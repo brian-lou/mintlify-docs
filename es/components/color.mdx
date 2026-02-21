@@ -1,16 +1,16 @@
 ---
 title: "Color"
-description: "Muestra paletas de colores con funcionalidad de copiar al hacer clic."
+description: "Muestra paletas de colores con función de copia con un clic."
 keywords: ["color", "palette", "colors", "design system", "hex", "rgb", "rgba", "hsl", "oklch"]
 ---
 
-Usa el componente Color para mostrar paletas de colores en tu documentación. Los colores pueden mostrarse en una cuadrícula compacta u organizarse en una tabla con filas etiquetadas.
+Utiliza el componente Color para mostrar paletas de colores en tu documentación. Los colores pueden mostrarse en una cuadrícula compacta o bien en una tabla con filas etiquetadas.
 
 <div id="compact-variant">
   ## Variante compacta
 </div>
 
-Muestra colores en una cuadrícula simple con nombres y valores de color.
+Muestra los colores en una cuadrícula sencilla con sus nombres y valores.
 
 <Color variant="compact">
   <Color.Item name="blue-500" value="#3B82F6" />
@@ -33,10 +33,10 @@ Muestra colores en una cuadrícula simple con nombres y valores de color.
 
 
 <div id="table-variant">
-  ## Variante de tabla
+  ## Variante en tabla
 </div>
 
-Organiza los colores en filas etiquetadas para la documentación del sistema de diseño.
+Organiza los colores en filas con etiquetas para la documentación del sistema de diseño.
 
 <Color variant="table">
   <Color.Row title="Primario">
@@ -56,12 +56,12 @@ Organiza los colores en filas etiquetadas para la documentación del sistema de 
 
 ```mdx Table example
 <Color variant="table">
-  <Color.Row title="Primario">
+  <Color.Row title="Primary">
     <Color.Item name="primary-500" value="#3B82F6" />
     <Color.Item name="primary-600" value="#2563EB" />
     <Color.Item name="primary-700" value="#1D4ED8" />
   </Color.Row>
-  <Color.Row title="Secundario">
+  <Color.Row title="Secondary">
     <Color.Item name="secondary-500" value="#8B5CF6" />
     <Color.Item name="secondary-600" value="#7C3AED" />
   </Color.Row>
@@ -73,7 +73,7 @@ Organiza los colores en filas etiquetadas para la documentación del sistema de 
   ## Formatos de color
 </div>
 
-El componente admite todos los formatos de color CSS, incluyendo hex, rgb, rgba, hsl y oklch.
+El componente es compatible con todos los formatos de color de CSS, incluidos hex, rgb, rgba, hsl y oklch.
 
 <Color variant="compact">
   <Color.Item name="hex" value="#FF5733" />
@@ -99,10 +99,10 @@ El componente admite todos los formatos de color CSS, incluyendo hex, rgb, rgba,
 
 
 <div id="theme-aware-colors">
-  ## Colores según el tema
+  ## Colores adaptados al tema
 </div>
 
-Define distintos colores para los modos claro y oscuro usando un objeto con las propiedades `light` y `dark`.
+Define distintos colores para el modo claro y el modo oscuro usando un objeto con las propiedades `light` y `dark`.
 
 <Color variant="compact">
   <Color.Item name="bg-primary" value={{ light: "#FFFFFF", dark: "#000000" }} />
@@ -130,7 +130,7 @@ Define distintos colores para los modos claro y oscuro usando un objeto con las 
 </div>
 
 <ResponseField name="variant" type="string" required>
-  Estilo de presentación de la paleta de colores. Opciones: `compact` o `table`.
+  Modo de visualización de la paleta de colores. Opciones: `compact` o `table`.
 </ResponseField>
 
 <ResponseField name="children" type="Color.Item | Color.Row" required>
@@ -142,11 +142,11 @@ Define distintos colores para los modos claro y oscuro usando un objeto con las 
 </div>
 
 <ResponseField name="title" type="string">
-  Etiqueta de la fila de colores.
+  Etiqueta para la fila de colores.
 </ResponseField>
 
 <ResponseField name="children" type="Color.Item" required>
-  Elementos de color que se muestran en la fila.
+  Elementos de color que se mostrarán en la fila.
 </ResponseField>
 
 <div id="coloritem">

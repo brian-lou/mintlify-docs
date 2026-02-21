@@ -1,18 +1,18 @@
 ---
 title: "Plausible"
-description: "使用 Plausible 进行简单、尊重隐私的分析。"
-keywords: ["Plausible Analytics", "privacy-respecting analytics", "self-hosted analytics", "domain configuration"]
+description: "使用 Plausible 跟踪简洁且注重隐私的统计数据。"
+keywords: ["Plausible Analytics", "注重隐私的统计", "自托管统计", "域名配置"]
 ---
 
-在 `docs.json` 中添加你站点的 domain，以将 Analytics 发送至 Plausible。
+将你的网站域名添加到 `docs.json` 中，用来将统计数据发送到 Plausible。
 
 <Info>
-  为 domain 或服务器填写时不要包含 `https://`。
+  不要在域名或服务器前包含 `https://`。
 </Info>
 
 <CodeGroup>
 
-```json docs.json 中的 Analytics 选项
+```json Analytics options in docs.json
 "integrations": {
     "plausible": {
         "domain": "required - your documentation domain",
@@ -21,7 +21,7 @@ keywords: ["Plausible Analytics", "privacy-respecting analytics", "self-hosted a
 }
 ```
 
-```json 示例
+```json Example
 "integrations": {
     "plausible": {
         "domain": "docs.domain.com"

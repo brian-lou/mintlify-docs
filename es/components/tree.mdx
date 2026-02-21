@@ -1,10 +1,10 @@
 ---
 title: "Árbol"
 description: "Utiliza componentes de árbol para mostrar estructuras jerárquicas de archivos y carpetas."
-keywords: ["árbol", "árbol de archivos", "estructura de carpetas", "navegación jerárquica", "sistema de archivos"]
+keywords: ["tree", "file tree", "folder structure", "hierarchical navigation", "file system"]
 ---
 
-Utiliza componentes de árbol para mostrar estructuras jerárquicas como sistemas de archivos, directorios de proyectos o contenido anidado. El componente de árbol ofrece compatibilidad con navegación mediante teclado y funciones de accesibilidad.
+Utiliza componentes de árbol para mostrar estructuras jerárquicas como sistemas de archivos, directorios de proyectos o contenido anidado. El componente de árbol admite navegación con el teclado y funciones de accesibilidad.
 
 <div id="basic-tree">
   ## Árbol básico
@@ -102,19 +102,19 @@ Crea estructuras de carpetas muy profundas anidando componentes `Tree.Folder` un
 
 
 <div id="keyboard-navigation">
-  ## Navegación con el teclado
+  ## Navegación por teclado
 </div>
 
-El componente de árbol admite la navegación con el teclado.
+El componente de árbol permite la navegación por teclado.
 
 - **Teclas de flecha**: Navega hacia arriba y hacia abajo por los elementos visibles.
-- **Flecha derecha**: Expande una carpeta cerrada o se desplaza al primer elemento hijo de una carpeta abierta.
-- **Flecha izquierda**: Contrae una carpeta abierta o se desplaza a la carpeta padre.
-- **Inicio (Home)**: Salta al primer elemento del árbol.
-- **Fin (End)**: Salta al último elemento visible del árbol.
-- **Enter/Espacio**: Alterna el estado de la carpeta entre abierta y cerrada.
-- **\***: Expande todas las carpetas del mismo nivel en el nivel actual.
-- **Búsqueda incremental**: Escribe caracteres para saltar a los elementos que comienzan con esos caracteres.
+- **Flecha derecha**: Expande una carpeta cerrada o se mueve al primer elemento hijo de una carpeta abierta.
+- **Flecha izquierda**: Contrae una carpeta abierta o se mueve a la carpeta principal.
+- **Inicio**: Salta al primer elemento del árbol.
+- **Fin**: Salta al último elemento visible del árbol.
+- **Enter/Espacio**: Alterna el estado abierto/cerrado de la carpeta.
+- **\***: Expande todas las carpetas del mismo nivel.
+- **Búsqueda incremental (type-ahead)**: Escribe caracteres para saltar a elementos que comiencen con esos caracteres.
 
 <div id="properties">
   ## Propiedades
@@ -133,7 +133,7 @@ El componente de árbol admite la navegación con el teclado.
 </ResponseField>
 
 <ResponseField name="openable" type="boolean" default="true">
-  Indica si la carpeta se puede abrir y cerrar. Configúralo en false para carpetas no interactivas.
+  Indica si la carpeta se puede abrir y cerrar. Establécelo en false para carpetas no interactivas.
 </ResponseField>
 
 <div id="treefile">

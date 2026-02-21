@@ -377,7 +377,7 @@
             "tab": "Documentation",
             "groups": [
               {
-                "group": "Commencer",
+                "group": "Démarrer",
                 "icon": "rocket",
                 "pages": [
                   "fr/index",
@@ -407,12 +407,13 @@
                   "fr/customize/custom-scripts",
                   "fr/customize/react-components",
                   {
-                    "group": "Accéder au Dashboard",
+                    "group": "Accéder au tableau de bord",
                     "pages": [
                       "fr/dashboard/sso",
                       "fr/dashboard/permissions",
                       "fr/dashboard/roles",
-                      "fr/dashboard/audit-logs"
+                      "fr/dashboard/audit-logs",
+                      "fr/dashboard/security-contact"
                     ]
                   },
                   "fr/customize/custom-404-page"
@@ -440,7 +441,7 @@
                   "fr/create/text",
                   "fr/create/code",
                   {
-                    "group": "Assistant",
+                    "group": "Agent",
                     "pages": [
                       "fr/agent/index",
                       "fr/agent/quickstart",
@@ -490,7 +491,7 @@
                 ]
               },
               {
-                "group": "Documenter des API",
+                "group": "API de documents",
                 "icon": "file-json",
                 "pages": [
                   "fr/api-playground/overview",
@@ -511,7 +512,7 @@
                   "fr/deploy/deployments",
                   "fr/deploy/preview-deployments",
                   {
-                    "group": "Sous-chemin /docs",
+                    "group": "sous-chemin /docs",
                     "pages": [
                       "fr/deploy/docs-subpath",
                       "fr/deploy/cloudflare",
@@ -547,10 +548,10 @@
                   "fr/ai/markdown-export",
                   "fr/optimize/pdf-exports",
                   {
-                    "group": "Integrations",
+                    "group": "Intégrations",
                     "pages": [
                       {
-                        "group": "Analytics",
+                        "group": "Analyses",
                         "pages": [
                           "fr/integrations/analytics/overview",
                           "fr/integrations/analytics/amplitude",
@@ -571,14 +572,14 @@
                         ]
                       },
                       {
-                        "group": "SDKs",
+                        "group": "SDK",
                         "pages": [
                           "fr/integrations/sdks/speakeasy",
                           "fr/integrations/sdks/stainless"
                         ]
                       },
                       {
-                        "group": "Support",
+                        "group": "Assistance",
                         "pages": [
                           "fr/integrations/support/overview",
                           "fr/integrations/support/intercom",
@@ -701,7 +702,7 @@
                 ]
               },
               {
-                "group": "Analytics",
+                "group": "Analyses",
                 "icon": "chart-line",
                 "pages": [
                   "fr/api/analytics/feedback",
@@ -711,10 +712,10 @@
             ]
           },
           {
-            "tab": "journal des modifications",
+            "tab": "Historique des modifications",
             "groups": [
               {
-                "group": "journal des modifications",
+                "group": "Journal des modifications",
                 "icon": "calendar",
                 "pages": [
                   "fr/changelog"
@@ -761,12 +762,13 @@
                   "es/customize/custom-scripts",
                   "es/customize/react-components",
                   {
-                    "group": "Acceder al dashboard",
+                    "group": "Acceder al panel",
                     "pages": [
                       "es/dashboard/sso",
                       "es/dashboard/permissions",
                       "es/dashboard/roles",
-                      "es/dashboard/audit-logs"
+                      "es/dashboard/audit-logs",
+                      "es/dashboard/security-contact"
                     ]
                   },
                   "es/customize/custom-404-page"
@@ -794,7 +796,7 @@
                   "es/create/text",
                   "es/create/code",
                   {
-                    "group": "Asistente",
+                    "group": "Agente",
                     "pages": [
                       "es/agent/index",
                       "es/agent/quickstart",
@@ -844,7 +846,7 @@
                 ]
               },
               {
-                "group": "Documentar APIs",
+                "group": "APIs de documentos",
                 "icon": "file-json",
                 "pages": [
                   "es/api-playground/overview",
@@ -885,7 +887,7 @@
                 ]
               },
               {
-                "group": "Optimizar",
+                "group": "Optimización",
                 "icon": "wrench",
                 "pages": [
                   "es/ai/assistant",
@@ -904,7 +906,7 @@
                     "group": "Integraciones",
                     "pages": [
                       {
-                        "group": "Analytics",
+                        "group": "Analíticas",
                         "pages": [
                           "es/integrations/analytics/overview",
                           "es/integrations/analytics/amplitude",
@@ -1046,7 +1048,7 @@
                 ]
               },
               {
-                "group": "assistant",
+                "group": "Asistente",
                 "icon": "bot-message-square",
                 "pages": [
                   "es/api/assistant/create-assistant-message-v2",
@@ -1055,7 +1057,7 @@
                 ]
               },
               {
-                "group": "Analytics",
+                "group": "Análisis",
                 "icon": "chart-line",
                 "pages": [
                   "es/api/analytics/feedback",
@@ -1065,10 +1067,10 @@
             ]
           },
           {
-            "tab": "Cambios",
+            "tab": "Registro de cambios",
             "groups": [
               {
-                "group": "cambios",
+                "group": "Registro de cambios",
                 "icon": "calendar",
                 "pages": [
                   "es/changelog"
@@ -1085,7 +1087,7 @@
             "tab": "文档",
             "groups": [
               {
-                "group": "快速开始",
+                "group": "快速上手",
                 "icon": "rocket",
                 "pages": [
                   "zh/index",
@@ -1115,12 +1117,13 @@
                   "zh/customize/custom-scripts",
                   "zh/customize/react-components",
                   {
-                    "group": "访问控制台",
+                    "group": "访问仪表盘",
                     "pages": [
                       "zh/dashboard/sso",
                       "zh/dashboard/permissions",
                       "zh/dashboard/roles",
-                      "zh/dashboard/audit-logs"
+                      "zh/dashboard/audit-logs",
+                      "zh/dashboard/security-contact"
                     ]
                   },
                   "zh/customize/custom-404-page"
@@ -1131,7 +1134,7 @@
                 "icon": "pen-line",
                 "pages": [
                   {
-                    "group": "Web 编辑器",
+                    "group": "网页编辑器",
                     "pages": [
                       "zh/editor/index",
                       "zh/editor/pages",
@@ -1198,7 +1201,7 @@
                 ]
               },
               {
-                "group": "编写 API 文档",
+                "group": "文档 API",
                 "icon": "file-json",
                 "pages": [
                   "zh/api-playground/overview",
@@ -1258,7 +1261,7 @@
                     "group": "集成",
                     "pages": [
                       {
-                        "group": "Analytics",
+                        "group": "分析",
                         "pages": [
                           "zh/integrations/analytics/overview",
                           "zh/integrations/analytics/amplitude",
@@ -1279,7 +1282,7 @@
                         ]
                       },
                       {
-                        "group": "SDK",
+                        "group": "SDK（软件开发工具包）",
                         "pages": [
                           "zh/integrations/sdks/speakeasy",
                           "zh/integrations/sdks/stainless"
@@ -1383,7 +1386,7 @@
                 ]
               },
               {
-                "group": "管理员",
+                "group": "管理",
                 "icon": "activity",
                 "pages": [
                   "zh/api/update/trigger",
@@ -1400,7 +1403,7 @@
                 ]
               },
               {
-                "group": "AI 助手",
+                "group": "助手",
                 "icon": "bot-message-square",
                 "pages": [
                   "zh/api/assistant/create-assistant-message-v2",
@@ -1409,7 +1412,7 @@
                 ]
               },
               {
-                "group": "Analytics",
+                "group": "分析",
                 "icon": "chart-line",
                 "pages": [
                   "zh/api/analytics/feedback",
@@ -1422,7 +1425,7 @@
             "tab": "更新日志",
             "groups": [
               {
-                "group": "更新日志",
+                "group": "变更日志",
                 "icon": "calendar",
                 "pages": [
                   "zh/changelog"

@@ -1,20 +1,20 @@
 ---
 title: "Redirecciones"
-description: "Configura redirecciones para páginas movidas, renombradas o eliminadas."
+description: "Configura redirecciones para páginas que se hayan movido, renombrado o eliminado."
 keywords: ["301", "redirects"]
 ---
 
-Cuando cambias la ruta de un archivo en tu carpeta de docs, también cambia la URL de esa página. Esto puede ocurrir al reestructurar tus docs o al cambiar el título de la barra lateral.
+Cuando cambias la ruta de acceso de un archivo en la carpeta docs de tu documentación, también cambia la ruta de la URL de esa página. Esto puede ocurrir al reestructurar la documentación o al cambiar el título de la barra lateral.
 
 <div id="redirects">
   ## Redirecciones
 </div>
 
 <Note>
-  Las redirecciones **no pueden** incluir anclas de URL como `path#anchor` ni parámetros de consulta como `path?query=value`.
+  Las redirecciones **no pueden** incluir fragmentos de URL como `path#anchor` ni parámetros de consulta como `path?query=value`.
 </Note>
 
-Configura redirecciones 301 añadiendo el campo `redirects` a tu archivo `docs.json`.
+Configura redirecciones 301 agregando el campo `redirects` a tu archivo `docs.json`.
 
 ```json
 "redirects": [
@@ -25,13 +25,13 @@ Configura redirecciones 301 añadiendo el campo `redirects` a tu archivo `docs.j
 ]
 ```
 
-Esto redirige de forma permanente `/source/path` a `/destination/path` para que no pierdas el SEO previo de la página original.
+Esto redirige permanentemente `/source/path` a `/destination/path` para que no pierdas el posicionamiento SEO previo de la página original.
 
 <div id="wildcard-redirects">
   ### Redirecciones con comodín
 </div>
 
-Para hacer coincidir una ruta con comodín, usa `*` después de un parámetro. En este ejemplo, `/beta/:slug*` coincide con `/beta/introduction` y la redirige a `/v2/introduction`.
+Para hacer coincidir una ruta comodín, usa `*` después de un parámetro. En este ejemplo, `/beta/:slug*` coincide con `/beta/introduction` y la redirige a `/v2/introduction`.
 
 ```json
 "redirects": [
@@ -43,10 +43,10 @@ Para hacer coincidir una ruta con comodín, usa `*` después de un parámetro. E
 ```
 
 <div id="partial-wildcard-redirects">
-  ### Redirecciones con comodín parcial
+  ### Redirecciones con comodines parciales
 </div>
 
-Usa comodines parciales para hacer coincidir los segmentos de la URL que comienzan con un prefijo específico.
+Utiliza comodines parciales para coincidir con segmentos de URL que empiezan con un prefijo determinado.
 
 ```json
 "redirects": [
@@ -57,9 +57,9 @@ Usa comodines parciales para hacer coincidir los segmentos de la URL que comienz
 ]
 ```
 
-Esto coincide con cualquier URL con la ruta `/articles/concepts-`, como `/articles/concepts-getting-started` y `/articles/concepts-overview`, y las redirige todas a `/collections/overview`.
+Esto hace coincidir cualquier URL con la ruta `/articles/concepts-`, como `/articles/concepts-getting-started` y `/articles/concepts-overview`, y las redirige todas a `/collections/overview`.
 
-También puedes usar el valor del comodín capturado en el destino.
+También puedes sustituir el valor del comodín capturado en el destino.
 
 ```json
 "redirects": [
@@ -70,13 +70,13 @@ También puedes usar el valor del comodín capturado en el destino.
 ]
 ```
 
-Esto redirige `/old/article-123` a `/new/article-123`, manteniendo el valor capturado después del prefijo.
+Esto redirige `/old/article-123` a `/new/article-123`, manteniendo el valor capturado tras el prefijo.
 
 <div id="avoid-infinite-redirects">
-  ### Evita redirecciones infinitas
+  ### Evitar redirecciones infinitas
 </div>
 
-Para evitar bucles infinitos, no crees redirecciones circulares en las que las rutas se redirijan unas a otras.
+Para evitar bucles infinitos, no crees redirecciones circulares en las que unas rutas redirijan a otras y viceversa.
 
 ```json
 "redirects": [
@@ -95,7 +95,7 @@ Para evitar bucles infinitos, no crees redirecciones circulares en las que las r
   ## Comprobar enlaces rotos
 </div>
 
-Detecta enlaces rotos con la [CLI](/es/installation).
+Comprueba si hay enlaces rotos con la [CLI](/es/installation).
 
 ```bash
 mint broken-links

@@ -5,58 +5,58 @@ description: "Crea un centro de soporte de autoservicio que ayude a los clientes
 keywords: ["support center", "help center", "customer support", "self-service", "FAQ"]
 ---
 
-Un centro de soporte ayuda a los clientes a resolver problemas y encontrar información sobre tu producto. Cuando los clientes pueden encontrar respuestas por sí mismos, reciben ayuda más rápido y tu equipo de soporte puede centrarse en los problemas complejos que requieren su experiencia.
+Un centro de soporte ayuda a los clientes a resolver problemas y encontrar información sobre tu producto. Cuando los clientes pueden encontrar respuestas por sí mismos, obtienen ayuda más rápido y tu equipo de soporte puede centrarse en problemas complejos que requieren su experiencia.
 
-Mintlify proporciona la infraestructura para centros de soporte que escalan con tu base de clientes.
+Mintlify proporciona la infraestructura para centros de soporte que escalan junto con tu base de clientes.
 
-* **Búsqueda con IA**: El [assistant](/es/ai/assistant) responde preguntas de los clientes usando tu contenido de soporte, para que puedan encontrar respuestas sin saber exactamente dónde buscar ni qué términos específicos usar.
-* **Recopilación de comentarios**: Los [widgets de comentarios](/es/optimize/feedback) integrados permiten que los clientes califiquen artículos y reporten problemas para que puedas mejorar el contenido.
-* **Analytics**: Haz un seguimiento de qué artículos reciben visitas, qué preguntas hacen los clientes y dónde tienen dificultades.
+* **Búsqueda con IA**: El [asistente](/es/ai/assistant) responde las preguntas de los clientes usando tu contenido de soporte, para que las personas puedan encontrar respuestas sin saber exactamente dónde buscar ni qué términos específicos usar.
+* **Recopilación de comentarios**: Los [widgets de comentarios](/es/optimize/feedback) integrados permiten que los clientes califiquen los artículos e informen problemas para que puedas mejorar el contenido.
+* **Analítica**: Haz un seguimiento de qué artículos reciben visitas, qué preguntas hacen los clientes y dónde tienen dificultades.
 * **Autenticación**: Usa [SSO o OAuth](/es/deploy/authentication-setup) para mostrar contenido personalizado según los planes o tipos de cuenta de los clientes.
 
 <div id="prerequisites">
   ## Requisitos previos
 </div>
 
-Si aún no has creado un proyecto de Mintlify, consulta la [Guía de inicio rápido](/es/quickstart) para desplegar tu sitio.
+Si aún no has creado un proyecto de Mintlify, consulta la [Guía rápida](/es/quickstart) para publicar tu sitio.
 
 * Contenido para tus temas de soporte más habituales
 * Acceso de administrador a tu organización de Mintlify
-* Un domain para alojar tu centro de soporte
+* Dominio para alojar tu centro de ayuda
 
 <div id="migrate-existing-content">
-  ## Migra el contenido existente
+  ## Migrar el contenido existente
 </div>
 
-Si estás creando un centro de soporte desde cero, pasa a [Planifica la estructura de tu centro de soporte](#plan-your-support-center-structure).
+Si estás creando un centro de ayuda desde cero, pasa a [Planifica la estructura de tu centro de ayuda](#plan-your-support-center-structure).
 
 <div id="audit-existing-content">
-  ### Audita el contenido existente
+  ### Auditar el contenido existente
 </div>
 
-Revisa tus recursos de soporte actuales para comprender qué migrar.
+Revisa tus recursos de soporte actuales para saber qué migrar.
 
-* **Artículos de ayuda**: ¿Qué temas abordas? ¿Qué artículos reciben más visitas?
+* **Artículos de ayuda**: ¿Qué temas tratas? ¿Qué artículos reciben más visitas?
 * **Preguntas frecuentes (FAQs)**: ¿Tienes preguntas frecuentes que deberían convertirse en artículos?
-* **Tickets de soporte**: ¿Qué preguntas te hacen los clientes de forma reiterada? Estas deberían convertirse en contenido de autoservicio.
+* **Tickets de soporte**: ¿Qué preguntas hacen tus clientes de forma reiterada? Estas deberían convertirse en contenido de autoservicio.
 * **Documentación del producto**: ¿Hay superposición entre el contenido de soporte y la documentación del producto?
 
 <div id="export-your-existing-content">
   ### Exporta tu contenido existente
 </div>
 
-* Exporta a **Markdown** para realizar la migración más sencilla a Mintlify.
+* Exporta a **Markdown** para realizar la migración a Mintlify de la forma más sencilla.
 * Exporta a **HTML** si Markdown no está disponible y luego conviértelo a Markdown.
-* Exporta los **datos de tickets de soporte** para identificar las preguntas más habituales que necesitan documentación.
+* Exporta los **datos de los tickets** para identificar las preguntas frecuentes que deben documentarse.
 
 <div id="plan-your-support-center-structure">
-  ## Planifica la estructura de tu centro de soporte
+  ## Planifica la estructura de tu centro de ayuda
 </div>
 
-Organiza tu centro de soporte en torno a los problemas de los clientes, no a las funciones del producto. Los clientes llegan con preguntas y objetivos, así que estructura el contenido de forma que se alinee con su manera de pensar sobre tu producto y las tareas habituales.
+Organiza tu centro de ayuda en torno a los problemas de los clientes, no a las características del producto. Los clientes llegan con preguntas y objetivos, así que estructura el contenido de forma que se alinee con la forma en que piensan en tu producto y en las tareas habituales.
 
 <Tip>
-  Revisa tus tickets de soporte para entender qué es lo que realmente preguntan los clientes. Esto te ayuda a priorizar el contenido y a estructurar la navigation en torno a problemas reales.
+  Revisa tus tickets de soporte para entender sobre qué preguntan realmente los clientes. Esto te ayuda a priorizar el contenido y estructurar la navegación en torno a problemas reales.
 </Tip>
 
 ```json
@@ -88,7 +88,7 @@ Organiza tu centro de soporte en torno a los problemas de los clientes, no a las
         ]
       },
       {
-        "group": "Solución de problemas",
+        "group": "Troubleshooting",
         "pages": [
           "troubleshooting/common-errors",
           "troubleshooting/connectivity",
@@ -100,19 +100,19 @@ Organiza tu centro de soporte en torno a los problemas de los clientes, no a las
 }
 ```
 
-Consulta [Navegación](/es/organize/navigation) para obtener más opciones de configuración.
+Para conocer más opciones de configuración, consulta [Navigation](/es/organize/navigation).
 
 <div id="write-effective-support-content">
-  ## Redacta contenido de soporte eficaz
+  ## Escribe contenido de soporte efectivo
 </div>
 
-El contenido de soporte debe ayudar a los clientes a resolver problemas rápidamente. Cada artículo debe responder a una pregunta específica o resolver un problema concreto. Organiza el contenido relacionado en grupos en lugar de crear páginas demasiado largas con demasiada información.
+El contenido de soporte debe ayudar a los clientes a resolver problemas rápidamente. Cada artículo debe responder a una sola pregunta o resolver un único problema. Organiza el contenido relacionado en grupos en lugar de crear páginas demasiado largas con demasiada información.
 
 <div id="structure-articles-for-scanning">
-  ### Estructura los artículos para que se puedan escanear rápidamente
+  ### Estructura los artículos para la lectura rápida
 </div>
 
-Los clientes recorren las páginas de soporte en busca de su problema específico. Usa encabezados claros y párrafos breves.
+Los clientes recorren rápidamente las páginas de soporte buscando su problema específico. Usa encabezados claros y párrafos cortos.
 
 ```mdx Example support page
 ---
@@ -133,17 +133,17 @@ If you forgot your password, request a reset link from the login page.
 
 Old cached data can cause login problems. Clear your browser cache and try again.
 
-## Verificar el estado de la cuenta
+## Check account status
 
-Si tu cuenta está suspendida o desactivada, verás un error al iniciar sesión.
-Contacta a soporte si crees que esto es un error.
+If your account is suspended or deactivated, you'll see an error when logging in.
+Contact support if you believe this is a mistake.
 ```
 
 <div id="include-step-by-step-instructions">
   ### Incluye instrucciones paso a paso
 </div>
 
-Al explicar cómo hacer algo, utiliza pasos numerados.
+Al explicar cómo hacer algo, usa pasos numerados.
 
 <Steps>
   <Step title="Ir a Configuración">
@@ -151,83 +151,83 @@ Al explicar cómo hacer algo, utiliza pasos numerados.
   </Step>
 
   <Step title="Seleccionar Facturación">
-    Haz clic en **Billing** en el menú de navegación.
+    Haz clic en **Facturación** en el menú de navegación.
   </Step>
 
-  <Step title="Actualizar método de pago">
-    Haz clic en **Update** junto a tu método de pago actual e introduce los nuevos datos.
+  <Step title="Actualizar el método de pago">
+    Haz clic en **Actualizar** junto a tu método de pago actual e introduce los nuevos datos.
   </Step>
 </Steps>
 
 <div id="add-visual-aids">
-  ### Añade recursos visuales
+  ### Añade ayudas visuales
 </div>
 
-Las capturas de pantalla y los diagramas ayudan a los usuarios a comprobar que están en la sección correcta.
+Las capturas de pantalla y los diagramas ayudan a los clientes a confirmar que están en el lugar correcto.
 
 ```mdx Example screenshot
 ![Página de configuración con la sección de facturación resaltada](/images/billing-settings.png)
 ```
 
 <div id="set-up-the-assistant">
-  ## Configura el assistant
+  ## Configura el asistente
 </div>
 
-El assistant responde a las preguntas de los clientes utilizando tu contenido de soporte. Configúralo desde tu [dashboard](https://dashboard.mintlify.com/products/assistant/settings).
+El asistente responde las preguntas de los clientes usando tu contenido de soporte. Configúralo desde tu [panel de control](https://dashboard.mintlify.com/products/assistant/settings).
 
 <Steps>
-  <Step title="Añade preguntas de ejemplo">
-    Añade preguntas frecuentes que hacen los clientes, como:
+  <Step title="Agregar preguntas de ejemplo">
+    Agrega preguntas frecuentes de los clientes, como:
 
     * &quot;¿Cómo cancelo mi suscripción?&quot;
     * &quot;¿Por qué se rechazó mi pago?&quot;
-    * &quot;¿Cómo agrego miembros del equipo?&quot;
+    * &quot;¿Cómo agrego miembros al equipo?&quot;
 
-    Las preguntas de ejemplo aparecen como botones de acceso rápido, lo que ayuda a los clientes a obtener respuestas con un solo clic.
+    Las preguntas de ejemplo aparecen como botones de acceso rápido, ayudando a los clientes a obtener respuestas con un solo clic.
   </Step>
 
-  <Step title="Configura un correo de derivación">
-    Configura un correo de soporte para las preguntas que el assistant no pueda responder. Esto garantiza que los clientes aún puedan contactar a tu equipo cuando el autoservicio no sea suficiente.
+  <Step title="Configurar un correo de soporte">
+    Configura un correo de soporte para las preguntas que el asistente no pueda responder. Esto asegura que los clientes aún puedan contactar a tu equipo cuando el autoservicio no sea suficiente.
   </Step>
 
-  <Step title="Revisa las conversaciones">
-    Revisa regularmente las conversaciones del assistant para identificar:
+  <Step title="Revisar conversaciones">
+    Revisa con regularidad las conversaciones del asistente para identificar:
 
-    * Preguntas que el assistant no puede responder (brechas de contenido)
-    * Respuestas incorrectas o incompletas (contenido a mejorar)
+    * Preguntas que el asistente no puede responder (vacíos de contenido)
+    * Respuestas incorrectas o incompletas (contenido por mejorar)
     * Patrones de preguntas frecuentes (contenido a priorizar)
   </Step>
 </Steps>
 
 <div id="enable-feedback-collection">
-  ## Activar la recopilación de comentarios
+  ## Habilitar la recopilación de comentarios
 </div>
 
-Los comentarios te ayudan a entender qué páginas son útiles y cuáles necesitan mejoras. Revisa los [comentarios](/es/optimize/feedback) para ver qué páginas los clientes consideran útiles y cuáles requieren mejoras. Lee todos los comentarios y actualiza las páginas en función de los comentarios válidos.
+Los comentarios te ayudan a comprender qué páginas son útiles y cuáles necesitan mejoras. Revisa los [comentarios](/es/optimize/feedback) para ver qué páginas los clientes consideran útiles y cuáles es necesario mejorar. Lee todos los comentarios y actualiza las páginas basándote en los comentarios válidos.
 
 <div id="set-up-analytics">
-  ## Configura Analytics
+  ## Configurar la analítica
 </div>
 
-Supervisa cómo los clientes usan tu centro de soporte para mejorar el contenido a lo largo del tiempo.
+Supervisa cómo los clientes usan tu centro de ayuda para mejorar el contenido con el tiempo.
 
-* **Artículos populares**: ¿Qué artículos reciben más visitas? Manténlos precisos y bien actualizados.
-* **Consultas de búsqueda**: ¿Qué buscan los clientes? Crea contenido para las búsquedas comunes que no devuelven resultados.
-* **Conversaciones con el assistant**: ¿Qué preguntas recibe el assistant? Usa esta información para identificar lagunas de contenido.
+* **Artículos populares**: ¿Qué artículos reciben más visitas? Manténlos exactos y bien actualizados.
+* **Consultas de búsqueda**: ¿Qué buscan los clientes? Crea contenido para las búsquedas frecuentes que no devuelven resultados.
+* **Conversaciones con el asistente**: ¿Qué preguntas recibe el asistente? Utiliza esto para identificar lagunas de contenido.
 
 <div id="restrict-content-by-customer-segment">
   ## Restringe el contenido por segmento de clientes
 </div>
 
-Si tienes diferentes niveles de cliente o planes de producto, muestra contenido relevante para cada segmento usando control de acceso basado en grupos.
+Si tienes diferentes niveles de cliente o planes de producto, muestra contenido relevante a cada segmento usando control de acceso basado en grupos.
 
 <Steps>
   <Step title="Configura la autenticación">
-    Configura la [autenticación](/es/deploy/authentication-setup) para identificar a los clientes cuando visiten tu centro de ayuda.
+    Configura la [autenticación](/es/deploy/authentication-setup) para identificar a los clientes cuando visitan tu centro de ayuda.
   </Step>
 
   <Step title="Configura grupos de usuarios">
-    Devuelve la información de grupos en los datos de tus usuarios para definir segmentos de clientes según el tipo de plan, el estado de la cuenta u otros atributos. Consulta [Formato de datos de usuario](/es/deploy/authentication-setup#user-data-format) para más detalles.
+    Incluye la información de grupo en tus datos de usuario para definir segmentos de clientes según el tipo de plan, el estado de la cuenta u otros atributos. Consulta el [formato de datos de usuario](/es/deploy/authentication-setup#user-data-format) para obtener más detalles.
   </Step>
 
   <Step title="Etiqueta el contenido por grupo">
@@ -243,10 +243,10 @@ Si tienes diferentes niveles de cliente o planes de producto, muestra contenido 
 </Steps>
 
 <div id="maintain-your-support-center">
-  ## Mantén tu centro de soporte
+  ## Mantén tu centro de ayuda
 </div>
 
-El contenido de soporte se vuelve obsoleto a medida que tu producto cambia. Establece procesos para mantener el contenido actualizado y preciso.
+El contenido de soporte se va quedando desactualizado a medida que tu producto cambia. Establece procesos para mantenerlo actualizado y preciso.
 
 <Steps>
   <Step title="Actualiza con los lanzamientos de producto">
@@ -254,15 +254,15 @@ El contenido de soporte se vuelve obsoleto a medida que tu producto cambia. Esta
   </Step>
 
   <Step title="Revisa los comentarios con regularidad">
-    Revisa semanalmente las valoraciones de los artículos y los comentarios de los clientes. Atiende los comentarios negativos con prontitud. A menudo indican contenido confuso o incorrecto.
+    Revisa las valoraciones de los artículos y los comentarios de los clientes cada semana. Atiende rápidamente los comentarios negativos. A menudo indican contenido confuso o incorrecto.
   </Step>
 
   <Step title="Supervisa los tickets de soporte">
-    Si los clientes envían tickets sobre problemas cubiertos en tu centro de soporte, investiga por qué el autoservicio no funcionó. Es posible que el artículo sea difícil de encontrar, poco claro o incompleto.
+    Si los clientes envían tickets sobre problemas que ya están cubiertos en tu centro de ayuda, investiga por qué el autoservicio no funcionó. Es posible que el artículo sea difícil de encontrar, poco claro o incompleto.
   </Step>
 
-  <Step title="Archiva el contenido obsoleto">
-    Elimina o archiva los artículos sobre funciones en desuso. El contenido obsoleto confunde a los clientes y reduce la confianza en tu centro de soporte.
+  <Step title="Archiva el contenido desactualizado">
+    Elimina o archiva los artículos sobre funciones obsoletas. El contenido desactualizado confunde a los clientes y reduce la confianza en tu centro de ayuda.
   </Step>
 </Steps>
 
@@ -270,11 +270,11 @@ El contenido de soporte se vuelve obsoleto a medida que tu producto cambia. Esta
   ## Próximos pasos
 </div>
 
-Tu centro de soporte está listo para su lanzamiento. Después de desplegarlo:
+Tu centro de soporte está listo para ponerse en marcha. Después de la implementación:
 
 1. Vincula tu centro de soporte desde tu producto y tu sitio web.
-2. Supervisa las conversaciones del assistant y las consultas de búsqueda para detectar brechas de contenido.
+2. Supervisa las conversaciones del asistente y las consultas de búsqueda para detectar vacíos de contenido.
 3. Revisa semanalmente las valoraciones y mejora los artículos con baja calificación.
 4. Haz un seguimiento del volumen de tickets para medir la efectividad del autoservicio.
 
-Un buen centro de soporte reduce los costos de soporte y, al mismo tiempo, mejora la satisfacción del cliente. Invierte en contenido que responda de forma eficaz a las preguntas más comunes.
+Un buen centro de soporte reduce los costos de soporte y, al mismo tiempo, mejora la satisfacción del cliente. Invierte en contenido que responda de forma eficaz las preguntas más frecuentes.

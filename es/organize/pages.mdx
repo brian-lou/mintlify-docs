@@ -1,10 +1,10 @@
 ---
 title: "Páginas"
-description: "Configura la metadata de la página, los títulos y las propiedades de frontmatter."
-keywords: ["etiquetas", "etiqueta", "frontmatter", "metadata", "diseño"]
+description: "Configura los metadatos de las páginas, los títulos y las propiedades de frontmatter."
+keywords: ["tags", "tag", "frontmatter", "metadata", "layout"]
 ---
 
-Cada página es un archivo Markdown. Tanto `.mdx` como `.md` son tipos de archivo compatibles. Recomendamos usar MDX, que combina Markdown con componentes de React para crear documentación enriquecida e interactiva. El Markdown plano (`.md`) se admite para facilitar la migración desde otras plataformas, pero se debería actualizar a MDX para obtener todas las funcionalidades.
+Cada página es un archivo Markdown. Se admiten los tipos de archivo `.mdx` y `.md`. Recomendamos usar MDX, que combina Markdown con componentes de React para crear documentación más completa e interactiva. El Markdown simple (`.md`) se admite para facilitar la migración desde otras plataformas, pero debería actualizarse a MDX para disponer de todas las funcionalidades.
 
 <div id="page-metadata">
   ## Metadatos de la página
@@ -15,9 +15,9 @@ Cada página comienza con frontmatter, los metadatos YAML delimitados por `---` 
 Usa el frontmatter para controlar:
 
 * Títulos y descripciones de la página
-* Títulos de la barra lateral, iconos y etiquetas
+* Títulos, iconos y etiquetas de la barra lateral
 * Diseños de página
-* Metatags de SEO
+* Metaetiquetas de SEO
 * Metadatos personalizados
 
 <ResponseField name="title" type="string" required>
@@ -25,20 +25,20 @@ Usa el frontmatter para controlar:
 </ResponseField>
 
 <ResponseField name="description" type="string">
-  Una breve descripción de lo que cubre esta página. Aparece debajo del título y mejora el SEO.
+  Una breve descripción de lo que trata esta página. Aparece debajo del título y mejora el SEO.
 </ResponseField>
 
 <ResponseField name="sidebarTitle" type="string">
-  Un título corto que se muestra en la navegación de la barra lateral.
+  Un título corto que se muestra en la navegación lateral.
 </ResponseField>
 
 <ResponseField name="icon" type="string">
-  El icono que se mostrará.
+  El icono que se va a mostrar.
 
   Opciones:
 
-  * nombre del [icono de Font Awesome](https://fontawesome.com/icons)
-  * nombre del [icono de Lucide](https://lucide.dev/icons)
+  * Nombre del icono de [Font Awesome](https://fontawesome.com/icons)
+  * Nombre del icono de [Lucide](https://lucide.dev/icons)
   * URL de un icono alojado externamente
   * Ruta a un archivo de icono en tu proyecto
 </ResponseField>
@@ -59,8 +59,8 @@ Usa el frontmatter para controlar:
 
 ```yaml Example YAML frontmatter wrap
 ---
-title: "Acerca del frontmatter"
-description: "El frontmatter es el metadata que controla cómo aparece y se comporta tu página"
+title: "About frontmatter"
+description: "Frontmatter is the metadata that controls how your page appears and behaves"
 sidebarTitle: "Frontmatter"
 icon: "book"
 tag: "NEW"
@@ -71,7 +71,7 @@ tag: "NEW"
   ## Modo de página
 </div>
 
-Controla cómo se muestra tu página con el ajuste `mode`.
+Controla cómo se muestra la página mediante el ajuste `mode`.
 
 <div id="default">
   ### Predeterminado
@@ -81,19 +81,19 @@ Si no se define ningún modo, se utiliza un diseño estándar con una barra late
 
 ```yaml
 ---
-title: "Título de página predeterminado"
+title: "Default page title"
 ---
 ```
 
 <div id="wide">
-  ### Ancho
+  ### Wide
 </div>
 
-El modo ancho oculta la tabla de contenidos. Es útil para páginas que no tienen encabezados o si prefieres aprovechar el espacio horizontal adicional. El modo ancho está disponible en todos los temas.
+El modo ancho oculta la tabla de contenido. Es útil para páginas sin encabezados o si prefieres aprovechar el espacio horizontal adicional. El modo ancho está disponible para todos los temas.
 
 ```yaml
 ---
-title: "Título de página amplia"
+title: "Wide page title"
 mode: "wide"
 ---
 ```
@@ -102,50 +102,50 @@ mode: "wide"
   ### Personalizado
 </div>
 
-El modo personalizado ofrece un diseño minimalista que elimina todos los elementos excepto la barra superior. Es un lienzo en blanco para crear páginas de destino u otros diseños únicos en los que quieras que haya elementos de navigation mínimos. El modo personalizado está disponible para todos los temas.
+El modo personalizado proporciona un diseño minimalista que elimina todos los elementos excepto la barra de navegación superior. El modo personalizado es un lienzo en blanco para crear páginas de destino u otros diseños únicos en los que quieras que haya una navegación mínima. El modo personalizado está disponible para todos los temas.
 
 ```yaml
 ---
-title: "Título de página personalizado"
+title: "Custom page title"
 mode: "custom"
 ---
 ```
 
 <Warning>
-  Usar la propiedad `style` en páginas en modo personalizado puede provocar un desplazamiento de diseño al cargar la página. En su lugar, usa [Tailwind CSS o CSS personalizado](/es/customize/custom-scripts) para evitar este problema.
+  Usar la propiedad `style` en páginas con modo personalizado puede causar un desplazamiento del diseño al cargar la página. Usa [Tailwind CSS o CSS personalizado](/es/customize/custom-scripts) en su lugar para evitar este problema.
 </Warning>
 
 <div id="frame">
   ### Frame
 </div>
 
-El modo Frame ofrece un diseño similar al modo personalizado, pero mantiene la barra lateral de navegación. Este modo de página permite usar HTML y componentes personalizados sin perder la experiencia de navegación predeterminada. El modo Frame solo está disponible en los temas Aspen y Almond.
+El modo Frame ofrece un diseño similar al modo Custom, pero conserva la navegación lateral. Este modo de página permite usar HTML y componentes personalizados, manteniendo la experiencia de navegación predeterminada. El modo Frame solo está disponible para los temas Aspen y Almond.
 
 ```yaml
 ---
-title: "Título de página Frame"
+title: "Frame page title"
 mode: "frame"
 ---
 ```
 
 <div id="center">
-  ### Center
+  ### Centrado
 </div>
 
-El modo Center elimina la barra lateral y la tabla de contenidos, centrando el contenido. Es útil para la página de cambios u otras páginas donde quieras destacar el contenido. El modo Center está disponible para los temas Mint y Linden.
+El modo centrado elimina la barra lateral y la tabla de contenidos, y sitúa el contenido en el centro. Es útil para registros de cambios u otras páginas en las que se desea destacar el contenido. El modo centrado está disponible para los temas Mint y Linden.
 
 ```yaml
 ---
-title: "Centrar título de página"
+title: "Center page title"
 mode: "center"
 ---
 ```
 
 <div id="api-pages">
-  ## Páginas de la API
+  ## Páginas de API
 </div>
 
-Crea áreas de pruebas de la API interactivas añadiendo una especificación de la API a tu frontmatter, `api` o `openapi`.
+Crea entornos de prueba interactivos para APIs añadiendo una especificación de API a tu frontmatter, `api` u `openapi`.
 
 ```yaml
 ---
@@ -159,20 +159,20 @@ Obtén más información sobre cómo crear [documentación de API](/es/api-playg
   ## Enlaces externos
 </div>
 
-Enlaza a sitios externos directamente desde tu navigation con la metadata `url`.
+Enlaza a sitios externos directamente desde tu navegación mediante el metadato `url`.
 
 ```yaml
 ---
-title: "Paquete npm"
+title: "npm Package"
 url: "https://www.npmjs.com/package/mint"
 ---
 ```
 
 <div id="search-engine-optimization">
-  ## Optimización para motores de búsqueda (SEO)
+  ## Optimización para motores de búsqueda
 </div>
 
-La mayoría de las metaetiquetas de SEO se generan automáticamente. Puedes establecer manualmente las metaetiquetas de SEO para mejorar el SEO de tu sitio, su difusión en redes sociales y la compatibilidad con los navegadores.
+La mayoría de las metaetiquetas de SEO se generan automáticamente. Puedes definir metaetiquetas de SEO manualmente para mejorar el SEO de tu sitio, su difusión en redes sociales y la compatibilidad con los navegadores.
 
 <Note>
   Las metaetiquetas con dos puntos deben ir entre comillas.
@@ -184,25 +184,25 @@ La mayoría de las metaetiquetas de SEO se generan automáticamente. Puedes esta
 ---
 ```
 
-Consulta [SEO](/es/optimize/seo) para conocer todas las opciones de metadata de SEO.
+Consulta [SEO](/es/optimize/seo) para ver todas las opciones disponibles de metadatos de SEO.
 
 <div id="internal-search-keywords">
-  ## Palabras clave para la búsqueda interna
+  ## Palabras clave internas de búsqueda
 </div>
 
-Mejora la capacidad de descubrimiento de una página específica en la búsqueda integrada añadiendo `keywords` en tu metadata. Estas palabras clave no aparecerán como parte del contenido de la página ni en los resultados de búsqueda, pero los usuarios que las busquen verán la página como resultado.
+Mejora la visibilidad de una página específica en la búsqueda interna proporcionando `keywords` en tus metadatos. Estas palabras clave no aparecerán como parte del contenido de la página ni en los resultados de búsqueda, pero los usuarios que las busquen verán la página entre los resultados.
 
 ```yaml
 ---
-keywords: ['configuración', 'configuración inicial', 'primeros pasos']
+keywords: ['configuration', 'setup', 'getting started']
 ---
 ```
 
 <div id="last-modified-timestamp">
-  ## Marca de tiempo de la última modificación
+  ## Marca de tiempo de última modificación
 </div>
 
-Añade una marca de tiempo «Última modificación el [fecha]» a todas las páginas activando `metadata.timestamp` en tu [configuración global](/es/organize/settings#metadata).
+Añade la marca de tiempo de &quot;Última modificación el [date]&quot; a todas las páginas habilitando `metadata.timestamp` en la [configuración global](/es/organize/settings#metadata).
 
 ```json docs.json
 "metadata": {
@@ -210,13 +210,13 @@ Añade una marca de tiempo «Última modificación el [fecha]» a todas las pág
 }
 ```
 
-Anula la configuración global de la marca de tiempo en páginas individuales con el campo `timestamp` del frontmatter. Usa este campo para mostrar u ocultar selectivamente las marcas de tiempo en páginas específicas.
+Sobrescribe la configuración global de la marca de tiempo en páginas individuales con el campo `timestamp` del frontmatter. Usa este campo para mostrar u ocultar selectivamente la marca de tiempo en páginas específicas.
 
 ```yaml
 ---
-title: "Título de la página"
+title: "Page title"
 timestamp: false
 ---
 ```
 
-Cuando se establece en `true`, la marca de tiempo se muestra aunque la configuración global sea `false`. Cuando se establece en `false`, la marca de tiempo se oculta aunque la configuración global sea `true`.
+Si se establece en `true`, la marca de tiempo se muestra incluso si la configuración global está en `false`. Si se establece en `false`, la marca de tiempo se oculta incluso si la configuración global está en `true`.

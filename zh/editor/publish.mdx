@@ -1,89 +1,89 @@
 ---
 title: "在 Web 编辑器中发布更改"
 sidebarTitle: "发布"
-description: "保存你的工作并发布你对文档站点的更改。"
-keywords: ["编辑器", "发布", "更改", "branches", "拉取请求（PR；亦称“合并请求”/Merge Request）"]
+description: "保存你的工作，并将更改发布到你的文档站点。"
+keywords: ["editor", "publish", "changes", "branches", "pull requests"]
 ---
 
 <div id="publishing-workflows">
   ## 发布工作流
 </div>
 
-编辑器支持两种发布文档更新的工作流程。你使用的工作流程取决于存储库的 branch 保护规则以及你正在使用的 branch。
+编辑器支持两种发布文档更新的工作流。你使用哪种工作流取决于代码仓库的分支保护规则以及你当前所在的分支。
 
-* **创建拉取请求**：如果你的存储库具有需要审核的 branch 保护规则，要求在更改合并到部署用分支之前必须先创建拉取请求，那么在你发布更改时，编辑器会创建一个拉取请求（PR；亦称“合并请求”/Merge Request）。
-* **直接发布**：如果没有保护规则，你的更改会在发布时合并到部署用分支并立即部署。
+* **创建 pull request**：如果你的代码仓库在部署分支上启用了分支保护规则，并要求更改在合并前必须通过 pull request，编辑器会在你发布更改时创建一个 pull request。
+* **直接发布**：如果你的代码仓库没有分支保护规则，你的更改会在你发布时直接合并到部署分支并立即部署。
 
-| branch 类型 | branch 保护 | 发布工作流 |
+| 分支类型 | 分支保护 | 发布工作流 |
 |-------------|-------------------|------------------------------|
-| <Tooltip headline="部署用分支" tip="用于发布到线上文档站点的 branch，通常为 'main'。">部署用分支</Tooltip> | 无 | 提交并部署更改 |
-| 部署用分支 | 需要拉取请求 | 创建一个拉取请求 |
-| <Tooltip headline="功能分支" tip="一个隔离的 branch，你会在其中进行更新，然后再合并到部署用分支。">功能分支</Tooltip> | 无 | 将更改合并到部署用分支并部署更改 |
-| 功能分支 | 需要拉取请求 | 创建一个拉取请求 |
+| <Tooltip headline="部署分支" tip="用于发布到线上文档站点的分支，通常为「main」。">部署分支</Tooltip> | 无 | 提交并部署更改 |
+| 部署分支 | 需要 pull request | 创建一个 pull request |
+| <Tooltip headline="功能分支" tip="在合并到部署分支之前，你在其上进行更新工作的独立分支。">功能分支</Tooltip> | 无 | 将更改合并到部署分支并部署更改 |
+| 功能分支 | 需要 pull request | 创建一个 pull request |
 
 <Tip>
-  在你的 Git 服务提供商中配置 branch 保护规则以要求拉取请求。请参阅 GitHub 文档中的 [About protected branches](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches) 或 GitLab 文档中的 [Protected branches](https://docs.gitlab.com/user/project/repository/branches/protected/)。
+  在你的 Git 服务提供商中配置分支保护规则以要求使用 pull request。请参阅 GitHub 文档中的 [About protected branches](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches) 或 GitLab 文档中的 [Protected branches](https://docs.gitlab.com/user/project/repository/branches/protected/)。
 </Tip>
 
 <div id="save-changes">
   ## 保存更改
 </div>
 
-在编辑过程中，编辑器会跟踪你的更改。
+在你进行编辑时，编辑器会跟踪你的更改。
 
 - 新建或删除的文件。
-- 页面内容的修改。
+- 页面中的内容修改。
 - 导航结构的更改。
-- 媒体文件的上传和整理。
+- 媒体的上传与管理。
 - 配置更新。
 
-当你在部署用分支上工作时，你的更改会自动保存。
+当你在部署分支上工作时，你的更改会自动保存。
 
-<Frame caption="部署用分支上的更改。">
+<Frame caption="部署分支上的更改。">
   <img src="/images/editor/toolbar-light.png" alt="网页编辑器工具栏，显示一个待处理的更改。" className="block dark:hidden" />
   <img src="/images/editor/toolbar-dark.png" alt="网页编辑器工具栏，显示一个待处理的更改。" className="hidden dark:block" />
 </Frame>
 
-当你在功能分支上工作时，可以将更改以<Tooltip headline="Commit" tip="提交是在 Git 中保存你更改快照的操作。">提交</Tooltip>的形式保存到该分支。
+当你在功能分支上工作时，可以将更改以<Tooltip headline="提交（Commit）" tip="提交（commit）是 Git 中保存你更改内容的快照。">提交</Tooltip>的形式保存到该分支。
 
 <Frame caption="功能分支上的更改。">
-<img src="/images/editor/toolbar-branch-light.png" alt="网页编辑器工具栏，显示一个待处理的更改，以及功能分支上的 Save as commit 按钮。" className="block dark:hidden" />
-<img src="/images/editor/toolbar-branch-dark.png" alt="网页编辑器工具栏，显示一个待处理的更改，以及功能分支上的 Save as commit 按钮。" className="hidden dark:block" />
+<img src="/images/editor/toolbar-branch-light.png" alt="网页编辑器工具栏，显示一个待处理的更改，以及功能分支上的“Save as commit”按钮。" className="block dark:hidden" />
+<img src="/images/editor/toolbar-branch-dark.png" alt="网页编辑器工具栏，显示一个待处理的更改，以及功能分支上的“Save as commit”按钮。" className="hidden dark:block" />
 </Frame>
 
-若要放弃更改，请在 **Changes** 下拉菜单中文件名旁单击 **Undo changes**。
+要丢弃更改，在 **Changes** 下拉列表中文件名旁边点击 **Undo changes**。
 
 <div id="publish-your-changes">
-  ### 发布更改
+  ### 发布你的更改
 </div>
 
-点击工具栏中的 **Publish**。根据你的工作流，你的更改会立即部署，或者在你的 Git 提供商中为你创建一个拉取请求（PR；亦称“合并请求”/Merge Request），供你合并。如果你在一个功能 branch 上，请在发布前先保存更改。
+点击工具栏中的 **Publish**。根据你的工作流，你的更改要么会立即部署，要么会创建一个 pull request，供你在 Git 托管服务中合并。如果你当前在功能分支上，请在发布前先保存你的更改。
 
-当没有待处理的更改，或者当前 branch 已经有打开的拉取请求时，**Publish** 按钮会被禁用。
+当没有待处理的更改，或当前分支已经存在已打开的 pull request 时，**Publish** 按钮会被禁用。
 
 ## 解决冲突
 
-当你的 branch 和部署用分支对同一文件做了互不兼容的更改时，就会发生冲突。
+当你的分支与部署分支在同一文件上存在不兼容的更改时，就会产生冲突。
 
 <div id="what-causes-conflicts">
   ### 冲突产生的原因
 </div>
 
-冲突会在以下情况下发生：
+发生冲突的情况包括：
 
-- 你和另一位团队成员编辑了同一文件中的相同行。
-- 在一个 branch 中，文件被移动或删除，但在另一个 branch 中被修改。
+- 你和另一位团队成员编辑了文件中的同一行。
+- 在一个分支中某些文件被移动或删除，而在另一个分支中这些文件被修改。
 
 <div id="resolve-conflicts">
   ### 解决冲突
 </div>
 
-当冲突导致无法执行发布或切换 branch 等操作时，编辑器会显示 Warning。要解决冲突，请按照编辑器中的提示选择要保留的更改。
+当冲突导致无法执行发布、切换分支等操作时，编辑器会显示警告。要解决冲突，请按照编辑器中的指示选择要保留的更改。
 
 <div id="commit-signing">
   ## 提交签名
 </div>
 
-在你的 [账户设置](https://dashboard.mintlify.com/settings/account) 中授权你的 GitHub 账号，即可用该账号对提交进行签名。若未完成授权，则由 Mintlify GitHub 应用为在网页编辑器中完成的提交进行签名。
+在你的 [账户设置](https://dashboard.mintlify.com/settings/account) 中授权你的 GitHub 账号来签署提交。如果未授权，网页编辑器中进行的提交将由 Mintlify GitHub 应用代为签署。
 
-将提交归属到你的账号有助于准确记录是谁对你的文档进行了更改。
+将提交归属到你的账号有助于准确记录是谁更改了你的文档。

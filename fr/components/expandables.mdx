@@ -1,10 +1,10 @@
 ---
-title: "Sections extensibles"
-description: "Permet d’afficher ou de masquer des propriétés imbriquées"
-keywords: ["sections extensibles", "propriétés imbriquées", "champs extensibles", "afficher/masquer le contenu"]
+title: "Éléments extensibles"
+description: "Permettent d’afficher les propriétés imbriquées"
+keywords: ["éléments extensibles", "propriétés imbriquées", "champs extensibles", "basculer le contenu"]
 ---
 
-Utilisez des sections extensibles pour afficher ou masquer du contenu imbriqué dans les champs de réponse. Elles sont particulièrement utiles pour présenter des propriétés d’objet complexes dans la documentation d’API.
+Utilisez des éléments extensibles pour afficher ou masquer le contenu imbriqué à l’intérieur des champs de réponse. Ils sont particulièrement utiles pour présenter les propriétés d’objets complexes dans la documentation d’API.
 
 <ResponseField name="user" type="User Object">
   <Expandable title="propriétés">
@@ -20,13 +20,13 @@ Utilisez des sections extensibles pour afficher ou masquer du contenu imbriqué 
 
 ```mdx Expandable example
 <ResponseField name="user" type="User Object">
-  <Expandable title="propriétés">
+  <Expandable title="properties">
     <ResponseField name="full_name" type="string">
       Le nom complet de l'utilisateur
     </ResponseField>
 
     <ResponseField name="is_over_21" type="boolean">
-      Indique si l'utilisateur a plus de 21 ans
+      Si l'utilisateur a plus de 21 ans
     </ResponseField>
   </Expandable>
 </ResponseField>
@@ -38,9 +38,9 @@ Utilisez des sections extensibles pour afficher ou masquer du contenu imbriqué 
 </div>
 
 <ResponseField name="title" type="string">
-  Le nom de l’objet affiché.
+  Le nom de l’objet que vous affichez.
 </ResponseField>
 
 <ResponseField name="defaultOpen" type="boolean" default="false">
-  Définissez sur `true` pour que l’élément extensible s’ouvre au chargement de la page.
+  Définissez sur `true` pour que la zone extensible soit ouverte au chargement de la page
 </ResponseField>

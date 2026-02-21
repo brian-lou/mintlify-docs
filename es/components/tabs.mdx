@@ -1,16 +1,16 @@
 ---
-title: "Tabs"
+title: "Pestañas"
 description: "Organiza el contenido con pestañas para mostrar diferentes opciones o versiones."
-keywords: ["tabbed content", "content panels", "switchable content"]
+keywords: ["contenido con pestañas", "paneles de contenido", "contenido conmutable"]
 ---
 
-Usa pestañas para organizar el contenido en varios paneles entre los que los usuarios pueden alternar. Puedes agregar cualquier número de pestañas e incluir otros componentes dentro de cada una.
+Usa pestañas para organizar el contenido en varios paneles entre los que los usuarios pueden alternar. Puedes añadir cualquier número de pestañas e incluir otros componentes dentro de cada pestaña.
 
 <Tabs>
   <Tab title="Primera pestaña">
     ☝️ Bienvenido al contenido que solo puedes ver dentro de la primera pestaña.
 
-    Puedes agregar cualquier número de componentes dentro de las pestañas. Por ejemplo, un bloque de código:
+    Puedes añadir cualquier número de componentes dentro de las pestañas. Por ejemplo, un bloque de código:
 
     ```java HelloWorld.java
       class HelloWorld {
@@ -22,19 +22,19 @@ Usa pestañas para organizar el contenido en varios paneles entre los que los us
   </Tab>
 
   <Tab title="Segunda pestaña" icon="leaf">
-    ✌️ Aquí tienes contenido que solo está dentro de la segunda pestaña.
+    ✌️ Aquí tienes contenido que solo aparece dentro de la segunda pestaña.
 
-    ¡Esta tiene un <Icon icon="leaf" />!
+    ¡Esta tiene un icono <Icon icon="leaf" />!
   </Tab>
 
   <Tab title="Tercera pestaña">
-    💪 Aquí tienes contenido que solo está dentro de la tercera pestaña.
+    💪 Aquí tienes contenido que solo aparece dentro de la tercera pestaña.
   </Tab>
 </Tabs>
 
 ````mdx Tabs example
 <Tabs>
-  <Tab title="Primera pestaña">
+  <Tab title="First tab">
     ☝️ Bienvenido al contenido que solo puedes ver dentro de la primera pestaña.
 
     Puedes agregar cualquier número de componentes dentro de las pestañas. Por ejemplo, un bloque de código:
@@ -47,27 +47,27 @@ Usa pestañas para organizar el contenido en varios paneles entre los que los us
     ```
   </Tab>
   <Tab title="Second tab" icon="leaf">
-    ✌️ Here's content that's only inside the second tab.
+    ✌️ Aquí hay contenido que solo está dentro de la segunda pestaña.
 
-    This one has a <Icon icon="leaf" /> icon!
+    ¡Esta tiene un ícono <Icon icon="leaf" />!
   </Tab>
   <Tab title="Third tab">
-    💪 Here's content that's only inside the third tab.
+    💪 Aquí hay contenido que solo está dentro de la tercera pestaña.
   </Tab>
 </Tabs>
 ````
 
-Las pestañas con el mismo título se mantienen sincronizadas en toda la página. Por ejemplo, si tienes varios grupos de pestañas que incluyen una pestaña titulada `JavaScript`, al seleccionar `JavaScript` en un grupo de pestañas se selecciona automáticamente `JavaScript` en los demás. Esto ayuda a que los usuarios que eligen un lenguaje o framework una vez vean reflejada esa elección en todas partes. Las pestañas también se sincronizan con los [grupos de código](/es/components/code-groups) que tienen el mismo título.
+Las pestañas con títulos iguales se mantienen sincronizadas en toda la página. Por ejemplo, si tienes varios grupos de pestañas que incluyen una pestaña titulada `JavaScript`, al seleccionar `JavaScript` en un grupo de pestañas se selecciona automáticamente `JavaScript` en los demás. Esto ayuda a las personas que eligen un lenguaje de programación o framework una vez a ver esa elección reflejada en todas partes. Las pestañas también se sincronizan con [grupos de código](/es/components/code-groups) que tienen títulos iguales.
 
 Para desactivar la sincronización de pestañas, agrega `sync={false}` a un componente `<Tabs>`.
 
 ```mdx Disable tab sync example
 <Tabs sync={false}>
-  <Tab title="Primera pestaña">
-    Este grupo de pestañas opera de forma independiente.
+  <Tab title="First tab">
+    This tab group operates independently.
   </Tab>
-  <Tab title="Segunda pestaña">
-    Seleccionar pestañas aquí no afectará a otros grupos de pestañas.
+  <Tab title="Second tab">
+    Selecting tabs here won't affect other tab groups.
   </Tab>
 </Tabs>
 ```
@@ -77,21 +77,21 @@ Para desactivar la sincronización de pestañas, agrega `sync={false}` a un comp
 </div>
 
 <ResponseField name="title" type="string" required>
-  El title de la Tab. Los títulos cortos facilitan la navegación. Las pestañas con el mismo título sincronizan sus selecciones.
+  El título de la pestaña. Los títulos cortos son más fáciles de recorrer. Las pestañas con títulos idénticos sincronizan sus selecciones.
 </ResponseField>
 
 <ResponseField name="icon" type="string">
-  Un icon de [Font Awesome](https://fontawesome.com/icons), un icon de [Lucide](https://lucide.dev/icons), una URL a un icon o una ruta relativa a un icon.
+  Un ícono de [Font Awesome](https://fontawesome.com/icons), un ícono de [Lucide](https://lucide.dev/icons), una URL de un ícono o una ruta relativa a un ícono.
 </ResponseField>
 
 <ResponseField name="iconType" type="string">
-  Solo para icon de Font Awesome: Uno de `regular`, `solid`, `light`, `thin`, `sharp-solid`, `duotone`, `brands`.
+  Solo para íconos de Font Awesome: uno de `regular`, `solid`, `light`, `thin`, `sharp-solid`, `duotone`, `brands`.
 </ResponseField>
 
 <ResponseField name="sync" type="boolean" default="true">
-  Cuando es `true`, las pestañas se sincronizan con otras pestañas y grupos de código de la página que tengan títulos coincidentes. Establécelo en `false` para que las pestañas sean independientes.
+  Cuando es `true`, las pestañas se sincronizan con otras pestañas y grupos de código de la página que tengan el mismo título. Configúralo en `false` para que las pestañas sean independientes.
 </ResponseField>
 
 <ResponseField name="borderBottom" type="boolean">
-  Añade un borde inferior y un padding al contenedor de pestañas. Es útil para separar visualmente el contenido con pestañas del resto de la página, especialmente cuando las pestañas contienen contenido de distinta longitud.
+  Agrega un borde inferior y relleno al contenedor de pestañas. Es útil para separar visualmente el contenido con pestañas del resto de la página, especialmente cuando las pestañas contienen contenido de longitudes variables.
 </ResponseField>

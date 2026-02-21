@@ -1,39 +1,39 @@
 ---
-title: "Trabajar con branches"
-description: "Crea branches para previsualizar cambios y colaborar antes de publicar."
+title: "Trabajar con ramas"
+description: "Crea ramas para previsualizar cambios y colaborar antes de publicar."
 keywords: ["Git","branches","branch workflow","creating branches","deployment branch"]
 ---
 
-Las branches son una función del control de versiones que apuntan a confirmaciones específicas en tu repositorio. Tu rama de implementación, generalmente llamada `main`, representa el contenido que se usa para compilar tu sitio de documentación en producción. Todas las demás branches son independientes de tu sitio en producción a menos que decidas fusionarlas en tu rama de implementación.
+Las ramas son una característica del control de versiones que apuntan a commits específicos en tu repositorio. Tu rama de implementación, normalmente llamada `main`, representa el contenido que se usa para compilar tu sitio de documentación publicado. Todas las demás ramas son independientes de tu documentación publicada, a menos que decidas fusionarlas en tu rama de implementación.
 
-Las branches te permiten crear instancias separadas de tu documentación para realizar cambios, obtener revisiones y probar nuevos enfoques antes de publicar. Tu equipo puede trabajar en branches para actualizar diferentes partes de tu documentación al mismo tiempo, sin afectar lo que los usuarios ven en tu sitio en producción.
+Las ramas te permiten crear instancias separadas de tu documentación para hacer cambios, recibir revisiones y probar nuevos enfoques antes de publicar. Tu equipo puede trabajar en ramas para actualizar diferentes partes de tu documentación simultáneamente sin afectar lo que los usuarios ven en tu sitio publicado.
 
-El siguiente diagrama muestra un ejemplo de flujo de trabajo con branches en el que se crea una branch de funcionalidad, se realizan cambios y luego la branch de funcionalidad se fusiona en la branch principal.
+El siguiente diagrama muestra un ejemplo de flujo de trabajo con ramas en el que se crea una rama de funcionalidad, se realizan cambios y luego la rama de funcionalidad se fusiona en la rama principal.
 
 ```mermaid
 gitGraph
-    commit id: "Confirmación inicial"
-    commit id: "Branch creada"
+    commit id: "Initial commit"
+    commit id: "Branch created"
     branch feature-branch
     checkout feature-branch
-    commit id: "Agregar cambios"
-    commit id: "Agregar más cambios"
+    commit id: "Add Changes"
+    commit id: "Add more changes"
     checkout main
     checkout feature-branch
-    commit id: "Agregar comentarios del revisor"
+    commit id: "Add reviewer feedback"
     checkout main
-    merge feature-branch id: "Fusionar en main" type: HIGHLIGHT
-    commit id: "Documentación en producción"
+    merge feature-branch id: "Merge into main" type: HIGHLIGHT
+    commit id: "Live docs"
 ```
 
-Recomendamos trabajar siempre desde branches al actualizar la documentación para mantener estable tu sitio en producción y habilitar flujos de revisión.
+Recomendamos trabajar siempre con ramas al actualizar la documentación para mantener estable tu sitio en producción y facilitar los flujos de revisión.
 
 
 <div id="branch-naming-conventions">
-  ## Convenciones para nombrar branches
+  ## Convenciones para nombrar ramas
 </div>
 
-Usa nombres claros y descriptivos que indiquen el propósito de un branch.
+Usa nombres claros y descriptivos que expliquen la finalidad de una rama.
 
 **Usa**:
 
@@ -54,73 +54,72 @@ Usa nombres claros y descriptivos que indiquen el propósito de un branch.
 </div>
 
 <Tabs>
-  <Tab title="Usando el editor web">
+  <Tab title="Usar el editor web">
     1. Haz clic en el nombre de la rama en el editor.
-    1. Haz clic en **Nueva rama**.
-    1. Escribe un nombre descriptivo.
-    1. Haz clic en **Crear rama**.
+    1. Haz clic en **New Branch**.
+    1. Ingresa un nombre descriptivo.
+    1. Haz clic en **Create Branch**.
   </Tab>
-  <Tab title="Usando desarrollo local">
+  <Tab title="Usar el desarrollo local">
     <Steps>
-      <Step title="Crea una rama desde tu terminal">
+      <Step title="Crear una rama desde la terminal">
         ```bash
         git checkout -b branch-name
         ```
 
         Esto crea la rama y cambia a ella en un solo comando.
       </Step>
-      <Step title="Envía la rama a GitHub">
+      <Step title="Enviar la rama a GitHub">
         ```bash
         git push -u origin branch-name
         ```
 
-        La opción `-u` configura el seguimiento para que en futuros envíos solo necesites ejecutar `git push`.
+        La opción `-u` configura el seguimiento para que en futuros `git push` solo necesites escribir `git push`.
       </Step>
     </Steps>
   </Tab>
 </Tabs>
 
 <div id="save-changes-on-a-branch">
-  ## Guardar cambios en una branch
+  ## Guardar cambios en una rama
 </div>
 
 <Tabs>
   <Tab title="Usar el editor web">
-    Selecciona el botón **Save as commit** en la parte superior derecha de la barra de herramientas del editor. Esto crea una confirmación y sube tu trabajo a tu branch automáticamente.
+    Selecciona el botón **Save as commit** en la esquina superior derecha de la barra de herramientas del editor. Esto crea un commit y envía automáticamente tu trabajo a tu rama.
   </Tab>
-
-  <Tab title="Usar desarrollo local">
-    Prepara, confirma y sube tus cambios.
+  <Tab title="Usar entorno de desarrollo local">
+    Prepara (stage), haz commit y haz push de tus cambios.
 
     ```bash
     git add .
-    git commit -m "Describe your changes"
+    git commit -m "Describe tus cambios"
     git push
     ```
   </Tab>
 </Tabs>
 
 <div id="switch-branches">
-  ## Cambiar de branch
+  ## Cambiar de rama
 </div>
 
 <Tabs>
   <Tab title="Usar el editor web">
-    1. Selecciona el nombre del branch en la barra de herramientas del editor.
-    1. Selecciona el branch al que quieres cambiar en el menú desplegable.
+    1. Selecciona el nombre de la rama en la barra de herramientas del editor.
+    1. Selecciona en el menú desplegable la rama a la que quieres cambiar.
 
     <Warning>
-      Los cambios sin guardar se pierden al cambiar de branch. Guarda tu trabajo primero.
+      Los cambios sin guardar se perderán al cambiar de rama. Guarda tu trabajo primero.
     </Warning>
   </Tab>
-  <Tab title="Usar el entorno de desarrollo local">
-    Cambia a un branch existente:
+  <Tab title="Usar el desarrollo local">
+    Cambia a una rama existente:
 
     ```bash
     git checkout branch-name
     ```
 
-    O crea y cambia en un solo comando:
+    O créala y cámbiate a ella en un solo comando:
 
     ```bash
     git checkout -b new-branch-name
@@ -129,7 +128,7 @@ Usa nombres claros y descriptivos que indiquen el propósito de un branch.
 </Tabs>
 
 <div id="merge-branches">
-  ## Fusionar branches
+  ## Fusionar ramas
 </div>
 
-Cuando tus cambios estén listos para su publicación, crea una solicitud de extracción para fusionar tu branch en la rama de implementación. 
+Una vez que tus cambios estén listos para publicarse, crea una solicitud de extracción (pull request) para fusionar tu rama con la rama de despliegue. 

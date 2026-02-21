@@ -1,89 +1,89 @@
 ---
 title: "Publicar cambios en el editor web"
 sidebarTitle: "Publicar"
-description: "Guarda tu trabajo y publica los cambios en tu sitio de documentación."
-keywords: ["editor", "publicar", "cambios", "branches", "solicitudes de extracción"]
+description: "Guarda tu trabajo y publica cambios en tu sitio de documentación."
+keywords: ["editor", "publicar", "cambios", "ramas", "pull requests"]
 ---
 
 <div id="publishing-workflows">
   ## Flujos de publicación
 </div>
 
-El editor admite dos flujos de trabajo para publicar actualizaciones de la documentación. El flujo que uses depende de las reglas de protección de branch de tu repositorio y de la branch en la que trabajes.
+El editor admite dos flujos de trabajo para publicar actualizaciones de la documentación. El flujo que uses depende de las reglas de protección de ramas de tu repositorio y de la rama en la que trabajes.
 
-* **Crear solicitudes de extracción**: Si tu repositorio tiene una regla de protección de branch que requiere solicitudes de extracción antes de que los cambios se puedan fusionar en tu rama de implementación, el editor crea una solicitud de extracción cuando publicas cambios.
-* **Publicar directamente**: Si tu repositorio no tiene reglas de protección de branch, tus cambios se fusionan en la rama de implementación y se implementan de inmediato cuando publicas.
+* **Crear pull requests**: Si tu repositorio tiene una regla de protección de ramas que requiere pull requests antes de que los cambios puedan fusionarse en tu rama de despliegue, el editor crea un pull request cuando publicas los cambios.
+* **Publicar directamente**: Si tu repositorio no tiene reglas de protección de ramas, tus cambios se fusionan en la rama de despliegue y se despliegan de inmediato cuando los publicas.
 
-| Tipo de branch | Protección de branch | Flujo de publicación |
+| Tipo de rama | Protección de rama | Flujo de publicación |
 |-------------|-------------------|------------------------------|
-| <Tooltip headline="Rama de implementación" tip="La branch que publica en tu sitio de documentación en producción, normalmente &quot;main&quot;.">Rama de implementación</Tooltip> | Ninguna | Realiza una confirmación e implementa los cambios |
-| Rama de implementación | Solicitudes de extracción obligatorias | Crea una solicitud de extracción |
-| <Tooltip headline="Branch de funcionalidad" tip="Una branch aislada donde trabajas en actualizaciones antes de fusionarlas en tu rama de implementación.">Branch de funcionalidad</Tooltip> | Ninguna | Fusiona los cambios en la rama de implementación e implementa los cambios |
-| Branch de funcionalidad | Solicitudes de extracción obligatorias | Crea una solicitud de extracción |
+| <Tooltip headline="Rama de despliegue" tip="La rama que publica en tu sitio de documentación en producción, normalmente 'main'.">Rama de despliegue</Tooltip> | Ninguna | Confirma y despliega los cambios |
+| Rama de despliegue | Pull requests obligatorios | Crea un pull request |
+| <Tooltip headline="Rama de funcionalidad" tip="Una rama aislada donde trabajas en actualizaciones antes de fusionarlas en tu rama de despliegue.">Rama de funcionalidad</Tooltip> | Ninguna | Fusiona los cambios en la rama de despliegue y despliega los cambios |
+| Rama de funcionalidad | Pull requests obligatorios | Crea un pull request |
 
 <Tip>
-  Configura reglas de protección de branch en tu proveedor de Git para requerir solicitudes de extracción. Consulta [Acerca de las ramas protegidas](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches) en la documentación de GitHub o [Ramas protegidas](https://docs.gitlab.com/user/project/repository/branches/protected/) en la documentación de GitLab.
+  Configura reglas de protección de ramas en tu proveedor de Git para requerir pull requests. Consulta [Acerca de las ramas protegidas](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches) en la documentación de GitHub o [Ramas protegidas](https://docs.gitlab.com/user/project/repository/branches/protected/) en la documentación de GitLab.
 </Tip>
 
 <div id="save-changes">
   ## Guardar cambios
 </div>
 
-A medida que editas, el editor realiza un seguimiento de tus cambios.
+A medida que editas, el editor registra tus cambios.
 
 - Archivos nuevos o eliminados.
-- Ediciones de contenido en las páginas.
+- Ediciones de contenido en páginas.
 - Cambios en la estructura de navegación.
-- Cargas y organización de archivos multimedia.
+- Subidas y organización de contenido multimedia.
 - Actualizaciones de configuración.
 
-Cuando trabajas en tu rama de implementación, los cambios se guardan automáticamente.
+Cuando trabajas en tu rama de despliegue, tus cambios se guardan automáticamente.
 
-<Frame caption="Cambios en una rama de implementación.">
+<Frame caption="Cambios en una rama de despliegue.">
   <img src="/images/editor/toolbar-light.png" alt="Barra de herramientas del editor web que muestra un cambio pendiente." className="block dark:hidden" />
   <img src="/images/editor/toolbar-dark.png" alt="Barra de herramientas del editor web que muestra un cambio pendiente." className="hidden dark:block" />
 </Frame>
 
-Cuando trabajas en una rama de funcionalidad, puedes guardar los cambios en la rama como <Tooltip headline="Confirmación" tip="Una confirmación es una instantánea guardada de tus cambios en Git.">confirmaciones</Tooltip>.
+Cuando trabajas en una rama de características, puedes guardar los cambios en la rama como <Tooltip headline="Commit" tip="Un commit es una instantánea guardada de tus cambios en Git.">commits</Tooltip>.
 
-<Frame caption="Cambios en una rama de funcionalidad.">
-<img src="/images/editor/toolbar-branch-light.png" alt="Barra de herramientas del editor web que muestra un cambio pendiente y el botón Save as commit en una rama de funcionalidad." className="block dark:hidden" />
-<img src="/images/editor/toolbar-branch-dark.png" alt="Barra de herramientas del editor web que muestra un cambio pendiente y el botón Save as commit en una rama de funcionalidad." className="hidden dark:block" />
+<Frame caption="Cambios en una rama de características.">
+<img src="/images/editor/toolbar-branch-light.png" alt="Barra de herramientas del editor web que muestra un cambio pendiente y el botón Save as commit en una rama de características." className="block dark:hidden" />
+<img src="/images/editor/toolbar-branch-dark.png" alt="Barra de herramientas del editor web que muestra un cambio pendiente y el botón Save as commit en una rama de características." className="hidden dark:block" />
 </Frame>
 
 Para descartar cambios, haz clic en **Undo changes** junto al nombre de un archivo en el menú desplegable **Changes**.
 
 <div id="publish-your-changes">
-  ### Publica tus cambios
+  ### Publicar tus cambios
 </div>
 
-Haz clic en **Publish** en la barra de herramientas. Según tu flujo de trabajo, tus cambios se despliegan de inmediato o se crea una solicitud de extracción para que la fusiones en tu proveedor de Git. Si estás en una feature branch, guarda tus cambios antes de publicar.
+Haz clic en **Publish** en la barra de herramientas. Según tu flujo de trabajo, tus cambios se despliegan de inmediato o se crea una pull request para que la fusiones en tu proveedor de Git. Si estás en una rama de funcionalidad (feature branch), guarda tus cambios antes de publicar.
 
-El botón **Publish** se desactiva cuando no hay cambios pendientes o cuando ya hay una solicitud de extracción abierta para la branch actual.
+El botón **Publish** se desactiva cuando no hay cambios pendientes o cuando ya hay una pull request abierta para la rama actual.
 
 ## Resolver conflictos
 
-Los conflictos se producen cuando tu branch y la rama de implementación contienen cambios incompatibles en los mismos archivos.
+Los conflictos se producen cuando tu rama y la rama de despliegue tienen cambios incompatibles en los mismos archivos.
 
 <div id="what-causes-conflicts">
-  ### Qué provoca los conflictos
+  ### Qué provoca conflictos
 </div>
 
 Los conflictos se producen cuando:
 
 - Tú y otra persona del equipo modifican las mismas líneas de un archivo.
-- Los archivos se mueven o eliminan en una branch, pero se modifican en otra.
+- En una rama se mueven o eliminan archivos, pero en otra se modifican.
 
 <div id="resolve-conflicts">
   ### Resolver conflictos
 </div>
 
-El editor muestra advertencias cuando los conflictos impiden realizar operaciones como publicar o cambiar de branch. Para resolverlos, sigue las instrucciones del editor para elegir qué cambios conservar.
+El editor muestra advertencias cuando los conflictos impiden realizar operaciones como publicar o cambiar de rama. Para resolverlos, sigue las instrucciones del editor para seleccionar qué cambios conservar.
 
 <div id="commit-signing">
-  ## Firma de confirmaciones
+  ## Firma de commits
 </div>
 
-Firma tus confirmaciones con tu cuenta de GitHub al autorizarla en la [configuración de la cuenta](https://dashboard.mintlify.com/settings/account). Sin autorización, la Aplicación de GitHub de Mintlify firma las confirmaciones realizadas en el editor web.
+Firma tus commits con tu cuenta de GitHub autorizándola en tu [configuración de la cuenta](https://dashboard.mintlify.com/settings/account). Sin esa autorización, la aplicación Mintlify GitHub App firma los commits realizados en el editor web.
 
-Asociar las confirmaciones a tu cuenta mantiene un historial preciso de quién hizo cambios en tu documentación.
+Atribuir los commits a tu cuenta mantiene un historial preciso de quién hizo cambios en tu documentación.

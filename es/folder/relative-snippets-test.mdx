@@ -1,13 +1,13 @@
 ---
 title: "Prueba de fragmentos relativos"
-description: "Página de prueba oculta para validar las importaciones relativas de fragmentos"
+description: "Página oculta de prueba para validar las importaciones de fragmentos relativos"
 ---
 
 <div id="relative-snippets-test-page">
   # Página de prueba de fragmentos relativos
 </div>
 
-Esta es una página de prueba oculta para validar la funcionalidad de importación de fragmentos mediante rutas relativas.
+Esta es una página de prueba oculta para comprobar la funcionalidad de importación de fragmentos relativos.
 
 ---
 
@@ -15,7 +15,7 @@ Esta es una página de prueba oculta para validar la funcionalidad de importaci�
   ## Prueba 1: Importación desde el directorio superior (`../snippets/`)
 </div>
 
-Importando desde `/snippets/test-snippet-a.mdx` mediante `../snippets/test-snippet-a.mdx`:
+Importar desde `/snippets/test-snippet-a.mdx` usando `../snippets/test-snippet-a.mdx`:
 
 import TestSnippetA from "../snippets/test-snippet-a.mdx";
 
@@ -25,10 +25,10 @@ import TestSnippetA from "../snippets/test-snippet-a.mdx";
 
 
 <div id="test-2-parent-directory-import-with-named-export">
-  ## Prueba 2: Importación desde el directorio padre con exportación nombrada
+  ## Prueba 2: Importación del directorio superior con exportación nombrada
 </div>
 
-Importando `testVariable` desde `/snippets/test-snippet-b.mdx`:
+Importar `testVariable` desde `/snippets/test-snippet-b.mdx`:
 
 import TestSnippetB from "../snippets/test-snippet-b.mdx";
 
@@ -43,7 +43,7 @@ import TestSnippetB from "../snippets/test-snippet-b.mdx";
   ## Prueba 3: Importación desde el mismo directorio (`./`)
 </div>
 
-Importando desde `local-snippet.mdx` en la misma carpeta:
+Importación de `local-snippet.mdx` desde el mismo directorio:
 
 import LocalSnippet, { localMessage } from "./local-snippet.mdx";
 
@@ -58,7 +58,7 @@ import LocalSnippet, { localMessage } from "./local-snippet.mdx";
   ## Test 4: Importación desde subdirectorio (`./nested/`)
 </div>
 
-Importación desde `nested/deep-snippet.mdx`:
+Importando desde `nested/deep-snippet.mdx`:
 
 import DeepSnippet, { deepMessage } from "./nested/deep-snippet.mdx";
 
@@ -70,10 +70,10 @@ import DeepSnippet, { deepMessage } from "./nested/deep-snippet.mdx";
 
 
 <div id="test-5-absolute-import-for-comparison">
-  ## Prueba 5: importación absoluta (para comparación)
+  ## Prueba 5: Importación absoluta (para comparación)
 </div>
 
-Importando mediante la ruta absoluta `/snippets/icons-optional.mdx`:
+Importar usando la ruta absoluta `/snippets/icons-optional.mdx`:
 
 import IconsOptional from "/snippets/es/icons-optional.mdx";
 
@@ -87,9 +87,9 @@ import IconsOptional from "/snippets/es/icons-optional.mdx";
 </div>
 
 | Prueba | Ruta de importación | Tipo | Estado |
-|------|-------------|------|--------|
-| 1 | `../snippets/test-snippet-a.mdx` | Directorio superior | Ver más arriba |
-| 2 | `../snippets/test-snippet-b.mdx` | Directorio superior + export | Ver más arriba |
-| 3 | `./local-snippet.mdx` | Mismo directorio | Ver más arriba |
-| 4 | `./nested/deep-snippet.mdx` | Subdirectorio | Ver más arriba |
-| 5 | `/snippets/icons-optional.mdx` | Ruta absoluta | Ver más arriba |
+|--------|---------------------|------|--------|
+| 1 | `../snippets/test-snippet-a.mdx` | Directorio padre | Ver arriba |
+| 2 | `../snippets/test-snippet-b.mdx` | Directorio padre + exportación | Ver arriba |
+| 3 | `./local-snippet.mdx` | Mismo directorio | Ver arriba |
+| 4 | `./nested/deep-snippet.mdx` | Directorio hijo | Ver arriba |
+| 5 | `/snippets/icons-optional.mdx` | Ruta absoluta | Ver arriba |

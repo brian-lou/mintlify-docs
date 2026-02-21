@@ -1,15 +1,15 @@
 ---
 title: "Tuiles"
-description: "Affichez des aperçus visuels avec titres et descriptions dans une mise en page en grille."
+description: "Affichez des aperçus visuels avec titres et descriptions dans une grille."
 keywords: ["tuiles", "aperçu visuel", "grille", "vitrine"]
 ---
 
-Utilisez des tuiles pour créer des éléments de présentation visuelle avec un arrière-plan à motifs, un titre et une description. Les tuiles sont idéales pour afficher des aperçus de composants, des mises en avant de fonctionnalités ou des éléments de navigation dans une mise en page en grille.
+Utilisez des tuiles pour créer des éléments visuels de mise en avant avec un arrière-plan à motifs, un titre et une description. Les tuiles sont idéales pour afficher des aperçus de composants, mettre en avant des fonctionnalités ou présenter des éléments de navigation dans une grille.
 
-<Tile href="/fr/components/accordions" title="Accordion" description="Deux variantes">
-  <img src="/images/tiles/accordion-light.svg" alt="Aperçu du composant Accordion" className="block dark:hidden" />
+<Tile href="/fr/components/accordions" title="Accordéon" description="Deux variantes">
+  <img src="/images/tiles/accordion-light.svg" alt="Aperçu du composant Accordéon" className="block dark:hidden" />
 
-  <img src="/images/tiles/accordion-dark.svg" alt="Aperçu du composant Accordion (mode sombre)" className="hidden dark:block" />
+  <img src="/images/tiles/accordion-dark.svg" alt="Aperçu du composant Accordéon (mode sombre)" className="hidden dark:block" />
 </Tile>
 
 ```mdx Tile example
@@ -20,10 +20,10 @@ Utilisez des tuiles pour créer des éléments de présentation visuelle avec un
 ```
 
 <div id="grid-layout">
-  ## Mise en page en grille
+  ## Disposition en grille
 </div>
 
-Combinez les tuiles avec le [composant Columns](/fr/components/columns) pour créer une grille responsive d’aperçus visuels.
+Combinez des tuiles avec le [composant de colonnes](/fr/components/columns) pour créer une grille responsive d’aperçus visuels.
 
 <Columns cols={3}>
   <Tile href="/fr/components/accordions" title="Accordion" description="Deux variantes">
@@ -47,17 +47,17 @@ Combinez les tuiles avec le [composant Columns](/fr/components/columns) pour cr�
 
 ```mdx Grid layout example
 <Columns cols={3}>
-  <Tile href="/components/accordions" title="Accordion" description="Deux variantes">
-    <img src="/images/tiles/accordion-light.svg" alt="Aperçu du composant Accordion" className="block dark:hidden" />
-    <img src="/images/tiles/accordion-dark.svg" alt="Aperçu du composant Accordion (mode sombre)" className="hidden dark:block" />
+  <Tile href="/components/accordions" title="Accordion" description="Two variants">
+    <img src="/images/tiles/accordion-light.svg" alt="Accordion component preview" className="block dark:hidden" />
+    <img src="/images/tiles/accordion-dark.svg" alt="Accordion component preview (dark mode)" className="hidden dark:block" />
   </Tile>
-  <Tile href="/components/accordions" title="Accordion" description="Deux variantes">
-    <img src="/images/tiles/accordion-light.svg" alt="Aperçu du composant Accordion" className="block dark:hidden" />
-    <img src="/images/tiles/accordion-dark.svg" alt="Aperçu du composant Accordion (mode sombre)" className="hidden dark:block" />
+  <Tile href="/components/accordions" title="Accordion" description="Two variants">
+    <img src="/images/tiles/accordion-light.svg" alt="Accordion component preview" className="block dark:hidden" />
+    <img src="/images/tiles/accordion-dark.svg" alt="Accordion component preview (dark mode)" className="hidden dark:block" />
   </Tile>
-  <Tile href="/components/accordions" title="Accordion" description="Deux variantes">
-    <img src="/images/tiles/accordion-light.svg" alt="Aperçu du composant Accordion" className="block dark:hidden" />
-    <img src="/images/tiles/accordion-dark.svg" alt="Aperçu du composant Accordion (mode sombre)" className="hidden dark:block" />
+  <Tile href="/components/accordions" title="Accordion" description="Two variants">
+    <img src="/images/tiles/accordion-light.svg" alt="Accordion component preview" className="block dark:hidden" />
+    <img src="/images/tiles/accordion-dark.svg" alt="Accordion component preview (dark mode)" className="hidden dark:block" />
   </Tile>
 </Columns>
 ```
@@ -67,7 +67,7 @@ Combinez les tuiles avec le [composant Columns](/fr/components/columns) pour cr�
 </div>
 
 <ResponseField name="href" type="string" required>
-  URL vers laquelle accéder lorsque la tuile est cliquée.
+  URL vers laquelle naviguer lorsqu’on clique sur la tuile.
 </ResponseField>
 
 <ResponseField name="title" type="string">
@@ -79,5 +79,5 @@ Combinez les tuiles avec le [composant Columns](/fr/components/columns) pour cr�
 </ResponseField>
 
 <ResponseField name="children" type="React.ReactNode" required>
-  Contenu affiché dans la zone d’aperçu de la tuile, généralement des images ou des SVG.
+  Contenu affiché à l’intérieur de la zone d’aperçu de la tuile, généralement des images ou des SVG.
 </ResponseField>

@@ -1,10 +1,10 @@
 ---
 title: "字体"
 description: "使用 Google Fonts 或自托管字体自定义排版。"
-keywords: ["Google Fonts", "本地字体", "自定义排版"]
+keywords: ["Google Fonts", "local fonts", "custom typography"]
 ---
 
-可为整站，或分别为标题与正文字体设置自定义字体。你可以使用 Google Fonts、本地字体文件，或外部托管的字体。默认字体因主题而异。
+为整个站点设置自定义字体，或分别为标题和正文设置不同的字体。你可以使用 Google Fonts、本地字体文件或外部托管的字体。默认字体会因主题而有所不同。
 
 字体由 `docs.json` 中的 [fonts 属性](/zh/organize/settings#param-fonts) 控制。
 
@@ -12,7 +12,7 @@ keywords: ["Google Fonts", "本地字体", "自定义排版"]
   ## Google Fonts
 </div>
 
-当你在 `docs.json` 中指定字体族名称时，Mintlify 会自动加载 [Google Fonts](https://fonts.google.com)。
+在 `docs.json` 中指定字体系列名称后，Mintlify 会自动加载 [Google Fonts](https://fonts.google.com)。
 
 ```json docs.json
 "fonts": {
@@ -24,14 +24,14 @@ keywords: ["Google Fonts", "本地字体", "自定义排版"]
   ## 本地字体
 </div>
 
-要使用本地字体，请将字体文件放在项目目录中，并在 `docs.json` 配置中进行引用。
+要使用本地字体，请将字体文件放在项目目录下，并在 `docs.json` 配置文件中引用它们。
 
 <div id="setting-up-local-fonts">
   ### 设置本地字体
 </div>
 
 <Steps>
-  <Step title="将字体文件添加到项目">
+  <Step title="将字体文件添加到项目中">
     例如，创建一个 `fonts` 目录并添加字体文件：
 
     ```text
@@ -45,7 +45,7 @@ keywords: ["Google Fonts", "本地字体", "自定义排版"]
   </Step>
 
   <Step title="在 docs.json 中配置字体">
-    从项目根目录使用相对路径引用本地字体：
+    使用相对于项目根目录的相对路径来引用本地字体：
 
     ```json docs.json
     {
@@ -61,10 +61,10 @@ keywords: ["Google Fonts", "本地字体", "自定义排版"]
 </Steps>
 
 <div id="local-fonts-for-headings-and-body">
-  ### 标题与正文字体的本地字体
+  ### 标题和正文使用的本地字体
 </div>
 
-在你的 `docs.json` 中分别为标题和正文配置本地字体：
+在 `docs.json` 中分别为标题和正文配置本地字体：
 
 ```json docs.json
 {
@@ -89,7 +89,7 @@ keywords: ["Google Fonts", "本地字体", "自定义排版"]
   ## 外部托管字体
 </div>
 
-在 `docs.json` 中通过引用字体源的 URL 来使用外部托管的字体：
+通过在你的 `docs.json` 中引用字体源 URL 来使用外部托管字体：
 
 ```json docs.json
 {
@@ -107,65 +107,65 @@ keywords: ["Google Fonts", "本地字体", "自定义排版"]
 </div>
 
 <ResponseField name="fonts" type="object">
-  文档站点的字体配置。
+  用于文档的字体配置。
 
   <Expandable title="Fonts">
     <ResponseField name="family" type="string" required>
-      字体系列名称，例如 “Inter” 或 “Playfair Display”。
+      字体族名称，例如 &quot;Inter&quot; 或 &quot;Playfair Display&quot;。
     </ResponseField>
 
     <ResponseField name="weight" type="number">
-      字重，例如 400 或 700。可变字体支持更精确的字重，如 550。
+      字重，例如 400 或 700。可变字体支持更精确的字重，例如 550。
     </ResponseField>
 
     <ResponseField name="source" type="string (uri)">
-      字体来源的 URL，例如 `https://mintlify-assets.b-cdn.net/fonts/Hubot-Sans.woff2`，或本地字体文件路径，例如 `/assets/fonts/InterDisplay.woff2`。当你指定 Google 字体的 `family` 名称时会自动加载 Google Fonts，因此无需提供 source 的 URL。
+      字体源的 URL，例如 `https://mintlify-assets.b-cdn.net/fonts/Hubot-Sans.woff2`，或本地字体文件的路径，例如 `/assets/fonts/InterDisplay.woff2`。当你指定 Google Fonts 的 `family` 名称时，Google Fonts 会自动加载，因此无需提供 source URL。
     </ResponseField>
 
     <ResponseField name="format" type="'woff' | 'woff2'">
-      字体文件格式。使用 `source` 字段时为必填。
+      字体文件格式。使用 `source` 字段时必填。
     </ResponseField>
 
     <ResponseField name="heading" type="object">
-      覆盖标题专用的字体设置。
+      用于单独覆盖标题的字体设置。
 
       <Expandable title="Heading">
         <ResponseField name="family" type="string" required>
-          标题的字体系列名称。
+          标题的字体族名称。
         </ResponseField>
 
         <ResponseField name="weight" type="number">
-          标题字重。
+          标题的字重。
         </ResponseField>
 
         <ResponseField name="source" type="string (uri)">
-          字体来源的 URL，例如 `https://mintlify-assets.b-cdn.net/fonts/Hubot-Sans.woff2`，或标题使用的本地字体文件路径。当你指定 Google 字体的 `family` 名称时会自动加载 Google Fonts，因此无需提供 source 的 URL。
+          标题字体源的 URL，例如 `https://mintlify-assets.b-cdn.net/fonts/Hubot-Sans.woff2`，或标题使用的本地字体文件路径。当你指定 Google Fonts 的 `family` 名称时，Google Fonts 会自动加载，因此无需提供 source URL。
         </ResponseField>
 
         <ResponseField name="format" type="'woff' | 'woff2'">
-          标题的字体文件格式。使用 `source` 字段时为必填。
+          标题的字体文件格式。使用 `source` 字段时必填。
         </ResponseField>
       </Expandable>
     </ResponseField>
 
     <ResponseField name="body" type="object">
-      覆盖正文专用的字体设置。
+      用于单独覆盖正文文本的字体设置。
 
       <Expandable title="Body">
         <ResponseField name="family" type="string" required>
-          正文的字体系列名称。
+          正文文本的字体族名称。
         </ResponseField>
 
         <ResponseField name="weight" type="number">
-          正文字重。
+          正文文本的字重。
         </ResponseField>
 
         <ResponseField name="source" type="string (uri)">
-          字体来源的 URL，例如 `https://mintlify-assets.b-cdn.net/fonts/Hubot-Sans.woff2`，或正文使用的本地字体文件路径。当你指定 Google 字体的 `family` 名称时会自动加载 Google Fonts，因此无需提供 source 的 URL。
+          正文字体源的 URL，例如 `https://mintlify-assets.b-cdn.net/fonts/Hubot-Sans.woff2`，或正文使用的本地字体文件路径。当你指定 Google Fonts 的 `family` 名称时，Google Fonts 会自动加载，因此无需提供 source URL。
         </ResponseField>
 
         <ResponseField name="format" type="'woff' | 'woff2'">
-          正文的字体文件格式。使用 `source` 字段时为必填。
+          正文文本的字体文件格式。使用 `source` 字段时必填。
         </ResponseField>
       </Expandable>
     </ResponseField>

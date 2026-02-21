@@ -1,12 +1,12 @@
 ---
 title: "Pasos"
-description: "Crea procedimientos numerados paso a paso."
+description: "Crea procedimientos paso a paso numerados."
 keywords: ["secuencia", "pasos numerados", "procedimientos", "pasos de tutorial"]
 ---
 
 import IconsOptional from "/snippets/es/icons-optional.mdx";
 
-Usa pasos para mostrar una serie de acciones o eventos secuenciales. Puedes agregar tantos pasos como necesites.
+Utiliza pasos para mostrar una serie de acciones o eventos secuenciales. Puedes agregar tantos pasos como necesites.
 
 <Steps>
   <Step title="Primer paso">
@@ -14,7 +14,7 @@ Usa pasos para mostrar una serie de acciones o eventos secuenciales. Puedes agre
   </Step>
 
   <Step title="Segundo paso">
-    Estas son instrucciones o contenido que solo corresponden al segundo paso.
+    Estas are instrucciones o contenido que solo corresponden al segundo paso.
   </Step>
 
   <Step title="Tercer paso">
@@ -24,13 +24,13 @@ Usa pasos para mostrar una serie de acciones o eventos secuenciales. Puedes agre
 
 ```mdx Steps example
 <Steps>
-  <Step title="Primer Paso">
+  <Step title="Primer paso">
     Estas son instrucciones o contenido que solo corresponden al primer paso.
   </Step>
-  <Step title="Segundo Paso">
+  <Step title="Segundo paso">
     Estas son instrucciones o contenido que solo corresponden al segundo paso.
   </Step>
-  <Step title="Tercer Paso">
+  <Step title="Tercer paso">
     Estas son instrucciones o contenido que solo corresponden al tercer paso.
   </Step>
 </Steps>
@@ -46,11 +46,11 @@ Usa pasos para mostrar una serie de acciones o eventos secuenciales. Puedes agre
 </ResponseField>
 
 <ResponseField name="titleSize" type="string" default="p">
-  El tamaño de los títulos de los pasos. Uno de `p`, `h2` y `h3`.
+  El tamaño de los títulos de los pasos. Puede ser `p`, `h2` o `h3`.
 </ResponseField>
 
 <div id="individual-step-properties">
-  ## Propiedades individuales del paso
+  ## Propiedades individuales de cada paso
 </div>
 
 <ResponseField name="children" type="string | ReactNode" required>
@@ -60,7 +60,7 @@ Usa pasos para mostrar una serie de acciones o eventos secuenciales. Puedes agre
 <IconsOptional />
 
 <ResponseField name="title" type="string">
-  El Título es el texto principal del paso y aparece junto al indicador.
+  El título es el texto principal del paso y aparece junto al indicador.
 </ResponseField>
 
 <ResponseField name="stepNumber" type="number">
@@ -68,5 +68,5 @@ Usa pasos para mostrar una serie de acciones o eventos secuenciales. Puedes agre
 </ResponseField>
 
 <ResponseField name="titleSize" type="string" default="p">
-  El tamaño de los títulos del paso. Uno de: `p`, `h2` o `h3`.
+  El tamaño de los títulos de los pasos. Uno de `p`, `h2` y `h3`.
 </ResponseField>

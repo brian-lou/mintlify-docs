@@ -2,7 +2,7 @@
   "openapi": "3.0.1",
   "info": {
     "title": "Mintlify Assistant API",
-    "description": "Una API para integrar las funciones de descubrimiento de Mintlify en tu producto.",
+    "description": "Una API para integrar las capacidades de descubrimiento de Mintlify en tu producto.",
     "version": "1.0.0"
   },
   "servers": [
@@ -18,8 +18,8 @@
   "paths": {
     "/v1/assistant/{domain}/message": {
       "post": {
-        "summary": "Mensaje del assistant v1",
-        "description": "Genera un mensaje de respuesta del assistant para el domain especificado. Compatible con AI SDK v4.",
+        "summary": "Mensaje del asistente v1",
+        "description": "Genera un mensaje de respuesta del asistente para el dominio indicado. Compatible con el AI SDK v4.",
         "parameters": [
           {
             "name": "domain",
@@ -28,7 +28,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "El identificador de domain de tu URL `domain.mintlify.app`. Se puede encontrar al final de la URL de tu dashboard. Por ejemplo, en `dashboard.mintlify.com/organization/domain`, el identificador de domain es `domain`."
+            "description": "El identificador de dominio de tu URL `domain.mintlify.app`. Puedes encontrarlo al final de la URL de tu panel. Por ejemplo, en `dashboard.mintlify.com/organization/domain`, el identificador de dominio es `domain`."
           }
         ],
         "requestBody": {
@@ -44,12 +44,12 @@
                 "properties": {
                   "fp": {
                     "type": "string",
-                    "description": "Identificador de huella para el seguimiento de sesiones de conversación. Usa “anonymous” para usuarios anónimos o proporciona un identificador de usuario único."
+                    "description": "Identificador de huella digital para hacer seguimiento de las sesiones de conversación. Usa \"anonymous\" para usuarios anónimos o proporciona un identificador de usuario único."
                   },
                   "threadId": {
                     "default": null,
                     "type": "string",
-                    "description": "Un identificador opcional que se utiliza para mantener la continuidad de la conversación a lo largo de varios mensajes. Cuando se incluye, permite que el sistema asocie los mensajes posteriores con el mismo hilo de conversación. El threadId se devuelve en la respuesta como event.threadId cuando event.type === 'finish'."
+                    "description": "Un identificador opcional que se utiliza para mantener la continuidad de la conversación a lo largo de varios mensajes. Cuando se proporciona, permite que el sistema asocie los mensajes de seguimiento con el mismo hilo de conversación. El threadId se devuelve en la respuesta como event.threadId cuando event.type === \"finish\"."
                   },
                   "messages": {
                     "type": "array",
@@ -95,7 +95,7 @@
                         "annotations": {
                           "type": "array",
                           "items": {},
-                          "description": "Array opcional de anotaciones asociadas al mensaje."
+                          "description": "Lista opcional de anotaciones para el mensaje."
                         },
                         "parts": {
                           "type": "array",
@@ -342,7 +342,7 @@
                               }
                             ]
                           },
-                          "description": "Array de partes del mensaje con distintos tipos, incluidos texto, razonamiento, fuentes e invocaciones de herramientas."
+                          "description": "Lista de partes del mensaje con distintos tipos, incluidos texto, razonamiento, fuentes e invocaciones de herramientas."
                         },
                         "experimental_attachments": {
                           "type": "array",
@@ -363,7 +363,7 @@
                               "url"
                             ]
                           },
-                          "description": "Array opcional de adjuntos experimentales para el mensaje."
+                          "description": "Lista opcional de adjuntos experimentales para el mensaje."
                         }
                       },
                       "required": [
@@ -373,7 +373,7 @@
                         "parts"
                       ]
                     },
-                    "description": "Array de mensajes de la conversación. En el frontend, probablemente quieras usar la función handleSubmit del hook useChat del paquete @ai-sdk para añadir los mensajes del usuario y gestionar las respuestas en streaming, en lugar de definir manualmente los objetos de este array, ya que tienen tantos parámetros."
+                    "description": "Lista de mensajes de la conversación. En el frontend, probablemente querrás usar la función handleSubmit del hook useChat del paquete @ai-sdk para añadir los mensajes del usuario y manejar las respuestas en streaming, en lugar de definir manualmente los objetos de esta lista, ya que estos tienen muchos parámetros."
                   },
                   "retrievalPageSize": {
                     "type": "number",
@@ -386,11 +386,11 @@
                     "properties": {
                       "version": {
                         "type": "string",
-                        "description": "Filtro opcional de versión."
+                        "description": "Filtro de versión opcional."
                       },
                       "language": {
                         "type": "string",
-                        "description": "Filtro opcional de idioma."
+                        "description": "Filtro de idioma opcional."
                       }
                     },
                     "description": "Criterios de filtrado opcionales para la búsqueda."
@@ -402,12 +402,12 @@
         },
         "responses": {
           "200": {
-            "description": "Mensaje generado correctamente.",
+            "description": "Mensaje generado con éxito.",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "Objeto de respuesta con segmentos de datos en flujo formateados con el estado, los encabezados y el contenido especificados. Para más información, consulta la documentación de AI SDK en [ai-sdk.dev/docs/ai-sdk-ui/streaming-data](https://ai-sdk.dev/docs/ai-sdk-ui/streaming-data). Usa el [hook useChat de AI SDK](https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-chat#usechat) para gestionar el flujo de la respuesta."
+                  "description": "Objeto `Response` con fragmentos de datos en streaming formateados con el estado, los encabezados y el contenido especificados. Para obtener más información, consulta la documentación de AI SDK en [ai-sdk.dev/docs/ai-sdk-ui/streaming-data](https://ai-sdk.dev/docs/ai-sdk-ui/streaming-data). Usa el [hook useChat de ai-sdk](https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-chat#usechat) para gestionar el streaming de la respuesta."
                 }
               }
             }
@@ -417,8 +417,8 @@
     },
     "/v2/assistant/{domain}/message": {
       "post": {
-        "summary": "Mensaje del assistant v2",
-        "description": "Genera un mensaje de respuesta del assistant para el domain indicado. Compatible con el SDK de IA v5 o superior.",
+        "summary": "Mensaje del asistente v2",
+        "description": "Genera un mensaje de respuesta del asistente para el dominio especificado. Compatible con AI SDK v5 o superior.",
         "parameters": [
           {
             "name": "domain",
@@ -427,7 +427,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "El identificador de domain de tu URL, por ejemplo `domain.mintlify.app`. Puedes encontrarlo al final de la URL de tu dashboard. Por ejemplo, en `dashboard.mintlify.com/organization/domain`, el identificador de domain es `domain`."
+            "description": "El identificador de dominio de tu URL `domain.mintlify.app`. Puedes encontrarlo al final de la URL de tu panel. Por ejemplo, `dashboard.mintlify.com/organization/domain` tiene el identificador de dominio `domain`."
           }
         ],
         "requestBody": {
@@ -443,12 +443,12 @@
                 "properties": {
                   "fp": {
                     "type": "string",
-                    "description": "Identificador de huella (fingerprint) para realizar el seguimiento de las sesiones de conversación. Usa `anonymous` para usuarios anónimos o proporciona un identificador de usuario único."
+                    "description": "Identificador de huella digital para el seguimiento de sesiones de conversación. Usa `anonymous` para usuarios anónimos o proporciona un identificador de usuario único."
                   },
                   "threadId": {
                     "default": null,
                     "type": "string",
-                    "description": "Un identificador opcional que se utiliza para mantener la continuidad de la conversación a través de varios mensajes. Cuando se incluye, permite que el sistema asocie los mensajes posteriores con el mismo hilo de conversación. El `threadId` se devuelve en la respuesta como `event.threadId` cuando `event.type === 'finish'`."
+                    "description": "Identificador opcional que se utiliza para mantener la continuidad de la conversación a lo largo de varios mensajes. Cuando se especifica, permite al sistema asociar los mensajes posteriores con el mismo hilo de conversación. El `threadId` se devuelve en la respuesta como `event.threadId` cuando `event.type === 'finish'`."
                   },
                   "messages": {
                     "type": "array",
@@ -478,7 +478,7 @@
                             "assistant",
                             "user"
                           ],
-                          "description": "El rol del emisor del mensaje."
+                          "description": "Rol del remitente del mensaje."
                         },
                         "createdAt": {
                           "type": "string",
@@ -491,7 +491,7 @@
                             "oneOf": [
                               {
                                 "type": "object",
-                                "description": "Segmento de contenido de texto.",
+                                "description": "Parte de contenido de texto.",
                                 "properties": {
                                   "type": {
                                     "type": "string",
@@ -510,7 +510,7 @@
                               },
                               {
                                 "type": "object",
-                                "description": "Segmento de contenido de razonamiento con metadata opcional del proveedor.",
+                                "description": "Parte de contenido de razonamiento con metadatos opcionales del proveedor.",
                                 "properties": {
                                   "type": {
                                     "type": "string",
@@ -523,7 +523,7 @@
                                   },
                                   "providerMetadata": {
                                     "type": "object",
-                                    "description": "Metadata opcional específica del proveedor."
+                                    "description": "Metadatos opcionales específicos del proveedor."
                                   }
                                 },
                                 "required": [
@@ -533,7 +533,7 @@
                               },
                               {
                                 "type": "object",
-                                "description": "Segmento que hace referencia a la URL de origen.",
+                                "description": "Parte que hace referencia a la URL de origen.",
                                 "properties": {
                                   "type": {
                                     "type": "string",
@@ -552,7 +552,7 @@
                                   },
                                   "providerMetadata": {
                                     "type": "object",
-                                    "description": "Metadata opcional específica del proveedor."
+                                    "description": "Metadatos opcionales específicos del proveedor."
                                   }
                                 },
                                 "required": [
@@ -563,7 +563,7 @@
                               },
                               {
                                 "type": "object",
-                                "description": "Segmento de archivo adjunto.",
+                                "description": "Parte de un archivo adjunto.",
                                 "properties": {
                                   "type": {
                                     "type": "string",
@@ -608,7 +608,7 @@
                         },
                         "metadata": {
                           "type": "object",
-                          "description": "Metadata opcional asociada con el mensaje."
+                          "description": "Metadatos opcionales asociados al mensaje."
                         }
                       },
                       "required": [
@@ -617,7 +617,7 @@
                         "parts"
                       ]
                     },
-                    "description": "Array de mensajes de la conversación. Usa la función handleSubmit del hook useChat del paquete @ai-sdk/react para gestionar los mensajes y las respuestas en streaming."
+                    "description": "Array de mensajes de la conversación. Usa la función handleSubmit del hook useChat del paquete @ai-sdk/react para gestionar el envío de mensajes y las respuestas en streaming."
                   },
                   "retrievalPageSize": {
                     "type": "number",
@@ -641,7 +641,7 @@
                         "items": {
                           "type": "string"
                         },
-                        "description": "Array opcional de identificadores de grupo para filtrar los resultados."
+                        "description": "Matriz opcional de identificadores de grupo para filtrar los resultados."
                       }
                     },
                     "description": "Criterios de filtrado opcionales para la búsqueda."
@@ -657,7 +657,7 @@
                             "code",
                             "textSelection"
                           ],
-                          "description": "El tipo de contexto que se está proporcionando."
+                          "description": "El tipo de contexto que se proporciona."
                         },
                         "value": {
                           "type": "string",
@@ -665,11 +665,11 @@
                         },
                         "path": {
                           "type": "string",
-                          "description": "Ruta opcional al archivo o página de origen."
+                          "description": "Ruta opcional al archivo o a la página de origen."
                         },
                         "elementId": {
                           "type": "string",
-                          "description": "Identificador opcional para el elemento de la interfaz de usuario que contiene el contexto."
+                          "description": "Identificador opcional del elemento de la interfaz de usuario que contiene el contexto."
                         }
                       },
                       "required": [
@@ -677,7 +677,7 @@
                         "value"
                       ]
                     },
-                    "description": "Array opcional de información contextual para proporcionar al assistant."
+                    "description": "Matriz opcional de información contextual para proporcionar al asistente."
                   }
                 }
               }
@@ -686,12 +686,12 @@
         },
         "responses": {
           "200": {
-            "description": "Mensaje generado con éxito",
+            "description": "Mensaje generado correctamente",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "Streaming de respuestas compatible con AI SDK v5. Usa el [hook useChat de @ai-sdk/react](https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-chat#usechat) para gestionar el flujo de la respuesta."
+                  "description": "Respuesta en streaming compatible con AI SDK v5. Usa el [hook useChat de @ai-sdk/react](https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-chat#usechat) para gestionar el flujo de la respuesta."
                 }
               }
             }
@@ -707,7 +707,7 @@
           }
         },
         "summary": "Buscar en la documentación",
-        "description": "Realiza búsquedas semánticas y por palabras clave en tu documentación, con filtrado y paginación configurables.",
+        "description": "Realiza búsquedas semánticas y por palabras clave en tu documentación, con filtrado configurable y paginación.",
         "parameters": [
           {
             "name": "domain",
@@ -716,7 +716,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "El identificador domain de tu URL `domain.mintlify.app`. Lo puedes encontrar al final de la URL de tu dashboard. Por ejemplo, `dashboard.mintlify.com/organization/domain` tiene un identificador domain de `domain`."
+            "description": "El identificador de dominio de tu URL `domain.mintlify.app`. Se puede encontrar al final de la URL de tu panel. Por ejemplo, `dashboard.mintlify.com/organization/domain` tiene un identificador de dominio `domain`."
           }
         ],
         "requestBody": {
@@ -731,16 +731,16 @@
                 "properties": {
                   "query": {
                     "type": "string",
-                    "description": "La búsqueda que se ejecutará en el contenido de tu documentación."
+                    "description": "La consulta de búsqueda que se ejecutará sobre el contenido de tu documentación."
                   },
                   "pageSize": {
                     "type": "number",
                     "default": 10,
-                    "description": "Número de resultados de búsqueda que se mostrarán. De forma predeterminada es 10 si no se especifica."
+                    "description": "Número de resultados de búsqueda que se devolverán. El valor predeterminado es 10 si no se especifica."
                   },
                   "filter": {
                     "type": "object",
-                    "description": "Parámetros de filtrado opcionales para restringir los resultados de la búsqueda.",
+                    "description": "Parámetros de filtrado opcionales para restringir los resultados de búsqueda.",
                     "properties": {
                       "version": {
                         "type": "string",
@@ -759,7 +759,7 @@
         },
         "responses": {
           "200": {
-            "description": "Resultados de la búsqueda",
+            "description": "Resultados de búsqueda",
             "content": {
               "application/json": {
                 "schema": {
@@ -777,7 +777,7 @@
                       },
                       "metadata": {
                         "type": "object",
-                        "description": "Metadata adicional sobre el resultado de la búsqueda."
+                        "description": "Metadatos adicionales sobre el resultado de la búsqueda."
                       }
                     }
                   }
@@ -794,7 +794,7 @@
       "bearerAuth": {
         "type": "http",
         "scheme": "bearer",
-        "description": "La cabecera Authorization espera un token de tipo Bearer. Usa una clave de API para assistant (con el prefijo `mint_dsc_`). Esta es una clave pública segura para utilizar en código del lado del cliente. Genérala desde la [página de claves de API](https://dashboard.mintlify.com/settings/organization/api-keys) de tu dashboard."
+        "description": "El encabezado Authorization espera un token Bearer. Usa una clave de API de assistant (con el prefijo `mint_dsc_`). Esta es una clave pública segura para usar en código del lado del cliente. Genera una en la [página de claves de API](https://dashboard.mintlify.com/settings/organization/api-keys) de tu panel."
       }
     }
   }

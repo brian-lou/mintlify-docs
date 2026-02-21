@@ -4,58 +4,54 @@ description: "Ajoutez des images, des vidéos et des iframes."
 keywords: ["images", "vidéos", "iframes", "médias", "svg"]
 ---
 
-Ajoutez des images, intégrez des vidéos et insérez du contenu interactif via des iframes dans votre documentation.
+Ajoutez des images, intégrez des vidéos et insérez du contenu interactif à l’aide d’iframes dans votre documentation.
 
 <Frame>
-<img
-  className="rounded-xl"
-  src="https://mintlify-assets.b-cdn.net/bigbend.jpg"
-  alt="Photographie d’un paysage pittoresque avec des fleurs violettes au premier plan, des montagnes à l’arrière-plan et un ciel bleu parsemé de nuages."
-/>
+  <img className="rounded-xl" src="https://mintlify-assets.b-cdn.net/bigbend.jpg" alt="Photographie d’un paysage pittoresque avec des fleurs violettes au premier plan, des montagnes à l’arrière-plan et un ciel bleu parsemé de nuages." />
 </Frame>
 
 <div id="images">
   ## Images
 </div>
 
-Ajoutez des images pour fournir du contexte visuel, des exemples ou pour agrémenter votre documentation.
+Ajoutez des images pour apporter un contexte visuel, illustrer des exemples ou décorer votre documentation.
 
 <div id="basic-image-syntax">
-  ### Syntaxe d’image de base
+  ### Syntaxe de base pour les images
 </div>
 
 Utilisez la [syntaxe Markdown](https://www.markdownguide.org/basic-syntax/#images) pour ajouter des images à votre documentation :
 
 ```mdx
-![Texte alternatif décrivant l'image](/path/to/image.png)
+![Alt text describing the image](/path/to/image.png)
 ```
 
 <Tip>
-  Incluez toujours un texte alternatif descriptif pour améliorer l’accessibilité et le SEO. Le texte alternatif doit décrire clairement ce que montre l’image.
+  Incluez toujours un texte alternatif descriptif pour améliorer l’accessibilité et le référencement. Le texte alternatif doit décrire clairement ce que montre l’image.
 </Tip>
 
-Les fichiers image doivent faire moins de 20 Mo. Pour les fichiers plus volumineux, hébergez-les sur un service CDN comme [Amazon S3](https://aws.amazon.com/s3) ou [Cloudinary](https://cloudinary.com).
+Les fichiers image doivent être de moins de 20 Mo. Pour les fichiers plus volumineux, hébergez-les sur un service CDN comme [Amazon S3](https://aws.amazon.com/s3) ou [Cloudinary](https://cloudinary.com).
 
 <div id="html-image-embeds">
-  ### Intégrations d’images HTML
+  ### Intégration d’images en HTML
 </div>
 
-Pour un meilleur contrôle de l’affichage des images, utilisez des balises HTML `<img>` :
+Pour un contrôle accru sur l’affichage des images, utilisez des balises HTML `<img>` :
 
 ```jsx
 <img 
   src="/images/dashboard.png" 
-  alt="Interface principale du tableau de bord"
+  alt="Main dashboard interface"
   style={{height: "300px", width: "400px"}}
   className="rounded-lg"
 />
 ```
 
 <div id="resize-images-with-inline-styles">
-  #### Redimensionner des images avec des styles en ligne
+  #### Redimensionner les images avec des styles en ligne
 </div>
 
-Utilisez des styles JSX en ligne avec l’attribut `style` pour redimensionner les images :
+Utilisez des styles JSX en ligne avec l&#39;attribut `style` pour redimensionner les images :
 
 ```jsx
 <img
@@ -69,56 +65,55 @@ Utilisez des styles JSX en ligne avec l’attribut `style` pour redimensionner l
   #### Désactiver le zoom des images
 </div>
 
-Pour désactiver le zoom par défaut au clic sur les images, ajoutez la propriété `noZoom` :
+Pour désactiver le zoom par défaut au clic pour les images, ajoutez la propriété `noZoom` :
 
 ```html highlight="4"
 <img 
   src="/images/screenshot.png" 
-  alt="Texte alternatif descriptif"
+  alt="Descriptive alt text"
   noZoom
 />
 ```
-
 
 <div id="link-images">
   #### Lier des images
 </div>
 
-Pour rendre une image cliquable, placez l’image dans une balise d’ancre et ajoutez la propriété `noZoom` :
+Pour rendre une image cliquable, entourez l&#39;image d&#39;une balise de lien et ajoutez la propriété `noZoom` :
 
 ```html
 <a href="https://mintlify.com" target="_blank">
   <img 
     src="/images/logo.png" 
-    alt="Logo Mintlify"
+    alt="Mintlify logo"
     noZoom
   />
 </a>
 ```
 
 <Note>
-  Les images à l’intérieur des balises d’ancrage affichent automatiquement un curseur en forme de pointeur pour indiquer qu’elles sont cliquables.
+  Les images placées dans des balises d’ancre affichent automatiquement le curseur pointeur pour indiquer qu’elles sont cliquables.
 </Note>
 
 <div id="light-and-dark-mode-images">
-  #### Images pour les modes clair et sombre
+  #### Images en mode clair et en mode sombre
 </div>
 
-Pour afficher des images différentes en mode clair et en mode sombre, utilisez les classes Tailwind CSS :
+Pour afficher des images différentes en fonction du thème clair ou sombre, utilisez les classes Tailwind CSS :
 
 ```html
 <!-- Image en mode clair -->
 <img 
   className="block dark:hidden" 
   src="/images/light-mode.png" 
-  alt="Interface en mode clair"
+  alt="Light mode interface"
 />
 
 <!-- Image en mode sombre -->
 <img 
   className="hidden dark:block" 
   src="/images/dark-mode.png" 
-  alt="Interface en mode sombre"
+  alt="Dark mode interface"
 />
 ```
 
@@ -126,31 +121,31 @@ Pour afficher des images différentes en mode clair et en mode sombre, utilisez 
   ### Images SVG
 </div>
 
-Les fichiers SVG qui utilisent des éléments `foreignObject` s'affichent différemment en production qu'en développement local. Le CDN d'images de Mintlify supprime `foreignObject` des SVG à titre de mesure de sécurité, ce qui peut tronquer ou masquer du texte et d'autres contenus HTML intégrés.
+Les fichiers SVG qui utilisent des éléments `foreignObject` sont rendus différemment en production qu’en environnement de développement local. Le CDN d’images de Mintlify supprime `foreignObject` des SVG pour des raisons de sécurité, ce qui peut tronquer ou masquer du texte et d’autres contenus HTML intégrés.
 
-Cela affecte fréquemment les SVG exportés à partir d'outils comme [draw.io](https://www.drawio.com) lorsque le formatage de texte HTML ou le renvoi à la ligne est activé. Pour corriger cela, désactivez **Formatted Text** et **Word Wrap** sur tous les libellés de votre diagramme avant d'exporter en SVG. Consultez la [documentation draw.io](https://www.drawio.com/doc/faq/svg-export-text-problems) pour plus d'informations sur les exportations SVG.
+Cela affecte fréquemment les SVG exportés à partir d’outils comme [draw.io](https://www.drawio.com), lorsque les options de mise en forme HTML du texte ou de retour à la ligne automatique sont activées. Pour corriger ce problème, désactivez **Formatted Text** et **Word Wrap** sur tous les libellés de votre diagramme avant de l’exporter en SVG. Consultez la [documentation draw.io](https://www.drawio.com/doc/faq/svg-export-text-problems) pour plus d’informations sur l’export SVG.
 
 <div id="videos">
   ## Vidéos
 </div>
 
-Mintlify prend en charge les [balises HTML dans Markdown](https://www.markdownguide.org/basic-syntax/#html), ce qui vous offre la flexibilité nécessaire pour créer du contenu riche.
+Mintlify prend en charge les [balises HTML dans Markdown](https://www.markdownguide.org/basic-syntax/#html) et vous permet ainsi de créer du contenu riche.
 
 <Tip>
-  Incluez toujours un texte de remplacement à l’intérieur des éléments vidéo pour les navigateurs qui ne prennent pas en charge la lecture des vidéos.
+  Incluez toujours du texte alternatif à l&#39;intérieur des éléments vidéo pour les navigateurs qui ne prennent pas en charge la lecture vidéo.
 </Tip>
 
 <div id="youtube-embeds">
-  ### Intégrations YouTube
+  ### Intégration de vidéos YouTube
 </div>
 
-Intégrez des vidéos YouTube à l&#39;aide d&#39;éléments iframe :
+Intégrez des vidéos YouTube à l’aide d’éléments iframe :
 
 ```html
 <iframe
   className="w-full aspect-video rounded-xl"
   src="https://www.youtube.com/embed/4KzFe50RQkQ"
-  title="Lecteur vidéo YouTube"
+  title="YouTube video player"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
   allowFullScreen
 ></iframe>
@@ -160,26 +155,25 @@ Intégrez des vidéos YouTube à l&#39;aide d&#39;éléments iframe :
   <iframe className="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/4KzFe50RQkQ" title="Lecteur vidéo YouTube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
 </Frame>
 
-
 <div id="self-hosted-videos">
   ### Vidéos auto‑hébergées
 </div>
 
-Utilisez l’élément HTML `<video>` pour des vidéos auto‑hébergées :
+Utilisez l’élément HTML `<video>` pour le contenu vidéo auto‑hébergé :
 
 ```html
 <video
   controls
   className="w-full aspect-video rounded-xl"
-  src="lien-vers-votre-video.com"
+  src="link-to-your-video.com"
 ></video>
 ```
 
 <div id="autoplay-videos">
-  ### Lecture automatique de vidéos
+  ### Lecture automatique des vidéos
 </div>
 
-Pour lancer automatiquement une vidéo, utilisez :
+Pour lire automatiquement une vidéo, utilisez :
 
 ```html
 <video
@@ -193,27 +187,27 @@ Pour lancer automatiquement une vidéo, utilisez :
 ```
 
 <Note>
-  Lorsque vous utilisez la syntaxe JSX, écrivez les attributs composés de deux mots en camelCase : `autoPlay`, `playsInline`, `allowFullScreen`.
+  Lorsque vous utilisez la syntaxe JSX, écrivez les attributs dont le nom comporte deux mots en camelCase : `autoPlay`, `playsInline`, `allowFullScreen`.
 </Note>
 
 <div id="iframes">
   ## iframes
 </div>
 
-Intégrez du contenu externe à l’aide d’éléments iframe :
+Intégrez du contenu externe en utilisant des éléments iframe :
 
 ```html
 <iframe 
   src="https://example.com/embed" 
-  title="Contenu intégré"
+  title="Embedded content"
   className="w-full h-96 rounded-xl"
 ></iframe>
 ```
 
 <div id="related-resources">
-  ## Ressources connexes
+  ## Ressources associées
 </div>
 
 <Card title="Référence du composant Frame" icon="frame" horizontal href="/fr/components/frames">
-  Découvrez comment utiliser le composant Frame pour présenter des images.
+  Découvrez comment utiliser le composant Frame pour afficher des images.
 </Card>

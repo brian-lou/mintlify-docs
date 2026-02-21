@@ -1,65 +1,65 @@
 ---
 title: "Internationalisation"
-description: "Configurez une documentation multilingue pour atteindre un public mondial."
-keywords: ["internationalisation", "i18n", "multilingue", "traductions", "localisation", "sélecteur de langue"]
+description: "Configurer une documentation multilingue pour toucher un public international."
+keywords: ["internationalization", "i18n", "multi-language", "translations", "localization", "language switcher"]
 ---
 
-L’internationalisation (i18n) est le processus qui consiste à concevoir un logiciel ou du contenu pour fonctionner avec différentes langues et différents paramètres régionaux. Ce guide explique comment structurer les fichiers, configurer la navigation et maintenir les traductions efficacement afin que vous puissiez aider vos utilisateurs à accéder à votre documentation dans leur langue préférée et améliorer votre portée à l’international.
+L’internationalisation (i18n) est le processus de conception de logiciels ou de contenus pour qu’ils prennent en charge différentes langues et différents paramètres régionaux. Ce guide explique comment structurer les fichiers, configurer la navigation et maintenir efficacement les traductions afin d’aider vos utilisateurs à accéder à votre documentation dans la langue de leur choix et d’améliorer votre portée mondiale.
 
 <div id="file-structure">
   ## Structure des fichiers
 </div>
 
-Organisez le contenu traduit dans des répertoires propres à chaque langue afin que votre documentation reste facile à maintenir et pour structurer votre navigation par langue.
+Organisez le contenu traduit dans des répertoires spécifiques à chaque langue pour que votre documentation reste facile à maintenir et pour structurer votre navigation par langue.
 
-Créez un répertoire séparé pour chaque langue en utilisant les [codes de langue ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). Placez les fichiers traduits dans ces répertoires en respectant la même structure que pour votre langue par défaut.
+Créez un répertoire séparé pour chaque langue en utilisant les [codes de langue ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). Placez les fichiers traduits dans ces répertoires en conservant la même structure que pour votre langue par défaut.
 
 <Expandable title="codes de langue pris en charge">
-  * `ar` - arabe
-  * `cs` - tchèque
-  * `cn` ou `zh-Hans` - chinois (simplifié)
-  * `zh-Hant` - chinois (traditionnel)
-  * `de` - allemand
-  * `en` - anglais
-  * `es` - espagnol
-  * `fr` - français
-  * `he` - hébreu
-  * `hi` - hindi
-  * `id` - indonésien
-  * `it` - italien
-  * `jp` - japonais
-  * `ko` - coréen
-  * `lv` - letton
-  * `nl` - néerlandais
-  * `no` - norvégien
-  * `pl` - polonais
-  * `pt` ou `pt-BR` - portugais
-  * `ro` - roumain
-  * `ru` - russe
-  * `sv` - suédois
-  * `tr` - turc
-  * `ua` - ukrainien
-  * `uz` - ouzbek
-  * `vi` - vietnamien
+  * `ar` - Arabe
+  * `cs` - Tchèque
+  * `cn` or `zh-Hans` - Chinois (simplifié)
+  * `zh-Hant` - Chinois (traditionnel)
+  * `de` - Allemand
+  * `en` - Anglais
+  * `es` - Espagnol
+  * `fr` - Français
+  * `he` - Hébreu
+  * `hi` - Hindi
+  * `id` - Indonésien
+  * `it` - Italien
+  * `jp` - Japonais
+  * `ko` - Coréen
+  * `lv` - Letton
+  * `nl` - Néerlandais
+  * `no` - Norvégien
+  * `pl` - Polonais
+  * `pt` or `pt-BR` - Portugais
+  * `ro` - Roumain
+  * `ru` - Russe
+  * `sv` - Suédois
+  * `tr` - Turc
+  * `ua` - Ukrainien
+  * `uz` - Ouzbek
+  * `vi` - Vietnamien
 </Expandable>
 
 ```text Example file structure
 docs/
-├── index.mdx                    # anglais (par défaut)
+├── index.mdx                    # Anglais (par défaut)
 ├── quickstart.mdx
 ├── fr/
-│   ├── index.mdx               # French
+│   ├── index.mdx               # Français
 │   ├── quickstart.mdx
 ├── es/
-│   ├── index.mdx               # Spanish
+│   ├── index.mdx               # Espagnol
 │   ├── quickstart.mdx
 └── zh/
-    ├── index.mdx               # Chinese
+    ├── index.mdx               # Chinois
     └── quickstart.mdx
 ```
 
 <Tip>
-  Conservez les mêmes noms de fichiers et la même structure de répertoires dans toutes les langues. Cela facilite la maintenance des traductions et l’identification du contenu manquant.
+  Conservez les mêmes noms de fichiers et la même structure de répertoires pour toutes les langues. Cela facilite la maintenance des traductions et l’identification du contenu manquant.
 </Tip>
 
 
@@ -67,7 +67,7 @@ docs/
   ## Configurer le sélecteur de langue
 </div>
 
-Pour ajouter un sélecteur de langue à votre documentation, configurez le tableau `languages` dans la propriété `navigation` de votre fichier `docs.json`.
+Pour ajouter un sélecteur de langue à votre documentation, configurez le tableau `languages` dans la navigation de votre fichier `docs.json`.
 
 ```json docs.json
 {
@@ -77,7 +77,7 @@ Pour ajouter un sélecteur de langue à votre documentation, configurez le table
         "language": "en",
         "groups": [
           {
-            "group": "Premiers pas",
+            "group": "Getting started",
             "pages": ["index", "quickstart"]
           }
         ]
@@ -96,20 +96,20 @@ Pour ajouter un sélecteur de langue à votre documentation, configurez le table
 }
 ```
 
-Chaque entrée de langue dans le tableau `languages` nécessite :
+Chaque entrée dans le tableau `languages` doit inclure :
 
-* `language` : code de langue ISO 639-1
-* Une structure de navigation complète
-* Les chemins d’accès aux fichiers traduits
+* `language` : code de langue au format ISO 639-1
+* Structure de navigation complète
+* Chemins vers les fichiers traduits
 
-La structure de navigation peut différer selon les langues pour s’adapter aux besoins de contenu propres à chacune.
+La structure de navigation peut varier d’une langue à l’autre afin de tenir compte des besoins spécifiques de contenu propres à chaque langue.
 
 
 <div id="set-default-language">
   ### Définir la langue par défaut
 </div>
 
-La première langue du tableau `languages` est automatiquement utilisée comme langue par défaut. Pour définir une autre langue comme langue par défaut, réorganisez le tableau ou ajoutez la propriété `default` :
+La première langue du tableau `languages` est automatiquement utilisée comme langue par défaut. Pour définir une autre langue par défaut, réordonnez le tableau ou ajoutez la propriété `default` :
 
 ```json docs.json
 {
@@ -128,7 +128,7 @@ La première langue du tableau `languages` est automatiquement utilisée comme l
 }
 ```
 
-Vous pouvez également utiliser la propriété `default` pour modifier l’ordre :
+Vous pouvez également utiliser la propriété `default` pour modifier l&#39;ordre :
 
 ```json docs.json
 {
@@ -150,10 +150,10 @@ Vous pouvez également utiliser la propriété `default` pour modifier l’ordre
 
 
 <div id="single-language-documentation">
-  ### Documentation en une seule langue
+  ### Documentation dans une seule langue
 </div>
 
-Si vous ne souhaitez proposer qu’une seule langue sans sélecteur de langue, supprimez le champ `languages` de votre configuration de navigation. Définissez ensuite directement votre structure de navigation :
+Si vous souhaitez ne proposer qu’une seule langue, sans sélecteur de langue, supprimez le champ `languages` de la configuration de navigation. Définissez alors directement la structure de navigation :
 
 ```json docs.json
 {
@@ -163,7 +163,7 @@ Si vous ne souhaitez proposer qu’une seule langue sans sélecteur de langue, s
         "tab": "Documentation",
         "groups": [
           {
-            "group": "Premiers pas",
+            "group": "Getting started",
             "pages": ["index", "quickstart"]
           }
         ]
@@ -173,10 +173,10 @@ Si vous ne souhaitez proposer qu’une seule langue sans sélecteur de langue, s
 }
 ```
 
-Cela affiche votre documentation dans une seule langue, sans l’interface du sélecteur de langue.
+Cela affiche votre documentation dans une seule langue, sans le sélecteur de langue.
 
 <Tip>
-  Traduisez les libellés de navigation, comme les noms de groupes ou d’onglets, afin de les faire correspondre à la langue du contenu. Cela crée une expérience entièrement localisée pour vos utilisateurs.
+  Traduisez les libellés de navigation, comme les noms de groupes ou d’onglets, pour qu’ils correspondent à la langue du contenu. Vous offrirez ainsi à vos utilisateurs une expérience entièrement localisée.
 </Tip>
 
 
@@ -184,7 +184,7 @@ Cela affiche votre documentation dans une seule langue, sans l’interface du s�
   ### Navigation globale
 </div>
 
-Pour ajouter des éléments de navigation globaux qui apparaissent dans toutes les langues, configurez l&#39;objet `global` dans la propriété `navigation` de votre fichier `docs.json`.
+Pour ajouter des éléments de navigation globaux qui apparaissent pour toutes les langues, configurez l&#39;objet `global` dans la navigation de votre `docs.json`.
 
 ```json docs.json
 {
@@ -202,7 +202,7 @@ Pour ajouter des éléments de navigation globaux qui apparaissent dans toutes l
       ]
     },
     "languages": [
-      // Navigation spécifique à chaque langue
+      // Navigation spécifique à la langue
     ]
   }
 }
@@ -210,10 +210,10 @@ Pour ajouter des éléments de navigation globaux qui apparaissent dans toutes l
 
 
 <div id="maintain-translations">
-  ## Conserver les traductions
+  ## Maintenir les traductions
 </div>
 
-Veillez à ce que vos traductions restent exactes et synchronisées avec votre contenu source.
+Maintenez des traductions fidèles et synchronisées avec votre contenu source.
 
 <div id="translation-workflow">
   ### Processus de traduction
@@ -227,7 +227,7 @@ Veillez à ce que vos traductions restent exactes et synchronisées avec votre c
 6. Vérifiez que la navigation et les liens fonctionnent.
 
 <div id="automated-translations">
-  ### Traductions automatisées
+  ### Traductions automatiques
 </div>
 
 Pour des solutions de traduction automatique, [contactez l'équipe commerciale de Mintlify](mailto:gtm@mintlify.com).
@@ -242,15 +242,15 @@ Stockez les images traduites dans des répertoires propres à chaque langue.
 images/
 ├── dashboard.png          # Version anglaise
 ├── fr/
-│   └── dashboard.png     # French version
+│   └── dashboard.png     # Version française
 └── es/
-    └── dashboard.png     # Spanish version
+    └── dashboard.png     # Version espagnole
 ```
 
-Référencez les images à l’aide de chemins relatifs dans vos contenus traduits.
+Référencez les images à l&#39;aide de chemins relatifs dans votre contenu traduit.
 
 ```mdx es/index.mdx
-![Capture d'écran du Dashboard](/images/fr/dashboard.png)
+![Captura de pantalla del panel de control](/images/es/dashboard.png)
 ```
 
 
@@ -258,13 +258,13 @@ Référencez les images à l’aide de chemins relatifs dans vos contenus tradui
   ## SEO pour les sites multilingues
 </div>
 
-Optimisez chaque version dans chaque langue pour les moteurs de recherche.
+Optimisez chaque version du site dans chaque langue pour les moteurs de recherche.
 
 <div id="page-metadata">
-  ### Metadata de la page
+  ### Métadonnées de page
 </div>
 
-Incluez les metadata traduites dans le frontmatter de chaque fichier :
+Incluez les métadonnées traduites dans le frontmatter de chaque fichier :
 
 ```mdx fr/index.mdx
 ---
@@ -280,40 +280,40 @@ keywords: ["démarrage", "tutoriel", "guide"]
 </div>
 
 <div id="date-and-number-formats">
-  ### Formats de date et de nombre
+  ### Formats de dates et de nombres
 </div>
 
-Tenez compte des formats propres à chaque langue pour les dates et les nombres.
+Tenez compte du formatage spécifique à la langue et à la région pour les dates et les nombres.
 
-- Formats de date : MM/DD/YYYY vs DD/MM/YYYY
-- Formats de nombres : 1,000.00 vs 1.000,00
-- Symboles monétaires : $100.00 vs 100,00€
+- Formats de date : MM/DD/YYYY vs DD/MM/YYYY
+- Formats de nombre : 1,000.00 vs 1.000,00
+- Symboles monétaires : $100.00 vs 100,00€
 
-Incluez des exemples dans le format approprié pour chaque langue ou utilisez des formats universellement compréhensibles.
+Incluez des exemples dans le format approprié pour chaque langue ou utilisez des formats universellement compris.
 
 <div id="maintain-consistency">
   ### Maintenir la cohérence
 </div>
 
-- Assurez une parité de contenu entre toutes les langues afin que chaque utilisateur bénéficie de la même qualité d’information.
+- Assurez l’équivalence du contenu dans toutes les langues afin que chaque utilisateur bénéficie de la même qualité d’information.
 - Créez un glossaire de traduction pour les termes techniques.
-- Conservez la même structure de contenu dans toutes les langues.
-- Alignez le ton et le style sur ceux de votre contenu source.
+- Conservez la même structure de contenu d’une langue à l’autre.
+- Adaptez le ton et le style à ceux de votre contenu source.
 - Utilisez des branches Git pour gérer le travail de traduction séparément des mises à jour du contenu principal.
 
 <div id="layout-differences">
   ### Différences de mise en page
 </div>
 
-Certaines langues nécessitent plus ou moins d’espace que l’anglais. Testez votre contenu traduit sur différentes tailles d’écran pour vous assurer que :
+Certaines langues prennent plus ou moins de place que l’anglais. Testez votre contenu traduit sur différentes tailles d’écran afin de vérifier :
 
-- La navigation s’affiche correctement.
-- Les code blocks ne débordent pas.
-- Les tableaux et autres éléments de texte mis en forme restent lisibles.
-- Les images se redimensionnent correctement.
+- La navigation tient correctement à l’écran.
+- Les blocs de code ne débordent pas.
+- Les tableaux et autres textes mis en forme restent faciles à lire.
+- Les images s’adaptent correctement.
 
 <div id="character-encoding">
   ### Encodage des caractères
 </div>
 
-Assurez-vous que votre environnement de développement et votre pipeline de déploiement prennent en charge l’UTF-8 afin d’afficher correctement tous les caractères dans les langues utilisant différents alphabets et caractères spéciaux.
+Assurez-vous que votre environnement de développement et votre pipeline de déploiement prennent en charge l'encodage UTF-8 afin d'afficher correctement tous les caractères pour les langues qui utilisent différents alphabets et des caractères spéciaux.

@@ -1,29 +1,29 @@
 ---
 openapi: /es/analytics.openapi.json GET /api/external/v1/analytics/{projectId}/assistant
-keywords: [ "analytics", "assistant", "conversations", "export", "AI" ]
+keywords: [ "analítica", "asistente", "conversaciones", "exportación", "IA" ]
 ---
 
 <div id="usage">
   ## Uso
 </div>
 
-Utiliza este endpoint para exportar el historial de conversaciones del Asistente de IA desde tu documentación. Cada conversación incluye la búsqueda del usuario, la respuesta del Asistente de IA, las fuentes citadas y la categoría de la búsqueda.
+Utilice este endpoint para exportar el historial de conversaciones del asistente de IA de su documentación. Cada conversación incluye la consulta del usuario, la respuesta del asistente, las fuentes citadas y la categoría de la consulta.
 
-Pagina los resultados usando el parámetro `cursor` devuelto en la respuesta. Continúa obteniendo resultados mientras `hasMore` sea `true`.
+Pagínelos resultados usando el parámetro `cursor` devuelto en la respuesta. Continúe obteniendo resultados mientras `hasMore` sea `true`.
 
 <div id="filtering">
   ## Filtrado
 </div>
 
-Filtra conversaciones por intervalo de fechas usando los parámetros `dateFrom` y `dateTo`.
+Filtra las conversaciones por intervalo de fechas con los parámetros `dateFrom` y `dateTo`.
 
 <div id="conversation-data">
-  ## Datos de conversación
+  ## Datos de la conversación
 </div>
 
 Cada conversación incluye:
 
 - **query**: La pregunta del usuario
-- **response**: La respuesta del assistant
-- **sources**: Páginas a las que se hace referencia en la respuesta, con título y URL
-- **queryCategory**: Clasificación del tipo de búsqueda (si está disponible)
+- **response**: La respuesta del asistente
+- **sources**: Páginas mencionadas en la respuesta, con título y URL
+- **queryCategory**: Clasificación del tipo de consulta (si está disponible)

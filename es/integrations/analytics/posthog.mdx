@@ -1,16 +1,16 @@
 ---
 title: "PostHog"
-description: "Realiza el seguimiento de la analítica de producto y del uso de funcionalidades con PostHog."
-keywords: ["PostHog integration", "product analytics", "feature flags", "self-hosted PostHog"]
+description: "Realiza un seguimiento de la analítica de producto y del uso de funcionalidades con PostHog."
+keywords: ["integración de PostHog", "analítica de producto", "feature flags", "PostHog autoalojado"]
 ---
 
-Añade lo siguiente a tu archivo `docs.json` para enviar Analytics a PostHog.
+Agrega lo siguiente a tu archivo `docs.json` para enviar datos de analítica a PostHog.
 
-Solo necesitas incluir `apiHost` si alojas PostHog por tu cuenta. De forma predeterminada enviamos eventos a `https://app.posthog.com`.
+Solo necesitas incluir `apiHost` si utilizas PostHog en modo autoalojado. Enviamos los eventos a `https://app.posthog.com` de forma predeterminada.
 
 <CodeGroup>
 
-```json Opciones de Analytics en docs.json
+```json Opciones de analítica en docs.json
 "integrations": {
     "posthog": {
         "apiKey": "YOUR_POSTHOG_PROJECT_API_KEY",
@@ -35,22 +35,22 @@ Solo necesitas incluir `apiHost` si alojas PostHog por tu cuenta. De forma prede
 </div>
 
 <ParamField path="apiKey" type="string" required>
-  La API key de tu proyecto de PostHog. Debe empezar con `phc_`.
+  La clave de API de tu proyecto de PostHog. Debe comenzar con `phc_`.
 </ParamField>
 
 <ParamField path="apiHost" type="string">
-  La URL de tu instancia de PostHog. Solo es Obligatorio si alojas PostHog por tu cuenta. De forma predeterminada es `https://app.posthog.com`.
+  La URL de tu instancia de PostHog. Solo es necesaria si alojas PostHog tú mismo. Por defecto es `https://app.posthog.com`.
 </ParamField>
 
 <ParamField path="sessionRecording" type="boolean" default="true">
-  Activa o desactiva la grabación de sesiones. Establécelo en `false` para desactivar las grabaciones de sesiones y mantener Analytics habilitado.
+  Activa o desactiva la grabación de sesiones. Configúralo en `false` para desactivar la grabación de sesiones manteniendo la analítica activada.
 </ParamField>
 
 <div id="session-recordings">
-  ## Grabaciones de sesiones
+  ## Grabaciones de sesión
 </div>
 
-Las grabaciones de sesiones se habilitan de forma predeterminada al configurar PostHog. Para desactivar las grabaciones de sesiones y mantener Analytics habilitado, establece `sessionRecording` en `false` en tu configuración.
+Las grabaciones de sesión están habilitadas de forma predeterminada cuando configuras PostHog. Para desactivar las grabaciones de sesión y mantener la analítica activada, establece `sessionRecording` en `false` en tu configuración.
 
 ```json Disable session recordings
 "integrations": {
@@ -61,4 +61,4 @@ Las grabaciones de sesiones se habilitan de forma predeterminada al configurar P
 }
 ```
 
-Debes agregar la URL de tu sitio de documentación a la sección &quot;Authorized domains for recordings&quot; de PostHog antes de poder recibir grabaciones de sesión. La opción para agregar tu URL se encuentra en la configuración del proyecto de PostHog.
+Debes añadir la URL de tu sitio de documentación a los &quot;dominios autorizados para grabaciones&quot; de PostHog antes de poder recibir grabaciones de sesiones. La opción para añadir tu URL se encuentra en la configuración del proyecto de PostHog.

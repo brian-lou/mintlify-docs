@@ -2,7 +2,7 @@
   "openapi": "3.0.1",
   "info": {
     "title": "Mintlify External API",
-    "description": "Una API para gestionar la documentación de Mintlify y acceder a recursos.",
+    "description": "Una API para gestionar la documentación y acceder a los recursos de Mintlify.",
     "version": "1.0.0"
   },
   "servers": [
@@ -22,12 +22,12 @@
     "/project/update/{projectId}": {
       "post": {
         "summary": "Iniciar actualización",
-        "description": "Pone en cola una actualización de implementación para tu proyecto de documentación. Devuelve un ID de estado que se puede usar para hacer seguimiento del progreso de la actualización. La actualización se activa desde la rama de implementación que tengas configurada.",
+        "description": "Pone en cola una actualización de despliegue para tu proyecto de documentación. Devuelve un ID de estado que puede utilizarse para seguir el progreso de la actualización. La actualización se inicia desde tu rama de despliegue configurada.",
         "parameters": [
           {
             "name": "projectId",
             "in": "path",
-            "description": "El ID de tu proyecto. Puedes copiarlo de la página de [API keys](https://dashboard.mintlify.com/settings/organization/api-keys) de tu dashboard.",
+            "description": "El ID de tu proyecto. Puedes copiarlo desde la página de [claves de API](https://dashboard.mintlify.com/settings/organization/api-keys) en tu panel de control.",
             "required": true,
             "schema": {
               "type": "string"
@@ -36,7 +36,7 @@
         ],
         "responses": {
           "202": {
-            "description": "Una respuesta satisfactoria",
+            "description": "Una respuesta correcta",
             "content": {
               "application/json": {
                 "schema": {
@@ -44,7 +44,7 @@
                   "properties": {
                     "statusId": {
                       "type": "string",
-                      "description": "El ID de estado de la actualización que se activó."
+                      "description": "El ID de estado de la actualización iniciada."
                     }
                   }
                 }
@@ -56,13 +56,13 @@
     },
     "/project/update-status/{statusId}": {
       "get": {
-        "summary": "Obtener el estado de la actualización",
-        "description": "Obtén el estado de una actualización mediante el ID de estado",
+        "summary": "Consultar el estado de la actualización",
+        "description": "Obtener el estado de una actualización mediante su ID de estado",
         "parameters": [
           {
             "name": "statusId",
             "in": "path",
-            "description": "El identificador de estado de una actualización activada.",
+            "description": "El ID de estado de una actualización iniciada.",
             "required": true,
             "schema": {
               "type": "string"
@@ -79,19 +79,19 @@
                   "properties": {
                     "_id": {
                       "type": "string",
-                      "description": "El ID de estado de la actualización que se activó."
+                      "description": "El ID del estado de la actualización iniciada."
                     },
                     "projectId": {
                       "type": "string",
-                      "description": "El identificador del proyecto de documentación."
+                      "description": "El ID del proyecto de documentación."
                     },
                     "createdAt": {
                       "type": "string",
-                      "description": "Un ISODate con la fecha y la hora especificadas en UTC"
+                      "description": "Un valor ISODate con la fecha y hora especificadas en UTC."
                     },
                     "endedAt": {
                       "type": "string",
-                      "description": "Un ISODate con la fecha y hora especificadas en UTC"
+                      "description": "Un valor ISODate con la fecha y hora especificadas en UTC."
                     },
                     "status": {
                       "type": "string",
@@ -105,7 +105,7 @@
                     },
                     "summary": {
                       "type": "string",
-                      "description": "Resumen del estado de la actualización"
+                      "description": "Resumen del estado de la actualización."
                     },
                     "logs": {
                       "type": "array",
@@ -128,7 +128,7 @@
                     },
                     "screenshotDark": {
                       "type": "string",
-                      "description": "Captura de pantalla de la documentación en modo oscuro."
+                      "description": "Una captura de pantalla de la documentación en modo oscuro."
                     },
                     "author": {
                       "type": "string",
@@ -136,19 +136,19 @@
                     },
                     "commit": {
                       "type": "object",
-                      "description": "Detalles de la confirmación",
+                      "description": "Detalles del commit.",
                       "properties": {
                         "sha": {
                           "type": "string",
-                          "description": "El SHA de la confirmación."
+                          "description": "El SHA del commit."
                         },
                         "ref": {
                           "type": "string",
-                          "description": "La referencia de la confirmación."
+                          "description": "La referencia (ref) del commit."
                         },
                         "message": {
                           "type": "string",
-                          "description": "El mensaje de confirmación."
+                          "description": "El mensaje del commit."
                         },
                         "filesChanged": {
                           "type": "object",
@@ -156,14 +156,14 @@
                           "properties": {
                             "added": {
                               "type": "array",
-                              "description": "Se han añadido nuevos archivos.",
+                              "description": "Archivos nuevos agregados.",
                               "items": {
                                 "type": "string"
                               }
                             },
                             "modified": {
                               "type": "array",
-                              "description": "Archivos existentes que fueron modificados.",
+                              "description": "Archivos existentes modificados.",
                               "items": {
                                 "type": "string"
                               }
@@ -181,7 +181,7 @@
                     },
                     "source": {
                       "type": "string",
-                      "description": "Origen del disparador de la actualización.",
+                      "description": "El origen del activador de actualización.",
                       "enum": [
                         "internal",
                         "github-app-installation",
@@ -204,7 +204,7 @@
       "bearerAuth": {
         "type": "http",
         "scheme": "bearer",
-        "description": "El encabezado Authorization espera un token de tipo Bearer. Usa una clave de API de administrador (con el prefijo `mint_`). Esta es una clave secreta del lado del servidor. Genera una en la [página de claves de API](https://dashboard.mintlify.com/settings/organization/api-keys) de tu dashboard."
+        "description": "El encabezado Authorization requiere un token Bearer. Utiliza una clave de API de administrador (con el prefijo `mint_`). Esta es una clave secreta que debe permanecer en el servidor. Genera una en la [página de claves de API](https://dashboard.mintlify.com/settings/organization/api-keys) de tu panel de control."
       }
     }
   }

@@ -1,16 +1,16 @@
 ---
 title: "字段"
-description: "使用类型信息为 API 请求和响应的参数编写文档。"
-keywords: ["ParamField", "ResponseField", "request parameters", "response documentation"]
+description: "使用类型信息为 API 请求和响应参数编写文档。"
+keywords: ["参数字段", "响应字段", "请求参数", "响应文档"]
 ---
 
-使用字段为 API 的参数与响应编写文档。字段分为两类：参数字段和响应字段。
+使用字段为 API 的请求参数和响应编写文档。字段分为两种类型：参数字段和响应字段。
 
 <div id="parameter-field">
   ## 参数字段
 </div>
 
-`<ParamField>` 组件用于为你的 API 或 SDK 定义参数。添加一个 `ParamField` 将自动添加一个 [API 操作台](/zh/api-playground/overview)。
+`<ParamField>` 组件用于为你的 API 或 SDK 定义参数。添加一个 `ParamField` 会自动创建一个 [API Playground](/zh/api-playground/overview)。
 
 <ParamField path="param" type="string" required>
   参数字段示例
@@ -27,8 +27,7 @@ keywords: ["ParamField", "ResponseField", "request parameters", "response docume
 </div>
 
 <ParamField body="query, path, body, or header" type="string">
-  指定参数属于 query、path、body 或 header，后面跟随
-  参数名称。
+  参数是查询、路径、请求体还是请求头。后面紧跟参数名称。
 </ParamField>
 
 <ParamField body="type" type="string">
@@ -36,42 +35,42 @@ keywords: ["ParamField", "ResponseField", "request parameters", "response docume
 
   支持 `number`、`string`、`boolean`、`object`。
 
-  可使用 `[]` 后缀定义数组，例如 `string[]`。
+  可以通过在类型后添加 `[]` 后缀来定义数组。例如 `string[]`。
 </ParamField>
 
 <ParamField body="required" type="boolean">
-  指明该参数是否为必填。
+  表示该参数是否为必填。
 </ParamField>
 
 <ParamField body="deprecated" type="boolean">
-  指明该参数是否已废弃。
+  表示该参数是否已弃用。
 </ParamField>
 
 <ParamField body="default" type="any">
-  当请求的值为空时将使用的默认值。
+  当请求中的该值为空时所使用的默认值。
 </ParamField>
 
 <ParamField body="placeholder" type="string">
-  playground 中输入框的占位文本。
+  在 playground 中该输入字段显示的占位文本。
 </ParamField>
 
 <ParamField body="children" type="string">
-  参数说明（支持 Markdown）。
+  参数的描述（支持 Markdown）。
 </ParamField>
 
 <div id="response-field">
   ## 响应字段
 </div>
 
-`<ResponseField>` 组件用于定义 API 的返回值。
+`<ResponseField>` 组件定义了 API 的返回值。
 
 <ResponseField name="response" type="string" required>
-  响应字段示例
+  响应字段的示例
 </ResponseField>
 
 ```mdx
 <ResponseField name="response" type="string" required>
-  响应字段示例
+  A response field example
 </ResponseField>
 ```
 
@@ -84,7 +83,7 @@ keywords: ["ParamField", "ResponseField", "request parameters", "response docume
 </ResponseField>
 
 <ResponseField name="type" type="string" required>
-  响应值的期望类型。可以是任意字符串。
+  响应值的预期类型。可以是任意字符串。
 </ResponseField>
 
 <ResponseField name="default" type="string">
@@ -92,11 +91,11 @@ keywords: ["ParamField", "ResponseField", "request parameters", "response docume
 </ResponseField>
 
 <ResponseField name="required" type="boolean">
-  指示该响应是否为必填。
+  表示该响应是否为必填。
 </ResponseField>
 
 <ResponseField name="deprecated" type="boolean">
-  指示该字段是否已废弃。
+  表示字段是否已弃用。
 </ResponseField>
 
 <ResponseField name="pre" type="string[]">

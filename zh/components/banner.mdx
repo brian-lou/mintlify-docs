@@ -1,38 +1,38 @@
 ---
-title: "横幅"
-description: "添加横幅以显示全站重要公告和通知。"
-keywords: ["banner", "announcements", "site-wide"]
+title: "Banner 横幅"
+description: "添加一个横幅，用于显示全站范围内的重要公告和通知。"
+keywords: ["banner", "公告", "全站"]
 ---
 
-使用横幅在整个文档站点显示重要公告、更新或通知。横幅会显示在每个页面顶部，支持 Markdown 格式，并可设置为可关闭。横幅使用你的 `docs.json` 中 `colors.dark` 属性定义的颜色。
+使用横幅在整个文档站点中展示重要公告、更新或通知。横幅会显示在每个页面的顶部，支持 Markdown 格式，并且可以设置为可关闭。横幅会使用 `docs.json` 中 `colors.dark` 属性所定义的颜色。
 
-要添加横幅，请在你的 `docs.json` 中使用 `banner` 属性：
+要添加横幅，请在 `docs.json` 中使用 `banner` 属性：
 
 <CodeGroup>
   ```json Product announcements wrap
   "banner": {
-    "content": "🚀 2.0 版本现已上线！查看我们的[更新日志](/changelog)了解详情。",
+    "content": "🚀 Version 2.0 is now live! See our [changelog](/changelog) for details.",
     "dismissible": true 
   }
   ```
 
   ```json Maintenance notices wrap
   "banner": {
-    "content": "⚠️ 计划维护：API 将于 12 月 15 日 02:00–04:00（UTC）不可用",
+    "content": "⚠️ Scheduled maintenance: API will be unavailable December 15, 2-4 AM UTC",
     "dismissible": false
   }
   ```
 
   ```json Required actions wrap
   "banner": {
-    "content": "**需要操作：** 请在 1 月 1 日前迁移到我们的新版本。[迁移指南](/migration)",
+    "content": "**Action required:** Migrate to our new version by January 1. [Migration guide](/migration)",
     "dismissible": true
   }
   ```
 </CodeGroup>
 
 <Note>
-  你也可以通过在 `navigation.languages` 中设置 `banner` 来按语言配置横幅。参见[特定语言横幅](#language-specific-banners)。
+  你也可以通过在 `navigation.languages` 中设置 `banner` 来为不同语言分别配置横幅。参见[语言专属横幅](#language-specific-banners)。
 </Note>
 
 <div id="properties">
@@ -40,18 +40,18 @@ keywords: ["banner", "announcements", "site-wide"]
 </div>
 
 <ResponseField name="content" type="string" required>
-  横幅文案。支持纯文本和 Markdown 格式。
+  横幅信息。支持纯文本和 Markdown 格式。
 </ResponseField>
 
 <ResponseField name="dismissible" type="boolean">
-  是否允许用户关闭横幅。为 `true` 时，用户可将其关闭，且在当前会话内不会再次出现。默认值为 `false`。
+  用户是否可以关闭横幅。当为 `true` 时，用户可以关闭横幅，并且在其会话期间横幅不会再次出现。默认为 `false`。
 </ResponseField>
 
 <div id="language-specific-banners">
-  ## 语言特定横幅
+  ## 按语言配置横幅
 </div>
 
-在文档中为每种语言配置不同的横幅内容。在 `docs.json` 的 `navigation.languages` 数组中定义语言特定的横幅。
+在文档中为每种语言配置不同的横幅内容。在 `docs.json` 的 `navigation.languages` 数组中定义各语言对应的横幅。
 
 ```json
 {
@@ -94,10 +94,10 @@ keywords: ["banner", "announcements", "site-wide"]
 
 
 <div id="fallback-behavior">
-  ### 回退行为
+  ### 回退机制
 </div>
 
-横幅在确定要显示哪个内容时遵循以下优先顺序：
+在决定展示哪种内容时，横幅会遵循以下优先级顺序：
 
-1. **特定语言横幅**：如果当前语言有 `banner` 配置，则以该配置为准。
-2. **全局横幅**：如果不存在特定语言横幅，则显示全局 `banner`。
+1. **语言特定横幅**：如果当前语言配置了 `banner`，则优先生效。
+2. **全局横幅**：如果没有语言特定横幅，则显示全局 `banner`。

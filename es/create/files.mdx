@@ -1,24 +1,24 @@
 ---
 title: "Archivos"
-description: "Sirve activos estáticos desde tu documentación."
-keywords: ["activos estáticos", "tipos de archivo compatibles"]
+description: "Publica recursos estáticos desde tu documentación."
+keywords: ["static assets", "supported file types"]
 ---
 
-Mintlify sirve automáticamente activos estáticos desde tu repositorio de documentación en la ruta correspondiente de tu domain. Por ejemplo, si tienes `/images/my-logo.png` en tu repositorio, el archivo de imagen estará disponible en `https://docs.your-project.com/images/my-logo.png`.
+Mintlify publica automáticamente recursos estáticos desde el repositorio de tu documentación en la ruta correspondiente de tu dominio. Por ejemplo, si tienes `/images/my-logo.png` en tu repositorio, el archivo de imagen estará disponible en `https://docs.your-project.com/images/my-logo.png`.
 
-Puedes poner a disposición de tus usuarios cualquier tipo de archivo compatible, incluidas especificaciones OpenAPI, imágenes, vídeos y más.
+Puedes poner a disposición de tus usuarios cualquier tipo de archivo compatible, incluidas especificaciones OpenAPI, imágenes, videos y más.
 
-Los archivos deben ser menores de 20 MB para imágenes y 100 MB para otros tipos de archivo.
+Los archivos deben tener un tamaño inferior a 20 MB para las imágenes y 100 MB para otros tipos de archivo.
 
 <Note>
-La entrega de archivos no es compatible para sitios de documentación con la autenticación habilitada. Si tu sitio requiere autenticación, los archivos estáticos no serán accesibles en sus URL directas.
+No se admite la distribución de archivos para sitios de documentación con la autenticación habilitada. Si tu sitio requiere autenticación, los archivos estáticos no serán accesibles en sus URL directas.
 </Note>
 
 <div id="supported-file-types">
-  ## Tipos de archivo compatibles
+  ## Tipos de archivos compatibles
 </div>
 
-Tipos de archivo compatibles para todos los planes:
+Tipos de archivos compatibles para todos los planes:
 
 - **Imágenes**: `.png`, `.jpg`, `.jpeg`, `.gif`, `.webp`, `.svg`, `.ico`
 - **Vídeo**: `.mp4`, `.webm`
@@ -28,7 +28,7 @@ Tipos de archivo compatibles para todos los planes:
 - **Scripts**: `.js`
 - **Fuentes**: `.woff`, `.woff2`, `.ttf`, `.eot`
 
-Tipos de archivo compatibles para los planes Enterprise:
+Tipos de archivos compatibles para los planes Enterprise:
 
 - **Documentos**: `.pdf`, `.txt`
 - **Datos**: `.xml`, `.csv`
@@ -38,7 +38,7 @@ Tipos de archivo compatibles para los planes Enterprise:
   ## Organización de archivos
 </div>
 
-Organiza tus archivos en carpetas para que tu repositorio sea fácil de navegar:
+Organiza tus archivos usando carpetas para que tu repositorio sea fácil de navegar:
 
 ```text
 /your-project
@@ -52,4 +52,4 @@ Organiza tus archivos en carpetas para que tu repositorio sea fácil de navegar:
     |- demo-video.mp4
 ```
 
-Los archivos se sirven desde la raíz de tu domain, por lo que la estructura de tu repositorio se corresponde directamente con la estructura de la URL. En el ejemplo anterior, `assets/whitepaper.pdf` estaría disponible en `https://docs.your-project.com/assets/whitepaper.pdf`.
+Los archivos se sirven desde la raíz de tu dominio, por lo que la estructura de tu repositorio se corresponde directamente con la estructura de la URL. En el ejemplo anterior, `assets/whitepaper.pdf` estaría disponible en `https://docs.your-project.com/assets/whitepaper.pdf`.

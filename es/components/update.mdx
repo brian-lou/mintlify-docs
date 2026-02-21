@@ -1,28 +1,25 @@
 ---
 title: "Actualización"
-description: "Muestra actualizaciones de producto y entradas del cambios en un formato de línea de tiempo."
-keywords: ["cambios", "actualizaciones de producto", "notas de la versión"]
+description: "Muestra actualizaciones del producto y entradas del registro de cambios en un formato de línea de tiempo."
+keywords: ["registros de cambios", "actualizaciones del producto", "notas de versión"]
 ---
 
-Usa el componente `Update` para mostrar entradas del cambios, actualizaciones de versión y notas de la versión con un formato uniforme.
+Utiliza el componente `Update` para mostrar entradas del registro de cambios, actualizaciones de versión y notas de versión con un formato consistente.
 
 <Update label="Ejemplo" description="v0.1.1">
-  ## Ejemplo de actualización
+  ## Actualización de ejemplo
 
   Puedes añadir cualquier cosa aquí, como una captura de pantalla, un fragmento de código o una lista de cambios.
-  
+
   <Frame>
-    <img
-      className="block"
-      src="https://mintlify-assets.b-cdn.net/hero-light.png"
-      alt="Captura de pantalla de la página de introducción de PearsDB como ejemplo de una imagen en un componente Update."
-    />
+    <img className="block" src="https://mintlify-assets.b-cdn.net/hero-light.png" alt="Captura de pantalla de la página de introducción de PearsDB como ejemplo de una imagen dentro de un componente Update." />
   </Frame>
 
-  ### Novedades
-  - Diseño adaptable
-  - Ancla para cada actualización
-  - Entrada de RSS generada para cada actualización
+  ### Características
+
+  * Diseño adaptable
+  * Ancla para cada actualización
+  * Entrada de fuente RSS generada para cada actualización
 </Update>
 
 <div id="how-to-use">
@@ -35,19 +32,19 @@ Usa el componente `Update` para mostrar entradas del cambios, actualizaciones de
 </Update>
 ```
 
-Usa varios componentes `Update` para crear [cambios](/es/create/changelogs).
+Usa varios componentes `Update` para crear [changelogs](/es/create/changelogs).
 
-Los componentes `Update` generan automáticamente entradas en el canal RSS. Las entradas contienen únicamente Markdown puro: no se incluyen componentes, bloques de código, código en línea ni elementos HTML en bruto.
+Los componentes `Update` generan automáticamente entradas para la fuente RSS. Las entradas contienen solo Markdown puro: no se incluyen componentes, bloques de código, código en línea ni elementos HTML sin procesar.
 
-Si tu actualización incluye componentes o HTML, usa la prop `rss` para ofrecer un texto alternativo a los suscriptores de RSS.
+Si tu actualización incluye componentes o HTML, usa la propiedad `rss` para proporcionar texto alternativo a los suscriptores de RSS.
 
 ```mdx Custom RSS content
 <Update
   label="March 2025"
   description="v2.0.0"
   rss={{
-    title: "Marzo 2025 - Rediseño importante",
-    description: "Renovación completa de la interfaz con nuevos componentes"
+    title: "March 2025 - Major redesign",
+    description: "Complete UI overhaul with new components"
   }}
 >
   ## New dashboard
@@ -60,13 +57,12 @@ Si tu actualización incluye componentes o HTML, usa la prop `rss` para ofrecer 
 </Update>
 ```
 
-
 <div id="props">
   ## Props
 </div>
 
 <ResponseField name="label" type="string" required>
-  label de la actualización. Aparece a la izquierda de la actualización y crea un enlace ancla. Las labels deben ser únicas.
+  Etiqueta de la actualización. Aparece a la izquierda de la actualización y crea un enlace de ancla. Las etiquetas deben ser únicas.
 </ResponseField>
 
 <ResponseField name="tags" type="string[]">
@@ -74,16 +70,16 @@ Si tu actualización incluye componentes o HTML, usa la prop `rss` para ofrecer 
 </ResponseField>
 
 <ResponseField name="description" type="string">
-  Descripción de la actualización. Aparece debajo del label y las etiquetas.
+  Descripción de la actualización. Aparece debajo de la etiqueta y las etiquetas.
 </ResponseField>
 
 <ResponseField name="rss" type="object">
-  Los componentes de actualización generan automáticamente entradas del feed RSS. Usa la propiedad `rss` para crear una única entrada de feed RSS con un título y una descripción personalizados.
-  
+  Los componentes de actualización generan automáticamente entradas del feed RSS. Usa la propiedad `rss` para crear una sola entrada del feed RSS con un título y una descripción personalizados.
+
   Si no se especifica:
 
-  - Las actualizaciones con encabezados de Markdown crean una entrada de feed RSS separada por cada encabezado.
-  - Las actualizaciones sin encabezados de Markdown crean una única entrada de feed RSS usando el `label` como título.
+  * Las actualizaciones con encabezados de Markdown crean una entrada de feed RSS independiente para cada encabezado.
+  * Las actualizaciones sin encabezados de Markdown crean una sola entrada de feed RSS usando `label` como título.
 
   <Expandable title="propiedades">
     <ResponseField name="title" type="string">

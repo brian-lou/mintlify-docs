@@ -1,20 +1,20 @@
 ---
-title: "Accordions"
-description: "Usa Accordions para mostrar y ocultar contenido."
-keywords: ["accordions", "collapsible content", "expandable sections", "progressive disclosure"]
+title: "Acordeones"
+description: "Utiliza acordeones para mostrar y ocultar contenido."
+keywords: ["acordeones", "contenido plegable", "secciones expandibles", "revelación progresiva"]
 ---
 
 import IconsOptional from "/snippets/es/icons-optional.mdx";
 
-Accordion permite a los usuarios expandir y contraer secciones de contenido. Usa Accordion para la revelación progresiva y para organizar la información.
+Los acordeones permiten a los usuarios expandir y contraer secciones de contenido. Usa acordeones para mostrar información de forma progresiva y para organizarla.
 
 
 <div id="single-accordion">
-  ## Accordion individual
+  ## Acordeón individual
 </div>
 
-<Accordion title="Soy un Accordion.">
-  Puedes poner cualquier contenido aquí, incluidos otros componentes, como código:
+<Accordion title="Soy un acordeón.">
+  Puedes poner cualquier tipo de contenido aquí, incluidos otros componentes, como código:
 
   ```java HelloWorld.java
    class HelloWorld {
@@ -26,28 +26,29 @@ Accordion permite a los usuarios expandir y contraer secciones de contenido. Usa
 </Accordion>
 
 ````mdx Accordion example
-<Accordion title="Soy un Accordion.">
+<Accordion title="Soy un Acordeón.">
   Puedes poner cualquier contenido aquí, incluyendo otros componentes, como código:
 
    ```java HelloWorld.java
     class HelloWorld {
         public static void main(String[] args) {
-            System.out.println("¡Hola, Mundo!");
+            System.out.println("Hello, World!");
         }
     }
   ```
 </Accordion>
 ````
 
+
 <div id="accordion-groups">
-  ## Grupos de Accordion
+  ## Grupos de acordeones
 </div>
 
-Agrupa acordeones relacionados usando `<AccordionGroup>`. Esto crea una sección coherente de acordeones que se pueden expandir o contraer individualmente.
+Agrupa los acordeones relacionados usando `<AccordionGroup>`. Esto crea una sección coherente de acordeones que se pueden expandir o contraer individualmente.
 
 <AccordionGroup>
   <Accordion title="Primeros pasos">
-    Puedes incluir otros componentes dentro de los Accordion.
+    Puedes colocar otros componentes dentro de los acordeones.
 
     ```java HelloWorld.java
     class HelloWorld {
@@ -59,7 +60,7 @@ Agrupa acordeones relacionados usando `<AccordionGroup>`. Esto crea una sección
   </Accordion>
 
   <Accordion title="Funciones avanzadas" icon="bot">
-    Añade iconos para que los acordeones sean más distintivos visualmente y fáciles de recorrer de un vistazo.
+    Agrega iconos para hacer que los acordeones sean más distintivos visualmente y fáciles de recorrer con la vista.
   </Accordion>
 
   <Accordion title="Solución de problemas">
@@ -69,27 +70,28 @@ Agrupa acordeones relacionados usando `<AccordionGroup>`. Esto crea una sección
 
 ````mdx Accordion Group Example
 <AccordionGroup>
-  <Accordion title="Primeros pasos">
-    Puedes incluir otros componentes dentro de los Accordion.
+  <Accordion title="Getting started">
+    You can put other components inside Accordions.
 
     ```java HelloWorld.java
     class HelloWorld {
         public static void main(String[] args) {
-            System.out.println("¡Hola, Mundo!");
+            System.out.println("Hello, World!");
         }
     }
     ```
   </Accordion>
 
-  <Accordion title="Funciones avanzadas" icon="alien-8bit">
-    Añade iconos para hacer que los accordion sean más distintivos visualmente y fáciles de revisar.
+  <Accordion title="Advanced features" icon="alien-8bit">
+    Add icons to make accordions more visually distinct and scannable.
   </Accordion>
 
-  <Accordion title="Solución de problemas">
-    Mantén el contenido relacionado organizado en grupos.
+  <Accordion title="Troubleshooting">
+    Keep related content organized into groups.
   </Accordion>
 </AccordionGroup>
 ````
+
 
 <div id="properties">
   ## Propiedades
@@ -100,11 +102,11 @@ Agrupa acordeones relacionados usando `<AccordionGroup>`. Esto crea una sección
 </ResponseField>
 
 <ResponseField name="description" type="string">
-  Detalle debajo del título en la vista previa del Accordion.
+  Detalle que aparece debajo del título en la vista previa del Accordion.
 </ResponseField>
 
 <ResponseField name="defaultOpen" type="boolean" default="false">
-  Indica si el Accordion se abre de forma predeterminada.
+  Indica si el Accordion está abierto de forma predeterminada.
 </ResponseField>
 
 <IconsOptional />

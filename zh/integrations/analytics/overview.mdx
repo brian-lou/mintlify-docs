@@ -1,19 +1,19 @@
 ---
-title: "Analytics 集成"
-description: "连接 Analytics 平台以跟踪用户互动和文档使用情况。"
+title: "分析集成"
+description: "连接分析平台以跟踪用户参与度和文档使用情况。"
 keywords: ["third-party analytics", "engagement tracking", "analytics platforms", "usage tracking"]
 ---
 
-通过连接第三方 Analytics 平台来跟踪用户如何与你的文档交互。Mintlify 会将互动事件发送到你已配置的 Analytics 提供商。
+通过连接第三方分析平台，跟踪用户如何与您的文档交互。Mintlify 会将用户参与事件发送到您配置的分析服务提供商。
 
 <div id="how-analytic-integrations-work">
-  ## Analytics 集成的工作原理
+  ## 分析集成的工作原理
 </div>
 
-当你将 Analytics 集成添加到文档站点时，Mintlify 会跟踪页面浏览、搜索查询、API 操作台请求和反馈提交等用户交互，并将这些数据发送到你的分析服务提供方。你可以通过在 `docs.json` 文件中添加 API key 来连接任意数量的已支持 Analytics 提供方。一旦你在配置中添加了这些服务，Analytics 事件就会开始流向相应的提供方，无需任何额外配置。
+当你在文档站点中添加分析集成时，Mintlify 会跟踪用户交互，例如页面浏览、搜索查询、API playground 请求和反馈提交，并将它们发送到你的分析服务提供商。你可以在 `docs.json` 文件中添加你的 API 密钥，以连接任意数量的受支持分析服务提供商。一旦你在配置中添加了它们，分析事件就会立即开始发送到这些服务提供商，无需任何额外配置。
 
 <div id="supported-platforms">
-  ## 支持的平台
+  ## 支持平台
 </div>
 
 <CardGroup cols={2}>
@@ -47,7 +47,7 @@ xmlns="http://www.w3.org/2000/svg"
   />
 
   <Card
-    title="清晰度"
+    title="Clarity"
     href="/zh/integrations/analytics/clarity"
     horizontal
     icon={
@@ -555,10 +555,10 @@ clip-rule="evenodd"
   ## 设置
 </div>
 
-将你的 analytics 提供商凭据添加到 `docs.json` 的 `integrations` 对象中。只需包含你想要使用的平台即可。
+将分析服务提供商的凭据添加到 `docs.json` 文件中的 `integrations` 对象中。只需包含你打算使用的平台。
 
 <Note>
-  Analytics 集成只需要公共 API key，这些 key 对任何查看你文档站点的人都是可见的。在 analytics 提供商端与这些公共 key 配对的私有 API key 必须严格保密。不要在 `docs.json` 中包含私有 API key。
+  分析集成只需要公共 API 密钥，任何访问你的文档站点的人都可以看到这些密钥。与你的公共密钥在分析服务提供商端配对使用的私有 API 密钥必须严格保密。不要在 `docs.json` 中包含私有 API 密钥。
 </Note>
 
 ```json docs.json
@@ -587,7 +587,7 @@ clip-rule="evenodd"
     },
     "hightouch": {
         "apiKey": "required",
-        "apiHost": "可选"
+        "apiHost": "optional"
     },
     "hotjar": {
         "hjid": "required",
@@ -607,7 +607,7 @@ clip-rule="evenodd"
     },
     "posthog": {
         "apiKey": "required",
-        "apiHost": "可选"
+        "apiHost": "optional"
     },
     "segment": {
       "key": "required"
@@ -617,7 +617,6 @@ clip-rule="evenodd"
     }
 }
 ```
-
 
 <div id="example-configuration">
   ### 示例配置
@@ -644,68 +643,68 @@ clip-rule="evenodd"
   ## 跟踪事件
 </div>
 
-所有事件都使用 `docs.` 前缀。
+所有被跟踪的事件都使用 `docs.` 作为前缀。
 
 <div id="navigation-and-page-views">
-  ### 导航与页面浏览
+  ### 导航和页面浏览
 </div>
 
-| Event name                              | Description                                                                                               |
+| 事件名称                              | 描述                                                                                               |
 | :-------------------------------------- | :-------------------------------------------------------------------------------------------------------- |
-| `docs.content.view`                     | 当用户查看页面时。仅适用于默认不跟踪页面浏览次数的 Analytics 提供商。 |
-| `docs.content.md.view`                  | 当用户查看页面的 Markdown 版本时。                                                          |
-| `docs.navitem.click`                    | 当用户点击页眉导航项时。                                                              |
-| `docs.navitem.cta_click`                | 当用户点击某个行动呼吁（CTA）时。                                                                      |
-| `docs.footer.powered_by_mintlify_click` | 当用户点击“Powered by Mintlify”链接时。                                                        |
+| `docs.content.view`                     | 用户查看页面。仅发送给默认不会跟踪页面浏览的服务提供商。 |
+| `docs.content.md.view`                  | 用户查看页面的 Markdown 版本。                                                          |
+| `docs.navitem.click`                    | 用户点击顶部导航项。                                                              |
+| `docs.navitem.cta_click`                | 用户点击行动号召按钮。                                                                      |
+| `docs.footer.powered_by_mintlify_click` | 用户点击“Powered by Mintlify”链接。                                                        |
 
 <div id="search">
   ### 搜索
 </div>
 
-| Event name                              | Description                                                                                               |
+| 事件名称                                | 说明                                                                                                     |
 | :-------------------------------------- | :-------------------------------------------------------------------------------------------------------- |
-| `docs.search.query`                     | 当用户发起搜索查询时。                                                                                |
-| `docs.search.close`                     | 当用户关闭搜索栏时。                                                                                      |
-| `docs.search.result_click`              | 当用户点击某个搜索结果时。                                                                                |
+| `docs.search.query`                     | 用户发起搜索。                                                                                            |
+| `docs.search.close`                     | 用户关闭搜索框。                                                                                          |
+| `docs.search.result_click`              | 用户点击搜索结果。                                                                                        |
 
 <div id="code-and-api-playground">
-  ### 代码和 API 操作台
+  ### 代码和 API 体验区
 </div>
 
 | Event name                              | Description                                                                                               |
 | :-------------------------------------- | :-------------------------------------------------------------------------------------------------------- |
-| `docs.code_block.copy`                  | 当用户从代码块中复制代码时。                                                                              |
-| `docs.code_block.ask_ai`                | 当用户请求 AI 助手解释代码块时。                                                                          |
-| `docs.api_playground.request`           | 当用户在 API 操作台中调用 API 时。                                                                        |
+| `docs.code_block.copy`                  | 用户从代码块中复制代码。                                                                |
+| `docs.code_block.ask_ai`                | 用户请求助手解释某个代码块。                                                   |
+| `docs.api_playground.request`           | 用户在 API 体验区中发送 API 请求。                                                           |
 
 <div id="interactive-components">
-  ### 交互组件
+  ### 互动组件
 </div>
 
-| Event name                              | Description                                                                                               |
+| 事件名称                              | 描述                                                                                               |
 | :-------------------------------------- | :-------------------------------------------------------------------------------------------------------- |
-| `docs.accordion.open`                   | 用户打开折叠面板。                                                                                         |
-| `docs.accordion.close`                  | 用户关闭折叠面板。                                                                                         |
-| `docs.expandable.open`                  | 用户打开可展开区域。                                                                                       |
-| `docs.expandable.close`                 | 用户关闭可展开区域。                                                                                       |
+| `docs.accordion.open`                   | 用户打开折叠面板。                                                                           |
+| `docs.accordion.close`                  | 用户关闭折叠面板。                                                                          |
+| `docs.expandable.open`                  | 用户打开可展开组件。                                                                          |
+| `docs.expandable.close`                 | 用户关闭可展开组件。                                                                         |
 
 <div id="assistant-and-agent">
-  ### AI 助手和 Agent
+  ### 助手和代理
 </div>
 
 | Event name                              | Description                                                                                               |
 | :-------------------------------------- | :-------------------------------------------------------------------------------------------------------- |
-| `docs.assistant.enter`                  | 当用户打开 AI 助手时。                                                                                    |
-| `docs.assistant.completed`              | 当一次对话结束时。                                                                                        |
-| `docs.assistant.source_click`           | 当用户在对话中点击引用时。                                                                                |
-| `docs.assistant.suggestion_click`       | 当用户在对话中点击建议时。                                                                                |
-| `docs.assistant.ask_ai_on_text_selection` | 当用户选择文本并点击“Ask AI”来询问该选区时。                                                            |
-| `docs.assistant.shared`                 | 当用户分享一次对话时。                                                                                    |
-| `docs.assistant.thumbs_up`              | 当用户在助手回复上点击正向反馈按钮时。                                                                    |
-| `docs.assistant.thumbs_down`            | 当用户在助手回复上点击负向反馈按钮时。                                                                    |
-| `docs.assistant.spam_detected`          | 当助手在用户消息中检测到垃圾信息时。                                                                      |
-| `docs.autopilot.suggestion.created`     | 当 Agent 创建文档建议时。                                                                                 |
-| `docs.autopilot.suggestion.no_suggestion` | 当 Agent 判定不需要更新文档时。                                                                         |
+| `docs.assistant.enter`                  | 用户打开 AI 助手。                                                                             |
+| `docs.assistant.completed`              | 聊天会话结束。                                                                         |
+| `docs.assistant.source_click`           | 用户点击聊天回复中的引用来源。                                                                  |
+| `docs.assistant.suggestion_click`       | 用户点击推荐问题。                                                                |
+| `docs.assistant.ask_ai_on_text_selection` | 用户选中文本并点击“Ask AI”。                                |
+| `docs.assistant.shared`                 | 用户分享一段聊天对话。                                                                   |
+| `docs.assistant.thumbs_up`              | 用户在助手的回复上点击正向反馈按钮。                                 |
+| `docs.assistant.thumbs_down`            | 用户在助手的回复上点击负向反馈按钮。                                 |
+| `docs.assistant.spam_detected`          | 助手在用户消息中检测到垃圾信息。                                                        |
+| `docs.autopilot.suggestion.created`     | 代理创建一条文档更新建议。                                                        |
+| `docs.autopilot.suggestion.no_suggestion` | 代理判定不需要更新文档。                                            |
 
 <div id="contextual-menu">
   ### 上下文菜单
@@ -713,7 +712,7 @@ clip-rule="evenodd"
 
 | Event name                              | Description                                                                                               |
 | :-------------------------------------- | :-------------------------------------------------------------------------------------------------------- |
-| `docs.context_menu.copy_page`           | 当用户将当前页面复制为 Markdown 时。                                                                      |
-| `docs.context_menu.copy_mcp_link`       | 当用户复制托管 MCP 服务器链接时。                                                                         |
-| `docs.context_menu.ai_provider_click`   | 当用户点击某个 AI 提供商，并以当前页面作为上下文创建对话时。                                             |
-| `docs.context_menu.install_mcp_server`  | 当用户在代码编辑器上安装托管 MCP 服务器时。                                                               |
+| `docs.context_menu.copy_page`           | 用户将当前页面复制为 Markdown 格式。                                                          |
+| `docs.context_menu.copy_mcp_link`       | 用户复制托管的 MCP server 链接。                                                            |
+| `docs.context_menu.ai_provider_click`   | 用户点击某个 AI 提供商，以当前页面作为上下文创建一次对话。                 |
+| `docs.context_menu.install_mcp_server`  | 用户在代码编辑器中安装托管的 MCP server。                                               |

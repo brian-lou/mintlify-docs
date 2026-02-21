@@ -1,28 +1,30 @@
 ---
-title: "自定义 Agent 行为"
-description: "使用 AGENTS.md 配置 Agent 如何处理文档相关任务。"
-keywords: ["AGENTS.md", "Agent 配置", "自定义说明", "Agent 自定义"]
+title: "自定义 agent 行为"
+description: "通过 AGENTS.md 配置 agent 处理文档任务的方式。"
+keywords: ["AGENTS.md", "agent 配置", "自定义指令", "agent 自定义"]
 ---
 
-在你的存储库中创建一个 `AGENTS.md` 文件来自定义 Agent 的行为（`Agents.md` 也同样有效）。Agent 会读取此文件并遵循你提供的所有指令。
+在你的仓库中创建一个 `AGENTS.md` 文件来自定义 agent 的行为（文件名 `Agents.md` 也可以）。agent 会读取此文件并遵循你提供的所有指令。
 
-Agent 会在两个位置搜索 `AGENTS.md` 文件。它会先检查文档目录，然后检查存储库根目录。如果这两个位置都有 `AGENTS.md` 文件，Agent 将使用文档目录中的那个。
+或者使用 `CLAUDE.md`。
 
-添加你希望 Agent 遵循的任何指令。Agent 会将这些指令追加到它的 system prompt（系统提示词）中，因此这些指令会应用于所有任务，无论你是在控制台中、在 Slack 上，还是通过 API 使用 Agent。
+agent 会在两个位置搜索 `AGENTS.md` 文件。它首先检查文档目录，然后检查仓库根目录。如果这两个位置都有 `AGENTS.md` 文件，agent 会使用文档目录中的那个文件。
+
+将你希望 agent 遵循的任何指令添加到该文件中。agent 会把这些指令追加到它的 system prompt 中，因此这些指令会应用于所有任务，无论你是在仪表板中、在 Slack 上，还是通过 API 使用 agent。
 
 <div id="what-to-include-in-agentsmd">
-  ## 在 AGENTS.md 中应包含的内容
+  ## AGENTS.md 中应包含的内容
 </div>
 
-可以考虑添加以下说明：
+可以考虑添加以下指引：
 
-- **风格偏好**：与你的文档相关的文风、语气、格式和术语。
-- **代码规范**：在示例中使用的编程语言、框架和编码约定。
-- **内容要求**：针对不同类型页面应包含哪些部分或信息。
-- **项目背景**：与你的产品、架构或用户群体相关的具体细节，用于制定文档相关决策。
+- **风格偏好**：与文档相关的语气、风格、格式和术语等偏好。
+- **代码规范**：示例中应使用的编程语言、框架和编码约定。
+- **内容要求**：不同类型页面需要包含哪些部分或信息。
+- **项目背景**：会影响文档决策的产品、架构或用户群体等具体细节。
 
 <div id="example-agentsmd-file">
-  ## AGENTS.md 文件示例
+  ## AGENTS.md 示例文件
 </div>
 
 ```markdown AGENTS.md
