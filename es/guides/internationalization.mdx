@@ -1,20 +1,20 @@
 ---
 title: "Internacionalización"
-description: "Configura documentación multilingüe para llegar a audiencias de todo el mundo."
+description: "Configura documentación multilingüe para llegar a audiencias globales."
 keywords: ["internationalization", "i18n", "multi-language", "translations", "localization", "language switcher"]
 ---
 
-La internacionalización (i18n) es el proceso de diseñar software o contenido para que funcione en distintos idiomas y configuraciones regionales. Esta guía explica cómo estructurar archivos, configurar la navegación y mantener las traducciones de forma eficiente, para que puedas ayudar a los usuarios a acceder a tu documentación en su idioma preferido y mejorar tu alcance global.
+La internacionalización (i18n) es el proceso de diseñar software o contenido para que sea compatible con diferentes idiomas y configuraciones regionales. Esta guía explica cómo estructurar archivos, configurar la navegación y mantener las traducciones de forma efectiva, para que puedas ayudar a los usuarios a acceder a tu documentación en su idioma preferido y mejorar tu alcance global.
 
 <div id="file-structure">
   ## Estructura de archivos
 </div>
 
-Organiza el contenido traducido en directorios específicos por idioma para mantener tu documentación organizada y estructurar la navigation por idioma.
+Organiza el contenido traducido en directorios específicos por idioma para mantener tu documentación fácil de mantener y estructurar la navegación por idioma.
 
-Crea un directorio separado para cada idioma usando los [códigos de idioma ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). Coloca los archivos traducidos en estos directorios con la misma estructura que tu idioma predeterminado.
+Crea un directorio independiente para cada idioma usando los [códigos de idioma ISO 639-1](https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes). Coloca los archivos traducidos en estos directorios con la misma estructura que en tu idioma predeterminado.
 
-<Expandable title="códigos de idioma compatibles">
+<Expandable title="códigos de idioma admitidos">
   * `ar` - árabe
   * `cs` - checo
   * `cn` o `zh-Hans` - chino (simplificado)
@@ -59,7 +59,7 @@ docs/
 ```
 
 <Tip>
-  Mantén los mismos nombres de archivo y la misma estructura de directorios en todos los idiomas. Esto facilita el mantenimiento de las traducciones y la identificación del contenido faltante.
+  Mantén los mismos nombres de archivo y la misma estructura de directorios en todos los idiomas. Esto facilita mantener las traducciones y detectar contenido faltante.
 </Tip>
 
 
@@ -67,7 +67,7 @@ docs/
   ## Configurar el selector de idioma
 </div>
 
-Para añadir un selector de idioma a tu documentación, configura el array `languages` en la propiedad `navigation` de tu `docs.json`.
+Para agregar un selector de idioma a tu documentación, configura el array `languages` en la navegación de tu `docs.json`.
 
 ```json docs.json
 {
@@ -77,7 +77,7 @@ Para añadir un selector de idioma a tu documentación, configura el array `lang
         "language": "en",
         "groups": [
           {
-            "group": "Primeros pasos",
+            "group": "Getting started",
             "pages": ["index", "quickstart"]
           }
         ]
@@ -96,20 +96,20 @@ Para añadir un selector de idioma a tu documentación, configura el array `lang
 }
 ```
 
-Cada entrada de idioma en el array `languages` requiere:
+Cada entrada de idioma en la matriz `languages` requiere:
 
 * `language`: código de idioma ISO 639-1
-* Estructura completa de navigation
+* Estructura de navegación completa
 * Rutas de los archivos traducidos
 
-La estructura de navigation puede diferir entre idiomas para adaptarse a las necesidades de contenido específicas de cada idioma.
+La estructura de navegación puede variar entre idiomas para adaptarse a las necesidades de contenido específicas de cada uno.
 
 
 <div id="set-default-language">
   ### Establecer el idioma predeterminado
 </div>
 
-El primer idioma del arreglo `languages` se usa automáticamente como idioma predeterminado. Para establecer otro idioma como predeterminado, reordena el arreglo o agrega la propiedad `default`:
+El primer idioma en el array `languages` se usa automáticamente como idioma predeterminado. Para usar un idioma diferente como predeterminado, reordena el array o agrega la propiedad `default`:
 
 ```json docs.json
 {
@@ -128,7 +128,7 @@ El primer idioma del arreglo `languages` se usa automáticamente como idioma pre
 }
 ```
 
-Alternativamente, usa la propiedad `default` para modificar el orden:
+Como alternativa, usa la propiedad `default` para sobrescribir el orden:
 
 ```json docs.json
 {
@@ -153,17 +153,17 @@ Alternativamente, usa la propiedad `default` para modificar el orden:
   ### Documentación en un solo idioma
 </div>
 
-Si solo quieres tener un único idioma disponible sin un selector de idioma, elimina el campo `languages` de tu configuración de navigation. En su lugar, define directamente tu estructura de navigation:
+Si solo quieres tener un idioma disponible y no necesitas un selector de idioma, elimina el campo `languages` de tu configuración de navegación. Luego define directamente tu estructura de navegación:
 
 ```json docs.json
 {
   "navigation": {
     "tabs": [
       {
-        "tab": "Documentación",
+        "tab": "Documentation",
         "groups": [
           {
-            "group": "Primeros pasos",
+            "group": "Getting started",
             "pages": ["index", "quickstart"]
           }
         ]
@@ -173,10 +173,10 @@ Si solo quieres tener un único idioma disponible sin un selector de idioma, eli
 }
 ```
 
-Esto muestra la documentación en un solo idioma sin la interfaz de usuario del selector de idioma.
+Esto muestra la documentación en un solo idioma, sin el conmutador de idioma en la interfaz.
 
 <Tip>
-  Traduce las etiquetas de navegación, como los nombres de grupos o Tabs, para que coincidan con el idioma del contenido. Esto crea una experiencia completamente localizada para tus usuarios.
+  Traduce las etiquetas de navegación, como los nombres de grupos o pestañas, para que estén en el mismo idioma que el contenido. Esto crea una experiencia completamente localizada para tus usuarios.
 </Tip>
 
 
@@ -184,7 +184,7 @@ Esto muestra la documentación en un solo idioma sin la interfaz de usuario del 
   ### Navegación global
 </div>
 
-Para añadir elementos de navegación global que aparezcan en todos los idiomas, configura el objeto `global` dentro de la `navigation` de tu `docs.json`.
+Para añadir elementos de navegación global que sean visibles en todos los idiomas, configura el objeto `global` en la navegación de `docs.json`.
 
 ```json docs.json
 {
@@ -192,7 +192,7 @@ Para añadir elementos de navegación global que aparezcan en todos los idiomas,
     "global": {
       "anchors": [
         {
-          "anchor": "Documentación",
+          "anchor": "Documentation",
           "href": "https://example.com/docs"
         },
         {
@@ -202,7 +202,7 @@ Para añadir elementos de navegación global que aparezcan en todos los idiomas,
       ]
     },
     "languages": [
-      // Language-specific navigation
+      // Navegación específica por idioma
     ]
   }
 }
@@ -210,33 +210,33 @@ Para añadir elementos de navegación global que aparezcan en todos los idiomas,
 
 
 <div id="maintain-translations">
-  ## Mantén las traducciones
+  ## Mantén actualizadas las traducciones
 </div>
 
-Mantén las traducciones precisas y sincronizadas con tu contenido original.
+Mantén tus traducciones precisas y sincronizadas con tu contenido fuente.
 
 <div id="translation-workflow">
   ### Flujo de trabajo de traducción
 </div>
 
-1. Actualiza el contenido original en tu idioma principal.
-2. Identifica el contenido modificado.
-3. Traduce el contenido modificado.
+1. Actualiza el contenido fuente en tu idioma principal.
+2. Identifica el contenido que haya cambiado.
+3. Traduce el contenido cambiado.
 4. Revisa las traducciones para comprobar su precisión.
 5. Actualiza los archivos traducidos.
-6. Verifica que la navegación y los enlaces funcionen.
+6. Verifica que la navegación y los enlaces funcionen correctamente.
 
 <div id="automated-translations">
-  ### Traducciones automatizadas
+  ### Traducciones automáticas
 </div>
 
 Para soluciones de traducción automática, [ponte en contacto con el equipo de ventas de Mintlify](mailto:gtm@mintlify.com).
 
 <div id="images-and-media">
-  ### Imágenes y recursos multimedia
+  ### Imágenes y medios
 </div>
 
-Guarda las imágenes traducidas en directorios específicos para cada idioma.
+Almacena las imágenes traducidas en directorios específicos para cada idioma.
 
 ```
 images/
@@ -247,10 +247,10 @@ images/
     └── dashboard.png     # Versión en español
 ```
 
-Referencia las imágenes usando rutas relativas en tu contenido traducido.
+Utiliza rutas relativas para las imágenes en tu contenido traducido.
 
 ```mdx es/index.mdx
-![Captura de pantalla del dashboard](/images/es/dashboard.png)
+![Captura de pantalla del panel de control](/images/es/dashboard.png)
 ```
 
 
@@ -261,22 +261,22 @@ Referencia las imágenes usando rutas relativas en tu contenido traducido.
 Optimiza cada versión en cada idioma para los motores de búsqueda.
 
 <div id="page-metadata">
-  ### Metadata de la página
+  ### Metadatos de página
 </div>
 
-Incluye la metadata traducida en el frontmatter de cada archivo:
+Incluye los metadatos traducidos en el frontmatter de cada archivo:
 
 ```mdx fr/index.mdx
 ---
-title: "Comenzar"
-description: "Aprenda a comenzar con nuestro producto."
-keywords: ["inicio", "tutorial", "guía"]
+title: "Commencer"
+description: "Apprenez à commencer avec notre produit."
+keywords: ["démarrage", "tutoriel", "guide"]
 ---
 ```
 
 
 <div id="best-practices">
-  ## Mejores prácticas
+  ## Buenas prácticas
 </div>
 
 <div id="date-and-number-formats">
@@ -289,31 +289,31 @@ Ten en cuenta los formatos específicos de cada región para fechas y números.
 - Formatos numéricos: 1,000.00 vs 1.000,00
 - Símbolos de moneda: $100.00 vs 100,00€
 
-Incluye ejemplos en el formato apropiado para cada idioma o utiliza formatos universalmente comprensibles.
+Incluye ejemplos en el formato adecuado para cada idioma o utiliza formatos universalmente entendidos.
 
 <div id="maintain-consistency">
-  ### Mantén la consistencia
+  ### Mantén la coherencia
 </div>
 
-- Mantén el mismo contenido en todos los idiomas para garantizar que cada usuario reciba la misma calidad de información.
-- Crea un glosario de traducción para los términos técnicos.
+- Mantén la equivalencia del contenido en todos los idiomas para asegurarte de que cada usuario reciba la misma calidad de información.
+- Crea un glosario de términos técnicos para la traducción.
 - Conserva la misma estructura de contenido en todos los idiomas.
-- Haz que el tono y el estilo coincidan con los de tu contenido original.
-- Usa branches de Git para gestionar el trabajo de traducción por separado de las actualizaciones del contenido principal.
+- Alinea el tono y el estilo con tu contenido original.
+- Usa ramas de Git para gestionar el trabajo de traducción por separado de las actualizaciones del contenido principal.
 
 <div id="layout-differences">
   ### Diferencias de diseño
 </div>
 
-Algunos idiomas requieren más o menos espacio que el inglés. Prueba tu contenido traducido en diferentes tamaños de pantalla para asegurarte de que:
+Algunos idiomas requieren más o menos espacio que el inglés. Prueba tu contenido traducido en distintos tamaños de pantalla para comprobar que:
 
-- La navegación quepa correctamente.
+- La navegación se ajuste correctamente.
 - Los bloques de código no se desborden.
 - Las tablas y otros textos con formato sigan siendo legibles.
-- Las imágenes se escalen adecuadamente.
+- Las imágenes se redimensionen de forma adecuada.
 
 <div id="character-encoding">
   ### Codificación de caracteres
 </div>
 
-Asegúrate de que tanto tu entorno de desarrollo como tu pipeline de implementación sean compatibles con la codificación UTF-8 para mostrar correctamente todos los caracteres de idiomas con alfabetos distintos y caracteres especiales.
+Asegúrate de que tu entorno de desarrollo y tu canal de despliegue sean compatibles con la codificación UTF-8 para mostrar correctamente todos los caracteres en idiomas que usan alfabetos distintos y caracteres especiales.

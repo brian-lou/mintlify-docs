@@ -2,7 +2,7 @@
   "openapi": "3.0.1",
   "info": {
     "title": "Mintlify Admin API",
-    "description": "Une API pour les opérations administratives, y compris les mises à jour de la documentation et la gestion des agents.",
+    "description": "Une API pour les opérations d’administration, y compris la mise à jour de la documentation et la gestion des agents.",
     "version": "1.0.0"
   },
   "servers": [
@@ -19,7 +19,7 @@
     "/agent/{projectId}/job": {
       "post": {
         "summary": "Créer une tâche d’agent",
-        "description": "Crée un nouveau job d’agent qui peut générer et modifier la documentation à partir des messages fournis et des informations sur la branche.",
+        "description": "Crée une nouvelle tâche d’agent qui peut générer et modifier la documentation à partir des messages fournis et des informations de branche.",
         "parameters": [
           {
             "name": "projectId",
@@ -28,7 +28,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "Votre ID de projet. Vous pouvez le copier à partir de la page [API keys](https://dashboard.mintlify.com/settings/organization/api-keys) de votre Dashboard."
+            "description": "Votre ID de projet. Vous pouvez le copier depuis la page [Clés API](https://dashboard.mintlify.com/settings/organization/api-keys) de votre tableau de bord."
           }
         ],
         "requestBody": {
@@ -44,11 +44,11 @@
                 "properties": {
                   "branch": {
                     "type": "string",
-                    "description": "Le nom de la branche Git sur laquelle l’agent doit travailler (la branche sera automatiquement créée si elle n’existe pas)"
+                    "description": "Le nom de la branche Git sur laquelle l’agent doit travailler, qui sera créée automatiquement si elle n’existe pas."
                   },
                   "messages": {
                     "type": "array",
-                    "description": "Une liste de messages à fournir à l’agent. Une invite système par défaut est toujours automatiquement ajoutée en premier, vous n’avez donc généralement besoin d’inclure que les messages utilisateur.",
+                    "description": "Une liste de messages à transmettre à l’agent. Une invite système par défaut est toujours automatiquement ajoutée au début, vous n’avez donc généralement besoin d’inclure que les messages utilisateur.",
                     "items": {
                       "type": "object",
                       "required": [
@@ -62,7 +62,7 @@
                             "system",
                             "user"
                           ],
-                          "description": "Le rôle de l’expéditeur du message. Utilisez `user` pour les instructions de la tâche. Utilisez `system` pour ajouter des instructions supplémentaires qui seront ajoutées après l’invite système par défaut (sans la remplacer)."
+                          "description": "Le rôle de l’émetteur du message. Utilisez `user` pour les instructions de tâche. Utilisez `system` pour ajouter des instructions supplémentaires qui sont ajoutées après l’invite système par défaut (celle-ci n’est pas remplacée)."
                         },
                         "content": {
                           "type": "string",
@@ -74,7 +74,7 @@
                   "asDraft": {
                     "type": "boolean",
                     "default": true,
-                    "description": "Détermine si la pull request (demande de fusion) est créée en mode brouillon ou en mode non brouillon. Si la valeur est true, une pull request brouillon est créée. Si la valeur est false, une pull request classique (non brouillon) prête pour relecture est créée."
+                    "description": "Indique si la pull request est créée en mode brouillon ou non. Lorsque la valeur est true, une pull request en brouillon est créée. Lorsque la valeur est false, une pull request classique (non brouillon), prête pour révision, est créée."
                   },
                   "model": {
                     "type": "string",
@@ -83,7 +83,7 @@
                       "opus"
                     ],
                     "default": "sonnet",
-                    "description": "Le modèle d’IA à utiliser pour la tâche de l’agent. Utilisez `sonnet` pour un traitement plus rapide et économique. Utilisez `opus` pour un traitement plus puissant, mais plus lent."
+                    "description": "Le modèle d’IA à utiliser pour la tâche de l’agent. Utilisez `sonnet` pour un traitement plus rapide et économique. Utilisez `opus` pour un traitement plus performant, mais plus lent."
                   }
                 }
               }
@@ -92,20 +92,20 @@
         },
         "responses": {
           "200": {
-            "description": "Job d’agent créé avec succès (réponse diffusée en continu). L’en-tête X-Session-Id est renvoyé dans la réponse",
+            "description": "Tâche d’agent créée avec succès (réponse en streaming). L’en-tête X-Session-Id est renvoyé dans la réponse.",
             "headers": {
               "X-Message-Id": {
                 "schema": {
                   "type": "string"
                 },
-                "description": "Identifiant du message pour la tâche créée"
+                "description": "Identifiant de message pour la tâche créée"
               }
             },
             "content": {
               "text/plain": {
                 "schema": {
                   "type": "string",
-                  "description": "Réponse diffusée en continu contenant les détails d’exécution et les résultats de la tâche de l’agent."
+                  "description": "Réponse en streaming contenant les détails d’exécution et les résultats de la tâche de l’agent."
                 }
               }
             }
@@ -115,8 +115,8 @@
     },
     "/agent/{projectId}/job/{id}": {
       "get": {
-        "summary": "Obtenir le job d’agent par identifiant",
-        "description": "Récupère les détails et le statut d’un job d’agent spécifique à partir de son identifiant.",
+        "summary": "Récupérer une tâche d’agent par ID",
+        "description": "Récupère les détails et l’état d’une tâche d’agent spécifique à partir de son identifiant.",
         "parameters": [
           {
             "name": "projectId",
@@ -125,7 +125,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "Votre ID de projet. Peut être copié depuis la page [API keys](https://dashboard.mintlify.com/settings/organization/api-keys) de votre Dashboard."
+            "description": "L’identifiant de votre projet. Vous pouvez le copier depuis la page [API keys](https://dashboard.mintlify.com/settings/organization/api-keys) de votre tableau de bord."
           },
           {
             "name": "id",
@@ -139,7 +139,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Les détails de la tâche de l’agent ont été récupérés avec succès",
+            "description": "Détails de la tâche d’agent récupérés avec succès",
             "content": {
               "application/json": {
                 "schema": {
@@ -151,11 +151,11 @@
                     },
                     "subdomain": {
                       "type": "string",
-                      "description": "Le sous-domaine auquel cette session appartient."
+                      "description": "Le sous-domaine associé à cette session."
                     },
                     "branch": {
                       "type": "string",
-                      "description": "Nom de la branche Git dans laquelle les modifications ont été effectuées.",
+                      "description": "Nom de la branche Git où les modifications ont été effectuées.",
                       "nullable": true
                     },
                     "haulted": {
@@ -169,19 +169,19 @@
                         "github_missconfigured",
                         "error"
                       ],
-                      "description": "Motif d’arrêt de la session."
+                      "description": "Raison de l’interruption de la session."
                     },
                     "pullRequestLink": {
                       "type": "string",
-                      "description": "Lien vers la pull request (demande de fusion) que vous avez créée."
+                      "description": "Lien vers la pull request créée."
                     },
                     "messageToUser": {
                       "type": "string",
-                      "description": "Message destiné à l’utilisateur concernant le résultat de la session."
+                      "description": "Message à l’utilisateur concernant le résultat de la session."
                     },
                     "todos": {
                       "type": "array",
-                      "description": "Liste des tâches issues de la session.",
+                      "description": "Liste des tâches à effectuer issues de la session.",
                       "items": {
                         "type": "object",
                         "properties": {
@@ -218,7 +218,7 @@
                     "createdAt": {
                       "type": "string",
                       "format": "date-time",
-                      "description": "Horodatage de la création de la session."
+                      "description": "Date et heure de création de la session."
                     }
                   }
                 }
@@ -230,8 +230,8 @@
     },
     "/agent/{projectId}/jobs": {
       "get": {
-        "summary": "Obtenir tous les jobs d’agent",
-        "description": "Récupère tous les jobs d’agent pour le domaine spécifié, y compris leur statut et leurs détails.",
+        "summary": "Récupérer toutes les tâches d’agent",
+        "description": "Récupère l’ensemble des tâches d’agent pour le domaine spécifié, y compris leur statut et leurs détails.",
         "parameters": [
           {
             "name": "projectId",
@@ -240,12 +240,12 @@
             "schema": {
               "type": "string"
             },
-            "description": "L’ID de votre projet. Vous pouvez le copier à partir de la page [API keys](https://dashboard.mintlify.com/settings/organization/api-keys) de votre Dashboard."
+            "description": "Votre ID de projet. Peut être copié depuis la page [API keys](https://dashboard.mintlify.com/settings/organization/api-keys) de votre tableau de bord."
           }
         ],
         "responses": {
           "200": {
-            "description": "Toutes les tâches d’agent ont été récupérées avec succès",
+            "description": "Toutes les tâches d’agent ont été récupérées avec succès.",
             "content": {
               "application/json": {
                 "schema": {
@@ -253,21 +253,21 @@
                   "properties": {
                     "allSessions": {
                       "type": "array",
-                      "description": "Tableau de toutes les sessions d’agent du domain.",
+                      "description": "Tableau répertoriant l’ensemble des sessions d’agent pour le domaine.",
                       "items": {
                         "type": "object",
                         "properties": {
                           "sessionId": {
                             "type": "string",
-                            "description": "Le sous-domaine auquel appartient cette session."
+                            "description": "Le sous-domaine auquel cette session est associée."
                           },
                           "subdomain": {
                             "type": "string",
-                            "description": "Le sous-domaine associé à cette session."
+                            "description": "Le sous-domaine auquel cette session est associée."
                           },
                           "branch": {
                             "type": "string",
-                            "description": "Nom de la branche Git où les modifications ont été effectuées.",
+                            "description": "Nom de la branche Git dans laquelle les modifications ont été effectuées.",
                             "nullable": true
                           },
                           "haulted": {
@@ -281,19 +281,19 @@
                               "github_missconfigured",
                               "error"
                             ],
-                            "description": "Motif d'arrêt de la session."
+                            "description": "Raison de l’arrêt de la session."
                           },
                           "pullRequestLink": {
                             "type": "string",
-                            "description": "Lien vers la pull request (demande de fusion) qui a été créée."
+                            "description": "Lien vers la pull request créée."
                           },
                           "messageToUser": {
                             "type": "string",
-                            "description": "Message destiné à l’utilisateur indiquant le résultat de la session."
+                            "description": "Message destiné à l’utilisateur concernant le résultat de la session."
                           },
                           "todos": {
                             "type": "array",
-                            "description": "Liste des actions à réaliser issues de la session.",
+                            "description": "Liste des tâches à effectuer issues de la session.",
                             "items": {
                               "type": "object",
                               "properties": {
@@ -309,7 +309,7 @@
                                     "completed",
                                     "cancelled"
                                   ],
-                                  "description": "État actuel de la tâche."
+                                  "description": "Statut actuel de la tâche."
                                 },
                                 "priority": {
                                   "type": "string",
@@ -322,7 +322,7 @@
                                 },
                                 "id": {
                                   "type": "string",
-                                  "description": "Identifiant unique de la tâche."
+                                  "description": "Identifiant unique de la tâche à effectuer."
                                 }
                               }
                             }
@@ -330,7 +330,7 @@
                           "createdAt": {
                             "type": "string",
                             "format": "date-time",
-                            "description": "Horodatage correspondant à la création de la session."
+                            "description": "Horodatage de la création de la session."
                           }
                         }
                       }
@@ -349,7 +349,7 @@
       "bearerAuth": {
         "type": "http",
         "scheme": "bearer",
-        "description": "L’en-tête `Authorization` requiert un jeton Bearer. Utilisez une clé API d’administrateur (préfixée par `mint_`). Il s’agit d’une clé secrète côté serveur. Générez-en une sur la [page des clés API](https://dashboard.mintlify.com/settings/organization/api-keys) dans votre Dashboard Mintlify."
+        "description": "L’en-tête Authorization requiert un jeton Bearer. Utilisez une clé d’API administrateur (préfixée par « mint_ »). Il s’agit d’une clé secrète côté serveur. Générez-en une sur la page [API keys](https://dashboard.mintlify.com/settings/organization/api-keys) de votre tableau de bord."
       }
     }
   }

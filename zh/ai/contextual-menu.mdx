@@ -1,29 +1,29 @@
 ---
 title: "上下文菜单"
-description: "为你的文档添加一键集成的 AI 功能。"
-keywords: ["AI 工具", "ChatGPT", "Claude", "Perplexity", "MCP", "Grok"]
+description: "为文档添加一键 AI 集成。"
+keywords: ["AI tools", "ChatGPT", "Claude", "Perplexity", "MCP", "Grok"]
 ---
 
 import { PreviewButton } from "/snippets/previewbutton.jsx"
 import IconsRequired from "/snippets/zh/icons-required.mdx";
 
-上下文菜单可快速访问经 AI 优化的内容，以及与主流 AI 工具的直接集成。用户在任意页面打开上下文菜单时，可以将内容复制为 AI 工具的 context，或在 ChatGPT、Claude、Perplexity，或你自定义的工具中直接开启对话，并自动加载你的文档作为 context。
+上下文菜单可快捷访问经 AI 优化的内容，以及与常用 AI 工具的直接集成。用户在任意页面打开上下文菜单后，可以将内容复制并用作 AI 工具的上下文，或在 ChatGPT、Claude、Perplexity，或你指定的自定义工具中发起对话，并自动加载你的文档作为上下文。
 
 
 <div id="menu-options">
   ## 菜单选项
 </div>
 
-上下文菜单包含多个内置选项，你可以通过将其标识符添加到配置中来启用。
+上下文菜单包含多个预设选项，你可以通过在配置中添加它们的标识符来启用。
 
-| 选项 | 标识符 | 说明 |
+| 选项 | 标识符 | 描述 |
 |:--------|:------------|:-------------|
-| **复制页面** | `copy` | 将当前页面复制为 Markdown，便于作为上下文粘贴到 AI 工具中 |
-| **以 Markdown 查看** | `view` | 以 Markdown 打开当前页面 |
-| **在 ChatGPT 中打开** | `chatgpt` | 使用当前页面作为上下文创建一个 ChatGPT 会话 |
-| **在 Claude 中打开** | `claude` | 使用当前页面作为上下文创建一个 Claude 会话 |
-| **在 Perplexity 中打开** | `perplexity` | 使用当前页面作为上下文创建一个 Perplexity 会话 |
-| **在 Grok 中打开** | `grok` | 使用当前页面作为上下文创建一个 Grok 会话 |
+| **复制页面** | `copy` | 将当前页面复制为 Markdown，以便作为上下文粘贴到 AI 工具中 |
+| **以 Markdown 查看** | `view` | 以 Markdown 形式打开当前页面 |
+| **在 ChatGPT 中打开** | `chatgpt` | 以当前页面作为上下文创建一个 ChatGPT 会话 |
+| **在 Claude 中打开** | `claude` | 以当前页面作为上下文创建一个 Claude 会话 |
+| **在 Perplexity 中打开** | `perplexity` | 以当前页面作为上下文创建一个 Perplexity 会话 |
+| **在 Grok 中打开** | `grok` | 以当前页面作为上下文创建一个 Grok 会话 |
 | **复制 MCP 服务器 URL** | `mcp` | 将你的 MCP 服务器 URL 复制到剪贴板 |
 | **连接到 Cursor** | `cursor` | 在 Cursor 中安装你托管的 MCP 服务器 |
 | **连接到 VS Code** | `vscode` | 在 VS Code 中安装你托管的 MCP 服务器 |
@@ -32,15 +32,15 @@ import IconsRequired from "/snippets/zh/icons-required.mdx";
 <Frame>
     <img 
     src="/images/contextual-menu/contextual-menu.png" 
-    alt="展开的上下文菜单，显示了复制页面、以 Markdown 查看、在 ChatGPT 中打开以及在 Claude 中打开等菜单项。" 
+    alt="展开的上下文菜单，显示“复制页面”、“以 Markdown 查看”、“在 ChatGPT 中打开”和“在 Claude 中打开”等菜单项。" 
   />
 </Frame>
 
 <div id="enabling-the-contextual-menu">
-  ## 启用情境菜单
+  ## 启用上下文菜单
 </div>
 
-在你的 `docs.json` 文件中添加 `contextual` 字段，并指定要包含的选项。
+在 `docs.json` 文件中添加一个 `contextual` 字段，并指定要包含的选项。
 
 ```json
 {
@@ -65,20 +65,20 @@ import IconsRequired from "/snippets/zh/icons-required.mdx";
   ## 添加自定义选项
 </div>
 
-通过向 `options` 数组添加一个对象，在上下文菜单中创建自定义选项。每个自定义选项需要包含以下属性：
+在上下文菜单中创建自定义选项，只需向 `options` 数组添加一个对象。每个自定义选项都需要以下属性：
 
 <ResponseField name="title" type="string" required>
   选项的标题。
 </ResponseField>
 
 <ResponseField name="description" type="string" required>
-  选项的说明。在展开上下文菜单时显示于标题下方。
+  选项的描述。当上下文菜单展开时，会显示在标题下方。
 </ResponseField>
 
 <IconsRequired />
 
 <ResponseField name="href" type="string | object" required>
-  选项的 href。简单链接使用字符串，带有 query 参数的动态链接使用对象。
+  选项的 href。简单链接使用字符串，带查询参数的动态链接使用对象。
 
   <Expandable title="href object">
     <ResponseField name="base" type="string" required>
@@ -86,17 +86,17 @@ import IconsRequired from "/snippets/zh/icons-required.mdx";
     </ResponseField>
 
     <ResponseField name="query" type="object" required>
-      选项的 query 参数。
+      选项的查询参数。
 
       <Expandable title="query object">
         <ResponseField name="key" type="string" required>
-          query 参数的 key。
+          查询参数的键。
         </ResponseField>
 
         <ResponseField name="value" type="string" required>
-          query 参数的值。我们会将以下占位符替换为对应的值：
+          查询参数的值。我们会将以下占位符替换为对应的值：
 
-          * 使用 `$page` 插入当前页面内容（Markdown 格式）。
+          * 使用 `$page` 插入当前页面的 Markdown 内容。
           * 使用 `$path` 插入当前页面路径。
           * 使用 `$mcp` 插入托管的 MCP 服务器 URL。
         </ResponseField>
@@ -117,8 +117,8 @@ import IconsRequired from "/snippets/zh/icons-required.mdx";
             "claude",
             "perplexity",
             {
-                "title": "功能请求",
-                "description": "在 GitHub 上参与讨论，请求新功能",
+                "title": "Request a feature",
+                "description": "Join the discussion on GitHub to request a new feature",
                 "icon": "plus",
                 "href": "https://github.com/orgs/mintlify/discussions/categories/feature-requests"
             }
@@ -126,6 +126,7 @@ import IconsRequired from "/snippets/zh/icons-required.mdx";
     }
 }
 ```
+
 
 <div id="custom-option-examples">
   ### 自定义选项示例
@@ -135,7 +136,7 @@ import IconsRequired from "/snippets/zh/icons-required.mdx";
 <Accordion title="简单链接">
 ```json
 {
-  "title": "请求新功能",
+  "title": "提出功能需求",
   "description": "在 GitHub 上参与讨论",
   "icon": "plus",
   "href": "https://github.com/orgs/mintlify/discussions/categories/feature-requests"
@@ -143,18 +144,18 @@ import IconsRequired from "/snippets/zh/icons-required.mdx";
 ```
 </Accordion>
 
-<Accordion title="包含页面内容的动态链接">
+<Accordion title="带页面内容的动态链接">
 ```json
 {
   "title": "在 X 上分享",
-  "description": "将此页面分享至 X",
+  "description": "在 X 上分享此页面",
   "icon": "x",
   "href": {
     "base": "https://x.com/intent/tweet",
     "query": [
       {
       "key": "text",
-      "value": "查看这份文档：$page"
+      "value": "查看此文档：$page"
       }
     ]
   }

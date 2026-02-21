@@ -1,22 +1,22 @@
 ---
 title: "Playground"
 description: "Permettez aux développeurs de tester des endpoints d’API directement dans votre documentation."
-keywords: ["interactif", "API", "test des endpoints", "requêtes API en direct", "générateur de requêtes"]
+keywords: ["interactif", "API", "test d’endpoint", "requêtes API en direct", "générateur de requêtes"]
 ---
 
-Le playground API est un environnement interactif qui permet aux utilisateurs de tester et d’explorer vos endpoints d’API. Les développeurs peuvent composer des requêtes API, les envoyer et consulter les réponses sans quitter votre documentation.
+Le playground d’API est un environnement interactif qui permet aux utilisateurs de tester et d’explorer vos endpoints d’API. Les développeurs peuvent composer des requêtes d’API, les envoyer et consulter les réponses sans quitter votre documentation.
 
-Voir [Déclencher une mise à jour](/fr/api/update/trigger) pour un exemple du playground API en action.
+Consultez [Déclencher une mise à jour](/fr/api/update/trigger) pour voir un exemple du playground d’API en action.
 
 <Frame>
-  <img src="/images/playground/API-playground-light.png" alt="Playground API pour l’endpoint « Déclencher une mise à jour »." className="block dark:hidden" />
+  <img src="/images/playground/API-playground-light.png" alt="Playground d’API pour l’endpoint « déclencher une mise à jour »." className="block dark:hidden" />
 
-  <img src="/images/playground/API-playground-dark.png" alt="Playground API pour l’endpoint « Déclencher une mise à jour »." className="hidden dark:block" />
+  <img src="/images/playground/API-playground-dark.png" alt="Playground d’API pour l’endpoint « déclencher une mise à jour »." className="hidden dark:block" />
 </Frame>
 
-Le playground génère des pages interactives pour vos endpoints à partir de votre spécification OpenAPI ou de votre schéma AsyncAPI. Si vous modifiez votre API, il met automatiquement à jour les pages concernées.
+Le playground génère des pages interactives pour vos endpoints à partir de votre spécification OpenAPI ou de votre schéma AsyncAPI. Si vous modifiez votre API, le playground met automatiquement à jour les pages correspondantes.
 
-Nous recommandons de générer votre playground API à partir d’une spécification OpenAPI. Cependant, vous pouvez créer manuellement des pages de référence de l’API après avoir défini une URL de base et une méthode d’authentification dans votre `docs.json`.
+Nous recommandons de générer votre playground d’API à partir d’une spécification OpenAPI. Toutefois, vous pouvez créer manuellement des pages de référence d’API après avoir défini une URL de base et une méthode d’authentification dans votre `docs.json`.
 
 <div id="get-started">
   ## Premiers pas
@@ -25,7 +25,7 @@ Nous recommandons de générer votre playground API à partir d’une spécifica
 <Steps>
   <Step title="Ajoutez votre fichier de spécification OpenAPI.">
     <Tip>
-      Validez votre fichier de spécification OpenAPI avec le [Swagger Editor](https://editor.swagger.io/) ou la commande [Mint CLI](https://www.npmjs.com/package/mint) `mint openapi-check <filename>`.
+      Validez votre fichier de spécification OpenAPI à l’aide de [Swagger Editor](https://editor.swagger.io/) ou de la commande [Mint CLI](https://www.npmjs.com/package/mint) `mint openapi-check <filename>`.
     </Tip>
 
     ```bash {3}
@@ -35,14 +35,14 @@ Nous recommandons de générer votre playground API à partir d’une spécifica
     ```
   </Step>
 
-  <Step title="Générez les pages des endpoints.">
-    Mettez à jour votre `docs.json` pour référencer votre spécification OpenAPI.
+  <Step title="Générez les pages d’endpoints.">
+    Mettez à jour votre fichier `docs.json` afin qu’il référence votre spécification OpenAPI.
 
     **Pour générer automatiquement des pages pour tous les endpoints de votre spécification OpenAPI**, ajoutez une propriété `openapi` à n’importe quel élément de navigation.
 
-    Cet exemple génère une page pour chaque endpoint défini dans `openapi.json` et organise les pages dans le groupe « Référence API ».
+    Cet exemple génère une page pour chaque endpoint spécifié dans `openapi.json` et organise les pages dans le groupe « API reference ».
 
-    ```json Generate all endpoint pages
+    ```json Générer toutes les pages d’endpoints
     "navigation": {
       "groups": [
         {
@@ -53,11 +53,11 @@ Nous recommandons de générer votre playground API à partir d’une spécifica
     }
     ```
 
-    **Pour ne générer des pages que pour certains endpoints**, énumérez-les dans la propriété `pages` de l’élément de navigation.
+    **Pour générer des pages uniquement pour certains endpoints**, indiquez ces endpoints dans la propriété `pages` de l’élément de navigation.
 
-    Cet exemple génère des pages uniquement pour les endpoints `GET /users` et `POST /users`. Pour générer d’autres pages d’endpoints, ajoutez-les au tableau `pages`.
+    Cet exemple génère des pages uniquement pour les endpoints `GET /users` et `POST /users`. Pour générer d’autres pages d’endpoints, ajoutez des endpoints supplémentaires au tableau `pages`.
 
-    ```json Generate specific endpoint pages
+    ```json Générer des pages d’endpoints spécifiques
     "navigation": {
       "groups": [
           {
@@ -75,52 +75,52 @@ Nous recommandons de générer votre playground API à partir d’une spécifica
 </Steps>
 
 <div id="customize-your-playground">
-  ## Personnaliser votre bac à sable
+  ## Personnaliser votre espace de test
 </div>
 
-Personnalisez votre bac à sable d’API en définissant les propriétés suivantes dans votre `docs.json`.
+Personnalisez votre espace de test d&#39;API en définissant les propriétés suivantes dans votre `docs.json`.
 
 <ResponseField name="playground" type="object">
-  Configurations du bac à sable d’API.
+  Paramètres de configuration de l&#39;espace de test de l&#39;API.
 
   <Expandable title="playground" defaultOpen="True">
     <ResponseField name="display" type="&#x22;interactive&#x22; | &#x22;simple&#x22; | &#x22;none&#x22; | &#x22;auth&#x22;">
-      Le mode d’affichage du bac à sable d’API.
+      Le mode d&#39;affichage de l&#39;espace de test de l&#39;API.
 
-      * `"interactive"` : Affiche le bac à sable interactif.
-      * `"simple"` : Affiche un endpoint copiable sans bac à sable.
-      * `"none"` : N’affiche rien.
-      * `"auth"` : Affiche le bac à sable interactif uniquement aux utilisateurs authentifiés. Les utilisateurs non authentifiés ou qui ne font pas partie des groupes requis ne voient aucun bac à sable.
+      * `"interactive"` : affiche l&#39;espace de test interactif.
+      * `"simple"` : affiche un endpoint copiable sans espace de test.
+      * `"none"` : n&#39;affiche rien.
+      * `"auth"` : affiche l&#39;espace de test interactif uniquement pour les utilisateurs authentifiés. Les utilisateurs non authentifiés ou ne faisant pas partie des groupes requis ne voient aucun espace de test.
 
-      Valeur par défaut : `interactive`.
+      La valeur par défaut est `interactive`.
     </ResponseField>
 
     <ResponseField name="proxy" type="boolean" defaultOpen="True">
-      Indique s’il faut faire passer les requêtes API via un serveur proxy. Valeur par défaut : `true`.
+      Indique s&#39;il faut faire passer les requêtes d&#39;API via un serveur proxy. La valeur par défaut est `true`.
     </ResponseField>
   </Expandable>
 </ResponseField>
 
 <ResponseField name="examples" type="object">
-  Configurations pour les exemples d’API générés automatiquement.
+  Paramètres de configuration pour les exemples d&#39;API générés automatiquement.
 
   <Expandable title="examples" defaultOpen="True">
     <ResponseField name="languages" type="array of string">
-      Langues d’exemples pour les extraits d’API générés automatiquement.
+      Langages d&#39;exemple pour les extraits d&#39;API générés automatiquement.
 
-      Les langues s’affichent dans l’ordre indiqué.
+      Les langages s&#39;affichent dans l&#39;ordre spécifié.
     </ResponseField>
 
     <ResponseField name="defaults" type="&#x22;required&#x22; | &#x22;all&#x22;">
-      Indique s’il faut afficher les paramètres optionnels dans les exemples d’API. Valeur par défaut : `all`.
+      Indique s&#39;il faut afficher les paramètres optionnels dans les exemples d&#39;API. La valeur par défaut est `all`.
     </ResponseField>
 
     <ResponseField name="prefill" type="boolean">
-      Indique s’il faut préremplir le bac à sable d’API avec des données tirées des exemples de schéma. Lorsque cette option est activée, le bac à sable remplit automatiquement les champs de requête avec des valeurs d’exemple provenant de votre spécification OpenAPI. Valeur par défaut : `false`.
+      Indique s&#39;il faut préremplir l&#39;espace de test de l&#39;API avec des données provenant des exemples de schéma. Lorsque cette option est activée, l&#39;espace de test remplit automatiquement les champs de requête avec des valeurs d&#39;exemple issues de votre spécification OpenAPI. La valeur par défaut est `false`.
     </ResponseField>
 
     <ResponseField name="autogenerate" type="boolean">
-      Indique s’il faut générer des exemples de code pour les endpoints à partir des spécifications d’API. Valeur par défaut : `true`. Lorsque cette option est définie sur `false`, seuls les exemples de code rédigés manuellement (depuis `x-codeSamples` dans les spécifications OpenAPI ou les composants `<RequestExample>` dans le MDX) apparaissent dans le bac à sable d’API.
+      Indique s&#39;il faut générer des exemples de code pour les endpoints à partir des spécifications d&#39;API. La valeur par défaut est `true`. Lorsqu&#39;elle est définie sur `false`, seuls les exemples de code rédigés manuellement (provenant de `x-codeSamples` dans les spécifications OpenAPI ou de composants `<RequestExample>` dans le MDX) apparaissent dans l&#39;espace de test de l&#39;API.
     </ResponseField>
   </Expandable>
 </ResponseField>
@@ -129,7 +129,7 @@ Personnalisez votre bac à sable d’API en définissant les propriétés suivan
   ### Exemple de configuration
 </div>
 
-Cet exemple configure l’aire de test de l’API pour être interactive, avec des extraits de code pour cURL, Python et JavaScript. Seuls les paramètres requis sont affichés dans les extraits, et l’aire de test préremplit le corps de la requête avec des valeurs d’exemple.
+Cet exemple configure l’espace de test de l’API pour le rendre interactif, avec des exemples de code pour cURL, Python et JavaScript. Seuls les paramètres obligatoires sont affichés dans les extraits de code, et l’espace de test préremplit le corps de la requête avec des valeurs d’exemple.
 
 ```json
 {
@@ -150,18 +150,18 @@ Cet exemple configure l’aire de test de l’API pour être interactive, avec d
   ### Affichage du playground basé sur l’authentification
 </div>
 
-Utilisez le mode d’affichage `auth` pour afficher le playground interactif uniquement aux utilisateurs authentifiés. C’est utile lorsque vous voulez rendre la documentation de votre API publique tout en restreignant l’accès au playground aux utilisateurs connectés.
+Utilisez le mode d’affichage `auth` pour n’afficher le playground interactif qu’aux utilisateurs authentifiés. Il est utile lorsque vous souhaitez permettre aux utilisateurs de consulter publiquement la documentation de votre API tout en limitant l’accès au playground aux utilisateurs connectés.
 
 Lorsque `display` est défini sur `auth` :
 
 * Les utilisateurs authentifiés voient le playground interactif.
 * Les utilisateurs non authentifiés ne voient aucun playground (équivalent à `none`).
 
-Vous pouvez également combiner `auth` avec la propriété `groups` dans le frontmatter de la page pour restreindre l’accès au playground à des groupes d’utilisateurs spécifiques.
+Vous pouvez également combiner `auth` avec la propriété `groups` dans le frontmatter de la page afin de limiter l’accès au playground à certains groupes d’utilisateurs spécifiques.
 
 ```mdx Page with group-restricted playground
 ---
-title: "Créer un utilisateur"
+title: "Create user"
 openapi: POST /users
 playground: auth
 groups: ["admin", "developer"]
@@ -171,37 +171,37 @@ public: true
 
 Dans cet exemple :
 
-* La page est publique (tout le monde peut consulter la documentation).
-* Seuls les utilisateurs authentifiés appartenant aux groupes `admin` ou `developer` voient l&#39;espace de test interactif.
-* Les utilisateurs qui ne sont pas dans ces groupes ne voient aucun espace de test.
+* La page est visible publiquement (tout le monde peut consulter la documentation).
+* Seuls les utilisateurs authentifiés appartenant aux groupes `admin` ou `developer` voient le bac à sable interactif.
+* Les utilisateurs qui ne font pas partie de ces groupes ne voient aucun bac à sable.
 
-Si la page ne comporte pas de propriété `groups`, tous les utilisateurs authentifiés voient l&#39;espace de test interactif.
+Si la page ne définit pas de propriété `groups`, tous les utilisateurs authentifiés voient le bac à sable interactif.
 
 <Note>
-  Le mode d&#39;affichage `auth` nécessite que l&#39;[authentification](/fr/deploy/authentication-setup) soit configurée pour votre documentation.
+  Le mode d’affichage `auth` nécessite que [l’authentification](/fr/deploy/authentication-setup) soit configurée pour votre documentation.
 </Note>
 
 <div id="custom-endpoint-pages">
   ### Pages d’endpoint personnalisées
 </div>
 
-Lorsque vous avez besoin d’un contrôle plus fin sur votre documentation d’API, utilisez l’extension `x-mint` dans votre spécification OpenAPI ou créez des pages MDX individuelles pour vos endpoints.
+Lorsque vous avez besoin de mieux contrôler votre documentation d’API, utilisez l’extension `x-mint` dans votre spécification OpenAPI ou créez des pages MDX individuelles pour vos endpoints.
 
 Les deux options vous permettent de :
 
-* Personnaliser la metadata de la page
+* Personnaliser les métadonnées de la page
 * Ajouter du contenu supplémentaire, comme des exemples
 * Contrôler le comportement du playground pour chaque page
 
-L’extension `x-mint` est recommandée afin que toute votre documentation d’API soit automatiquement générée à partir de votre spécification OpenAPI et maintenue dans un seul fichier.
+L’extension `x-mint` est recommandée afin que l’ensemble de votre documentation d’API soit automatiquement généré à partir de votre spécification OpenAPI et conservé dans un seul fichier.
 
-Les pages MDX individuelles sont recommandées pour les petites API ou lorsque vous souhaitez expérimenter des modifications page par page.
+Les pages MDX individuelles sont recommandées pour les petites API ou lorsque vous souhaitez tester des modifications page par page.
 
 <div id="further-reading">
   ## Pour aller plus loin
 </div>
 
-* [Configuration OpenAPI](/fr/api-playground/openapi-setup) pour en savoir plus sur la création de votre document OpenAPI.
-* [Extension x-mint](/fr/api-playground/openapi-setup#x-mint-extension) pour en savoir plus sur la personnalisation de vos pages d’endpoint.
-* [Configuration MDX](/fr/api-playground/mdx-setup) pour en savoir plus sur la création manuelle de pages de référence d’API individuelles.
-* [Configuration AsyncAPI](/fr/api-playground/asyncapi-setup) pour en savoir plus sur la création de votre schéma AsyncAPI afin de générer des pages de référence WebSocket.
+* [Configuration OpenAPI](/fr/api-playground/openapi-setup) pour plus d&#39;informations sur la création de votre document OpenAPI.
+* [Extension x-mint](/fr/api-playground/openapi-setup#x-mint-extension) pour plus d&#39;informations sur la personnalisation des pages de vos endpoints.
+* [Configuration MDX](/fr/api-playground/mdx-setup) pour plus d&#39;informations sur la création manuelle de pages de référence d&#39;API individuelles.
+* [Configuration AsyncAPI](/fr/api-playground/asyncapi-setup) pour plus d&#39;informations sur la création de votre schéma AsyncAPI afin de générer des pages de référence pour WebSocket.

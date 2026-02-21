@@ -1,13 +1,13 @@
 ---
 title: "Champs de réponse"
-description: "Afficher les valeurs de réponse d’une API."
-keywords: ["sortie d’API", "valeurs de retour", "structure de réponse"]
+description: "Afficher les valeurs de réponse de l'API."
+keywords: ["sortie d'API", "valeurs de retour", "structure de réponse"]
 ---
 
-Le composant `<ResponseField>` est conçu pour définir les valeurs de retour d’une API. De nombreuses documentations utilisent également `<ResponseField>` sur les pages lorsque vous devez lister les types de certains éléments.
+Le composant `<ResponseField>` est conçu pour définir les valeurs de retour d’une API. De nombreuses documentations utilisent également `<ResponseField>` sur les pages où vous devez lister les types de certains éléments.
 
 <ResponseField name="response" type="string" required>
-  Exemple de champ de réponse
+  Un exemple de champ de réponse
 </ResponseField>
 
 ```mdx
@@ -18,15 +18,15 @@ Le composant `<ResponseField>` est conçu pour définir les valeurs de retour d�
 
 
 <div id="props">
-  ## Props
+  ## Propriétés
 </div>
 
 <ResponseField name="name" type="string" required>
-  Nom de la valeur de réponse.
+  Le nom de la valeur de réponse.
 </ResponseField>
 
 <ResponseField name="type" type="string" required>
-  Type attendu de la valeur de réponse — peut être n’importe quelle chaîne.
+  Type attendu de la valeur de réponse – il peut s’agir de n’importe quelle chaîne de caractères.
 </ResponseField>
 
 <ResponseField name="default" type="string">
@@ -34,19 +34,19 @@ Le composant `<ResponseField>` est conçu pour définir les valeurs de retour d�
 </ResponseField>
 
 <ResponseField name="required" type="boolean">
-  Afficher « required » à côté du nom du champ.
+  Affiche « required » à côté du nom du champ.
 </ResponseField>
 
 <ResponseField name="deprecated" type="boolean">
-  Indique si un champ est obsolète.
+  Indique si un champ est obsolète ou non.
 </ResponseField>
 
 <ResponseField name="pre" type="string[]">
-  Étiquettes affichées avant le nom du champ
+  Libellés affichés avant le nom du champ.
 </ResponseField>
 
 <ResponseField name="post" type="string[]">
-  Étiquettes affichées après le nom du champ
+  Libellés affichés après le nom du champ.
 </ResponseField>
 
 <RequestExample>

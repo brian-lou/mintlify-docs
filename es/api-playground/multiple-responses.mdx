@@ -1,30 +1,30 @@
 ---
 title: "Respuestas múltiples"
-description: "Documenta múltiples variaciones de respuestas para endpoints de la API."
+description: "Documenta múltiples variaciones de respuesta para endpoints de API."
 keywords: ["response examples", "conditional responses", "response variations", "examples property"]
 ---
 
-Si tu API devuelve respuestas diferentes según los parámetros de entrada, el contexto del usuario u otras condiciones de la solicitud, puedes documentar múltiples ejemplos de respuestas con la propiedad `examples`.
+Si tu API devuelve diferentes respuestas según los parámetros de entrada, el contexto del usuario u otras condiciones de la solicitud, puedes documentar múltiples ejemplos de respuesta con la propiedad `examples`.
 
-Esta propiedad se puede agregar a cualquier respuesta y tiene el siguiente esquema.
+Esta propiedad se puede añadir a cualquier respuesta y tiene el siguiente esquema.
 
 ```yaml
 responses:
   "200":
-    description: Respuesta exitosa
+    description: Successful response
     content:
       application/json:
         schema:
           $ref: "#/components/schemas/YourResponseSchema"
         examples:
           us:
-            summary: Respuesta para Estados Unidos
+            summary: Response for United States
             value:
               countryCode: "US"
               currencyCode: "USD"
               taxRate: 0.0825
           gb:
-            summary: Respuesta para Reino Unido
+            summary: Response for United Kingdom
             value:
               countryCode: "GB"
               currencyCode: "GBP"

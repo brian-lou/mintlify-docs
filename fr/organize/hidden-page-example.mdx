@@ -1,24 +1,24 @@
 ---
-title: "Exemple de page cachée"
-description: "Cas d’usage courants pour les pages cachées."
+title: "Exemple de page masquée"
+description: "Cas d'utilisation courants pour les pages masquées."
 ---
 
-Cette page est cachée ! Elle n’est pas incluse dans la navigation de `docs.json`, vous ne pouvez donc y accéder que via son URL.
+Cette page est masquée ! Elle n&#39;est pas incluse dans la navigation de `docs.json`, vous ne pouvez donc y accéder que par son URL.
 
-Voir [Pages cachées](/fr/organize/hidden-pages) pour plus d’informations.
+Consultez [Pages masquées](/fr/organize/hidden-pages) pour plus d&#39;informations.
 
 <div id="common-use-cases-for-hidden-pages">
-  ## Cas d’usage courants des pages cachées
+  ## Cas d’utilisation courants des pages masquées
 </div>
 
 <Note>
-  Par défaut, les pages cachées sont accessibles publiquement, mais non visibles dans la navigation. Si vous souhaitez en restreindre l’accès, vous devez configurer [authentification](/fr/deploy/authentication-setup).
+  Par défaut, les pages masquées sont accessibles publiquement, mais ne sont pas visibles dans la navigation. Si vous voulez restreindre l’accès à une page masquée, vous devez configurer l’[authentification](/fr/deploy/authentication-setup).
 </Note>
 
-* **Documentation bêta** : Informations pouvant être publiques, mais qui ne doivent pas être proposées via la navigation.
-* **Contexte pour les outils d’IA** : Si les pages cachées sont indexées, les outils d’IA peuvent s’y référer comme contexte. Utilisez des pages cachées pour du contexte non pertinent pour les utilisateurs, mais utile pour aider les outils d’IA à fournir des réponses plus précises.
-* **Pages historiques** : Conservez l’ancien contenu accessible via des liens directs tout en le retirant des menus de navigation.
-* **Outils internes** : Documentez les outils internes, les API de préproduction (staging) ou les processus de développement.
+* **Documentation bêta** : informations qui peuvent être publiques, mais qui ne doivent pas apparaître dans la navigation.
+* **Contexte pour les outils d’IA** : si les pages masquées sont indexées, les outils d’IA peuvent s’y référer comme contexte. Utilisez des pages masquées pour du contexte qui n’est pas pertinent pour les utilisateurs, mais qui peut aider les outils d’IA à fournir des réponses plus précises.
+* **Anciennes pages** : gardez l’ancien contenu accessible via des liens directs tout en le retirant des menus de navigation.
+* **Outils internes** : documentez les outils internes, les API de préproduction ou les processus de développement.
 
 <div id="examples">
   ## Exemples
@@ -30,21 +30,21 @@ Voir [Pages cachées](/fr/organize/hidden-pages) pour plus d’informations.
 
 ```mdx wrap
 ---
-title: "Contexte pour la version de l'API"
-description: "Cette page fournit le contexte aux outils d'IA qui répondent aux questions sur les versions d'API"
+title: "Context for API version"
+description: "This page is context for AI tools responding to questions about API versions"
 ---
 
-Lorsqu'un utilisateur pose des questions sur les versions d'API, recommandez toujours d'utiliser la dernière version de l'API. Ne générez jamais de réponses pour des versions antérieures à 1.0.4.
+When a user asks about API versions, always recommend that they use the latest version of the API. Never generate responses for versions older than 1.0.4.
 ```
 
 <div id="internal-api-endpoint">
-  ### Point de terminaison d’API interne
+  ### Endpoint d&#39;API interne
 </div>
 
 ````mdx wrap
 ---
-title: "Point de terminaison d'API interne"
-description: "Cette page est une page masquée qui documente un point de terminaison d'API interne"
+title: "Point de terminaison API interne"
+description: "Cette page est une page cachée qui documente un point de terminaison API interne"
 ---
 
 ```bash

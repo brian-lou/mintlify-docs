@@ -1,10 +1,10 @@
 ---
 title: "Tipos de datos complejos"
-description: "Describe APIs con esquemas flexibles, propiedades opcionales y múltiples formatos de datos con las palabras clave `oneOf`, `anyOf` y `allOf`."
-keywords: ["oneOf", "anyOf", "allOf", "composición de esquemas", "esquemas polimórficos"]
+description: "Describe APIs con esquemas flexibles, propiedades opcionales y múltiples formatos de datos usando las palabras clave `oneOf`, `anyOf` y `allOf`."
+keywords: ["oneOf", "anyOf", "allOf", "schema composition", "polymorphic schemas"]
 ---
 
-Cuando tu API acepta varios formatos de datos, tiene campos condicionales o utiliza patrones de herencia, las palabras clave de composición de esquemas de OpenAPI te ayudan a documentar estas estructuras flexibles. Con `oneOf`, `anyOf` y `allOf`, puedes describir APIs que admiten diferentes tipos de entrada o combinan múltiples esquemas en modelos de datos completos.
+Cuando tu API admite varios formatos de datos, tiene campos condicionales o utiliza patrones de herencia, las palabras clave de composición de esquemas de OpenAPI te ayudan a documentar estas estructuras flexibles. Al usar `oneOf`, `anyOf` y `allOf`, puedes describir APIs que gestionan distintos tipos de entrada o combinan varios esquemas en modelos de datos integrales.
 
 <div id="oneof-anyof-allof-keywords">
   ## Palabras clave `oneOf`, `anyOf`, `allOf`
@@ -14,19 +14,19 @@ Para tipos de datos complejos, OpenAPI proporciona palabras clave para combinar 
 
 - `allOf`: Combina varios esquemas (como fusionar objetos o extender un esquema base). Funciona como un operador `and`. 
 - `anyOf`: Acepta datos que coincidan con cualquiera de los esquemas proporcionados. Funciona como un operador `or`.
-- `oneOf`: Acepta datos que coincidan exactamente con uno de los esquemas proporcionados. Funciona como un operador `exclusive-or`.
+- `oneOf`: Acepta datos que coincidan con exactamente uno de los esquemas proporcionados. Funciona como un operador `exclusive-or`.
 
-<Warning>Mintlify trata `oneOf` y `anyOf` de forma idéntica, ya que la diferencia práctica rara vez afecta el uso de la API.</Warning>
+<Warning>Mintlify trata `oneOf` y `anyOf` de manera idéntica, ya que la diferencia práctica rara vez afecta al uso de la API.</Warning>
 
-Para obtener especificaciones detalladas de estas palabras clave, consulta la [documentación de OpenAPI](https://swagger.io/docs/specification/data-models/oneof-anyof-allof-not/).
+Para especificaciones detalladas de estas palabras clave, consulta la [documentación de OpenAPI](https://swagger.io/docs/specification/data-models/oneof-anyof-allof-not/).
 
-<Info>La palabra clave `not` no es compatible actualmente.</Info>
+<Info>La palabra clave `not` actualmente no es compatible.</Info>
 
 <div id="combining-schemas-with-allof">
   ### Combinando esquemas con `allOf`
 </div>
 
-Cuando usas `allOf`, Mintlify realiza un preprocesamiento de tu documento de OpenAPI para mostrar combinaciones complejas de forma legible. Por ejemplo, cuando combinas dos esquemas de objeto con `allOf`, Mintlify unifica las propiedades de ambos en un solo objeto. Esto resulta especialmente útil al aprovechar los [componentes](https://swagger.io/docs/specification/components/) reutilizables de OpenAPI.
+Cuando utilizas `allOf`, Mintlify realiza cierto preprocesamiento de tu documento OpenAPI para mostrar combinaciones complejas de forma más legible. Por ejemplo, cuando combinas dos esquemas de objetos con `allOf`, Mintlify reúne las propiedades de ambos en un único objeto. Esto resulta especialmente útil al aprovechar los [componentes](https://swagger.io/docs/specification/components/) reutilizables de OpenAPI.
 
 ```yaml
 org_with_users:
@@ -36,7 +36,7 @@ org_with_users:
       properties:
         users:
           type: array
-          description: Una matriz que contiene todos los usuarios de la organización
+          description: Un array que contiene todos los usuarios de la organización
 # ...
 components:
   schemas:
@@ -55,17 +55,17 @@ components:
     </ParamField>
 
     <ParamField body="users" type="object[]">
-      Una matriz que contiene a todos los usuarios de la organización
+      Una lista que contiene todos los usuarios de la organización
     </ParamField>
   </Expandable>
 </ParamField>
 
 
 <div id="providing-options-with-oneof-and-anyof">
-  ### Proporcionar opciones con `oneOf` y `anyOf`
+  ### Ofrecer opciones con `oneOf` y `anyOf`
 </div>
 
-Cuando uses `oneOf` o `anyOf`, las opciones se muestran en un contenedor con pestañas. Especifica un campo `title` en cada subschema para poner nombre a tus opciones. Por ejemplo, así podrías mostrar dos tipos distintos de direcciones de entrega:
+Cuando utilizas `oneOf` o `anyOf`, las opciones se muestran en un contenedor con pestañas. Especifica un campo `title` en cada subesquema para darle un nombre a cada opción. Por ejemplo, así podrías mostrar dos tipos diferentes de direcciones de entrega:
 
 ```yaml
 delivery_address:
@@ -82,7 +82,7 @@ delivery_address:
       properties:
         box_number:
           type: string
-          description: El número del apartado de correos
+          description: El número del apartado postal
         # ...
 ```
 

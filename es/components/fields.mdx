@@ -1,19 +1,19 @@
 ---
 title: "Campos"
 description: "Documenta los parámetros de solicitud y respuesta de la API con información de tipos."
-keywords: ["ParamField", "ResponseField", "request parameters", "response documentation"]
+keywords: ["ParamField", "ResponseField", "parámetros de solicitud", "documentación de respuestas"]
 ---
 
-Usa campos para documentar los parámetros y las respuestas de la API. Hay dos tipos de campos: campos de parámetro y campos de respuesta.
+Usa campos para documentar los parámetros y las respuestas de la API. Hay dos tipos de campos: campos de parámetros y campos de respuesta.
 
 <div id="parameter-field">
   ## Campo de parámetro
 </div>
 
-El componente `<ParamField>` se utiliza para definir parámetros de tus API o SDK. Al agregar un `ParamField`, se añade automáticamente un [área de pruebas de la API](/es/api-playground/overview).
+El componente `<ParamField>` se utiliza para definir parámetros para tus APIs o SDKs. Al agregar un `ParamField`, se añade automáticamente un [API Playground](/es/api-playground/overview).
 
 <ParamField path="param" type="string" required>
-  Un ejemplo de campo de parámetro
+  Ejemplo de un campo de parámetro
 </ParamField>
 
 ```mdx
@@ -27,7 +27,7 @@ El componente `<ParamField>` se utiliza para definir parámetros de tus API o SD
 </div>
 
 <ParamField body="query, path, body, or header" type="string">
-  Indica si el parámetro es de query, ruta, cuerpo o encabezado. Seguido del
+  Indica si el parámetro es de tipo query, path, body o header, seguido del
   nombre del parámetro.
 </ParamField>
 
@@ -36,7 +36,7 @@ El componente `<ParamField>` se utiliza para definir parámetros de tus API o SD
 
   Admite `number`, `string`, `boolean`, `object`.
 
-  Los arreglos se pueden definir con el sufijo `[]`. Por ejemplo, `string[]`.
+  Los arrays pueden definirse usando el sufijo `[]`. Por ejemplo, `string[]`.
 </ParamField>
 
 <ParamField body="required" type="boolean">
@@ -44,15 +44,15 @@ El componente `<ParamField>` se utiliza para definir parámetros de tus API o SD
 </ParamField>
 
 <ParamField body="deprecated" type="boolean">
-  Indica si el parámetro está en desuso.
+  Indica si el parámetro está obsoleto.
 </ParamField>
 
 <ParamField body="default" type="any">
-  Valor predeterminado que se aplica cuando el valor de la solicitud está vacío.
+  Valor predeterminado que se completa cuando el valor de la solicitud está vacío.
 </ParamField>
 
 <ParamField body="placeholder" type="string">
-  Texto del marcador de posición para la entrada en el entorno de pruebas.
+  Texto de marcador de posición para el campo de entrada en el playground.
 </ParamField>
 
 <ParamField body="children" type="string">
@@ -63,7 +63,7 @@ El componente `<ParamField>` se utiliza para definir parámetros de tus API o SD
   ## Campo de respuesta
 </div>
 
-El componente `<ResponseField>` define los valores de retorno de una API.
+El componente `<ResponseField>` define los valores devueltos de una API.
 
 <ResponseField name="response" type="string" required>
   Un ejemplo de un campo de respuesta
@@ -71,7 +71,7 @@ El componente `<ResponseField>` define los valores de retorno de una API.
 
 ```mdx
 <ResponseField name="response" type="string" required>
-  Un ejemplo de campo de respuesta
+  A response field example
 </ResponseField>
 ```
 
@@ -84,11 +84,11 @@ El componente `<ResponseField>` define los valores de retorno de una API.
 </ResponseField>
 
 <ResponseField name="type" type="string" required>
-  Tipo esperado del valor de la respuesta. Puede ser cualquier cadena arbitraria.
+  Tipo esperado para el valor de la respuesta. Puede ser cualquier cadena de texto arbitraria.
 </ResponseField>
 
 <ResponseField name="default" type="string">
-  Valor predeterminado.
+  El valor predeterminado.
 </ResponseField>
 
 <ResponseField name="required" type="boolean">
@@ -96,7 +96,7 @@ El componente `<ResponseField>` define los valores de retorno de una API.
 </ResponseField>
 
 <ResponseField name="deprecated" type="boolean">
-  Indica si un campo está en desuso.
+  Indica si el campo está obsoleto.
 </ResponseField>
 
 <ResponseField name="pre" type="string[]">

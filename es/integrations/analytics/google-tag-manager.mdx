@@ -1,16 +1,16 @@
 ---
 title: "Google Tag Manager"
-description: "Administra etiquetas y eventos de Analytics con Google Tag Manager."
-keywords: ["integración con GTM", "gestión de etiquetas", "ID de etiqueta", "consentimiento de cookies"]
+description: "Administra etiquetas y eventos de analítica con Google Tag Manager."
+keywords: ["GTM integration", "tag management", "tag ID", "cookie consent"]
 ---
 
-Añade tu ID de etiqueta en el archivo `docs.json` y inyectaremos el script de Google Tag Manager en todas tus páginas.
+Añade tu ID de etiqueta (`tagId`) al archivo `docs.json` y insertaremos el script de Google Tag Manager en todas tus páginas.
 
-Tú eres responsable de configurar los banners de consentimiento de cookies con Google Tag Manager si los necesitas.
+Eres responsable de configurar los banners de consentimiento de cookies con Google Tag Manager si los necesitas.
 
 <CodeGroup>
 
-```json Opciones de Analytics en docs.json
+```json Opciones de analítica en docs.json
 "integrations": {
     "gtm": {
         "tagId": "required"

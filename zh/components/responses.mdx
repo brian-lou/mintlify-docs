@@ -4,7 +4,7 @@ description: "显示 API 响应值。"
 keywords: ["API 输出", "返回值", "响应结构"]
 ---
 
-`<ResponseField>` 组件用于定义 API 的返回值。在需要列出某些对象的类型时，许多文档页面也会使用 `<ResponseField>`。
+`<ResponseField>` 组件用于定义 API 的返回值。许多文档也会在需要在页面上列出某些内容的类型时使用 `<ResponseField>`。
 
 <ResponseField name="response" type="string" required>
   响应字段示例
@@ -12,13 +12,13 @@ keywords: ["API 输出", "返回值", "响应结构"]
 
 ```mdx
 <ResponseField name="response" type="string" required>
-  响应字段示例
+  A response field example
 </ResponseField>
 ```
 
 
 <div id="props">
-  ## 属性
+  ## Props
 </div>
 
 <ResponseField name="name" type="string" required>
@@ -34,19 +34,19 @@ keywords: ["API 输出", "返回值", "响应结构"]
 </ResponseField>
 
 <ResponseField name="required" type="boolean">
-  在字段名旁显示“required”。
+  在字段名旁显示“required”字样。
 </ResponseField>
 
 <ResponseField name="deprecated" type="boolean">
-  指示该字段是否为已废弃。
+  字段是否已标记为弃用。
 </ResponseField>
 
 <ResponseField name="pre" type="string[]">
-  显示在字段名之前的标签
+  显示在字段名称之前的标签。
 </ResponseField>
 
 <ResponseField name="post" type="string[]">
-  显示在字段名之后的标签
+  显示在字段名称之后的标签。
 </ResponseField>
 
 <RequestExample>

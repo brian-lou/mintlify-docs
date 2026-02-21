@@ -1,25 +1,27 @@
 ---
-title: "Personnaliser le comportement de l’agent"
-description: "Configurer la façon dont l’agent gère les tâches de documentation avec AGENTS.md."
-keywords: ["AGENTS.md", "configuration de l’agent", "instructions personnalisées", "personnalisation de l’agent"]
+title: "Personnaliser le comportement de l'agent"
+description: "Configurer la façon dont l'agent gère les tâches de documentation avec AGENTS.md."
+keywords: ["AGENTS.md", "configuration de l'agent", "instructions personnalisées", "personnalisation de l'agent"]
 ---
 
-Créez un fichier `AGENTS.md` dans votre référentiel pour personnaliser le comportement de l’agent (`Agents.md` est également accepté). L’agent lit ce fichier et suit toutes les instructions que vous y indiquez.
+Créez un fichier `AGENTS.md` dans votre dépôt pour personnaliser le comportement de l'agent (`Agents.md` est également accepté). L'agent lit ce fichier et suit toutes les instructions que vous fournissez.
 
-L’agent recherche les fichiers `AGENTS.md` à deux emplacements. Il vérifie d’abord le répertoire de la documentation, puis la racine du référentiel. Si vous avez des fichiers `AGENTS.md` aux deux emplacements, l’agent utilise celui qui se trouve dans votre répertoire de documentation.
+Vous pouvez aussi utiliser `CLAUDE.md`.
 
-Ajoutez toutes les instructions que vous voulez que l’agent suive. L’agent ajoute ces instructions à son prompt système, de sorte qu’elles s’appliquent à toutes les tâches, que vous utilisiez l’agent dans votre Dashboard, sur Slack ou via l’API.
+L'agent recherche les fichiers `AGENTS.md` à deux emplacements. Il vérifie d'abord le répertoire de documentation, puis la racine du dépôt. Si vous avez des fichiers `AGENTS.md` aux deux emplacements, l'agent utilise le fichier présent dans votre répertoire de documentation.
+
+Ajoutez toutes les instructions que vous souhaitez que l'agent suive. L'agent ajoute ces instructions à son prompt système, de sorte qu'elles s'appliquent à toutes les tâches, que vous utilisiez l'agent dans votre tableau de bord, sur Slack ou via l'API.
 
 <div id="what-to-include-in-agentsmd">
   ## Ce qu’il faut inclure dans AGENTS.md
 </div>
 
-Envisagez d’ajouter des consignes concernant :
+Pensez à ajouter des instructions pour :
 
-- **Préférences de style** : Voix, ton, mise en forme et terminologie propres à votre documentation.
-- **Normes de code** : Langages de programmation, frameworks et conventions de codage à utiliser dans les exemples.
-- **Exigences de contenu** : Quelles sections ou quelles informations inclure pour différents types de pages.
-- **Contexte du projet** : Détails spécifiques sur votre produit, votre architecture ou votre base d’utilisateurs qui influencent les décisions de documentation.
+- **Préférences de style** : voix, ton, mise en forme et terminologie propres à votre documentation.
+- **Normes de code** : langages de programmation, frameworks et conventions de codage à utiliser dans les exemples.
+- **Exigences de contenu** : quelles sections ou informations inclure pour différents types de pages.
+- **Contexte du projet** : détails spécifiques sur votre produit, votre architecture ou votre base d’utilisateurs qui orientent vos choix en matière de documentation.
 
 <div id="example-agentsmd-file">
   ## Exemple de fichier AGENTS.md

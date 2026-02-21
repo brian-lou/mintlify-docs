@@ -2,7 +2,7 @@
   "openapi": "3.0.1",
   "info": {
     "title": "Mintlify Assistant API",
-    "description": "Une API pour intégrer les fonctionnalités de découverte de Mintlify à votre produit.",
+    "description": "Une API pour intégrer les fonctionnalités de découverte de Mintlify dans votre produit.",
     "version": "1.0.0"
   },
   "servers": [
@@ -18,8 +18,8 @@
   "paths": {
     "/v1/assistant/{domain}/message": {
       "post": {
-        "summary": "Message de l’Assistant v1",
-        "description": "Génère un message de réponse de l’Assistant pour le domain spécifié. Compatible avec l’AI SDK v4.",
+        "summary": "Message de l’assistant v1",
+        "description": "Génère un message de réponse de l’assistant pour le domaine spécifié. Compatible avec le SDK IA v4.",
         "parameters": [
           {
             "name": "domain",
@@ -28,7 +28,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "L’identifiant de domain à partir de votre URL `domain.mintlify.app`. Il se trouve à la fin de l’URL de votre Dashboard. Par exemple, `dashboard.mintlify.com/organization/domain` a un identifiant de domain de `domain`."
+            "description": "L’identifiant de domaine provenant de votre URL `domain.mintlify.app`. Il se trouve à la fin de l’URL de votre tableau de bord. Par exemple, `dashboard.mintlify.com/organization/domain` a un identifiant de domaine égal à `domain`."
           }
         ],
         "requestBody": {
@@ -44,12 +44,12 @@
                 "properties": {
                   "fp": {
                     "type": "string",
-                    "description": "Identifiant de fingerprint pour le suivi des sessions de conversation. Utilisez « anonymous » pour les utilisateurs anonymes ou fournissez un identifiant utilisateur unique."
+                    "description": "Identifiant d’empreinte pour le suivi des sessions de conversation. Utilisez « anonymous » pour les utilisateurs anonymes ou fournissez un identifiant utilisateur unique."
                   },
                   "threadId": {
                     "default": null,
                     "type": "string",
-                    "description": "Identifiant facultatif utilisé pour maintenir la continuité d’une conversation sur plusieurs messages. Lorsqu’il est fourni, il permet au système de rattacher les messages suivants au même fil de discussion. Le threadId est renvoyé dans la réponse sous la forme event.threadId lorsque event.type === 'finish'."
+                    "description": "Identifiant facultatif utilisé pour maintenir la continuité de la conversation sur plusieurs messages. Lorsqu’il est fourni, il permet au système d’associer les messages de suivi au même fil de discussion. Le threadId est renvoyé dans la réponse sous la forme event.threadId lorsque event.type === 'finish'."
                   },
                   "messages": {
                     "type": "array",
@@ -81,7 +81,7 @@
                             "data",
                             "user"
                           ],
-                          "description": "Rôle de l’émetteur du message."
+                          "description": "Rôle de l’expéditeur du message."
                         },
                         "createdAt": {
                           "type": "string",
@@ -95,7 +95,7 @@
                         "annotations": {
                           "type": "array",
                           "items": {},
-                          "description": "Tableau optionnel d’annotations pour ce message."
+                          "description": "Liste facultative d’annotations pour le message."
                         },
                         "parts": {
                           "type": "array",
@@ -342,7 +342,7 @@
                               }
                             ]
                           },
-                          "description": "Tableau de segments de message avec différents types, dont le texte, le raisonnement, les sources et les appels d’outils."
+                          "description": "Liste de segments de message avec différents types, notamment texte, raisonnement, sources et appels d’outils."
                         },
                         "experimental_attachments": {
                           "type": "array",
@@ -363,7 +363,7 @@
                               "url"
                             ]
                           },
-                          "description": "Tableau facultatif de pièces jointes expérimentales associées au message."
+                          "description": "Liste facultative de pièces jointes expérimentales pour le message."
                         }
                       },
                       "required": [
@@ -373,12 +373,12 @@
                         "parts"
                       ]
                     },
-                    "description": "Tableau de messages représentant la conversation. Côté frontend, vous utiliserez probablement la fonction handleSubmit du hook useChat du package @ai-sdk pour ajouter les messages utilisateur et gérer les réponses en streaming, plutôt que de définir manuellement les objets de ce tableau, car ils comportent de très nombreux paramètres."
+                    "description": "Liste des messages de la conversation. Sur le front-end, il est généralement préférable d’utiliser la fonction handleSubmit du hook useChat du package @ai-sdk pour ajouter les messages de l’utilisateur et gérer les réponses en streaming, plutôt que de définir manuellement les objets de cette liste, car ils comportent de très nombreux paramètres."
                   },
                   "retrievalPageSize": {
                     "type": "number",
                     "default": 5,
-                    "description": "Nombre de résultats de recherche dans la documentation à utiliser pour générer la réponse. Des valeurs plus élevées fournissent davantage de contexte mais peuvent augmenter le temps de réponse. Valeur recommandée : 5."
+                    "description": "Nombre de résultats de recherche dans la documentation à utiliser pour générer la réponse. Des valeurs plus élevées fournissent davantage de contexte mais peuvent augmenter le temps de réponse. Recommandé : 5."
                   },
                   "filter": {
                     "type": "object",
@@ -386,11 +386,11 @@
                     "properties": {
                       "version": {
                         "type": "string",
-                        "description": "Filtre de version facultatif."
+                        "description": "Filtre optionnel de version."
                       },
                       "language": {
                         "type": "string",
-                        "description": "Filtre de langue facultatif."
+                        "description": "Filtre optionnel de langue."
                       }
                     },
                     "description": "Critères de filtrage facultatifs pour la recherche."
@@ -407,7 +407,7 @@
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "Objet de réponse dont les parties du flux de données sont formatées avec le status, les en-têtes et le champ content spécifiés. Pour plus d’informations, consultez la documentation de l’AI SDK sur [ai-sdk.dev/docs/ai-sdk-ui/streaming-data](https://ai-sdk.dev/docs/ai-sdk-ui/streaming-data). Utilisez le [hook useChat de ai-sdk](https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-chat#usechat) pour gérer le flux de réponse."
+                  "description": "Objet de réponse contenant des segments de flux de données mis en forme avec le statut, les en-têtes et le contenu spécifiés. Pour plus d’informations, consultez la documentation AI SDK à l’adresse [ai-sdk.dev/docs/ai-sdk-ui/streaming-data](https://ai-sdk.dev/docs/ai-sdk-ui/streaming-data). Utilisez le [hook useChat de ai-sdk](https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-chat#usechat) pour gérer le flux de réponses."
                 }
               }
             }
@@ -417,8 +417,8 @@
     },
     "/v2/assistant/{domain}/message": {
       "post": {
-        "summary": "Message de l’Assistant v2",
-        "description": "Génère un message de réponse de l’Assistant pour le domaine spécifié. Compatible avec le SDK d’IA v5+.",
+        "summary": "Message de l’assistant v2",
+        "description": "Génère un message de réponse de l’assistant pour le domaine spécifié. Compatible avec AI SDK v5+.",
         "parameters": [
           {
             "name": "domain",
@@ -427,7 +427,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "L’identifiant de domaine provenant de votre URL `domain.mintlify.app`. Il se trouve à la fin de l’URL de votre Dashboard. Par exemple, `dashboard.mintlify.com/organization/domain` a un identifiant de domaine égal à `domain`."
+            "description": "Identifiant de domaine provenant de votre URL `domain.mintlify.app`. Il se trouve à la fin de l’URL de votre tableau de bord. Par exemple, `dashboard.mintlify.com/organization/domain` a un identifiant de domaine égal à `domain`."
           }
         ],
         "requestBody": {
@@ -443,12 +443,12 @@
                 "properties": {
                   "fp": {
                     "type": "string",
-                    "description": "Identifiant d’empreinte pour le suivi des sessions de conversation. Utilisez `anonymous` pour les utilisateurs non authentifiés ou fournissez un identifiant utilisateur unique."
+                    "description": "Identifiant d’empreinte pour le suivi des sessions de conversation. Utilisez `anonymous` pour les utilisateurs anonymes ou fournissez un identifiant utilisateur unique."
                   },
                   "threadId": {
                     "default": null,
                     "type": "string",
-                    "description": "Identifiant optionnel utilisé pour maintenir la continuité de la conversation sur plusieurs messages. Lorsqu’il est fourni, il permet au système de rattacher les messages suivants au même fil de conversation. Le `threadId` est renvoyé dans la réponse sous la forme `event.threadId` lorsque `event.type === 'finish'`."
+                    "description": "Identifiant facultatif utilisé pour maintenir la continuité de la conversation sur plusieurs messages. Lorsqu’il est fourni, il permet au système de rattacher les messages suivants au même fil de discussion. Le `threadId` est renvoyé dans la réponse sous la forme `event.threadId` lorsque `event.type === 'finish'`."
                   },
                   "messages": {
                     "type": "array",
@@ -483,7 +483,7 @@
                         "createdAt": {
                           "type": "string",
                           "format": "date-time",
-                          "description": "Horodatage indiquant la création du message."
+                          "description": "Horodatage de la création du message."
                         },
                         "parts": {
                           "type": "array",
@@ -510,7 +510,7 @@
                               },
                               {
                                 "type": "object",
-                                "description": "Segment de contenu de raisonnement, avec des metadata de fournisseur facultatives.",
+                                "description": "Segment de contenu de raisonnement avec métadonnées facultatives propres au fournisseur.",
                                 "properties": {
                                   "type": {
                                     "type": "string",
@@ -523,7 +523,7 @@
                                   },
                                   "providerMetadata": {
                                     "type": "object",
-                                    "description": "Metadata spécifiques au fournisseur, facultatives."
+                                    "description": "Métadonnées facultatives propres au fournisseur."
                                   }
                                 },
                                 "required": [
@@ -533,7 +533,7 @@
                               },
                               {
                                 "type": "object",
-                                "description": "Segment faisant référence à une URL source.",
+                                "description": "Segment de référence à une URL source.",
                                 "properties": {
                                   "type": {
                                     "type": "string",
@@ -552,7 +552,7 @@
                                   },
                                   "providerMetadata": {
                                     "type": "object",
-                                    "description": "Metadata spécifiques au fournisseur, facultatives."
+                                    "description": "Métadonnées facultatives propres au fournisseur."
                                   }
                                 },
                                 "required": [
@@ -563,7 +563,7 @@
                               },
                               {
                                 "type": "object",
-                                "description": "Segment représentant un fichier joint.",
+                                "description": "Segment d’une pièce jointe de fichier.",
                                 "properties": {
                                   "type": {
                                     "type": "string",
@@ -604,11 +604,11 @@
                               }
                             ]
                           },
-                          "description": "Tableau de segments du message. Chaque segment a un type et des champs spécifiques à ce type."
+                          "description": "Tableau de segments de message. Chaque segment possède un type et des champs spécifiques à ce type."
                         },
                         "metadata": {
                           "type": "object",
-                          "description": "Metadata facultatives associées au message."
+                          "description": "Métadonnées facultatives associées au message."
                         }
                       },
                       "required": [
@@ -617,12 +617,12 @@
                         "parts"
                       ]
                     },
-                    "description": "Tableau des messages de la conversation. Utilisez la fonction `handleSubmit` du hook `useChat` du package `@ai-sdk/react` pour gérer les messages et les réponses en streaming."
+                    "description": "Tableau des messages de la conversation. Utilisez la fonction handleSubmit du hook useChat du package @ai-sdk/react pour gérer les messages et les réponses diffusées en streaming."
                   },
                   "retrievalPageSize": {
                     "type": "number",
                     "default": 5,
-                    "description": "Nombre de résultats de recherche dans la documentation à utiliser pour générer la réponse. Des valeurs plus élevées fournissent davantage de contexte, mais peuvent augmenter le temps de réponse. Valeur recommandée\u0000a0: 5."
+                    "description": "Nombre de résultats de recherche dans la documentation à utiliser pour générer la réponse. Des valeurs plus élevées offrent davantage de contexte, mais peuvent augmenter le temps de réponse. Recommandé : 5."
                   },
                   "filter": {
                     "type": "object",
@@ -641,7 +641,7 @@
                         "items": {
                           "type": "string"
                         },
-                        "description": "Tableau facultatif d’identifiants de groupes pour filtrer les résultats."
+                        "description": "Tableau facultatif d’identifiants de groupe pour filtrer les résultats."
                       }
                     },
                     "description": "Critères de filtrage facultatifs pour la recherche."
@@ -657,15 +657,15 @@
                             "code",
                             "textSelection"
                           ],
-                          "description": "Type de contexte fourni."
+                          "description": "Le type de contexte fourni."
                         },
                         "value": {
                           "type": "string",
-                          "description": "Extrait de code ou contenu textuel sélectionné."
+                          "description": "L’extrait de code ou le contenu textuel sélectionné."
                         },
                         "path": {
                           "type": "string",
-                          "description": "Chemin facultatif vers le fichier ou la page source."
+                          "description": "Chemin facultatif vers le fichier source ou la page."
                         },
                         "elementId": {
                           "type": "string",
@@ -677,7 +677,7 @@
                         "value"
                       ]
                     },
-                    "description": "Tableau facultatif d’informations contextuelles à fournir à l’Assistant."
+                    "description": "Tableau facultatif d’informations contextuelles à fournir à l’assistant."
                   }
                 }
               }
@@ -691,7 +691,7 @@
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "Réponse en streaming compatible avec AI SDK v5. Utilisez le [hook useChat de @ai-sdk/react](https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-chat#usechat) pour gérer le streaming de la réponse."
+                  "description": "Réponse en flux compatible avec l’AI SDK v5. Utilisez le [hook useChat de @ai-sdk/react](https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-chat#usechat) pour gérer le flux de réponses."
                 }
               }
             }
@@ -707,7 +707,7 @@
           }
         },
         "summary": "Rechercher dans la documentation",
-        "description": "Effectuez des recherches sémantiques et par mots-clés dans votre documentation, avec un filtrage et une pagination configurables.",
+        "description": "Effectuez des recherches sémantiques et par mots-clés dans votre documentation, avec filtrage et pagination configurables.",
         "parameters": [
           {
             "name": "domain",
@@ -716,7 +716,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "L’identifiant de domaine extrait de votre URL `domain.mintlify.app`. Il se trouve à la fin de l’URL de votre Dashboard. Par exemple, dans `dashboard.mintlify.com/organization/domain`, l’identifiant de domaine est `domain`."
+            "description": "L’identifiant de domaine figurant dans votre URL `domain.mintlify.app`. Il se trouve à la fin de l’URL de votre tableau de bord. Par exemple, `dashboard.mintlify.com/organization/domain` a pour identifiant de domaine `domain`."
           }
         ],
         "requestBody": {
@@ -736,11 +736,11 @@
                   "pageSize": {
                     "type": "number",
                     "default": 10,
-                    "description": "Nombre de résultats de recherche à retourner. La valeur par défaut est 10 si aucune valeur n’est spécifiée."
+                    "description": "Nombre de résultats de recherche à renvoyer. La valeur par défaut est 10 si elle n’est pas précisée."
                   },
                   "filter": {
                     "type": "object",
-                    "description": "Paramètres de filtrage optionnels permettant de restreindre les résultats de recherche.",
+                    "description": "Paramètres de filtrage facultatifs pour affiner les résultats de recherche.",
                     "properties": {
                       "version": {
                         "type": "string",
@@ -769,15 +769,15 @@
                     "properties": {
                       "content": {
                         "type": "string",
-                        "description": "Le contenu correspondant issu de votre documentation."
+                        "description": "Contenu correspondant extrait de votre documentation."
                       },
                       "path": {
                         "type": "string",
-                        "description": "Le chemin d’accès ou l’URL du document source."
+                        "description": "Chemin ou URL du document source."
                       },
                       "metadata": {
                         "type": "object",
-                        "description": "Metadata supplémentaires relatives au résultat de recherche."
+                        "description": "Métadonnées supplémentaires relatives au résultat de recherche."
                       }
                     }
                   }
@@ -794,7 +794,7 @@
       "bearerAuth": {
         "type": "http",
         "scheme": "bearer",
-        "description": "L’en-tête Authorization attend un jeton Bearer. Utilisez une clé d’API Assistant (préfixée par `mint_dsc_`). Il s’agit d’une clé publique, que vous pouvez utiliser en toute sécurité dans du code côté client. Générez-en une sur la page [API keys](https://dashboard.mintlify.com/settings/organization/api-keys) de votre Dashboard."
+        "description": "L’en-tête Authorization attend un jeton Bearer. Utilisez pour cela une clé d’API assistant (préfixée par `mint_dsc_`). Il s’agit d’une clé publique, que vous pouvez utiliser en toute sécurité dans du code côté client. Générez-en une depuis la page [API keys](https://dashboard.mintlify.com/settings/organization/api-keys) de votre tableau de bord."
       }
     }
   }

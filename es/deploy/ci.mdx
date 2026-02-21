@@ -1,33 +1,33 @@
 ---
-title: "Verificaciones de CI"
-description: "Automatiza la comprobación de enlaces rotos, el linting y la validación gramatical en CI/CD."
-keywords: ["integración continua", "CI/CD", "verificaciones", "Vale", "linter"]
+title: "Comprobaciones de CI"
+description: "Automatiza las comprobaciones de enlaces rotos, el linting y la validación gramatical en CI/CD."
+keywords: ["integración continua", "CI/CD", "comprobaciones", "Vale", "linter"]
 ---
 
 <Info>
-  Los [planes Pro y Enterprise](https://mintlify.com/pricing?ref=docs-ci) incluyen verificaciones de CI para repositorios de GitHub.
+  Los [planes Pro y Enterprise](https://mintlify.com/pricing?ref=docs-ci) incluyen comprobaciones de CI para repositorios de GitHub.
 </Info>
 
-Usa las verificaciones de CI para analizar tu documentación, detectar errores y mostrar advertencias antes de implementar. Las verificaciones de CI de Mintlify se ejecutan en solicitudes de extracción contra una rama de implementación configurada.
+Usa las comprobaciones de CI para analizar tu documentación en busca de errores y mostrar advertencias antes del despliegue. Las comprobaciones de Mintlify CI se ejecutan en pull requests dirigidas a una rama de despliegue configurada.
 
 <div id="installation">
   ## Instalación
 </div>
 
-Para comenzar, sigue los pasos en la página de [GitHub](/es/deploy/github).
+Para comenzar, sigue los pasos de la página de [GitHub](/es/deploy/github).
 
 <Tip>
-  Solo se necesita acceso al repositorio donde se encuentra el contenido de tu documentación, por lo que se recomienda encarecidamente otorgar acceso únicamente a ese repositorio.
+  Solo se requiere acceso al repositorio donde se encuentra el contenido de tu documentación, por lo que se recomienda encarecidamente conceder acceso únicamente a ese repositorio.
 </Tip>
 
 ## Configuración
 
-Configura las comprobaciones de CI habilitadas para una implementación desde la página de [Add-ons](https://dashboard.mintlify.com/products/addons) de tu dashboard. Activa las comprobaciones que quieras ejecutar.
+Configura las verificaciones de CI habilitadas para una implementación desde la página de [Add-ons](https://dashboard.mintlify.com/products/addons) de tu panel de control. Activa las verificaciones que quieras ejecutar.
 
-Al habilitar comprobaciones, puedes elegir ejecutarlas con nivel de `Advertencia` o `Bloqueo`.
+Al habilitar las verificaciones, puedes elegir ejecutarlas con nivel `Warning` o `Blocking`.
 
-* Una comprobación con nivel `Advertencia` nunca devolverá un estado de error, incluso si hay errores o sugerencias.
-* Una comprobación con nivel `Bloqueo` devolverá un estado de error si hay errores o sugerencias.
+* Una verificación de nivel `Warning` nunca mostrará un estado de error, incluso si hay errores o sugerencias.
+* Una verificación de nivel `Blocking` mostrará un estado de error si hay errores o sugerencias.
 
 <div id="available-ci-checks">
   ## Comprobaciones de CI disponibles
@@ -37,46 +37,47 @@ Al habilitar comprobaciones, puedes elegir ejecutarlas con nivel de `Advertencia
   ### Enlaces rotos
 </div>
 
-De forma similar al funcionamiento del [verificador de enlaces de la CLI](/es/installation#find-broken-links) en tu máquina local, la verificación de CI de enlaces rotos busca automáticamente en el contenido de tu documentación enlaces internos que no funcionan.
+De forma similar a cómo funciona el [comprobador de enlaces de la CLI](/es/installation#find-broken-links) en tu máquina local,
+la comprobación de enlaces rotos de CI busca automáticamente en el contenido de tu documentación en busca de enlaces internos rotos.
 
-Para ver los resultados de esta verificación, visita la página de resultados de comprobaciones de GitHub para una confirmación específica.
+Para ver los resultados de esta comprobación, visita la página de resultados de comprobaciones de GitHub para un commit específico.
 
 <div id="vale">
   ### Vale
 </div>
 
-[Vale](https://vale.sh/) es un linter de prosa de código abierto basado en reglas que admite una variedad de tipos de documentos, incluidos Markdown y MDX. Usa Vale para comprobar la coherencia del estilo y el tono en tu documentación.
+[Vale](https://vale.sh/) es un linter de prosa de código abierto basado en reglas que admite una variedad de tipos de documentos, entre ellos Markdown y MDX. Usa Vale para comprobar la coherencia del estilo y el tono de tu documentación.
 
-Mintlify admite ejecutar Vale automáticamente en una comprobación de CI y mostrar los resultados como un estado de comprobación.
+Mintlify permite ejecutar Vale automáticamente en una comprobación de CI y mostrar los resultados como estado de la comprobación.
 
 <div id="configuration">
   #### Configuración
 </div>
 
-Si tienes un archivo `.vale.ini` en el directorio raíz de contenido de tu implementación, la verificación de Vale CI usa ese archivo de configuración y cualquier archivo de configuración en el `stylesPath` que especifiques.
+Si tienes un archivo `.vale.ini` en el directorio raíz de contenido de tu despliegue, la comprobación de CI de Vale usa ese archivo de configuración y cualquier archivo de configuración en la ruta indicada en `stylesPath`.
 
 Si no tienes un archivo de configuración de Vale, se cargará automáticamente la configuración predeterminada.
 
 ```mdx Default vale.ini configuration expandable
-# Top level styles
+# Estilos de nivel superior
 StylesPath = /app/styles
 MinAlertLevel = suggestion
-# Etiquetas HTML en línea a ignorar (code/tt para fragmentos de código, img/url para enlaces/imágenes, a para etiquetas ancla)
+# Etiquetas HTML en línea a ignorar (code/tt para fragmentos de código, img/url para enlaces/imágenes, a para etiquetas de anclaje)
 IgnoredScopes = code, tt, img, url, a
 SkippedScopes = script, style, pre, figure
 
-# Vocabularies
+# Vocabularios
 Vocab = Mintlify
 
-# Packages
+# Paquetes
 Packages = MDX
 
-# Only match MDX
+# Solo coincide con MDX
 [*.mdx]
 BasedOnStyles = Vale
-Vale.Terms = NO # Enforces really harsh capitalization rules, keep off
+Vale.Terms = NO # Aplica reglas de capitalización muy estrictas, mantener desactivado
 
-# Ignore JSX/MDX-specific syntax patterns
+# Ignorar patrones de sintaxis específicos de JSX/MDX
 # `import ...`, `export ...`
 # `<Component ... />`
 # `<Component>...</Component>`
@@ -85,7 +86,7 @@ TokenIgnores = (?sm)((?:import|export) .+?$), \
 (?<!`)(<\w+ ?.+ ?\/>)(?!`), \
 (<[A-Z]\w+>.+?<\/[A-Z]\w+>)
 
-# Exclude multiline JSX and curly braces
+# Excluir JSX multilínea y llaves
 # `<Component \n ... />`
 BlockIgnores = (?sm)^(<\w+\n .*\s\/>)$, \
 (?sm)^({.+.*})
@@ -363,11 +364,10 @@ next
 toc
 ```
 
-Para agregar tu propio vocabulario a la configuración predeterminada, crea un directorio `styles/config/vocabularies/Mintlify` con los archivos `accept.txt` y `reject.txt`.
+Para agregar tu propio vocabulario para la configuración predeterminada, crea un directorio `styles/config/vocabularies/Mintlify` con los archivos `accept.txt` y `reject.txt`.
 
-
-* `accept.txt`: Palabras que deben ser ignoradas por el linter Vale. Por ejemplo, nombres de productos o términos poco comunes.
-* `reject.txt`: Palabras que deben marcarse como errores. Por ejemplo, jerga o palabras que no son apropiadas para el tono de tu documentación.
+* `accept.txt`: Palabras que el linter de Vale debe ignorar. Por ejemplo, nombres de productos o términos poco comunes.
+* `reject.txt`: Palabras que se deben marcar como errores. Por ejemplo, jerga o palabras que no son apropiadas para el tono de tu documentación.
 
 ```text Example Vale file structure
 /your-project
@@ -399,7 +399,7 @@ Para agregar tu propio vocabulario a la configuración predeterminada, crea un d
 ```
 
 <Note>
-  Por razones de seguridad, no se admite el uso de un `stylesPath` absoluto ni de un `stylesPath` que incluya `..`.
+  Por motivos de seguridad, no se permiten rutas `stylesPath` absolutas ni `stylesPath` que incluyan valores `..`.
 
   Usa rutas relativas e incluye el `stylesPath` en tu repositorio.
 </Note>
@@ -408,9 +408,9 @@ Para agregar tu propio vocabulario a la configuración predeterminada, crea un d
   #### Paquetes
 </div>
 
-Vale es compatible con una variedad de [paquetes](https://vale.sh/docs/keys/packages), que puedes usar para detectar errores ortográficos y de estilo. Cualquier paquete que incluyas en tu repositorio bajo el `stylesPath` correcto se instala automáticamente y se utiliza en tu configuración de Vale.
+Vale es compatible con una variedad de [paquetes](https://vale.sh/docs/keys/packages) que se pueden usar para comprobar errores ortográficos y de estilo. Cualquier paquete que incluyas en tu repositorio en el `stylesPath` correcto se instala automáticamente y se utiliza en tu configuración de Vale.
 
-Para los paquetes que no estén incluidos en tu repositorio, puedes especificar cualquiera del [registro de paquetes de Vale](https://vale.sh/explorer); se descargarán automáticamente y se utilizarán en tu configuración de Vale.
+Para los paquetes que no estén incluidos en tu repositorio, puedes especificar cualquiera de los paquetes del [registro de paquetes de Vale](https://vale.sh/explorer); se descargarán automáticamente y se utilizarán en tu configuración de Vale.
 
 <Note>
   Por motivos de seguridad, **no** se admite la descarga automática de paquetes que no provengan del [registro de paquetes de Vale](https://vale.sh/explorer).
@@ -424,14 +424,14 @@ Para los paquetes que no estén incluidos en tu repositorio, puedes especificar 
   La compatibilidad nativa con MDX requiere Vale 3.10.0 o posterior. Comprueba tu versión de Vale con `vale --version`.
 </Note>
 
-Para usar los comentarios dentro del documento de Vale en archivos MDX, utiliza comentarios al estilo MDX `{/* ... */}`:
+Para usar los comentarios en el propio documento de Vale en archivos MDX, utiliza comentarios con sintaxis MDX `{/* ... */}`:
 
 ```mdx
 {/* vale off */}
 
-Este texto es ignorado por Vale
+This text is ignored by Vale
 
 {/* vale on */}
 ```
 
-Vale reconoce y respeta automáticamente estos comentarios en los archivos MDX sin necesidad de configuración adicional. Usa los comentarios para omitir líneas o secciones que el linter deba ignorar.
+Vale reconoce y respeta automáticamente estos comentarios en archivos MDX sin necesidad de configuración adicional. Utiliza comentarios para omitir líneas o secciones que el linter deba ignorar.

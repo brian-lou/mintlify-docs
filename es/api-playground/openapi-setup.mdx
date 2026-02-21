@@ -1,23 +1,23 @@
 ---
 title: "Configuración de OpenAPI"
-description: "Genera páginas de API automáticamente a partir de tu especificación de OpenAPI."
-keywords: ["OpenAPI", "Especificación de API", "Swagger"]
+description: "Genera páginas de la API automáticamente a partir de tu especificación de OpenAPI."
+keywords: ["OpenAPI", "API specification", "Swagger"]
 ---
 
-OpenAPI es una especificación para describir APIs. Mintlify es compatible con documentos OpenAPI 3.0 y 3.1 para generar documentación de API interactiva y mantenerla actualizada.
+OpenAPI es una especificación para describir APIs. Mintlify es compatible con documentos de OpenAPI 3.0 y 3.1 para generar documentación de API interactiva y mantenerla actualizada.
 
 <div id="add-an-openapi-specification-file">
-  ## Agrega un archivo de especificación OpenAPI
+  ## Añadir un archivo de especificación OpenAPI
 </div>
 
 Para documentar tus endpoints con OpenAPI, necesitas una o más especificaciones OpenAPI válidas en formato JSON o YAML que sigan la [especificación OpenAPI 3.0 o 3.1](https://swagger.io/specification/).
 
-Agrega especificaciones OpenAPI a tu repositorio de documentación o alójalas en línea donde puedas acceder a ellas mediante una URL.
+Añade las especificaciones OpenAPI a tu repositorio de documentación u hospédalas en línea donde puedas acceder a ellas mediante una URL.
 
-Haz referencia a cualquier número de especificaciones OpenAPI en el elemento de navigation de tu `docs.json` para crear páginas para los endpoints de tu API. Cada archivo de especificación genera su propio conjunto de endpoints.
+Incluye cualquier número de especificaciones OpenAPI en el elemento de navegación de tu `docs.json` para crear páginas para los endpoints de tu API. Cada archivo de especificación genera su propio conjunto de endpoints.
 
 <CodeGroup>
-  ```json Single specification
+  ```json Especificación única
   "navigation": {
     "tabs": [
       {
@@ -28,7 +28,7 @@ Haz referencia a cualquier número de especificaciones OpenAPI en el elemento de
   }
   ```
 
-  ```json Multiple specifications
+  ```json Varias especificaciones
   "navigation": {
     "tabs": [
       {
@@ -44,29 +44,29 @@ Haz referencia a cualquier número de especificaciones OpenAPI en el elemento de
 </CodeGroup>
 
 <Note>
-  Mintlify admite `$ref` para **referencias internas únicamente** dentro de un solo documento OpenAPI. No se admiten referencias externas.
+  Mintlify admite `$ref` para **referencias internas únicamente** dentro de un solo documento OpenAPI. Las referencias externas no se admiten.
 </Note>
 
 <div id="describe-your-api">
   ### Describe tu API
 </div>
 
-Recomendamos los siguientes recursos para aprender y elaborar tu especificación de OpenAPI.
+Recomendamos los siguientes recursos para aprender y crear tu especificación de OpenAPI.
 
 * [Guía de OpenAPI de Swagger](https://swagger.io/docs/specification/v3_0/basic-structure/) para aprender la sintaxis de OpenAPI.
-* [Fuentes Markdown de la especificación OpenAPI](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/) para consultar los detalles de la versión más reciente de la especificación.
-* [Swagger Editor](https://editor.swagger.io/) para editar, validar y depurar tu documento de OpenAPI.
-* [La CLI de Mint](https://www.npmjs.com/package/mint) para validar tu documento de OpenAPI con el comando: `mint openapi-check <openapiFilenameOrUrl>`.
+* [Fuentes en Markdown de la especificación OpenAPI](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/) para consultar los detalles de la especificación OpenAPI más reciente.
+* [Swagger Editor](https://editor.swagger.io/) para editar, validar y depurar tu documento OpenAPI.
+* [La CLI de Mint](https://www.npmjs.com/package/mint) para validar tu documento OpenAPI con el comando: `mint openapi-check <openapiFilenameOrUrl>`.
 
 <Note>
-  La Guía de OpenAPI de Swagger corresponde a OpenAPI v3.0, pero casi toda la información es aplicable a v3.1. Para obtener más información sobre las diferencias entre v3.0 y v3.1, consulta [Migrating from OpenAPI 3.0 to 3.1.0](https://www.openapis.org/blog/2021/02/16/migrating-from-openapi-3-0-to-3-1-0) en el blog de OpenAPI.
+  La Guía de OpenAPI de Swagger está pensada para OpenAPI v3.0, pero casi toda la información es aplicable a v3.1. Para obtener más información sobre las diferencias entre v3.0 y v3.1, consulta [Migrating from OpenAPI 3.0 to 3.1.0](https://www.openapis.org/blog/2021/02/16/migrating-from-openapi-3-0-to-3-1-0) en el blog de OpenAPI.
 </Note>
 
 <div id="specify-the-base-url-for-your-api">
   ### Especifica la URL base de tu API
 </div>
 
-Para habilitar el área de pruebas de la API, añade un campo `servers` a tu especificación de OpenAPI con la URL base de tu API.
+Para habilitar el entorno de pruebas de la API, agrega un campo `servers` a tu especificación OpenAPI con la URL base de tu API.
 
 ```json
 {
@@ -78,23 +78,23 @@ Para habilitar el área de pruebas de la API, añade un campo `servers` a tu esp
 }
 ```
 
-En una especificación de OpenAPI, los distintos endpoints de la API se definen por sus rutas, como `/users/{id}` o simplemente `/`. La URL base indica dónde se deben anexar esas rutas. Para obtener más información sobre cómo configurar el campo `servers`, consulta [API Server and Base Path](https://swagger.io/docs/specification/api-host-and-base-path/) en la documentación de OpenAPI.
+En una especificación OpenAPI, los diferentes endpoints de la API se especifican por sus rutas, como `/users/{id}` o simplemente `/`. La URL base define dónde se deben agregar estas rutas. Para obtener más información sobre cómo configurar el campo `servers`, consulta [API Server and Base Path](https://swagger.io/docs/specification/api-host-and-base-path/) en la documentación de OpenAPI.
 
-El área de pruebas de la API usa estas URL de servidor para determinar adónde enviar las solicitudes. Si especificas varios servidores, un menú desplegable permite a los usuarios alternar entre ellos. Si no especificas un servidor, el área de pruebas de la API utiliza el modo simple, ya que no puede enviar solicitudes sin una URL base.
+El entorno de pruebas de la API utiliza estas URL de servidor para determinar adónde enviar las solicitudes. Si especificas varios servidores, un menú desplegable permite a los usuarios cambiar entre servidores. Si no especificas un servidor, el entorno de pruebas de la API utiliza el modo simple, ya que no puede enviar solicitudes sin una URL base.
 
-Si tu API tiene endpoints que se encuentran en distintas URL, puedes [sobrescribir el campo `servers`](https://swagger.io/docs/specification/v3_0/api-host-and-base-path/#overriding-servers) para una ruta u operación determinada.
+Si tu API tiene endpoints que se encuentran en diferentes URL, puedes [sobrescribir el campo `servers`](https://swagger.io/docs/specification/v3_0/api-host-and-base-path/#overriding-servers) para una ruta o una operación determinada.
 
 <div id="specify-authentication">
   ### Especificar la autenticación
 </div>
 
-Para habilitar la autenticación en la documentación y el playground de tu API, configura los campos `securitySchemes` y `security` en tu especificación de OpenAPI. Las descripciones de la API y el playground de la API agregan campos de autenticación basados en la configuración de seguridad de tu especificación de OpenAPI.
+Para habilitar la autenticación en la documentación y en el playground de tu API, configura los campos `securitySchemes` y `security` en tu especificación de OpenAPI. Las descripciones de la API y el playground de la API añaden campos de autenticación basados en las configuraciones de seguridad de tu especificación de OpenAPI.
 
 <Steps>
   <Step title="Define tu método de autenticación.">
-    Agrega el campo `securitySchemes` para definir cómo se autentican los usuarios.
+    Añade un campo `securitySchemes` para definir cómo se autentican los usuarios.
 
-    Este ejemplo muestra una configuración de autenticación Bearer.
+    Este ejemplo muestra una configuración para autenticación bearer.
 
     ```json
     {
@@ -111,7 +111,7 @@ Para habilitar la autenticación en la documentación y el playground de tu API,
   </Step>
 
   <Step title="Aplica la autenticación a tus endpoints.">
-    Agrega el campo `security` para requerir autenticación.
+    Añade un campo `security` para exigir autenticación.
 
     ```json
     {
@@ -127,11 +127,11 @@ Para habilitar la autenticación en la documentación y el playground de tu API,
 
 Los tipos de autenticación más comunes incluyen:
 
-* [Claves de API](https://swagger.io/docs/specification/authentication/api-keys/): Para claves en encabezado, consulta o cookie.
+* [API Keys](https://swagger.io/docs/specification/authentication/api-keys/): Para claves en cabeceras, parámetros de consulta o cookies.
 * [Bearer](https://swagger.io/docs/specification/authentication/bearer-authentication/): Para tokens JWT u OAuth.
-* [Básica](https://swagger.io/docs/specification/authentication/basic-authentication/): Para usuario y contraseña.
+* [Basic](https://swagger.io/docs/specification/authentication/basic-authentication/): Para nombre de usuario y contraseña.
 
-Si distintos endpoints de tu API requieren diferentes métodos de autenticación, puedes [anular el campo `security`](https://swagger.io/docs/specification/authentication/#:~:text=you%20can%20apply%20them%20to%20the%20whole%20API%20or%20individual%20operations%20by%20adding%20the%20security%20section%20on%20the%20root%20level%20or%20operation%20level%2C%20respectively.) para una operación determinada.
+Si distintos endpoints dentro de tu API requieren diferentes métodos de autenticación, puedes [sobrescribir el campo `security`](https://swagger.io/docs/specification/authentication/#:~:text=you%20can%20apply%20them%20to%20the%20whole%20API%20or%20individual%20operations%20by%20adding%20the%20security%20section%20on%20the%20root%20level%20or%20operation%20level%2C%20respectively.) para una operación determinada.
 
 Para obtener más información sobre cómo definir y aplicar la autenticación, consulta [Authentication](https://swagger.io/docs/specification/authentication/) en la documentación de OpenAPI.
 
@@ -139,13 +139,13 @@ Para obtener más información sobre cómo definir y aplicar la autenticación, 
   ## Personaliza las páginas de tus endpoints
 </div>
 
-Personaliza las páginas de tus endpoints añadiendo la extensión `x-mint` a tu especificación de OpenAPI. La extensión `x-mint` ofrece un control adicional sobre cómo se genera y se muestra la documentación de tu API.
+Personaliza las páginas de tus endpoints añadiendo la extensión `x-mint` a tu especificación OpenAPI. La extensión `x-mint` proporciona un mayor control sobre cómo se genera y muestra la documentación de tu API.
 
 <div id="metadata">
   ### Metadatos
 </div>
 
-Sobrescribe los metadatos predeterminados de las páginas de API generadas añadiendo `x-mint: metadata` a cualquier operación. Puedes usar cualquier campo de metadatos válido en el frontmatter de MDX, excepto `openapi`.
+Sobrescribe los metadatos predeterminados de las páginas de API generadas agregando `x-mint: metadata` a cualquier operación. Puedes utilizar cualquier campo de metadatos que sea válido en el frontmatter de MDX, excepto `openapi`.
 
 ```json {7-13}
 {
@@ -157,13 +157,13 @@ Sobrescribe los metadatos predeterminados de las páginas de API generadas añad
         "x-mint": {
           "metadata": {
             "title": "List all users",
-            "description": "Obtener datos de usuarios paginados con opciones de filtrado",
+            "description": "Fetch paginated user data with filtering options",
             "og:title": "Display a list of users"
           }
         },
         "parameters": [
           {
-            // Parameter configuration
+            // Configuración de parámetros
           }
         ]
       }
@@ -172,14 +172,14 @@ Sobrescribe los metadatos predeterminados de las páginas de API generadas añad
 }
 ```
 
-También puedes controlar cómo se muestra el playground para cada endpoint usando los campos de metadata `playground` y `groups`:
+También puedes controlar cómo se muestra el playground para cada endpoint mediante los campos de metadatos `playground` y `groups`:
 
 ```json {7-11}
 {
   "paths": {
     "/admin/users": {
       "post": {
-        "summary": "Crear usuario administrador",
+        "summary": "Create admin user",
         "x-mint": {
           "metadata": {
             "playground": "auth",
@@ -193,22 +193,22 @@ También puedes controlar cómo se muestra el playground para cada endpoint usan
 }
 ```
 
-Esta configuración hace que la página sea pública mientras restringe el playground interactivo a usuarios autenticados del grupo `admin`.
+Esta configuración permite que la página sea visible públicamente, a la vez que restringe el entorno de pruebas interactivo a los usuarios autenticados del grupo `admin`.
 
 <div id="content">
   ### Contenido
 </div>
 
-Agrega contenido antes de la documentación de la API generada automáticamente usando `x-mint: content`. La extensión `x-mint: content` es compatible con todos los componentes y el formato MDX de Mintlify.
+Añade contenido antes de la documentación de la API generada automáticamente usando `x-mint: content`. La extensión `x-mint: content` es compatible con todos los componentes y el formato MDX de Mintlify.
 
 ```json {6-8}
 {
   "paths": {
     "/users": {
       "post": {
-        "summary": "Crear usuario",
+        "summary": "Create user",
         "x-mint": {
-          "content": "## Requisitos previos\n\nEste endpoint requiere privilegios de administrador y tiene límite de tasa.\n\n<Note>Los correos electrónicos de los usuarios deben ser únicos en todo el sistema.</Note>"
+          "content": "## Prerequisites\n\nThis endpoint requires admin privileges and has rate limiting.\n\n<Note>User emails must be unique across the system.</Note>"
         },
         "parameters": [
           {
@@ -225,14 +225,14 @@ Agrega contenido antes de la documentación de la API generada automáticamente 
   ### Href
 </div>
 
-Establece la URL de la página del endpoint generada automáticamente usando `x-mint: href`. Cuando `x-mint: href` está presente, la página de la API generada utiliza la URL especificada en lugar de la URL predeterminada generada automáticamente.
+Establece la URL de la página de endpoint generada automáticamente usando `x-mint: href`. Cuando `x-mint: href` está presente, la página de la API generada usa la URL especificada en lugar de la URL generada automáticamente predeterminada.
 
 ```json {6-8, 14-16}
 {
   "paths": {
     "/legacy-endpoint": {
       "get": {
-        "summary": "Endpoint heredado",
+        "summary": "Legacy endpoint",
         "x-mint": {
           "href": "/deprecated-endpoints/legacy-endpoint"
         }
@@ -240,7 +240,7 @@ Establece la URL de la página del endpoint generada automáticamente usando `x-
     },
     "/documented-elsewhere": {
       "post": {
-        "summary": "Endpoint especial",
+        "summary": "Special endpoint",
         "x-mint": {
           "href": "/guides/special-endpoint-guide"
         }
@@ -251,63 +251,63 @@ Establece la URL de la página del endpoint generada automáticamente usando `x-
 ```
 
 <div id="auto-populate-api-pages">
-  ## Generar automáticamente páginas de API
+  ## Completar automáticamente las páginas de la API
 </div>
 
 Añade un campo `openapi` a cualquier elemento de navegación en tu `docs.json` para generar automáticamente páginas para endpoints de OpenAPI. Puedes controlar dónde aparecen estas páginas en tu estructura de navegación, ya sea como secciones de API dedicadas o junto con otras páginas.
 
-El campo `openapi` acepta una ruta de archivo en tu repositorio de documentación o una URL a un documento de OpenAPI alojado.
+El campo `openapi` acepta una ruta de archivo en tu repositorio de documentación o una URL a un documento OpenAPI alojado.
 
-Las páginas de endpoints generadas tienen estos metadatos predeterminados:
+Las páginas de endpoints generadas tienen estos valores de metadatos predeterminados:
 
-* `title`: El campo `summary` de la operación, si está presente. Si no hay `summary`, el título se genera a partir del método HTTP y el endpoint.
+* `title`: El campo `summary` de la operación, si está presente. Si no hay `summary`, el título se genera a partir del método HTTP y del endpoint.
 * `description`: El campo `description` de la operación, si está presente.
-* `version`: El valor `version` del ancla o pestaña principal, si está presente.
-* `deprecated`: El campo `deprecated` de la operación. Si es `true`, aparece una etiqueta de “deprecated” junto al título del endpoint en la navegación lateral y en la página del endpoint.
+* `version`: El valor `version` del ancla o pestaña padre, si está presente.
+* `deprecated`: El campo `deprecated` de la operación. Si es `true`, aparece una etiqueta de obsoleto junto al título del endpoint en la navegación lateral y en la página del endpoint.
 
 <Tip>
-  Para excluir endpoints específicos de tus páginas de API generadas automáticamente, añade la propiedad [x-hidden](/es/api-playground/managing-page-visibility#x-hidden) a la operación en tu especificación de OpenAPI.
+  Para excluir endpoints específicos de tus páginas de API generadas automáticamente, añade la propiedad [x-hidden](/es/api-playground/managing-page-visibility#x-hidden) a la operación en tu especificación OpenAPI.
 </Tip>
 
 Hay dos enfoques para añadir páginas de endpoints a tu documentación:
 
-1. **Secciones de API dedicadas**: Referencia especificaciones de OpenAPI en elementos de navegación para crear secciones de API dedicadas.
-2. **Endpoints selectivos**: Referencia endpoints específicos en tu navegación junto con otras páginas.
+1. **Secciones de API dedicadas**: Haz referencia a especificaciones OpenAPI en elementos de navegación para secciones de API dedicadas.
+2. **Endpoints selectivos**: Haz referencia a endpoints específicos en tu navegación junto con otras páginas.
 
 <div id="dedicated-api-sections">
   ### Secciones de API dedicadas
 </div>
 
-Crea secciones de API dedicadas añadiendo un campo `openapi` a un elemento de navegación y ninguna otra página. Se incluyen todos los endpoints de la especificación.
+Crea secciones de API dedicadas añadiendo un campo `openapi` a un elemento de navegación y sin añadir otras páginas. Se incluyen todos los endpoints de la especificación.
 
 ```json {5}
 "navigation": {
   "tabs": [
     {
-        "tab": "Referencia de API",
+        "tab": "API Reference",
         "openapi": "https://petstore3.swagger.io/api/v3/openapi.json"
     }
   ]
 }
 ```
 
-Para organizar varias especificaciones de OpenAPI en secciones separadas de tu documentación, asigna cada especificación a un grupo distinto dentro de la jerarquía de navegación. Cada grupo puede referenciar su propia especificación de OpenAPI.
+Para organizar varias especificaciones OpenAPI en secciones separadas de tu documentación, asigna cada una a un grupo distinto en tu jerarquía de navegación. Cada grupo puede hacer referencia a su propia especificación OpenAPI.
 
 ```json {8-11, 15-18}
 "navigation": {
   "tabs": [
     {
-      "tab": "Referencia de API",
+      "tab": "API Reference",
       "groups": [
         {
-          "group": "API de Usuarios",
+          "group": "Users API",
           "openapi": {
             "source": "/path/to/users-openapi.json",
             "directory": "users-api-reference"
           }
         },
         {
-          "group": "API de Administrador",
+          "group": "Admin API",
           "openapi": {
             "source": "/path/to/admin-openapi.json",
             "directory": "admin-api-reference"
@@ -320,33 +320,33 @@ Para organizar varias especificaciones de OpenAPI en secciones separadas de tu d
 ```
 
 <Note>
-  El campo `directory` es opcional y especifica dónde se almacenan las páginas de API generadas en tu repositorio de documentación. Si no se especifica, de forma predeterminada se usa el directorio `api-reference` de tu repositorio.
+  El campo `directory` es opcional y especifica dónde se almacenan las páginas de la API generadas en tu repositorio de documentación. Si no se indica, de manera predeterminada se usará el directorio `api-reference` de tu repositorio.
 </Note>
 
 <div id="selective-endpoints">
   ### Endpoints selectivos
 </div>
 
-Cuando quieras tener más control sobre dónde aparecen los endpoints en tu documentación, puedes hacer referencia a endpoints específicos en la navegación. Este enfoque te permite generar páginas de endpoints de API junto con otros contenidos. También puedes usarlo para combinar endpoints de diferentes especificaciones de OpenAPI.
+Cuando necesitas más control sobre dónde aparecen los endpoints en tu documentación, puedes hacer referencia a endpoints específicos en la navegación. Este enfoque te permite generar páginas de endpoints de API junto con otros contenidos. También puedes usar este enfoque para combinar endpoints de distintas especificaciones de OpenAPI.
 
 <div id="set-a-default-openapi-spec">
-  #### Establecer una especificación de OpenAPI predeterminada
+  #### Configura una especificación OpenAPI predeterminada
 </div>
 
-Configura una especificación de OpenAPI predeterminada para un elemento de navegación. Luego, referencia endpoints específicos en el campo `pages`.
+Configura una especificación OpenAPI predeterminada para un elemento de navegación. Luego haz referencia a endpoints específicos en el campo `pages`.
 
 ```json {12, 15-16}
 "navigation": {
   "tabs": [
     {
-      "tab": "Primeros pasos",
+      "tab": "Getting started",
       "pages": [
         "quickstart",
         "installation"
       ]
     },
     {
-      "tab": "Referencia de API",
+      "tab": "API reference",
       "openapi": "/path/to/openapi.json",
       "pages": [
         "api-overview",
@@ -359,17 +359,17 @@ Configura una especificación de OpenAPI predeterminada para un elemento de nave
 }
 ```
 
-Cualquier entrada de página que coincida con el formato `METHOD /path` genera una página de API para ese endpoint utilizando la especificación predeterminada de OpenAPI.
+Cualquier entrada de página que coincida con el formato `METHOD /path` generará una página de API para ese endpoint usando la especificación OpenAPI predeterminada.
 
 <div id="openapi-spec-inheritance">
-  #### Herencia de especificaciones de OpenAPI
+  #### Herencia de la especificación de OpenAPI
 </div>
 
-Las especificaciones de OpenAPI se heredan a lo largo de la jerarquía de navegación. Los elementos de navegación secundarios heredan la especificación de OpenAPI de su elemento principal, a menos que definan la suya propia.
+La especificación de OpenAPI se hereda hacia abajo en la jerarquía de navegación. Los elementos de navegación hijos heredan la especificación de OpenAPI de su elemento padre, a menos que definan la suya propia.
 
 ```json {3, 7-8, 11, 13-14}
 {
-  "group": "Referencia de API",
+  "group": "API reference",
   "openapi": "/path/to/openapi-v1.json",
   "pages": [
     "overview",
@@ -377,7 +377,7 @@ Las especificaciones de OpenAPI se heredan a lo largo de la jerarquía de navega
     "GET /users",
     "POST /users",
     {
-      "group": "Pedidos",
+      "group": "Orders",
       "openapi": "/path/to/openapi-v2.json",
       "pages": [
         "GET /orders",
@@ -392,37 +392,37 @@ Las especificaciones de OpenAPI se heredan a lo largo de la jerarquía de navega
   #### Endpoints individuales
 </div>
 
-Haz referencia a endpoints específicos sin establecer una especificación de OpenAPI predeterminada, incluyendo la ruta del archivo. Puedes referenciar endpoints de múltiples especificaciones de OpenAPI en la misma sección de la documentación.
+Haz referencia a endpoints específicos sin establecer una especificación OpenAPI predeterminada, incluyendo la ruta del archivo. Puedes hacer referencia a endpoints de varias especificaciones de OpenAPI en la misma sección de documentación.
 
 ```json {5-6}
 "navigation": {
   "pages": [
-    "introduccion",
-    "guias-de-usuario",
+    "introduction",
+    "user-guides",
     "/path/to/users-openapi.json POST /users",
     "/path/to/orders-openapi.json GET /orders"
   ]
 }
 ```
 
-Este enfoque es útil cuando necesitas endpoints individuales de distintas especificaciones, solo quieres incluir algunos endpoints o prefieres incluir endpoints junto con otros tipos de documentación.
+Este enfoque es útil cuando necesitas endpoints individuales de distintas especificaciones, solo quieres incluir determinados endpoints o deseas incluir endpoints junto con otros tipos de documentación.
 
 <div id="create-mdx-pages-from-your-openapi-specification">
-  ## Crea páginas MDX a partir de tu especificación de OpenAPI
+  ## Crea páginas MDX a partir de tu especificación OpenAPI
 </div>
 
-Para tener un control más granular de las páginas de endpoints individuales, crea páginas MDX a partir de tu especificación de OpenAPI. Esto te permite personalizar los metadatos y el contenido de la página, además de reordenar o excluir páginas en la navegación, mientras sigues utilizando los parámetros y respuestas generados automáticamente.
+Para un control más granular sobre las páginas de endpoints individuales, crea páginas MDX a partir de tu especificación OpenAPI. Esto te permite personalizar los metadatos de la página, el contenido y reordenar o excluir páginas en tu navegación, mientras sigues usando los parámetros y respuestas autogenerados.
 
-Hay dos formas de documentar tu especificación de OpenAPI con páginas MDX individuales:
+Hay dos maneras de documentar tu especificación OpenAPI con páginas MDX individuales:
 
-* Documenta los endpoints con el campo `openapi` en el frontmatter.
-* Documenta los modelos de datos con el campo `openapi-schema` en el frontmatter.
+* Documenta endpoints con el campo `openapi` en el frontmatter.
+* Documenta modelos de datos con el campo `openapi-schema` en el frontmatter.
 
 <div id="document-endpoints">
   ### Documentar endpoints
 </div>
 
-Crea una página para cada endpoint y especifica qué operación de OpenAPI mostrar usando el campo `openapi` en el frontmatter.
+Crea una página para cada endpoint y especifica qué operación de OpenAPI se mostrará usando el campo `openapi` en el frontmatter.
 
 <CodeGroup>
   ```mdx Example
@@ -439,31 +439,31 @@ Crea una página para cada endpoint y especifica qué operación de OpenAPI most
   ---
   title: "título de la página"
   description: "descripción de la página"
-  openapi: ruta-del-archivo-openapi método ruta
-  deprecated: boolean (opcional)
-  version: "cadena-de-versión" (opcional)
+  openapi: openapi-file-path method path
+  deprecated: boolean (no obligatorio)
+  version: "version-string" (no obligatorio)
   ---
   ```
 </CodeGroup>
 
-El método y la ruta deben coincidir exactamente con tu especificación de OpenAPI. Si tienes varias especificaciones de OpenAPI, incluye la ruta del archivo en la referencia. Las URL externas de OpenAPI pueden referenciarse en `docs.json`.
+El método y la ruta deben coincidir exactamente con tu especificación de OpenAPI. Si tienes varias especificaciones de OpenAPI, incluye la ruta del archivo en tu referencia. Las URL externas de OpenAPI pueden referenciarse en `docs.json`.
 
 <div id="autogenerate-endpoint-pages">
-  #### Generar automáticamente páginas de endpoints
+  #### Autogenerar páginas de endpoints
 </div>
 
-Para generar automáticamente archivos MDX a partir de tu especificación de OpenAPI, usa el [scraper](https://www.npmjs.com/package/@mintlify/scraping) de Mintlify.
+Para autogenerar archivos MDX a partir de tu especificación de OpenAPI, usa el [scraper](https://www.npmjs.com/package/@mintlify/scraping) de Mintlify.
 
 ```bash
 npx @mintlify/scraping@latest openapi-file <path-to-openapi-file> -o <folder-name>
 ```
 
 <Tip>
-  Agrega la opción `-o` para especificar una carpeta donde se crearán los archivos. Si no se especifica una carpeta, los archivos se crearán en el directorio de trabajo.
+  Agrega la opción `-o` para especificar una carpeta en la que se guardarán los archivos. Si no se especifica ninguna carpeta, los archivos se guardarán en el directorio de trabajo.
 </Tip>
 
 <div id="document-data-models">
-  ### Documentar modelos de datos
+  ### Modelos de datos de documentos
 </div>
 
 Crea una página para cada estructura de datos definida en `components.schemas` de tu especificación de OpenAPI usando el campo `openapi-schema` en el frontmatter.
@@ -502,9 +502,9 @@ Si tienes esquemas con el mismo nombre en varios archivos, especifica el archivo
   ## Webhooks
 </div>
 
-Los webhooks son devoluciones de llamada (callbacks) HTTP que tu API envía para notificar a sistemas externos cuando se producen eventos. Los webhooks son compatibles en documentos de OpenAPI 3.1+.
+Los webhooks son callbacks HTTP que tu API envía para notificar a sistemas externos cuando se producen eventos. Los webhooks se admiten en documentos OpenAPI 3.1+.
 
-Agrega un campo `webhooks` a tu documento de OpenAPI junto con el campo `paths`.
+Agrega un campo `webhooks` a tu documento OpenAPI junto al campo `paths`.
 
 Para obtener más información sobre cómo definir webhooks, consulta [Webhooks](https://spec.openapis.org/oas/v3.1.0#oasWebhooks) en la documentación de OpenAPI.
 
@@ -512,10 +512,10 @@ Para crear una página MDX para un webhook (OpenAPI 3.1+), usa `webhook` en luga
 
 ```mdx
 ---
-title: "Webhook de pedido actualizado"
-description: "Se activa cuando se actualiza un pedido"
+title: "Order updated webhook"
+description: "Triggered when an order is updated"
 openapi: "openapi.json webhook orderUpdated"
 ---
 ```
 
-El nombre del webhook debe coincidir exactamente con la clave en el campo `webhooks` de tu especificación de OpenAPI.
+El nombre del webhook debe coincidir exactamente con la clave del campo `webhooks` de tu especificación OpenAPI.

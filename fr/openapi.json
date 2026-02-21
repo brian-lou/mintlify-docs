@@ -21,13 +21,13 @@
   "paths": {
     "/project/update/{projectId}": {
       "post": {
-        "summary": "Lancer la mise à jour",
-        "description": "Mettez en file d’attente une mise à jour de déploiement pour votre projet de documentation. Retourne un identifiant de statut qui peut être utilisé pour suivre la progression de la mise à jour. La mise à jour est déclenchée à partir de la branche de déploiement que vous avez configurée.",
+        "summary": "Lancer une mise à jour",
+        "description": "Place en file d’attente une mise à jour du déploiement pour votre projet de documentation. Renvoie un identifiant d’état qui peut être utilisé pour suivre la progression de la mise à jour. La mise à jour est déclenchée à partir de la branche de déploiement que vous avez configurée.",
         "parameters": [
           {
             "name": "projectId",
             "in": "path",
-            "description": "Identifiant de votre projet. Vous pouvez le copier à partir de la page [API keys](https://dashboard.mintlify.com/settings/organization/api-keys) de votre Dashboard.",
+            "description": "L’identifiant de votre projet. Vous pouvez le copier depuis la page [API keys](https://dashboard.mintlify.com/settings/organization/api-keys) de votre tableau de bord.",
             "required": true,
             "schema": {
               "type": "string"
@@ -36,7 +36,7 @@
         ],
         "responses": {
           "202": {
-            "description": "Une réponse réussie",
+            "description": "Réponse en cas de réussite",
             "content": {
               "application/json": {
                 "schema": {
@@ -44,7 +44,7 @@
                   "properties": {
                     "statusId": {
                       "type": "string",
-                      "description": "L’identifiant de statut de la mise à jour déclenchée."
+                      "description": "L’identifiant d’état de la mise à jour déclenchée."
                     }
                   }
                 }
@@ -56,13 +56,13 @@
     },
     "/project/update-status/{statusId}": {
       "get": {
-        "summary": "Obtenir le statut de mise à jour",
-        "description": "Récupérer le statut d’une mise à jour à partir de son identifiant de statut",
+        "summary": "Récupérer l’état de la mise à jour",
+        "description": "Récupérer l’état d’une mise à jour à partir de son identifiant d’état",
         "parameters": [
           {
             "name": "statusId",
             "in": "path",
-            "description": "L’identifiant de statut de la mise à jour déclenchée.",
+            "description": "L’identifiant d’état d’une mise à jour déclenchée.",
             "required": true,
             "schema": {
               "type": "string"
@@ -71,7 +71,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Une réponse réussie",
+            "description": "Réponse en cas de réussite",
             "content": {
               "application/json": {
                 "schema": {
@@ -79,19 +79,19 @@
                   "properties": {
                     "_id": {
                       "type": "string",
-                      "description": "L’identifiant de statut de la mise à jour déclenchée."
+                      "description": "Identifiant d’état de la mise à jour déclenchée."
                     },
                     "projectId": {
                       "type": "string",
-                      "description": "L’identifiant du projet de documentation."
+                      "description": "Identifiant du projet de documentation."
                     },
                     "createdAt": {
                       "type": "string",
-                      "description": "Une valeur ISODate correspondant à la date et à l’heure spécifiées en UTC"
+                      "description": "Valeur ISODate correspondant à la date et à l’heure spécifiées en UTC."
                     },
                     "endedAt": {
                       "type": "string",
-                      "description": "Une valeur ISODate correspondant à la date et à l’heure spécifiées en UTC"
+                      "description": "Valeur ISODate correspondant à la date et à l’heure spécifiées en UTC."
                     },
                     "status": {
                       "type": "string",
@@ -101,54 +101,54 @@
                         "success",
                         "failure"
                       ],
-                      "description": "Le statut de la mise à jour."
+                      "description": "État de la mise à jour."
                     },
                     "summary": {
                       "type": "string",
-                      "description": "Récapitulatif de l’état de la mise à jour"
+                      "description": "Résumé de l’état de la mise à jour."
                     },
                     "logs": {
                       "type": "array",
-                      "description": "Un tableau de logs.",
+                      "description": "Tableau de journaux.",
                       "items": {
                         "type": "string"
                       }
                     },
                     "subdomain": {
                       "type": "string",
-                      "description": "Le sous-domaine de la documentation en cours de mise à jour."
+                      "description": "Sous-domaine de la documentation en cours de mise à jour."
                     },
                     "screenshot": {
                       "type": "string",
-                      "description": "Une capture d’écran de la documentation."
+                      "description": "Capture d’écran de la documentation."
                     },
                     "screenshotLight": {
                       "type": "string",
-                      "description": "Une capture d’écran de la doc."
+                      "description": "Capture d’écran de la documentation."
                     },
                     "screenshotDark": {
                       "type": "string",
-                      "description": "Une capture d’écran de la documentation en mode sombre."
+                      "description": "Capture d’écran de la documentation en mode sombre."
                     },
                     "author": {
                       "type": "string",
-                      "description": "L’auteur de la mise à jour."
+                      "description": "Auteur de la modification."
                     },
                     "commit": {
                       "type": "object",
-                      "description": "Les détails du commit",
+                      "description": "Détails du commit.",
                       "properties": {
                         "sha": {
                           "type": "string",
-                          "description": "Le SHA du commit."
+                          "description": "SHA du commit."
                         },
                         "ref": {
                           "type": "string",
-                          "description": "La référence du commit."
+                          "description": "Référence du commit."
                         },
                         "message": {
                           "type": "string",
-                          "description": "Le message de commit."
+                          "description": "Message du commit."
                         },
                         "filesChanged": {
                           "type": "object",
@@ -156,7 +156,7 @@
                           "properties": {
                             "added": {
                               "type": "array",
-                              "description": "De nouveaux fichiers ont été ajoutés.",
+                              "description": "Nouveaux fichiers ajoutés.",
                               "items": {
                                 "type": "string"
                               }
@@ -181,7 +181,7 @@
                     },
                     "source": {
                       "type": "string",
-                      "description": "La source du déclencheur de mise à jour.",
+                      "description": "Origine du déclencheur de mise à jour.",
                       "enum": [
                         "internal",
                         "github-app-installation",
@@ -204,7 +204,7 @@
       "bearerAuth": {
         "type": "http",
         "scheme": "bearer",
-        "description": "L’en-tête Authorization requiert un jeton Bearer. Utilisez une clé d’API administrateur (préfixée par `mint_`). Il s’agit d’une clé secrète utilisée côté serveur. Générez-en une depuis la page [API keys](https://dashboard.mintlify.com/settings/organization/api-keys) de votre Dashboard."
+        "description": "L’en-tête Authorization requiert un jeton Bearer. Utilisez une clé API d’administrateur (préfixée par `mint_`). Il s’agit d’une clé secrète côté serveur. Générez-en une depuis la [page des clés d’API](https://dashboard.mintlify.com/settings/organization/api-keys) de votre tableau de bord."
       }
     }
   }

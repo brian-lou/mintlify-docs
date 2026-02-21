@@ -1,16 +1,16 @@
 ---
-title: "Integraciones de Analytics"
-description: "Conecta plataformas de Analytics para medir la interacción de los usuarios y el uso de la documentación."
+title: "Integraciones de analítica"
+description: "Conecta plataformas de analítica para hacer un seguimiento de la interacción de los usuarios y del uso de la documentación."
 keywords: ["third-party analytics", "engagement tracking", "analytics platforms", "usage tracking"]
 ---
 
-Realiza un seguimiento de cómo los usuarios interactúan con tu documentación conectando plataformas de Analytics de terceros. Mintlify envía eventos de interacción a los proveedores de Analytics que hayas configurado.
+Haz un seguimiento de cómo los usuarios interactúan con tu documentación conectándola a plataformas de analítica de terceros. Mintlify envía eventos de interacción a los proveedores de analítica que hayas configurado.
 
 <div id="how-analytic-integrations-work">
   ## Cómo funcionan las integraciones de analítica
 </div>
 
-Cuando agregas integraciones de Analytics a tu sitio de documentación, Mintlify registra interacciones de los usuarios como vistas de página, consultas de búsqueda, solicitudes en el área de pruebas de la API y envíos de comentarios, y las envía a tus proveedores de Analytics. Puedes conectar cualquier cantidad de proveedores de Analytics compatibles agregando tus claves de API al archivo `docs.json`. Los eventos de Analytics se envían a tus proveedores tan pronto como los agregas a tu configuración, sin necesidad de configuración adicional.
+Cuando añades integraciones de analítica a tu sitio de documentación, Mintlify realiza el seguimiento de interacciones de los usuarios como vistas de página, consultas de búsqueda, solicitudes en el API playground y envíos de comentarios, y las envía a tus proveedores de analítica. Puedes conectar cualquier cantidad de proveedores de analítica compatibles añadiendo tus claves de API al archivo `docs.json`. Los eventos de analítica se envían a tus proveedores en cuanto los añades a tu configuración, sin necesidad de realizar ninguna otra configuración adicional.
 
 <div id="supported-platforms">
   ## Plataformas compatibles
@@ -47,7 +47,7 @@ xmlns="http://www.w3.org/2000/svg"
   />
 
   <Card
-    title="Claridad"
+    title="Clarity"
     href="/es/integrations/analytics/clarity"
     horizontal
     icon={
@@ -555,69 +555,68 @@ clip-rule="evenodd"
   ## Configuración
 </div>
 
-Configura las credenciales de tu proveedor de Analytics en el objeto `integrations` de `docs.json`. Incluye solo las plataformas que deseas usar.
+Añade las credenciales de tu proveedor de analítica al objeto `integrations` en `docs.json`. Incluye solo las plataformas que quieras usar.
 
 <Note>
-  Las integraciones de Analytics solo requieren claves públicas de API, que son accesibles para cualquier persona que vea tu sitio de documentación. Tus claves privadas de API, que se emparejan con las claves públicas en el lado de los proveedores de Analytics, deben mantenerse privadas. No incluyas claves privadas de API en tu `docs.json`.
+  Las integraciones de analítica solo requieren claves de API públicas, que son accesibles para cualquiera que visite tu sitio de documentación. Tus claves de API privadas, que se usan junto con las claves públicas en los proveedores de analítica, deben permanecer privadas. No incluyas claves de API privadas en tu `docs.json`.
 </Note>
 
 ```json docs.json
 "integrations": {
     "amplitude": {
-        "apiKey": "obligatorio"
+        "apiKey": "required"
     },
     "clarity": {
-        "projectId": "obligatorio"
+        "projectId": "required"
     },
     "clearbit": {
-        "publicApiKey": "obligatorio"
+        "publicApiKey": "required"
     },
     "cookies": {
-      "key": "obligatorio",
-      "value": "obligatorio"
+      "key": "required",
+      "value": "required"
     },
     "fathom": {
-        "siteId": "obligatorio"
+        "siteId": "required"
     },
     "ga4": {
-        "measurementId": "obligatorio"
+        "measurementId": "required"
     },
     "gtm": {
-        "tagId": "obligatorio"
+        "tagId": "required"
     },
     "hightouch": {
-        "apiKey": "obligatorio",
+        "apiKey": "required",
         "apiHost": "optional"
     },
     "hotjar": {
-        "hjid": "obligatorio",
-        "hjsv": "obligatorio"
+        "hjid": "required",
+        "hjsv": "required"
     },
     "logrocket": {
-        "appId": "obligatorio"
+        "appId": "required"
     },
     "mixpanel": {
-        "projectToken": "obligatorio"
+        "projectToken": "required"
     },
     "pirsch": {
-        "id": "obligatorio"
+        "id": "required"
     },
     "plausible": {
-        "domain": "obligatorio"
+        "domain": "required"
     },
     "posthog": {
-        "apiKey": "obligatorio",
+        "apiKey": "required",
         "apiHost": "optional"
     },
     "segment": {
-      "key": "obligatorio"
+      "key": "required"
     },
     "telemetry": {
       "enabled": "boolean"
     }
 }
 ```
-
 
 <div id="example-configuration">
   ### Ejemplo de configuración
@@ -641,79 +640,79 @@ Configura las credenciales de tu proveedor de Analytics en el objeto `integratio
 ```
 
 <div id="tracked-events">
-  ## Eventos rastreados
+  ## Eventos registrados
 </div>
 
-Todos los eventos de seguimiento utilizan el prefijo `docs.`.
+Todos los eventos registrados utilizan el prefijo `docs.`.
 
 <div id="navigation-and-page-views">
   ### Navegación y vistas de página
 </div>
 
-| Event name                              | Descripción                                                                                               |
+| Nombre del evento                       | Descripción                                                                                               |
 | :-------------------------------------- | :-------------------------------------------------------------------------------------------------------- |
-| `docs.content.view`                     | Cuando un usuario ve una página. Solo se envía a proveedores de analítica que no registran vistas de página de forma predeterminada. |
-| `docs.content.md.view`                  | Cuando un usuario ve la versión en Markdown de una página.                                               |
-| `docs.navitem.click`                    | Cuando un usuario hace clic en un elemento de navegación del encabezado.                                  |
-| `docs.navitem.cta_click`                | Cuando un usuario hace clic en un botón de llamada a la acción.                                           |
-| `docs.footer.powered_by_mintlify_click` | Cuando un usuario hace clic en el enlace "Powered by Mintlify".                                          |
+| `docs.content.view`                     | El usuario visualiza una página. Solo se envía a los proveedores que no registran las vistas de página de forma predeterminada. |
+| `docs.content.md.view`                  | El usuario visualiza la versión Markdown de una página.                                                   |
+| `docs.navitem.click`                    | El usuario hace clic en un elemento de la navegación del encabezado.                                      |
+| `docs.navitem.cta_click`                | El usuario hace clic en un botón de llamada a la acción.                                                  |
+| `docs.footer.powered_by_mintlify_click` | El usuario hace clic en el enlace &quot;Powered by Mintlify&quot;.                                                 |
 
 <div id="search">
   ### Búsqueda
 </div>
 
-| Event name                              | Descripción                                                                                               |
+| Nombre del evento                       | Descripción                                                                                               |
 | :-------------------------------------- | :-------------------------------------------------------------------------------------------------------- |
-| `docs.search.query`                     | Cuando un usuario realiza una búsqueda.                                                                   |
-| `docs.search.close`                     | Cuando un usuario cierra la barra de búsqueda.                                                            |
-| `docs.search.result_click`              | Cuando un usuario hace clic en un resultado de búsqueda.                                                  |
+| `docs.search.query`                     | El usuario realiza una consulta de búsqueda.                                                              |
+| `docs.search.close`                     | El usuario cierra la barra de búsqueda.                                                                   |
+| `docs.search.result_click`              | El usuario hace clic en un resultado de búsqueda.                                                         |
 
 <div id="code-and-api-playground">
-  ### Código y área de pruebas de la API
+  ### Área de pruebas de código y API
 </div>
 
-| Event name                              | Descripción                                                                                               |
+| Nombre del evento                       | Descripción                                                                                              |
 | :-------------------------------------- | :-------------------------------------------------------------------------------------------------------- |
-| `docs.code_block.copy`                  | El usuario copia el código de un bloque de código.                                                        |
-| `docs.code_block.ask_ai`                | El usuario le pide al assistant que explique un bloque de código.                                        |
-| `docs.api_playground.request`           | El usuario realiza una solicitud a una API en el área de pruebas de la API.                              |
+| `docs.code_block.copy`                  | El usuario copia código de un bloque de código.                                                          |
+| `docs.code_block.ask_ai`                | El usuario le pide al asistente que explique un bloque de código.                                       |
+| `docs.api_playground.request`           | El usuario realiza una solicitud a la API en el área de pruebas de la API.                              |
 
 <div id="interactive-components">
   ### Componentes interactivos
 </div>
 
-| Event name                              | Descripción                                                                                               |
+| Nombre del evento                       | Descripción                                                                                              |
 | :-------------------------------------- | :-------------------------------------------------------------------------------------------------------- |
-| `docs.accordion.open`                   | El usuario abre un Accordion.                                                                             |
-| `docs.accordion.close`                  | El usuario cierra un Accordion.                                                                           |
-| `docs.expandable.open`                  | El usuario abre un elemento expandible.                                                                   |
-| `docs.expandable.close`                 | El usuario cierra un elemento expandible.                                                                 |
+| `docs.accordion.open`                   | El usuario abre un acordeón.                                                                             |
+| `docs.accordion.close`                  | El usuario cierra un acordeón.                                                                           |
+| `docs.expandable.open`                  | El usuario abre un elemento expandible.                                                                  |
+| `docs.expandable.close`                 | El usuario cierra un elemento expandible.                                                                |
 
 <div id="assistant-and-agent">
-  ### Asistente de IA y agente
+  ### Asistente y agente
 </div>
 
-| Event name                              | Descripción                                                                                               |
+| Nombre del evento                       | Descripción                                                                                               |
 | :-------------------------------------- | :-------------------------------------------------------------------------------------------------------- |
-| `docs.assistant.enter`                  | Cuando un usuario abre el Asistente de IA.                                                                |
-| `docs.assistant.completed`              | Cuando se completa una sesión de chat.                                                                    |
-| `docs.assistant.source_click`           | Cuando un usuario hace clic en una cita en una respuesta de chat.                                        |
-| `docs.assistant.suggestion_click`       | Cuando un usuario hace clic en una pregunta sugerida.                                                     |
-| `docs.assistant.ask_ai_on_text_selection` | Cuando un usuario selecciona texto y hace clic en "Ask AI".                                              |
-| `docs.assistant.shared`                 | Cuando un usuario comparte una conversación de chat.                                                      |
-| `docs.assistant.thumbs_up`              | Cuando un usuario hace clic en el botón de comentarios positivos en una respuesta del Asistente de IA.   |
-| `docs.assistant.thumbs_down`            | Cuando un usuario hace clic en el botón de comentarios negativos en una respuesta del Asistente de IA.   |
-| `docs.assistant.spam_detected`          | Cuando el Asistente de IA detecta spam en un mensaje de usuario.                                          |
-| `docs.autopilot.suggestion.created`     | Cuando el agente crea una sugerencia de documentación.                                                    |
-| `docs.autopilot.suggestion.no_suggestion` | Cuando el agente determina que no se necesita ninguna actualización de la documentación.                 |
+| `docs.assistant.enter`                  | El usuario abre el asistente de IA.                                                                       |
+| `docs.assistant.completed`              | La sesión de chat finaliza.                                                                               |
+| `docs.assistant.source_click`           | El usuario hace clic en una cita en una respuesta de chat.                                                |
+| `docs.assistant.suggestion_click`       | El usuario hace clic en una pregunta sugerida.                                                            |
+| `docs.assistant.ask_ai_on_text_selection` | El usuario selecciona texto y hace clic en &quot;Ask AI&quot;.                                                     |
+| `docs.assistant.shared`                 | El usuario comparte una conversación de chat.                                                             |
+| `docs.assistant.thumbs_up`              | El usuario hace clic en el botón de comentarios positivos en una respuesta del asistente.                |
+| `docs.assistant.thumbs_down`            | El usuario hace clic en el botón de comentarios negativos en una respuesta del asistente.                |
+| `docs.assistant.spam_detected`          | El asistente detecta spam en un mensaje del usuario.                                                      |
+| `docs.autopilot.suggestion.created`     | El agente crea una sugerencia de documentación.                                                           |
+| `docs.autopilot.suggestion.no_suggestion` | El agente determina que no se necesita ninguna actualización de la documentación.                        |
 
 <div id="contextual-menu">
   ### Menú contextual
 </div>
 
-| Event name                              | Descripción                                                                                               |
+| Event name                              | Description                                                                                               |
 | :-------------------------------------- | :-------------------------------------------------------------------------------------------------------- |
-| `docs.context_menu.copy_page`           | Cuando un usuario copia la página actual como Markdown.                                                   |
-| `docs.context_menu.copy_mcp_link`       | Cuando un usuario copia el enlace del servidor MCP alojado.                                               |
-| `docs.context_menu.ai_provider_click`   | Cuando un usuario hace clic en un proveedor de IA para crear una conversación con la página actual como contexto. |
-| `docs.context_menu.install_mcp_server`  | Cuando un usuario instala el servidor MCP alojado en editores de código.                                 |
+| `docs.context_menu.copy_page`           | El usuario copia la página actual como Markdown.                                                          |
+| `docs.context_menu.copy_mcp_link`       | El usuario copia el enlace al servidor MCP alojado.                                                      |
+| `docs.context_menu.ai_provider_click`   | El usuario hace clic en un proveedor de IA para iniciar una conversación usando la página actual como contexto. |
+| `docs.context_menu.install_mcp_server`  | El usuario instala el servidor MCP alojado en los editores de código.                                    |

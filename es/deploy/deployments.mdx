@@ -1,26 +1,26 @@
 ---
-title: "Implementaciones"
-description: "Administra las implementaciones, consulta el historial y supervisa el estado."
-keywords: ["implementación manual", "historial de implementaciones", "activadores de implementación", "eliminar implementación"]
+title: "Despliegues"
+description: "Administra despliegues, consulta el historial y supervisa el estado."
+keywords: ["despliegue manual", "historial de despliegues", "disparadores de despliegue", "eliminar despliegue"]
 ---
 
-Tu sitio de documentación se implementa automáticamente cuando haces push de cambios a tu repositorio conectado. Para ello, la Aplicación de GitHub de Mintlify debe estar correctamente instalada y conectada.
+Tu sitio de documentación se despliega automáticamente cuando haces push de cambios a tu repositorio conectado. Esto requiere que la aplicación de GitHub de Mintlify esté correctamente instalada y conectada.
 
-Si tus últimos cambios no aparecen en tu sitio en producción, primero verifica que la Aplicación de GitHub esté instalada en la cuenta u organización propietaria de tu repositorio de documentación. Consulta [Solución de problemas de GitHub](/es/deploy/github#troubleshooting) para más información.
+Si tus últimos cambios no aparecen en tu sitio en producción, primero verifica que la cuenta u organización de GitHub propietaria del repositorio de documentación tenga instalada la aplicación de GitHub. Consulta la sección de [solución de problemas de GitHub](/es/deploy/github#troubleshooting) para obtener más información.
 
-Si tienes la Aplicación de GitHub instalada, pero los cambios aún no se implementan, activa manualmente una implementación desde tu dashboard.
+Si tienes la aplicación de GitHub instalada, pero los cambios aún no se están desplegando, inicia manualmente un despliegue desde tu panel de control.
 
 <div id="manually-trigger-a-deployment">
-  ## Activar una implementación manualmente
+  ## Iniciar un despliegue manualmente
 </div>
 
 <Steps>
-  <Step title="Verifica que tu última confirmación se realizó correctamente.">
-    Comprueba que tu confirmación más reciente aparezca en tu repositorio de documentación y que no haya presentado errores.
+  <Step title="Verifica que tu commit más reciente se haya realizado correctamente.">
+    Comprueba que tu commit más reciente aparezca en tu repositorio de documentación y que se haya completado sin errores.
   </Step>
 
-  <Step title="Activa una implementación manualmente.">
-    Ve a tu [dashboard](https://dashboard.mintlify.com) y selecciona el botón de implementación.
+  <Step title="Inicia un despliegue manualmente.">
+    Ve a tu [dashboard](https://dashboard.mintlify.com) y selecciona el botón de deploy.
 
     <Frame>
       <img src="/images/deployments/manual-update-light.png" alt="El botón de actualización manual resaltado con un rectángulo naranja." className="block dark:hidden" />
@@ -31,24 +31,24 @@ Si tienes la Aplicación de GitHub instalada, pero los cambios aún no se implem
 </Steps>
 
 <div id="delete-a-deployment">
-  ## Eliminar una implementación
+  ## Eliminar un deployment
 </div>
 
-Puedes eliminar de forma permanente una implementación desde la sección [Danger zone](https://dashboard.mintlify.com/settings/organization/danger-zone) en la configuración de tu dashboard. Esta acción es irreversible y eliminará todos los datos de la implementación, incluidas las implementaciones de vista previa asociadas.
+Puedes eliminar permanentemente un deployment desde la [Danger zone](https://dashboard.mintlify.com/settings/organization/danger-zone) en la configuración de tu panel de control. Esta acción es irreversible y elimina todos los datos del deployment, incluidos todos los deployments de vista previa asociados.
 
 <Steps>
-  <Step title="Ve a Danger zone.">
-    Ve a [Danger zone](https://dashboard.mintlify.com/settings/organization/danger-zone) en la página de configuración de tu dashboard.
+  <Step title="Ve a la Danger zone.">
+    Ve a la [Danger zone](https://dashboard.mintlify.com/settings/organization/danger-zone) en la página de configuración de tu panel de control.
   </Step>
 
-  <Step title="Elimina la implementación.">
-    1. En la sección **Delete my deployment**, proporciona un motivo para la eliminación.
-    2. Haz clic en el botón Eliminar y confirma que quieres borrar la implementación.
+  <Step title="Elimina el deployment.">
+    1. En la sección **Delete my deployment**, indica un motivo para la eliminación.
+    2. Haz clic en el botón de eliminar y confirma que quieres eliminar el deployment.
   </Step>
 </Steps>
 
 <Warning>
-  Eliminar una implementación es permanente y no se puede deshacer. Si tienes una suscripción activa, recibirás un crédito prorrateado por el tiempo no utilizado que quede en tu período de facturación.
+  Eliminar un deployment es permanente y no se puede deshacer. Si tienes una suscripción activa, recibirás un crédito prorrateado por cualquier tiempo no utilizado que quede en tu período de facturación.
 </Warning>
 
-Si tienes varias implementaciones, después de la eliminación se te redirigirá a otra implementación. Si eliminas tu única implementación, se te redirigirá a la página de inicio de Mintlify. Cuando elimines una implementación, el administrador de la organización recibirá una notificación por correo electrónico que confirma la eliminación.
+Si tienes varios deployments, se te redirigirá a otro deployment después de eliminarlo. Si eliminas tu único deployment, se te redirigirá a la página de inicio de Mintlify. Cuando elimines un deployment, el administrador de la organización recibirá una notificación por correo electrónico que confirmará la eliminación.

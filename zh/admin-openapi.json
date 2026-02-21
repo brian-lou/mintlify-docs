@@ -2,7 +2,7 @@
   "openapi": "3.0.1",
   "info": {
     "title": "Mintlify Admin API",
-    "description": "用于管理操作的 API，包括文档更新和代理管理。",
+    "description": "用于执行管理操作的 API，包括文档更新和代理管理。",
     "version": "1.0.0"
   },
   "servers": [
@@ -18,8 +18,8 @@
   "paths": {
     "/agent/{projectId}/job": {
       "post": {
-        "summary": "创建代理作业",
-        "description": "创建一个新的 agent 作业，可根据提供的消息和 branch 信息生成并编辑文档。",
+        "summary": "创建代理任务",
+        "description": "创建新的代理任务，用于根据提供的消息和分支信息生成和编辑文档。",
         "parameters": [
           {
             "name": "projectId",
@@ -28,7 +28,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "你的项目 ID。可在控制台的 [API keys](https://dashboard.mintlify.com/settings/organization/api-keys) 页面中复制。"
+            "description": "你的项目 ID。可在控制台的 [API keys](https://dashboard.mintlify.com/settings/organization/api-keys) 页面复制。"
           }
         ],
         "requestBody": {
@@ -44,11 +44,11 @@
                 "properties": {
                   "branch": {
                     "type": "string",
-                    "description": "代理应处理的 Git branch 名称，若该 branch 不存在，将会自动创建"
+                    "description": "代理要处理的 Git 分支名称；如果该分支不存在，将会自动创建。"
                   },
                   "messages": {
                     "type": "array",
-                    "description": "要提供给代理的消息列表。系统会始终在最前面自动添加一个默认的系统提示词，因此通常只需要包含用户消息即可。",
+                    "description": "提供给代理的消息列表。默认的系统提示会始终自动添加在最前面，因此通常只需包含用户消息。",
                     "items": {
                       "type": "object",
                       "required": [
@@ -62,7 +62,7 @@
                             "system",
                             "user"
                           ],
-                          "description": "消息发送方的角色。使用 `user` 表示任务指令。使用 `system` 添加补充指令，这些指令会附加在默认 system prompt 之后（不会替换默认的 system prompt）。"
+                          "description": "消息发送者的角色。任务说明请使用 `user` 角色。使用 `system` 可添加附加说明，这些说明会追加在默认系统提示之后（不会替换默认提示）。"
                         },
                         "content": {
                           "type": "string",
@@ -74,7 +74,7 @@
                   "asDraft": {
                     "type": "boolean",
                     "default": true,
-                    "description": "控制是否以草稿模式或非草稿模式创建拉取请求（PR；亦称“合并请求”/Merge Request）。为 true 时，将创建草稿拉取请求；为 false 时，将创建常规（非草稿）拉取请求，供审核使用。"
+                    "description": "控制拉取请求是以草稿模式还是常规模式创建。为 true 时，会创建草稿拉取请求；为 false 时，会创建可供审核的常规（非草稿）拉取请求。"
                   },
                   "model": {
                     "type": "string",
@@ -83,7 +83,7 @@
                       "opus"
                     ],
                     "default": "sonnet",
-                    "description": "用于该智能体任务的 AI 模型。使用 `sonnet` 可获得更快捷、成本更低的处理。使用 `opus` 可获得更强大但速度更慢的处理。"
+                    "description": "用于该代理任务的 AI 模型。使用 `sonnet` 可获得更快、成本更低的处理；使用 `opus` 可获得更强大但速度较慢的处理能力。"
                   }
                 }
               }
@@ -92,20 +92,20 @@
         },
         "responses": {
           "200": {
-            "description": "代理任务已成功创建（流式响应）。X-Session-Id 头会随响应一同返回",
+            "description": "代理任务创建成功（流式响应）。响应中会返回 X-Session-Id 响应头。",
             "headers": {
               "X-Message-Id": {
                 "schema": {
                   "type": "string"
                 },
-                "description": "已创建任务的消息标识符"
+                "description": "为已创建任务生成的消息 ID"
               }
             },
             "content": {
               "text/plain": {
                 "schema": {
                   "type": "string",
-                  "description": "包含代理任务执行详情和结果的流式响应。"
+                  "description": "以流式方式返回的响应，其中包含代理任务的执行详情和结果。"
                 }
               }
             }
@@ -115,8 +115,8 @@
     },
     "/agent/{projectId}/job/{id}": {
       "get": {
-        "summary": "通过 ID 获取代理任务",
-        "description": "根据其 ID 获取指定代理任务的详细信息和状态。",
+        "summary": "按 ID 获取代理任务",
+        "description": "通过代理任务 ID 获取该任务的详细信息和状态。",
         "parameters": [
           {
             "name": "projectId",
@@ -125,7 +125,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "项目 ID。可在控制台的 [API keys](https://dashboard.mintlify.com/settings/organization/api-keys) 页面中复制。"
+            "description": "你的项目 ID。可在控制台的 [API keys](https://dashboard.mintlify.com/settings/organization/api-keys) 页面中复制。"
           },
           {
             "name": "id",
@@ -134,12 +134,12 @@
             "schema": {
               "type": "string"
             },
-            "description": "要检索的代理作业的唯一标识符。"
+            "description": "要获取的代理任务的唯一标识符。"
           }
         ],
         "responses": {
           "200": {
-            "description": "成功获取代理任务详情",
+            "description": "代理任务详情获取成功",
             "content": {
               "application/json": {
                 "schema": {
@@ -147,20 +147,20 @@
                   "properties": {
                     "sessionId": {
                       "type": "string",
-                      "description": "本次会话所属的子域。"
+                      "description": "此会话所属的子域名。"
                     },
                     "subdomain": {
                       "type": "string",
-                      "description": "该会话所属的子域。"
+                      "description": "本次会话对应的子域名。"
                     },
                     "branch": {
                       "type": "string",
-                      "description": "包含这些更改的 Git branch 名称。",
+                      "description": "用于进行更改的 Git 分支名称。",
                       "nullable": true
                     },
                     "haulted": {
                       "type": "boolean",
-                      "description": "会话执行是否已被中止。"
+                      "description": "会话是否已被中止。"
                     },
                     "haultReason": {
                       "type": "string",
@@ -169,25 +169,25 @@
                         "github_missconfigured",
                         "error"
                       ],
-                      "description": "会话终止原因。"
+                      "description": "会话被中止的原因。"
                     },
                     "pullRequestLink": {
                       "type": "string",
-                      "description": "指向已创建拉取请求（PR，亦称“合并请求”/Merge Request）的链接。"
+                      "description": "指向已创建的 pull request 的链接。"
                     },
                     "messageToUser": {
                       "type": "string",
-                      "description": "用于告知用户会话结果的消息。"
+                      "description": "向用户说明本次会话结果的消息。"
                     },
                     "todos": {
                       "type": "array",
-                      "description": "本次会话的待办事项清单。",
+                      "description": "会话中的待办事项列表。",
                       "items": {
                         "type": "object",
                         "properties": {
                           "content": {
                             "type": "string",
-                            "description": "任务的简要说明。"
+                            "description": "任务的简要描述。"
                           },
                           "status": {
                             "type": "string",
@@ -197,7 +197,7 @@
                               "completed",
                               "cancelled"
                             ],
-                            "description": "当前任务状态。"
+                            "description": "任务的当前状态。"
                           },
                           "priority": {
                             "type": "string",
@@ -206,11 +206,11 @@
                               "medium",
                               "low"
                             ],
-                            "description": "任务的优先级。"
+                            "description": "任务的优先级等级。"
                           },
                           "id": {
                             "type": "string",
-                            "description": "待办事项的唯一标识。"
+                            "description": "待办任务的唯一标识符。"
                           }
                         }
                       }
@@ -218,7 +218,7 @@
                     "createdAt": {
                       "type": "string",
                       "format": "date-time",
-                      "description": "会话创建时间的时间戳。"
+                      "description": "会话创建时的时间戳。"
                     }
                   }
                 }
@@ -230,8 +230,8 @@
     },
     "/agent/{projectId}/jobs": {
       "get": {
-        "summary": "获取所有代理任务",
-        "description": "获取指定 domain 下的所有 agent 任务，包括其状态和详细信息。",
+        "summary": "获取全部代理任务",
+        "description": "获取指定域名下的所有代理任务，以及它们的状态和详细信息。",
         "parameters": [
           {
             "name": "projectId",
@@ -240,12 +240,12 @@
             "schema": {
               "type": "string"
             },
-            "description": "项目 ID。可在控制台的 [API keys](https://dashboard.mintlify.com/settings/organization/api-keys) 页面中复制获取。"
+            "description": "你的项目 ID。可以在控制台的 [API keys](https://dashboard.mintlify.com/settings/organization/api-keys) 页面中复制。"
           }
         ],
         "responses": {
           "200": {
-            "description": "已成功检索到所有代理作业",
+            "description": "已成功检索到所有代理任务。",
             "content": {
               "application/json": {
                 "schema": {
@@ -253,26 +253,26 @@
                   "properties": {
                     "allSessions": {
                       "type": "array",
-                      "description": "该 domain 的所有代理会话数组。",
+                      "description": "该域名下所有代理会话组成的数组。",
                       "items": {
                         "type": "object",
                         "properties": {
                           "sessionId": {
                             "type": "string",
-                            "description": "本会话所属的子域。"
+                            "description": "此会话所属的子域名。"
                           },
                           "subdomain": {
                             "type": "string",
-                            "description": "此会话对应的子域。"
+                            "description": "此会话所属的子域名。"
                           },
                           "branch": {
                             "type": "string",
-                            "description": "进行更改所在的 Git branch 名称。",
+                            "description": "进行更改的 Git 分支名称。",
                             "nullable": true
                           },
                           "haulted": {
                             "type": "boolean",
-                            "description": "会话执行是否被中止。"
+                            "description": "会话执行是否已被中止。"
                           },
                           "haultReason": {
                             "type": "string",
@@ -281,25 +281,25 @@
                               "github_missconfigured",
                               "error"
                             ],
-                            "description": "会话中止原因"
+                            "description": "会话终止的原因。"
                           },
                           "pullRequestLink": {
                             "type": "string",
-                            "description": "指向已创建拉取请求（PR；亦称“合并请求”/Merge Request）的链接。"
+                            "description": "指向已创建拉取请求的链接。"
                           },
                           "messageToUser": {
                             "type": "string",
-                            "description": "用于告知用户会话结果的消息。"
+                            "description": "用于向用户说明本次会话结果的消息。"
                           },
                           "todos": {
                             "type": "array",
-                            "description": "本次会话的待办事项列表。",
+                            "description": "会话中的待办事项列表。",
                             "items": {
                               "type": "object",
                               "properties": {
                                 "content": {
                                   "type": "string",
-                                  "description": "任务简要说明。"
+                                  "description": "任务的简要说明。"
                                 },
                                 "status": {
                                   "type": "string",
@@ -309,7 +309,7 @@
                                     "completed",
                                     "cancelled"
                                   ],
-                                  "description": "任务当前状态。"
+                                  "description": "任务的当前状态。"
                                 },
                                 "priority": {
                                   "type": "string",
@@ -318,11 +318,11 @@
                                     "medium",
                                     "low"
                                   ],
-                                  "description": "任务优先级。"
+                                  "description": "任务的优先级。"
                                 },
                                 "id": {
                                   "type": "string",
-                                  "description": "待办事项的唯一标识符。"
+                                  "description": "该待办事项的唯一标识符。"
                                 }
                               }
                             }
@@ -349,7 +349,7 @@
       "bearerAuth": {
         "type": "http",
         "scheme": "bearer",
-        "description": "Authorization 头部需要 Bearer 令牌。请使用以 `mint_` 为前缀的管理员 API 密钥。这是服务端使用的机密凭证。你可以在控制台的 [API keys 页面](https://dashboard.mintlify.com/settings/organization/api-keys) 中生成一个。"
+        "description": "Authorization 请求头需要携带 Bearer token。请使用管理员 API key（以 `mint_` 开头）。这是仅供服务端使用的密钥。你可以在控制台的 [API keys 页面](https://dashboard.mintlify.com/settings/organization/api-keys) 中生成一个。"
       }
     }
   }

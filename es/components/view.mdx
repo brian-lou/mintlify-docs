@@ -1,13 +1,13 @@
 ---
 title: "Vista"
-description: "Crea contenido con múltiples vistas para distintos lenguajes de programación o frameworks."
+description: "Crea contenido con múltiples vistas para diferentes lenguajes de programación o frameworks."
 keywords: ["selector", "contenido específico por lenguaje", "cambio de contenido"]
 ---
 
-Usa el componente `View` para crear contenido que cambie según la vista seleccionada en un menú desplegable de múltiples vistas. Es especialmente útil para mostrar ejemplos de código o documentación específica para distintos lenguajes de programación o frameworks.
+Usa el componente `View` para crear contenido que cambia según la vista seleccionada en un menú desplegable con varias vistas. Es especialmente útil para mostrar ejemplos de código o documentación específica para distintos lenguajes de programación o frameworks.
 
 <Tip>
-  Usa un componente `View` por lenguaje en cada página. Usa [pestañas](/es/components/tabs) para procedimientos que varían según el lenguaje y [grupos de código](/es/components/code-groups) para ejemplos de código que difieren según el lenguaje.
+  Usa un componente View por lenguaje en cada página. Usa [tabs](/es/components/tabs) para procedimientos que varían según el lenguaje y [code groups](/es/components/code-groups) para ejemplos de código que varían según el lenguaje.
 </Tip>
 
 <View title="JavaScript" icon="js">
@@ -32,7 +32,7 @@ Usa el componente `View` para crear contenido que cambie según la vista selecci
 
 ````mdx JavaScript and Python views
 <View title="JavaScript" icon="js">
-  Este contenido solo es visible cuando se selecciona JavaScript.
+  Este contenido solo es visible cuando JavaScript está seleccionado.
 
   ```javascript
   console.log("Hello from JavaScript!");
@@ -40,7 +40,7 @@ Usa el componente `View` para crear contenido que cambie según la vista selecci
 </View>
 
 <View title="Python" icon="python">
-  Este contenido solo es visible cuando se selecciona Python.
+  Este contenido solo es visible cuando Python está seleccionado.
 
   ```python
   print("Hello from Python!")
@@ -65,9 +65,9 @@ Si tienes estructuras de encabezados diferentes en cada vista, los usuarios solo
 </ResponseField>
 
 <ResponseField name="icon" type="string">
-  Un icono de [Font Awesome](https://fontawesome.com/icons), un icono de [Lucide](https://lucide.dev/icons), una URL de un icono o una ruta relativa a un icono.
+  Un ícono de [Font Awesome](https://fontawesome.com/icons), un ícono de [Lucide](https://lucide.dev/icons), una URL de un ícono o una ruta relativa a un ícono.
 </ResponseField>
 
 <ResponseField name="iconType" type="string">
-  Solo para iconos de Font Awesome: uno de `regular`, `solid`, `light`, `thin`, `sharp-solid`, `duotone`, `brands`.
+  Solo para íconos de Font Awesome: uno de `regular`, `solid`, `light`, `thin`, `sharp-solid`, `duotone`, `brands`.
 </ResponseField>

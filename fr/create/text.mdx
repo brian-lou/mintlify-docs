@@ -1,36 +1,36 @@
 ---
 title: "Mettre en forme le texte"
-description: "Apprenez à mettre en forme le texte, à créer des titres et à styliser le contenu."
-keywords: ["Mise en forme Markdown", "style du texte", "titres", "liens d’ancrage"]
+description: "Apprenez à mettre en forme du texte, à créer des titres et à styliser le contenu."
+keywords: ["Mise en forme Markdown", "mise en forme du texte", "titres", "liens d’ancrage"]
 ---
 
 <div id="headers">
   ## En-têtes
 </div>
 
-Les en-têtes structurent votre contenu et créent des ancres de navigation. Ils apparaissent dans la table des matières et aident les utilisateurs à parcourir votre documentation d’un coup d’œil.
+Les en-têtes organisent votre contenu et créent des ancres de navigation. Ils apparaissent dans la table des matières et aident les utilisateurs à parcourir rapidement votre documentation.
 
 <div id="creating-headers">
-  ### Création de titres
+  ### Création d&#39;en-têtes
 </div>
 
-Utilisez le symbole `#` pour créer des titres de différents niveaux :
+Utilisez les symboles `#` pour créer des en-têtes de différents niveaux :
 
 ```mdx
-## En-tête de section principale
-### En-tête de sous-section
-#### En-tête de sous-sous-section
+## Main section header
+### Subsection header
+#### Sub-subsection header
 ```
 
 <Tip>
-  Utilisez des titres descriptifs, riches en mots-clés, qui annoncent clairement le contenu à venir. Cela améliore la navigation des utilisateurs et le référencement.
+  Utilisez des titres descriptifs, riches en mots-clés, qui indiquent clairement le contenu à venir. Cela améliore la navigation des utilisateurs ainsi que le référencement naturel.
 </Tip>
 
 <div id="disabling-anchor-links">
   ### Désactivation des liens d’ancrage
 </div>
 
-Par défaut, les en-têtes incluent des liens d’ancrage cliquables permettant aux utilisateurs de créer un lien direct vers des sections spécifiques. Vous pouvez désactiver ces liens d’ancrage à l’aide de la prop `noAnchor` dans les en-têtes HTML ou React.
+Par défaut, les titres incluent des liens d’ancrage cliquables qui permettent aux utilisateurs de pointer directement vers des sections spécifiques. Vous pouvez désactiver ces liens d’ancrage en utilisant la prop `noAnchor` dans les titres HTML ou React.
 
 <CodeGroup>
   ```mdx HTML header example
@@ -46,13 +46,11 @@ Par défaut, les en-têtes incluent des liens d’ancrage cliquables permettant 
   ```
 </CodeGroup>
 
-Lorsque `noAnchor` est utilisé, l’en-tête n’affiche pas la puce d’ancrage et cliquer sur le texte de l’en-tête ne copie pas le lien d’ancrage dans le presse‑papiers.
+Lorsque `noAnchor` est utilisé, le titre n’affiche pas l’icône d’ancrage et cliquer sur le texte du titre ne copie pas le lien d’ancrage dans le presse-papiers.
 
-<div id="text-formatting">
-  ## Mise en forme du texte
-</div>
+## Mise en forme du texte
 
-Nous prenons en charge la plupart des formats Markdown pour mettre en valeur et styliser le texte.
+Nous prenons en charge la plupart des mises en forme Markdown pour mettre en évidence et styliser le texte.
 
 <div id="basic-formatting">
   ### Mise en forme de base
@@ -62,20 +60,20 @@ Appliquez ces styles de mise en forme à votre texte :
 
 | Style | Syntaxe | Exemple | Résultat |
 |-------|--------|---------|--------|
-| **Gras** | `**text**` | `**important note**` | **note importante** |
-| *Italique* | `_text_` | `_emphasis_` | *emphase* |
-| ~~Barré~~ | `~text~` | `~deprecated feature~` | ~~fonctionnalité obsolète~~ |
+| **Gras** | `**text**` | `**remarque importante**` | **remarque importante** |
+| *Italique* | `_text_` | `_mise en évidence_` | *mise en évidence* |
+| ~~Barré~~ | `~text~` | `~fonctionnalité obsolète~` | ~~fonctionnalité obsolète~~ |
 
 <div id="combining-formats">
   ### Combiner les formats
 </div>
 
-Vous pouvez combiner différents styles de mise en forme :
+Vous pouvez combiner plusieurs styles de mise en forme :
 
 ```mdx
-**_gras et italique_**
-**~~gras et barré~~**
-*~~italique et barré~~*
+**_bold and italic_**
+**~~bold and strikethrough~~**
+*~~italic and strikethrough~~*
 ```
 
 ***gras et italique***<br />
@@ -89,25 +87,23 @@ Vous pouvez combiner différents styles de mise en forme :
 Pour les expressions mathématiques ou les notes de bas de page, utilisez des balises HTML :
 
 | Type | Syntaxe | Exemple | Résultat |
-|------|---------|---------|----------|
+|------|--------|---------|--------|
 | Exposant | `<sup>text</sup>` | `example<sup>2</sup>` | example<sup>2</sup> |
 | Indice | `<sub>text</sub>` | `example<sub>n</sub>` | example<sub>n</sub> |
 
-<div id="links">
-  ## Liens
-</div>
+## Liens
 
-Les liens aident les utilisateurs à naviguer entre les pages et à accéder à des ressources externes. Utilisez un libellé de lien descriptif pour améliorer l’accessibilité et l’expérience utilisateur.
+Les liens aident les utilisateurs à naviguer entre les pages et à accéder à des ressources externes. Utilisez un libellé de lien explicite pour améliorer l’accessibilité et l’expérience utilisateur.
 
 <div id="internal-links">
   ### Liens internes
 </div>
 
-Créez des liens vers d’autres pages de votre documentation à l’aide de chemins relatifs à la racine :
+Créez des liens vers d&#39;autres pages de votre documentation à l&#39;aide de chemins relatifs à la racine :
 
 ```mdx
-[Démarrage rapide](/quickstart)
-[Étapes](/components/steps)
+[Quickstart](/quickstart)
+[Steps](/components/steps)
 ```
 
 [Démarrage rapide](/fr/quickstart)<br />
@@ -117,85 +113,85 @@ Créez des liens vers d’autres pages de votre documentation à l’aide de che
   ### Liens externes
 </div>
 
-Pour les ressources externes, incluez l’URL complète :
+Pour les liens vers des ressources externes, indiquez l’URL complète :
 
 ```mdx
-[Guide Markdown](https://www.markdownguide.org/)
+[Markdown Guide](https://www.markdownguide.org/)
 ```
 
-[Guide Markdown](https://www.markdownguide.org/)
+[Guide de Markdown](https://www.markdownguide.org/)
 
 <div id="broken-links">
-  ### Liens brisés
+  ### Liens cassés
 </div>
 
-Vous pouvez vérifier la présence de liens brisés dans votre documentation à l’aide de l’interface en ligne de commande (CLI) : [CLI](/fr/installation)
+Vous pouvez vérifier la présence de liens cassés dans votre documentation grâce à la [CLI](/fr/installation) :
 
 ```bash
 mint broken-links
 ```
 
 <div id="blockquotes">
-  ## Citations
+  ## Blocs de citation
 </div>
 
-Les citations mettent en avant des informations importantes, des citations ou des exemples dans votre contenu.
+Les blocs de citation mettent en valeur des informations importantes, des citations ou des exemples dans votre contenu.
 
 <div id="single-line-blockquotes">
-  ### Bloc de citation sur une seule ligne
+  ### Citations sur une seule ligne
 </div>
 
 Ajoutez `>` avant le texte pour créer un bloc de citation :
 
 ```mdx
-> Ceci est une citation qui se distingue du contenu principal.
+> This is a quote that stands out from the main content.
 ```
 
-> Cette citation se démarque du contenu principal.
+> Ceci est une citation qui se détache du contenu principal.
 
 <div id="multi-line-blockquotes">
-  ### Bloc citations sur plusieurs lignes
+  ### Blocs de citation multi‑lignes
 </div>
 
-Pour des citations plus longues ou plusieurs paragraphes :
+Pour les citations plus longues ou comportant plusieurs paragraphes :
 
 ```mdx
-> Ceci est le premier paragraphe d'une citation multiligne.
+> Voici le premier paragraphe d'un bloc de citation multiligne.
 >
-> Ceci est le second paragraphe, séparé par une ligne vide avec `>`.
+> Voici le deuxième paragraphe, séparé par une ligne vide avec `>`.
 ```
 
-> Voici le premier paragraphe d’un bloc de citation sur plusieurs lignes.
+> Ceci est le premier paragraphe d&#39;un bloc de citation sur plusieurs lignes.
 >
-> Voici le deuxième paragraphe, séparé par une ligne vide précédée de `>`.
+> Ceci est le deuxième paragraphe, séparé par une ligne vide précédée de `>`.
 
 <Tip>
-  Utilisez les blocs de citation avec parcimonie pour préserver leur impact visuel et leur portée. Envisagez d’utiliser des [encarts](/fr/components/callouts) pour les notes, avertissements et autres informations.
+  Utilisez les citations avec parcimonie pour préserver leur impact visuel et leur sens. Envisagez d&#39;utiliser des [callouts](/fr/components/callouts) pour les notes, avertissements et autres informations.
 </Tip>
 
 <div id="mathematical-expressions">
   ## Expressions mathématiques
 </div>
 
-Nous prenons en charge LaTeX pour le rendu des expressions et équations mathématiques. Vous pouvez remplacer la détection automatique en configurant `styles.latex` dans le fichier `docs.json` de vos [paramètres](/fr/organize/settings#param-latex).
+Nous prenons en charge LaTeX pour le rendu des expressions et équations mathématiques. Vous pouvez outrepasser la détection automatisée en configurant `styles.latex` dans les paramètres de votre `docs.json` ([paramètres](/fr/organize/settings#param-latex)).
 
 <div id="inline-math">
-  ### Mathématiques en ligne
+  ### Formules en ligne
 </div>
 
-Utilisez un seul signe dollar, « $ », pour les expressions mathématiques en ligne :
+Utilisez un seul signe dollar, `$`, pour les expressions mathématiques en ligne :
 
 ```mdx
-Le théorème de Pythagore énonce que $(a^2 + b^2 = c^2)$ dans un triangle rectangle.
+The Pythagorean theorem states that $(a^2 + b^2 = c^2)$ in a right triangle.
 ```
 
-Le théorème de Pythagore stipule que $(a^2 + b^2 = c^2)$ dans un triangle rectangle.
+Le théorème de Pythagore énonce que $(a^2 + b^2 = c^2)$ dans un triangle rectangle.
 
 <div id="block-equations">
   ### Équations en bloc
 </div>
 
-Utilisez deux signes dollar, `$$`, pour les équations isolées :
+Utilisez le double symbole dollar, `$$`, pour les équations affichées :
 
 ```mdx
 $$
@@ -208,47 +204,47 @@ E = mc^2
 $$
 
 <Info>
-  La prise en charge de LaTeX requiert une syntaxe mathématique correcte. Consultez la [documentation LaTeX](https://www.latex-project.org/help/documentation/) pour des consignes complètes sur la syntaxe.
+  La prise en charge de LaTeX requiert une syntaxe mathématique valide. Pour une présentation complète de la syntaxe, consultez la [documentation LaTeX](https://www.latex-project.org/help/documentation/).
 </Info>
 
 <div id="line-breaks-and-spacing">
-  ## Sauts de ligne et espaces
+  ## Sauts de ligne et espacement
 </div>
 
-Maîtrisez les espaces et les retours à la ligne pour améliorer la lisibilité du contenu.
+Gérez l&#39;espacement et les sauts de ligne pour améliorer la lisibilité du contenu.
 
 <div id="paragraph-breaks">
   ### Sauts de paragraphe
 </div>
 
-Séparez les paragraphes par des lignes vides :
+Séparez les paragraphes par des lignes blanches :
 
 ```mdx
-Ceci est le premier paragraphe.
+This is the first paragraph.
 
-Ceci est le deuxième paragraphe, séparé par une ligne vide.
+This is the second paragraph, separated by a blank line.
 ```
 
-Ceci est le premier paragraphe.
+Voici le premier paragraphe.
 
-Ceci est le deuxième paragraphe, séparé par une ligne blanche.
+Voici le deuxième paragraphe, séparé du précédent par une ligne vide.
 
 <div id="manual-line-breaks">
   ### Sauts de ligne manuels
 </div>
 
-Utilisez les balises HTML `<br />` pour forcer des retours à la ligne au sein des paragraphes :
+Utilisez des balises HTML `<br />` pour insérer des retours à la ligne forcés au sein des paragraphes :
 
 ```mdx
-Cette ligne se termine ici.<br />
-Cette ligne commence sur une nouvelle ligne.
+This line ends here.<br />
+This line starts on a new line.
 ```
 
 Cette ligne se termine ici.<br />
-Cette ligne commence sur une nouvelle ligne.
+Cette ligne commence à la ligne suivante.
 
 <Tip>
-  Dans la plupart des cas, des sauts de paragraphe avec ligne blanche offrent une meilleure lisibilité que des retours à la ligne manuels.
+  Dans la plupart des cas, les sauts de paragraphe séparés par des lignes vides offrent une meilleure lisibilité que les retours à la ligne manuels.
 </Tip>
 
 <div id="best-practices">
@@ -259,20 +255,22 @@ Cette ligne commence sur une nouvelle ligne.
   ### Organisation du contenu
 </div>
 
-* Utilisez des titres pour établir une hiérarchie claire
-* Respectez la hiérarchie des titres (ne passez pas de H2 à H4)
-* Rédigez des titres descriptifs et riches en mots-clés
+* Utilisez des titres pour créer une hiérarchie claire du contenu
+* Respectez une hiérarchie de titres logique (ne passez pas de H2 à H4)
+* Rédigez des titres descriptifs, riches en mots-clés
 
 <div id="text-formatting">
   ### Mise en forme du texte
 </div>
 
-* Utilisez le gras pour mettre en évidence, pas pour des paragraphes entiers
-* Réservez l’italique aux termes, titres ou nuances d’emphase
-* Évitez la mise en forme excessive qui détourne l’attention du contenu
+* Utilisez le gras pour mettre en valeur, pas pour des paragraphes entiers
+* Réservez l’italique aux termes, aux titres ou à une mise en avant discrète
+* Évitez une mise en forme excessive qui détourne l’attention du contenu
 
-### Liens
+<div id="links">
+  ### Liens
+</div>
 
-- Rédigez un texte de lien descriptif plutôt que « cliquez ici » ou « en savoir plus »
-- Utilisez des chemins relatifs à la racine pour les liens internes
-- Testez régulièrement les liens pour éviter les liens cassés
+* Rédigez un texte de lien descriptif plutôt que « cliquez ici » ou « en savoir plus »
+* Utilisez des chemins relatifs à la racine pour les liens internes
+* Testez régulièrement les liens pour éviter les liens cassés

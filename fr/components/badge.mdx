@@ -1,15 +1,16 @@
 ---
 title: "Badge"
-description: "Utilisez des badges pour mettre en avant un statut, des labels ou des metadata, en ligne ou de façon autonome."
-keywords: ["badge", "label", "tag", "status", "indicator"]
+description: "Utilisez les badges pour mettre en avant un statut, un libellé ou des métadonnées, intégrés au texte ou affichés seuls."
+keywords: ["badge", "étiquette", "tag", "statut", "indicateur"]
 ---
 
 import IconsOptional from "/snippets/fr/icons-optional.mdx";
 
-Utilisez des badges pour afficher des indicateurs d’état, des labels ou des metadata. Les badges peuvent être utilisés dans le corps du texte ou comme éléments autonomes.
+Utilisez des badges pour afficher des indicateurs d’état, des libellés ou des métadonnées. Les badges peuvent être utilisés au sein d’un texte ou comme éléments autonomes.
+
 
 <div id="basic-badge">
-  ## Badge simple
+  ## Badge de base
 </div>
 
 <Badge>Badge</Badge>
@@ -17,6 +18,7 @@ Utilisez des badges pour afficher des indicateurs d’état, des labels ou des m
 ```mdx
 <Badge>Badge</Badge>
 ```
+
 
 <div id="colors">
   ## Couleurs
@@ -55,7 +57,7 @@ Les badges proposent plusieurs variantes de couleur pour exprimer différentes s
   ## Tailles
 </div>
 
-Les badges sont disponibles en quatre tailles pour s’adapter à la hiérarchie de votre contenu.
+Les badges sont disponibles en quatre tailles pour refléter la hiérarchie de votre contenu.
 
 <Badge size="xs">Badge</Badge>
 <Badge size="sm">Badge</Badge>
@@ -68,12 +70,13 @@ Les badges sont disponibles en quatre tailles pour s’adapter à la hiérarchie
 <Badge size="md">Badge</Badge>
 <Badge size="lg">Badge</Badge>
 ```
+
 
 <div id="shapes">
   ## Formes
 </div>
 
-Choisissez entre des angles arrondis ou des badges en forme de pilule.
+Choisissez entre des badges à coins arrondis ou en forme de pilule.
 
 <Badge shape="rounded">Badge</Badge>
 <Badge shape="pill">Badge</Badge>
@@ -82,12 +85,13 @@ Choisissez entre des angles arrondis ou des badges en forme de pilule.
 <Badge shape="rounded">Badge</Badge>
 <Badge shape="pill">Badge</Badge>
 ```
+
 
 <div id="icons">
   ## Icônes
 </div>
 
-Ajoutez des icônes aux badges pour apporter davantage de contexte.
+Ajoutez des icônes aux badges pour donner davantage de contexte.
 
 <Badge icon="circle-check" color="green">Badge</Badge>
 <Badge icon="clock" color="orange">Badge</Badge>
@@ -98,12 +102,13 @@ Ajoutez des icônes aux badges pour apporter davantage de contexte.
 <Badge icon="clock" color="orange">Badge</Badge>
 <Badge icon="ban" color="red">Badge</Badge>
 ```
+
 
 <div id="stroke-variant">
-  ## Variante contour
+  ## Variante « contour »
 </div>
 
-Utilisez la variante à contour pour un rendu plus subtil.
+Utilisez la variante « contour » pour un rendu plus discret.
 
 <Badge stroke color="blue">Badge</Badge>
 <Badge stroke color="green">Badge</Badge>
@@ -116,12 +121,13 @@ Utilisez la variante à contour pour un rendu plus subtil.
 <Badge stroke color="orange">Badge</Badge>
 <Badge stroke color="red">Badge</Badge>
 ```
+
 
 <div id="disabled-state">
   ## État désactivé
 </div>
 
-Désactivez les badges pour indiquer qu’ils sont inactifs ou indisponibles.
+Désactiver les badges pour indiquer un état inactif ou indisponible.
 
 <Badge disabled icon="lock" color="gray">Badge</Badge>
 <Badge disabled icon="lock" color="blue">Badge</Badge>
@@ -130,22 +136,24 @@ Désactivez les badges pour indiquer qu’ils sont inactifs ou indisponibles.
 <Badge disabled icon="lock" color="gray">Badge</Badge>
 <Badge disabled icon="lock" color="blue">Badge</Badge>
 ```
+
 
 <div id="inline-usage">
-  ## Utilisation en ligne
+  ## Utilisation dans le texte
 </div>
 
-Les badges s’intègrent naturellement dans le texte. Par exemple, cette fonctionnalité nécessite un abonnement <Badge color="orange" size="sm">Premium</Badge>, ou bien cet endpoint d’API renvoie un format <Badge color="green" size="sm">JSON</Badge>.
+Les badges s&#39;intègrent naturellement dans le contenu textuel. Par exemple, cette fonctionnalité nécessite un abonnement <Badge color="orange" size="sm">Premium</Badge>, et ce point de terminaison d&#39;API renvoie une réponse au format <Badge color="green" size="sm">JSON</Badge>.
 
 ```mdx
-Cette fonctionnalité nécessite un abonnement <Badge color="orange" size="sm">Premium</Badge>.
+This feature requires a <Badge color="orange" size="sm">Premium</Badge> subscription.
 ```
+
 
 <div id="combined-properties">
   ## Propriétés combinées
 </div>
 
-Combinez plusieurs propriétés pour créer des styles de badge personnalisés.
+Combinez plusieurs propriétés pour créer des styles de badges personnalisés.
 
 <Badge icon="star" color="blue" size="lg" shape="pill">Premium</Badge>
 <Badge icon="check" stroke color="green" size="sm">Vérifié</Badge>
@@ -153,9 +161,10 @@ Combinez plusieurs propriétés pour créer des styles de badge personnalisés.
 
 ```mdx
 <Badge icon="star" color="blue" size="lg" shape="pill">Premium</Badge>
-<Badge icon="check" stroke color="green" size="sm">Vérifié</Badge>
-<Badge icon="badge-alert" color="orange" shape="rounded">Bêta</Badge>
+<Badge icon="check" stroke color="green" size="sm">Verified</Badge>
+<Badge icon="badge-alert" color="orange" shape="rounded">Beta</Badge>
 ```
+
 
 <div id="properties">
   ## Propriétés
@@ -183,7 +192,7 @@ Combinez plusieurs propriétés pour créer des styles de badge personnalisés.
 <IconsOptional />
 
 <ResponseField name="stroke" type="boolean" default="false">
-  Afficher le badge avec un contour plutôt qu’un fond plein.
+  Afficher le badge avec un contour au lieu d’un arrière-plan uni.
 </ResponseField>
 
 <ResponseField name="disabled" type="boolean" default="false">

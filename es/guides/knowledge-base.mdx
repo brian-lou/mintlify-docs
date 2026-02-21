@@ -1,66 +1,66 @@
 ---
-title: "Crear una base de conocimientos"
-sidebarTitle: "Base de conocimientos"
-description: "Hospeda tu base de conocimientos interna en Mintlify para consolidar la información de tu equipo, mejorar las búsquedas y reducir la carga de mantenimiento."
-keywords: ["base de conocimientos", "documentación interna", "documentación privada", "kb", "gestión del conocimiento", "captura de conocimiento"]
+title: "Crear una base de conocimiento"
+sidebarTitle: "Base de conocimiento"
+description: "Hospeda tu base de conocimiento interna en Mintlify para consolidar la información de tu equipo, mejorar la búsqueda y reducir la carga de mantenimiento."
+keywords: ["knowledge base", "internal documentation", "private docs", "kb", "knowledge management", "knowledge capture"]
 ---
 
-Una base de conocimientos interna ayuda a tu equipo a encontrar respuestas y mantener una fuente de verdad. Si tu equipo tiene información distribuida en diferentes canales y plataformas, es posible que las personas encuentren información incorrecta o ninguna información cuando busquen respuestas. Una base de conocimientos centralizada resuelve esto al colocar las respuestas donde todos puedan encontrarlas y darle a tu equipo un lugar específico para registrar el conocimiento compartido.
+Una base de conocimiento interna ayuda a tu equipo a encontrar respuestas y mantener una única fuente de verdad. Si tu equipo tiene información distribuida en distintos canales y plataformas, es posible que las personas encuentren información incorrecta o que no encuentren nada cuando busquen respuestas. Una base de conocimiento centralizada resuelve esto al colocar las respuestas donde todos puedan encontrarlas y darle a tu equipo un lugar específico para registrar el conocimiento compartido.
 
-Mintlify proporciona la infraestructura para bases de conocimientos a las que todo tu equipo puede contribuir.
+Mintlify ofrece la infraestructura para bases de conocimiento en las que todo tu equipo puede contribuir.
 
-* **Búsqueda con IA**: El [assistant](/es/ai/assistant) responde preguntas utilizando el contenido de tu base de conocimientos, para que las personas encuentren respuestas sin saber exactamente dónde buscar.
-* **Integraciones con Slack**: Añade el assistant a [Slack](/es/ai/slack-bot) para que tu equipo pueda hacer preguntas y usa el [agent](/es/agent/slack) para capturar conocimiento a partir de las conversaciones.
-* **Contribuciones con baja barrera de entrada**: El [web editor](/es/editor) y el [agent](/es/agent/quickstart) permiten que cualquier miembro de tu equipo actualice el contenido sin aprender Git o Markdown.
-* **Autenticación integrada**: Controla el acceso con [SSO u OAuth](/es/deploy/authentication-setup) y usa [groups](/es/deploy/authentication-setup#control-access-with-groups) para mostrar contenido diferente a distintos equipos.
+* **Búsqueda con IA**: El [assistant](/es/ai/assistant) responde preguntas usando el contenido de tu base de conocimiento, de modo que las personas encuentren respuestas sin necesidad de saber exactamente dónde buscar.
+* **Integraciones con Slack**: Añade el assistant a [Slack](/es/ai/slack-bot) para que tu equipo pueda hacer preguntas y utilizar el [agent](/es/agent/slack) para capturar conocimiento de las conversaciones.
+* **Contribuciones sin fricción**: El [web editor](/es/editor) y el [agent](/es/agent/quickstart) permiten que cualquier persona de tu equipo actualice contenido sin tener que aprender Git o Markdown.
+* **Autenticación integrada**: Controla el acceso con [SSO u OAuth](/es/deploy/authentication-setup), y usa [groups](/es/deploy/authentication-setup#control-access-with-groups) para mostrar contenido diferente a equipos distintos.
 
 <div id="prerequisites">
   ## Requisitos previos
 </div>
 
-Si aún no has creado un proyecto de Mintlify, consulta la [Guía rápida](/es/quickstart) para publicar tu sitio.
+Si aún no has creado un proyecto de Mintlify, consulta la [Guía de inicio rápido](/es/quickstart) para publicar tu sitio.
 
 * Un sistema de autenticación (SSO o proveedor OAuth como Okta o Azure AD)
-* Control sobre tu domain para el alojamiento
+* Control sobre tu dominio para el alojamiento
 * Acceso de administrador a tu organización de Mintlify
 
 <div id="migrate-existing-content">
-  ## Migra el contenido existente
+  ## Migrar contenido existente
 </div>
 
-Si estás creando una base de conocimientos desde cero, salta a [Diseña la estructura de navegación](#design-the-navigation-structure).
+Si estás creando una base de conocimientos desde cero, pasa a [Diseñar la estructura de navegación](#design-the-navigation-structure).
 
 <div id="audit-existing-content">
-  ### Audita el contenido existente
+  ### Auditar el contenido existente
 </div>
 
-Cataloga el contenido que tienes actualmente en tu base de conocimiento. Esto te ayuda a entender qué contenido necesitas migrar, planear cómo organizarlo en tu nueva base de conocimiento, identificar cualquier brecha en tu contenido y confirmar que trasladaste todo tu contenido a tu nueva base de conocimiento.
+Cataloga el contenido que tienes actualmente en tu base de conocimiento. Esto te ayuda a comprender qué contenido necesitas migrar, a planear cómo organizarlo en tu nueva base de conocimiento, a identificar posibles vacíos en tu contenido y a confirmar que trasladaste todo tu contenido a tu nueva base de conocimiento.
 
 * **Número total de artículos**: Ayuda a estimar el esfuerzo de migración y a hacer seguimiento del grado de completitud.
-* **Temas y contenido**: Informa la estructura de tu navigation y la organización del contenido.
-* **Organización actual**: Observa cómo está organizado actualmente tu contenido y si coincide con la estructura que deseas.
-* **Tipos de contenido**: Determina cualquier requisito de conversión de contenido para texto, PDF, videos y contenido incrustado.
-* **Metadata**: Identifica cualquier metadata que se deba preservar, como fechas, autores y etiquetas.
-* **Requisitos de acceso**: Determina el mejor enfoque de Autenticación para tu base de conocimiento.
+* **Temas y contenido**: Sirve para definir la estructura de navegación y la organización del contenido.
+* **Organización actual**: Permite ver cómo está organizado actualmente tu contenido y si coincide con la estructura que deseas.
+* **Tipos de contenido**: Determina cualquier requisito de conversión para contenido en texto, archivos PDF, videos y contenido incrustado.
+* **Metadatos**: Identifica los metadatos que se deben preservar, como fechas, autores y etiquetas.
+* **Requisitos de acceso**: Determina el mejor enfoque de autenticación para tu base de conocimiento.
 
 <div id="export-your-existing-content">
   ### Exporta tu contenido existente
 </div>
 
-La mayoría de las plataformas de base de conocimiento permiten exportar contenido en formatos estándar. El formato que elijas depende de tu plataforma actual y de tus prioridades.
+La mayoría de las plataformas de bases de conocimiento permiten exportar contenido en formatos estándar. El formato que elijas depende de tu plataforma actual y de tus prioridades.
 
-* Exporta en **Markdown** para lograr la migración más sencilla a Mintlify. (recomendado)
-* Exporta en **HTML** si Markdown no está disponible. Deberás convertir tu contenido a Markdown más adelante.
-* Exporta en **JSON o CSV** si tienes metadata estructurada que necesites conservar.
+* Exporta a **Markdown** para realizar la migración más sencilla a Mintlify. (recomendado)
+* Exporta a **HTML** si Markdown no está disponible. Deberás convertir tu contenido a Markdown más adelante.
+* Exporta a **JSON o CSV** si tienes metadatos estructurados que quieras conservar.
 
 <div id="design-the-navigation-structure">
   ## Diseña la estructura de navegación
 </div>
 
-La estructura de navegación determina cómo las personas encuentran contenido en tu base de conocimientos. Puedes recrear tu estructura actual o rediseñarla para que se adapte mejor a cómo tu equipo concibe el contenido.
+Tu estructura de navegación determina cómo las personas encuentran el contenido en tu base de conocimientos. Puedes recrear tu estructura existente o rediseñarla para que encaje mejor con la forma en que tu equipo concibe el contenido.
 
 <Tip>
-  La migración es un buen momento para mejorar tu estructura. Plantéate si tu organización actual realmente funciona para tu equipo o si puedes reorganizarla para que la información sea más fácil de encontrar.
+  La migración es un buen momento para mejorar tu estructura. Plantéate si la organización actual realmente funciona para tu equipo o si puedes reorganizarla para que la información sea más fácil de encontrar.
 </Tip>
 
 Tu archivo `docs.json` define la estructura de navegación de tu base de conocimientos. Crea este archivo en la raíz del repositorio de tu proyecto.
@@ -88,7 +88,7 @@ Tu archivo `docs.json` define la estructura de navegación de tu base de conocim
         ]
       },
       {
-        "group": "Ingeniería",
+        "group": "Engineering",
         "pages": [
           "engineering/overview",
           "engineering/dev-setup",
@@ -101,27 +101,27 @@ Tu archivo `docs.json` define la estructura de navegación de tu base de conocim
 }
 ```
 
-Consulta [Navigation](/es/organize/navigation) para obtener más información sobre cómo estructurar tu base de conocimientos.
+Consulta la sección [Navigation](/es/organize/navigation) para obtener más información sobre cómo estructurar tu base de conocimientos.
 
 <div id="set-up-authentication">
-  ## Configurar la autenticación
+  ## Configura la autenticación
 </div>
 
-Determina quién necesita acceso a qué contenido en tu base de conocimientos.
+Determina quién necesita acceso a qué contenido de tu base de conocimientos.
 
-Si todas las personas deben tener acceso a toda la base de conocimientos, configura solo la [autenticación](/es/deploy/authentication-setup).
+Si todo el mundo debe tener acceso a toda la base de conocimientos, configura solo la [autenticación](/es/deploy/authentication-setup).
 
-Si necesitas restringir el acceso a cierto contenido para usuarios o grupos específicos, configura la autenticación con el [control de acceso basado en grupos](/es/deploy/authentication-setup#control-access-with-groups).
+Si necesitas restringir el acceso a cierto contenido a usuarios o grupos específicos, configura la autenticación con [control de acceso basado en grupos](/es/deploy/authentication-setup#control-access-with-groups).
 
 <div id="migrate-your-content">
   ## Migra tu contenido
 </div>
 
-Mueve el contenido exportado a una estructura de carpetas que coincida con la estructura de navegación que diseñaste. Convierte el contenido a Markdown si es necesario, agrega el frontmatter que falte y configura los enlaces internos.
+Mueve tu contenido exportado a una estructura de carpetas que coincida con la estructura de navegación que diseñaste. Convierte el contenido a Markdown si es necesario, añade cualquier frontmatter que falte y configura los enlaces internos.
 
 <Steps>
   <Step title="Organiza los archivos">
-    Crea carpetas que coincidan con la estructura de tu `docs.json`. Por ejemplo, si tu `docs.json` tiene un grupo Finance, crea una carpeta `finance/`:
+    Crea carpetas que coincidan con la estructura de tu `docs.json`. Por ejemplo, si tu `docs.json` tiene un grupo de finanzas, crea una carpeta `finance/`:
 
     ```text
     your-project/
@@ -143,11 +143,11 @@ Mueve el contenido exportado a una estructura de carpetas que coincida con la es
         └── code-standards.mdx
     ```
 
-    Coloca cada artículo en su carpeta correspondiente. La ruta del archivo debe coincidir con la ruta en tu `docs.json`. Por ejemplo, si `docs.json` hace referencia a `"finance/expense-reports"`, el archivo debería ser `finance/expense-reports.mdx` en el repositorio de tu proyecto.
+    Coloca cada artículo en su carpeta correspondiente. La ruta del archivo debe coincidir con la ruta en tu `docs.json`. Por ejemplo, si `docs.json` hace referencia a `"finance/expense-reports"`, el archivo debe ser `finance/expense-reports.mdx` en el repositorio de tu proyecto.
   </Step>
 
-  <Step title="Agrega frontmatter a cada artículo">
-    Cada archivo `.mdx` necesita frontmatter en la parte superior con metadatos. Cada página requiere un título y una descripción. Consulta [Pages](/es/organize/pages) para más información sobre los metadatos de las páginas.
+  <Step title="Añade frontmatter a cada artículo">
+    Cada archivo `.mdx` necesita frontmatter en la parte superior con metadatos. Cada página requiere un título y una descripción. Consulta [Pages](/es/organize/pages) para obtener más información sobre los metadatos de las páginas.
 
     ```mdx
     ---
@@ -160,76 +160,76 @@ Mueve el contenido exportado a una estructura de carpetas que coincida con la es
   </Step>
 
   <Step title="Configura los enlaces internos">
-    Enlaza entre páginas usando rutas desde la raíz de tu proyecto.
+    Crea enlaces entre páginas usando rutas desde la raíz de tu proyecto.
 
     ```mdx
-    Consulta la [Guía de incorporación](/hr/onboarding) para la configuración de nuevos empleados.
+    See [Onboarding Guide](/hr/onboarding) for new employee setup.
 
-    Si tienes preguntas, contacta al [Equipo de beneficios de RR. HH.](/hr/benefits#common-questions).
+    For questions, contact [HR Benefits Team](/hr/benefits#common-questions).
     ```
   </Step>
 
   <Step title="Convierte HTML y otros formatos a Markdown">
-    Si exportaste tu contenido como HTML, conviértelo a Markdown. Algunas herramientas que pueden ayudar incluyen:
+    Si exportaste tu contenido como HTML, conviértelo a Markdown. Algunas herramientas que pueden ayudarte incluyen:
 
     * **Pandoc**: Herramienta de línea de comandos que convierte entre muchos formatos.
-    * **CloudConvert**: Conversor en línea que admite HTML, DOCX, PDF y más.
+    * **CloudConvert**: Convertidor en línea que admite HTML, DOCX, PDF y más.
     * **Extensiones de VS Code**: Busca &quot;HTML to Markdown&quot; en las extensiones.
   </Step>
 
   <Step title="Gestiona múltiples formatos de contenido">
-    Si tienes archivos PDF, videos u otros elementos multimedia, decide cómo incluirlos en tu base de conocimientos.
+    Si tienes archivos PDF, vídeos u otros contenidos multimedia, decide cómo incluirlos en tu base de conocimientos.
 
-    * **Incorpora videos**: Incorpora videos o enlaza a videos alojados.
-    * **Enlaza a archivos PDF**: Agrega los PDF al repositorio de tu proyecto y enlázalos desde las páginas relevantes.
-    * **Convierte archivos PDF a Markdown**: Si quieres que el contenido de un PDF sea una página, convierte los PDF a Markdown.
+    * **Incrusta vídeos**: Incrusta vídeos o enlaza a vídeos alojados.
+    * **Enlaza a PDFs**: Añade los PDFs al repositorio de tu proyecto y enlázalos desde las páginas relevantes.
+    * **Convierte PDFs a Markdown**: Si quieres que el contenido de un PDF sea una página, convierte los PDFs a Markdown.
   </Step>
 </Steps>
 
 <div id="set-up-the-assistant">
-  ## Configura el assistant
+  ## Configurar el asistente
 </div>
 
-El assistant se habilita automáticamente para los planes Pro y Enterprise. El assistant permite que tu equipo haga preguntas y obtenga respuestas con fuentes citadas de tu base de conocimientos.
+El asistente se habilita automáticamente para los planes Pro y Enterprise. Permite que tu equipo haga preguntas y obtenga respuestas con fuentes citadas de tu base de conocimientos.
 
-Configura el assistant desde tu [dashboard](https://dashboard.mintlify.com/products/assistant/settings):
+Configura el asistente desde tu [panel de control](https://dashboard.mintlify.com/products/assistant/settings):
 
-* **Preguntas de ejemplo**: Añade preguntas comunes como &quot;¿cómo envío un informe de gastos?&quot; o &quot;¿cuál es la política de vacaciones?&quot; para que las personas puedan obtener respuestas con un solo clic.
-* **Sitios de búsqueda**: Incluye sitios adicionales que el assistant puede buscar al responder preguntas.
-* **Correo de derivación**: Configura un correo de soporte para las preguntas que el assistant no pueda responder.
+* **Preguntas de ejemplo**: Agrega preguntas frecuentes como &quot;¿Cómo presento un informe de gastos?&quot; o &quot;¿Cuál es la política de vacaciones?&quot; para que las personas puedan obtener respuestas con un solo clic.
+* **Sitios de búsqueda**: Incluye sitios adicionales en los que el asistente pueda buscar al responder preguntas.
+* **Correo de derivación**: Configura un correo de soporte para las preguntas que el asistente no pueda responder.
 
 <div id="add-the-assistant-to-slack">
-  ### Agrega el assistant a Slack
+  ### Añade el asistente a Slack
 </div>
 
-El [bot de Slack](/es/ai/slack-bot) permite que tu equipo le haga preguntas al assistant sin salir de Slack. Crea un canal donde el bot responda a cada mensaje o deja que las personas mencionen al bot con @ en cualquier canal.
+El [bot de Slack](/es/ai/slack-bot) permite que tu equipo haga preguntas al asistente sin salir de Slack. Crea un canal donde el bot responda a cada mensaje o permite que las personas @mencionen al bot en cualquier canal.
 
 <div id="enable-team-contributions">
-  ## Permitir contribuciones del equipo
+  ## Activa las contribuciones del equipo
 </div>
 
-Una base de conocimientos se mantiene precisa cuando todos pueden actualizarla, no solo las personas que la configuraron. Mintlify ofrece tres formas para que los miembros del equipo contribuyan rápidamente a tu base de conocimientos.
+Una base de conocimientos se mantiene actualizada y precisa cuando todos pueden modificarla, no solo quienes la configuraron. Mintlify ofrece tres maneras para que los miembros del equipo contribuyan rápidamente a tu base de conocimientos.
 
 <div id="web-editor">
   ### Editor web
 </div>
 
-El [editor web](/es/editor) permite que cualquier persona cree y edite páginas directamente en su navegador. Los colaboradores pueden:
+El [editor web](/es/editor) permite que cualquiera cree y edite páginas en su navegador. Las personas colaboradoras pueden:
 
 * Editar páginas de forma visual o en Markdown.
 * Arrastrar y soltar para reorganizar la navegación.
-* Cargar imágenes y contenido multimedia.
-* Crear branches y solicitudes de extracción para revisión.
+* Subir imágenes y contenido multimedia.
+* Crear ramas y solicitudes de incorporación de cambios (pull requests) para revisión.
 
-Es ideal para expertos en la materia que conocen el contenido pero no se sienten cómodos con flujos de trabajo basados en código.
+Esto funciona bien para especialistas en la materia que conocen el contenido pero no se sienten cómodos con los flujos de trabajo con código.
 
 <div id="agent">
   ### Agente
 </div>
 
-El [agent](/es/agent/quickstart) en tu dashboard crea actualizaciones de la documentación a partir de instrucciones en lenguaje natural. Describe lo que quieres cambiar y el agente creará una solicitud de extracción con las actualizaciones.
+El [agente](/es/agent/quickstart) en tu panel de control crea actualizaciones de documentación a partir de indicaciones en lenguaje natural. Describe lo que quieres cambiar y el agente crea una pull request (PR) con las actualizaciones.
 
-Por ejemplo, un miembro del equipo podría indicar: &quot;agrega una sección a la página de la política de gastos que explique cómo enviar recibos de comidas de más de $50&quot; y copiar la página de la política de gastos existente en el prompt. El agente redactaría el contenido y abriría una solicitud de extracción para revisión.
+Por ejemplo, un miembro del equipo podría escribir: «añade una sección a la página de la política de gastos que explique cómo enviar recibos de comidas de más de 50 $» y copiar la página actual de la política de gastos en la indicación. El agente redactaría el contenido y abriría una PR para su revisión.
 
 <div id="capture-knowledge-from-slack">
   ### Captura conocimiento de Slack
@@ -237,19 +237,19 @@ Por ejemplo, un miembro del equipo podría indicar: &quot;agrega una sección a 
 
 Los equipos comparten información valiosa en Slack que a menudo nunca llega a la documentación. El [agente en Slack](/es/agent/slack) puede capturar este conocimiento y convertirlo en documentación estructurada.
 
-Cuando alguien comparte información útil en un hilo de Slack, cualquier miembro del equipo puede mencionar a `@mintlify` con instrucciones para documentarla. El agente lee la conversación, extrae la información relevante y crea una solicitud de extracción. Esto es útil para capturar decisiones técnicas, soluciones a problemas y explicaciones de procesos mientras el contexto sigue fresco.
+Cuando alguien comparte información útil en un hilo de Slack, cualquier miembro del equipo puede mencionar `@mintlify` con instrucciones para documentarla. El agente lee la conversación, extrae la información relevante y crea un pull request. Esto es útil para capturar decisiones técnicas, soluciones de resolución de problemas y explicaciones de procesos mientras el contexto aún está fresco.
 
 Por ejemplo, si tu equipo habló sobre cómo configurar una nueva integración en un hilo, podrías responder:
 
 > @mintlify Crea una guía para configurar la integración de Acme a partir de esta conversación.
 
-El agente utiliza el contexto del hilo para crear documentación que capture la información clave de la discusión.
+El agente usa el contexto del hilo para crear documentación que recoge la información clave de la discusión.
 
 <div id="locally">
-  ### Localmente
+  ### De forma local
 </div>
 
-Cualquier persona con acceso al repositorio de tu base de conocimientos puede trabajar localmente en su editor preferido y enviar cambios al repositorio.
+Cualquier persona con acceso al repositorio de tu base de conocimiento puede trabajar de forma local en su editor preferido y enviar cambios a tu repositorio.
 
 <div id="establish-maintenance-workflows">
   ## Establece flujos de trabajo de mantenimiento
@@ -258,45 +258,45 @@ Cualquier persona con acceso al repositorio de tu base de conocimientos puede tr
 Una base de conocimientos puede deteriorarse rápidamente sin mantenimiento. Configura sistemas para mantener el contenido actualizado y ayudar a tu equipo a contribuir a la base de conocimientos.
 
 <Steps>
-  <Step title="Asignar responsables del contenido">
-    Designa un responsable o un pequeño equipo para cada sección. No tienen que escribir todo el contenido, pero sí son responsables de:
+  <Step title="Asignar responsabilidad sobre el contenido">
+    Designa un responsable o un pequeño equipo para cada sección. No tienen que redactar todo el contenido, pero sí son responsables de:
 
     * Revisar el contenido con regularidad.
     * Señalar la información desactualizada.
     * Aprobar nuevas páginas en su sección.
-    * Responder cuando las personas reporten errores.
+    * Responder cuando las personas informen errores.
   </Step>
 
   <Step title="Configurar ciclos de revisión y verificación de contenido">
-    El contenido se vuelve obsoleto con el tiempo. Establece un calendario de revisión.
+    El contenido se vuelve obsoleto con el tiempo. Establece un calendario de revisiones.
 
     * **Contenido crítico**: Revisar cada 30 días
     * **Contenido estándar**: Revisar cada 90 días
-    * **Contenido atemporal (evergreen)**: Revisar anualmente
+    * **Contenido siempre vigente (evergreen)**: Revisar anualmente
 
-    Al revisar, comprueba:
+    Al revisar, verifica:
 
-    * ¿Los enlaces siguen siendo válidos?
+    * ¿Siguen siendo válidos los enlaces?
     * ¿Han cambiado los sistemas o procesos?
     * ¿Los ejemplos están actualizados?
     * ¿Hay información nueva que debería añadirse?
   </Step>
 
-  <Step title="Crear directrices de contribución">
-    Facilita que cualquier persona mejore la base de conocimientos. Tus directrices deberían cubrir:
+  <Step title="Crear pautas de contribución">
+    Facilita que cualquier persona mejore la base de conocimientos. Tus pautas deben cubrir:
 
     * **Formato**: ¿Tienes plantillas específicas o requisitos de formato?
-    * **Proceso**: ¿Cómo debería alguien proponer y enviar cambios?
-    * **Revisión**: ¿Quién revisa las propuestas? ¿Cuál es el tiempo de respuesta?
-    * **Alcance**: ¿Qué tipos de contenido entran en el alcance?
+    * **Proceso**: ¿Cómo debe alguien proponer y enviar cambios?
+    * **Revisión**: ¿Quién revisa las contribuciones? ¿Cuál es el tiempo de respuesta?
+    * **Alcance**: ¿Qué tipos de contenido están incluidos?
   </Step>
 
   <Step title="Supervisar métricas de uso">
-    Revisa cómo tu equipo utiliza la base de conocimientos para priorizar contenido e identificar áreas de mejora. Establece un ritmo regular para revisar las métricas de uso: mensual o trimestral son buenos intervalos.
+    Revisa cómo tu equipo utiliza la base de conocimientos para priorizar contenido e identificar áreas de mejora. Establece una frecuencia fija para revisar las métricas de uso (mensual o trimestral son buenos intervalos).
 
     * ¿Qué artículos reciben más visitas? Invierte en mantenerlos precisos y fáciles de leer.
-    * ¿Qué artículos no reciben visitas? Considera eliminarlos o mejorar la facilidad para encontrarlos.
-    * ¿Cuál es la tasa de rebote? Si las personas se van de inmediato, es posible que el contenido no sea útil o que la navegación pueda mejorarse.
+    * ¿Qué artículos no reciben visitas? Considera eliminarlos o mejorar su visibilidad.
+    * ¿Cuál es la tasa de rebote? Si la gente se va de inmediato, es posible que el contenido no sea útil o que la navegación pueda mejorarse.
   </Step>
 </Steps>
 
@@ -304,11 +304,11 @@ Una base de conocimientos puede deteriorarse rápidamente sin mantenimiento. Con
   ## Próximos pasos
 </div>
 
-Tu base de conocimientos está lista para el lanzamiento. Después de desplegarla:
+Tu base de conocimientos está lista para ponerse en marcha. Después de implementarla:
 
-1. Anuncia la base de conocimientos a tu equipo.
-2. Supervisa el uso y los patrones de búsqueda en tus Analytics.
-3. Fomenta las contribuciones cuando la gente detecte carencias.
+1. Preséntala a tu equipo.
+2. Supervisa el uso y los patrones de búsqueda en tus analíticas.
+3. Anima a las personas a contribuir cuando detecten carencias.
 4. Revisa y actualiza el contenido con regularidad.
 
-Las bases de conocimientos más exitosas evolucionan en función de cómo los equipos las usan en la práctica.
+Las bases de conocimientos más exitosas evolucionan en función de cómo las usan realmente los equipos.

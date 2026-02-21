@@ -1,40 +1,40 @@
 ---
-title: "编写高效提示词"
-description: "通过清晰、聚焦的提示词，让 agent 给出更佳结果。"
+title: "撰写高效提示词"
+description: "通过清晰、有针对性的提示词，让 agent 产出更好的结果。"
 keywords: ["prompts", "agent prompts", "effective prompting", "agent usage"]
 ---
 
-把 agent 想象成一个需要你指引才能完成任务的 AI 助手。向它提供清晰的指令和充分的上下文。任务越聚焦，就越容易完成，因此要将复杂项目拆解为更小的步骤。
+把 agent 想象成一个需要你指引才能完成任务的得力助手。为它提供清晰的指令和上下文信息。任务越聚焦，就越容易完成，因此可以将复杂项目拆解为更小的步骤。
 
 <div id="make-prompts-specific-and-outcome-focused">
-  ## 让提示更具体，并聚焦在结果上
+  ## 让提示更具体，并聚焦在期望结果上
 </div>
 
-像 `@mintlify Improve the onboarding page` 这样泛泛的提示只会应用一些通用的最佳实践，但可能无法按照你预想的方式，针对性地改进内容。
+像 `@mintlify Improve the onboarding page` 这样的笼统提示，只会应用一些通用的最佳实践，但不一定会按照你心里设想的方式对内容进行改进。
 
-尝试围绕你希望用户达成的结果，或他们遇到的具体问题来编写提示。
+尝试根据你希望用户达成的目标，或他们遇到的问题来设计提示。
 
-- `@mintlify A lot of users have trouble installing the CLI. Review the onboarding page and update the docs so that users can easily install the CLI`
-- `@mintlify Developers keep getting 401 errors when following our authentication guide. Review the auth docs and add clearer examples showing how to properly format the API key`
+- `@mintlify 许多用户在安装 CLI 时遇到困难。请检查 onboarding 页面并更新文档，让用户可以轻松完成 CLI 安装`
+- `@mintlify 开发者在按照我们的身份验证指南操作时，总是遇到 401 错误。请审查认证文档，并补充更清晰的示例，展示如何正确格式化 API key`
 
 <div id="use-broad-prompts-for-maintenance-tasks">
-  ## 针对维护任务使用更通用的提示
+  ## 在维护任务中使用宽泛的提示
 </div>
 
-对于常规的文档内容维护（例如修复拼写错误、更新重定向，或在整个文档中重命名某个功能），请使用更通用的提示。
+在进行通用内容维护时使用较为宽泛的提示，比如修复错别字、更新重定向，或在整个文档中重命名某个功能。
 
 - `@mintlify Find and fix all typos in the docs`
 - `@mintlify change all unordered lists to use * instead of -`
 
 <div id="specify-a-domain-name-for-multi-site-organizations">
-  ## 为多站点组织指定 domain 名称
+  ## 为多站点组织指定域名
 </div>
 
-如果你有多个文档站点，请在消息中包含 `subdomain` 参数，以指定智能助手应处理哪一组文档。
+如果你有多个文档站点，请在消息中包含 `subdomain` 参数，用来指定代理应处理哪个文档集。
 
-要找到你的 domain 名称，请查看你想更新的那组文档在控制台中的 URL。domain 名称是组织名称之后的最后一部分。比如，如果你的控制台 URL 是 `https://dashboard.mintlify.com/org-name/domain-name`，那么你的 domain 名称就是 `domain-name`。
+要找到你的域名，请查看你想要更新的文档集对应的 dashboard URL。域名是组织名称之后的最后一段。例如，如果你的 dashboard URL 是 `https://dashboard.mintlify.com/org-name/domain-name`，那么你的域名就是 `domain-name`。
 
-使用 `@mintlify subdomain=<your-domain-name> <your-prompt>` 这种格式来指示智能助手在特定的一组文档上工作。
+使用 `@mintlify subdomain=<your-domain-name> <your-prompt>` 的格式来提示代理处理特定的文档集。
 
-- `@mintlify subdomain=public-docs Add a new section to the quickstart about inviting collaborators based on this PR`：指示智能助手只更新 `public-docs` 站点中的 quickstart。
-- `@mintlify subdomain=customer-docs Update the auth docs for the new authentication method`：指示智能助手只更新 `customer-docs` 站点中的认证文档。
+- `@mintlify subdomain=public-docs Add a new section to the quickstart about inviting collaborators based on this PR`：提示代理只在 `public-docs` 站点上更新快速开始（quickstart）。
+- `@mintlify subdomain=customer-docs Update the auth docs for the new authentication method`：提示代理只在 `customer-docs` 站点上更新认证文档（auth docs）。

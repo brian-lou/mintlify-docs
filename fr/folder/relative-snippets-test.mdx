@@ -1,21 +1,21 @@
 ---
-title: "Test des extraits de code relatifs"
-description: "Page de test cachée pour valider les imports d'extraits de code relatifs"
+title: "Test des snippets relatifs"
+description: "Page de test cachée pour valider les imports relatifs de snippets"
 ---
 
 <div id="relative-snippets-test-page">
   # Page de test des extraits relatifs
 </div>
 
-Ceci est une page de test cachée destinée à valider la fonctionnalité d’importation d’extraits de code relatifs.
+Cette page de test cachée permet de valider la fonctionnalité d'importation relative des extraits.
 
 ---
 
 <div id="test-1-parent-directory-import-snippets">
-  ## Test 1 : Import du répertoire parent (`../snippets/`)
+  ## Test 1 : Import depuis le répertoire parent (`../snippets/`)
 </div>
 
-Import de `/snippets/test-snippet-a.mdx` en utilisant `../snippets/test-snippet-a.mdx` :
+Import de `/snippets/test-snippet-a.mdx` via `../snippets/test-snippet-a.mdx` :
 
 import TestSnippetA from "../snippets/test-snippet-a.mdx";
 
@@ -25,7 +25,7 @@ import TestSnippetA from "../snippets/test-snippet-a.mdx";
 
 
 <div id="test-2-parent-directory-import-with-named-export">
-  ## Test 2 : import du répertoire parent avec export nommé
+  ## Test 2 : Import depuis le répertoire parent avec export nommé
 </div>
 
 Import de `testVariable` depuis `/snippets/test-snippet-b.mdx` :
@@ -40,10 +40,10 @@ import TestSnippetB from "../snippets/test-snippet-b.mdx";
 
 
 <div id="test-3-same-directory-import">
-  ## Test 3 : Import dans le même répertoire (`./`)
+  ## Test 3 : Import depuis le même répertoire (`./`)
 </div>
 
-Import du fichier `local-snippet.mdx` dans le même dossier :
+Import depuis `local-snippet.mdx` dans le même répertoire :
 
 import LocalSnippet, { localMessage } from "./local-snippet.mdx";
 
@@ -55,10 +55,10 @@ import LocalSnippet, { localMessage } from "./local-snippet.mdx";
 
 
 <div id="test-4-child-directory-import-nested">
-  ## Test 4 : Import depuis un sous-répertoire (`./nested/`)
+  ## Test 4 : import depuis un sous-répertoire (`./nested/`)
 </div>
 
-Import depuis `nested/deep-snippet.mdx` :
+Import à partir de `nested/deep-snippet.mdx` :
 
 import DeepSnippet, { deepMessage } from "./nested/deep-snippet.mdx";
 
@@ -70,7 +70,7 @@ import DeepSnippet, { deepMessage } from "./nested/deep-snippet.mdx";
 
 
 <div id="test-5-absolute-import-for-comparison">
-  ## Test 5 : Import absolu (à titre de comparaison)
+  ## Test 5 : import absolu (pour comparaison)
 </div>
 
 Import en utilisant le chemin absolu `/snippets/icons-optional.mdx` :
@@ -83,13 +83,13 @@ import IconsOptional from "/snippets/fr/icons-optional.mdx";
 
 
 <div id="summary">
-  ## Résumé
+  ## Récapitulatif
 </div>
 
-| Test | Chemin d’importation | Type | Statut |
-|------|----------------------|------|--------|
-| 1 | `../snippets/test-snippet-a.mdx` | Dossier parent | Voir ci-dessus |
-| 2 | `../snippets/test-snippet-b.mdx` | Dossier parent + export | Voir ci-dessus |
-| 3 | `./local-snippet.mdx` | Même dossier | Voir ci-dessus |
-| 4 | `./nested/deep-snippet.mdx` | Sous-dossier | Voir ci-dessus |
+| Test | Chemin d’import | Type | Statut |
+|------|-----------------|------|--------|
+| 1 | `../snippets/test-snippet-a.mdx` | Répertoire parent | Voir ci-dessus |
+| 2 | `../snippets/test-snippet-b.mdx` | Répertoire parent + export | Voir ci-dessus |
+| 3 | `./local-snippet.mdx` | Même répertoire | Voir ci-dessus |
+| 4 | `./nested/deep-snippet.mdx` | Répertoire enfant | Voir ci-dessus |
 | 5 | `/snippets/icons-optional.mdx` | Chemin absolu | Voir ci-dessus |

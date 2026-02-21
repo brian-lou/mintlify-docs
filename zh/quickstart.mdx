@@ -1,32 +1,32 @@
 ---
 title: "快速入门"
-description: "部署你的文档站点并完成首次更改。"
-keywords: ["快速入门","部署","入门","第一步","教程","设置","上手"]
+description: "部署文档站点，并完成你的首次更改。"
+keywords: ["quickstart","deploy","get started","first steps","tutorial","setup","onboarding"]
 ---
 
-完成本指南后，你将拥有一个已上线的文档站点，可以开始对其进行自定义和更新。
+完成本指南后，你将拥有一个已上线、可供自定义和更新的文档站点。
 
 <div id="before-you-begin">
   ## 开始之前
 </div>
 
-Mintlify 使用“文档即代码”（docs-as-code）的方法来管理你的文档。站点上的每个页面都有一个对应的文件，存储在你的文档<Tooltip tip="你的文档源代码所在的位置，用于存储所有文件及其历史记录。Web 编辑器会连接到你的文档存储库以访问和修改内容，或者你也可以在本地使用自己偏好的 IDE 编辑文件。">存储库</Tooltip>中。
+Mintlify 使用 “docs-as-code” 的方式来管理你的文档。你的网站上的每个页面都有一个对应的文件，存储在你的文档<Tooltip tip="你的文档源代码，存储了所有文件及其历史记录。网页编辑器会连接到你的文档仓库以访问和修改内容，或者你也可以在本地使用偏好的 IDE 编辑文件。">repository</Tooltip> 中。
 
-当你将文档存储库连接到你的项目后，你可以在本地或 Web 编辑器中编辑文档，并将任何更改同步到远程存储库。
+当你将文档仓库连接到你的项目时，你可以在本地或网页编辑器中编写文档，并将所有更改同步到远程仓库。
 
 <div id="deploy-your-documentation-site">
-  ## 部署你的文档站点
+  ## 部署文档站点
 </div>
 
-前往 [mintlify.com/start](https://mintlify.com/start) 并完成初始设置流程。在初始设置过程中，你会连接你的 GitHub 账户，为文档创建或选择一个存储库，并安装 GitHub 应用以启用自动部署。
+前往 [mintlify.com/start](https://mintlify.com/start) 并完成新手引导流程。在引导过程中，你会连接 GitHub 账号，为文档创建或选择一个代码仓库，并安装 GitHub App 以启用自动部署。
 
-完成初始设置后，你的文档站点会部署完成，并可通过你的 `.mintlify.app` URL 访问。
+完成引导后，你的文档站点就会部署完毕，并可以通过 `.mintlify.app` URL 访问。
 
 <AccordionGroup>
-  <Accordion title="可选：在初始设置中跳过连接 GitHub">
-    如果你想在不连接自己的存储库的情况下快速开始使用，可以在初始设置过程中跳过 GitHub 连接。Mintlify 会在一个私有组织下为你创建一个私有存储库，并自动为你配置 GitHub 应用。
+  <Accordion title="可选：在引导流程中跳过连接 GitHub">
+    如果你希望在不连接自己代码仓库的情况下快速开始使用，可以在引导过程中跳过 GitHub 连接。Mintlify 会在一个私有组织中为你创建一个私有仓库，并自动为你配置 GitHub App。
 
-    这样你可以立即使用 Web 编辑器，并在之后迁移到你自己的存储库。
+    这样你就可以立即使用在线编辑器，并在之后迁移到你自己的代码仓库。
   </Accordion>
 </AccordionGroup>
 
@@ -36,27 +36,27 @@ Mintlify 使用“文档即代码”（docs-as-code）的方法来管理你的�
 
 你的文档站点现在已部署在 `https://<your-project-name>.mintlify.app`。
 
-在 [控制台](https://dashboard.mintlify.com/) 的 **Overview** 页面中可以找到准确的 URL。
+在[控制面板](https://dashboard.mintlify.com/)的 **Overview** 页面中找到具体的 URL。
 
 <Frame>
-  <img src="/images/quickstart/mintlify-domain-light.png" alt="Mintlify 控制台 Overview 页面。" className="block dark:hidden" />
+  <img src="/images/quickstart/mintlify-domain-light.png" alt="Mintlify 控制面板 Overview 页面的界面。" className="block dark:hidden" />
 
-  <img src="/images/quickstart/mintlify-domain-dark.png" alt="Mintlify 控制台 Overview 页面。" className="hidden dark:block" />
+  <img src="/images/quickstart/mintlify-domain-dark.png" alt="Mintlify 控制面板 Overview 页面的界面。" className="hidden dark:block" />
 </Frame>
 
 <Tip>
-  你的网站已经可以立即访问。使用这个 URL 进行测试并与团队分享。在面向正式用户分享之前，你可能希望先添加一个[自定义域名](/zh/customize/custom-domain)。
+  你的网站已可立即访问。使用此 URL 进行测试并与团队成员分享。在向用户正式公开之前，你可能希望先添加一个[自定义域名](/zh/customize/custom-domain)。
 </Tip>
 
 <div id="make-your-first-change">
-  ## 完成你的第一次修改
+  ## 完成你的首次修改
 </div>
 
 <Tabs>
   <Tab title="CLI">
     <Steps>
       <Step title="安装 CLI">
-        命令行界面（CLI）需要 [Node.js](https://nodejs.org/en) v20.17.0 或更高版本。为保证稳定性，建议使用 LTS 版本。
+        CLI 需要 [Node.js](https://nodejs.org/en) v20.17.0 或更高版本。为保证稳定性，请使用 LTS 版本。
 
         <CodeGroup>
           ```bash npm
@@ -68,15 +68,15 @@ Mintlify 使用“文档即代码”（docs-as-code）的方法来管理你的�
           ```
         </CodeGroup>
 
-        完整的安装步骤和故障排查请参见 [Install the CLI](/zh/installation)。
+        有关完整安装步骤和故障排查，请参见 [安装 CLI](/zh/installation)。
       </Step>
 
-      <Step title="克隆你的存储库">
-        如果你还没有在本地克隆存储库，请按照 [Clone your repository](/zh/installation#clone-your-repository) 中的说明进行操作。
+      <Step title="克隆代码仓库">
+        如果你还没有在本地克隆代码仓库，请按照 [克隆代码仓库](/zh/installation#clone-your-repository) 中的说明操作。
       </Step>
 
       <Step title="编辑页面">
-        在你常用的编辑器中打开 `index.mdx`，在 frontmatter 中更新 description 字段：
+        在你常用的编辑器中打开 `index.mdx`，并更新 frontmatter 中的描述：
 
         ```mdx
         ---
@@ -87,17 +87,17 @@ Mintlify 使用“文档即代码”（docs-as-code）的方法来管理你的�
       </Step>
 
       <Step title="本地预览">
-        在你的文档目录中运行以下命令：
+        在文档目录中运行以下命令：
 
         ```bash
         mint dev
         ```
 
-        在 `http://localhost:3000` 查看预览。
+        然后在浏览器中访问 `http://localhost:3000` 查看本地预览。
       </Step>
 
-      <Step title="推送你的更改">
-        提交并推送你的更改以触发一次部署：
+      <Step title="推送更改">
+        提交并推送你的更改以触发部署：
 
         ```bash
         git add .
@@ -113,16 +113,16 @@ Mintlify 使用“文档即代码”（docs-as-code）的方法来管理你的�
   <Tab title="网页编辑器">
     <Steps>
       <Step title="打开网页编辑器">
-        在控制台中前往 [web editor](https://dashboard.mintlify.com/editor)。
+        在控制台中前往 [网页编辑器](https://dashboard.mintlify.com/editor)。
       </Step>
 
       <Step title="编辑页面">
-        打开 **Introduction** 页面并更新说明。
+        打开 **Introduction** 页面并更新描述。
 
         <Frame>
-          <img src="/images/quickstart/hello-world-light.png" alt="在网页编辑器中打开的 Introduction 页面，其中说明已编辑为 Hello world!。" className="block dark:hidden" />
+          <img src="/images/quickstart/hello-world-light.png" alt="Introduction 页面在网页编辑器中打开，并且描述已编辑为 Hello world!。" className="block dark:hidden" />
 
-          <img src="/images/quickstart/hello-world-dark.png" alt="在网页编辑器中打开的 Introduction 页面，其中说明已编辑为 Hello world!。" className="hidden dark:block" />
+          <img src="/images/quickstart/hello-world-dark.png" alt="Introduction 页面在网页编辑器中打开，并且描述已编辑为 Hello world!。" className="hidden dark:block" />
         </Frame>
       </Step>
 
@@ -131,18 +131,18 @@ Mintlify 使用“文档即代码”（docs-as-code）的方法来管理你的�
       </Step>
 
       <Step title="查看线上效果">
-        在控制台的 [Overview](https://dashboard.mintlify.com/) 页面中，你可以查看站点的部署状态。部署完成后，刷新你的文档站点即可看到最新的变更。
+        在控制台的 [Overview](https://dashboard.mintlify.com/) 页面，你可以看到站点的部署状态。部署完成后，刷新你的文档站点即可看到最新更改。
       </Step>
     </Steps>
   </Tab>
 </Tabs>
 
 <div id="next-steps">
-  ## 后续步骤
+  ## 下一步
 </div>
 
 <Card title="使用 Web 编辑器" icon="mouse-pointer-2" horizontal href="/zh/editor/index">
-  在浏览器中编辑文档，并预览页面发布后的效果。
+  在浏览器中编辑文档，并预览页面发布后的展示效果。
 </Card>
 
 <Card title="探索 CLI 命令" icon="terminal" horizontal href="/zh/installation">
@@ -150,5 +150,5 @@ Mintlify 使用“文档即代码”（docs-as-code）的方法来管理你的�
 </Card>
 
 <Card title="添加自定义域名" icon="globe" horizontal href="/zh/customize/custom-domain">
-  为你的文档站点使用自定义域名。
+  为你的文档站点配置你自己的域名。
 </Card>
