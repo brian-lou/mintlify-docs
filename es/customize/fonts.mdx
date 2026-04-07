@@ -4,15 +4,15 @@ description: "Personaliza la tipografía con Google Fonts o fuentes autoalojadas
 keywords: ["Google Fonts", "fuentes locales", "tipografía personalizada"]
 ---
 
-Configura una fuente personalizada para todo tu sitio o por separado para los encabezados y el texto principal. Usa Google Fonts, archivos de fuentes locales o fuentes alojadas externamente. La fuente predeterminada varía según el tema.
+Establece una fuente personalizada para todo tu sitio o configura por separado las fuentes de los encabezados y del cuerpo del texto. Usa Google Fonts, archivos de fuentes locales o fuentes alojadas externamente. La fuente predeterminada varía según el tema.
 
-Las fuentes se controlan mediante la [propiedad `fonts`](/es/organize/settings#param-fonts) en tu `docs.json`.
+Las fuentes se configuran mediante la [propiedad `fonts`](/es/organize/settings#param-fonts) de tu `docs.json`.
 
 <div id="google-fonts">
   ## Google Fonts
 </div>
 
-Mintlify carga automáticamente [Google Fonts](https://fonts.google.com) cuando especificas un nombre de familia de fuentes en tu `docs.json`.
+Mintlify carga automáticamente [Google Fonts](https://fonts.google.com) cuando indicas el nombre de una familia tipográfica en tu `docs.json`.
 
 ```json docs.json
 "fonts": {
@@ -24,15 +24,15 @@ Mintlify carga automáticamente [Google Fonts](https://fonts.google.com) cuando 
   ## Fuentes locales
 </div>
 
-Para utilizar fuentes locales, coloca los archivos de fuente en el directorio de tu proyecto y haz referencia a ellos en la configuración de `docs.json`.
+Para usar fuentes locales, coloca tus archivos de fuente en el directorio de tu proyecto y haz referencia a ellos en la configuración de `docs.json`.
 
 <div id="setting-up-local-fonts">
-  ### Configuración de fuentes locales
+  ### Configurar fuentes locales
 </div>
 
 <Steps>
-  <Step title="Agregar archivos de fuentes a tu proyecto">
-    Por ejemplo, crea un directorio `fonts` y agrega tus archivos de fuentes:
+  <Step title="Añade los archivos de fuente a tu proyecto">
+    Por ejemplo, crea un directorio `fonts` y añade tus archivos de fuente:
 
     ```text
     your-project/
@@ -44,8 +44,8 @@ Para utilizar fuentes locales, coloca los archivos de fuente en el directorio de
     ```
   </Step>
 
-  <Step title="Configurar fuentes en docs.json">
-    Haz referencia a tus fuentes locales utilizando rutas relativas desde la raíz de tu proyecto:
+  <Step title="Configura las fuentes en docs.json">
+    Especifica tus fuentes locales con rutas relativas desde la raíz de tu proyecto:
 
     ```json docs.json
     {
@@ -61,10 +61,10 @@ Para utilizar fuentes locales, coloca los archivos de fuente en el directorio de
 </Steps>
 
 <div id="local-fonts-for-headings-and-body">
-  ### Fuentes locales para títulos y cuerpo de texto
+  ### Fuentes locales para encabezados y texto del cuerpo
 </div>
 
-Configura fuentes locales distintas para los títulos y el cuerpo del texto en tu `docs.json`:
+Configura fuentes locales independientes para los encabezados y el texto del cuerpo en tu `docs.json`:
 
 ```json docs.json
 {
@@ -86,10 +86,10 @@ Configura fuentes locales distintas para los títulos y el cuerpo del texto en t
 ```
 
 <div id="externally-hosted-fonts">
-  ## Fuentes externas alojadas
+  ## Fuentes alojadas externamente
 </div>
 
-Usa fuentes externas haciendo referencia a una URL de origen de fuente en tu `docs.json`:
+Usa fuentes alojadas externamente indicando la URL de origen de la fuente en tu `docs.json`:
 
 ```json docs.json
 {
@@ -103,7 +103,7 @@ Usa fuentes externas haciendo referencia a una URL de origen de fuente en tu `do
 ```
 
 <div id="font-configuration-reference">
-  ## Referencia de configuración de fuentes
+  ## Referencia de la configuración de fuentes
 </div>
 
 <ResponseField name="fonts" type="object">
@@ -115,19 +115,19 @@ Usa fuentes externas haciendo referencia a una URL de origen de fuente en tu `do
     </ResponseField>
 
     <ResponseField name="weight" type="number">
-      Peso de la fuente, como 400 o 700. Las fuentes variables admiten pesos precisos como 550.
+      Peso de la fuente, como 400 o 700. Las fuentes variables admiten pesos precisos, como 550.
     </ResponseField>
 
     <ResponseField name="source" type="string (uri)">
-      URL de tu fuente, como `https://mintlify-assets.b-cdn.net/fonts/Hubot-Sans.woff2`, o ruta a tu archivo de fuente local, como `/assets/fonts/InterDisplay.woff2`. Google Fonts se cargan automáticamente cuando especificas un nombre de `family` de Google Font, por lo que no se necesita una URL de origen.
+      URL de origen de tu fuente, como `https://mintlify-assets.b-cdn.net/fonts/Hubot-Sans.woff2`, o ruta a tu archivo de fuente local, como `/assets/fonts/InterDisplay.woff2`. Google Fonts se carga automáticamente cuando especificas un nombre de `family` de Google Fonts, por lo que no necesitas una URL de origen.
     </ResponseField>
 
     <ResponseField name="format" type="'woff' | 'woff2'">
-      Formato del archivo de fuente. Obligatorio cuando se usa el campo `source`.
+      Formato del archivo de fuente. Obligatorio cuando usas el campo `source`.
     </ResponseField>
 
     <ResponseField name="heading" type="object">
-      Reemplaza la configuración de fuentes específicamente para los encabezados.
+      Sobrescribe la configuración de la fuente específicamente para los encabezados.
 
       <Expandable title="Encabezado">
         <ResponseField name="family" type="string" required>
@@ -139,33 +139,33 @@ Usa fuentes externas haciendo referencia a una URL de origen de fuente en tu `do
         </ResponseField>
 
         <ResponseField name="source" type="string (uri)">
-          URL de tu fuente, como `https://mintlify-assets.b-cdn.net/fonts/Hubot-Sans.woff2`, o ruta a tu archivo de fuente local para encabezados. Google Fonts se cargan automáticamente cuando especificas un nombre de `family` de Google Font, por lo que no se necesita una URL de origen.
+          URL de origen de tu fuente, como `https://mintlify-assets.b-cdn.net/fonts/Hubot-Sans.woff2`, o ruta a tu archivo de fuente local para los encabezados. Google Fonts se carga automáticamente cuando especificas un nombre de `family` de Google Fonts, por lo que no necesitas una URL de origen.
         </ResponseField>
 
         <ResponseField name="format" type="'woff' | 'woff2'">
-          Formato del archivo de fuente para los encabezados. Obligatorio cuando se usa el campo `source`.
+          Formato del archivo de fuente para los encabezados. Obligatorio cuando usas el campo `source`.
         </ResponseField>
       </Expandable>
     </ResponseField>
 
     <ResponseField name="body" type="object">
-      Reemplaza la configuración de fuentes específicamente para el texto principal.
+      Sobrescribe la configuración de la fuente específicamente para el cuerpo del texto.
 
-      <Expandable title="Cuerpo">
+      <Expandable title="Body">
         <ResponseField name="family" type="string" required>
-          Nombre de la familia tipográfica para el texto principal.
+          Nombre de la familia tipográfica para el cuerpo del texto.
         </ResponseField>
 
         <ResponseField name="weight" type="number">
-          Peso de la fuente para el texto principal.
+          Peso de la fuente para el cuerpo del texto.
         </ResponseField>
 
         <ResponseField name="source" type="string (uri)">
-          URL de tu fuente, como `https://mintlify-assets.b-cdn.net/fonts/Hubot-Sans.woff2`, o ruta a tu archivo de fuente local para el texto principal. Google Fonts se cargan automáticamente cuando especificas un nombre de `family` de Google Font, por lo que no se necesita una URL de origen.
+          URL de origen de tu fuente, como `https://mintlify-assets.b-cdn.net/fonts/Hubot-Sans.woff2`, o ruta a tu archivo de fuente local para el cuerpo del texto. Google Fonts se carga automáticamente cuando especificas un nombre de `family` de Google Fonts, por lo que no necesitas una URL de origen.
         </ResponseField>
 
         <ResponseField name="format" type="'woff' | 'woff2'">
-          Formato del archivo de fuente para el texto principal. Obligatorio cuando se usa el campo `source`.
+          Formato del archivo de fuente para el cuerpo del texto. Obligatorio cuando usas el campo `source`.
         </ResponseField>
       </Expandable>
     </ResponseField>

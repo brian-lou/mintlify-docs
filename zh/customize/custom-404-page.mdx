@@ -4,15 +4,15 @@ description: "自定义 404 错误页面的标题和描述。"
 keywords: ["404 错误页面", "自定义错误页面"]
 ---
 
-所有 404 页面都会根据请求的 URL 自动推荐相关页面。用户进入 404 页面时，agent 会分析路径，并从文档中检索语义相关的页面，帮助他们找到所需内容。
+所有 404 页面都会根据请求的 URL 自动推荐相关页面。如果用户访问了 404 页面，代理会分析该路径，并从你的文档中检索语义相关的页面，帮助他们找到所需内容。
 
-你可以自定义 404 错误页面的标题和描述。可以利用描述来添加有用的链接或说明。
+你可以自定义 404 错误页面的标题和描述。你还可以在描述中添加实用链接或引导说明。
 
 <div id="configuration">
   ## 配置
 </div>
 
-在 `docs.json` 文件的 `errors.404` 部分配置你的 404 页面：
+可在 `docs.json` 文件的 `errors.404` 部分配置 404 页面：
 
 ```json
 "errors": {
@@ -30,9 +30,9 @@ keywords: ["404 错误页面", "自定义错误页面"]
 </div>
 
 <ResponseField name="redirect" type="boolean">
-  当页面未找到时，是否自动重定向到首页。
-  
-  设为 `true` 时，将自动重定向到首页。
+  页面未找到时，是否自动重定向到首页。
+
+  设为 `true` 时，将重定向到首页。
 
   设为 `false` 时，将显示自定义 404 页面。
 </ResponseField>
@@ -42,5 +42,5 @@ keywords: ["404 错误页面", "自定义错误页面"]
 </ResponseField>
 
 <ResponseField name="description" type="string">
-  404 错误页面的自定义说明。支持 Markdown 格式。
+  404 错误页面的自定义描述。支持 Markdown 格式。
 </ResponseField>

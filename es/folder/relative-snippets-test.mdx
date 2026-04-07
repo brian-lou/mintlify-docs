@@ -1,21 +1,21 @@
 ---
-title: "Prueba de fragmentos relativos"
-description: "Página oculta de prueba para validar las importaciones de fragmentos relativos"
+title: "Prueba de snippets relativos"
+description: "Página de prueba oculta para validar las importaciones relativas de snippets"
 ---
 
 <div id="relative-snippets-test-page">
-  # Página de prueba de fragmentos relativos
+  # Página de prueba de snippets relativos
 </div>
 
-Esta es una página de prueba oculta para comprobar la funcionalidad de importación de fragmentos relativos.
+Esta es una página de prueba oculta para validar la funcionalidad de importación relativa de snippets.
 
----
+***
 
 <div id="test-1-parent-directory-import-snippets">
-  ## Prueba 1: Importación desde el directorio superior (`../snippets/`)
+  ## Prueba 1: Importación desde el directorio padre (`../snippets/`)
 </div>
 
-Importar desde `/snippets/test-snippet-a.mdx` usando `../snippets/test-snippet-a.mdx`:
+Importación de `/snippets/test-snippet-a.mdx` mediante `../snippets/test-snippet-a.mdx`:
 
 import TestSnippetA from "../snippets/test-snippet-a.mdx";
 
@@ -25,10 +25,10 @@ import TestSnippetA from "../snippets/test-snippet-a.mdx";
 
 
 <div id="test-2-parent-directory-import-with-named-export">
-  ## Prueba 2: Importación del directorio superior con exportación nombrada
+  ## Prueba 2: Importación desde el directorio padre con exportación con nombre
 </div>
 
-Importar `testVariable` desde `/snippets/test-snippet-b.mdx`:
+Importación de `testVariable` desde `/snippets/test-snippet-b.mdx`:
 
 import TestSnippetB from "../snippets/test-snippet-b.mdx";
 
@@ -43,7 +43,7 @@ import TestSnippetB from "../snippets/test-snippet-b.mdx";
   ## Prueba 3: Importación desde el mismo directorio (`./`)
 </div>
 
-Importación de `local-snippet.mdx` desde el mismo directorio:
+Importar `local-snippet.mdx` desde la misma carpeta:
 
 import LocalSnippet, { localMessage } from "./local-snippet.mdx";
 
@@ -55,10 +55,10 @@ import LocalSnippet, { localMessage } from "./local-snippet.mdx";
 
 
 <div id="test-4-child-directory-import-nested">
-  ## Test 4: Importación desde subdirectorio (`./nested/`)
+  ## Prueba 4: Importación desde un subdirectorio (`./nested/`)
 </div>
 
-Importando desde `nested/deep-snippet.mdx`:
+Importación desde `nested/deep-snippet.mdx`:
 
 import DeepSnippet, { deepMessage } from "./nested/deep-snippet.mdx";
 
@@ -70,10 +70,10 @@ import DeepSnippet, { deepMessage } from "./nested/deep-snippet.mdx";
 
 
 <div id="test-5-absolute-import-for-comparison">
-  ## Prueba 5: Importación absoluta (para comparación)
+  ## Prueba 5: Importación absoluta (como referencia)
 </div>
 
-Importar usando la ruta absoluta `/snippets/icons-optional.mdx`:
+Importación mediante la ruta absoluta `/snippets/icons-optional.mdx`:
 
 import IconsOptional from "/snippets/es/icons-optional.mdx";
 
@@ -86,10 +86,10 @@ import IconsOptional from "/snippets/es/icons-optional.mdx";
   ## Resumen
 </div>
 
-| Prueba | Ruta de importación | Tipo | Estado |
-|--------|---------------------|------|--------|
-| 1 | `../snippets/test-snippet-a.mdx` | Directorio padre | Ver arriba |
-| 2 | `../snippets/test-snippet-b.mdx` | Directorio padre + exportación | Ver arriba |
-| 3 | `./local-snippet.mdx` | Mismo directorio | Ver arriba |
-| 4 | `./nested/deep-snippet.mdx` | Directorio hijo | Ver arriba |
-| 5 | `/snippets/icons-optional.mdx` | Ruta absoluta | Ver arriba |
+| Prueba | Ruta de importación              | Tipo                              | Estado     |
+| ------ | -------------------------------- | --------------------------------- | ---------- |
+| 1      | `../snippets/test-snippet-a.mdx` | Directorio superior               | Ver arriba |
+| 2      | `../snippets/test-snippet-b.mdx` | Directorio superior + exportación | Ver arriba |
+| 3      | `./local-snippet.mdx`            | Mismo directorio                  | Ver arriba |
+| 4      | `./nested/deep-snippet.mdx`      | Subdirectorio                     | Ver arriba |
+| 5      | `/snippets/icons-optional.mdx`   | Ruta absoluta                     | Ver arriba |

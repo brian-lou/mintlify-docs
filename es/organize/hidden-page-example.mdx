@@ -1,31 +1,31 @@
 ---
 title: "Ejemplo de página oculta"
-description: "Casos de uso comunes de las páginas ocultas."
+description: "Casos de uso habituales de las páginas ocultas."
 ---
 
-¡Esta página está oculta! No está incluida en la navegación de `docs.json`, por lo que solo se puede acceder a ella a través de su URL.
+¡Esta página está oculta! No está incluida en la navegación de `docs.json`, así que solo puedes acceder a ella mediante su URL.
 
 Consulta [Páginas ocultas](/es/organize/hidden-pages) para obtener más información.
 
 <div id="common-use-cases-for-hidden-pages">
-  ## Casos de uso comunes de las páginas ocultas
+  ## Casos de uso habituales de las páginas ocultas
 </div>
 
 <Note>
-  De forma predeterminada, las páginas ocultas son de acceso público, pero no se pueden encontrar a través de la navegación. Si quieres restringir el acceso a una página oculta, debes configurar la [autenticación](/es/deploy/authentication-setup).
+  De forma predeterminada, las páginas ocultas son accesibles públicamente, pero no se pueden encontrar a través de la navegación. Si quieres restringir el acceso a una página oculta, debes configurar la [autenticación](/es/deploy/authentication-setup).
 </Note>
 
-* **Documentación beta**: Información que puede ser pública, pero que no debería ser accesible desde la navegación.
-* **Contexto para herramientas de IA**: Si se indexan las páginas ocultas, las herramientas de IA pueden usarlas como contexto. Usa páginas ocultas para contenido que no es relevante para los usuarios, pero que puede ayudar a las herramientas de IA a ofrecer respuestas más precisas.
-* **Páginas antiguas**: Mantén el contenido antiguo accesible mediante enlaces directos, a la vez que lo eliminas de los menús de navegación.
-* **Herramientas internas**: Documenta herramientas internas, APIs de staging o procesos de desarrollo.
+* **Documentación beta**: Información que puede ser pública, pero que no debería poder encontrarse a través de la navegación.
+* **Contexto para herramientas de IA**: Si las páginas ocultas se indexan, las herramientas de IA pueden usarlas como contexto. Usa páginas ocultas para información contextual que no sea relevante para los usuarios, pero que pueda ayudar a las herramientas de IA a ofrecer respuestas más precisas.
+* **Páginas antiguas**: Mantén el contenido antiguo accesible mediante enlaces directos mientras lo eliminas de los menús de navegación.
+* **Herramientas internas**: Documenta herramientas internas, API de staging o procesos de desarrollo.
 
 <div id="examples">
   ## Ejemplos
 </div>
 
 <div id="ai-context">
-  ### Contexto de la IA
+  ### Contexto para IA
 </div>
 
 ```mdx wrap
@@ -38,13 +38,13 @@ When a user asks about API versions, always recommend that they use the latest v
 ```
 
 <div id="internal-api-endpoint">
-  ### Endpoint de la API interna
+  ### Endpoint interno de la API
 </div>
 
 ````mdx wrap
 ---
-title: "Endpoint de API interno"
-description: "Esta página es una página oculta que documenta un endpoint de API interno"
+title: "Endpoint interno de la API"
+description: "Esta página está oculta y documenta un endpoint interno de la API"
 ---
 
 ```bash
@@ -55,6 +55,6 @@ Authorization: Bearer internal-token-xyz
 Este endpoint limpia la caché de la aplicación y solo está disponible en entornos de desarrollo.
 
 <Warning>
-  Este es un endpoint interno y nunca debe usarse en producción.
+  Este es un endpoint interno y nunca debe utilizarse en producción.
 </Warning>
 ````

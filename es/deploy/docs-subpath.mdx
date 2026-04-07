@@ -1,24 +1,24 @@
 ---
 title: "Descripción general"
-description: "Publica tu documentación en la subruta `/docs` de tu dominio."
-keywords: ["enrutamiento de subruta", "configuración de /docs"]
+description: "Aloja tu documentación en la subruta `/docs` de tu dominio."
+keywords: ["enrutamiento por subruta", "configuración de /docs"]
 ---
 
-Publica tu documentación en una subruta como `your-domain.com/docs` para mantenerla en tu dominio principal, lo que facilita encontrarla y mantiene una experiencia de marca coherente para tus usuarios.
+Aloja tu documentación en una subruta como `your-domain.com/docs` para mantenerla en tu dominio principal, lo que facilita encontrarla y ofrece una experiencia de marca coherente a tus usuarios.
 
 <div id="set-up-by-hosting-provider">
   ## Configuración según el proveedor de alojamiento
 </div>
 
-La configuración de una subruta `/docs` depende de tu proveedor de alojamiento. Elige tu proveedor y sigue las instrucciones de configuración.
+La configuración de la subruta `/docs` varía según el proveedor de alojamiento. Elige tu proveedor y sigue las instrucciones de configuración.
 
-* [Cloudflare](/es/deploy/cloudflare): Configura Cloudflare Workers en tu dominio para servir tu documentación en la subruta `/docs`.
-* [AWS Route 53 y CloudFront](/es/deploy/route53-cloudfront): Despliega tu documentación en la subruta `/docs` usando AWS con Route 53 (DNS) y CloudFront (CDN).
-* [Vercel](/es/deploy/vercel#host-from-docs) - Usa reglas de reescritura (rewrites) para desplegar tu documentación en la subruta `/docs`.
-* [Proxy inverso personalizado](/es/deploy/reverse-proxy) - Para otras plataformas de alojamiento, configura un proxy inverso para desplegar tu documentación en la subruta `/docs`.
+* [Cloudflare](/es/deploy/cloudflare): Configura Cloudflare Workers para tu dominio a fin de servir tu documentación desde la subruta `/docs`.
+* [AWS Route 53 and CloudFront](/es/deploy/route53-cloudfront): Despliega tu documentación en la subruta `/docs` con AWS, usando el DNS de Route 53 y la CDN de CloudFront.
+* [Vercel](/es/deploy/vercel#host-from-docs) - Usa reescrituras para desplegar tu documentación en la subruta `/docs`.
+* [Proxy inverso personalizado](/es/deploy/reverse-proxy) - En otras plataformas de alojamiento, configura un proxy inverso para desplegar tu documentación en la subruta `/docs`.
 
 <div id="additional-configuration-for-strict-security-policies">
   ### Configuración adicional para políticas de seguridad estrictas
 </div>
 
-Si canalizas todo el tráfico de tu dominio personalizado a través de un proxy, es posible que tengas que configurar tu proxy o las reglas de tu firewall para añadir los [encabezados](/es/deploy/csp-configuration) correctos y que tu documentación se muestre correctamente.
+Si haces pasar todo el tráfico de tu dominio personalizado por un proxy, es posible que debas configurar el proxy o las reglas del firewall para añadir los [encabezados](/es/deploy/csp-configuration) correctos, de modo que tu documentación se muestre correctamente.

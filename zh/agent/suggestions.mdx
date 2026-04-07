@@ -1,38 +1,39 @@
 ---
 title: "代理建议"
-description: "监控 Git 仓库的变更并接收文档更新建议。"
-keywords: ["automation", "documentation gaps", "self updating", "self-updating", "automate updates", "autopilot"]
+description: "监控 Git 仓库变更，并接收建议的文档更新。"
+keywords: ["自动化", "文档缺口", "自动更新", "自更新", "更新自动化", "自动驾驶"]
 ---
 
 <Note>
-  代理建议功能适用于[企业套餐](https://mintlify.com/pricing?ref=autopilot)。要为你的组织启用建议功能，请[联系我们的销售团队](mailto:gtm@mintlify.com)。
+  代理建议仅适用于 [Enterprise plans](https://mintlify.com/pricing?ref=autopilot)。如需为你的组织启用此功能，请[联系我们的销售团队](mailto:gtm@mintlify.com)。
 </Note>
 
-你可以让代理从两个来源提出文档更新建议。
+你可以让代理根据以下两个来源建议文档更新。
 
-* **拉取请求变更**：监控选定的 Git 仓库中的代码更改，以发现需要更新文档的部分。
-* **助手对话**：分析用户在你的文档网站上向助手提出的问题，以识别内容缺口。
+* **拉取请求变更**：监控选定 Git 仓库中的代码变更，找出需要同步更新文档的内容。
+* **助手对话**：分析用户在你的文档站点中向助手提出的问题，以识别内容空白。
 
-当代理识别出潜在的文档更新时，会在你的控制台中创建一条建议，并附上用于创建拉取请求的相关上下文信息。
+当代理识别出可能需要更新的文档时，它会在你的仪表板中创建一条建议，并附带用于创建拉取请求的相关上下文。
 
-利用这些建议，在新功能发布时主动保持文档最新，或用来解决常见的用户问题。
+你可以利用这些建议，在新功能发布时主动保持文档最新，或回应用户的常见问题。
 
 <div id="prerequisites">
-  ## 前置条件
+  ## 先决条件
 </div>
 
-在使用建议功能之前，必须在你的组织中安装 [Mintlify GitHub App](/zh/deploy/github)。该应用必须能够访问你的文档代码库，以及至少一个在其中代码更改需要更新文档的其他代码库。
+在使用建议功能之前，你必须在你的组织中安装 [Mintlify GitHub App](/zh/deploy/github)。该应用必须有权访问你的文档仓库，以及至少一个代码变更需要同步更新文档的其他仓库。
 
 <div id="configure-suggestions">
   ## 配置建议
 </div>
 
-在代理设置中配置代理要监控的仓库，以及你希望如何接收通知。设置页面会显示代理正在监控的所有 GitHub 组织和仓库。
+在代理设置中，你可以配置代理监控哪些仓库，以及如何接收通知。设置页面会显示代理当前监控的所有 GitHub 组织和仓库。
 
-要进入代理设置：
+要访问代理设置：
 
-1. 在仪表板中点击 **Ask agent** 按钮以打开代理面板。
+1. 点击仪表板中的 **Ask agent** 按钮，打开代理面板。
 2. 点击 **Settings** 按钮。
+
    <Frame>
      <img src="/images/agent/dashboard-settings-light.png" alt="浅色模式下的设置按钮。" className="block dark:hidden" />
 
@@ -40,66 +41,66 @@ keywords: ["automation", "documentation gaps", "self updating", "self-updating",
    </Frame>
 
 <div id="monitor-repositories">
-  ### 监控代码仓库
+  ### 监控仓库
 </div>
 
-无论合并到哪个分支，只要你为某个代码仓库启用了监控，agent 就会监控该仓库中所有已合并的 pull request。名为 **Mintlify Autopilot** 的 GitHub 检查会在已监控仓库的 pull request 上运行，分析它们是否需要更新文档。当你合并了需要文档更新的 pull request 时，agent 会在你的控制台中创建一条建议。
+对于你启用监控的每个仓库，代理都会监控所有已合并的拉取请求，无论它们合并到了哪个分支。在受监控的仓库中，拉取请求上会运行一个名为 **Mintlify Autopilot** 的 GitHub 检查，用于分析是否可能需要更新文档。当你合并了一个需要更新文档的拉取请求时，代理会在你的仪表板中创建一条建议。
 
 <Note>
-  当你首次为某个代码仓库启用监控时，agent 会为过去七天内合并的 pull request 创建建议。只有在该仓库尚不存在任何建议时，才会进行这次回填。在你启用监控后，可能会立刻看到多条建议出现。
+  当你首次为某个仓库启用监控时，代理会为过去七天内已合并的拉取请求创建建议。只有在该仓库尚无任何建议时，才会执行此回填。启用监控后，你可能会立即看到多条建议出现。
 </Note>
 
-如果你禁用监控，agent 会立即停止监控该代码仓库。该仓库中已有的建议会继续保留在你的控制台中，直到你将其关闭。
+如果你禁用监控，代理会立即停止对该仓库的监控。该仓库的现有建议会保留在你的仪表板中，直到你将其忽略。
 
 <div id="conversation-insights">
-  ### 会话洞察
+  ### 对话洞察
 </div>
 
-如果你可以同时访问 agent 和 assistant，agent 会根据用户与 assistant 的会话生成建议。
+如果你可以访问代理和助手，代理会根据用户与助手之间的对话生成建议。
 
-agent 会定期分析与 assistant 的会话，当识别出表明文档缺失或表述不清的问题模式时，就会生成建议。
+代理会定期分析助手对话，并在识别出表明文档缺失或说明不清的问题模式时生成建议。
 
 <div id="notifications">
   ### 通知
 </div>
 
-Agent 的建议始终会显示在你的仪表盘中。你可以配置通知设置，在 Agent 创建新建议时通过电子邮件或 Slack 私信接收提醒。
+代理提出的建议始终会显示在你的仪表板中。你可以配置通知，以便在代理创建新建议时通过电子邮件或 Slack 私信收到提醒。
 
 <Tip>
-  如果你没有收到与建议相关的电子邮件通知，请检查垃圾邮件文件夹，并将邮箱地址 `notifications@mintlify.com` 添加到你的安全发件人列表中。
+  如果你没有收到建议的电子邮件通知，请检查垃圾邮件文件夹，并将电子邮件地址 `notifications@mintlify.com` 添加到安全发件人列表中。
 </Tip>
 
 <div id="review-suggestions">
   ## 审核建议
 </div>
 
-代理会在你的仪表板中生成建议。每条建议都会显示触发该建议的 pull request 或助手对话主题、创建日期，以及建议的文档更新内容。
+代理会在你的仪表板中生成建议。每条建议都会显示触发该建议的拉取请求或助手对话主题、创建日期，以及提议的文档更新。
 
 仪表板中的 **Ask agent** 按钮会显示等待你审核的建议数量。
 
 <Frame>
-  <img src="/images/suggestions/count-light.png" alt="浅色模式下显示 4 条建议的 Ask agent 按钮。" className="block dark:hidden" />
+  <img src="/images/suggestions/count-light.png" alt="浅色模式下，Ask agent 按钮显示四条建议。" className="block dark:hidden" />
 
-  <img src="/images/suggestions/count-dark.png" alt="深色模式下显示 4 条建议的 Ask agent 按钮。" className="hidden dark:block" />
+  <img src="/images/suggestions/count-dark.png" alt="深色模式下，Ask agent 按钮显示四条建议。" className="hidden dark:block" />
 </Frame>
 
 <div id="create-pull-requests">
-  ### 创建拉取请求（pull request）
+  ### 创建拉取请求
 </div>
 
-将建议作为上下文提供给 agent，以便其创建拉取请求（pull request）。
+将建议作为上下文添加，让代理创建拉取请求。
 
-1. 在仪表板中点击 **Ask agent** 按钮，打开 agent 面板。
+1. 点击仪表板中的 **Ask agent** 按钮，打开代理面板。
 2. 点击 **Add to chat**。
-3. 向 agent 提交提示词以创建拉取请求（pull request）。
+3. 向代理提交提示，请其创建拉取请求。
 
 <div id="dismiss-suggestions">
   ### 忽略建议
 </div>
 
-如果某条建议不需要更新文档，或者你已经处理了相关更改，可以将其忽略，以将其从仪表板中移除。
+如果某条建议无需更新文档，或者你已经处理了相关更改，可以将其忽略，使其从仪表板中移除。
 
-1. 在仪表板中点击 **Ask agent** 按钮以打开 agent 面板。
-2. 点击你想要忽略的建议旁边的 **Dismiss** 按钮。
+1. 点击仪表板中的 **Ask agent** 按钮，打开代理面板。
+2. 点击任意你想忽略的建议旁边的 **Dismiss** 按钮。
 
-该建议会立即从你的仪表板中移除。你无法找回已忽略的建议。
+该建议会立即从你的仪表板中移除。已忽略的建议无法找回。

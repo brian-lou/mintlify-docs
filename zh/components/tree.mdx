@@ -1,13 +1,13 @@
 ---
 title: "树"
-description: "使用树形组件显示层级化的文件和文件夹结构。"
-keywords: ["tree", "file tree", "folder structure", "hierarchical navigation", "file system"]
+description: "使用树组件显示层级化的文件和文件夹结构。"
+keywords: ["树", "文件树", "文件夹结构", "层级导航", "文件系统"]
 ---
 
-使用树形组件来展示文件系统、项目目录或嵌套内容等层级结构。树组件支持键盘导航和无障碍功能。
+使用树组件显示文件系统、项目目录或嵌套内容等层级结构。树组件支持键盘导航和无障碍特性。
 
 <div id="basic-tree">
-  ## 基础树形结构
+  ## 基础树
 </div>
 
 <Tree>
@@ -46,12 +46,11 @@ keywords: ["tree", "file tree", "folder structure", "hierarchical navigation", "
 </Tree>
 ```
 
-
 <div id="nested-folders">
   ## 嵌套文件夹
 </div>
 
-通过将 `Tree.Folder` 组件相互嵌套来创建深层嵌套的结构。
+通过将 `Tree.Folder` 组件层层嵌套，你可以创建多层嵌套结构。
 
 <Tree>
   <Tree.Folder name="app" defaultOpen>
@@ -105,16 +104,16 @@ keywords: ["tree", "file tree", "folder structure", "hierarchical navigation", "
   ## 键盘导航
 </div>
 
-该树组件支持键盘导航。
+树组件支持键盘导航。
 
-- **方向键**：在可见项之间向上或向下移动。
-- **右方向键**：展开关闭的文件夹，或移动到已展开文件夹的第一个子项。
-- **左方向键**：折叠已展开的文件夹，或移动到父级文件夹。
-- **Home**：跳转到树中的第一个项。
-- **End**：跳转到树中最后一个可见项。
-- **Enter/Space**：切换文件夹的展开/折叠状态。
-- **\***：展开当前层级的所有同级文件夹。
-- **前缀搜索（type-ahead search）**：输入字符以跳转到以这些字符开头的项。
+* **方向键**：在可见项之间上下移动。
+* **向右方向键**：展开已折叠的文件夹，或移动到已展开文件夹的第一个子项。
+* **向左方向键**：折叠已展开的文件夹，或移动到父文件夹。
+* **Home**：跳转到树中的第一项。
+* **End**：跳转到树中最后一个可见项。
+* **Enter/Space**：切换文件夹的展开/折叠状态。
+* *****：展开当前层级的所有同级文件夹。
+* **键入搜索**：输入字符，跳转到以这些字符开头的项。
 
 <div id="properties">
   ## 属性
@@ -125,7 +124,7 @@ keywords: ["tree", "file tree", "folder structure", "hierarchical navigation", "
 </div>
 
 <ResponseField name="name" type="string" required>
-  在树中显示的文件夹名称。
+  树中显示的文件夹名称。
 </ResponseField>
 
 <ResponseField name="defaultOpen" type="boolean" default="false">
@@ -133,7 +132,7 @@ keywords: ["tree", "file tree", "folder structure", "hierarchical navigation", "
 </ResponseField>
 
 <ResponseField name="openable" type="boolean" default="true">
-  文件夹是否可以展开和收起。对于非交互式文件夹，请将其设置为 false。
+  文件夹是否可以展开和折叠。对于不可交互的文件夹，请设为 false。
 </ResponseField>
 
 <div id="treefile">
@@ -141,5 +140,5 @@ keywords: ["tree", "file tree", "folder structure", "hierarchical navigation", "
 </div>
 
 <ResponseField name="name" type="string" required>
-  显示在树形结构中的文件名。
+  在树中显示的文件名。
 </ResponseField>

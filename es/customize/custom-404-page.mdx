@@ -4,15 +4,15 @@ description: "Personaliza el título y la descripción de tu página de error 40
 keywords: ["página de error 404", "páginas de error personalizadas"]
 ---
 
-Todas las páginas 404 sugieren automáticamente páginas relevantes en función de la URL solicitada. Si los usuarios llegan a una página 404, un agente analiza la ruta y recupera páginas semánticamente relacionadas de tu documentación para ayudarlos a encontrar lo que buscan.
+Todas las páginas 404 sugieren automáticamente páginas relevantes en función de la URL solicitada. Si los usuarios llegan a una página 404, un agente analiza la ruta y obtiene páginas relacionadas semánticamente de tu documentación para ayudarles a encontrar lo que buscan.
 
-Puedes personalizar el título y la descripción de la página de error 404. Usa la descripción para añadir enlaces útiles o indicaciones adicionales.
+Puedes personalizar el título y la descripción de la página de error 404. Usa la descripción para añadir enlaces útiles o instrucciones.
 
 <div id="configuration">
   ## Configuración
 </div>
 
-Configura la página 404 en la sección `errors.404` de tu archivo `docs.json`:
+Configura tu página 404 en la sección `errors.404` del archivo `docs.json`:
 
 ```json
 "errors": {
@@ -30,15 +30,15 @@ Configura la página 404 en la sección `errors.404` de tu archivo `docs.json`:
 </div>
 
 <ResponseField name="redirect" type="boolean">
-  Indica si se debe redirigir automáticamente a la página de inicio cuando no se encuentra una página.
-  
-  Configúralo en `true` para redirigir a la página de inicio.
+  Si se debe redirigir automáticamente a la página de inicio cuando no se encuentre una página.
 
-  Configúralo en `false` para mostrar la página 404 personalizada.
+  Establece `true` para redirigir a la página de inicio.
+
+  Establece `false` para mostrar la página 404 personalizada.
 </ResponseField>
 
 <ResponseField name="title" type="string">
-  Título personalizado para la página de error 404. Esto reemplaza el encabezado predeterminado «Page not found».
+  Título personalizado para la página de error 404. Sustituye el encabezado predeterminado &quot;Página no encontrada&quot;.
 </ResponseField>
 
 <ResponseField name="description" type="string">

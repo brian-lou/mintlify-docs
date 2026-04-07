@@ -16,20 +16,20 @@
       "bearerAuth": {
         "type": "http",
         "scheme": "bearer",
-        "description": "L’en-tête Authorization requiert un jeton Bearer. Utilisez une clé d’API administrateur (préfixée par `mint_`). Il s’agit d’une clé secrète côté serveur. Générez-en une depuis la page [API keys](https://dashboard.mintlify.com/settings/organization/api-keys) de votre tableau de bord."
+        "description": "L’en-tête Authorization attend un Jeton d’authentification Bearer. Utilisez une clé d’API d’administrateur (préfixée par `mint_`). Il s’agit d’une clé secrète côté serveur. Générez-en une sur la [page des clés d’API](https://dashboard.mintlify.com/settings/organization/api-keys) de votre tableau de bord."
       }
     },
     "schemas": {
       "projectId": {
         "type": "string",
-        "description": "Votre ID de projet. Vous pouvez le copier depuis la page [API keys](https://dashboard.mintlify.com/settings/organization/api-keys) de votre tableau de bord."
+        "description": "Identifiant de votre projet. Vous pouvez le copier depuis la [page des clés d’API](https://dashboard.mintlify.com/settings/organization/api-keys) de votre tableau de bord."
       },
       "FeedbackResponse": {
         "type": "object",
         "properties": {
           "feedback": {
             "type": "array",
-            "description": "Liste des entrées de retours.",
+            "description": "Liste des retours.",
             "items": {
               "anyOf": [
                 {
@@ -63,7 +63,7 @@
                         "code_snippet",
                         "contextual"
                       ],
-                      "description": "Origine du retour. `code_snippet` correspond à un retour sur un bloc de code, `contextual` à un retour au niveau de la page."
+                      "description": "Origine du retour. `code_snippet` désigne un retour sur un bloc de extrait de code, `contextual` un retour au niveau de la page."
                     },
                     "status": {
                       "type": "string",
@@ -73,7 +73,7 @@
                         "resolved",
                         "dismissed"
                       ],
-                      "description": "Statut actuel de l’examen du retour."
+                      "description": "Statut actuel de révision du retour."
                     }
                   },
                   "required": [
@@ -101,7 +101,7 @@
                         "string",
                         "null"
                       ],
-                      "description": "Texte du commentaire de retour fourni par l’utilisateur."
+                      "description": "Texte du commentaire de l’utilisateur."
                     },
                     "createdAt": {
                       "type": [
@@ -116,7 +116,7 @@
                         "code_snippet",
                         "contextual"
                       ],
-                      "description": "Origine du retour. `code_snippet` correspond à un retour sur un bloc de code, `contextual` à un retour au niveau de la page."
+                      "description": "Origine du retour. `code_snippet` désigne un retour sur un bloc de extrait de code, `contextual` un retour au niveau de la page."
                     },
                     "status": {
                       "type": "string",
@@ -126,7 +126,7 @@
                         "resolved",
                         "dismissed"
                       ],
-                      "description": "Statut actuel de l’examen du retour."
+                      "description": "Statut actuel de révision du retour."
                     },
                     "helpful": {
                       "type": "boolean",
@@ -137,7 +137,7 @@
                         "string",
                         "null"
                       ],
-                      "description": "Adresse e-mail fournie par l’utilisateur pour le suivi ultérieur."
+                      "description": "Adresse e-mail fournie par l’utilisateur pour le suivi."
                     }
                   },
                   "required": [
@@ -167,7 +167,7 @@
                         "string",
                         "null"
                       ],
-                      "description": "Texte du commentaire laissé par l’utilisateur."
+                      "description": "Texte du commentaire de l’utilisateur."
                     },
                     "createdAt": {
                       "type": [
@@ -182,7 +182,7 @@
                         "code_snippet",
                         "contextual"
                       ],
-                      "description": "Source du retour. `code_snippet` indique un retour sur un bloc de code, `contextual` un retour au niveau de la page."
+                      "description": "Origine du retour. `code_snippet` désigne un retour sur un bloc de extrait de code, `contextual` un retour au niveau de la page."
                     },
                     "status": {
                       "type": "string",
@@ -192,7 +192,7 @@
                         "resolved",
                         "dismissed"
                       ],
-                      "description": "Statut actuel de traitement du retour."
+                      "description": "Statut actuel de révision du retour."
                     },
                     "code": {
                       "type": "string",
@@ -203,7 +203,7 @@
                         "string",
                         "null"
                       ],
-                      "description": "Nom de fichier associé à l’extrait de code."
+                      "description": "Nom du fichier associé à l’extrait de code."
                     },
                     "lang": {
                       "type": [
@@ -233,11 +233,11 @@
               "string",
               "null"
             ],
-            "description": "Curseur utilisé pour récupérer la page de résultats suivante. Null s’il n’y a plus de résultats."
+            "description": "Curseur permettant de récupérer la page de résultats suivante. Null s’il n’y a pas d’autres résultats."
           },
           "hasMore": {
             "type": "boolean",
-            "description": "Indique si des résultats supplémentaires sont disponibles au‑delà de cette page."
+            "description": "Indique si d’autres résultats sont disponibles après cette page."
           }
         },
         "required": [
@@ -251,11 +251,11 @@
         "properties": {
           "error": {
             "type": "string",
-            "description": "Message d’erreur décrivant ce qui s’est mal passé."
+            "description": "Message d’erreur décrivant le problème."
           },
           "details": {
             "type": "array",
-            "description": "Détails supplémentaires concernant l’erreur.",
+            "description": "Détails supplémentaires sur l’erreur.",
             "items": {
               "type": "object",
               "properties": {
@@ -279,7 +279,7 @@
         "properties": {
           "conversations": {
             "type": "array",
-            "description": "Liste des conversations avec l’assistant.",
+            "description": "Liste des conversations de l’assistant.",
             "items": {
               "type": "object",
               "properties": {
@@ -289,7 +289,7 @@
                 },
                 "timestamp": {
                   "type": "string",
-                  "description": "Horodatage indiquant la date et l’heure de la conversation."
+                  "description": "Horodatage de la conversation."
                 },
                 "query": {
                   "type": "string",
@@ -325,7 +325,7 @@
                     "string",
                     "null"
                   ],
-                  "description": "Catégorie de regroupement attribuée automatiquement à la conversation, le cas échéant."
+                  "description": "Catégorie attribuée automatiquement à la conversation, le cas échéant."
                 }
               },
               "required": [
@@ -343,11 +343,11 @@
               "string",
               "null"
             ],
-            "description": "Curseur permettant de récupérer la page de résultats suivante. Null s’il n’y a plus de résultats."
+            "description": "Curseur permettant de récupérer la page de résultats suivante. Null s’il n’y a pas d’autres résultats."
           },
           "hasMore": {
             "type": "boolean",
-            "description": "Indique si des résultats supplémentaires sont disponibles au‑delà de cette page."
+            "description": "Indique si d’autres résultats sont disponibles au-delà de cette page."
           }
         },
         "required": [
@@ -371,8 +371,8 @@
   "paths": {
     "/api/external/v1/analytics/{projectId}/feedback": {
       "get": {
-        "summary": "Récupérer les retours des utilisateurs",
-        "description": "Renvoie les commentaires des utilisateurs paginés, avec filtrage optionnel.",
+        "summary": "Obtenir les retours d’utilisateurs",
+        "description": "Renvoie les retours utilisateurs paginés avec filtrage facultatif",
         "tags": [
           "Analytics"
         ],
@@ -388,7 +388,7 @@
           {
             "schema": {
               "type": "string",
-              "description": "Date au format ISO 8601 ou YYYY-MM-DD.",
+              "description": "Date au format ISO 8601 ou YYYY-MM-DD",
               "example": "2024-01-01"
             },
             "required": false,
@@ -398,7 +398,7 @@
           {
             "schema": {
               "type": "string",
-              "description": "Date au format ISO 8601 ou YYYY-MM-DD.",
+              "description": "Date au format ISO 8601 ou YYYY-MM-DD",
               "example": "2024-01-01"
             },
             "required": false,
@@ -412,7 +412,7 @@
                 "code_snippet",
                 "contextual"
               ],
-              "description": "Filtrer par source des commentaires des utilisateurs."
+              "description": "Filtrer par source de retour"
             },
             "required": false,
             "name": "source",
@@ -421,7 +421,7 @@
           {
             "schema": {
               "type": "string",
-              "description": "Liste de statuts, séparés par des virgules, à utiliser comme filtre"
+              "description": "Liste de statuts séparés par des virgules pour le filtrage"
             },
             "required": false,
             "name": "status",
@@ -451,7 +451,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Données de retour d’expérience paginées",
+            "description": "Données de retour avec pagination",
             "content": {
               "application/json": {
                 "schema": {
@@ -471,7 +471,7 @@
             }
           },
           "500": {
-            "description": "Erreur du serveur",
+            "description": "Erreur serveur",
             "content": {
               "application/json": {
                 "schema": {
@@ -485,8 +485,8 @@
     },
     "/api/external/v1/analytics/{projectId}/assistant": {
       "get": {
-        "summary": "Récupérer les conversations avec l’assistant",
-        "description": "Renvoie l’historique des conversations de l’assistant IA avec pagination",
+        "summary": "Obtenir les conversations de l’assistant",
+        "description": "Renvoie l’historique paginé des conversations de l’assistant IA",
         "tags": [
           "Analytics"
         ],
@@ -502,7 +502,7 @@
           {
             "schema": {
               "type": "string",
-              "description": "Date au format ISO 8601 ou AAAA-MM-JJ",
+              "description": "Date au format ISO 8601 ou YYYY-MM-DD",
               "example": "2024-01-01"
             },
             "required": false,
@@ -512,7 +512,7 @@
           {
             "schema": {
               "type": "string",
-              "description": "Date au format ISO 8601 ou AAAA-MM-JJ",
+              "description": "Date au format ISO 8601 ou YYYY-MM-DD",
               "example": "2024-01-01"
             },
             "required": false,
@@ -535,7 +535,7 @@
             "schema": {
               "type": "string",
               "format": "ulid",
-              "description": "Curseur de pagination (au format ULID)"
+              "description": "Curseur de pagination (format ULID)"
             },
             "required": false,
             "name": "cursor",
@@ -544,7 +544,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Données de conversation paginées",
+            "description": "Données des conversations avec pagination",
             "content": {
               "application/json": {
                 "schema": {
@@ -564,7 +564,7 @@
             }
           },
           "500": {
-            "description": "Erreur du serveur",
+            "description": "Erreur serveur",
             "content": {
               "application/json": {
                 "schema": {

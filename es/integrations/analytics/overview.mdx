@@ -1,16 +1,16 @@
 ---
 title: "Integraciones de analítica"
-description: "Conecta plataformas de analítica para hacer un seguimiento de la interacción de los usuarios y del uso de la documentación."
-keywords: ["third-party analytics", "engagement tracking", "analytics platforms", "usage tracking"]
+description: "Conéctate a plataformas de analítica para hacer un seguimiento de la interacción de los usuarios y del uso de la documentación."
+keywords: ["analítica de terceros", "seguimiento de la interacción", "plataformas de analítica", "seguimiento del uso"]
 ---
 
-Haz un seguimiento de cómo los usuarios interactúan con tu documentación conectándola a plataformas de analítica de terceros. Mintlify envía eventos de interacción a los proveedores de analítica que hayas configurado.
+Haz un seguimiento de cómo los usuarios interactúan con tu documentación conectándote a plataformas de analítica de terceros. Mintlify envía eventos de interacción a los proveedores de analítica que tengas configurados.
 
 <div id="how-analytic-integrations-work">
   ## Cómo funcionan las integraciones de analítica
 </div>
 
-Cuando añades integraciones de analítica a tu sitio de documentación, Mintlify realiza el seguimiento de interacciones de los usuarios como vistas de página, consultas de búsqueda, solicitudes en el API playground y envíos de comentarios, y las envía a tus proveedores de analítica. Puedes conectar cualquier cantidad de proveedores de analítica compatibles añadiendo tus claves de API al archivo `docs.json`. Los eventos de analítica se envían a tus proveedores en cuanto los añades a tu configuración, sin necesidad de realizar ninguna otra configuración adicional.
+Cuando agregas integraciones de analítica a tu sitio de documentación, Mintlify registra las interacciones de los usuarios, como vistas de página, consultas de búsqueda, solicitudes realizadas desde el Área de pruebas de API y envíos de comentarios, y las envía a tus proveedores de analítica. Puedes conectar tantos proveedores de analítica compatibles como quieras agregando tus claves de API al archivo `docs.json`. Los eventos de analítica se envían a tus proveedores en cuanto los agregas a tu configuración, sin necesidad de realizar ninguna configuración adicional.
 
 <div id="supported-platforms">
   ## Plataformas compatibles
@@ -198,7 +198,7 @@ fill="none"
   />
 
   <Card
-    title="Hotjar"
+    title="HotJar"
     href="/es/integrations/analytics/hotjar"
     horizontal
     icon={
@@ -555,10 +555,10 @@ clip-rule="evenodd"
   ## Configuración
 </div>
 
-Añade las credenciales de tu proveedor de analítica al objeto `integrations` en `docs.json`. Incluye solo las plataformas que quieras usar.
+Agrega las credenciales de tu proveedor de analítica al objeto `integrations` en `docs.json`. Incluye solo las plataformas que quieras usar.
 
 <Note>
-  Las integraciones de analítica solo requieren claves de API públicas, que son accesibles para cualquiera que visite tu sitio de documentación. Tus claves de API privadas, que se usan junto con las claves públicas en los proveedores de analítica, deben permanecer privadas. No incluyas claves de API privadas en tu `docs.json`.
+  Las integraciones de analítica solo requieren claves públicas de API, a las que puede acceder cualquiera que vea tu sitio de documentación. Tus claves privadas de API, que se emparejan con las claves públicas del lado de los proveedores de analítica, deben permanecer privadas. No incluyas claves privadas de API en tu `docs.json`.
 </Note>
 
 ```json docs.json
@@ -619,7 +619,7 @@ Añade las credenciales de tu proveedor de analítica al objeto `integrations` e
 ```
 
 <div id="example-configuration">
-  ### Ejemplo de configuración
+  ### Configuración de ejemplo
 </div>
 
 ```json docs.json
@@ -643,76 +643,76 @@ Añade las credenciales de tu proveedor de analítica al objeto `integrations` e
   ## Eventos registrados
 </div>
 
-Todos los eventos registrados utilizan el prefijo `docs.`.
+Todos los eventos registrados usan el prefijo `docs.`.
 
 <div id="navigation-and-page-views">
   ### Navegación y vistas de página
 </div>
 
-| Nombre del evento                       | Descripción                                                                                               |
-| :-------------------------------------- | :-------------------------------------------------------------------------------------------------------- |
-| `docs.content.view`                     | El usuario visualiza una página. Solo se envía a los proveedores que no registran las vistas de página de forma predeterminada. |
-| `docs.content.md.view`                  | El usuario visualiza la versión Markdown de una página.                                                   |
-| `docs.navitem.click`                    | El usuario hace clic en un elemento de la navegación del encabezado.                                      |
-| `docs.navitem.cta_click`                | El usuario hace clic en un botón de llamada a la acción.                                                  |
-| `docs.footer.powered_by_mintlify_click` | El usuario hace clic en el enlace &quot;Powered by Mintlify&quot;.                                                 |
+| Nombre del evento                       | Descripción                                                                                                          |
+| :-------------------------------------- | :------------------------------------------------------------------------------------------------------------------- |
+| `docs.content.view`                     | El usuario visita una página. Solo se envía a proveedores que no registran vistas de página de forma predeterminada. |
+| `docs.content.md.view`                  | El usuario ve la versión en Markdown de una página.                                                                  |
+| `docs.navitem.click`                    | El usuario hace clic en un elemento de navegación del encabezado.                                                    |
+| `docs.navitem.cta_click`                | El usuario hace clic en un botón de llamada a la acción.                                                             |
+| `docs.footer.powered_by_mintlify_click` | El usuario hace clic en el enlace &quot;Powered by Mintlify&quot;.                                                   |
 
 <div id="search">
   ### Búsqueda
 </div>
 
-| Nombre del evento                       | Descripción                                                                                               |
-| :-------------------------------------- | :-------------------------------------------------------------------------------------------------------- |
-| `docs.search.query`                     | El usuario realiza una consulta de búsqueda.                                                              |
-| `docs.search.close`                     | El usuario cierra la barra de búsqueda.                                                                   |
-| `docs.search.result_click`              | El usuario hace clic en un resultado de búsqueda.                                                         |
+| Nombre del evento          | Descripción                                       |
+| :------------------------- | :------------------------------------------------ |
+| `docs.search.query`        | El usuario realiza una búsqueda.                  |
+| `docs.search.close`        | El usuario cierra la barra de búsqueda.           |
+| `docs.search.result_click` | El usuario hace clic en un resultado de búsqueda. |
 
 <div id="code-and-api-playground">
-  ### Área de pruebas de código y API
+  ### Código y área de pruebas de API
 </div>
 
-| Nombre del evento                       | Descripción                                                                                              |
-| :-------------------------------------- | :-------------------------------------------------------------------------------------------------------- |
-| `docs.code_block.copy`                  | El usuario copia código de un bloque de código.                                                          |
-| `docs.code_block.ask_ai`                | El usuario le pide al asistente que explique un bloque de código.                                       |
-| `docs.api_playground.request`           | El usuario realiza una solicitud a la API en el área de pruebas de la API.                              |
+| Nombre del evento             | Descripción                                                             |
+| :---------------------------- | :---------------------------------------------------------------------- |
+| `docs.code_block.copy`        | El usuario copia código de un bloque de código.                         |
+| `docs.code_block.ask_ai`      | El usuario le pide al asistente que explique un bloque de código.       |
+| `docs.api_playground.request` | El usuario realiza una solicitud a la API en el Área de pruebas de API. |
 
 <div id="interactive-components">
   ### Componentes interactivos
 </div>
 
-| Nombre del evento                       | Descripción                                                                                              |
-| :-------------------------------------- | :-------------------------------------------------------------------------------------------------------- |
-| `docs.accordion.open`                   | El usuario abre un acordeón.                                                                             |
-| `docs.accordion.close`                  | El usuario cierra un acordeón.                                                                           |
-| `docs.expandable.open`                  | El usuario abre un elemento expandible.                                                                  |
-| `docs.expandable.close`                 | El usuario cierra un elemento expandible.                                                                |
+| Nombre del evento       | Descripción                                |
+| :---------------------- | :----------------------------------------- |
+| `docs.accordion.open`   | El usuario abre un acordeón.               |
+| `docs.accordion.close`  | El usuario cierra un acordeón.             |
+| `docs.expandable.open`  | El usuario abre un elemento desplegable.   |
+| `docs.expandable.close` | El usuario cierra un elemento desplegable. |
 
 <div id="assistant-and-agent">
   ### Asistente y agente
 </div>
 
-| Nombre del evento                       | Descripción                                                                                               |
-| :-------------------------------------- | :-------------------------------------------------------------------------------------------------------- |
-| `docs.assistant.enter`                  | El usuario abre el asistente de IA.                                                                       |
-| `docs.assistant.completed`              | La sesión de chat finaliza.                                                                               |
-| `docs.assistant.source_click`           | El usuario hace clic en una cita en una respuesta de chat.                                                |
-| `docs.assistant.suggestion_click`       | El usuario hace clic en una pregunta sugerida.                                                            |
-| `docs.assistant.ask_ai_on_text_selection` | El usuario selecciona texto y hace clic en &quot;Ask AI&quot;.                                                     |
-| `docs.assistant.shared`                 | El usuario comparte una conversación de chat.                                                             |
-| `docs.assistant.thumbs_up`              | El usuario hace clic en el botón de comentarios positivos en una respuesta del asistente.                |
-| `docs.assistant.thumbs_down`            | El usuario hace clic en el botón de comentarios negativos en una respuesta del asistente.                |
-| `docs.assistant.spam_detected`          | El asistente detecta spam en un mensaje del usuario.                                                      |
-| `docs.autopilot.suggestion.created`     | El agente crea una sugerencia de documentación.                                                           |
-| `docs.autopilot.suggestion.no_suggestion` | El agente determina que no se necesita ninguna actualización de la documentación.                        |
+| Nombre del evento                         | Descripción                                                                             |
+| :---------------------------------------- | :-------------------------------------------------------------------------------------- |
+| `docs.assistant.enter`                    | El usuario abre el asistente de IA.                                                     |
+| `docs.assistant.completed`                | La sesión de chat finaliza.                                                             |
+| `docs.assistant.source_click`             | El usuario hace clic en una cita de una respuesta del chat.                             |
+| `docs.assistant.suggestion_click`         | El usuario hace clic en una pregunta sugerida.                                          |
+| `docs.assistant.ask_ai_on_text_selection` | El usuario selecciona texto y hace clic en &quot;Ask AI&quot;.                          |
+| `docs.assistant.shared`                   | El usuario comparte una conversación de chat.                                           |
+| `docs.assistant.thumbs_up`                | El usuario hace clic en el botón de valoración positiva de una respuesta del asistente. |
+| `docs.assistant.thumbs_down`              | El usuario hace clic en el botón de valoración negativa de una respuesta del asistente. |
+| `docs.assistant.spam_detected`            | El asistente detecta spam en un mensaje del usuario.                                    |
+| `docs.autopilot.suggestion.created`       | El agente crea una sugerencia para la documentación.                                    |
+| `docs.autopilot.suggestion.no_suggestion` | El agente determina que no hace falta actualizar la documentación.                      |
 
 <div id="contextual-menu">
   ### Menú contextual
 </div>
 
-| Event name                              | Description                                                                                               |
-| :-------------------------------------- | :-------------------------------------------------------------------------------------------------------- |
-| `docs.context_menu.copy_page`           | El usuario copia la página actual como Markdown.                                                          |
-| `docs.context_menu.copy_mcp_link`       | El usuario copia el enlace al servidor MCP alojado.                                                      |
-| `docs.context_menu.ai_provider_click`   | El usuario hace clic en un proveedor de IA para iniciar una conversación usando la página actual como contexto. |
-| `docs.context_menu.install_mcp_server`  | El usuario instala el servidor MCP alojado en los editores de código.                                    |
+| Nombre del evento                      | Descripción                                                                                                  |
+| :------------------------------------- | :----------------------------------------------------------------------------------------------------------- |
+| `docs.context_menu.copy_page`          | El usuario copia la página actual en formato Markdown.                                                       |
+| `docs.context_menu.copy_mcp_link`      | El usuario copia el enlace del servidor MCP alojado.                                                         |
+| `docs.context_menu.ai_provider_click`  | El usuario hace clic en un proveedor de IA para iniciar una conversación con la página actual como contexto. |
+| `docs.context_menu.install_mcp_server` | El usuario instala el servidor MCP alojado en editores de código.                                            |

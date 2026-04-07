@@ -1,14 +1,14 @@
 ---
 title: "导航"
-description: "设计契合用户需求的信息架构。"
+description: "设计符合用户需求的信息架构。"
 keywords: ["导航结构", "侧边栏配置", "页面组织", "导航分组"]
 ---
 
 `docs.json` 中的 [navigation](/zh/organize/settings#param-navigation) 属性用于控制文档的结构和信息层级。
 
-通过合理配置导航，你可以组织内容，让用户准确找到他们所需的信息。
+通过合理配置导航，你可以更好地组织内容，让用户快速找到所需信息。
 
-在导航的根级别选择一种主要的组织方式。确定主要方式后，你可以在其下嵌套其他导航元素。
+在导航的根级别选择一种主要的组织方式。选定后，你可以在其中嵌套其他导航元素。
 
 <div id="pages">
   ## 页面
@@ -16,11 +16,11 @@ keywords: ["导航结构", "侧边栏配置", "页面组织", "导航分组"]
 
 页面是最基本的导航组件。每个页面都是文档仓库中的一个 MDX 文件。
 
-<img className="block dark:hidden pointer-events-none" src="/images/navigation/pages-light.png" alt="页面的装饰性图形。" />
+<img className="block dark:hidden pointer-events-none" src="/images/navigation/pages-light.png" alt="页面装饰图。" />
 
-<img className="hidden dark:block pointer-events-none" src="/images/navigation/pages-dark.png" alt="页面的装饰性图形。" />
+<img className="hidden dark:block pointer-events-none" src="/images/navigation/pages-dark.png" alt="页面装饰图。" />
 
-在 `navigation` 对象中，`pages` 是一个数组，其中的每一项都必须指向一个[页面文件](/zh/organize/pages)的路径。
+在 `navigation` 对象中，`pages` 是一个数组，其中每一项都必须指向某个[页面文件](/zh/organize/pages)的路径。
 
 ```json
 {
@@ -40,13 +40,13 @@ keywords: ["导航结构", "侧边栏配置", "页面组织", "导航分组"]
   ## 分组
 </div>
 
-使用分组将侧边栏导航组织成不同的部分。分组可以相互嵌套、添加标签，并搭配图标进行展示。
+使用分组将侧边栏导航整理为不同的区块。分组可以相互嵌套、添加标签，并配上图标。
 
-<img className="block dark:hidden pointer-events-none" src="/images/navigation/groups-light.png" alt="装饰性分组图形。" />
+<img className="block dark:hidden pointer-events-none" src="/images/navigation/groups-light.png" alt="分组的装饰性图示。" />
 
-<img className="hidden dark:block pointer-events-none" src="/images/navigation/groups-dark.png" alt="装饰性分组图形。" />
+<img className="hidden dark:block pointer-events-none" src="/images/navigation/groups-dark.png" alt="分组的装饰性图示。" />
 
-在 `navigation` 对象中，`groups` 是一个数组，其中每个条目都是一个对象，并且需要包含 `group` 字段和 `pages` 字段。`icon`、`tag` 和 `expanded` 字段是可选的。
+在 `navigation` 对象中，`groups` 是一个数组，其中每一项都是一个对象，必须包含 `group` 和 `pages` 字段。`icon`、`tag` 和 `expanded` 字段为可选项。
 
 ```json
 {
@@ -86,13 +86,13 @@ keywords: ["导航结构", "侧边栏配置", "页面组织", "导航分组"]
   ### 默认展开状态
 </div>
 
-使用 `expanded` 属性来控制导航侧边栏中嵌套分组的默认状态。
+使用 `expanded` 属性来控制导航侧边栏中嵌套分组的默认展开状态。
 
 * `expanded: true`：分组默认展开。
 * `expanded: false` 或省略：分组默认折叠。
 
 <Note>
-  `expanded` 属性仅影响嵌套分组——也就是分组中的分组。顶层分组始终展开，无法折叠。
+  `expanded` 属性仅影响嵌套分组，也就是分组中的分组。顶层分组始终处于展开状态，且无法折叠。
 </Note>
 
 ```json
@@ -110,16 +110,16 @@ keywords: ["导航结构", "侧边栏配置", "页面组织", "导航分组"]
 ```
 
 <div id="tabs">
-  ## 选项卡
+  ## 标签页
 </div>
 
-选项卡会为文档创建具有独立 URL 路径的不同部分，并在文档顶部生成一条水平导航栏，方便用户在各个部分之间切换。
+标签页会通过独立的 URL 路径将文档划分为不同部分。它还会在文档顶部生成一条水平导航栏，方便用户在各个部分之间切换。
 
-<img className="block dark:hidden pointer-events-none" src="/images/navigation/tabs-light.png" alt="装饰性选项卡导航图形。" />
+<img className="block dark:hidden pointer-events-none" src="/images/navigation/tabs-light.png" alt="标签页导航的装饰性图示。" />
 
-<img className="hidden dark:block pointer-events-none" src="/images/navigation/tabs-dark.png" alt="装饰性选项卡导航图形。" />
+<img className="hidden dark:block pointer-events-none" src="/images/navigation/tabs-dark.png" alt="标签页导航的装饰性图示。" />
 
-在 `navigation` 对象中，`tabs` 是一个数组，每个元素都是一个对象，必须包含一个 `tab` 字段，并且可以包含其他导航配置项，例如分组、页面、图标或指向外部页面的链接。
+在 `navigation` 对象中，`tabs` 是一个数组，其中每一项都是一个对象，必须包含 `tab` 字段，也可以包含其他导航字段，例如分组、页面、图标或指向外部页面的链接。
 
 ```json
 {
@@ -157,9 +157,9 @@ keywords: ["导航结构", "侧边栏配置", "页面组织", "导航分组"]
   ### 菜单
 </div>
 
-菜单为选项卡添加下拉导航项。使用菜单可以帮助用户直接进入该选项卡中的特定页面。
+菜单可为标签页添加下拉导航项。使用菜单可帮助用户直接跳转到标签页中的特定页面。
 
-在 `navigation` 对象中，`menu` 是一个数组，其中的每一项都是一个对象。每个对象都需要包含一个 `item` 字段，并且可以包含其他导航字段，例如分组、页面、图标或指向外部页面的链接。
+在 `navigation` 对象中，`menu` 是一个数组，其中每个条目都是一个对象，必须包含 `item` 字段，还可以包含其他导航字段，例如分组、页面、图标或外部页面链接。
 
 菜单项只能包含分组、页面和外部链接。
 
@@ -189,7 +189,7 @@ keywords: ["导航结构", "侧边栏配置", "页面组织", "导航分组"]
           {
             "item": "SDKs",
             "icon": "code",
-            "description": "SDKs are used to interact with the API.",
+            "description": "SDK 用于与 API 交互。",
             "pages": [
               "sdk/fetch",
               "sdk/create",
@@ -207,13 +207,13 @@ keywords: ["导航结构", "侧边栏配置", "页面组织", "导航分组"]
   ## 锚点
 </div>
 
-锚点会在侧边栏顶部添加常驻的导航项。可以使用锚点来划分内容结构、提供快速访问外部资源的入口，或创建醒目的操作入口。
+锚点会在侧边栏顶部添加固定显示的导航项。你可以使用锚点为内容分区、快速访问外部资源，或创建醒目的行动号召。
 
-<img className="block dark:hidden pointer-events-none" src="/images/navigation/anchors-light.png" alt="锚点导航的装饰性图像。" />
+<img className="block dark:hidden pointer-events-none" src="/images/navigation/anchors-light.png" alt="锚点导航的装饰性图示。" />
 
-<img className="hidden dark:block pointer-events-none" src="/images/navigation/anchors-dark.png" alt="锚点导航的装饰性图像。" />
+<img className="hidden dark:block pointer-events-none" src="/images/navigation/anchors-dark.png" alt="锚点导航的装饰性图示。" />
 
-在 `navigation` 对象中，`anchors` 是一个数组，其中每一项都是一个对象，该对象必须包含一个 `anchor` 字段，并且可以包含其他导航字段，例如分组、页面、图标或指向外部页面的链接。
+在 `navigation` 对象中，`anchors` 是一个数组，其中每一项都是一个对象，必须包含 `anchor` 字段，也可以包含其他导航字段，例如分组、页面、图标或外部页面链接。
 
 ```json
 {
@@ -250,9 +250,9 @@ keywords: ["导航结构", "侧边栏配置", "页面组织", "导航分组"]
   ### 全局锚点
 </div>
 
-对于需要在所有页面上显示的链接，请使用全局锚点，不论用户正在浏览导航的哪一部分。全局锚点在链接到文档之外的资源（例如博客、社区论坛或支持门户），或为重要的内部页面（例如更新日志或状态页）提供一致的访问入口时尤其有用。
+对于需要显示在所有页面上的链接，无论用户当前查看的是 navigation 中的哪个部分，都应使用全局锚点。全局锚点特别适合链接到文档外部的资源 (例如博客、社区论坛或支持门户) ，也适合为重要的内部页面 (例如变更日志或状态页面) 提供统一的访问入口。
 
-全局锚点同时支持外部 URL 和指向文档内页面的相对路径。
+全局锚点既支持外部 URL，也支持指向文档内页面的相对路径。
 
 ```json
 {
@@ -280,13 +280,13 @@ keywords: ["导航结构", "侧边栏配置", "页面组织", "导航分组"]
   ## 下拉菜单
 </div>
 
-下拉菜单位于侧边栏导航顶部的可展开菜单中。下拉菜单中的每一项都会指向文档的某个部分。
+下拉菜单位于侧边栏导航顶部的可展开菜单中。下拉菜单中的每一项都会指向文档中的某个部分。
 
-<img className="block dark:hidden pointer-events-none" src="/images/navigation/dropdowns-light.png" alt="装饰性下拉导航图形。" />
+<img className="block dark:hidden pointer-events-none" src="/images/navigation/dropdowns-light.png" alt="下拉导航的装饰性图示。" />
 
-<img className="hidden dark:block pointer-events-none" src="/images/navigation/dropdowns-dark.png" alt="装饰性下拉导航图形。" />
+<img className="hidden dark:block pointer-events-none" src="/images/navigation/dropdowns-dark.png" alt="下拉导航的装饰性图示。" />
 
-在 `navigation` 对象中，`dropdowns` 是一个数组，其中每个元素都是一个对象，该对象必须包含一个 `dropdown` 字段，并且可以包含其他导航配置字段，例如分组、页面、图标或指向外部页面的链接。
+在 `navigation` 对象中，`dropdowns` 是一个数组，其中每一项都是一个对象，必须包含 `dropdown` 字段，还可以包含其他导航字段，例如分组、页面、图标或外部页面链接。
 
 ```json
 {
@@ -323,13 +323,13 @@ keywords: ["导航结构", "侧边栏配置", "页面组织", "导航分组"]
   ## 产品
 </div>
 
-<img className="block dark:hidden pointer-events-none" src="/images/navigation/product-switcher-light.png" alt="用于产品切换器的装饰性图像。" />
+<img className="block dark:hidden pointer-events-none" src="/images/navigation/product-switcher-light.png" alt="产品切换器的装饰图示。" />
 
-<img className="hidden dark:block pointer-events-none" src="/images/navigation/product-switcher-dark.png" alt="用于产品切换器的装饰性图像。" />
+<img className="hidden dark:block pointer-events-none" src="/images/navigation/product-switcher-dark.png" alt="产品切换器的装饰图示。" />
 
-“产品”会在导航中创建一个专用区域，用于组织与特定产品相关的文档。你可以使用“产品”来区分文档中的不同产品、服务或重要功能集。
+产品会在导航中创建一个专门的分区，用于组织特定产品的文档。使用产品可以在文档中区分不同的产品、服务或主要功能集。
 
-在 `navigation` 对象中，`products` 是一个数组，其中每个条目都是一个对象，该对象必须包含一个 `product` 字段，并且可以包含其他导航字段，例如 groups、pages、icons 或指向外部页面的链接。
+在 `navigation` 对象中，`products` 是一个数组，其中每一项都是一个对象，必须包含 `product` 字段，也可以包含其他导航字段，例如分组、页面、图标或外部页面链接。
 
 ```json
 {
@@ -381,17 +381,17 @@ keywords: ["导航结构", "侧边栏配置", "页面组织", "导航分组"]
   ## OpenAPI
 </div>
 
-将 OpenAPI 规范直接集成到你的导航结构中，以自动生成 API 文档。你可以创建专门的 API 部分，或将端点页面放入其他导航组件中。
+将 OpenAPI 规范直接集成到文档的导航结构中，即可自动生成 API 文档。你可以创建专门的 API 章节，也可以将端点页面放入其他导航组件中。
 
-在导航层级中的任意层级设置默认的 OpenAPI 规范。子元素会继承该规范，除非它们定义了自己的规范。
+你可以在导航层级的任意级别设置默认的 OpenAPI 规范。除非子元素定义了自己的规范，否则它们都会继承该规范。
 
 <Note>
-  当你将 `openapi` 属性添加到一个导航元素（例如锚点、选项卡或分组），且未指定任何页面时，Mintlify 会自动为 OpenAPI 规范中定义的 **所有端点** 生成页面。
+  当你为某个导航元素 (例如 锚点、标签页 或 分组) 添加 `openapi` 属性但未指定任何页面时，Mintlify 会自动为 OpenAPI 规范中定义的 **所有端点** 生成页面。
 
-  若要控制显示哪些端点，请在 `pages` 数组中显式列出需要的端点。
+  若要控制显示哪些端点，请在 `pages` 数组中明确列出所需端点。
 </Note>
 
-有关在文档中引用 OpenAPI 端点的更多信息，请参见 [OpenAPI 设置](/zh/api-playground/openapi-setup)。
+如需详细了解如何在文档中引用 OpenAPI 端点，请参阅 [OpenAPI 设置](/zh/api-playground/openapi-setup)。
 
 ```json
 {
@@ -424,13 +424,13 @@ keywords: ["导航结构", "侧边栏配置", "页面组织", "导航分组"]
   ## 版本
 </div>
 
-将导航划分为不同版本。版本可以从下拉菜单中选择。
+将导航划分为不同版本。你可以通过下拉菜单选择版本。
 
-<img className="block dark:hidden pointer-events-none" src="/images/navigation/versions-light.png" alt="版本切换器的装饰性图形。" />
+<img className="block dark:hidden pointer-events-none" src="/images/navigation/versions-light.png" alt="版本切换器的装饰性图示。" />
 
-<img className="hidden dark:block pointer-events-none" src="/images/navigation/versions-dark.png" alt="版本切换器的装饰性图形。" />
+<img className="hidden dark:block pointer-events-none" src="/images/navigation/versions-dark.png" alt="版本切换器的装饰性图示。" />
 
-在 `navigation` 对象中，`versions` 是一个数组，其中每一项都是一个对象，该对象必须包含一个 `version` 字段，并且可以包含任意其他导航字段。
+在 `navigation` 对象中，`versions` 是一个数组，其中的每一项都是一个对象，必须包含 `version` 字段，也可以包含其他任意导航字段。
 
 ```json
 {
@@ -463,68 +463,68 @@ keywords: ["导航结构", "侧边栏配置", "页面组织", "导航分组"]
   ## 语言
 </div>
 
-按不同语言划分你的导航。语言可以通过下拉菜单进行选择。
+将你的导航按不同语言划分。语言可通过下拉菜单选择。
 
-<img className="block dark:hidden pointer-events-none" src="/images/navigation/languages-light.png" alt="语言切换器的装饰性图像。" />
+<img className="block dark:hidden pointer-events-none" src="/images/navigation/languages-light.png" alt="语言切换器的装饰性图形。" />
 
-<img className="hidden dark:block pointer-events-none" src="/images/navigation/languages-dark.png" alt="语言切换器的装饰性图像。" />
+<img className="hidden dark:block pointer-events-none" src="/images/navigation/languages-dark.png" alt="语言切换器的装饰性图形。" />
 
-在 `navigation` 对象中，`languages` 是一个数组，其中每一项都是一个对象，必须包含一个 `language` 字段，并且还可以包含任何其他导航字段，包括特定语言的横幅配置。
+在 `navigation` 对象中，`languages` 是一个数组，其中每一项都是一个对象，必须包含 `language` 字段，也可以包含任何其他导航字段，包括特定语言的横幅配置。
 
 我们目前支持以下语言本地化：
 
 <CardGroup cols={2}>
-  <Card title="Arabic (ar)" icon="/images/navigation/languages/ar.png" horizontal />
+  <Card title="阿拉伯语 (ar)" icon="/images/navigation/languages/ar.png" horizontal />
 
-  <Card title="Czech (cs)" icon="/images/navigation/languages/cs.png" horizontal />
+  <Card title="捷克语 (cs)" icon="/images/navigation/languages/cs.png" horizontal />
 
-  <Card title="Chinese (cn)" icon="/images/navigation/languages/cn.png" horizontal />
+  <Card title="中文 (cn)" icon="/images/navigation/languages/cn.png" horizontal />
 
-  <Card title="Chinese (zh-Hant)" icon="/images/navigation/languages/cn.png" horizontal />
+  <Card title="繁体中文 (zh-Hant)" icon="/images/navigation/languages/cn.png" horizontal />
 
-  <Card title="Dutch (nl)" icon="/images/navigation/languages/nl.png" horizontal />
+  <Card title="荷兰语 (nl)" icon="/images/navigation/languages/nl.png" horizontal />
 
-  <Card title="English (en)" icon="/images/navigation/languages/en.png" horizontal />
+  <Card title="英语 (en)" icon="/images/navigation/languages/en.png" horizontal />
 
-  <Card title="French (fr)" icon="/images/navigation/languages/fr.png" horizontal />
+  <Card title="法语 (fr)" icon="/images/navigation/languages/fr.png" horizontal />
 
-  <Card title="German (de)" icon="/images/navigation/languages/de.png" horizontal />
+  <Card title="德语 (de)" icon="/images/navigation/languages/de.png" horizontal />
 
-  <Card title="Hebrew (he)" icon="/images/navigation/languages/he.png" horizontal />
+  <Card title="希伯来语 (he)" icon="/images/navigation/languages/he.png" horizontal />
 
-  <Card title="Hindi (hi)" icon="/images/navigation/languages/hi.png" horizontal />
+  <Card title="印地语 (hi)" icon="/images/navigation/languages/hi.png" horizontal />
 
-  <Card title="Indonesian (id)" icon="/images/navigation/languages/id.png" horizontal />
+  <Card title="印度尼西亚语 (id)" icon="/images/navigation/languages/id.png" horizontal />
 
-  <Card title="Italian (it)" icon="/images/navigation/languages/it.png" horizontal />
+  <Card title="意大利语 (it)" icon="/images/navigation/languages/it.png" horizontal />
 
-  <Card title="Japanese (jp)" icon="/images/navigation/languages/jp.png" horizontal />
+  <Card title="日语 (jp)" icon="/images/navigation/languages/jp.png" horizontal />
 
-  <Card title="Korean (ko)" icon="/images/navigation/languages/ko.png" horizontal />
+  <Card title="韩语 (ko)" icon="/images/navigation/languages/ko.png" horizontal />
 
-  <Card title="Latvian (lv)" icon="/images/navigation/languages/lv.png" horizontal />
+  <Card title="拉脱维亚语 (lv)" icon="/images/navigation/languages/lv.png" horizontal />
 
-  <Card title="Norwegian (no)" icon="/images/navigation/languages/no.png" horizontal />
+  <Card title="挪威语 (no)" icon="/images/navigation/languages/no.png" horizontal />
 
-  <Card title="Polish (pl)" icon="/images/navigation/languages/pl.png" horizontal />
+  <Card title="波兰语 (pl)" icon="/images/navigation/languages/pl.png" horizontal />
 
-  <Card title="Portuguese (pt-BR)" icon="/images/navigation/languages/pt-br.png" horizontal />
+  <Card title="葡萄牙语 (pt-BR)" icon="/images/navigation/languages/pt-br.png" horizontal />
 
-  <Card title="Romanian (ro)" icon="/images/navigation/languages/ro.png" horizontal />
+  <Card title="罗马尼亚语 (ro)" icon="/images/navigation/languages/ro.png" horizontal />
 
-  <Card title="Russian (ru)" icon="/images/navigation/languages/ru.png" horizontal />
+  <Card title="俄语 (ru)" icon="/images/navigation/languages/ru.png" horizontal />
 
-  <Card title="Spanish (es)" icon="/images/navigation/languages/es.png" horizontal />
+  <Card title="西班牙语 (es)" icon="/images/navigation/languages/es.png" horizontal />
 
-  <Card title="Swedish (sv)" icon="/images/navigation/languages/sv.png" horizontal />
+  <Card title="瑞典语 (sv)" icon="/images/navigation/languages/sv.png" horizontal />
 
-  <Card title="Turkish (tr)" icon="/images/navigation/languages/tr.png" horizontal />
+  <Card title="土耳其语 (tr)" icon="/images/navigation/languages/tr.png" horizontal />
 
-  <Card title="Ukrainian (ua)" icon="/images/navigation/languages/ua.png" horizontal />
+  <Card title="乌克兰语 (ua)" icon="/images/navigation/languages/ua.png" horizontal />
 
-  <Card title="Uzbek (uz)" icon="/images/navigation/languages/uz.png" horizontal />
+  <Card title="乌兹别克语 (uz)" icon="/images/navigation/languages/uz.png" horizontal />
 
-  <Card title="Vietnamese (vi)" icon="/images/navigation/languages/vi.png" horizontal />
+  <Card title="越南语 (vi)" icon="/images/navigation/languages/vi.png" horizontal />
 </CardGroup>
 
 ```json
@@ -562,18 +562,18 @@ keywords: ["导航结构", "侧边栏配置", "页面组织", "导航分组"]
 }
 ```
 
-如需自动化翻译支持，请[联系我们的销售团队](mailto:gtm@mintlify.com)以洽谈解决方案。
+如需自动翻译，请[联系我们的销售团队](mailto:gtm@mintlify.com)了解相关解决方案。
 
 <div id="nesting">
   ## 嵌套
 </div>
 
-导航元素可以相互嵌套，以创建复杂的层级结构。你必须有一个根级的父导航元素，例如选项卡（tab）、分组（group）或下拉菜单（dropdown）。在你的主导航模式中，可以嵌套其他类型的导航元素。
+导航元素之间可以相互嵌套，以创建更复杂的层级结构。你必须设置一个根级父导航元素，例如标签页、分组或下拉菜单。然后，你可以在主要导航模式中嵌套其他类型的导航元素。
 
-在导航层级的每一层中，每个导航元素只能包含一种类型的子元素。比如，一个选项卡可以包含带有分组的链接（anchor），但一个选项卡不能在同一层级同时包含链接和分组。
+在导航层级的每一层中，每个导航元素只能包含一种类型的子元素。例如，标签页可以包含锚点，而锚点可以包含分组；但标签页不能在同一层级同时包含锚点和分组。
 
 <CodeGroup>
-  ```json 包含锚点的选项卡
+  ```json 带锚点的标签页
   {
     "navigation": {
       "tabs": [
@@ -606,7 +606,7 @@ keywords: ["导航结构", "侧边栏配置", "页面组织", "导航分组"]
   }
   ```
 
-  ```json 包含选项卡的锚点
+  ```json 带标签页的锚点
   {
     "navigation": {
       "anchors": [
@@ -634,7 +634,7 @@ keywords: ["导航结构", "侧边栏配置", "页面组织", "导航分组"]
   }
   ```
 
-  ```json 包含选项卡的产品
+  ```json 带标签页的产品
   {
     "navigation": {
       "products": [
@@ -667,7 +667,7 @@ keywords: ["导航结构", "侧边栏配置", "页面组织", "导航分组"]
   }
   ```
 
-  ```json 多产品型 SaaS，包含选项卡和菜单
+  ```json 带标签页和菜单的多产品 SaaS
   {
     "navigation": {
       "products": [
@@ -738,7 +738,7 @@ keywords: ["导航结构", "侧边栏配置", "页面组织", "导航分组"]
   }
   ```
 
-  ```json 带选项卡的多版本文档
+  ```json 带标签页的版本化文档
   {
     "navigation": {
       "versions": [
@@ -751,10 +751,6 @@ keywords: ["导航结构", "侧边栏配置", "页面组织", "导航分组"]
                 {
                   "group": "Getting Started",
                   "pages": ["v2/quickstart", "v2/migration-from-v1"]
-                },
-                {
-                  "group": "Features",
-                  "pages": ["v2/features/auth", "v2/features/api"]
                 }
               ]
             },
@@ -792,7 +788,7 @@ keywords: ["导航结构", "侧边栏配置", "页面组织", "导航分组"]
   ## 面包屑导航
 </div>
 
-面包屑导航会在页面顶部显示完整的导航路径。有些主题默认启用面包屑导航，有些则不会。你可以通过在 `docs.json` 中使用 `styling` 属性来控制站点是否启用面包屑导航。
+面包屑导航会在页面顶部显示完整的导航路径。有些主题默认启用了面包屑导航，有些则默认未启用。你可以通过 `docs.json` 中的 `styling` 属性控制是否在站点中启用面包屑导航。
 
 <CodeGroup>
   ```json 显示完整面包屑导航
@@ -812,28 +808,28 @@ keywords: ["导航结构", "侧边栏配置", "页面组织", "导航分组"]
   ## 交互配置
 </div>
 
-使用 `docs.json` 中的 `interaction` 属性来控制用户与导航元素的交互方式。
+使用 `docs.json` 中的 `interaction` 属性，控制用户与导航元素的交互方式。
 
 <div id="enable-auto-navigation-for-groups">
-  ### 为导航分组启用自动导航
+  ### 为分组启用自动导航
 </div>
 
-当用户展开导航分组时，一些主题会自动跳转到该分组中的第一个页面。你可以使用 `drilldown` 选项覆盖主题的默认行为。
+当用户展开某个导航分组时，某些主题会自动跳转到该分组中的第一页。你可以使用 `drilldown` 选项覆盖主题的默认行为。
 
-* 设置为 `true`，在选择导航分组时强制自动跳转到第一个页面。
-* 设置为 `false`，在选择分组时阻止跳转，只展开或折叠该分组。
-* 保持未设置则使用主题的默认行为。
+* 设为 `true`，在选中导航分组时强制自动跳转到第一页。
+* 设为 `false`，可阻止跳转，选中时仅展开或折叠该分组。
+* 保持未设置，则使用主题的默认行为。
 
 <CodeGroup>
-  ```json Force navigation
+  ```json 强制导航
   "interaction": {
-    "drilldown": true  // 当用户展开导航分组时强制跳转到第一个页面
+    "drilldown": true  // 当用户展开某个分组时，强制跳转到第一页
   }
   ```
 
-  ```json Prevent navigation
+  ```json 阻止导航
   "interaction": {
-    "drilldown": false // 从不跳转，只展开或折叠该分组
+    "drilldown": false // 永不跳转，仅展开或折叠该分组
   }
   ```
 </CodeGroup>

@@ -1,10 +1,10 @@
 ---
-title: "代码组"
-description: "在一个组件中展示多个代码示例"
-keywords: ["code groups", "tabbed code", "multi-language examples", "CodeGroup"]
+title: "代码分组"
+description: "在一个组件中显示多个代码示例"
+keywords: ["代码分组", "标签式代码", "多语言示例", "CodeGroup"]
 ---
 
-使用 `CodeGroup` 组件在带选项卡的界面中展示多个代码块，让用户可以对比不同编程语言的实现，或查看完成同一任务的不同实现方式。
+使用 `CodeGroup` 组件可在标签式界面中显示多个代码块，让用户能够对比不同编程语言的实现，或查看同一任务的其他实现方式。
 
 <CodeGroup>
   ```javascript helloWorld.js
@@ -24,15 +24,15 @@ keywords: ["code groups", "tabbed code", "multi-language examples", "CodeGroup"]
   ```
 </CodeGroup>
 
-代码组会从你的 `docs.json` 文件继承全局样式。使用 `styling.codeblocks` 来自定义你的主题。配置选项参见 [Settings](/zh/organize/settings#styling)。
+代码分组会继承 `docs.json` 文件中的全局样式。你可以使用 `styling.codeblocks` 自定义主题。配置选项请参阅[设置](/zh/organize/settings#styling)。
 
-当标签匹配时，代码组会自动与同一页面上的其他代码组和 [选项卡](/zh/components/tabs) 保持同步。当你在一个代码组中选择某种语言时，所有具有匹配标签的选项卡和代码组都会更新为显示相同的语言。
+当标签名称一致时，代码分组会自动与同一页面上的其他代码分组和[标签页](/zh/components/tabs)同步。当你在某个代码分组中选择一种语言时，所有具有相同标签名称的标签页和代码分组都会更新为显示该语言。
 
 <div id="create-code-groups">
-  ## 创建代码组
+  ## 创建代码分组
 </div>
 
-要创建代码组，请将多个代码块包裹在 `<CodeGroup>` 标签内。每个代码块都必须包含一个标题，该标题将作为选项卡标签显示。
+要创建代码分组，请用 `<CodeGroup>` 标签包裹多个代码块。每个代码块都必须包含一个标题，该标题将作为选项卡标签显示。
 
 ````mdx
 <CodeGroup>
@@ -60,7 +60,7 @@ class HelloWorld {
   ## 语言下拉菜单
 </div>
 
-你可以通过使用 `dropdown` 属性，将代码组中的标签页替换为下拉菜单，以在不同语言之间切换。
+你可以使用 `dropdown` 属性，将代码分组中的标签页替换为下拉菜单，从而在不同语言之间切换。
 
 <CodeGroup dropdown>
   ```javascript helloWorld.js

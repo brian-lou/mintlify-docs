@@ -1,29 +1,21 @@
 ---
 title: "反馈"
 description: "监控用户对文档的满意度和反馈。"
-keywords: ["用户反馈","点赞评分","上下文反馈","满意度"]
+keywords: ["用户反馈","顶踩评分","上下文反馈","满意度"]
 ---
 
 <Info>
-  若要收集和查看反馈，你必须先在仪表盘的 [Add-ons](https://dashboard.mintlify.com/products/addons) 页面启用反馈功能。
+  要收集和查看反馈，必须先在控制面板的 [Add-ons](https://dashboard.mintlify.com/products/addons) 页面启用反馈功能。
 </Info>
 
-[反馈](https://dashboard.mintlify.com/products/analytics/v2/feedback) 选项卡会显示你的文档收到的点赞和点踩数量，以及用户提供的任何文字反馈。利用这些信息评估文档质量并进行改进。
+[feedback](https://dashboard.mintlify.com/products/analytics/v2/feedback) 选项卡会显示文档收到的定量顶踩投票，以及用户提供的所有定性反馈。你可以利用这些信息评估文档质量并进行改进。
 
-在仪表盘的分析页面查看反馈。
+在控制面板的分析页面查看反馈。
 
 <Frame>
-  <img
-    className="block dark:hidden"
-    src="/images/analytics/feedback-light.png"
-    alt="分析页面中的反馈选项卡。"
-  />
+  <img className="block dark:hidden" src="/images/analytics/feedback-light.png" alt="分析页面中的反馈选项卡。" />
 
-  <img
-    className="hidden dark:block"
-    src="/images/analytics/feedback-dark.png"
-    alt="分析页面中的反馈选项卡。"
-  />
+  <img className="hidden dark:block" src="/images/analytics/feedback-dark.png" alt="分析页面中的反馈选项卡。" />
 </Frame>
 
 <div id="feedback-types">
@@ -31,74 +23,66 @@ keywords: ["用户反馈","点赞评分","上下文反馈","满意度"]
 </div>
 
 <Note>
-  上下文反馈和代码片段反馈目前处于测试阶段。要在你的文档站点上启用它们，请[联系我们的销售团队](mailto:hahnbee@mintlify.com)。
+  上下文反馈和代码片段反馈目前处于 Beta 测试阶段。要为你的文档站点启用这些功能，请[联系我们的销售团队](mailto:hahnbee@mintlify.com)。
 </Note>
 
-“反馈”选项卡会根据你启用的[反馈附加组件](https://dashboard.mintlify.com/products/addons)显示相应信息。
+反馈选项卡会根据你启用的[反馈附加功能](https://dashboard.mintlify.com/products/addons)显示相应信息。
 
 <Frame>
-  <img
-    className="block dark:hidden"
-    src="/images/analytics/feedback-addons-light.png"
-    alt="附加组件页面中的反馈开关。"
-  />
+  <img className="block dark:hidden" src="/images/analytics/feedback-addons-light.png" alt="Add-ons 页面中的反馈开关。" />
 
-  <img
-    className="hidden dark:block"
-    src="/images/analytics/feedback-addons-dark.png"
-    alt="附加组件页面中的反馈开关。"
-  />
+  <img className="hidden dark:block" src="/images/analytics/feedback-addons-dark.png" alt="Add-ons 页面中的反馈开关。" />
 </Frame>
 
-- **点赞评分**：通过简单的点赞/点踩投票来衡量用户对页面的整体满意度。
-- **上下文反馈**：用户可以自由填写、针对页面内容本身的反馈。
-- **代码片段反馈**：专门针对代码片段的反馈。
-- **编辑建议**：允许用户为你的文档提出编辑建议。仅适用于公共 GitHub 仓库。
-- **提交 Issue**：允许用户直接从你的文档中创建 GitHub issue。仅适用于公共 GitHub 仓库。
+* **Thumbs rating**：简单的顶踩投票，用于衡量用户对页面的整体满意度。
+* **上下文反馈**：针对页面内容的自由文本反馈。
+* **代码片段反馈**：专门针对代码片段的反馈。
+* **Edit suggestions**：允许用户为你的文档提出编辑建议。仅适用于公开的 GitHub 仓库。
+* **Raise issues**：允许用户直接从文档中创建 GitHub issue。仅适用于公开的 GitHub 仓库。
 
 <Note>
-  如果你在 `docs.json` 文件中禁用了遥测功能，文档页面上的反馈功能将不可用。
+  如果你在 `docs.json` 文件中禁用了遥测，文档页面将无法使用反馈功能。
 </Note>
 
 <div id="manage-feedback">
   ## 管理反馈
 </div>
 
-对于与上下文相关的反馈和代码片段反馈，你可以为某条反馈设置状态，并添加内部备注，以便跟踪你处理用户反馈的进展。
+对于上下文反馈和代码片段反馈，你可以设置反馈状态，并添加内部备注，以跟踪处理用户反馈的进展。
 
 <div id="change-feedback-status">
   ### 更改反馈状态
 </div>
 
-选择反馈旁边的状态，将其标记为 **待审核**、**处理中**、**已解决** 或 **已忽略**。
+选择某条反馈旁边的状态，将其标记为 **待处理**、**进行中**、**已解决** 或 **已忽略**。
 
-设置反馈状态的最佳实践：
+反馈状态设置建议：
 
-- **待审核**：反馈正在等待审核。
-- **处理中**：反馈已被确认，正在处理。
-- **已解决**：反馈已得到解决。
-- **已忽略**：反馈被视为无可执行价值、不相关或不准确，因此予以忽略。
+* **待处理**：反馈正在等待审核。
+* **进行中**：反馈已确认，正在处理中。
+* **已解决**：反馈已处理完成。
+* **已忽略**：反馈因无法采取行动、无关或不准确而被忽略。
 
 <div id="filter-by-status">
   ### 按状态筛选
 </div>
 
-使用状态筛选器来控制要显示哪些反馈。清除某个状态即可隐藏所有具有该状态的反馈。默认情况下，会显示所有反馈。
+使用状态筛选器控制显示哪些反馈。清除某个状态后，所有处于该状态的反馈都会被隐藏。默认情况下，会显示所有反馈。
 
 <div id="add-internal-notes">
   ### 添加内部备注
 </div>
 
-点击一条反馈即可添加内部备注。这些备注只对有权访问你的仪表盘的人员可见。
+点击某条反馈即可添加内部备注。这些备注仅对有权访问你的仪表板的人员可见。
 
-使用备注来补充协作所需的信息、链接相关的支持或工程工单，或记录任何其他有用信息。
+你可以使用备注补充协作信息、关联相关的支持或工程工单，或记录其他任何有用信息。
 
 <div id="use-feedback-data">
-  ## 使用反馈数据
+  ## 利用反馈数据
 </div>
 
-查看你的反馈数据，以：
+查看反馈数据，以便：
 
-- **识别表现良好的内容**：获得最多正面反馈的页面有助于了解文档中哪些内容效果最好。
-- **确定改进优先级**：获得最多负面反馈的页面表明哪些内容可能需要优先优化。
-- **采取行动**：根据用户的直接反馈来更新文档。
+* **识别优质内容**：获得最多正面反馈的页面，说明哪些内容在你的文档中效果最好。
+* **确定改进优先级**：获得最多负面反馈的页面，表明哪些内容可能需要优先改进。
+* **采取行动**：根据用户的直接反馈更新文档。

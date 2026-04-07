@@ -1,10 +1,10 @@
 ---
 title: "磁贴"
-description: "在网格布局中以视觉预览的形式展示带有标题和描述的内容。"
-keywords: ["tiles", "visual preview", "grid", "showcase"]
+description: "以网格布局显示带有标题和描述的可视化预览。"
+keywords: ["磁贴", "可视化预览", "网格", "展示"]
 ---
 
-使用磁贴来创建带有图案背景、标题和描述的视觉展示元素。磁贴非常适合在网格布局中展示组件预览、功能亮点或导航项。
+使用磁贴创建带有图案背景、标题和描述的可视化展示元素。磁贴非常适合在网格布局中展示组件预览、功能亮点或导航项。
 
 <Tile href="/zh/components/accordions" title="Accordion" description="两种变体">
   <img src="/images/tiles/accordion-light.svg" alt="Accordion 组件预览" className="block dark:hidden" />
@@ -23,22 +23,22 @@ keywords: ["tiles", "visual preview", "grid", "showcase"]
   ## 网格布局
 </div>
 
-将卡片与 [Columns 组件](/zh/components/columns) 组合使用，来创建一个响应式的预览网格布局。
+将磁贴与 [columns 组件](/zh/components/columns) 搭配使用，创建响应式视觉预览网格。
 
 <Columns cols={3}>
-  <Tile href="/zh/components/accordions" title="Accordion" description="Two variants">
+  <Tile href="/zh/components/accordions" title="Accordion" description="两种变体">
     <img src="/images/tiles/accordion-light.svg" alt="Accordion 组件预览" className="block dark:hidden" />
 
     <img src="/images/tiles/accordion-dark.svg" alt="Accordion 组件预览（深色模式）" className="hidden dark:block" />
   </Tile>
 
-  <Tile href="/zh/components/accordions" title="Accordion" description="Two variants">
+  <Tile href="/zh/components/accordions" title="Accordion" description="两种变体">
     <img src="/images/tiles/accordion-light.svg" alt="Accordion 组件预览" className="block dark:hidden" />
 
     <img src="/images/tiles/accordion-dark.svg" alt="Accordion 组件预览（深色模式）" className="hidden dark:block" />
   </Tile>
 
-  <Tile href="/zh/components/accordions" title="Accordion" description="Two variants">
+  <Tile href="/zh/components/accordions" title="Accordion" description="两种变体">
     <img src="/images/tiles/accordion-light.svg" alt="Accordion 组件预览" className="block dark:hidden" />
 
     <img src="/images/tiles/accordion-dark.svg" alt="Accordion 组件预览（深色模式）" className="hidden dark:block" />
@@ -79,5 +79,5 @@ keywords: ["tiles", "visual preview", "grid", "showcase"]
 </ResponseField>
 
 <ResponseField name="children" type="React.ReactNode" required>
-  显示在磁贴预览区域内的内容，通常为图片或 SVG 图形。
+  显示在磁贴预览区域内的内容，通常为图片或 SVG。
 </ResponseField>

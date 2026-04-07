@@ -1,10 +1,10 @@
 ---
 title: "Grupos de código"
 description: "Muestra varios ejemplos de código en un solo componente"
-keywords: ["grupos de código", "código con pestañas", "ejemplos multiidioma", "CodeGroup"]
+keywords: ["grupos de código", "código con pestañas", "ejemplos en varios lenguajes", "CodeGroup"]
 ---
 
-Usa el componente `CodeGroup` para mostrar varios bloques de código en una interfaz con pestañas, lo que permite a los usuarios comparar implementaciones en distintos lenguajes de programación o ver enfoques alternativos para la misma tarea.
+Usa el componente `CodeGroup` para mostrar varios bloques de código en una interfaz con pestañas, de modo que los usuarios puedan comparar implementaciones en distintos lenguajes de programación o ver enfoques alternativos para la misma tarea.
 
 <CodeGroup>
   ```javascript helloWorld.js
@@ -24,15 +24,15 @@ Usa el componente `CodeGroup` para mostrar varios bloques de código en una inte
   ```
 </CodeGroup>
 
-Los grupos de código heredan los estilos globales de tu archivo `docs.json`. Personaliza tu tema usando `styling.codeblocks`. Consulta [Configuración](/es/organize/settings#styling) para ver las opciones de configuración.
+Los grupos de código heredan el estilo global definido en tu archivo `docs.json`. Personaliza tu tema con `styling.codeblocks`. Consulta [Configuración](/es/organize/settings#styling) para ver las opciones de configuración.
 
-Los grupos de código se sincronizan automáticamente con otros grupos de código y [pestañas](/es/components/tabs) en la misma página cuando sus etiquetas coinciden. Cuando seleccionas un lenguaje en un grupo de código, todas las pestañas y grupos de código con etiquetas coincidentes se actualizan para mostrar ese mismo lenguaje.
+Los grupos de código se sincronizan automáticamente con otros grupos de código y [pestañas](/es/components/tabs) de la misma página cuando sus etiquetas coinciden. Cuando seleccionas un lenguaje en un grupo de código, todas las pestañas y los grupos de código con etiquetas coincidentes se actualizan para mostrar ese mismo lenguaje.
 
 <div id="create-code-groups">
   ## Crear grupos de código
 </div>
 
-Para crear un grupo de código, rodea varios bloques de código con etiquetas `<CodeGroup>`. Cada bloque de código debe incluir un título, que será la etiqueta de la pestaña.
+Para crear un grupo de código, agrupa varios bloques de código entre etiquetas `<CodeGroup>`. Cada bloque de código debe incluir un título, que se mostrará como nombre de la pestaña.
 
 ````mdx
 <CodeGroup>
@@ -60,7 +60,7 @@ class HelloWorld {
   ## Menú desplegable de idiomas
 </div>
 
-Puedes sustituir las pestañas de un grupo de código por un menú desplegable para cambiar entre idiomas usando la propiedad `dropdown`.
+Puedes reemplazar las pestañas de un grupo de código por un menú desplegable para cambiar entre idiomas con la prop `dropdown`.
 
 <CodeGroup dropdown>
   ```javascript helloWorld.js

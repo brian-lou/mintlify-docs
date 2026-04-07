@@ -1,20 +1,20 @@
 ---
 title: "个性化内容"
-description: "基于用户数据和身份验证显示自定义内容。"
-keywords: ["content personalization", "personalization", "user data", "groups", "dynamic", "prefill"]
+description: "根据用户数据和身份验证显示自定义内容。"
+keywords: ["内容个性化", "个性化", "用户数据", "分组", "动态", "预填充"]
 ---
 
 <Note>
-  个性化功能需要使用 OAuth 或 JWT 配置好的[身份验证](/zh/deploy/authentication-setup)。
+  个性化功能要求已配置使用 OAuth 或 JWT 的[身份验证](/zh/deploy/authentication-setup)。
 </Note>
 
-当用户登录到你的文档站点时，为他们定制内容。你可以预填 API 密钥，展示与用户方案或角色相关的专属内容，并根据所属用户组筛选 API 参考内容。
+用户登录到你的文档站点后，你可以为其自定义内容。你可以预填 API 密钥，显示与用户套餐或角色对应的内容，并根据分组成员身份筛选 API 参考内容。
 
 <div id="api-key-prefilling">
-  ## 预填充 API 密钥
+  ## API 密钥预填
 </div>
 
-通过在用户数据中返回与字段名称匹配的字段，自动将用户特定的值填入 API playground 中的各字段。将这些值包含在你的 [user data](/zh/deploy/authentication-setup#user-data-format) 的 `apiPlaygroundInputs` 字段中。
+通过在用户数据中返回匹配的字段名，系统会自动使用用户特定的值填充 API 操作台字段。请在[用户数据](/zh/deploy/authentication-setup#user-data-format)的 `apiPlaygroundInputs` 字段中包含这些值。
 
 ```json
 {
@@ -25,13 +25,13 @@ keywords: ["content personalization", "personalization", "user data", "groups", 
 }
 ```
 
-字段名称必须与 OpenAPI 规范中定义的名称完全一致。只有与当前端点的安全方案相匹配的值才会生效。
+字段名称必须与 OpenAPI 规范中定义的名称一致。只有与当前接口安全方案匹配的值才会生效。
 
 <div id="dynamic-mdx-content">
   ## 动态 MDX 内容
 </div>
 
-在 MDX 页面中使用 `user` 变量，根据用户的姓名、方案或组织等信息来展示内容。将自定义数据放入 [user data](/zh/deploy/authentication-setup#user-data-format) 的 `content` 字段中。
+在 MDX 页面中使用 `user` 变量，根据姓名、套餐或组织等用户信息动态显示内容。在[用户数据](/zh/deploy/authentication-setup#user-data-format)的 `content` 字段中加入自定义数据。
 
 ```json
 {
@@ -49,7 +49,7 @@ keywords: ["content personalization", "personalization", "user data", "groups", 
 Welcome back, {user.firstName}! Your {user.plan} plan includes 100 seats for members in your {user.company} organization.
 ```
 
-若要根据用户数据进行条件渲染，可在 JSX 组件中使用 `user` 变量。
+若要基于用户数据进行条件渲染，请在 JSX 组件中使用 `user` 变量。
 
 ```jsx
 {
@@ -60,14 +60,14 @@ Welcome back, {user.firstName}! Your {user.plan} plan includes 100 seats for mem
 ```
 
 <Note>
-  对于未登录用户，`user` 变量是一个空对象。请在访问所有 `user` 字段时使用可选链操作符以防止出错。例如，使用 `{user.org?.plan}` 而不是 `{user.org.plan}`。
+  对于未登录的用户，`user` 变量是一个空对象。请对所有 `user` 字段使用可选链，以避免报错。例如，使用 `{user.org?.plan}`，而不是 `{user.org.plan}`。
 </Note>
 
 <div id="page-visibility">
   ## 页面可见性
 </div>
 
-通过在页面的 frontmatter 中添加 `groups`，可以将页面访问权限限制为特定用户组。用户必须至少属于其中一个列出的用户组才能访问该页面。
+通过在页面前置元数据中添加 `groups`，可将页面访问限制为特定分组。用户必须至少属于所列出的一个分组，才能访问该页面。
 
 ```mdx
 ---
@@ -76,22 +76,22 @@ groups: ["admin"]
 ---
 ```
 
-有关群组如何与公共页面交互的更多信息，请参阅[使用群组控制访问](/zh/deploy/authentication-setup#control-access-with-groups)。
+如需详细了解分组如何与公开页面配合使用，请参阅[使用分组控制访问](/zh/deploy/authentication-setup#control-access-with-groups)。
 
 <div id="openapi-content-filtering">
   ## OpenAPI 内容过滤
 </div>
 
-在 OpenAPI 规范中使用 `x-mint` 扩展，根据用户组过滤 API 参考内容。你可以过滤整个端点、单个 schema 属性、`oneOf` 选项以及枚举值。
+使用 OpenAPI 规范中的 `x-mint` 扩展，根据用户分组过滤 API 参考内容。你可以过滤整个端点、单个 schema 属性、`oneOf` 变体以及枚举值。
 
 <div id="filter-endpoints">
   ### 过滤端点
 </div>
 
-在某个 operation 或 path 上添加 `x-mint.groups`，即可将该端点页面仅限定为特定用户组可见。不在所列用户组中的用户既不会在导航中看到该端点，也无法访问其页面。
+在操作或路径中添加 `x-mint.groups`，即可将端点页面限制为仅特定分组可见。不在所列分组中的用户既不会在导航中看到该端点，也无法访问其页面。
 
 <CodeGroup>
-  ```json {6-8} 受限的 operation
+  ```json {6-8} 受限操作
   {
     "paths": {
       "/billing": {
@@ -111,7 +111,7 @@ groups: ["admin"]
   }
   ```
 
-  ```json {3-5} 受限的 path
+  ```json {3-5} 受限路径
   {
     "paths": {
       "x-mint": {
@@ -133,10 +133,10 @@ groups: ["admin"]
 </CodeGroup>
 
 <div id="filter-schema-properties">
-  ### 过滤 schema 属性
+  ### 筛选 schema 属性
 </div>
 
-为请求正文、参数或响应中的各个属性添加 `x-mint.groups`。未添加 `x-mint.groups` 的属性将对所有用户可见。
+将 `x-mint.groups` 添加到请求体、参数或响应中的各个属性上。未添加 `x-mint.groups` 的属性仍会对所有用户可见。
 
 ```json {11-13} Restricted property
 {
@@ -161,13 +161,13 @@ groups: ["admin"]
 }
 ```
 
-在这个示例中，所有用户都能看到 `name` 属性。只有 `admin` 组中的用户才能看到 `internal_id` 属性。
+在此示例中，所有用户都能看到 `name` 属性。只有属于 `admin` 分组的用户才能看到 `internal_id` 属性。
 
 <div id="filter-oneof-variants">
-  ### 过滤 oneOf 变体
+  ### 筛选 oneOf 变体
 </div>
 
-为各个 `oneOf` 选项添加 `x-mint.groups`，以限制用户可见的架构变体。
+将 `x-mint.groups` 添加到各个 `oneOf` 选项中，以限制用户可见的模式变体。
 
 ```json {7-9} Restricted oneOf variant
 {
@@ -199,7 +199,7 @@ groups: ["admin"]
   ### 筛选枚举值
 </div>
 
-使用 `x-mint-enum` 扩展按分组来限制各个枚举值。将每个受限的枚举值作为键列出，并将其允许的分组作为值。未在 `x-mint-enum` 中列出的枚举值对所有用户可见。
+使用 `x-mint-enum` 扩展按分组限制单个枚举值。将每个受限值列为一个键，将其允许的分组作为对应的值。未在 `x-mint-enum` 中列出的枚举值对所有用户可见。
 
 ```json {4-7} Restricted enum values
 {
@@ -212,24 +212,24 @@ groups: ["admin"]
 }
 ```
 
-在本示例中，所有用户都会看到 `free`。属于 `pro` 或 `enterprise` 组的用户会看到 `pro`。只有属于 `enterprise` 组的用户会看到 `enterprise`。
+在此示例中，所有用户都会看到 `free`。`pro` 或 `enterprise` 分组中的用户会看到 `pro`。只有 `enterprise` 分组中的用户会看到 `enterprise`。
 
 <Note>
-  `x-mint-enum` 是 schema 对象上的一个独立顶级扩展，而不是嵌套在 `x-mint` 下。
+  `x-mint-enum` 是 schema 对象上独立的顶层扩展，而不是嵌套在 `x-mint` 下。
 </Note>
 
 <div id="user-data-format">
   ## 用户数据格式
 </div>
 
-您的身份验证系统会返回用于控制个性化的用户数据。本文中描述的 `groups`、`content` 和 `apiPlaygroundInputs` 字段都属于用户数据对象的一部分。
+你的身份验证系统会返回用于控制个性化体验的用户数据。本页介绍的 `groups`、`content` 和 `apiPlaygroundInputs` 字段都属于用户数据对象的一部分。
 
-有关完整的用户数据格式和字段说明，请参见 [用户数据格式](/zh/deploy/authentication-setup#user-data-format)。
+有关完整的用户数据格式和字段参考，请参阅 [用户数据格式](/zh/deploy/authentication-setup#user-data-format)。
 
 <div id="logout-behavior">
-  ## 退出登录行为
+  ## 登出行为
 </div>
 
-退出登录发生在客户端。当用户点击“退出登录”按钮时，Mintlify 会清除其在浏览器中存储的会话数据。
+登出在客户端完成。用户点击登出按钮时，Mintlify 会清除浏览器中存储的会话数据。
 
-要限制个性化数据的保留时间，请在用户数据中设置 `expiresAt` 字段。
+如需限制个性化数据的保留时间，请在用户数据中设置 `expiresAt` 字段。

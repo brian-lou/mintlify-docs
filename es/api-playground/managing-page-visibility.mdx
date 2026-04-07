@@ -1,24 +1,24 @@
 ---
 title: "Gestionar la visibilidad de las páginas"
-description: "Controla qué endpoints de la API aparecen en la navegación de tu documentación."
-keywords: ["x-hidden", "x-excluded", "hide endpoints", "page visibility", "internal endpoints"]
+description: "Controla qué endpoints de API aparecen en la navegación de tu documentación."
+keywords: ["x-hidden", "x-excluded", "ocultar endpoints", "visibilidad de las páginas", "endpoints internos"]
 ---
 
-Para endpoints de uso interno, operaciones obsoletas, funciones beta o endpoints que deberían ser accesibles mediante una URL directa pero no aparecer en la navegación del sitio, puedes controlar qué operaciones de OpenAPI se publican como páginas de documentación y su visibilidad en la navegación.
+Para endpoints de uso interno, operaciones obsoletas, funciones beta o endpoints a los que se deba acceder mediante URL directa pero que no deban descubrirse a través de la navegación del sitio, puedes controlar qué operaciones de OpenAPI se publican como páginas de documentación y su visibilidad en la navegación.
 
-Si tus páginas se generan automáticamente a partir de un documento OpenAPI, gestiona la visibilidad de las páginas con las extensiones `x-hidden` y `x-excluded`.
+Si tus páginas se autogeneran a partir de un documento OpenAPI, gestiona la visibilidad de las páginas con las extensiones `x-hidden` y `x-excluded`.
 
 <div id="x-hidden">
   ## `x-hidden`
 </div>
 
-La extensión `x-hidden` crea una página para un endpoint, pero la oculta de la navegación. Solo se puede acceder a la página yendo directamente a su URL.
+La extensión `x-hidden` crea una página para un endpoint, pero la oculta en la navegación. Solo se puede acceder a ella directamente mediante su URL.
 
 Los casos de uso habituales de `x-hidden` son:
 
-- Endpoints que quieres documentar, pero no destacar.
-- Páginas a las que enlazarás desde otros contenidos.
-- Endpoints para usuarios específicos.
+* Endpoints que quieres documentar, pero no destacar.
+* Páginas a las que enlazarás desde otro contenido.
+* Endpoints para usuarios específicos.
 
 <div id="x-excluded">
   ## `x-excluded`
@@ -26,19 +26,19 @@ Los casos de uso habituales de `x-hidden` son:
 
 La extensión `x-excluded` excluye por completo un endpoint de tu documentación.
 
-Algunos casos de uso habituales de `x-excluded` son:
+Los casos de uso más comunes de `x-excluded` son:
 
-- Endpoints internos.
-- Endpoints obsoletos que no quieres documentar.
-- Funciones beta que aún no están listas para la documentación pública.
+* Endpoints de uso interno.
+* Endpoints obsoletos que no quieres documentar.
+* Funcionalidades beta que no están listas para la documentación pública.
 
 <div id="implementation">
   ## Implementación
 </div>
 
-Agrega la extensión `x-hidden` o `x-excluded` bajo el método HTTP en tu especificación de OpenAPI.
+Agrega la extensión `x-hidden` o `x-excluded` debajo del método HTTP en tu especificación de OpenAPI.
 
-A continuación se muestran ejemplos de cómo usar cada propiedad en un documento de esquema de OpenAPI para un endpoint y una ruta de webhook.
+Aquí tienes ejemplos de cómo usar cada propiedad en un documento de esquema de OpenAPI para un endpoint y una ruta de webhook.
 
 ```json Endpoint example {11, 19}
 "paths": {
@@ -72,19 +72,19 @@ A continuación se muestran ejemplos de cómo usar cada propiedad en un document
 "webhooks": {
   "/plants_hook": {
     "post": {
-      "description": "Webhook for information about a new plant added to the store",
+      "description": "Webhook con información sobre una nueva planta añadida a la tienda",
     }
   },
   "/hidden_plants_hook": {
     "post": {
       "x-hidden": true,
-      "description": "Webhook for somewhat secret information about a new plant added to the store"
+      "description": "Webhook con información algo secreta sobre una nueva planta añadida a la tienda"
     }
   },
   "/secret_plants_hook": {
     "post": {
       "x-excluded": true,
-      "description": "Webhook for top secret information about a new plant added to the store (do not publish this endpoint!)"
+      "description": "Webhook con información ultrasecreta sobre una nueva planta añadida a la tienda (¡no publiques este endpoint!)"
     }
   }
 }

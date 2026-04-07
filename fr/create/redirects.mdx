@@ -1,20 +1,20 @@
 ---
 title: "Redirections"
-description: "Configurer des redirections pour les pages déplacées, renommées ou supprimées."
+description: "Configurez des redirections pour les pages déplacées, renommées ou supprimées."
 keywords: ["301", "redirections"]
 ---
 
-Lorsque vous modifiez le chemin d’accès d’un fichier dans votre dossier docs, l’URL de cette page est également modifiée. Cela peut se produire lorsque vous réorganisez votre documentation ou modifiez le titre de la barre latérale.
+Lorsque vous modifiez le chemin d’un fichier dans votre dossier de documentation, l’URL de cette page change également. Cela peut se produire lorsque vous réorganisez votre documentation ou modifiez le titre dans la barre latérale.
 
 <div id="redirects">
   ## Redirections
 </div>
 
 <Note>
-  Les redirections **ne peuvent pas** contenir d’ancres d’URL comme `path#anchor` ni de paramètres de requête comme `path?query=value`.
+  Les redirections **ne peuvent pas** inclure d’ancres d’URL comme `path#anchor` ni de paramètres de requête comme `path?query=value`.
 </Note>
 
-Configurez des redirections 301 en ajoutant le champ `redirects` à votre fichier `docs.json`.
+Configurez des redirections 301 en ajoutant le champ `redirects` dans votre fichier `docs.json`.
 
 ```json
 "redirects": [
@@ -25,13 +25,13 @@ Configurez des redirections 301 en ajoutant le champ `redirects` à votre fichie
 ]
 ```
 
-Cela redirige définitivement `/source/path` vers `/destination/path`, afin que vous ne perdiez pas le référencement de la page d’origine.
+Cela redirige de manière permanente `/source/path` vers `/destination/path`, afin de ne pas perdre le référencement naturel déjà acquis pour la page d’origine.
 
 <div id="wildcard-redirects">
-  ### Redirections avec caractère générique
+  ### Redirections avec caractères génériques
 </div>
 
-Pour faire correspondre un chemin avec un caractère générique, utilisez `*` après un paramètre. Dans cet exemple, `/beta/:slug*` correspond à `/beta/introduction` et redirige ce dernier vers `/v2/introduction`.
+Pour faire correspondre un chemin avec caractère générique, utilisez `*` après un paramètre. Dans cet exemple, `/beta/:slug*` correspond à `/beta/introduction` et le redirige vers `/v2/introduction`.
 
 ```json
 "redirects": [
@@ -43,10 +43,10 @@ Pour faire correspondre un chemin avec un caractère générique, utilisez `*` a
 ```
 
 <div id="partial-wildcard-redirects">
-  ### Redirections avec jokers partiels
+  ### Redirections avec caractères génériques partiels
 </div>
 
-Utilisez des jokers partiels pour faire correspondre les segments d’URL qui commencent par un préfixe donné.
+Utilisez des caractères génériques partiels pour faire correspondre les segments d’URL qui commencent par un préfixe spécifique.
 
 ```json
 "redirects": [
@@ -57,9 +57,9 @@ Utilisez des jokers partiels pour faire correspondre les segments d’URL qui co
 ]
 ```
 
-Cette règle fait correspondre toutes les URL dont le chemin est `/articles/concepts-`, comme `/articles/concepts-getting-started` et `/articles/concepts-overview`, et les redirige toutes vers `/collections/overview`.
+Ce motif correspond à toutes les URL ayant le chemin `/articles/concepts-`, comme `/articles/concepts-getting-started` et `/articles/concepts-overview`, et les redirige toutes vers `/collections/overview`.
 
-Vous pouvez également réutiliser la valeur du caractère générique capturée dans la destination.
+Vous pouvez également utiliser la valeur de caractère générique capturée dans la destination.
 
 ```json
 "redirects": [
@@ -70,13 +70,13 @@ Vous pouvez également réutiliser la valeur du caractère générique capturée
 ]
 ```
 
-Cela redirige `/old/article-123` vers `/new/article-123`, tout en conservant la valeur capturée après le préfixe.
+Cela redirige `/old/article-123` vers `/new/article-123`, en conservant la valeur capturée après le préfixe.
 
 <div id="avoid-infinite-redirects">
   ### Évitez les redirections infinies
 </div>
 
-Pour éviter les boucles infinies, ne créez pas de redirections circulaires dans lesquelles les chemins se renvoient mutuellement.
+Pour éviter les boucles infinies, ne créez pas de redirections circulaires dans lesquelles les chemins se redirigent mutuellement.
 
 ```json
 "redirects": [
@@ -92,10 +92,10 @@ Pour éviter les boucles infinies, ne créez pas de redirections circulaires dan
 ```
 
 <div id="check-for-broken-links">
-  ## Vérifier les liens brisés
+  ## Vérifier les liens rompus
 </div>
 
-Détectez les liens brisés à l’aide de la [CLI](/fr/installation).
+Recherchez les liens rompus avec le [CLI](/fr/installation).
 
 ```bash
 mint broken-links

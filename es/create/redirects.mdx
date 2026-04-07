@@ -1,10 +1,10 @@
 ---
 title: "Redirecciones"
-description: "Configura redirecciones para páginas que se hayan movido, renombrado o eliminado."
+description: "Configura redirecciones para páginas movidas, renombradas o eliminadas."
 keywords: ["301", "redirects"]
 ---
 
-Cuando cambias la ruta de acceso de un archivo en la carpeta docs de tu documentación, también cambia la ruta de la URL de esa página. Esto puede ocurrir al reestructurar la documentación o al cambiar el título de la barra lateral.
+Cuando cambias la ruta de un archivo en tu carpeta de documentación, también cambia la URL de esa página. Esto puede ocurrir al reorganizar tu documentación o al cambiar el título en la barra lateral.
 
 <div id="redirects">
   ## Redirecciones
@@ -14,7 +14,7 @@ Cuando cambias la ruta de acceso de un archivo en la carpeta docs de tu document
   Las redirecciones **no pueden** incluir fragmentos de URL como `path#anchor` ni parámetros de consulta como `path?query=value`.
 </Note>
 
-Configura redirecciones 301 agregando el campo `redirects` a tu archivo `docs.json`.
+Configura redirecciones 301 añadiendo el campo `redirects` a tu archivo `docs.json`.
 
 ```json
 "redirects": [
@@ -28,10 +28,10 @@ Configura redirecciones 301 agregando el campo `redirects` a tu archivo `docs.js
 Esto redirige permanentemente `/source/path` a `/destination/path` para que no pierdas el posicionamiento SEO previo de la página original.
 
 <div id="wildcard-redirects">
-  ### Redirecciones con comodín
+  ### Redirecciones con comodines
 </div>
 
-Para hacer coincidir una ruta comodín, usa `*` después de un parámetro. En este ejemplo, `/beta/:slug*` coincide con `/beta/introduction` y la redirige a `/v2/introduction`.
+Para hacer coincidir una ruta comodín, usa `*` después de un parámetro. En este ejemplo, `/beta/:slug*` coincide con `/beta/introduction` y lo redirige a `/v2/introduction`.
 
 ```json
 "redirects": [
@@ -46,7 +46,7 @@ Para hacer coincidir una ruta comodín, usa `*` después de un parámetro. En es
   ### Redirecciones con comodines parciales
 </div>
 
-Utiliza comodines parciales para coincidir con segmentos de URL que empiezan con un prefijo determinado.
+Usa comodines parciales para hacer coincidir segmentos de URL que empiecen por un prefijo específico.
 
 ```json
 "redirects": [
@@ -57,9 +57,9 @@ Utiliza comodines parciales para coincidir con segmentos de URL que empiezan con
 ]
 ```
 
-Esto hace coincidir cualquier URL con la ruta `/articles/concepts-`, como `/articles/concepts-getting-started` y `/articles/concepts-overview`, y las redirige todas a `/collections/overview`.
+Esto coincide con cualquier URL con la ruta `/articles/concepts-`, como `/articles/concepts-getting-started` y `/articles/concepts-overview`, y las redirige todas a `/collections/overview`.
 
-También puedes sustituir el valor del comodín capturado en el destino.
+También puedes sustituir en el destino el valor del comodín capturado.
 
 ```json
 "redirects": [
@@ -70,13 +70,13 @@ También puedes sustituir el valor del comodín capturado en el destino.
 ]
 ```
 
-Esto redirige `/old/article-123` a `/new/article-123`, manteniendo el valor capturado tras el prefijo.
+Esto redirige `/old/article-123` a `/new/article-123`, conservando el valor capturado después del prefijo.
 
 <div id="avoid-infinite-redirects">
-  ### Evitar redirecciones infinitas
+  ### Evita las redirecciones infinitas
 </div>
 
-Para evitar bucles infinitos, no crees redirecciones circulares en las que unas rutas redirijan a otras y viceversa.
+Para evitar bucles infinitos, no crees redirecciones circulares en las que las rutas se redirijan unas a otras.
 
 ```json
 "redirects": [
@@ -92,10 +92,10 @@ Para evitar bucles infinitos, no crees redirecciones circulares en las que unas 
 ```
 
 <div id="check-for-broken-links">
-  ## Comprobar enlaces rotos
+  ## Comprueba si hay enlaces rotos
 </div>
 
-Comprueba si hay enlaces rotos con la [CLI](/es/installation).
+Detecta enlaces rotos con la [CLI](/es/installation).
 
 ```bash
 mint broken-links

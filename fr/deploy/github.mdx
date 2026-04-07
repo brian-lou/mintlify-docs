@@ -1,31 +1,31 @@
 ---
 title: "GitHub"
-description: "Connectez un dépôt GitHub pour des déploiements automatisés, des aperçus de pull requests et une synchronisation continue."
+description: "Connectez un dépôt GitHub pour des déploiements automatisés, des prévisualisations de pull requests et une synchronisation continue."
 keywords: ["GitHub App","connexion au dépôt","déploiements automatisés"]
 ---
 
-Mintlify utilise l’application GitHub (GitHub App) pour synchroniser automatiquement votre documentation avec votre dépôt GitHub.
+Mintlify utilise une GitHub App pour synchroniser automatiquement votre documentation avec votre dépôt GitHub.
 
 <Tip>
   **Avez-vous besoin de la GitHub App ?**
 
-  - **Dépôt hébergé par Mintlify** dans l'organisation `mintlify-community` : non. La GitHub App est déjà configurée.
-  - **Votre propre dépôt** : oui. Installez la GitHub App pour activer les déploiements automatiques lorsque vous envoyez des modifications.
+  * **Dépôt hébergé par Mintlify** dans l’organisation `mintlify-community` : Non. La GitHub App est déjà configurée.
+  * **Votre propre dépôt** : Oui. Installez la GitHub App pour activer les déploiements automatiques lorsque vous push des modifications.
 
   Consultez votre dépôt sur la page [Git Settings](https://dashboard.mintlify.com/settings/deployment/git-settings) de votre tableau de bord.
 </Tip>
 
-Si votre documentation se trouve dans un dépôt privé appartenant à l'organisation Mintlify, la GitHub App est automatiquement configurée et gérée par Mintlify. Vous pouvez utiliser l’éditeur web pour apporter des modifications à votre documentation. Si vous souhaitez travailler sur votre documentation en local, clonez ce dépôt dans votre propre organisation et mettez à jour vos paramètres Git pour utiliser votre propre dépôt.
+Si votre dépôt est un dépôt privé appartenant à l’organisation Mintlify, la GitHub App est automatiquement configurée et gérée par Mintlify. Vous pouvez utiliser l’éditeur web pour modifier votre documentation. Si vous souhaitez travailler sur votre documentation en local, clonez le dépôt dans votre propre organisation et mettez à jour vos paramètres Git pour utiliser votre propre dépôt.
 
 <div id="clone-to-your-own-repository">
-  ## Cloner dans votre propre dépôt
+  ## Cloner vers votre propre dépôt
 </div>
 
-Si vous avez sauté l’étape de connexion à votre propre dépôt Git lors de l’onboarding, votre documentation se trouve dans un dépôt privé détenu par l’organisation Mintlify. Pour la déplacer vers votre propre compte ou organisation :
+Si vous n’avez pas connecté votre propre dépôt Git lors de la configuration initiale, votre documentation se trouve dans un dépôt privé appartenant à l’organisation Mintlify. Pour la déplacer vers votre propre compte ou organisation :
 
 1. Accédez à [Git Settings](https://dashboard.mintlify.com/settings/deployment/git-settings) dans votre tableau de bord.
-2. Cliquez sur **Clone as Private** ou **Clone as Public**. Les dépôts publics permettent à n’importe qui de consulter le code source de votre documentation et de soumettre des tickets ou des suggestions. Les dépôts privés en restreignent l’accès à votre équipe.
-3. Installez l’application GitHub en suivant les étapes décrites dans [Install the GitHub App](#install-the-github-app) ci-dessous.
+2. Cliquez sur **Clone as Private** ou **Clone as Public**. Les dépôts publics permettent à n’importe qui de consulter les sources de votre documentation et de soumettre des problèmes ou des suggestions. Les dépôts privés en réservent l’accès à votre équipe.
+3. Installez la GitHub App en suivant les étapes indiquées dans [Installer la GitHub App](#install-the-github-app) ci-dessous.
 
 <div id="alternative-download-and-create-your-own-repository">
   ### Alternative : téléchargez et créez votre propre dépôt
@@ -34,144 +34,135 @@ Si vous avez sauté l’étape de connexion à votre propre dépôt Git lors de 
 Si vous souhaitez un dépôt privé sans accorder d’autorisations OAuth étendues, vous pouvez transférer votre documentation manuellement :
 
 1. Accédez à [Git Settings](https://dashboard.mintlify.com/settings/deployment/git-settings) dans votre tableau de bord.
-2. Téléchargez votre documentation au format fichier ZIP.
+2. Téléchargez votre documentation au format zip.
 3. Créez un nouveau dépôt sur GitHub ou GitLab.
-4. Extrayez le contenu de l’archive ZIP et poussez-le vers votre nouveau dépôt.
-5. Revenez dans [Git Settings](https://dashboard.mintlify.com/settings/deployment/git-settings) et connectez votre nouveau dépôt à Mintlify.
-6. Installez l’application GitHub en suivant les étapes indiquées dans [Installer l’application GitHub](#install-the-github-app) ci-dessous.
+4. Extrayez le contenu du fichier zip et push it vers votre nouveau dépôt.
+5. Revenez à [Git Settings](https://dashboard.mintlify.com/settings/deployment/git-settings) et connectez votre nouveau dépôt à Mintlify.
+6. Installez la GitHub App en suivant les étapes de [Install the GitHub App](#install-the-github-app) ci-dessous.
 
 <div id="install-the-github-app">
-  ## Installer l’application GitHub
+  ## Installer la GitHub App
 </div>
 
 <Note>
-  Vous devez être propriétaire de l’organisation ou disposer des autorisations d’administrateur sur un dépôt pour installer l’application. Si vous ne disposez pas des autorisations nécessaires, le propriétaire du dépôt doit approuver la demande d’installation.
+  Vous devez être propriétaire de l’organisation ou disposer des droits d’administrateur sur un dépôt pour installer l’application. Si vous n’avez pas les autorisations nécessaires, le propriétaire du dépôt doit approuver la demande d’installation.
 </Note>
 
-Installez l’application GitHub Mintlify depuis votre [tableau de bord](https://dashboard.mintlify.com/settings/organization/github-app).
+Installez la GitHub App Mintlify depuis votre [tableau de bord](https://dashboard.mintlify.com/settings/organization/github-app).
 
 <Tip>
   Nous vous recommandons d’accorder l’accès uniquement à votre dépôt de documentation.
 </Tip>
 
 <Frame>
-  <img
-    className="h-80"
-    alt="Page d’installation de l’application GitHub Mintlify avec l’option « Only select repositories » sélectionnée."
-    src="/images/github/select-repos.png"
-  />
+  <img className="h-80" alt="Page d’installation de la GitHub App Mintlify avec l’option « Only select repositories » sélectionnée." src="/images/github/select-repos.png" />
 </Frame>
 
 <div id="permissions">
   ## Autorisations
 </div>
 
-Lorsque vous installez l'application GitHub, accordez les autorisations suivantes.
+Lorsque vous installez la GitHub App, accordez les autorisations suivantes.
 
-Autorisations de lecture :
+Autorisations en lecture :
 
-- `metadata` : Informations de base sur le dépôt
+* `metadata` : Informations de base sur le dépôt
 
-Autorisations de lecture et d’écriture :
+Autorisations en lecture et en écriture :
 
-- `checks` : Créer des vérifications de statut sur les pull requests
-- `code` : Lire les modifications de fichiers lorsque vous validez des commits sur votre branche de documentation
-- `deployments` : Générer des déploiements de prévisualisation pour les pull requests
-- `pull requests` : Créer des branches et des pull requests depuis l’éditeur web
+* `checks` : Créer des vérifications de statut sur les pull requests
+* `code` : Lire les modifications de fichiers lorsque vous ajoutez un commit à votre branche de documentation
+* `deployments` : Générer des déploiements de prévisualisation pour les pull requests
+* `pull requests` : Créer des branches et des pull requests depuis l’éditeur web
 
 <Info>
-  L’application n’accède qu’aux dépôts auxquels vous lui accordez explicitement l’accès. Si vous avez activé des règles de protection de branche, l’application ne peut pas pousser directement vers les branches protégées.
+  L’application accède uniquement aux dépôts pour lesquels vous lui avez explicitement accordé l’accès. Si des règles de protection de branche sont activées, l’application ne peut pas faire de push directement sur les branches protégées.
 </Info>
 
 <div id="manage-repository-access">
-  ## Gérer l'accès aux dépôts
+  ## Gérer l’accès aux dépôts
 </div>
 
-Lors de l'installation de l'application GitHub, vous pouvez accorder l'accès à l'ensemble de vos dépôts ou uniquement à certains d'entre eux. Nous recommandons de n'accorder l'accès qu'à votre dépôt de documentation et aux dépôts que vous souhaitez fournir comme contexte à l'agent. Vous pouvez modifier cette sélection à tout moment dans vos [paramètres de l'application GitHub](https://github.com/apps/mintlify/installations/new).
+Lorsque vous installez la GitHub App, vous pouvez accorder l’accès à tous vos dépôts ou seulement à certains d’entre eux. Nous vous recommandons d’accorder l’accès uniquement à votre dépôt de documentation ainsi qu’aux dépôts que vous souhaitez fournir comme contexte pour l’agent. Vous pouvez modifier cette sélection à tout moment dans les [paramètres de votre GitHub App](https://github.com/apps/mintlify/installations/new).
 
 <div id="configure-docs-source">
   ## Configurer la source de la documentation
 </div>
 
-Modifiez l’organisation, le dépôt ou la branche que votre documentation utilise pour la génération dans la section [Git Settings](https://dashboard.mintlify.com/settings/deployment/git-settings) de votre tableau de bord.
+Modifiez l’organisation, le dépôt ou la branche utilisés pour générer votre documentation dans la section [Git Settings](https://dashboard.mintlify.com/settings/deployment/git-settings) de votre tableau de bord.
 
 <div id="github-enterprise-with-ip-allowlists">
-  ## GitHub Enterprise avec listes d'adresses IP autorisées
+  ## GitHub Enterprise avec liste d’autorisation d’adresses IP
 </div>
 
-Si votre organisation GitHub Enterprise Cloud a activé une liste d'adresses IP autorisées, vous devez ajouter l'adresse IP de sortie (egress) de Mintlify (`54.242.90.151`) à votre liste pour que l'application GitHub fonctionne correctement.
+Si une liste d’autorisation d’adresses IP est activée pour votre organisation GitHub Enterprise Cloud, vous devez ajouter l’adresse IP de sortie de Mintlify (`54.242.90.151`) à cette liste pour que la GitHub App fonctionne correctement.
 
-Suivez la [documentation de GitHub](https://docs.github.com/en/enterprise-cloud@latest/organizations/keeping-your-organization-secure/managing-security-settings-for-your-organization/managing-allowed-ip-addresses-for-your-organization) pour configurer votre liste d'adresses IP autorisées.
+Suivez la [documentation GitHub](https://docs.github.com/en/enterprise-cloud@latest/organizations/keeping-your-organization-secure/managing-security-settings-for-your-organization/managing-allowed-ip-addresses-for-your-organization) pour configurer votre liste d’autorisation d’adresses IP.
 
 <div id="troubleshooting">
-  ## Résolution des problèmes
+  ## Dépannage
 </div>
 
 <div id="deployment-not-triggering-automatically">
-  ### Le déploiement ne se déclenche pas automatiquement
+  ### Le déploiement ne se lance pas automatiquement
 </div>
 
-Si les push vers votre dépôt ne déclenchent pas de déploiements, vérifiez les problèmes potentiels suivants.
+Si les pushs vers votre dépôt ne déclenchent pas de déploiement, vérifiez les points suivants.
 
 <AccordionGroup>
-  <Accordion title="Vérifier l'installation de l'application GitHub">
-    Vérifiez que la bonne application est installée sur le bon dépôt.
+  <Accordion title="Vérifier l’installation de GitHub App">
+    Vérifiez que l’application est installée sur le bon dépôt.
 
-    1. Allez dans les [paramètres de l'application GitHub](https://dashboard.mintlify.com/settings/organization/github-app) de votre tableau de bord.
-    1. Vérifiez que votre dépôt figure dans la liste des installations actives de l'application.
+    1. Accédez aux [paramètres de GitHub App](https://dashboard.mintlify.com/settings/organization/github-app) dans votre tableau de bord.
+    2. Vérifiez que votre dépôt figure dans la liste des installations actives de l’application.
   </Accordion>
-  <Accordion title="Vérifier la branche de déploiement">
-    Assurez-vous que vous poussez vers la bonne branche.
 
-    1. Allez dans les [paramètres Git](https://dashboard.mintlify.com/settings/deployment/git-settings)
-    1. Vérifiez que la branche indiquée dans votre tableau de bord correspond à la branche vers laquelle vous poussez.
+  <Accordion title="Vérifier la branche de déploiement">
+    Assurez-vous d’effectuer vos pushs vers la bonne branche.
+
+    1. Accédez à [Git Settings](https://dashboard.mintlify.com/settings/deployment/git-settings)
+    2. Vérifiez que la branche indiquée dans votre tableau de bord correspond à celle vers laquelle vous effectuez vos pushs.
   </Accordion>
 </AccordionGroup>
 
 <div id="github-app-connection-issues">
-  ### Problèmes de connexion avec l’application GitHub
+  ### Problèmes de connexion à GitHub App
 </div>
 
-Si vous rencontrez des problèmes avec l’application GitHub, la réinitialisation de la connexion permet de résoudre la plupart des cas.
+Si vous rencontrez des problèmes avec GitHub App, réinitialiser la connexion permet généralement d’en résoudre la plupart.
 
 <Steps>
-  <Step title="Désinstallez l’application Mintlify via GitHub.">
-    1. Dans GitHub, accédez à [installations](https://github.com/settings/installations) et sélectionnez **Configure** à côté de l’application Mintlify. Faites défiler la page vers le bas et sélectionnez **Uninstall**.
+  <Step title="Désinstallez l’application Mintlify depuis GitHub.">
+    1. Dans GitHub, accédez à [installations](https://github.com/settings/installations) et sélectionnez **Configure** à côté de l’application Mintlify. Faites défiler la page vers le bas, puis sélectionnez **Uninstall**.
     2. Accédez à [Authorized GitHub Apps](https://github.com/settings/apps/authorizations) et sélectionnez **Revoke** à côté de l’application Mintlify.
   </Step>
+
   <Step title="Réinstallez l’application Mintlify.">
-    1. Dans votre tableau de bord Mintlify, accédez à [Git Settings](https://dashboard.mintlify.com/settings/deployment/git-settings) et installez l’application GitHub.
+    1. Dans votre tableau de bord Mintlify, accédez à [Git Settings](https://dashboard.mintlify.com/settings/deployment/git-settings) et installez GitHub App.
     2. Autorisez votre compte dans la section [My Profile](https://dashboard.mintlify.com/settings/account) de votre tableau de bord.
   </Step>
 </Steps>
 
 <div id="feedback-add-ons-are-unavailable">
-  ### Les modules complémentaires de feedback sont indisponibles
+  ### Les add-ons de retour ne sont pas disponibles
 </div>
 
-Les fonctionnalités de suggestions de modification et de signalement de problèmes ne sont disponibles que pour les dépôts GitHub publics. Si ces options sont désactivées dans votre tableau de bord, vérifiez la visibilité de votre dépôt.
+Les fonctionnalités de retour pour les suggestions de modification et le signalement de problèmes sont uniquement disponibles pour les dépôts GitHub publics. Si ces options sont désactivées dans votre tableau de bord, vérifiez la visibilité de votre dépôt.
 
 Si votre dépôt est public et que vous ne pouvez pas activer les options de suggestions de modification ou de signalement de problèmes dans votre tableau de bord, revalidez vos paramètres Git.
 
 <Steps>
-  <Step title="Accéder à Git Settings">
+  <Step title="Accédez à Git Settings">
     Accédez à [Git Settings](https://dashboard.mintlify.com/settings/deployment/git-settings) dans votre tableau de bord.
   </Step>
-  <Step title="Revalider vos paramètres">
-    Cliquez sur la coche verte dans le coin du panneau des paramètres Git pour revalider les paramètres de votre dépôt. Cela force une mise à jour de vos paramètres de dépôt afin de refléter si votre dépôt est public ou privé.
+
+  <Step title="Revalidez vos paramètres">
+    Cliquez sur la coche verte dans le coin de l’encadré Git Settings pour revalider les paramètres de votre dépôt. Cela force la mise à jour des paramètres de votre dépôt afin d’indiquer s’il est public ou privé.
 
     <Frame>
-      <img
-        src="/images/github/revalidate-settings-light.png"
-        alt="La page Git Settings dans le tableau de bord Mintlify. Une flèche orange pointe vers la coche verte qui revalide les paramètres du dépôt."
-        className="block dark:hidden"
-      />
+      <img src="/images/github/revalidate-settings-light.png" alt="La page Git Settings dans le tableau de bord Mintlify. Une flèche orange pointe vers la coche verte qui revalide les paramètres du dépôt." className="block dark:hidden" />
 
-      <img
-        src="/images/github/revalidate-settings-dark.png"
-        alt="La page Git Settings dans le tableau de bord Mintlify. Une flèche orange pointe vers la coche verte qui revalide les paramètres du dépôt."
-        className="hidden dark:block"
-      />
+      <img src="/images/github/revalidate-settings-dark.png" alt="La page Git Settings dans le tableau de bord Mintlify. Une flèche orange pointe vers la coche verte qui revalide les paramètres du dépôt." className="hidden dark:block" />
     </Frame>
   </Step>
 </Steps>

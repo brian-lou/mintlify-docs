@@ -1,7 +1,7 @@
 ---
-title: "Colaborar en el editor web"
-sidebarTitle: "Colaborar"
-description: "Trabaja en equipo en la documentación con ramas, pull requests, despliegues de vista previa y enlaces del editor para compartir."
+title: "Colabora en el editor web"
+sidebarTitle: "Colabora"
+description: "Trabaja en la documentación con tu equipo usando ramas, pull requests, despliegues de vista previa y enlaces del editor para compartir."
 keywords: ["editor", "colaboración", "ramas", "pull requests", "despliegues de vista previa", "enlaces para compartir"]
 ---
 
@@ -10,40 +10,40 @@ Colabora con tu equipo en la documentación usando flujos de trabajo basados en 
 Si no estás familiarizado con Git, consulta [Conceptos de Git](/es/guides/git-concepts).
 
 <div id="branch-based-collaboration">
-  ## Colaboración basada en ramas
+  ## Colaboración con ramas
 </div>
 
-Utiliza ramas para trabajar en actualizaciones de la documentación en paralelo sin afectar tu sitio en producción.
+Usa ramas para trabajar en actualizaciones de la documentación en paralelo sin afectar tu sitio en producción.
 
 <div id="why-use-branches">
   ### Por qué usar ramas
 </div>
 
-* **Aislar cambios**: Trabaja en actualizaciones sin afectar tu documentación publicada.
-* **Revisar antes de publicar**: Recibe comentarios de los miembros del equipo antes de que los cambios se publiquen.
+* **Aislar cambios**: Trabaja en las actualizaciones sin afectar la documentación publicada.
+* **Revisar antes de publicar**: Recibe comentarios del equipo antes de que los cambios se publiquen.
 * **Trabajo en paralelo**: Varios miembros del equipo pueden trabajar en distintas ramas al mismo tiempo.
 
 <div id="recommended-workflow">
   ## Flujo de trabajo recomendado
 </div>
 
-Usa pull requests para proponer cambios y colaborar con tu equipo antes de fusionarlos con tu documentación en producción. Este flujo de trabajo garantiza que tu equipo revise los cambios antes de publicarlos y mantiene un historial claro de actualizaciones.
+Usa pull requests para proponer cambios y colaborar con tu equipo antes de integrarlos en tu documentación publicada. Este flujo de trabajo garantiza que tu equipo revise los cambios antes de publicarlos y mantiene un historial claro de las actualizaciones.
 
 <Steps>
   <Step title="Crear una pull request">
-    Crea un pull request desde el editor cuando estés listo para publicar tus cambios. Consulta <a href="/es/editor/publish">Publicar cambios en el editor web</a> para obtener más información sobre el uso de pull requests.
+    Crea una pull request desde el editor cuando estés listo para publicar tus cambios. Consulta <a href="/es/editor/publish">Publicar cambios en el editor web</a> para obtener más información sobre cómo usar pull requests.
   </Step>
 
   <Step title="Revisar pull requests">
-    Revisa los pull requests en tu proveedor de Git, como GitHub o GitLab.
+    Revisa las pull requests en tu proveedor de Git, como GitHub o GitLab.
   </Step>
 
   <Step title="Responder a los comentarios">
-    Cuando los revisores soliciten cambios, realiza los cambios solicitados y guarda tus cambios. Los cambios adicionales se envían automáticamente al pull request existente.
+    Cuando los revisores soliciten cambios, haz los cambios solicitados y guarda los cambios. Los cambios adicionales se envían automáticamente a la pull request existente.
   </Step>
 
   <Step title="Fusionar pull requests">
-    Fusiona tu pull request después de abordar todos los cambios solicitados, que los revisores requeridos aprueben el pull request y que todas las comprobaciones automatizadas se ejecuten correctamente.
+    Fusiona tu pull request después de haber atendido todos los cambios solicitados, de que los revisores obligatorios la aprueben y de que se hayan superado todas las comprobaciones automáticas.
   </Step>
 </Steps>
 
@@ -51,15 +51,15 @@ Usa pull requests para proponer cambios y colaborar con tu equipo antes de fusio
   ## Despliegues de vista previa
 </div>
 
-Los despliegues de vista previa crean URL temporales donde puedes ver tus cambios renderizados antes de que se publiquen. Usa los despliegues de vista previa para recopilar opiniones sobre los cambios.
+Los despliegues de vista previa crean URL temporales donde puedes ver cómo se verán tus cambios antes de que se publiquen. Usa los despliegues de vista previa para recopilar comentarios sobre los cambios.
 
 <div id="access-preview-deployments">
-  ### Acceder a los despliegues de vista previa
+  ### Accede a los despliegues de vista previa
 </div>
 
 1. Haz clic en **Share** en la barra de herramientas del editor.
-2. Haz clic en **Preview** para abrir el despliegue de vista previa en una nueva pestaña.
-3. La URL de vista previa muestra tu documentación con todos los cambios guardados.
+2. Haz clic en **Preview** para abrir el despliegue de vista previa en una pestaña nueva.
+3. La URL de vista previa muestra tu documentación con todos los cambios guardados ya aplicados.
 
 <Frame>
   <img src="/images/editor/share-preview-light.png" className="block dark:hidden" alt="Botón Share en la barra de herramientas del editor" />
@@ -71,21 +71,21 @@ Los despliegues de vista previa crean URL temporales donde puedes ver tus cambio
   ### Compartir vistas previas
 </div>
 
-Comparte la URL de la implementación de la vista previa con los miembros del equipo para recibir comentarios. Las vistas previas se actualizan automáticamente cuando guardas cambios adicionales.
+Comparte la URL de la implementación de vista previa con los miembros del equipo para recopilar comentarios. Las vistas previas se actualizan automáticamente cuando guardas más cambios.
 
 <div id="preview-authentication">
   ### Autenticación de vista previa
 </div>
 
-Las URL de vista previa son accesibles públicamente de forma predeterminada. Habilita la autenticación de vista previa en la página de [Add-ons](https://dashboard.mintlify.com/products/addons) de tu panel para restringir el acceso a los miembros autenticados de tu organización.
+Las URL de vista previa son públicas de forma predeterminada. Habilita la autenticación de vista previa en la página [Add-ons](https://dashboard.mintlify.com/products/addons) de tu panel para restringir el acceso a los miembros autenticados de la organización.
 
 <div id="share-editor-links">
   ## Compartir enlaces del editor
 </div>
 
-Comparte un enlace directo a una página específica en el editor con tu equipo. Usa enlaces del editor para colaborar en actualizaciones y realizar cambios en las páginas.
+Comparte con tu equipo un enlace directo a una página específica en el editor. Usa los enlaces del editor para colaborar en las actualizaciones y realizar cambios en las páginas.
 
-Cuando abres una página, el editor guarda la ruta en la URL. Copia la URL de la barra de direcciones de tu navegador para compartirla con los miembros del equipo que tengan acceso al editor.
+Al abrir una página, el editor guarda la ruta en la URL. Copia la URL de la barra de direcciones del navegador para compartirla con compañeros de equipo que tengan acceso al editor.
 
 El formato de la URL es:
 
@@ -98,5 +98,5 @@ Por ejemplo, `https://dashboard.mintlify.com/acme/docs/editor/main?file=guides/q
 Cualquier persona con acceso a tu organización de Mintlify puede usar el enlace para abrir el archivo directamente en el editor.
 
 <Tip>
-  Cuando compartas una página, indica en qué rama estás trabajando para que las personas puedan confirmar que están viendo la versión correcta.
+  Cuando compartas una página, indícales en qué rama estás trabajando para que puedan confirmar que están viendo la versión correcta.
 </Tip>

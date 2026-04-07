@@ -1,20 +1,20 @@
 ---
 title: "折叠面板"
-description: "使用折叠面板来显示或隐藏内容。"
-keywords: ["折叠面板", "可折叠内容", "可展开区域", "渐进式呈现"]
+description: "使用折叠面板来显示和隐藏内容。"
+keywords: ["折叠面板", "可折叠内容", "可展开部分", "渐进式展示"]
 ---
 
 import IconsOptional from "/snippets/zh/icons-optional.mdx";
 
-折叠面板使用户能够展开和收起内容区域。使用折叠面板进行渐进式信息展示，并帮助组织信息。
+折叠面板允许用户展开和折叠内容区域。使用折叠面板可逐步展示内容，并更好地组织信息。
 
 
 <div id="single-accordion">
-  ## 单个手风琴组件
+  ## 单个 折叠面板
 </div>
 
-<Accordion title="我是一个手风琴组件（Accordion）。">
-  你可以在这里放置任何内容，包括其他组件，比如代码：
+<Accordion title="我是一个 折叠面板。">
+  你可以在这里放入任何内容，包括其他组件，比如代码：
 
   ```java HelloWorld.java
    class HelloWorld {
@@ -41,14 +41,14 @@ import IconsOptional from "/snippets/zh/icons-optional.mdx";
 
 
 <div id="accordion-groups">
-  ## 手风琴分组
+  ## 折叠面板分组
 </div>
 
-使用 `<AccordionGroup>` 将相关的手风琴组合在一起。这样可以创建一个统一的手风琴分组，每个手风琴都可以单独展开或收起。
+使用 `<AccordionGroup>` 将相关的折叠面板组合在一起。这样可以创建一个统一的折叠面板区块，并且每个面板都可以单独展开或收起。
 
 <AccordionGroup>
-  <Accordion title="入门">
-    你可以在手风琴中嵌套其他组件。
+  <Accordion title="快速开始">
+    你可以在 折叠面板 中放入其他组件。
 
     ```java HelloWorld.java
     class HelloWorld {
@@ -60,11 +60,11 @@ import IconsOptional from "/snippets/zh/icons-optional.mdx";
   </Accordion>
 
   <Accordion title="高级功能" icon="bot">
-    添加图标可以让手风琴在视觉上更易区分并便于快速浏览。
+    添加图标，让折叠面板在视觉上更容易区分，也更便于快速浏览。
   </Accordion>
 
-  <Accordion title="故障排除">
-    将相关内容按组进行组织管理。
+  <Accordion title="故障排查">
+    将相关内容整理到同一分组中。
   </Accordion>
 </AccordionGroup>
 
@@ -98,15 +98,15 @@ import IconsOptional from "/snippets/zh/icons-optional.mdx";
 </div>
 
 <ResponseField name="title" type="string" required>
-  在 Accordion 预览中显示的标题。
+  折叠面板 预览中的标题。
 </ResponseField>
 
 <ResponseField name="description" type="string">
-  在 Accordion 预览中标题下方显示的详细描述。
+  折叠面板 预览中标题下方的说明文字。
 </ResponseField>
 
 <ResponseField name="defaultOpen" type="boolean" default="false">
-  是否默认展开 Accordion。
+  折叠面板 是否默认展开。
 </ResponseField>
 
 <IconsOptional />

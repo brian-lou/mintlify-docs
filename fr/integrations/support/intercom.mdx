@@ -1,27 +1,25 @@
 ---
 title: "Intercom"
-description: "Connectez Intercom pour la messagerie client intégrée à l’application."
-keywords: ["Intégration Intercom", "widget Intercom", "ID d’application", "messagerie intégrée à l’application"]
+description: "Connectez Intercom pour la messagerie client intégrée à l'application."
+keywords: ["intégration Intercom", "widget Intercom", "ID d'application", "messagerie intégrée à l'application"]
 ---
 
 Ajoutez ce qui suit à votre fichier `docs.json` pour ajouter un widget [Intercom](https://www.intercom.com).
 
 <CodeGroup>
+  ```json Options d'intégration dans docs.json
+  "integrations": {
+        "intercom": {
+              "appId": "APP_ID"
+        }
+  }
+  ```
 
-```json Options d'intégration dans docs.json
-"integrations": {
-      "intercom": {
-            "appId": "APP_ID"
-      }
-}
-```
-
-```json Exemple
-"integrations": {
-      "intercom": {
-            "appId": "abc123def4"
-      }
-}
-```
-
+  ```json Exemple
+  "integrations": {
+        "intercom": {
+              "appId": "abc123def4"
+        }
+  }
+  ```
 </CodeGroup>

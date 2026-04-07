@@ -1,6 +1,6 @@
 ---
 title: "Bot de Discord"
-description: "Añade un bot a tu servidor de Discord que responda preguntas basadas en tu documentación."
+description: "Añade un bot a tu servidor de Discord que responda preguntas basándose en tu documentación."
 keywords: ["Discord", "bot", "preguntas y respuestas", "atención al cliente"]
 ---
 
@@ -8,49 +8,51 @@ keywords: ["Discord", "bot", "preguntas y respuestas", "atención al cliente"]
   Las integraciones de Discord están disponibles en los [planes Pro y Enterprise](https://mintlify.com/pricing?ref=discord) con acceso al asistente.
 </Info>
 
-El bot de Discord ayuda a tu comunidad con respuestas en tiempo real basadas en tu documentación. El bot usa el asistente de Mintlify para buscar en tus docs y proporcionar respuestas precisas con referencias, de modo que siempre esté actualizado.
+El bot de Discord ayuda a tu comunidad con respuestas en tiempo real basadas en tu documentación. Usa el asistente de Mintlify para buscar en tu documentación y ofrecer respuestas precisas con citas, por lo que siempre está actualizado.
 
-El bot de Discord solo funciona en canales públicos. Responde a menciones con `@` o a todos los mensajes en un canal específico.
+El bot de Discord solo funciona en canales públicos. Responde a las menciones con `@` o a todos los mensajes de un canal específico.
 
-Cada mensaje enviado por el bot de Discord se descuenta de tu uso de mensajes del asistente.
+Cada mensaje enviado por el bot de Discord cuenta para tu uso de mensajes del asistente.
 
 <div id="add-the-discord-bot-to-your-server">
   ## Añade el bot de Discord a tu servidor
 </div>
 
 <Note>
-  Debes tener el permiso "Manage Server" en Discord para añadir el bot.
+  Debes tener el permiso &quot;Manage Server&quot; en Discord para añadir el bot.
 </Note>
 
 1. Ve a la página de [Assistant](https://dashboard.mintlify.com/products/assistant) en tu panel de control.
-1. En la tarjeta de Discord, haz clic en **Configure**. Se abrirá Discord.
+2. En la tarjeta de Discord, haz clic en **Configure**. Se abrirá Discord.
    <Frame>
      <img src="/images/assistant/connected-apps-light.png" alt="La sección de aplicaciones conectadas de la página de Assistant." className="block dark:hidden" />
+
      <img src="/images/assistant/connected-apps-dark.png" alt="La sección de aplicaciones conectadas de la página de Assistant." className="hidden dark:block" />
    </Frame>
-1. En Discord, selecciona el servidor al que quieres añadir el bot.
-1. Autoriza al bot para que pueda acceder a tu servidor.
-1. Menciona al bot en un canal para añadirlo. El nombre predeterminado del bot es `@Mintlify Bot`.
+3. En Discord, selecciona el servidor al que quieres añadir el bot.
+4. Autoriza al bot para acceder a tu servidor.
+5. Menciona al bot en un canal para añadirlo. El nombre predeterminado del bot es `@Mintlify Bot`.
 
 <div id="create-an-ask-ai-channel">
   ## Crea un canal `#ask-ai`
 </div>
 
-Para ayudar a tu comunidad a obtener respuestas rápidamente a sus preguntas, el bot puede responder a todos los mensajes en un canal que elijas. De forma predeterminada, el bot responde a todos los mensajes en canales llamados `#ask-ai`. Crea un canal `#ask-ai` e informa a tu comunidad que el bot responderá a los mensajes en ese canal.
+Para ayudar a tu comunidad a obtener respuestas rápidamente, el bot puede responder a todos los mensajes de un canal que elijas. De forma predeterminada, el bot responde a todos los mensajes de los canales llamados `#ask-ai`. Crea un canal `#ask-ai` y avisa a tu comunidad de que el bot responderá a los mensajes de ese canal.
 
-Si quieres que el bot responda a mensajes en un canal diferente, selecciona un canal en el [menú de configuración](https://dashboard.mintlify.com/products/assistant/settings/integrations) del bot de Discord.
+Si quieres que el bot responda a los mensajes de otro canal, selecciona uno en el [menú de configuración](https://dashboard.mintlify.com/products/assistant/settings/integrations) del bot de Discord.
 
 <Frame>
   <img src="/images/assistant/discord-configure-light.png" alt="El panel de configuración de Discord en modo claro." className="block dark:hidden" />
+
   <img src="/images/assistant/discord-configure-dark.png" alt="El panel de configuración de Discord en modo oscuro." className="hidden dark:block" />
 </Frame>
 
 Consulta [Starting Your First Discord Server](https://discord.com/blog/starting-your-first-discord-server) en el blog de Discord para obtener más información sobre cómo crear un canal.
 
 <div id="manage-the-discord-bot">
-  ## Administrar el bot de Discord
+  ## Gestiona el bot de Discord
 </div>
 
-Después de agregar el bot de Discord a tu servidor, puedes administrarlo o eliminarlo desde la pestaña [Integrations](https://dashboard.mintlify.com/products/assistant/settings/integrations) de tu panel de control.
+Después de añadir el bot de Discord a tu servidor, puedes administrarlo o eliminarlo desde la pestaña [Integrations](https://dashboard.mintlify.com/products/assistant/settings/integrations) de tu panel.
 
-En el menú de configuración del bot de Discord, personaliza el bot cambiando su avatar o nombre y elige en qué canal debe responder automáticamente a todos los mensajes.
+En el menú de configuración del bot de Discord, personalízalo cambiando su avatar o nombre y elige en qué canal responderá automáticamente a todos los mensajes.

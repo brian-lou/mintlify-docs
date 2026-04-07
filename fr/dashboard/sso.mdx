@@ -1,17 +1,17 @@
 ---
 title: "Authentification unique (SSO)"
-description: "Configurer SAML ou OIDC avec des fournisseurs d'identité pour l'authentification de votre équipe."
-keywords: ["SSO", "authentification SAML", "intégration Okta", "Microsoft Entra", "fournisseur d'identité", "JIT", "provisionnement", "OIDC"]
+description: "Configurez SAML ou OIDC avec des fournisseurs d’identité pour authentifier votre équipe."
+keywords: ["SSO", "authentification SAML", "intégration Okta", "Microsoft Entra", "fournisseur d’identité", "JIT", "provisionnement", "OIDC"]
 ---
 
 <Info>
-  Le SSO est disponible avec les [offres Enterprise](https://mintlify.com/pricing?ref=sso).
+  Le SSO est disponible avec les [forfaits Enterprise](https://mintlify.com/pricing?ref=sso).
 </Info>
 
-Les administrateurs des comptes Enterprise peuvent configurer le SSO SAML pour Okta ou Microsoft Entra directement depuis le tableau de bord Mintlify. Pour d'autres fournisseurs, comme Google Workspace ou Okta OIDC, [contactez-nous](mailto:support@mintlify.com) afin de configurer le SSO.
+Les administrateurs Enterprise peuvent configurer le SSO SAML pour Okta ou Microsoft Entra directement dans le tableau de bord Mintlify. Pour les autres fournisseurs, comme Google Workspace ou Okta OIDC, [contactez-nous](mailto:support@mintlify.com) pour configurer le SSO.
 
 <div id="set-up-sso">
-  ## Configurer l’authentification unique (SSO)
+  ## Configurer le SSO
 </div>
 
 <div id="okta">
@@ -23,27 +23,31 @@ Les administrateurs des comptes Enterprise peuvent configurer le SSO SAML pour O
     1. Dans votre tableau de bord Mintlify, accédez à la page [Single Sign-On](https://dashboard.mintlify.com/settings/organization/sso).
     2. Cliquez sur **Configure**.
     3. Sélectionnez **Okta SAML**.
-    4. Copiez l’**URL Single sign on** et l’**Audience URI**.
+    4. Copiez l’**URL de connexion unique** et l’**URI d’audience**.
   </Step>
+
   <Step title="Créer une application SAML dans Okta">
-    1. Dans Okta, sous **Applications**, créez une nouvelle intégration d’application utilisant SAML 2.0.
-    2. Renseignez les éléments suivants à partir de Mintlify :
-        * **Single sign on URL** : l’URL que vous avez copiée depuis votre tableau de bord Mintlify
-        * **Audience URI** : l’URI que vous avez copiée depuis votre tableau de bord Mintlify
-        * **Name ID Format** : `EmailAddress`
+    1. Dans Okta, sous **Applications**, créez une nouvelle intégration d’application avec SAML 2.0.
 
-    4. Ajoutez les déclarations d’attribut suivantes :
+    2. Renseignez les éléments suivants dans Mintlify :
+       * **URL de connexion unique** : l’URL copiée depuis votre tableau de bord Mintlify
+       * **URI d’audience** : l’URI copiée depuis votre tableau de bord Mintlify
+       * **Name ID Format** : `EmailAddress`
 
-        | Name | Name format | Value |
-        | ---- | ----------- | ----- |
-        | `firstName` | Basic | `user.firstName` |
-        | `lastName` | Basic | `user.lastName` |
+    3. Ajoutez les déclarations d’attribut suivantes :
+
+       | Nom         | Format du nom | Valeur           |
+       | ----------- | ------------- | ---------------- |
+       | `firstName` | Basic         | `user.firstName` |
+       | `lastName`  | Basic         | `user.lastName`  |
   </Step>
+
   <Step title="Copier l’URL des métadonnées Okta">
     Dans Okta, accédez à l’onglet **Sign On** de votre application et copiez l’URL des métadonnées.
   </Step>
+
   <Step title="Enregistrer dans Mintlify">
-    De retour dans le tableau de bord Mintlify, collez l’URL des métadonnées et cliquez sur **Save changes**.
+    De retour dans le tableau de bord Mintlify, collez l’URL des métadonnées, puis cliquez sur **Save changes**.
   </Step>
 </Steps>
 
@@ -52,45 +56,51 @@ Les administrateurs des comptes Enterprise peuvent configurer le SSO SAML pour O
 </div>
 
 <Steps>
-  <Step title="Configurer Microsoft Entra SSO dans votre tableau de bord Mintlify">
+  <Step title="Configurer le SSO Microsoft Entra dans votre tableau de bord Mintlify">
     1. Dans votre tableau de bord Mintlify, accédez à la page [Single Sign-On](https://dashboard.mintlify.com/settings/organization/sso).
     2. Cliquez sur **Configure**.
     3. Sélectionnez **Microsoft Entra ID SAML**.
     4. Copiez l’**URL de connexion unique** et l’**URI d’audience**.
   </Step>
+
   <Step title="Créer une application d’entreprise dans Microsoft Entra">
     1. Dans Microsoft Entra, accédez à **Enterprise applications**.
     2. Sélectionnez **New application**.
     3. Sélectionnez **Create your own application**.
-    4. Sélectionnez « Integrate any other application you don't find in the gallery (Non-gallery). »
+    4. Sélectionnez &quot;Integrate any other application you don&#39;t find in the gallery (Non-gallery).&quot;
   </Step>
+
   <Step title="Configurer SAML dans Microsoft Entra">
     1. Dans Microsoft Entra, accédez à **Single Sign-On**.
     2. Sélectionnez **SAML**.
-    3. Sous **Basic SAML Configuration**, saisissez les informations suivantes&nbsp;:
-        * **Identifier (Entity ID)**&nbsp;: l’Audience URI provenant de Mintlify
-        * **Reply URL (Assertion Consumer Service URL)**&nbsp;: l’URL de connexion unique provenant de Mintlify
+    3. Sous **Basic SAML Configuration**, saisissez les éléments suivants :
+       * **Identifier (Entity ID)** : l’URI d’audience de Mintlify
+       * **Reply URL (Assertion Consumer Service URL)** : l’URL de connexion unique de Mintlify
 
-    Laissez les autres valeurs vides et sélectionnez **Save**.
+    Laissez les autres champs vides, puis sélectionnez **Save**.
   </Step>
+
   <Step title="Configurer Attributes & Claims dans Microsoft Entra">
-    1. Dans Microsoft Entra, accédez à **Attributes & Claims**.
-    2. Sélectionnez **Unique User Identifier (Name ID)** sous « Required Claim ».
-    3. Modifiez l’attribut Source en `user.primaryauthoritativeemail`.
-    4. Sous **Additional claims**, créez les éléments suivants&nbsp;:
-        | Name | Value |
-        | ---- | ----- |
-        | `firstName` | `user.givenname` |
-        | `lastName` | `user.surname` |
+    1. Dans Microsoft Entra, accédez à **Attributes &amp; Claims**.
+    2. Sélectionnez **Unique User Identifier (Name ID)** sous &quot;Required Claim.&quot;
+    3. Remplacez l’attribut source par `user.primaryauthoritativeemail`.
+    4. Sous **Additional claims**, créez les éléments suivants :
+       | Nom         | Valeur           |
+       | ----------- | ---------------- |
+       | `firstName` | `user.givenname` |
+       | `lastName`  | `user.surname`   |
   </Step>
+
   <Step title="Copier l’URL des métadonnées Microsoft Entra">
     Sous **SAML Certificates**, copiez l’**App Federation Metadata URL**.
   </Step>
+
   <Step title="Enregistrer dans Mintlify">
-    De retour dans le tableau de bord Mintlify, collez l’URL des métadonnées et cliquez sur **Save changes**.
+    De retour dans le tableau de bord Mintlify, collez l’URL des métadonnées, puis cliquez sur **Save changes**.
   </Step>
+
   <Step title="Affecter des utilisateurs">
-    Dans Microsoft Entra, accédez à **Users and groups**. Affectez les utilisateurs qui doivent pouvoir accéder à votre tableau de bord Mintlify.
+    Dans Microsoft Entra, accédez à **Users and groups**. Affectez les utilisateurs qui doivent avoir accès à votre tableau de bord Mintlify.
   </Step>
 </Steps>
 
@@ -98,25 +108,25 @@ Les administrateurs des comptes Enterprise peuvent configurer le SSO SAML pour O
   ## Provisionnement JIT
 </div>
 
-Lorsque vous activez le provisionnement JIT (just-in-time), les utilisateurs qui se connectent via votre fournisseur d'identité sont automatiquement ajoutés à votre organisation Mintlify.
+Lorsque vous activez le provisionnement JIT (juste-à-temps), les utilisateurs qui se connectent via votre fournisseur d&#39;identité sont automatiquement ajoutés à votre organisation Mintlify.
 
-Pour activer le provisionnement JIT, vous devez avoir l’authentification unique (SSO) activée. Accédez à la page [Single Sign-On](https://dashboard.mintlify.com/settings/organization/sso) dans votre tableau de bord, configurez le SSO, puis activez le provisionnement JIT.
+Pour activer le provisionnement JIT, vous devez avoir activé le SSO. Accédez à la page [Single Sign-On](https://dashboard.mintlify.com/settings/organization/sso) dans votre tableau de bord, configurez le SSO, puis activez le provisionnement JIT.
 
 <div id="change-or-remove-sso-provider">
-  ## Modifier ou supprimer un fournisseur SSO
+  ## Changer ou supprimer un fournisseur SSO
 </div>
 
-1. Accédez à la page [Single Sign-On](https://dashboard.mintlify.com/settings/organization/sso) de votre tableau de bord.
+1. Accédez à la page [Single Sign-On](https://dashboard.mintlify.com/settings/organization/sso) dans votre tableau de bord.
 2. Cliquez sur **Configure**.
-3. Sélectionnez votre fournisseur SSO préféré ou désactivez le SSO.
+3. Sélectionnez le fournisseur SSO de votre choix, ou n’utilisez pas le SSO.
 
-Si vous désactivez le SSO, les utilisateurs devront s’authentifier à la place avec un mot de passe, un lien magique ou Google OAuth.
+Si vous supprimez le SSO, les utilisateurs devront s’authentifier à l’aide d’un mot de passe, d’un lien magique ou de Google OAuth.
 
 <div id="other-providers">
   ## Autres fournisseurs
 </div>
 
-Pour tout fournisseur autre que Microsoft Entra ou Okta SAML, [contactez-nous](mailto:support@mintlify.com) pour configurer le SSO.
+Pour tout fournisseur autre que Microsoft Entra ou Okta SAML, [contactez-nous](mailto:support@mintlify.com) afin de configurer le SSO.
 
 <div id="google-workspace-saml">
   ### Google Workspace (SAML)
@@ -126,34 +136,38 @@ Pour tout fournisseur autre que Microsoft Entra ou Okta SAML, [contactez-nous](m
   <Step title="Créer une application">
     1. Dans Google Workspace, accédez à **Web and mobile apps**.
     2. Sélectionnez **Add custom SAML app** dans le menu déroulant **Add app**.
-    <Frame>
-      ![Capture d’écran de la page de création d’application SAML de Google Workspace avec l’élément de menu « Add custom SAML app » mis en évidence](/images/gsuite-add-custom-saml-app.png)
-    </Frame>
-  </Step>
-  <Step title="Envoyez-nous les informations de votre IdP">
-    Copiez l’URL SSO, l’Entity ID et le certificat X.509 fournis, puis envoyez-les à l’équipe Mintlify.
-    <Frame>
-      ![Capture d’écran de la page d’application SAML de Google Workspace avec l’URL SSO, l’Entity ID et le certificat X.509 mis en évidence. Les valeurs spécifiques de chacun de ces éléments sont floutées.](/images/gsuite-saml-metadata.png)
-    </Frame>
-  </Step>
-  <Step title="Configurer l’intégration">
-    Sur la page **Service provider details**, saisissez les éléments suivants :
 
-    * ACS URL (fournie par Mintlify)
-    * Entity ID (fourni par Mintlify)
+    <Frame>
+      ![Capture d’écran de la page de création d’application SAML de Google Workspace, avec l’option de menu "Add custom SAML app" mise en évidence](/images/gsuite-add-custom-saml-app.png)
+    </Frame>
+  </Step>
+
+  <Step title="Envoyez-nous les informations de votre IdP">
+    Copiez l’URL SSO, l’ID d’entité et le certificat x509 fournis, puis envoyez-les à l’équipe Mintlify.
+
+    <Frame>
+      ![Capture d’écran de la page de l’application SAML de Google Workspace, avec l’URL SSO, l’ID d’entité et le certificat x509 mis en évidence. Les valeurs correspondantes sont floutées.](/images/gsuite-saml-metadata.png)
+    </Frame>
+  </Step>
+
+  <Step title="Configurer l’intégration">
+    Sur la page Service provider details, saisissez les éléments suivants :
+
+    * URL ACS (fournie par Mintlify)
+    * ID d’entité (fourni par Mintlify)
     * Name ID format : `EMAIL`
     * Name ID : `Basic Information > Primary email`
 
     <Frame>
-      ![Capture d’écran de la page « Service provider details » avec les champs de saisie ACS URL et Entity ID mis en évidence.](/images/gsuite-sp-details.png)
+      ![Capture d’écran de la page Service provider details, avec les champs de saisie URL ACS et ID d’entité mis en évidence.](/images/gsuite-sp-details.png)
     </Frame>
 
-    Sur la page suivante, saisissez les déclarations d’attribut suivantes :
+    Sur la page suivante, saisissez les attributs suivants :
 
     | Attribut Google Directory | Attribut de l’application |
-    | -------------------------- | ------------------------- |
-    | `First name` | `firstName` |
-    | `Last name` | `lastName` |
+    | ------------------------- | ------------------------- |
+    | `First name`              | `firstName`               |
+    | `Last name`               | `lastName`                |
 
     Une fois cette étape terminée et les utilisateurs assignés à l’application, informez notre équipe et nous activerons le SSO pour votre compte.
   </Step>
@@ -165,12 +179,14 @@ Pour tout fournisseur autre que Microsoft Entra ou Okta SAML, [contactez-nous](m
 
 <Steps>
   <Step title="Créer une application">
-    Dans Okta, sous **Applications**, créez une nouvelle intégration d'application OIDC. Choisissez le type d'application **Web Application**.
+    Dans Okta, dans **Applications**, créez une nouvelle intégration d&#39;application avec OIDC. Choisissez le type d&#39;application **Web Application**.
   </Step>
-  <Step title="Configurer l'intégration">
-    Sélectionnez le type d’octroi de code d’autorisation (« authorization code grant ») et saisissez l’URI de redirection fourni par Mintlify.
+
+  <Step title="Configurer l’intégration">
+    Sélectionnez le type d’autorisation par code et saisissez l’URI de redirection fournie par Mintlify.
   </Step>
-  <Step title="Envoyez-nous les informations de votre IdP">
-    Accédez à l’onglet **General** et repérez l’ID client et le secret client. Transmettez-nous ces informations en toute sécurité, avec l’URL de votre instance Okta (par exemple, `<your-tenant-name>.okta.com`). Vous pouvez les envoyer via un service comme 1Password ou SendSafely.
+
+  <Step title="Nous envoyer les informations de votre IdP">
+    Accédez à l’onglet **General** et repérez l’ID client et le secret client. Transmettez-les-nous de manière sécurisée, ainsi que l’URL de votre instance Okta (par exemple, `<your-tenant-name>.okta.com`). Vous pouvez les envoyer via un service comme 1Password ou SendSafely.
   </Step>
 </Steps>

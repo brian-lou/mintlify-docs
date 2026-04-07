@@ -1,16 +1,16 @@
 ---
-title: "Création de liens"
-description: "Apprenez à créer des liens internes, à référencer des endpoints d’API et à maintenir l’intégrité des liens dans l’ensemble de votre documentation."
-keywords: ["liens internes", "renvois croisés", "liens d’ancrage", "liens brisés"]
+title: "Liens"
+description: "Découvrez comment créer des liens internes, référencer des points de terminaison d’API et préserver l’intégrité des liens dans toute votre documentation."
+keywords: ["liens internes", "références croisées", "liens d'ancrage", "liens rompus"]
 ---
 
-Des liens bien conçus créent une expérience de documentation cohérente qui aide les utilisateurs à découvrir du contenu associé et à naviguer efficacement. Trop de liens ou des liens brisés peuvent dérouter les utilisateurs et rendre votre documentation moins efficace. Ce guide explique comment créer et maintenir des liens tout au long de votre documentation.
+Des liens bien conçus offrent une expérience documentaire cohérente, qui aide les utilisateurs à découvrir du contenu connexe et à naviguer facilement. À l’inverse, un trop grand nombre de liens ou des liens rompus peut les dérouter et réduire l’efficacité de votre documentation. Ce guide explique comment créer et maintenir des liens dans l’ensemble de votre documentation.
 
 <div id="internal-links">
   ## Liens internes
 </div>
 
-Créez des liens vers d&#39;autres pages de votre documentation en utilisant des chemins relatifs à la racine. Ces chemins commencent à la racine de votre répertoire de documentation et fonctionnent de manière cohérente, quel que soit l&#39;emplacement de la page qui contient le lien.
+Créez des liens vers d’autres pages de votre documentation à l’aide de chemins relatifs à la racine. Ces chemins commencent à la racine de votre répertoire de documentation et fonctionnent de manière cohérente, quel que soit l’emplacement de la page contenant le lien.
 
 ```mdx
 * [Quickstart guide](/quickstart)
@@ -19,75 +19,75 @@ Créez des liens vers d&#39;autres pages de votre documentation en utilisant des
 ```
 
 * [Guide de démarrage rapide](/fr/quickstart)
-* [Aperçu de l’API](/fr/api-playground/overview)
+* [Vue d’ensemble de l’API](/fr/api-playground/overview)
 * [Composants personnalisés](/fr/customize/react-components)
 
 <div id="anchor-links">
   ## Liens d’ancrage
 </div>
 
-Les liens d’ancrage vous permettent de créer un lien directement vers des sections précises d’une page. Chaque en‑tête génère automatiquement un lien d’ancrage à partir de son texte.
+Les liens d’ancrage vous permettent de créer des liens directs vers des sections spécifiques d’une page. Chaque titre génère automatiquement un lien d’ancrage à partir de son texte.
 
 <div id="link-to-headers-on-the-same-page">
-  ### Lien vers des en-têtes sur la même page
+  ### Lien vers les titres de la même page
 </div>
 
-Référez-vous aux en-têtes de la page actuelle en utilisant le symbole # :
+Créez un lien vers les titres de la page actuelle à l’aide du symbole dièse :
 
 ```mdx
 [Jump to best practices](#best-practices)
 ```
 
-[Accéder aux bonnes pratiques](#best-practices)
+[Voir les bonnes pratiques](#best-practices)
 
 <div id="link-to-headers-on-other-pages">
-  ### Créer des liens vers les en-têtes d&#39;autres pages
+  ### Créer des liens vers des titres sur d&#39;autres pages
 </div>
 
-Combinez les chemins de page avec des liens d&#39;ancrage.
+Combinez les chemins de page avec des liens d’ancrage.
 
 ```mdx
 * [Customize your playground](/api-playground/overview#customize-your-playground)
 * [Cards properties](/components/cards#properties)
 ```
 
-* [Personnaliser votre bac à sable](/fr/api-playground/overview#customize-your-playground)
+* [Personnaliser votre playground](/fr/api-playground/overview#customize-your-playground)
 * [Propriétés des cartes](/fr/components/cards#properties)
 
 <div id="how-anchor-links-are-generated">
-  ### Comment sont générés les liens d’ancrage
+  ### Comment les liens d’ancrage sont générés
 </div>
 
-Les liens d’ancrage sont automatiquement générés à partir du texte des titres.
+Les liens d’ancrage sont automatiquement créés à partir du texte des titres.
 
 * Convertir en minuscules
 * Remplacer les espaces par des tirets
 * Supprimer les caractères spéciaux
 * Conserver les chiffres et les lettres
 
-| Texte du titre | Lien d’ancrage |
-|-------------|-------------|
-| `## Getting Started` | `#getting-started` |
+| Texte du titre           | Lien d’ancrage        |
+| ------------------------ | --------------------- |
+| `## Getting Started`     | `#getting-started`    |
 | `### API Authentication` | `#api-authentication` |
-| `#### Step 1: Install` | `#step-1-install` |
+| `#### Step 1: Install`   | `#step-1-install`     |
 
 <Note>
-  Les titres avec la prop `noAnchor` ne génèrent pas de liens d’ancrage. Voir [Format text](/fr/create/text#disabling-anchor-links) pour plus de détails.
+  Les titres avec la propriété `noAnchor` ne génèrent pas de liens d’ancrage. Consultez [Mettre en forme le texte](/fr/create/text#disabling-anchor-links) pour en savoir plus.
 </Note>
 
 <div id="link-to-api-endpoints">
-  ## Créer des liens vers des endpoints d’API
+  ## Lier des endpoints d’API
 </div>
 
 Lorsque vous documentez des API, vous pouvez créer des liens vers des endpoints spécifiques depuis n’importe où dans votre documentation.
 
-Créez des liens vers les pages d’endpoints d’API à l’aide de leur chemin dans la navigation.
+Créez des liens vers les pages d’endpoint d’API à l’aide de leur chemin dans la navigation.
 
 <div id="link-to-external-pages">
-  ## Liens vers des pages externes
+  ## Créer un lien vers des pages externes
 </div>
 
-Lorsque vous créez un lien vers des ressources externes, indiquez clairement que ce lien mène en dehors de votre documentation.
+Lorsque vous créez des liens vers des ressources externes, indiquez clairement qu’ils renvoient hors de votre documentation.
 
 ```mdx
 Learn more about [Markdown syntax](https://www.markdownguide.org/) (external link).
@@ -103,11 +103,11 @@ See the [OpenAPI specification](https://swagger.io/specification/) in the Swagge
   ### Rédigez un texte de lien descriptif
 </div>
 
-Utilisez un texte clair et descriptif qui indique ce que les utilisateurs trouveront lorsqu&#39;ils cliqueront dessus.
+Utilisez un texte clair et descriptif qui indique ce que les utilisateurs trouveront en cliquant.
 
 <CodeGroup>
   ```mdx Bons exemples
-  Voir [Pages masquées](/organize/hidden-pages) pour plus d’informations.
+  Consultez [Pages masquées](/organize/hidden-pages) pour en savoir plus.
   [Configurer des domaines personnalisés](/customize/custom-domain)
   ```
 
@@ -119,24 +119,24 @@ Utilisez un texte clair et descriptif qui indique ce que les utilisateurs trouve
 </CodeGroup>
 
 <div id="create-topic-clusters">
-  ### Créer des groupes thématiques
+  ### Créez des ensembles thématiques
 </div>
 
-Reliez entre eux les contenus liés pour aider les utilisateurs à découvrir des informations pertinentes.
+Reliez les contenus associés entre eux pour aider les utilisateurs à découvrir des informations pertinentes.
 
 ```mdx
-## Related topics
+## Sujets connexes
 
-- [API authentication](/api-playground/overview#authentication)
-- [Adding SDK examples](/api-playground/adding-sdk-examples)
-- [Managing page visibility](/api-playground/managing-page-visibility)
+- [Authentification API](/api-playground/overview#authentication)
+- [Ajouter des exemples SDK](/api-playground/adding-sdk-examples)
+- [Gérer la visibilité des pages](/api-playground/managing-page-visibility)
 ```
 
 <div id="use-contextual-links">
   ### Utiliser des liens contextuels
 </div>
 
-Ajoutez des liens au fil du contenu lorsqu’ils apportent une réelle valeur.
+Ajoutez des liens de manière naturelle dans le contenu lorsqu’ils apportent une réelle valeur.
 
 ```mdx
 To customize your documentation appearance, configure [themes](/customize/themes) 
@@ -164,35 +164,35 @@ Before deploying your documentation, ensure you have:
   ### Évitez les liens circulaires
 </div>
 
-Ne créez pas de liens qui renvoient les utilisateurs sans cesse entre les mêmes pages.
+Ne créez pas de liens qui renvoient les utilisateurs en boucle entre les mêmes pages.
 
 <div id="check-for-broken-links">
   ### Vérifiez les liens rompus
 </div>
 
-Utilisez la CLI Mintlify pour identifier les liens rompus dans votre documentation.
+Utilisez la CLI Mintlify pour repérer les liens rompus dans votre documentation.
 
 ```bash
 mint broken-links
 ```
 
 <div id="update-links-when-reorganizing">
-  ### Mettre à jour les liens lors de la réorganisation
+  ### Mettre à jour les liens en cas de réorganisation
 </div>
 
 Lorsque vous déplacez ou renommez des pages :
 
 1. Mettez à jour le chemin de la page dans votre configuration de navigation.
-2. Configurez des redirections de l’ancien chemin vers le nouveau.
+2. Mettez en place des redirections de l’ancien chemin vers le nouveau.
 3. Recherchez dans votre documentation les références à l’ancien chemin.
 4. Mettez à jour tous les liens internes pour utiliser le nouveau chemin.
 5. Exécutez `mint broken-links` pour vérifier que tous les liens fonctionnent.
 
 <div id="use-redirects-for-moved-content">
-  ### Utilisez des redirections pour le contenu déplacé
+  ### Utiliser des redirections pour le contenu déplacé
 </div>
 
-Lorsque vous déplacez définitivement du contenu, ajoutez des redirections pour éviter les liens brisés.
+Lorsque vous déplacez définitivement du contenu, ajoutez des redirections pour éviter les liens rompus.
 
 ```json
 {
@@ -205,12 +205,12 @@ Lorsque vous déplacez définitivement du contenu, ajoutez des redirections pour
 }
 ```
 
-Consultez [Redirects](/fr/create/redirects) pour plus d’informations.
+Consultez [Redirections](/fr/create/redirects) pour plus d’informations.
 
 <div id="related-resources">
   ## Ressources connexes
 </div>
 
-* [Mettre en forme le texte](/fr/create/text) : Découvrez la mise en forme Markdown.
-* [Navigation](/fr/organize/navigation) : Configurez la structure de votre documentation.
-* [Redirections](/fr/create/redirects) : Mettez en place des redirections pour le contenu déplacé.
+* [Mettre en forme le texte](/fr/create/text) : Découvrez la mise en forme Markdown.
+* [Navigation](/fr/organize/navigation) : Configurez la structure de votre documentation.
+* [Redirections](/fr/create/redirects) : Configurez des redirections pour le contenu déplacé.

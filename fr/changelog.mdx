@@ -1,1026 +1,1026 @@
 ---
-title: "Mises à jour du produit"
+title: "Mises à jour produit"
 description: "Nouvelles versions et améliorations"
 rss: true
 noindex: true
 ---
 
-<Update label="6 février 2026" tags={["Nouvelles versions", "Améliorations"]} rss={{ title: "Configuration SSO en libre-service, rôle de lecteur, bascule trafic humain/IA et refonte de la commande slash" }}>
-  ## Configuration SSO en libre-service
+<Update label="6 février 2026" tags={["Nouvelles versions", "Améliorations"]} rss={{ title: "SSO en libre-service, rôle lecteur, bascule trafic humain/IA et refonte des commandes slash" }}>
+  ## Configuration du SSO en libre-service
 
-  Les clients Entreprise peuvent désormais configurer le SSO SAML (Okta ou Microsoft Entra) directement depuis le tableau de bord, y compris le provisioning just-in-time (JIT), le changement de fournisseur et la suppression de la connexion.
+  Les clients Enterprise peuvent désormais configurer le SSO SAML (Okta ou Microsoft Entra) directement depuis le tableau de bord, y compris le provisionnement juste-à-temps (JIT), le changement de fournisseur et la suppression de connexion.
 
-  ## Rôle de lecteur
+  ## Rôle lecteur
 
-  Nouveau rôle de lecteur avec un accès en lecture seule à votre tableau de bord. Les lecteurs peuvent voir le contenu dans l’éditeur, mais ils ne peuvent pas modifier le contenu, inviter des membres ou modifier les configurations.
+  Nouveau rôle lecteur avec accès en lecture seule à votre tableau de bord. Les lecteurs peuvent voir le contenu dans l’éditeur, mais ils ne peuvent ni le modifier, ni inviter des membres, ni changer la configuration.
 
   ## Bascule trafic humain/IA
 
-  La page d’analyses affiche désormais des onglets distincts pour le trafic humain et le trafic IA.
+  La page d’analyse affiche désormais des onglets distincts pour le trafic humain et le trafic IA.
 
-  ## Refonte du menu de commande slash
+  ## Refonte du menu de commandes slash
 
-  Le menu slash de l’éditeur propose désormais la recherche au fil de la saisie, une navigation au clavier améliorée et d’autres améliorations UX.
+  Le menu slash de l’éditeur propose désormais la recherche à la saisie, une navigation au clavier améliorée et d’autres améliorations UX.
 
-  ## Corrections de bugs
+  ## Correctifs
 
-  * Correction du dépassement de cellules dans les tableaux du tableau de bord.
-  * Le renommage de fichiers via la feuille de configuration dans l’éditeur enregistre désormais correctement les modifications.
-  * Les erreurs d’analyse MDX, comme une balise `<Card>` non fermée, se mettent désormais à jour dynamiquement lorsque vous les corrigez au lieu de persister de manière incorrecte entre les rechargements.
-  * Les poignées de glisser-déposer dans l’éditeur sont désormais correctement alignées avec différents types de contenu comme les titres ou les paragraphes, avec une taille cohérente et de meilleures zones cliquables.
+  * Correction du débordement des cellules dans les tableaux du tableau de bord.
+  * Le renommage de fichiers via le panneau de configuration dans l’éditeur enregistre désormais correctement les modifications.
+  * Les erreurs d’analyse MDX, comme une balise `<Card>` non fermée, se mettent désormais à jour dynamiquement à mesure que vous les corrigez, au lieu de persister à tort après rechargement.
+  * Les poignées de glisser-déposer dans l’éditeur s’alignent désormais correctement avec différents types de contenu, comme les titres ou les paragraphes, avec une taille cohérente et de meilleures zones de clic.
 </Update>
 
-<Update label="30 janvier 2026" tags={["Nouvelles versions", "Améliorations"]} rss={{ title: "Installation des compétences simplifiée, analytique remaniée, améliorations de l’éditeur et plus encore" }}>
-  ## Installation des compétences simplifiée
+<Update label="30 janvier 2026" tags={["Nouvelles versions", "Améliorations"]} rss={{ title: "Installation simplifiée des skills, page d’analyse repensée, améliorations de l’éditeur, et plus encore" }}>
+  ## Installation des skills simplifiée
 
-  Installez les [fichiers skill.md](/fr/ai/skillmd) à l’aide d’une simple URL de documentation. Aucun chemin vers le fichier `skill.md` n’est nécessaire.
+  Installez des [fichiers skill.md](/fr/ai/skillmd) à l’aide d’une simple URL de documentation. Aucun chemin vers le fichier `skill.md` n’est nécessaire.
 
   ```bash
   npx skills add mintlify.com/docs
   ```
 
-  ## Page d’analyses remaniée
+  ## Page d’analyse repensée
 
-  Navigation améliorée entre les onglets [analytics](optimize/analytics). Informations plus exploitables et meilleure visualisation des données.
+  Navigation améliorée entre les onglets [d’analyse](optimize/analytics). Des informations plus exploitables et une meilleure visualisation des données.
 
   ## Améliorations de l’éditeur
 
   * Icônes modifiables
-  * Édition WYSIWYG du titre et de la description pour les composants Cards, Accordions et Steps
-  * Masquer et afficher des pages dans votre navigation
+  * Modification WYSIWYG du titre et de la description pour les composants Cards, Accordions et Steps
+  * Masquez et réaffichez des pages dans votre navigation
   * Prise en charge des images locales dans l’aperçu en direct
-  * Déclenchement de blocs de code avec <code>```</code>
-  * Sélection de poignées de glisser-déposer plus précise
+  * Déclenchement des blocs de code avec <code>```</code>
+  * Sélection plus précise des poignées de glissement
   * Améliorations de stabilité
 
-  ## Page d’assistant mise à jour
+  ## Page de l’assistant mise à jour
 
-  Gérez toutes les [fonctionnalités d’assistant](/fr/ai/assistant) sur une seule page avec une mise en page plus claire et une meilleure UX.
+  Gérez toutes les [fonctionnalités de l’assistant](/fr/ai/assistant) sur une seule page avec une mise en page plus claire et une meilleure UX.
 
   ## Filtrage MCP
 
-  Les agents IA peuvent désormais [filtrer](ai/model-context-protocol#search-filtering-parameters) les résultats de recherche MCP par paramètres.
+  Les agents IA peuvent désormais [filtrer](ai/model-context-protocol#search-filtering-parameters) les résultats de recherche MCP à l’aide de paramètres.
 
   ## Autres
 
-  * Prise en charge de &quot;Open in Grok&quot; dans le [menu contextuel](/fr/ai/contextual-menu)
+  * Prise en charge de « Open in Grok » dans le [menu contextuel](/fr/ai/contextual-menu)
   * Prise en charge du téléversement de fichiers Zip dans l’[onboarding](deploy/github#alternative%3A-download-and-create-your-own-repository)
 
-  ## Corrections de bugs
+  ## Correctifs
 
-  * Correction d’un problème de mise en cache qui faisait apparaître des états développés/réduits incorrects dans la barre latérale lors de la navigation entre les pages.
-  * Résolution de problèmes de positionnement du défilement sur les pages personnalisées afin que le contenu s’affiche correctement.
-  * Correction de conflits lorsque plusieurs diagrammes Mermaid apparaissaient sur la même page.
-  * Correction d’une boucle de rendu qui pouvait provoquer des problèmes de performances avec le composant Tabs.
-  * Correction du bouton de réinitialisation de mot de passe qui ne fonctionnait pas.
+  * Correction d’un problème de mise en cache qui faisait afficher à la barre latérale des états développés/réduits incorrects lors de la navigation entre les pages.
+  * Résolution de problèmes de position de défilement sur les pages personnalisées afin que le contenu s’affiche correctement.
+  * Correction des conflits lorsque plusieurs diagrammes Mermaid étaient présents sur la même page.
+  * Correction d’une boucle de rendu pouvant entraîner des problèmes de performance avec le composant Tabs.
+  * Correction du bouton de réinitialisation du mot de passe qui ne fonctionnait pas.
   * L’assistant IA n’apparaît plus lors de l’impression des pages.
-  * Correction du curseur qui était invisible en mode sombre.
-  * Correction d’un bug qui pouvait supprimer les attributs de style dans le MDX.
-  * Correction d’un problème où les dates de &quot;dernière modification&quot; des pages étaient mises à jour de manière incorrecte lors de modifications globales de configuration.
-  * Correction des problèmes d’authentification empêchant le rendu correct des pages d’index.
-  * L’état GitHub est désormais correctement affiché pendant l’onboarding si GitHub est en panne.
+  * Correction du curseur invisible en mode sombre.
+  * Correction d’un bug pouvant supprimer des attributs de style dans MDX.
+  * Correction d’un problème où les dates de « dernière modification » des pages se mettaient à jour incorrectement lors de modifications globales de la configuration.
+  * Correction de problèmes d’authentification qui empêchaient les pages d’index de s’afficher correctement.
+  * L’état de GitHub est désormais correctement affiché pendant l’onboarding si GitHub est indisponible.
 </Update>
 
-<Update label="23 janvier 2026" tags={["New releases", "Improvements"]} rss={{ title: "skills.md, journaux d’audit et export Markdown" }}>
+<Update label="23 janvier 2026" tags={["Nouveautés", "Améliorations"]} rss={{ title: "skills.md, journaux d’audit et export Markdown" }}>
   ## Génération automatique de `skill.md`
 
-  Les sites de documentation génèrent désormais automatiquement un fichier `skill.md` à partir de vos références d’API, guides et fonctionnalités, afin de fournir aux agents IA un fichier de compétences complet avec le contexte nécessaire pour aider vos utilisateurs à exploiter votre produit. `skill.md` remplace l’approche `install.md` avec des capacités plus structurées et une adoption plus large. Si vous avez un fichier `skills.md` personnalisé à la racine de votre dépôt de documentation, il remplace la version générée automatiquement. Consultez [skill.md](/fr/ai/skillmd) pour plus d’informations.
+  Les sites de documentation génèrent désormais automatiquement un fichier `skill.md` à partir de vos références d’API, guides et fonctionnalités, afin de fournir aux agents IA un fichier de compétences complet avec le contexte nécessaire pour aider les utilisateurs à exploiter votre produit. `skill.md` remplace l’approche `install.md` avec des capacités plus structurées et une adoption plus large. Si vous avez un fichier `skills.md` personnalisé à la racine de votre dépôt de documentation, il remplace la version générée automatiquement. Consultez [skill.md](/fr/ai/skillmd) pour plus d’informations.
 
   ## Journaux d’audit pour les événements d’authentification
 
-  Les événements sont désormais suivis dans les [journaux d’audit](/fr/dashboard/audit-logs) pour plus de visibilité et de conformité.
+  Les événements sont désormais consignés dans les [journaux d’audit](/fr/dashboard/audit-logs) pour améliorer la visibilité et la conformité.
 
   ## Export Markdown pour les agents
 
-  Les pages de documentation renvoient désormais du Markdown brut lorsque l’en-tête `Accept: text/markdown` est envoyé, ce qui permet une meilleure consommation du contenu par les agents IA.
+  Les pages de documentation renvoient désormais le Markdown brut lorsque l’en-tête `Accept: text/markdown` est envoyé, ce qui permet aux agents IA de mieux exploiter le contenu.
 
   ## Améliorations
 
-  * L’authentification, l’authentification partielle et la personnalisation ont été réunies en une expérience d’authentification unifiée. Consultez [Authentication setup](/fr/deploy/authentication-setup) pour plus d’informations.
-  * Les pages masquées reçoivent désormais automatiquement des balises meta `noindex` pour un meilleur contrôle du SEO.
-  * Ajout de la prise en charge du Markdown pour les légendes d’images.
+  * L’authentification combinée, l’authentification partielle et la personnalisation ont été réunies dans une seule expérience d’authentification. Consultez [Configuration de l’authentification](/fr/deploy/authentication-setup) pour plus d’informations.
+  * Les pages masquées reçoivent désormais automatiquement des balises méta `noindex` pour un meilleur contrôle du SEO.
+  * Ajout de la prise en charge du Markdown pour les légendes d’image.
 </Update>
 
-<Update label="16 janvier 2026" tags={["New releases", "Improvements"]} rss={{ title: "install.md, prévisualisation en direct dans l’éditeur web, et plus encore" }}>
+<Update label="16 janvier 2026" tags={["Nouveautés", "Améliorations"]} rss={{ title: "install.md, aperçu en direct dans l’éditeur web, et plus encore" }}>
   ## Génération automatique de `install.md`
 
-  Les sites de documentation génèrent désormais automatiquement un fichier `install.md` qui agrège les pages liées à l’installation, comme les guides de démarrage rapide, la prise en main, l’installation et les guides de configuration pour les agents IA. Si vous avez un fichier `install.md` personnalisé dans votre dépôt de documentation, il a la priorité sur la version générée automatiquement.
+  Les sites de documentation génèrent désormais automatiquement un fichier `install.md` qui regroupe les pages liées à l’installation, comme les guides de démarrage rapide, de prise en main, d’installation et de configuration, pour les agents IA. Si vous avez un fichier `install.md` personnalisé dans votre dépôt de documentation, il est prioritaire sur la version générée automatiquement.
 
   ## Améliorations de l’éditeur web
 
-  * **Prévisualisation en direct** : visualisez les changements en temps réel lorsque vous modifiez votre documentation dans l’éditeur web. Les prévisualisations en direct montrent votre site exactement tel qu’il apparaît une fois publié, sans créer de déploiement de prévisualisation.
+  * **Aperçu en direct** : visualisez les changements en temps réel pendant que vous modifiez votre documentation dans l’éditeur web. Les aperçus en direct affichent votre site exactement tel qu’il apparaîtra une fois publié, sans créer de déploiement de prévisualisation.
   * **Section des fichiers inutilisés** : l’éditeur affiche désormais les pages inutilisées qui ne figurent pas dans votre navigation, avec prise en charge du glisser-déposer pour les ajouter.
 
   ## Recherche de branches pour les intégrations Git
 
-  Ajout de la fonctionnalité de recherche de branches pour les intégrations GitHub et GitLab, afin de faciliter la recherche et le changement de branches de déploiement dans les paramètres Git de votre tableau de bord.
+  Ajout d’une fonctionnalité de recherche de branches pour les intégrations GitHub et GitLab afin de faciliter la recherche et le changement de branches de déploiement dans les paramètres Git de votre tableau de bord.
 
   ## Commande CLI `mintlify validate`
 
-  Nouvelle commande CLI pour valider localement vos builds de documentation avant le déploiement. Exécutez `mint validate` pour détecter tôt les erreurs de configuration et de build.
+  Nouvelle commande CLI pour valider localement les builds de votre documentation avant le déploiement. Exécutez `mint validate` pour détecter rapidement les erreurs de configuration et de build.
 
   ## Paliers de messages de l’assistant
 
-  Les utilisateurs peuvent désormais sélectionner différents niveaux de quota mensuel de messages de l’assistant depuis le tableau de bord.
+  Les utilisateurs peuvent désormais sélectionner, depuis le tableau de bord, des paliers d’allocation mensuelle de messages de l’assistant.
 
   ## Corrections de bugs
 
-  * Correction des problèmes de chemin de base des références d’API.
-  * Mise à jour des couleurs d’encadré avec une palette de couleurs rafraîchie.
-  * Correction des images qui ne s’affichaient pas lors du premier chargement après leur téléversement dans l’éditeur.
-  * Correction du style de code dans les liens de cartes.
-  * Correction des fichiers `.md` qui écrasaient incorrectement les fichiers `.mdx`.
+  * Correction de problèmes de chemin de base dans les références d’API.
+  * Mise à jour des couleurs des encadrés avec une palette revisitée.
+  * Correction d’un problème empêchant l’affichage des images au chargement initial après leur téléversement dans l’éditeur.
+  * Correction du style du code dans les liens de carte.
+  * Correction d’un problème où les fichiers `.md` écrasaient incorrectement les fichiers `.mdx`.
 </Update>
 
-<Update label="9 janvier 2026" tags={["New releases", "Improvements"]} rss={{ title: "Extraits implicites et analyses de conversation de l’assistant pour tous" }}>
+<Update label="9 janvier 2026" tags={["Nouveautés", "Améliorations"]} rss={{ title: "Extraits implicites et analyses des conversations de l’assistant pour tous" }}>
   ## Extraits implicites
 
-  Les extraits fonctionnent désormais sans configuration explicite. Auparavant, vous deviez définir les extraits dans un répertoire `/snippets` spécifique. Désormais, vous pouvez importer n’importe quel fichier comme extrait depuis n’importe où dans votre documentation pour une réutilisation de contenu plus flexible. Consultez [Reusable snippets](/fr/create/reusable-snippets) pour plus d’informations.
+  Les extraits fonctionnent désormais sans configuration explicite. Auparavant, vous deviez définir les extraits dans un répertoire `/snippets` spécifique. Désormais, vous pouvez importer n’importe quel fichier comme extrait depuis n’importe quel emplacement de votre documentation pour réutiliser le contenu plus facilement. Consultez [Extraits réutilisables](/fr/create/reusable-snippets) pour plus d’informations.
 
   ## Suggestions de l’assistant pour tous les utilisateurs
 
-  Les [analyses de conversation](/fr/agent/suggestions#conversation-insights) sont désormais disponibles pour tous les sites de documentation qui ont à la fois l’agent et l’assistant activés. L’agent analyse les tendances dans les conversations de l’assistant pour identifier les lacunes de la documentation et suggérer des améliorations, vous aidant à traiter de manière proactive les questions fréquentes des utilisateurs.
+  Les [analyses des conversations](/fr/agent/suggestions#conversation-insights) sont désormais disponibles pour tous les sites de documentation sur lesquels l’agent et l’assistant sont activés. L’agent analyse les tendances dans les conversations avec l’assistant afin d’identifier les lacunes de la documentation et de suggérer des améliorations, ce qui vous aide à traiter de manière proactive les questions fréquentes des utilisateurs.
 
   ## Synchronisation des onglets et des groupes de code
 
-  Les onglets et les groupes de code synchronisent désormais leur sélection sur toute la page. Lorsque vous sélectionnez un onglet dans un composant, tous les autres composants d’onglets ayant des libellés correspondants se mettent à jour pour afficher la même sélection. Cela permet de garder les choix de langage ou de framework cohérents sur une page.
+  Les onglets et les groupes de code synchronisent désormais leur sélection sur toute la page. Lorsque vous sélectionnez un onglet dans un composant, tous les autres composants d’onglets avec des libellés correspondants se mettent à jour pour afficher la même sélection. Cela permet de conserver des choix de langage ou de framework cohérents sur l’ensemble d’une page.
 
   ## Améliorations
 
-  * **Bordure inférieure des onglets** : ajout d’un style optionnel de bordure inférieure pour les onglets.
-  * **Contrôles Mermaid** : contrôles interactifs pour les [diagrammes Mermaid](/fr/components/mermaid-diagrams) afin de naviguer dans de grands diagrammes.
-  * **Paramètres d’URL pour la recherche et l’assistant** : ouvrez des pages avec la fenêtre de recherche préremplie avec `?search=` ou l’assistant avec `?assistant=`. Paramètres de requête pour créer des liens directs et partager des connaissances.
-  * **Modification du nom de profil** : les utilisateurs peuvent désormais modifier leur prénom et leur nom dans les paramètres de profil.
+  * **Bordure inférieure des onglets** : ajout d’un style de bordure inférieure facultatif pour les onglets.
+  * **Contrôles Mermaid** : contrôles interactifs pour les [diagrammes Mermaid](/fr/components/mermaid-diagrams) afin de naviguer dans les grands diagrammes.
+  * **Paramètres d’URL pour la recherche et l’assistant** : ouvrez des pages avec la fenêtre modale de recherche préremplie avec `?search=` ou l’assistant avec `?assistant=`. Utilisez les paramètres de requête pour le lien direct et le partage de connaissances.
+  * **Modification du nom de profil** : les utilisateurs peuvent désormais modifier leur prénom et leur nom dans les paramètres du profil.
 </Update>
 
-<Update label="23 décembre 2025" tags={["Nouvelles versions", "Améliorations"]} rss={{ title: "Améliorations de l'éditeur web et analyses de l'assistant" }}>
-  ## Améliorations de l&#39;éditeur web
+<Update label="23 décembre 2025" tags={["Nouvelles versions", "Améliorations"]} rss={{ title: "Améliorations de l’éditeur web et suggestions issues de l’assistant" }}>
+  ## Améliorations de l’éditeur web
 
-  L&#39;[éditeur web](/fr/editor/index) dispose désormais d&#39;une interface plus intuitive et de nouvelles fonctionnalités.
+  L’[éditeur web](/fr/editor/index) propose désormais une interface plus intuitive et de nouvelles fonctionnalités.
 
-  * **Édition visuelle de la navigation** : configurez votre structure de navigation dans l&#39;éditeur web et voyez à quoi ressemble la barre latérale de navigation de votre site dans l&#39;éditeur. Tous les changements sont automatiquement reflétés dans votre `docs.json`.
-  * **Options de configuration** : ajustez toutes les options de configuration du site depuis l&#39;éditeur sans modifier manuellement votre `docs.json`.
-  * **Glisser-déposer de ressources** : faites glisser des images et des fichiers directement depuis votre ordinateur dans l&#39;arborescence des fichiers pour les téléverser.
-  * **Stabilité améliorée** : améliorations de la stabilité et de la réactivité sur mobile.
+  * **Édition visuelle de la navigation** : Configurez votre structure de navigation dans l’éditeur web et prévisualisez l’apparence de la barre latérale de navigation de votre site directement dans l’éditeur. Toutes les modifications sont automatiquement répercutées dans votre `docs.json`.
+  * **Options de configuration** : Ajustez toutes les options de configuration du site depuis l’éditeur, sans modifier manuellement votre `docs.json`.
+  * **Ressources par glisser-déposer** : Faites glisser des images et des fichiers directement depuis votre ordinateur dans l’arborescence des fichiers pour les importer.
+  * **Stabilité améliorée** : Amélioration de la stabilité et de l’expérience sur mobile.
 
-  ## Suggestions d&#39;agent à partir des conversations avec l&#39;assistant
+  ## Suggestions de l’agent à partir des conversations avec l’assistant
 
-  L&#39;[agent](/fr/agent) peut désormais suggérer des mises à jour de la documentation à partir des [conversations avec l&#39;assistant](/fr/agent/suggestions#conversation-insights). Lorsqu&#39;il est activé, l&#39;agent analyse les questions que les utilisateurs posent à l&#39;assistant pour identifier des tendances indiquant une documentation manquante ou peu claire.
+  L’[agent](/fr/agent) peut désormais suggérer des mises à jour de la documentation à partir des [conversations avec l’assistant](/fr/agent/suggestions#conversation-insights). Lorsqu’elle est activée, cette fonctionnalité permet à l’agent d’analyser les questions que les utilisateurs posent à l’assistant afin d’identifier des tendances révélant une documentation manquante ou peu claire.
 
-  Cela ajoute une deuxième source de suggestions de l&#39;agent en complément de la surveillance du dépôt, vous aidant à traiter de manière proactive les questions fréquentes des utilisateurs.
+  Cela ajoute une deuxième source de suggestions pour l’agent, en complément de la surveillance du dépôt, et vous aide à traiter de manière proactive les questions fréquentes des utilisateurs.
 
   ## Personnalisation du bot Slack
 
   Vous pouvez désormais [personnaliser votre bot Slack](/fr/ai/slack-bot) directement depuis le tableau de bord.
 
-  * **Choisir un canal de réponse** : sélectionnez le canal dans lequel le bot répond automatiquement à tous les messages. La valeur par défaut est `#ask-ai`.
-  * **Personnaliser l&#39;apparence du bot** : modifiez l&#39;avatar et le nom du bot depuis votre tableau de bord.
+  * **Choisir un canal de réponse** : Sélectionnez le canal dans lequel le bot répond automatiquement à tous les messages. La valeur par défaut est `#ask-ai`.
+  * **Personnaliser l’apparence du bot** : Modifiez l’avatar et le nom du bot depuis votre tableau de bord.
 
   ## Améliorations de la navigation mobile
 
-  * Ajout d&#39;un sélecteur de thème à la navigation mobile pour faciliter le passage du mode clair au mode sombre.
-  * Ajout de l&#39;affichage du logo à la navigation mobile pour une meilleure image de marque.
+  * Ajout d’un sélecteur de thème dans la navigation mobile pour faciliter le passage entre les modes clair et sombre.
+  * Ajout de l’affichage du logo dans la navigation mobile pour renforcer l’identité de marque.
 
   ## Corrections de bugs
 
-  * Correction des exemples de requêtes manquants dans le bac à sable API pour certains endpoints.
-  * Correction des exemples MDX qui ne s&#39;affichaient pas correctement lors de l&#39;utilisation d&#39;exemples préremplis dans le bac à sable API.
-  * Correction des liens dans l&#39;assistant qui s&#39;ouvraient dans de nouvelles fenêtres au lieu de la même fenêtre.
-  * Correction du rendu des liens Markdown dans les réponses de l&#39;assistant.
-  * Correction de la gestion des caractères spéciaux pour les slugs de titres.
+  * Correction des exemples de requête manquants dans le Bac à sable API pour certains endpoints.
+  * Correction de l’affichage des exemples MDX lors de l’utilisation d’exemples préremplis dans le Bac à sable API.
+  * Correction des liens dans l’assistant qui s’ouvraient dans une nouvelle fenêtre au lieu de la fenêtre en cours.
+  * Correction du rendu des liens Markdown dans les réponses de l’assistant.
+  * Correction de la gestion des caractères spéciaux dans les slugs des en-têtes.
 </Update>
 
-<Update label="19 décembre 2025" tags={["Améliorations"]} rss={{ title: "Améliorations de l'agent, de l'assistant et de l'éditeur" }}>
-  ## Améliorations de l&#39;agent
+<Update label="19 décembre 2025" tags={["Améliorations"]} rss={{ title: "Améliorations de l’agent, de l’assistant et de l’éditeur" }}>
+  ## Améliorations de l’agent
 
-  * Ajout de la prise en charge de la lecture des [instructions personnalisées](/fr/agent/customize) à partir d&#39;un fichier `AGENTS.md`.
-  * L&#39;agent ouvre désormais des pull requests (PR) sous votre compte GitHub si vous [connectez votre compte](/fr/agent/quickstart#connect-your-github-account) depuis le tableau de bord.
+  * Ajout de la prise en charge de la lecture des [instructions personnalisées](/fr/agent/customize) depuis un fichier `AGENTS.md`.
+  * L’agent ouvre désormais des PR avec votre compte GitHub si vous [connectez votre compte](/fr/agent/quickstart#connect-your-github-account) dans le tableau de bord.
 
-  ## Améliorations de l&#39;assistant
+  ## Améliorations de l’assistant
 
-  * Ajout d&#39;un bouton pour copier la conversation afin de partager ou d&#39;enregistrer facilement les conversations avec l&#39;assistant.
-  * Amélioration de la gestion des situations où le flux se bloque, pour des réponses de l&#39;assistant plus fiables.
-  * Amélioration de l&#39;affichage de l&#39;assistant sur les appareils mobiles.
+  * Ajout d’un bouton pour copier une conversation afin de la partager ou de l’enregistrer facilement.
+  * Amélioration de la gestion des interruptions de flux pour rendre les réponses de l’assistant plus fiables.
+  * Amélioration de l’affichage de l’assistant sur les appareils mobiles.
 
-  ## Améliorations de l&#39;éditeur web
+  ## Améliorations de l’éditeur web
 
-  * Ajout de [liens de prévisualisation partageables](/fr/editor#share-preview-deployments) depuis la barre d&#39;outils de l&#39;éditeur.
-  * Mise à jour du [flux de publication](/fr/editor#publish-your-changes) pour prendre en charge la publication en un clic ou la création de pull requests.
-  * Travailler dans l&#39;éditeur web ne nécessite plus de connexion à GitHub.
+  * Ajout de [liens d’aperçu partageables](/fr/editor#share-preview-deployments) dans la barre d’outils de l’éditeur.
+  * Mise à jour du [workflow de publication](/fr/editor#publish-your-changes) pour permettre la publication en un clic ou la création de pull requests.
+  * Travailler dans l’éditeur web ne nécessite plus de vous connecter avec GitHub.
 
-  ## Améliorations de l&#39;onboarding
+  ## Améliorations de l’onboarding
 
-  * Choisissez entre un dépôt de documentation hébergé par Mintlify ou votre propre dépôt lors de l&#39;inscription.
+  * Choisissez entre un dépôt de documentation hébergé par Mintlify ou votre propre dépôt lors de l’inscription.
   * Créez un site de documentation sans connecter de compte GitHub.
 
-  ## Améliorations des snippets
+  ## Améliorations des extraits
 
-  * Les [imports relatifs](/fr/create/reusable-snippets#import-snippets-into-pages) sont désormais pris en charge pour les snippets.
+  * Les [imports relatifs](/fr/create/reusable-snippets#import-snippets-into-pages) sont désormais pris en charge pour les extraits.
 
   ## Améliorations de la localisation
 
-  * Ajout de la prise en charge des langues polonaise, ouzbèke et hébraïque.
-  * Les éléments d&#39;interface utilisateur dans le bac à sable API, y compris les boutons « Try it » et « Send », sont désormais localisés dans toutes les langues prises en charge.
+  * Ajout de la prise en charge du polonais, de l’ouzbek et de l’hébreu.
+  * Les éléments d’interface du Bac à sable API, y compris les boutons « Try it » et « Send », sont désormais localisés dans toutes les langues prises en charge.
 </Update>
 
-<Update label="12 décembre 2025" tags={["Nouvelles versions", "Améliorations"]} rss={{  title: "Suggestions d'agent et bots de questions-réponses" }}>
-  ## Suggestions d&#39;agent
+<Update label="12 décembre 2025" tags={["Nouvelles versions", "Améliorations"]} rss={{  title: "Suggestions de l’agent et bots de questions-réponses" }}>
+  ## Suggestions de l’agent
 
-  L&#39;agent peut désormais surveiller les dépôts Git et [suggérer](/fr/agent/suggestions) des mises à jour de la documentation. Lorsque des modifications du code destiné aux utilisateurs sont détectées, des suggestions apparaissent dans le panneau de l&#39;agent. Les suggestions incluent la pull request correspondante et une liste de mises à jour de documentation proposées. Ajoutez ces suggestions comme contexte pour que l&#39;agent crée des pull requests ou ignorez-les.
+  L’agent peut désormais surveiller des dépôts Git et [suggérer](/fr/agent/suggestions) des mises à jour de la documentation. Lorsque des modifications de code visibles par les utilisateurs sont détectées, des suggestions apparaissent dans le panneau de l’agent. Ces suggestions incluent la pull request correspondante ainsi qu’une liste des mises à jour de documentation proposées. Ajoutez-les comme contexte pour que l’agent crée des pull requests, ou ignorez-les.
 
   ## Bots de questions-réponses dans Slack et Discord
 
-  Ajoutez à vos [espaces de travail Slack](/fr/ai/slack-bot) et [serveurs Discord](/fr/ai/discord) des bots propulsés par l&#39;assistant. Les bots répondent en temps réel aux questions à partir de votre documentation, afin de fournir à vos communautés des réponses exactes et à jour.
+  Ajoutez des bots alimentés par l’assistant à vos [espaces de travail Slack](/fr/ai/slack-bot) et [serveurs Discord](/fr/ai/discord). Les bots répondent aux questions en temps réel à partir de votre documentation, afin de fournir à vos communautés des réponses précises et à jour.
 
-  Les bots répondent aux mentions `@` ainsi qu&#39;à chaque message dans les canaux nommés `#ask-ai`.
+  Les bots répondent aux mentions `@` et à tous les messages dans les canaux nommés `#ask-ai`.
 
-  ## Les snippets prennent désormais en charge les imports relatifs
+  ## Extraits prennent désormais en charge les imports relatifs
 
-  Vous pouvez désormais utiliser des chemins relatifs lors de l&#39;import de snippets dans vos fichiers MDX. Auparavant, les imports nécessitaient des chemins absolus commençant par `/snippets/`. Vous pouvez maintenant utiliser des chemins relatifs comme `../snippets/example.mdx` pour une organisation des fichiers plus flexible.
+  Vous pouvez désormais utiliser des chemins relatifs lors de l’import d’extraits dans vos fichiers MDX. Auparavant, les imports nécessitaient des chemins absolus commençant par `/snippets/`. Vous pouvez maintenant utiliser des chemins relatifs comme `../snippets/example.mdx` pour organiser vos fichiers plus librement.
 
   ## Améliorations
 
   * **Insights** a été renommé **Analytics** dans le tableau de bord.
   * Ajout de la possibilité de supprimer un déploiement depuis le tableau de bord.
-  * Le composant `Tooltip` a été repensé avec un style amélioré et prend désormais en charge une prop optionnelle `headline` pour ajouter un titre à vos info-bulles.
-  * La commande `mint a11y` prend désormais en charge les options `--skip-contrast` et `--skip-alt-text`, vous permettant d&#39;exécuter des vérifications d&#39;accessibilité spécifiques dans votre pipeline CI/CD. Utilisez `--skip-contrast` pour vérifier uniquement l&#39;absence de texte alternatif, ou `--skip-alt-text` pour vérifier uniquement les rapports de contraste des couleurs.
+  * Le composant `Tooltip` a été repensé avec un style amélioré et prend désormais en charge une prop `headline` facultative pour ajouter un titre à vos infobulles.
+  * La commande `mint a11y` prend désormais en charge les flags `--skip-contrast` et `--skip-alt-text`, ce qui vous permet d’exécuter des vérifications d’accessibilité spécifiques dans votre pipeline CI/CD. Utilisez `--skip-contrast` pour vérifier uniquement l’absence de texte alternatif, ou `--skip-alt-text` pour vérifier uniquement les ratios de contraste des couleurs.
 
-  ## Corrections de bogues
+  ## Corrections de bugs
 
-  * Correction des liens à l&#39;intérieur des onglets qui ne fonctionnaient pas correctement.
-  * Correction du rendu des niveaux de titres 5 et 6 dans l&#39;éditeur web.
-  * Correction de l&#39;affichage des exemples de pages de schéma dans les pages de référence d&#39;API.
-  * Correction des chemins d&#39;envoi d&#39;images dans les configurations monorepo.
-  * Correction d&#39;un problème où la mauvaise valeur de charge utile de requête était sélectionnée en premier dans l&#39;espace de test de l&#39;API.
-  * Suppression des extensions de fichier des titres d&#39;image par défaut lors de l&#39;envoi.
+  * Correction des liens à l’intérieur des onglets qui ne fonctionnaient pas correctement.
+  * Correction du rendu des niveaux de titre 5 et 6 dans l’éditeur web.
+  * Correction de l’affichage des exemples sur les pages de schéma dans la référence API.
+  * Correction des chemins de téléversement d’images dans les configurations monorepo.
+  * Correction d’un problème où la mauvaise valeur de charge utile de requête était sélectionnée en premier dans le Bac à sable API.
+  * Suppression des extensions de fichier des titres d’image par défaut lors du téléversement.
   * Correction du style de double soulignement sur les liens de bannière.
-  * Correction des états de chargement et des valeurs de plage de dates pour la page d&#39;analytics.
-  * Les dossiers dans l&#39;éditeur web conservent désormais correctement leur état ouvert/fermé lorsque d&#39;autres dossiers sont ouverts ou fermés.
-  * Correction des longs titres de pages d&#39;API qui débordaient au lieu de revenir à la ligne.
+  * Correction des états de chargement et des valeurs de plage de dates sur la page d’analyse.
+  * Les dossiers dans l’éditeur web conservent désormais correctement leur état ouvert/fermé lorsque d’autres dossiers sont ouverts ou fermés.
+  * Correction des titres longs de pages API qui débordaient au lieu de revenir à la ligne.
 </Update>
 
-<Update label="9 décembre 2025" tags={["Nouvelles versions"]} rss={{ title: "Widget d'aperçu", description: "Suivez les fichiers modifiés dans les déploiements d'aperçu avec un widget interactif" }}>
-  ## Widget d&#39;aperçu
+<Update label="9 décembre 2025" tags={["Nouvelles versions"]} rss={{ title: "Widget d’aperçu", description: "Suivez les fichiers modifiés dans les déploiements d’aperçu avec un widget interactif" }}>
+  ## Widget d’aperçu
 
-  Les déploiements d&#39;aperçu incluent désormais un widget interactif qui affiche tous les fichiers modifiés dans le déploiement. Le widget apparaît sous la forme d&#39;un bouton flottant dans le coin inférieur droit et fournit :
+  Les déploiements d’aperçu incluent désormais un widget interactif qui affiche tous les fichiers modifiés dans le déploiement. Le widget apparaît sous la forme d’un bouton flottant dans le coin inférieur droit et fournit :
 
-  * Une navigation en un clic vers les pages modifiées.
-  * Une liste consultable de tous les fichiers modifiés avec des badges de statut (ajouté, modifié, supprimé).
+  * Accès en un clic aux pages modifiées.
+  * Liste consultable de tous les fichiers modifiés avec des badges d’état (ajouté, modifié, supprimé).
 
-  Le widget est automatiquement activé sur tous les déploiements d&#39;aperçu et aide les réviseurs à naviguer rapidement vers le contenu modifié.
+  Le widget est automatiquement activé sur tous les déploiements d’aperçu et aide les réviseurs à accéder rapidement au contenu modifié.
 </Update>
 
-<Update label="8 décembre 2025" tags={["Nouvelles versions"]} rss={{ title: "Dates de dernière modification", description: "Afficher la dernière mise à jour des pages avec des horodatages automatiques" }}>
+<Update label="8 décembre 2025" tags={["Nouvelles versions"]} rss={{ title: "Dates de dernière modification", description: "Affichez la date de dernière mise à jour des pages avec des horodatages automatiques" }}>
   ## Dates de dernière modification
 
-  Vous pouvez désormais afficher des horodatages de « dernière modification » sur toutes les pages de votre documentation. Activez cette fonctionnalité en définissant le paramètre [`timestamp`](/fr/organize/settings#param-timestamp) dans vos paramètres `docs.json`.
+  Vous pouvez désormais afficher un horodatage de « dernière modification » sur toutes les pages de votre documentation. Activez cette fonctionnalité en définissant le flag [`timestamp`](/fr/organize/settings#param-timestamp) dans vos paramètres `docs.json`.
 
-  Une fois activée, chaque page indiquera automatiquement quand elle a été mise à jour pour la dernière fois, aidant les lecteurs à comprendre l&#39;actualité du contenu.
+  Lorsqu’elle est activée, chaque page indiquera automatiquement sa dernière date de mise à jour, ce qui aide les lecteurs à savoir à quel point le contenu est récent.
 </Update>
 
-<Update label="5 décembre 2025" tags={["Improvements"]} rss={{ title: "Mises à jour hebdomadaires", description: "Améliorations du bac à sable API, améliorations de l’éditeur web et corrections de bugs" }}>
-  ## Améliorations de l’éditeur web
+<Update label="5 décembre 2025" tags={["Améliorations"]} rss={{ title: "Mises à jour hebdomadaires", description: "Améliorations du Bac à sable API, de l'éditeur web et corrections de bugs" }}>
+  ## Améliorations de l&#39;éditeur web
 
-  * Correction du téléversement d’images depuis le mode visuel de l’éditeur. Les images sont désormais téléversées avec des chemins corrects et une meilleure résolution des chemins gère les chemins absolus et relatifs.
-  * Correction de l’opération de synchronisation afin de mettre correctement à jour les fichiers actuellement ouverts, de sorte que l’éditeur affiche le contenu le plus à jour.
-  * Amélioration de la récupération des branches avec des mises à jour automatiques toutes les 15 minutes.
-  * Correction du processus de création de branches pour renseigner correctement la structure de dossiers lors de la création de nouvelles branches sans déplacer les modifications non validées.
-  * Correction du problème de duplication de dossiers lors de la création de nouvelles branches.
+  * Correction du téléversement d&#39;images depuis le mode visuel de l&#39;éditeur. Désormais, les images sont téléversées avec les bons chemins, et la résolution de chemin améliorée gère les chemins absolus comme relatifs.
+  * Correction de l&#39;opération de synchronisation pour mettre à jour correctement les fichiers actuellement ouverts, afin que l&#39;éditeur affiche toujours le contenu le plus récent.
+  * Amélioration de la récupération des branches avec une mise à jour automatique toutes les 15 minutes.
+  * Correction du flux de création de branche afin de remplir correctement la structure des dossiers lors de la création de nouvelles branches, sans déplacer les modifications non validées.
+  * Correction d&#39;un problème de duplication de dossiers lors de la création de nouvelles branches.
 
-  ## Améliorations de l’assistant
+  ## Améliorations de l&#39;assistant
 
-  * Correction de l’envoi à l’assistant afin d’empêcher l’envoi de messages vides.
-  * Correction des envois de messages accidentels pendant la composition avec un IME (pour des langues comme le japonais, le chinois ou le coréen).
-  * Meilleur comportement lors de l’ajout d’extraits de code à l’assistant.
+  * Correction de l&#39;envoi par l&#39;assistant pour empêcher l&#39;envoi de messages vides.
+  * Correction de l&#39;envoi accidentel de messages pendant la composition IME (pour des langues comme le japonais, le chinois ou le coréen).
+  * Amélioration du comportement lors de l&#39;ajout d&#39;extraits de code à l&#39;assistant.
 
   ## Corrections de bugs et fiabilité
 
   * Correction de la gestion des diagrammes Mermaid complexes.
-  * Correction de la gestion du hash pour les URLs et la table des matières afin de mettre correctement en surbrillance la page active lors de l’accès au chemin racine avec une page d’index.
-  * Ajout de la possibilité de désactiver les recommandations de page 404 via la configuration.
-  * Correction d’un bug dans le bac à sable API où les valeurs booléennes `false` et numériques `0` dans les paramètres de requête étaient filtrées et n’apparaissaient pas dans la requête API générée.
+  * Correction de la gestion des ancres dans les URL et la table des matières afin de mettre correctement en surbrillance la page active lors de l&#39;accès au chemin racine avec une page d&#39;index.
+  * Ajout de la possibilité de désactiver les recommandations sur la page 404 via la configuration.
+  * Correction d&#39;un bug dans le Bac à sable API où les valeurs booléennes `false` et numériques `0` dans les paramètres de requête étaient filtrées et n&#39;apparaissaient donc pas dans la requête API générée.
 </Update>
 
-<Update label="3 décembre 2025" tags={["New releases"]} rss={{ title: "Regroupement des requêtes de l’assistant", description: "Regrouper automatiquement les requêtes similaires adressées à l’assistant pour identifier les questions les plus fréquentes des utilisateurs" }}>
-  ## Regroupement des requêtes de l’assistant
+<Update label="3 décembre 2025" tags={["Nouveautés"]} rss={{ title: "Regroupement des requêtes de l'assistant", description: "Regroupez automatiquement les requêtes similaires de l'assistant pour identifier les questions fréquentes des utilisateurs" }}>
+  ## Regroupement des requêtes de l&#39;assistant
 
-  [Assistant insights](https://dashboard.mintlify.com/products/assistant) regroupe désormais automatiquement les requêtes similaires en catégories de questions, ce qui permet d’identifier plus facilement les tendances dans ce que vos utilisateurs demandent.
+  [Assistant insights](https://dashboard.mintlify.com/products/assistant) regroupe désormais automatiquement les requêtes similaires en catégories de questions, ce qui permet d&#39;identifier plus facilement les tendances dans les questions posées par vos utilisateurs.
 
-  Cliquez sur une catégorie pour voir toutes les conversations de cette catégorie et approfondir les conversations individuelles, où vous pouvez voir les requêtes des utilisateurs, les réponses de l’assistant et les sources citées.
+  Cliquez sur une catégorie pour voir toutes les conversations qu&#39;elle contient, puis explorer le détail de chaque conversation, avec les requêtes des utilisateurs, les réponses de l&#39;assistant et les sources citées.
 </Update>
 
-<Update label="1er décembre 2025" tags={["New releases"]} rss={{ title: "Prise en charge de .mintignore", description: "Exclure des fichiers et des répertoires de votre documentation publiée" }}>
+<Update label="1 décembre 2025" tags={["Nouveautés"]} rss={{ title: "Prise en charge de .mintignore", description: "Excluez des fichiers et des répertoires de votre documentation publiée" }}>
   ## Prise en charge de .mintignore
 
   * Ajout de la prise en charge du fichier `.mintignore` pour exclure certains fichiers et répertoires du traitement et de la publication sur votre site de documentation.
-  * Utilise la même syntaxe de motifs que `.gitignore` pour une configuration familière.
-  * Les fichiers exclus n’apparaissent pas dans la documentation publiée, ne sont pas indexés pour la recherche et ne sont pas accessibles aux visiteurs.
+  * Utilise la même syntaxe de motifs que `.gitignore`, pour une configuration familière.
+  * Les fichiers exclus n&#39;apparaissent pas dans la documentation publiée, ne sont pas indexés pour la recherche et ne sont pas accessibles aux visiteurs.
 
-  En savoir plus dans la [documentation .mintignore](/fr/organize/mintignore).
+  Pour en savoir plus, consultez la [documentation .mintignore](/fr/organize/mintignore).
 </Update>
 
-<Update label="25 novembre 2025" tags={["Improvements"]} rss={{ title: "Mise à niveau de la version de Vale", description: "La version 3.10+ de Vale est désormais prise en charge" }}>
+<Update label="25 novembre 2025" tags={["Améliorations"]} rss={{ title: "Mise à niveau de la version de Vale", description: "Vale version 3.10+ now supported" }}>
   ## Mise à niveau de la version de Vale
 
-  * Mise à niveau des dépendances back-end pour utiliser Vale version 3.11.2-r5, apportant une prise en charge native de MDX à la fonctionnalité de vérification Vale CI.
+  * Mise à niveau des dépendances backend vers Vale 3.11.2-r5, avec prise en charge native de MDX dans la fonctionnalité de vérification CI de Vale.
 </Update>
 
-<Update label="21 novembre 2025" tags={["Improvements"]} rss={{ title: "Mises à jour hebdomadaires", description: "Améliorations du bac à sable API, mises à jour de la localisation et améliorations du CLI" }}>
-  ## Améliorations du bac à sable API
+<Update label="21 novembre 2025" tags={["Améliorations"]} rss={{ title: "Mises à jour hebdomadaires", description: "Améliorations du Bac à sable API, mises à jour de la localisation et améliorations de la CLI" }}>
+  ## Améliorations du Bac à sable API
 
-  * Correction d’un problème où la section de réponse disparaissait lors du passage entre des endpoints ayant des codes de réponse différents. Le bac à sable se réinitialise désormais correctement sur le premier code de réponse disponible lors de la navigation vers un nouvel endpoint.
-  * Correction de l’affichage en double de l’en-tête &quot;Authorization&quot; dans les schémas d’authentification HTTP Basic. La section d’authentification affiche désormais une interface plus claire avec des libellés de champs et des descriptions appropriés.
-  * Amélioration de la gestion des schémas `oneOf` dans les objets et tableaux imbriqués. Les schémas API complexes avec plusieurs options de type s’affichent désormais correctement sous forme de menus déroulants plutôt que d’onglets dans les contextes appropriés.
-  * Correction des paramètres de chemin manquants qui étaient définis au niveau de l’endpoint dans les spécifications OpenAPI. Les paramètres spécifiés au-dessus des opérations individuelles sont désormais correctement inclus à la fois sur la page principale et dans le bac à sable.
-  * Amélioration de la génération d’exemples de réponses afin d’inclure toutes les propriétés requises, même lorsque les exemples ne spécifient que certains champs. Cela garantit que les exemples de réponses sont complets et précis.
-  * Correction des exemples de préremplissage manquants dans les tableaux d’objets. Les éléments de tableau contenant des données d’exemple se renseignent désormais correctement dans le bac à sable avec un index correct.
-  * Amélioration des marges et des espacements des descriptions dans tout le bac à sable API pour une meilleure lisibilité et une meilleure cohérence visuelle.
+  * Correction d&#39;un problème où la section de réponse disparaissait lors du passage d&#39;un point de terminaison à un autre avec des codes de réponse différents. Le Bac à sable API se réinitialise désormais correctement sur le premier code de réponse disponible lors de la navigation vers un nouveau point de terminaison.
+  * Correction du double affichage de l&#39;en-tête &quot;Authorization&quot; dans les schémas d&#39;authentification HTTP Basic. La section d&#39;authentification affiche désormais une interface plus épurée avec des libellés et descriptions de champs appropriés.
+  * Amélioration de la gestion des schémas `oneOf` dans les objets et tableaux imbriqués. Les schémas API complexes avec plusieurs options de type s&#39;affichent désormais correctement sous forme de listes déroulantes plutôt que d&#39;onglets dans les contextes appropriés.
+  * Correction des paramètres de chemin manquants définis au niveau du point de terminaison dans les specs OpenAPI. Les paramètres spécifiés au-dessus des opérations individuelles sont désormais correctement inclus à la fois sur la page principale et dans le playground.
+  * Amélioration de la génération des exemples de réponse afin d&#39;inclure toutes les propriétés requises, même lorsque les exemples ne spécifient que certains champs. Cela garantit des exemples de réponse complets et précis.
+  * Correction des exemples de préremplissage manquants dans les tableaux d&#39;objets. Les éléments de tableau avec des données d&#39;exemple sont désormais correctement renseignés dans le playground avec l&#39;indexation appropriée.
+  * Amélioration des marges internes des descriptions et de l&#39;espacement dans l&#39;ensemble du Bac à sable API pour une meilleure lisibilité et une plus grande cohérence visuelle.
 
   ## Améliorations de la localisation
 
-  * Amélioration des traductions dans les options des menus contextuels et les messages de statut de l’assistant pour toutes les langues prises en charge.
+  * Amélioration des traductions dans les options du menu contextuel et les messages d&#39;état de l&#39;assistant pour toutes les langues prises en charge.
 
-  ## Améliorations du CLI
+  ## Améliorations de la CLI
 
-  * Ajout d’un message d’erreur pour les utilisateurs qui exécutent `mint dev` sur des versions de Node.js inférieures à 20.17. Les utilisateurs sont guidés pour passer à une version LTS.
+  * Ajout d&#39;un message d&#39;erreur pour les utilisateurs qui exécutent `mint dev` sur des versions de Node.js inférieures à 20.17. Ils sont invités à passer à une version LTS.
 </Update>
 
-<Update label="15 novembre 2025" tags={["Nouvelles versions", "Améliorations"]} rss={{ title: "Mises à jour hebdomadaires", description: "Composant Badge, améliorations du bac à sable API, prise en charge de langages personnalisés et optimisations des performances" }}>
+<Update label="15 novembre 2025" tags={["Nouvelles versions", "Améliorations"]} rss={{ title: "Mises à jour hebdomadaires", description: "Composant Badge, améliorations du Bac à sable API, prise en charge des langages personnalisés et améliorations des performances" }}>
   ## Nouvelles fonctionnalités
 
   * **Composant Badge** : nouveau composant <Badge color="green">Badge</Badge> pour afficher des indicateurs d’état, des libellés et des tags
-  * **Langages Shiki personnalisés** : ajout de la prise en charge de langages de programmation personnalisés dans les blocs de code via la configuration `docs.json`, permettant la coloration syntaxique pour les langages spécifiques à un domaine
-  * **Intégration Clarity analytics** : Microsoft Clarity est désormais disponible comme intégration d’analytics pour l’enregistrement de sessions et le suivi des cartes de chaleur
+  * **Langages Shiki personnalisés** : ajout de la prise en charge de langages de programmation personnalisés dans les blocs de code via la configuration `docs.json`, avec coloration syntaxique pour les langages spécifiques à un domaine
+  * **Intégration de Clarity pour l’analyse** : Microsoft Clarity est désormais disponible comme intégration d’analyse pour l’enregistrement des sessions et le suivi des cartes de chaleur
 
-  ## Améliorations du bac à sable API
+  ## Améliorations du Bac à sable API
 
-  * Les clés d’authentification persistent désormais dans le bac à sable API lors de la navigation entre les pages et entre les sessions du navigateur, ce qui évite de devoir ressaisir les identifiants lors du test de plusieurs endpoints
-  * Les clés d’authentification sont automatiquement préremplies à partir de votre configuration, ce qui permet de démarrer plus rapidement les tests d’endpoints authentifiés
-  * Correction des noms d’en-têtes d’authentification pour Bearer auth et OAuth afin d’utiliser les standards HTTP appropriés
-  * Les entrées de sécurité définies au niveau de l’opération dans les spécifications OpenAPI remplacent désormais correctement les définitions de sécurité globales
-  * Correction d’un problème où les entrées d’en-têtes marquées comme paramètres de sécurité étaient incluses à tort dans les exemples de code générés
-  * Meilleure prise en charge des paramètres de style `deepObject` dans l’affichage des champs d’API
-  * Meilleurs messages d’erreur lorsque des URL non valides sont fournies dans les configurations d’API
-  * Amélioration de l’interface du bac à sable API avec un meilleur espacement, une meilleure mise en page et de meilleurs états de chargement
+  * Les clés d’authentification persistent désormais dans le Bac à sable API lors de la navigation entre les pages et d’une session de navigateur à l’autre, ce qui évite de ressaisir les identifiants lors du test de plusieurs endpoints
+  * Les clés d’authentification sont automatiquement préremplies à partir de votre configuration, ce qui permet de tester plus rapidement des endpoints authentifiés
+  * Correction des noms d’en-tête d’authentification pour Bearer et OAuth afin de respecter les normes HTTP
+  * Les entrées de sécurité définies au niveau des opérations dans les spécifications OpenAPI remplacent désormais correctement les définitions de sécurité globales
+  * Correction d’un problème où les entrées d’en-tête marquées comme paramètres de sécurité étaient incluses à tort dans les exemples de code générés
+  * Amélioration de la gestion des paramètres de style `deepObject` dans l’affichage des champs API
+  * Messages d’erreur plus clairs lorsque des URL non valides sont fournies dans les configurations API
+  * Amélioration de l’interface du Bac à sable API avec un meilleur espacement, une mise en page optimisée et un chargement amélioré
 
   ## Améliorations de la navigation et de l’interface
 
-  * Les indicateurs au survol des onglets bénéficient désormais d’un style amélioré pour un meilleur retour visuel
+  * Les indicateurs de survol des onglets bénéficient désormais d’un style amélioré pour un meilleur retour visuel
   * Les mots longs sont désormais correctement renvoyés à la ligne pour éviter le défilement horizontal
   * Le composant Step gère désormais les cas où aucun titre d’étape n’est fourni
-  * L’espacement de la section du logo est amélioré avec un meilleur padding
+  * Espacement amélioré dans la section du logo grâce à une meilleure marge intérieure
   * Correction des ID de titres pour gérer correctement les points d’interrogation et les caractères spéciaux dans les liens d’ancrage
-  * Le composant Icon accepte désormais la prop `className` pour un style personnalisé
-  * Correction des couleurs du sélecteur de thème pour une meilleure visibilité en modes clair et sombre
+  * Le composant Icon accepte désormais la prop `className` pour une personnalisation du style
+  * Correction des couleurs du bouton de bascule du thème pour une meilleure visibilité en modes clair et sombre
 
   ## Améliorations de l’éditeur web
 
-  * Le changement de branche est désormais intégré directement dans l’interface de l’éditeur pour faciliter la navigation entre les branches
-  * Correction de la création et du renommage de fichiers afin de correspondre correctement aux emplacements de fichiers d’origine dans le frontmatter MDX
+  * Le changement de branche est désormais intégré directement à l’interface de l’éditeur pour faciliter la navigation entre les branches
+  * Correction de la création et du renommage de fichiers afin de respecter les emplacements d’origine des fichiers dans le Frontmatter MDX
   * Correction de la gestion du déplacement de fichiers vers des chemins précédemment supprimés
-  * L’état des dossiers persiste désormais dans l’éditeur entre les sessions
+  * L’état des dossiers persiste désormais dans l’éditeur d’une session à l’autre
 
   ## Améliorations des composants et du style
 
-  * Les images peuvent désormais être zoomées avec un style de superposition amélioré en modes clair et sombre
+  * Les images peuvent désormais être zoomées avec un style de superposition amélioré pour les modes clair et sombre
   * Correction des styles des raccourcis clavier dans les encadrés en mode sombre
   * Amélioration de la génération d’images OG avec la prise en charge de Google Fonts et une meilleure logique de troncature
-  * Amélioration de l’interface pour les tableaux avec un meilleur alignement, un meilleur espacement et une meilleure lisibilité
-  * Correction du comportement de défilement pour les tableaux à l’intérieur des onglets et les étapes à l’intérieur des onglets
+  * Amélioration de l’interface des tableaux avec un meilleur alignement, un meilleur espacement et une meilleure lisibilité
+  * Correction du comportement de défilement pour les tableaux dans les onglets et les étapes dans les onglets
   * Amélioration du style de la barre latérale pour le thème Palm
 
   ## Performances et infrastructure
 
-  * Les thèmes Shiki sont désormais chargés en différé pour améliorer les performances de chargement initial de la page
+  * Les thèmes Shiki sont désormais chargés à la demande afin d’améliorer les performances de chargement initial des pages
   * Réduction de la latence de navigation grâce à l’optimisation du comportement de préchargement
 
   ## Corrections de bugs et fiabilité
 
-  * Effacement correct des valeurs ajoutées sur les entrées d’objets et de tableaux dans le bac à sable API
-  * Correction de problèmes de rendu de la table des matières
-  * Isolation du favicon corrigée pour éviter les conflits entre différents sites de documentation
+  * Suppression correcte des valeurs ajoutées dans les champs d’objet et de tableau du Bac à sable API
+  * Correction de problèmes d’affichage de la table des matières
+  * Correction de l’isolation des favicons pour éviter les conflits entre différents sites de documentation
   * Correction de l’affichage de la barre latérale sur les pages non API
-  * Correction du clignotement du contour lors de l’ouverture/fermeture de la fenêtre de zoom d’image
+  * Correction du clignotement du contour à l’ouverture et à la fermeture de la modale de zoom des images
   * Les liens externes s’ouvrent désormais correctement dans de nouveaux onglets
-  * Correction des incohérences de design du tableau de bord et amélioration de l’espacement
+  * Correction des incohérences de conception du tableau de bord et amélioration de l’espacement
 </Update>
 
-<Update label="31 octobre 2025" tags={["Improvements"]} rss={{ title: "Mises à jour hebdomadaires", description: "Améliorations du bac à sable API, améliorations des tableaux, optimisations des performances et corrections de bugs" }}>
+<Update label="31 octobre 2025" tags={["Améliorations"]} rss={{ title: "Mises à jour hebdomadaires", description: "Améliorations du bac à sable API, améliorations des tableaux, optimisations des performances et corrections de bugs" }}>
   ## Améliorations de l&#39;assistant
 
-  * **Les questions de démarrage pour l&#39;assistant sont là ! Vous pouvez ajouter les vôtres dans le tableau de bord à [Assistant --&gt; Settings](https://dashboard.mintlify.com/mintlify/mintlify/products/assistant/settings)**
-  * La qualité des insights de l&#39;assistant a été améliorée avec une protection anti‑spam par défaut pour les mots‑clés abusifs et les requêtes JSON.
+  * **Les questions de départ pour l&#39;assistant sont là ! Vous pouvez ajouter les vôtres dans le tableau de bord, sous [Assistant --&gt; Settings](https://dashboard.mintlify.com/mintlify/mintlify/products/assistant/settings)**
+  * La qualité des insights de l&#39;assistant a été améliorée grâce à une protection anti-spam par défaut contre les termes abusifs et les requêtes JSON.
 
   ## Améliorations du bac à sable API
 
   * Le bac à sable API renseigne désormais automatiquement les valeurs par défaut des paramètres, ce qui fait gagner du temps lors des tests des endpoints.
-  * Les problèmes avec `allOf`, `oneOf` et les schémas d&#39;objets imbriqués qui causaient auparavant des problèmes de rendu ou un affichage incorrect des champs ont été corrigés, et les schémas d&#39;API complexes s&#39;affichent désormais correctement avec tous les champs visibles et correctement structurés.
-  * Les types de champs enum et nullable affichent désormais des libellés exacts dans le bac à sable, ce qui clarifie les valeurs acceptées et indique si les champs sont optionnels.
-  * Lors de l&#39;utilisation d&#39;objets imbriqués dans les requêtes d&#39;API, le bac à sable affiche désormais des libellés descriptifs appropriés pour chaque champ au lieu de valeurs génériques, ce qui facilite la compréhension des données à fournir.
-  * Les tableaux de constantes enum et les affichages de champs d&#39;API s&#39;affichent désormais avec un formatage et un alignement améliorés, ce qui facilite le survol des options disponibles et la compréhension des exigences de chaque champ.
-  * Les modales du bac à sable API affichent désormais des descriptions riches au format MDX en haut, ce qui fournit un meilleur contexte pour les endpoints avec texte mis en forme, liens et exemples de code.
+  * Les problèmes liés à `allOf`, `oneOf` et aux schémas d&#39;objets imbriqués, qui causaient auparavant des problèmes de rendu ou des affichages de champs incorrects, ont été corrigés. Les schémas API complexes s&#39;affichent désormais correctement, avec tous les champs visibles et bien structurés.
+  * Les types de champs enum et nullable affichent désormais des libellés précis dans le bac à sable, ce qui permet de mieux comprendre quelles valeurs sont acceptées et si les champs sont facultatifs.
+  * Lorsque vous travaillez avec des objets imbriqués dans des requêtes API, le bac à sable affiche désormais des libellés descriptifs appropriés pour chaque champ au lieu d&#39;indications génériques, ce qui permet de mieux comprendre quelles données fournir.
+  * Les tableaux de constantes enum et l&#39;affichage des champs API bénéficient désormais d&#39;un meilleur formatage et d&#39;un meilleur alignement, ce qui facilite le repérage des options disponibles et la compréhension des exigences des champs.
+  * Les modales du bac à sable API affichent désormais en haut des descriptions enrichies au format MDX, ce qui fournit un meilleur contexte pour les endpoints avec du texte mis en forme, des liens et des exemples de code.
 
-  ## Modifications de l’analytics
+  ## Changements liés à l’analyse
 
-  * Chargement différé de l’analytics : PostHog et LogRocket se chargent désormais après le contenu de la documentation, ce qui améliore les temps de chargement initiaux des pages et les scores Core Web Vitals sans affecter les données d’analytics.
-  * Enregistrement conditionnel des sessions : l&#39;enregistrement de sessions PostHog peut désormais être activé de manière conditionnelle en fonction des propriétés utilisateur ou du contexte de la page, pour un meilleur contrôle sur le moment où les enregistrements ont lieu.
+  * Chargement différé de l&#39;analyse : PostHog et LogRocket se chargent désormais après le contenu de la documentation, ce qui améliore le temps de chargement initial des pages et les scores Core Web Vitals sans affecter les données d&#39;analyse.
+  * Enregistrement conditionnel des sessions : l&#39;enregistrement des sessions PostHog peut désormais être activé de manière conditionnelle selon les propriétés utilisateur ou le contexte de la page, pour mieux contrôler quand les enregistrements ont lieu.
 
   ## Améliorations visuelles
 
-  * Les tableaux bénéficient désormais d&#39;un meilleur alignement, d&#39;espacements cohérents et d&#39;une lisibilité accrue. Les en‑têtes sont correctement alignés avec leurs colonnes de contenu.
+  * Les tableaux bénéficient désormais d&#39;un meilleur alignement, d&#39;un espacement cohérent et d&#39;une lisibilité accrue. Les en-têtes s&#39;alignent correctement avec leurs colonnes de contenu.
 
   ## Corrections de bugs
 
-  * Correction des problèmes de débordement de liens qui provoquaient un défilement horizontal sur les appareils mobiles. Les liens reviennent désormais correctement à la ligne dans leurs conteneurs.
-  * Amélioration du style des blocs LaTeX/math pour une meilleure lisibilité et un formatage cohérent.
-  * Ajout des props `playsInline` et autoplay aux intégrations vidéo pour qu&#39;elles fonctionnent correctement sur les appareils iOS.
-  * Mise à jour de l&#39;icône Claude avec un border‑radius approprié pour une meilleure cohérence visuelle.
+  * Correction des problèmes de débordement de liens qui provoquaient un défilement horizontal sur les appareils mobiles. Les liens passent désormais correctement à la ligne dans leurs conteneurs.
+  * Amélioration du style des blocs LaTeX/math pour une meilleure lisibilité et une mise en forme cohérente.
+  * Ajout des props `playsInline` et autoplay aux intégrations vidéo afin qu&#39;elles fonctionnent correctement sur les appareils iOS.
+  * Mise à jour de l&#39;icône Claude avec un `border-radius` approprié pour une cohérence visuelle.
   * Correction du routage de `/llms.txt` afin que les agents LLM puissent accéder correctement à la documentation.
-  * Prévention de l&#39;expansion infinie des schémas dans les spécifications OpenAPI complexes qui pouvait provoquer des plantages du navigateur.
-  * Suppression du débordement horizontal (x‑overflow) dans le thème Palm qui coupait le texte dans le bac à sable API.
-  * Augmentation de la taille de police du contenu pour améliorer la compatibilité avec les modes de lecture des navigateurs.
+  * Prévention de l&#39;expansion infinie des schémas dans les specs OpenAPI complexes, qui pouvaient provoquer des plantages du navigateur.
+  * Suppression du débordement horizontal dans le thème Palm, qui coupait le texte dans le bac à sable API.
+  * Augmentation de la taille de police du contenu pour améliorer la compatibilité avec les modes lecteur des navigateurs.
   * Correction du style du bouton de connexion Google pour une meilleure cohérence visuelle.
 </Update>
 
-<Update label="24 octobre 2025" tags={["Improvements"]} rss={{ title: "Mises à jour hebdomadaires", description: "Améliorations du tableau de bord, améliorations du bac à sable API, corrections d’authentification et optimisations des performances" }}>
+<Update label="24 octobre 2025" tags={["Améliorations"]} rss={{ title: "Mises à jour hebdomadaires", description: "Améliorations du tableau de bord, améliorations du bac à sable API, corrections de l'authentification et optimisations des performances" }}>
   ## Améliorations des insights
 
-  * Amélioration de la page des insights avec des sélecteurs de dates corrigés pour « aujourd&#39;hui » et « hier »
-  * Tableau de feedback amélioré avec une fonctionnalité de recherche optimisée
-  * Ajout d’un état de chargement pour le tableau des catégories
+  * Amélioration de la page des insights avec des sélecteurs de date corrigés pour « aujourd&#39;hui » et « hier »
+  * Amélioration du tableau des retours avec une meilleure fonctionnalité de recherche
+  * Ajout d&#39;un état de chargement pour le tableau des catégories
 
   ## Améliorations de l&#39;assistant
 
-  * Ajout de la configuration de l’emplacement de l&#39;assistant dans le tableau de bord
-  * Amélioration des réponses de l&#39;assistant avec des corrections pour la récupération de contexte et les messages d’outils
+  * Ajout d&#39;une configuration du placement de l&#39;assistant dans le tableau de bord
+  * Amélioration des réponses de l&#39;assistant avec des corrections de la récupération du contexte et des messages d&#39;outil
 
-  ## Améliorations du bac à sable API et d’OpenAPI
+  ## Améliorations du bac à sable API et d&#39;OpenAPI
 
-  * Refactorisation des champs d’endpoint du bac à sable API pour utiliser un nouveau graphe de schéma pour de meilleures performances
-  * Amélioration de l’affichage des exemples d’API dans la modale du bac à sable même lorsque la barre latérale de l’assistant est ouverte
-  * Correction des props adjacentes aux `$refs` et aux props `x-` qui étaient perdues lors de l’analyse OpenAPI
-  * Correction du style de l’en‑tête de la modale du bac à sable API
+  * Refactorisation des champs d&#39;endpoint du bac à sable API pour utiliser le nouveau graphe de schéma afin d&#39;améliorer les performances
+  * Amélioration de l&#39;affichage des exemples API dans la modale du bac à sable, même lorsque la barre latérale de l&#39;assistant est ouverte
+  * Correction de la perte des props adjacentes aux `$refs` et des props `x-` lors de l&#39;analyse OpenAPI
+  * Correction du style de l&#39;en-tête de la modale du bac à sable API
 
-  ## Améliorations de l’éditeur web et du déploiement
+  ## Améliorations de l&#39;éditeur web et du déploiement
 
-  * Restauration du bouton manuel de création de preview pour faciliter la création de déploiements de preview
-  * Ajout d’un fetcher dans le tableau de bord pour les données de protections de branches
-  * Ajout d’un fetcher dans le tableau de bord pour le suivi du statut des PR
-  * Amélioration de la gestion de l’état de l’éditeur, permettant à l’état de persister entre les sessions du navigateur
-  * Correction de l’état désactivé pour le bouton de publication de l’éditeur
-  * Suppression de l’arrière‑plan des blocs de code dans l’éditeur pour une apparence plus épurée
+  * Restauration du bouton de création manuelle d&#39;aperçu pour faciliter la création des déploiements de prévisualisation
+  * Ajout d&#39;un fetcher dans le tableau de bord pour les données de protection des branches
+  * Ajout d&#39;un fetcher dans le tableau de bord pour le suivi du statut des PR
+  * Amélioration de la gestion d&#39;état de l&#39;éditeur, permettant à l&#39;état de persister entre les sessions du navigateur
+  * Correction de l&#39;état désactivé du bouton de publication de l&#39;éditeur
+  * Suppression de l&#39;arrière-plan des blocs de code dans l&#39;éditeur pour une apparence plus épurée
 
   ## Performances et infrastructure
 
-  * Mise en œuvre d’une synchronisation Git complète dans l’éditeur web pour une meilleure synchronisation du dépôt
-  * Mise en cache des réponses MCP pour de meilleures performances
+  * Implémentation d&#39;une synchronisation Git complète dans l&#39;éditeur web pour une meilleure synchronisation du dépôt
+  * Mise en cache des réponses MCP pour améliorer les performances
   * Amélioration du sitemap pour normaliser les chemins `/index`
 
   ## Corrections de bugs et fiabilité
 
-  * Correction des valeurs de préremplissage d’authentification qui n’étaient pas correctement renseignées dans le bac à sable API
-  * Correction des meta tags personnalisés de `seo.metatags` pour qu’ils survivent à l’hydratation côté client
-  * Correction du débordement de texte de l’en‑tête de page avec le style `break-all`
+  * Correction des valeurs de préremplissage d&#39;authentification qui n&#39;étaient pas correctement renseignées dans le bac à sable API
+  * Correction des balises meta personnalisées de `seo.metatags` afin qu&#39;elles soient conservées après l&#39;hydratation côté client
+  * Correction du débordement de texte dans l&#39;en-tête de page avec le style `break-all`
   * Suppression de la contrainte de pleine largeur pour les options de taille de page
-  * Correction de la taille du bouton pour accepter les invitations d’organisation
-  * Correction de l’affichage du raccourci clavier affichant « Ctrl+I » sans signe plus sur les ordinateurs non‑macOS
+  * Correction de la taille du bouton pour accepter les invitations d&#39;organisation
+  * Correction de l&#39;affichage du raccourci clavier montrant « Ctrl+I » sans signe plus sur les ordinateurs non macOS
 </Update>
 
-<Update label="17 octobre 2025" tags={["Improvements"]} rss={{ title: "Mises à jour hebdomadaires", description: "Améliorations de l'assistant, améliorations de la navigation, mises à jour du bac à sable API et corrections de bugs" }}>
-  ## Améliorations de l&#39;assistant et de l&#39;IA
+<Update label="17 octobre 2025" tags={["Améliorations"]} rss={{ title: "Mises à jour hebdomadaires", description: "Améliorations de l’assistant, amélioration de la navigation, mises à jour du Bac à sable API et corrections de bugs" }}>
+  ## Améliorations de l’assistant et de l’IA
 
-  * Mise à niveau du prompt de l&#39;assistant pour une meilleure précision et des réponses tenant compte du contexte
-  * Ajout d&#39;un score de confiance pour améliorer la prise de décision dans les réponses de l&#39;assistant
-  * Amélioration de la recherche de l&#39;assistant avec des requêtes de documentation parallèles pour des résultats plus rapides
-  * Correction d&#39;un bug où l&#39;assistant disparaissait et amélioration de sa visibilité sur les petites pages
+  * Amélioration du prompt de l’assistant pour gagner en précision et fournir des réponses mieux adaptées au contexte
+  * Ajout d’un score de confiance pour améliorer la prise de décision dans les réponses de l’assistant
+  * Amélioration de la recherche de l’assistant grâce à des requêtes parallèles dans la documentation, pour des résultats plus rapides
+  * Correction d’un bug qui faisait disparaître l’assistant et amélioration de sa visibilité sur les pages de petite taille
 
-  ## Améliorations de la navigation et de l&#39;interface
+  ## Améliorations de la navigation et de l’interface
 
-  * Ajout d&#39;une gouttière de barre de défilement stable aux composants de navigation pour une mise en page cohérente
-  * La section &quot;Sur cette page&quot; est désormais cliquable pour faire défiler rapidement vers le haut d&#39;une page
-  * Correction du positionnement de la barre de l&#39;assistant sur tous les thèmes
-  * Amélioration de la barre de l&#39;assistant pour éviter le chevauchement du contenu
+  * Ajout d’une gouttière de barre de défilement stable aux composants de navigation pour une mise en page cohérente
+  * La section &quot;Sur cette page&quot; est désormais cliquable pour revenir rapidement en haut d’une page
+  * Correction du positionnement de la barre de l’assistant dans tous les thèmes
+  * Amélioration de la barre de l’assistant pour éviter qu’elle ne chevauche le contenu
   * Correction de la largeur maximale des pages larges du thème Almond
-  * Amélioration de la taille des icônes de flèche des menus déroulants pour une apparence cohérente des groupes de navigation
+  * Amélioration du dimensionnement de l’icône en forme de flèche dans les menus déroulants pour un affichage homogène des groupes de navigation
 
-  ## Améliorations du bac à sable API et d&#39;OpenAPI
+  ## Améliorations du Bac à sable API et d’OpenAPI
 
   * Ajout de la prise en charge des feature flags pour le nouveau design de la page de référence API
   * Amélioration des utilitaires de graphe de schéma OpenAPI pour gérer correctement les compositions
-  * Ajout du type d&#39;endpoint aux données d&#39;opération pour une meilleure documentation d&#39;API
-  * Correction du rendu des descriptions du bac à sable API lorsque `enum` et les tableaux sont en Markdown
-  * Déplacement du rendu des descriptions dans le bac à sable API pour une meilleure mise en page
+  * Ajout du type d’endpoint aux données d’opération pour améliorer la documentation API
+  * Correction du rendu des descriptions dans le Bac à sable API lorsque enum et table sont en Markdown
+  * Déplacement du rendu des descriptions dans le Bac à sable API pour améliorer la mise en page
 
   ## Corrections de bugs et fiabilité
 
-  * Correction du changement de langue pour rester sur la même page au lieu de rediriger vers la page d&#39;accueil
-  * Correction de la CLI de détection de liens cassés pour qu&#39;elle se termine avec le code 1 pour l&#39;intégration CI/CD
-  * Correction des chemins de polices locales pour qu&#39;ils soient correctement précédés d&#39;une barre oblique
+  * Correction du changement de langue pour rester sur la même page au lieu de rediriger vers la page d’accueil
+  * Correction du CLI des liens rompus pour quitter avec le code 1 afin de faciliter l’intégration CI/CD
+  * Correction des chemins des polices locales pour ajouter correctement une barre oblique au début
   * Correction de la gestion des redirections pour ignorer les barres obliques initiales dans `docs.json`
-  * Correction de la suppression de `/index` des URL canoniques pour un meilleur SEO
-  * Correction du positionnement des listes ordonnées à l&#39;intérieur des accordéons
-  * Correction du style des balises `<span>` pour qu&#39;elles se comportent comme des balises `<p>`
-  * Correction de l&#39;affichage en bloc de la première balise `<p>` dans les listes
-  * Correction de l&#39;affichage des images OG pour afficher le nom de la division pour les pages d&#39;index
-  * Correction des chemins d&#39;icônes pour inclure `BASE_PATH` pour les chemins relatifs
-  * Suppression du flou d&#39;arrière-plan de l&#39;assistant pour de meilleures performances
+  * Correction de la suppression de `/index` dans l’URL canonique pour un meilleur SEO
+  * Correction du positionnement des listes ordonnées à l’intérieur des accordéons
+  * Correction du style des balises `<span>` pour qu’elles se comportent comme les balises `<p>`
+  * Correction de l’affichage en bloc de la première balise `<p>` dans les listes
+  * Correction de l’affichage de l’image OG pour montrer le nom de la division sur les pages d’index
+  * Correction des chemins d’icônes pour inclure `BASE_PATH` dans les chemins relatifs
+  * Correction de la suppression du flou d’arrière-plan de l’assistant pour de meilleures performances
 </Update>
 
-<Update label="11 octobre 2025" tags={["Improvements"]} rss={{ title: "Mises à jour hebdomadaires", description: "Améliorations du bac à sable API, améliorations d'Insights, mises à jour de l'éditeur web et corrections de bugs" }}>
-  ## Fonctionnalités d&#39;IA pour l&#39;assistant et l&#39;agent
+<Update label="11 octobre 2025" tags={["Améliorations"]} rss={{ title: "Mises à jour hebdomadaires", description: "Améliorations du Bac à sable API, améliorations d’Insights, mises à jour de l’éditeur web et corrections de bugs" }}>
+  ## Fonctionnalités IA de l’assistant et de l’agent
 
-  * Ajout des outils `list_pull_requests` et `list_commits` pour l&#39;agent afin qu&#39;il puisse documenter une plage de dates de PR ou plusieurs PR en une seule fois
-  * Mise à niveau de l&#39;agent et de l&#39;assistant vers Claude Sonnet 4.5
-  * Amélioration de la recherche de l&#39;assistant pour interroger la documentation en parallèle et obtenir des réponses plus rapides
-  * Correction du comptage de la longueur des conversations pour exclure les appels d&#39;outils
+  * Ajout des outils list&#95;pull&#95;requests et list&#95;commits pour l’agent afin qu’il puisse documenter une plage de dates de PR ou plusieurs PR à la fois
+  * Mise à niveau de l’agent et de l’assistant vers Claude Sonnet 4.5
+  * Amélioration de la recherche de l’assistant pour interroger la documentation en parallèle et accélérer les réponses
+  * Correction du comptage de la longueur des conversations pour exclure les appels d’outils
 
-  ## Améliorations d&#39;Insights
+  ## Améliorations d’Insights
 
-  * Analytics renommé en Insights
-  * Suppression de l&#39;obligation de cliquer pour charger Insights afin que vous puissiez voir immédiatement toutes vos données
-  * Amélioration de la précision des données d&#39;Insights avec des horodatages côté serveur
+  * Renommage d’analyse en Insights
+  * Suppression du clic nécessaire pour charger Insights afin que vous puissiez voir immédiatement toutes vos données
+  * Amélioration de la précision des données d’Insights grâce à des horodatages côté serveur
 
-  ## Améliorations de l&#39;éditeur web et du tableau de bord
+  ## Améliorations de l’éditeur web et du tableau de bord
 
-  * Suppression de l&#39;arrière-plan des blocs de code dans l&#39;éditeur pour une apparence plus épurée
-  * Correction du flux de création de branche pour naviguer correctement vers les nouvelles branches créées
-  * Ajout de la pagination de l&#39;historique de déploiement
+  * Suppression de l’arrière-plan des blocs de code dans l’éditeur pour un rendu plus épuré
+  * Correction du flux de création de branche pour ouvrir correctement les branches nouvellement créées
+  * Ajout de la pagination de l’historique des déploiements
   * Ajout de la pagination par curseur au tableau des déploiements de prévisualisation
-  * Correction des déploiements de prévisualisation pour ne retourner que les déploiements d&#39;environnement de prévisualisation
-  * Amélioration de l&#39;UI/UX du tableau de bord avec un meilleur espacement, une meilleure gestion des entrées et des corrections de mise en page
-  * Amélioration de la gestion des liens dans le chat de l&#39;assistant du tableau de bord
-  * Correction des problèmes de contour pour l&#39;assistant de chat dans Firefox
+  * Correction des déploiements de prévisualisation afin qu’ils ne renvoient que ceux de l’environnement de prévisualisation
+  * Amélioration de l’UI/UX du tableau de bord avec un meilleur espacement, une meilleure gestion des entrées et des corrections de mise en page
+  * Ajout d’une meilleure gestion des liens dans le chat de l’assistant du tableau de bord
+  * Correction des problèmes de contour de l’assistant de chat dans Firefox
 
-  ## Améliorations du bac à sable API
+  ## Améliorations du Bac à sable API
 
-  * Amélioration du rendu des modales du bac à sable API
-  * Correction des éléments extensibles du bac à sable API qui ne fonctionnaient pas avec les liens d&#39;ancrage
-  * Ajout de la prise en charge de la fusion du corps d&#39;exemple et du corps saisi par l&#39;utilisateur dans le bac à sable API
-  * Correction de l&#39;affichage des réponses vidéo dans le bac à sable API
+  * Amélioration du rendu des modales du Bac à sable API
+  * Correction des éléments extensibles du Bac à sable API qui ne fonctionnaient pas avec les liens d’ancrage
+  * Ajout de la prise en charge de la fusion entre l’exemple et le corps saisi par l’utilisateur dans le Bac à sable API
+  * Correction de l’affichage des réponses vidéo dans le Bac à sable API
 
   ## Corrections de bugs et fiabilité
 
-  * Correction des chemins de base et des liens en double dans les pages 404 recommandées
-  * Remplissage automatique de la balise `og:url` avec l&#39;URL canonique appropriée
-  * Ajout d&#39;une balise canonique pour un meilleur SEO
-  * Correction des problèmes de surdéfilement des blocs de code
-  * Configuration des moteurs de recherche pour ignorer les déploiements de prévisualisation à des fins de SEO
-  * Correction du suivi du référent pour utiliser le domaine au lieu de l&#39;URL complète
-  * Correction d&#39;un problème où les images devenaient toujours des éléments de bloc MDX (les images en ligne restent en ligne)
-  * Suppression des commentaires dans les pages markdown brutes afin que vous puissiez utiliser des commentaires TODO sans qu&#39;ils ne s&#39;affichent pour les utilisateurs
-  * Correction de la prise en charge de la lecture de répertoires pour `read_external_files`
+  * Correction des chemins de base et des liens dupliqués dans les pages recommandées de la 404
+  * Remplissage automatique de la balise og:url avec l’URL canonique appropriée
+  * Ajout d’une balise canonique pour un meilleur SEO
+  * Correction des problèmes de défilement excessif dans les blocs de code
+  * Les moteurs de recherche ignorent désormais les déploiements de prévisualisation à des fins de SEO
+  * Correction du suivi du référent pour utiliser le domaine au lieu de l’URL complète
+  * Correction des images qui devenaient systématiquement des éléments de bloc MDX (les images en ligne restent en ligne)
+  * Suppression des commentaires dans les pages markdown brutes afin que vous puissiez utiliser des commentaires TODO sans qu’ils soient visibles par les utilisateurs
+  * Correction de la prise en charge de la lecture de répertoires pour read&#95;external&#95;files
 
   ## Composants et style
 
-  * Ajout de la prise en charge des menus déroulants dans la division Products
-  * Correction de Products et du menu dans la fonction utilitaire de navigation du middleware
-  * Modification du texte de la page 404 pour qu&#39;il soit plus clair
+  * Ajout de la prise en charge des menus déroulants dans la division products
+  * Correction de products et du menu dans la fonction utilitaire de navigation du middleware
+  * Modification du texte de la page 404 pour plus de clarté
 </Update>
 
-<Update label="3 octobre 2025" tags={["Nouvelles versions", "Améliorations"]} rss={{ title: "Mises à jour hebdomadaires", description: "Navigation produits, CLI d’accessibilité, améliorations du bac à sable API et importantes améliorations d’accessibilité" }}>
+<Update label="3 octobre 2025" tags={["Nouveautés", "Améliorations"]} rss={{ title: "Mises à jour hebdomadaires", description: "Navigation des produits, CLI d’accessibilité, améliorations du bac à sable API et nombreuses améliorations de l’accessibilité" }}>
   ## Nouvelles fonctionnalités
 
-  * **Navigation produits** : Organisez la documentation pour plusieurs produits avec la navigation par sélecteur de produit
-  * **Commande CLI d’accessibilité** : Exécutez `mint a11y` pour tester votre documentation et détecter les problèmes d’accessibilité
-  * **Réponses vidéo dans le bac à sable API** : Le bac à sable API prend désormais en charge l’affichage des réponses vidéo
+  * **Navigation des produits** : Organisez la documentation de plusieurs produits avec le sélecteur de produits dans la navigation
+  * **Commande CLI d’accessibilité** : Exécutez `mint a11y` pour tester l’accessibilité de votre documentation
+  * **Réponses vidéo dans le bac à sable API** : Le bac à sable API prend désormais en charge l’affichage de réponses vidéo
   * **Préremplissage du bac à sable API** : Nouvelle option pour préremplir les exemples du bac à sable API afin d’accélérer les tests
-  * **Commentaires sans authentification** : Pour les sites utilisant une authentification partielle, les utilisateurs peuvent désormais envoyer des commentaires sans être authentifiés
-  * **Prise en charge des thèmes Shiki** : Les thèmes Shiki sont désormais pris en charge pour le style des blocs de code
-  * **Twoslash pour les blocs de code** : Les blocs de code TypeScript et JavaScript prennent désormais en charge Twoslash pour les informations de type en ligne
+  * **Retours sans authentification** : Pour les sites utilisant une authentification partielle, les utilisateurs peuvent désormais envoyer des retours sans être authentifiés
+  * **Prise en charge des thèmes Shiki** : Les thèmes Shiki sont désormais pris en charge pour la mise en forme des blocs de code
+  * **Twoslash pour les blocs de code** : Les blocs de code TypeScript et JavaScript prennent désormais en charge Twoslash pour afficher des informations de type en ligne
 
-  ## Améliorations d’accessibilité
+  ## Améliorations de l’accessibilité
 
-  * Ajout d’attributs ARIA complets sur les composants pour un meilleur support des lecteurs d’écran
-  * Nouveau bouton « Passer au contenu principal » pour la navigation au clavier
-  * Prise en charge de la navigation avec les flèches dans les composants d’onglets
-  * Infobulles, listes imbriquées et accessibilité des groupes de code améliorées
-  * États de focus et modèles d’interaction au clavier améliorés dans toute l’interface
+  * Ajout d’attributs ARIA complets sur l’ensemble des composants pour une meilleure prise en charge des lecteurs d’écran
+  * Nouveau bouton « Aller au contenu principal » pour la navigation au clavier
+  * Prise en charge de la navigation avec les touches fléchées dans les composants d’onglets
+  * Amélioration de l’accessibilité des infobulles, des listes imbriquées et des groupes de code
+  * Amélioration des états de focus et des modes d’interaction au clavier dans toute l’interface
 
-  ## Améliorations de l’assistant et des analyses
+  ## Améliorations de l’assistant et de l’analyse
 
-  * Ajout d’une visualisation en histogramme pour l’analyse des requêtes de l’assistant
-  * Sélecteur de plage de dates unifié sur la page d’analyses de l’assistant
-  * Contrôles de zoom pour les graphiques d’analyses de l’assistant
-  * Meilleure gestion de l’historique de l’assistant avec des raccourcis clavier et des améliorations du volet de discussion
+  * Ajout d’une visualisation en barres pour l’analyse des requêtes de l’assistant
+  * Sélecteur de plage de dates unifié sur la page d’analyse de l’assistant
+  * Contrôles de zoom pour les graphiques d’analyse de l’assistant
+  * Meilleure gestion de l’historique de l’assistant grâce aux raccourcis clavier et à des améliorations du volet de chat
 
   ## Corrections de bugs et fiabilité
 
-  * Correction des problèmes de z-index avec les panneaux latéraux superposés
-  * Correction des couleurs de secours en mode clair et des bugs de style liés aux thèmes
-  * Correction des volets extensibles du bac à sable API qui ne fonctionnaient pas avec les liens d’ancrage
-  * Correction de l’accessibilité des liens `.md` pour ChatGPT et autres agents LLM
-  * Correction de la gestion des dimensions d’image pour les largeurs et hauteurs en pourcentage
-  * Correction des problèmes de rendu des blocs de code avec les balises de langage et les thèmes personnalisés
-  * Correction du formatage et du style des liens dans les accordéons
-  * Correction des espacements du pied de page lorsque la configuration de l’assistant est vide
-  * Correction du rendu des icônes de cartes pour les images de dépôts locaux
-  * Correction de la gestion des fichiers audio dans le bac à sable API (empêche le décodage UTF-8)
+  * Correction de problèmes de z-index avec les superpositions du panneau latéral
+  * Correction des valeurs de repli des couleurs en mode clair et de bugs de style liés aux thèmes
+  * Correction du non-fonctionnement des éléments extensibles du bac à sable API avec les liens d’ancrage
+  * Correction de l’accessibilité des liens `.md` pour ChatGPT et d’autres agents LLM
+  * Correction de la gestion des dimensions d’image pour les largeurs et hauteurs exprimées en pourcentage
+  * Correction de problèmes de rendu des blocs de code avec les balises de langue et les thèmes personnalisés
+  * Correction de la mise en forme et du style des liens d’accordéon
+  * Correction de l’espacement du pied de page lorsque la configuration de l’assistant est vide
+  * Correction du rendu des icônes de carte pour les images de dépôt local
+  * Correction de la gestion des fichiers audio dans le bac à sable API (pour empêcher le décodage UTF-8)
   * Amélioration de la gestion de l’état de publication des PR dans l’éditeur web
 </Update>
 
-<Update label="26 septembre 2025" tags={["Améliorations"]} rss={{ title: "Mises à jour hebdomadaires", description: "Extension de la prise en charge des langues, améliorations de l’interface et améliorations de l’infrastructure" }}>
+<Update label="26 septembre 2025" tags={["Améliorations"]} rss={{ title: "Mises à jour hebdomadaires", description: "Extension de la prise en charge des langues, améliorations de l’interface utilisateur et de l’infrastructure" }}>
   ## Extension de la prise en charge des langues
 
   * Ajout de la prise en charge du roumain et du tchèque dans l’interface de documentation
-  * Capacités de localisation améliorées avec une couverture de traduction complète pour les nouvelles langues
+  * Amélioration des capacités de localisation avec une couverture de traduction complète pour les nouvelles langues
   * Amélioration du fonctionnement du sélecteur de langue dans tous les thèmes
 
-  ## Améliorations de l’interface et de l’expérience utilisateur
+  ## Améliorations de l’interface utilisateur et de l’expérience utilisateur
 
-  * Correction des problèmes de visibilité des onglets sur les pages 404 pour éviter une mise en surbrillance incorrecte de l’onglet actif
-  * Amélioration de la gestion des images avec une transmission correcte des attributs de largeur et de hauteur pour les images non optimisées
-  * Amélioration de la mise en page et de la cohérence du style des pages 404
+  * Correction de problèmes de visibilité des onglets sur les pages 404 pour éviter une mise en surbrillance incorrecte de l’onglet actif
+  * Amélioration de la gestion des images avec la transmission correcte des attributs de largeur et de hauteur pour les images non optimisées
+  * Amélioration de la mise en page et de la cohérence visuelle de la page 404
 
   ## Améliorations de l’infrastructure et des performances
 
-  * Amélioration du traitement des images GIF en ignorant le formatage automatique coûteux d’Imgix afin de réduire le temps de traitement et l’utilisation de la bande passante
-  * Optimisation des performances de diffusion des images avec un traitement spécial pour le contenu animé
+  * Amélioration du traitement des images GIF en évitant le formatage automatique Imgix, coûteux, afin de réduire le temps de traitement et l’utilisation de la bande passante
+  * Optimisation des performances de diffusion des images avec une gestion spécifique du contenu animé
 
   ## Corrections de bugs et fiabilité
 
-  * Correction du routage des e-mails de contact dans les paramètres du tableau de bord pour les demandes de module complémentaire Assistant
-  * Amélioration des mises à jour de schéma de base de données pour une meilleure gestion des utilisateurs
+  * Correction du routage des e-mails de contact dans les paramètres du tableau de bord pour les demandes liées au module complémentaire Assistant
+  * Amélioration des mises à jour du schéma de base de données pour une meilleure gestion des utilisateurs
 </Update>
 
 <Update label="19 septembre 2025" tags={["Améliorations"]} rss={{ title: "Mises à jour hebdomadaires", description: "Améliorations de l’éditeur web et de l’authentification, et corrections de bugs" }}>
   ## Améliorations de l’éditeur web et de la connexion au tableau de bord
 
-  * Poursuite de la migration vers l’app router pour l’éditeur web, suppression des obstacles et amélioration des performances
-  * Amélioration de la gestion des erreurs de connexion avec des messages explicites de validation d’e-mail
+  * Poursuite de la migration vers l’App Router pour l’éditeur web, en supprimant des blocages et en améliorant les performances
+  * Amélioration de la gestion des erreurs de connexion avec des messages explicites de validation des e-mails
   * Correction de la gestion des espaces dans la validation des adresses e-mail
 
   ## Améliorations de l’authentification
 
-  * Ajout de la prise en charge de paramètres de redirection validés dans le rappel de connexion afin de réduire les frictions lors de la connexion
+  * Ajout de la prise en charge de paramètres de redirection validés dans le callback de connexion afin de fluidifier la connexion
   * Amélioration du flux de connexion pour le SSO avec une meilleure gestion des redirections
 
   ## Corrections de bugs et fiabilité
 
-  * Correction des problèmes d’intégration GitLab avec les dépôts plus volumineux
+  * Correction de problèmes d’intégration GitLab avec les dépôts plus volumineux
   * Amélioration des performances de chargement du tableau de bord avec des requêtes de déploiement optimisées
-  * Correction des problèmes de rendu des chemins SVG dans la documentation
+  * Correction de problèmes de rendu des chemins SVG dans la documentation
   * Correction de la navigation au clavier dans la recherche et la fonctionnalité de chat
 </Update>
 
-<Update label="13 septembre 2025" tags={["Nouvelles versions", "Améliorations"]} rss={{ title: "Mises à jour hebdomadaires", description: "Suggestions de pages par l'IA pour les erreurs 404, recherche web de l'assistant avec sources externes, amélioration de la sécurité et correctifs de fiabilité" }}>
+<Update label="13 septembre 2025" tags={["Nouvelles versions", "Améliorations"]} rss={{ title: "Mises à jour hebdomadaires", description: "Suggestions IA pour les pages 404, recherche web de l’assistant avec des sources externes, amélioration de la sécurité et correctifs de fiabilité" }}>
   ## Versions majeures
 
-  * **Amélioration majeure** : pages suggérées par l’IA sur les pages 404, [quand quelqu’un arrive sur un lien mort → un agent IA lit le chemin → suggère des pages sémantiquement similaires](https://x.com/mintlify/status/1966625627773059495)
-  * **Version majeure** : la recherche web de l’assistant peut désormais inclure des sources externes\
+  * **Amélioration majeure** : suggestions de pages par l’IA sur les pages 404, [lorsqu’une personne arrive sur un lien mort → l’agent IA lit le chemin → suggère des pages sémantiquement similaires](https://x.com/mintlify/status/1966625627773059495)
+  * **Version majeure** : la recherche web de l’assistant peut désormais inclure des sources externes
     *Remarque : contactez-nous pour activer cette fonctionnalité sur votre site.*
 
   ## Assistant et MCP
 
-  * Correction d’un bug où l’assistant était limité en fréquence à tort parce que la fenêtre temporelle ne se déplaçait pas correctement
-  * Correction d’un bug dans les appels d’outils de l’assistant pour gérer correctement les blocs `text` vides
-  * Correction d’un bug où les noms de serveur MCP concaténés avec les appels d’outils dépassaient parfois la limite de 60 caractères imposée par les clients MCP
-  * Correction d’un bug où le menu de l’assistant avait une hauteur plusieurs fois supérieure à la fenêtre d’affichage et défilait indéfiniment
-  * Correction d’un bug où les valeurs de consommation de l’assistant pouvaient s’afficher avec plus de deux décimales dans le tableau de bord
+  * Correction d’un bug où l’assistant était limité à tort par le taux de requêtes parce que la fenêtre temporelle ne se décalait pas correctement
+  * Correction d’un bug dans les appels d’outils de l’assistant afin de gérer correctement les blocs `text` vides
+  * Correction d’un bug où les noms de serveur MCP concaténés aux appels d’outils dépassaient parfois la limite de 60 caractères imposée par les clients MCP
+  * Correction d’un bug où le menu de l’assistant avait une hauteur plusieurs fois supérieure à celle de la fenêtre d’affichage et défilait sans fin
+  * Correction d’un bug où les montants de dépenses de l’assistant pouvaient s’afficher avec plus de deux décimales dans le tableau de bord
 
   ## Éditeur web et déploiements
 
-  * Amélioration de la sécurité de l’éditeur afin que seuls les utilisateurs disposant des `write permissions` sur le dépôt git connecté puissent effectuer des modifications
-  * Correction d’un bug où les déploiements de prévisualisation ne fonctionnaient pas pour les branches dont le nom contenait `=`
-  * Correction d’un bug où les noms de branches longs débordaient des modales lors de la création de déploiements de prévisualisation
-  * Amélioration du confort : le paramètre de requête `email` préremplit désormais le champ dans les invitations à l’inscription
+  * Amélioration de sécurité ajoutée à l’éditeur afin que seuls les utilisateurs disposant des `write permissions` sur le dépôt git connecté puissent effectuer des modifications
+  * Correction d’un bug où les déploiements de prévisualisation ne fonctionnaient pas pour les branches contenant `=` dans leur nom
+  * Correction d’un bug où les noms de branche trop longs débordaient des fenêtres modales lors de la création de déploiements de prévisualisation
+  * Amélioration du confort d’utilisation : le paramètre de requête email préremplit désormais le champ de saisie dans les invitations d’inscription
   * Correction d’un bug où la copie d’une page depuis le menu contextuel ne fonctionnait pas sur Safari
 
-  ## Aire de test de l’API et navigation
+  ## Bac à sable API et navigation
 
-  * Plusieurs codes de réponse de l’aire de test de l’API s’affichent désormais dans un menu déroulant personnalisé contrôlé plutôt que dans le menu déroulant par défaut du système lorsqu’il est sélectionné
-  * Vous pouvez désormais utiliser le [champ `expanded` sur les groupes de navigation dans votre docs.json pour qu’ils soient ouverts par défaut](https://mintlify.com/docs/navigation#default-expanded-state)
+  * Les multiples codes de réponse du Bac à sable API s’affichent désormais dans un menu de sélection stylisé et contrôlé au lieu du menu de sélection système par défaut lorsqu’il reçoit le focus
+  * Vous pouvez désormais utiliser le [`champ expanded sur les groupes de navigation dans votre docs.json pour qu’ils soient ouverts par défaut`](https://mintlify.com/docs/navigation#default-expanded-state)
 
-  ## SEO et interface
+  ## SEO et interface utilisateur
 
-  * Correction d’un bug où les favicons n’apparaissaient pas dans les moteurs de recherche en les servant depuis la même URL que le site de documentation lui-même pour chaque site concerné
-  * Correction d’un bug où les intégrations YouTube apparaissaient et disparaissaient au chargement
-  * Correction d’un bug où le fait d’étendre le menu de retour pour inclure des réponses écrites provoquait un décalage de mise en page avec la table des matières
-  * Correction d’un bug où du texte dépassait au-dessus de la barre supérieure dans le thème Maple lorsqu’on fermait la bannière de notification
-  * Amélioration des thèmes Maple et Willow en ajoutant des boutons de connexion/déconnexion dans la barre latérale pour un accès plus facile
+  * Correction d’un bug où les favicons n’apparaissaient pas dans les moteurs de recherche, en les servant depuis la même URL que celle du site de documentation pour chaque site concerné
+  * Correction d’un bug où les intégrations YouTube clignotaient au chargement
+  * Correction d’un bug où l’extension du menu de retours pour inclure des réponses écrites provoquait un décalage de mise en page avec la table des matières
+  * Correction d’un bug où du texte débordait au-dessus de la barre supérieure dans le thème Maple lorsqu’une bannière de notification était masquée
+  * Amélioration des thèmes Maple et Willow avec l’ajout de boutons de connexion/déconnexion dans la barre latérale pour un accès plus facile
 
-  ## Analyses et exports
+  ## Analyse et exportations
 
-  * Correction de problèmes de fiabilité pour la vue d’analyses de l’assistant et les exports
-  * Les exports d’analyses de l’assistant sont désormais exécutés en arrière-plan et envoyés par e-mail pour une expérience plus fiable
+  * Correction de problèmes de fiabilité liés à la vue d’analyse de l’assistant et aux exportations
+  * Les exportations d’analyse de l’assistant sont désormais exécutées en arrière-plan et envoyées par e-mail pour une expérience plus fiable
 </Update>
 
-<Update label="30 août 2025" tags={["Improvements"]} rss={{ title: "Mises à jour hebdomadaires", description: "Collecte de feedback améliorée, améliorations de navigation et correctifs de bugs d'authentification" }}>
-  ## Mise à jour majeure : collecte de retours améliorée
+<Update label="30 août 2025" tags={["Améliorations"]} rss={{ title: "Mises à jour hebdomadaires", description: "Collecte des retours améliorée, améliorations de la navigation et corrections de bugs d’authentification" }}>
+  ## Version majeure : collecte des retours améliorée
 
-  * **Amélioration majeure** : les lecteurs peuvent désormais donner des retours plus détaillés après avoir sélectionné *pouce levé/baissé*, avec des options supplémentaires et des commentaires écrits. Vous pouvez aussi collecter des retours sur les blocs de code et consulter toutes les réponses dans les statistiques de votre tableau de bord.\
-    *Remarque : contactez-nous pour activer cette fonctionnalité pour votre site.*
+  * **Amélioration majeure** : les lecteurs peuvent désormais laisser des retours plus détaillés après avoir sélectionné *pouce levé/baissé*, avec des options et des commentaires écrits. Vous pouvez également recueillir des retours sur les blocs de code et consulter toutes les réponses dans les analyses de votre tableau de bord.
+    *Remarque : contactez-nous pour activer cette fonctionnalité sur votre site.*
 
-  ## Améliorations de navigation et de confort d&#39;utilisation
+  ## Améliorations de la navigation et du confort d’utilisation
 
-  * Amélioration de confort pour ignorer les barres obliques finales et les doubles barres obliques afin que vous n&#39;ayez pas à vous soucier de les renseigner parfaitement dans votre docs.json
-  * Vous pouvez désormais ajouter un attribut `noAnchor` à vos balises HTML `h1-6` pour éviter qu&#39;elles n&#39;aient un lien d&#39;ancrage
-  * Le thème Palm dispose désormais d&#39;un sélecteur de langue flottant en bas à gauche, similaire à l&#39;approche de Stripe
-  * Ajout d&#39;un nouveau champ dans docs.json appelé [`drilldown`](https://mintlify.com/docs/navigation#enable-auto-navigation-for-groups) qui vous permet de contrôler si les utilisateurs sont ou non redirigés vers la première page d&#39;un groupe de navigation lorsque le groupe est développé
-  * Amélioration de confort pour faire alterner les styles des listes ordonnées imbriquées entre décimal/romain et alphabétique
-
-  ## Correctifs de bugs et fiabilité
-
-  * Correction d&#39;un bug où les liens d&#39;ancrage basés sur la position de défilement ne fonctionnaient pas correctement lorsqu&#39;il y avait des composants JS sur une page
-  * Correction d&#39;un bug où Google indexait des fichiers `*.md` bruts parce qu&#39;ils n&#39;avaient pas d&#39;en-tête `x-robots-tag noindex`
-  * Correction d&#39;un bug avec OAuth sur la documentation protégée, où vous n&#39;étiez pas redirigé vers votre page de départ une fois le flux terminé avec succès
-  * Correction d&#39;un bug sur les aperçus de documentation protégée par authentification, où vous ne pouviez pas voir toute la barre de navigation
-  * Correctifs concernant la gestion des SVG avec notre nouveau CDN d&#39;images
-
-  ## Améliorations des composants et du style
-
-  * Ajout d&#39;un nouveau sélecteur CSS pour les styles personnalisés sur `SidebarNavGroupDivider`
-  * De nouveaux tests de régression pour les pages d&#39;API définies en MDX qui ont une sécurité définie garantiront un degré de stabilité plus élevé
-
-  ## Améliorations des performances
-
-  * Amélioration des performances en déplaçant le CSS de KaTeX de cdnjs vers notre propre CDN sur Cloudfront pour réduire la latence
-</Update>
-
-<Update label="23 août 2025" tags={["Improvements"]} rss={{ title: "Mises à jour hebdomadaires", description: "Correctifs de mise en page des images, améliorations d'authentification, navigation mobile et stabilité de l'éditeur web" }}>
-  ## Améliorations de la gestion des images
-
-  * **Amélioration majeure** : les images ne provoquent plus de décalage de mise en page par défaut, même lorsque les attributs de largeur et de hauteur ne sont pas spécifiés — le dimensionnement automatique empêche le contenu de sauter pendant le chargement des pages
-  * Tous les fichiers statiques de votre dépôt (PDF, TXT, XML, etc.) sont désormais automatiquement téléversés et servis lors du déploiement, offrant une couverture complète de vos ressources
-
-  ## Améliorations de l&#39;éditeur web et du déploiement
-
-  * Correction du workflow de création de branche dans l&#39;éditeur web pour naviguer correctement vers les nouvelles branches créées et y rester
-  * Boîte de dialogue de conflits de fusion améliorée avec une prise en charge correcte de la touche Échap, plus besoin de recharger la page pour fermer les conflits
-  * Optimisation des performances du workflow de mise à jour en invalidant le cache uniquement pour les pages modifiées lors des mises à jour partielles, réduisant ainsi les temps de déploiement
-
-  ## Améliorations de l&#39;authentification et de la navigation
-
-  * Nouvelle prise en charge de l&#39;authentification sur des sous-chemins personnalisés ; si vous servez la documentation sur `https://yourdomain.com/docs`, l&#39;authentification fonctionne désormais de manière fluide
-  * Correction d&#39;un bug d&#39;affichage de la barre latérale qui apparaissait de façon incorrecte lorsqu&#39;un seul lien était configuré
-  * Refonte complète de la navigation mobile : boutons centrés avec marges/espacements appropriés, espacement amélioré dans les menus déroulants, suppression des séparateurs et marges inutiles pour les sections vides, et correction des problèmes d&#39;espacement/marge du thème Maple
-
-  ## Correctifs de composants et de style
-
-  * Résolution d&#39;un problème de conversion des balises `<h1-6>` qui les transformait incorrectement en composants Heading et perturbait les styles personnalisés
-  * Un bouton de configuration de l&#39;assistant, activable en un clic, a été ajouté au dashboard pour une gestion plus simple
-
-  ## Améliorations techniques et fiabilité
-
-  * Système de logs amélioré pour les workflows de mise à jour, permettant un débogage plus rapide et une résolution plus efficace des problèmes
-  * Correction du rate limiting GitHub pour les clients ayant plus de 10 spécifications OpenAPI/AsyncAPI en passant de la récupération de fichiers individuels au clonage du dépôt
-  * Fiabilité de l&#39;assistant améliorée avec un LLM de secours, une meilleure gestion des erreurs de rate limit, et une fonctionnalité de recherche plus robuste
-</Update>
-
-<Update label="16 août 2025" tags={["Améliorations"]} rss={{ title: "Mises à jour hebdomadaires", description: "Optimisations des performances, intégrations LLM, améliorations de l’éditeur web et du bac à sable API" }}>
-  ## Optimisations des performances et du build
-
-  * La transpilation MDX se fait désormais au moment du déploiement au lieu de se produire à chaque chargement de page dans les environnements serverless Next.js non mis en cache, ce qui améliore le délai avant le premier octet (TTFB) pour les pages non mises en cache.
-  * Le hachage basé sur le contenu empêche une nouvelle transpilation lorsque le MDX n’a pas changé, réduisant d’environ 50 % les durées de workflows de mise à jour pour les clients avec un grand nombre de pages (les déploiements de plus de 5 minutes devraient être à peu près réduits de moitié)
-  * L’affichage des déploiements de prévisualisation dans le tableau de bord est désormais plus rapide grâce à l’ajout d’index de base de données et à la parallélisation des requêtes dans notre backend
-  * Réduction de la taille des pages en éliminant les données `navigation` dupliquées dans chaque payload `rsc` — gains de performance particulièrement visibles avec un grand nombre de pages ou des structures de navigation complexes
-  * Un préchargement plus agressif permet des chargements de pages instantanés plus fréquemment
-
-  ## Améliorations du bac à sable API et d’OpenAPI
-
-  * La conversion OpenAPI vers MCP a été déplacée vers le backend, ce qui permet aux serveurs MCP hébergés de contenir des outils (attendez-vous à une documentation plus claire et à davantage d’options de configuration prochainement)
-  * Ajout de la prise en charge de Ruby dans le bac à sable API
-  * Nous avons ajouté une fonctionnalité qui vous permet désormais de [spécifier les pages d’API à l’aide de votre fichier docs.json uniquement](/fr/api-playground/openapi-setup#auto-populate-api-pages) sans créer de nouveaux fichiers MDX.
-  * Prise en charge des [`webhook pages`](/fr/api-playground/openapi-setup#webhooks) dans la navigation de la documentation à partir des spécifications OpenAPI
-  * Contexte de modèle IA optimisé en supprimant les spécifications de liens d’ancrage des liens markdown lors de la navigation vers Anthropic, OpenAI ou d’autres fournisseurs
-
-  ## Améliorations de l’éditeur web
-
-  * La création/le renommage de fichiers enregistre désormais les modifications lors d’un clic à l’extérieur, au lieu de nécessiter l’appui sur la touche Entrée
-  * Correction de la navigation par branches où la modification de l’URL vers une branche spécifique redirigeait vers la dernière branche active au lieu de la destination prévue
-  * Encodage correct en URL des titres de branches contenant `/` pour éviter les problèmes de navigation
-  * Correction du raccourci de lien `Ctrl+K` dans l’éditeur du tableau de bord monorepo, qui préfixait le chemin du dépôt de docs et créait des liens cassés
-
-  ## Analytics et intégrations LLM
-
-  * Prise en charge de `llms.txt` et `llms-full.txt` personnalisés — ajoutez-les à la racine du dépôt de docs pour les exposer via les points de terminaison `/llms.txt` et `/llms-full.txt` pour la personnalisation LLM
-  * Ajout de l’[intégration analytics Hightouch](/fr/integrations/analytics/hightouch#hightouch)
-  * Amélioration du suivi analytics des menus contextuels (affichage dans le tableau de bord à venir)
-  * Ajout de tests e2e pour `llms.txt` et `llms-full.txt` afin de garantir une diffusion correcte
-
-  ## Améliorations des composants et du style
-
-  * Prise en charge de noms de classe personnalisés dans les balises `h{1-4}` pour appliquer des styles de titres personnalisés
-  * Correction des balises `h{1-4}` qui étaient rendues comme des composants `Heading` avec des chips en mode page personnalisée
-  * Ajout de sélecteurs CSS aux [breadcrumbs](/fr/organize/navigation#breadcrumbs) pour un ciblage CSS personnalisé
-  * Correction des images open-graph étirées en analysant leurs dimensions pour maintenir les proportions à une hauteur de 56 px
-  * Correction de `VSCode` en `VS Code` dans le menu contextuel lorsqu’il est activé
-  * Correction des titres à l’intérieur de composants personnalisés qui apparaissaient dans la table des matières aux côtés des titres sémantiques
+  * Amélioration du confort d’utilisation : les barres obliques finales et les doubles barres obliques sont désormais ignorées, pour que vous n’ayez pas à vous soucier de les saisir exactement comme il faut dans votre docs.json
+  * Vous pouvez désormais ajouter un attribut `noAnchor` à vos balises HTML `h1-6` pour éviter qu’un lien d’ancrage leur soit ajouté
+  * Le thème Palm dispose désormais d’un sélecteur de langue flottant en bas à gauche, dans un style similaire à celui de Stripe
+  * Ajout d’un nouveau champ dans le docs.json appelé [`drilldown`](https://mintlify.com/docs/navigation#enable-auto-navigation-for-groups), qui vous permet de contrôler si les utilisateurs sont redirigés ou non vers la première page d’un groupe de navigation lorsque celui-ci est développé
+  * Amélioration du confort d’utilisation pour alterner les styles des listes ordonnées imbriquées entre décimal/romain et alphabétique
 
   ## Corrections de bugs et fiabilité
 
-  * Correction de problèmes de rendu PDF avec certains titres de page en nettoyant les caractères qui posent problème à la génération
-  * Résolution de l’erreur CLI `Cannot convert undefined or null to object` lors de la rencontre de fichiers JSON OpenAPI vides
-  * Correction des méta‑balises open-graph personnalisées `docs.json` qui étaient écrasées par celles générées
-  * Correction des clics sur le bouton de flux RSS lors de l’arrivée sur des liens d’ancrage en utilisant origin + pathname pour les liens RSS
-  * Amélioration de la vitesse de téléchargement du CLI en supprimant les sourcemaps
+  * Correction d’un bug empêchant les Anchor links liés à la position de défilement de fonctionner correctement lorsqu’une page contenait des composants JS
+  * Correction d’un bug à cause duquel Google indexait des fichiers `*.md` bruts, car il leur manquait un en-tête `x-robots-tag noindex`
+  * Correction d’un bug avec OAuth sur les docs protégées qui empêchait la redirection vers votre page de départ une fois le flux terminé avec succès
+  * Correction d’un bug sur les aperçus de docs protégées par authentification qui empêchait d’afficher l’intégralité de la barre de navigation
+  * Corrections de bugs dans la gestion des SVG avec notre nouveau CDN d’images
+
+  ## Améliorations des composants et du style
+
+  * Ajout d’un nouveau sélecteur CSS pour appliquer des styles personnalisés à `SidebarNavGroupDivider`
+  * De nouveaux tests de régression pour les pages d’API définies en MDX avec des paramètres de sécurité permettront d’assurer une meilleure stabilité
+
+  ## Améliorations des performances
+
+  * Amélioration des performances en déplaçant le CSS de KaTeX de cdnjs vers notre propre CDN sur Cloudfront afin de réduire la latence
+</Update>
+
+<Update label="23 août 2025" tags={["Améliorations"]} rss={{ title: "Mises à jour hebdomadaires", description: "Corrections de mise en page des images, améliorations de l’authentification, améliorations de la navigation mobile et stabilité de l’éditeur web" }}>
+  ## Améliorations de la gestion des images
+
+  * **Amélioration majeure** : les images ne provoquent plus de décalage de mise en page par défaut, même lorsque les attributs de largeur et de hauteur ne sont pas spécifiés : le dimensionnement automatique empêche le contenu de bouger pendant le chargement des pages
+  * Tous les fichiers statiques de votre dépôt (PDF, TXT, XML, etc.) sont désormais automatiquement téléversés et servis lors du déploiement, pour une prise en charge complète des ressources
+
+  ## Améliorations de l’éditeur web et du déploiement
+
+  * Correction du flux de création de branche dans l’éditeur web afin de naviguer correctement vers les branches nouvellement créées et d’y rester
+  * Amélioration de la boîte de dialogue de conflit de fusion avec une gestion correcte de la touche Échap : il n’est plus nécessaire de recharger la page pour fermer les conflits
+  * Optimisation des performances du flux de mise à jour en invalidant le cache uniquement pour les pages modifiées lors des mises à jour partielles, réduisant ainsi les temps de déploiement
+
+  ## Améliorations de l’authentification et de la navigation
+
+  * Nouvelle prise en charge de l’authentification sur des sous-chemins personnalisés : si vous servez la documentation sur `https://yourdomain.com/docs`, l’authentification fonctionne désormais de manière fluide
+  * Correction d’un bug d’affichage de la barre latérale qui survenait à tort lorsqu’un seul lien était configuré
+  * Refonte complète de la navigation mobile : boutons centrés avec des marges et espacements internes appropriés, meilleur espacement dans les menus déroulants, suppression des séparateurs et marges inutiles pour les sections vides, et correction des problèmes de marge et d’espacement interne du thème Maple
+
+  ## Corrections des composants et du style
+
+  * Résolution d’un problème de conversion des balises `<h1-6>` qui les transformait à tort en composants Heading et perturbait les styles personnalisés
+  * Ajout d’un bouton de bascule de configuration de l’assistant en un clic dans le tableau de bord pour une gestion simplifiée
+
+  ## Améliorations techniques et fiabilité
+
+  * Amélioration du système de journalisation des flux de mise à jour, permettant un débogage et une résolution des problèmes plus rapides
+  * Correction de la limitation de débit GitHub pour les clients ayant plus de 10 specs OpenAPI/AsyncAPI en remplaçant la récupération fichier par fichier par le clonage du dépôt
+  * Amélioration de la fiabilité de l’assistant avec la prise en charge d’un LLM de secours, une meilleure gestion des erreurs de limitation de débit et un outil de recherche plus robuste
+</Update>
+
+<Update label="16 août 2025" tags={["Améliorations"]} rss={{ title: "Mises à jour hebdomadaires", description: "Optimisations des performances, intégrations LLM, amélioration de l’éditeur web et du Bac à sable API" }}>
+  ## Optimisations des performances et de la build
+
+  * La transpilation MDX s’effectue désormais au moment du déploiement, au lieu de se lancer à chaque chargement de page dans les environnements serverless NextJS non mis en cache, ce qui améliore le délai jusqu’au premier octet pour les pages non mises en cache.
+  * Le hachage basé sur le contenu évite une nouvelle transpilation lorsque le MDX n’a pas changé, réduisant d’environ 50 % le temps des workflows de mise à jour pour les clients ayant un grand nombre de pages (les déploiements de plus de 5 minutes devraient être à peu près divisés par deux)
+  * L’affichage des déploiements de prévisualisation dans le tableau de bord est désormais plus rapide grâce à l’ajout d’index de base de données et à la parallélisation des requêtes dans notre backend
+  * Réduction de la taille des pages grâce à la suppression des données `navigation` dupliquées dans la charge utile `rsc` de chaque page — les gains de performances sont particulièrement visibles avec un grand nombre de pages ou des structures de navigation complexes
+  * Un préchargement plus agressif permet plus souvent des chargements de page instantanés
+
+  ## Améliorations du Bac à sable API et d’OpenAPI
+
+  * La conversion d’OpenAPI vers MCP a été déplacée vers le backend, ce qui permet aux serveurs MCP hébergés d’inclure des outils (une documentation plus claire et de meilleures options de configuration arrivent bientôt)
+  * Ajout de la prise en charge de Ruby dans le Bac à sable API
+  * Nous avons ajouté une fonctionnalité qui vous permet désormais de [spécifier les pages API uniquement avec votre docs.json](/fr/api-playground/openapi-setup#auto-populate-api-pages) sans créer de nouveaux fichiers MDX.
+  * Prise en charge des [`pages de webhook`](/fr/api-playground/openapi-setup#webhooks) dans la navigation de la documentation à partir des spécifications OpenAPI
+  * Optimisation du contexte des modèles d’IA en supprimant les spécifications de liens d’ancrage des liens markdown lors de la navigation vers Anthropic, OpenAI ou d’autres fournisseurs
+
+  ## Améliorations de l’éditeur web
+
+  * La création et le renommage de fichiers enregistrent désormais les modifications lorsque vous cliquez ailleurs, au lieu d’exiger une pression sur la touche Entrée
+  * Correction de la navigation entre branches où la modification de l’URL vers une branche spécifique redirigeait vers la dernière branche active au lieu de la destination prévue
+  * Encodage correct dans l’URL des titres de branches contenant `/` afin d’éviter toute rupture de navigation
+  * Correction du raccourci de lien `Ctrl+K` dans l’éditeur du tableau de bord monorepo, qui ajoutait le chemin du dépôt docs en préfixe et créait des liens rompus
+
+  ## Analyse et intégrations LLM
+
+  * Prise en charge de `llms.txt` et `llms-full.txt` personnalisés — ajoutez-les à la racine du dépôt docs pour les servir aux points de terminaison `/llms.txt` et `/llms-full.txt` afin de personnaliser les LLM
+  * Ajout de l’[intégration d’analyse Hightouch](/fr/integrations/analytics/hightouch#hightouch)
+  * Amélioration du suivi analytique du menu contextuel (affichage dans le tableau de bord bientôt disponible)
+  * Ajout de tests e2e pour `llms.txt` et `llms-full.txt` afin de garantir qu’ils sont correctement servis
+
+  ## Améliorations des composants et du style
+
+  * Prise en charge de classnames personnalisés dans les balises `h{1-4}` pour appliquer des styles de titre personnalisés
+  * Correction du rendu des balises `h{1-4}` en tant que composants `Heading` avec chips en mode page personnalisée
+  * Ajout de sélecteurs CSS aux [breadcrumbs](/fr/organize/navigation#breadcrumbs) pour un ciblage CSS personnalisé
+  * Correction des images open-graph étirées en analysant leurs dimensions pour conserver les proportions à une hauteur de 56px
+  * Correction de `VSCode` en `VS Code` dans le menu contextuel lorsqu’il est activé
+  * Correction de l’apparition des titres au sein de composants personnalisés dans la table des matières, aux côtés des titres sémantiques
+
+  ## Corrections de bugs et fiabilité
+
+  * Correction des problèmes de rendu PDF avec certains titres de page en assainissant les caractères qui provoquaient des problèmes de génération
+  * Résolution de l’erreur CLI `Cannot convert undefined or null to object` lors de la lecture de fichiers JSON OpenAPI vides
+  * Correction de l’écrasement des métabalises open-graph personnalisées de `docs.json` par celles générées
+  * Correction des clics sur les boutons du flux RSS lors de l’arrivée sur des liens d’ancrage en utilisant origin + pathname pour les liens RSS
+  * Amélioration de la vitesse de téléchargement de la CLI en supprimant les sourcemaps
 
   ## Améliorations techniques
 
-  * Ajout de tests visuels au pipeline CI pour une détection plus précoce des régressions
+  * Ajout de tests visuels au pipeline CI pour détecter plus tôt les régressions
   * Amélioration de la gestion des erreurs et des capacités de débogage
-  * Couverture de tests complète pour les nouvelles fonctionnalités et les cas limites
+  * Couverture de test complète pour les nouvelles fonctionnalités et les cas limites
 </Update>
 
-<Update label="9 août 2025" tags={["Améliorations"]} rss={{ title: "Mises à jour hebdomadaires", description: "Search API, améliorations OAuth, diffusion des ressources et outils MCP" }}>
+<Update label="9 août 2025" tags={["Améliorations"]} rss={{ title: "Mises à jour hebdomadaires", description: "Search API, améliorations d’OAuth, diffusion des ressources et outils MCP" }}>
   ## Améliorations de l’authentification
 
-  * Accès public au niveau du groupe : rendez des groupes entiers de pages publics via `docs.json` pour ne pas avoir besoin de `public: true` sur chaque page ([en savoir plus](https://mintlify.com/docs/authentication-personalization/authentication-setup#group-level))
+  * Accès public au niveau des groupes : rendez des groupes de pages entiers publics via `docs.json`, sans avoir à ajouter `public: true` sur chaque page ([en savoir plus](https://mintlify.com/docs/authentication-personalization/authentication-setup#group-level))
   * Prise en charge de [`logoutURL dans la configuration OAuth`](https://mintlify.com/docs/authentication-personalization/authentication-setup#implementation-3) pour supprimer les cookies en amont et finaliser la déconnexion
-  * En cas d’erreur OAuth, les utilisateurs sont redirigés vers le `logoutURL` que vous avez spécifié pour relancer le flux d’authentification
-  * Correction d’un bref affichage d’erreur 500 durant les flux OAuth/JWT avant le callback
-  * Suppression automatique de `https://` dans les URL de configuration OAuth/JWT pour éviter les mauvaises configurations
+  * En cas d’erreur OAuth, les utilisateurs sont redirigés vers le `logoutURL` spécifié pour relancer le flux d’authentification
+  * Correction d’une brève apparition d’une erreur 500 pendant les flux OAuth/JWT, avant le callback
+  * Suppression automatique de `https://` des URL dans la configuration d’authentification OAuth/JWT pour éviter les erreurs de configuration
 
-  ## Améliorations du bac à sable API
+  ## Améliorations du Bac à sable API
 
-  * Nouveau [endpoint de l’API de recherche](https://mintlify.com/docs/api-reference/assistant/search) pour vous permettre de créer des agents et des serveurs MCP par-dessus votre documentation
-  * Les fichiers `openapi` et `asyncapi` sont désormais servis à leurs chemins spécifiés (par exemple, `https://mydocsurl.extension/{openapi-or-file-name}.json`)
-  * Vous pouvez maintenant utiliser le [`champ x-mint dans vos fichiers OpenAPI`](https://mintlify.com/docs/api-playground/openapi-setup#x-mint-extension) pour surcharger des champs générés, personnaliser le contenu de préambule ou modifier les URL des endpoints dans les exemples de code
-  * [`x-mcp est désormais x-mint.mcp`](https://mintlify.com/docs/api-playground/openapi-setup#mcp) dans les configurations OpenAPI pour contrôler quelles routes sont exposées en tant qu’outils MCP
+  * Nouveau [endpoint Search API](https://mintlify.com/docs/api-reference/assistant/search) pour vous permettre de créer des agents et des serveurs MCP à partir de votre documentation
+  * Les fichiers `openapi` et `asyncapi` sont désormais diffusés aux chemins spécifiés (par exemple, `https://mydocsurl.extension/{openapi-or-file-name}.json`)
+  * Vous pouvez désormais utiliser le [`champ x-mint dans vos fichiers openapi`](https://mintlify.com/docs/api-playground/openapi-setup#x-mint-extension) pour remplacer des champs générés, personnaliser le contenu d’introduction ou modifier les URL des endpoints dans les exemples de code
+  * [`x-mcp est désormais x-mint.mcp`](https://mintlify.com/docs/api-playground/openapi-setup#mcp) dans les configurations OpenAPI pour contrôler quelles routes sont exposées comme outils MCP
 
   ## Mises à jour de l’assistant
 
-  * Correction d’un problème où le menu d’actions (contenant des options comme copier et pouce levé) pour les anciens messages disparaissait lorsque de nouveaux messages arrivaient en flux
-  * Correction de l’accessibilité des pages imbriquées `/mcp/...` après la [mise en production des serveurs MCP hébergés](https://mintlify.com/docs/ai/model-context-protocol#accessing-your-mcp-server) de la semaine dernière
+  * Correction d’un problème où le menu d’action (avec des options comme copier et pouce levé) des anciens messages disparaissait lorsque de nouveaux messages arrivaient en streaming
+  * Correction de l’accessibilité des pages `/mcp/...` imbriquées après la [sortie des serveurs MCP hébergés](https://mintlify.com/docs/ai/model-context-protocol#accessing-your-mcp-server) la semaine dernière
 
   ## Performances et fiabilité
 
-  * Toutes les ressources d’images et de vidéos présentes dans votre dépôt de documentation sont désormais servies au chemin approprié sur votre domaine. Par exemple, si vous avez `/assets/marketing/my-logo.png` dans votre dépôt, il sera disponible à `https://mydocsurl.extension/assets/marketing/my-logo.png`.
-  * Le champ e-mail à la connexion pour le tableau de bord Mintlify bénéficie désormais de l’autofocus afin que vous puissiez commencer à taper immédiatement *(amélioration du confort d’utilisation)*
-  * Prise en charge à la fois des domaines personnalisés et des sous-domaines dans Redis pour une amélioration des performances sur les temps de chargement de la navigation (~50 ms de réduction de latence)
-  * Ajout d’une logique de nouvelle tentative pour les exports PDF afin d’améliorer la fiabilité
-  * Correction de la fenêtre de consentement aux cookies qui réapparaissait après acceptation ou rejet : la première sélection est désormais respectée
+  * Toutes les ressources image et vidéo présentes dans le dépôt de votre documentation sont désormais diffusées au bon chemin sur votre domaine. Par exemple, si vous avez `/assets/marketing/my-logo.png` dans votre dépôt, il sera disponible à l’adresse `https://mydocsurl.extension/assets/marketing/my-logo.png`.
+  * Le champ e-mail de connexion au tableau de bord Mintlify reçoit désormais automatiquement le focus afin que vous puissiez commencer à saisir immédiatement *(amélioration du confort d’utilisation)*
+  * Les domaines personnalisés et les sous-domaines sont désormais dans Redis afin d’améliorer les performances au chargement de la navigation (réduction de latence d’environ 50 ms)
+  * Ajout d’une logique de nouvelle tentative pour les exportations PDF afin d’améliorer la fiabilité
+  * Correction de la réapparition de la fenêtre de consentement aux cookies après acceptation ou refus — le premier choix est désormais respecté
   * Correction de la copie d’une page dans le presse-papiers sur Safari en spécifiant un `type` MIME dans `navigator.write`
 
   ## Améliorations techniques
 
-  * Corrections de bugs du CLI pour Windows et pnpm, plus des tests CI pour prévenir les régressions
-  * Amélioration de la sortie des logs d’erreur : un confort supplémentaire pour notre équipe d’ingénierie lors du débogage
-  * Corrections mineures de l’action CI de liens cassés lorsque les fichiers `contentDirectory` sont manquants
-  * Correction d’une régression causée par les correctifs d’aperçu protégé par auth de la semaine dernière, où l’onglet actif n’était pas correctement défini dans l’interface de navigation
-  * Correction de la couleur d’arrière-plan claire du thème qui ne s’appliquait pas aux icônes de l’onglet actif
-  * Correction d’un problème où la modification du type d’auth dans le tableau de bord mettait à jour puis revenait au type précédemment enregistré : la nouvelle sélection persiste désormais après enregistrement
-  * Améliorations internes de la DX pour les clients entreprise avec des bibliothèques d’UI personnalisées : il est maintenant plus simple pour nous d’inclure vos composants et de répondre à vos demandes sur des délais plus courts
+  * Corrections de bugs CLI pour Windows et pnpm, ainsi que des tests CI pour éviter les régressions
+  * Amélioration de la sortie des journaux d’erreurs — un gain de confort pour notre équipe d’ingénierie lors du débogage
+  * Corrections mineures de l’action CI de liens brisés lorsque les fichiers `contentDirectory` sont manquants
+  * Correction d’une régression causée par les correctifs de prévisualisation protégée par authentification de la semaine dernière : l’onglet actif n’était pas correctement défini dans l’interface de navigation
+  * Correction de la non-application de la couleur d’arrière-plan clair du thème aux icônes d’onglet actives
+  * Correction d’un problème où le changement du type d’authentification dans le tableau de bord se mettait à jour puis revenait au type précédemment enregistré — la nouvelle sélection est désormais conservée après l’enregistrement
+  * Améliorations internes de l’expérience développeur pour les clients enterprise avec des bibliothèques d’interface utilisateur personnalisées — il nous est désormais plus facile d’inclure vos composants et de répondre aux demandes dans des délais plus courts
 </Update>
 
-<Update label="2 août 2025" tags={["Improvements"]} rss={{ title: "Mises à jour hebdomadaires", description: "Améliorations de l’authentification, améliorations de la recherche et API d’assistant" }}>
+<Update label="2 août 2025" tags={["Améliorations"]} rss={{ title: "Mises à jour hebdomadaires", description: "Améliorations de l’authentification, de la recherche et API de l’assistant" }}>
   ## Améliorations de l’authentification
 
-  * Améliorations de l’authentification pour le développement local, permettant un développement plus rapide des fonctionnalités d’authentification et des correctifs de bugs dans ce domaine du produit
+  * Améliorations de l’authentification en développement local, pour accélérer le développement des fonctionnalités d’authentification et les corrections de bugs dans cette partie du produit
   * Déploiements de prévisualisation désormais disponibles pour les sites protégés par authentification
-  * Correction du comportement de redirection pour renvoyer correctement les utilisateurs vers leur page d’origine après authentification
-  * Correction de l’affichage du bouton de déconnexion pour l’authentification complète (fonctionnait auparavant uniquement pour l’authentification partielle)
+  * Correction du comportement de redirection afin de renvoyer correctement les utilisateurs vers leur page d’origine après l’authentification
+  * Correction de l’affichage du bouton de déconnexion pour l’authentification complète (auparavant, il ne fonctionnait que pour l’authentification partielle)
 
-  ## Améliorations de l’API playground
+  ## Améliorations du Bac à sable API
 
-  * Correction de la fonctionnalité de téléversement de fichiers `multipart/form-data` dans l’API playground
-  * Correction du comportement des liens d’ancrage afin que le clic mette à jour l’URL sans faire défiler en haut de la page
-  * Correction des problèmes de liens d’ancrage dans les onglets imbriqués
+  * Correction du téléversement de fichiers `multipart/form-data` dans le Bac à sable API
+  * Correction du comportement des liens d’ancrage afin que leur clic mette à jour l’URL sans remonter en haut de la page
+  * Correction de problèmes de liens d’ancrage dans les onglets imbriqués
 
   ## Mises à jour de l’assistant
 
-  * Nouvelle API d’assistant afin que vous puissiez l’intégrer à vos propres produits, compatible avec l’AI SDK
-  * Ajout d’un bouton de copie aux réponses de chat
+  * Nouvelle API de l’assistant pour vous permettre de l’intégrer à vos propres produits, compatible avec AI SDK
+  * Ajout d’un bouton de copie aux réponses du chat
   * Correction d’un problème lors de la nouvelle tentative d’envoi des messages dans l’assistant
-  * Amélioration de l’invite par défaut de l’assistant pour la rendre moins verbeuse par défaut
+  * Amélioration du prompt par défaut de l’assistant pour le rendre moins verbeux
 
-  ## Performance et fiabilité
+  ## Performances et fiabilité
 
-  * Recherche rendue plus réactive et précise en annulant les requêtes différées pendant la saisie
-  * Provisionnement de ressources pour un nouveau CDN : les temps de chargement des pages et des ressources d’images devraient bientôt s’améliorer
-  * Correction de bugs pour le rendu de diagrammes Mermaid complexes comme les diagrammes de GANTT
-  * Correction de bugs du CLI sur Windows pour améliorer la stabilité et ajout de tests pour éviter les régressions
+  * Recherche désormais plus fluide et plus précise grâce à l’annulation des requêtes différées pendant la saisie
+  * Ressources allouées à un nouveau CDN — les temps de chargement des images et des pages devraient bientôt s’améliorer
+  * Correction de bugs liés au rendu de diagrammes Mermaid complexes, comme les diagrammes de GANTT
+  * Correction de bugs de la CLI sur Windows pour améliorer la stabilité et ajout de tests pour éviter les régressions
 
   ## Améliorations techniques
 
   * Ajout d’OpenTelemetry pour les traces dans l’application NextJS afin d’améliorer le délai avant le premier octet pour les clients
-  * Migration d’Octokit vers GitHub API Client pour améliorer la latence dans l’éditeur web
-  * Correction des balises meta en double pour OpenGraph
-  * Mise à niveau de MongoDB de la version 6 à 7 pour de meilleures performances et de nouvelles fonctionnalités
+  * Migration d’Octokit vers GitHub API Client pour réduire la latence dans l’éditeur web
+  * Correction des balises meta OpenGraph en double
+  * Mise à niveau de MongoDB de la version 6 à 7 pour améliorer les performances et profiter de nouvelles fonctionnalités
 </Update>
 
-<Update label="juillet 2025" tags={["New releases", "Improvements"]} rss={{ title: "Mises à jour produit de juillet", description: "Intégration de l’app Slack, serveurs MCP hébergés, intégration avec Cursor et améliorations des performances" }}>
+<Update label="juillet 2025" tags={["Nouvelles versions", "Améliorations"]} rss={{ title: "Mises à jour produit de juillet", description: "Intégration de l’application Slack, serveurs MCP hébergés, intégration Cursor et améliorations des performances" }}>
   ## Application Slack
 
-  * Accès sans effort : le bot répond aux messages privés, aux @mentions et à toute question dans votre canal `#ask-ai`
-  * Configuration en un clic : installez-le directement depuis votre tableau de bord Mintlify en quelques secondes
-  * Réponses contextuelles : recherche dans l’ensemble de votre documentation pour fournir des réponses pertinentes et précises
+  * Accès sans friction : le bot répond aux messages privés, aux @mentions et à toute question dans votre canal `#ask-ai`
+  * Configuration en un clic : installez-la directement depuis votre tableau de bord Mintlify en quelques secondes
+  * Réponses contextuelles : il parcourt l’ensemble de votre documentation pour fournir des réponses pertinentes et précises
   * Réduisez les interruptions du support : transformez les questions quotidiennes en réponses instantanées en libre-service
 
-  En savoir plus dans notre [guide du bot Slack](/fr/ai/slack-bot).
+  Pour en savoir plus, consultez notre [guide du bot Slack](/fr/ai/slack-bot).
 
   ## Serveurs MCP hébergés
 
-  Déployez des serveurs Model Context Protocol (MCP) hébergés directement via Mintlify pour les intégrer à des outils d’IA comme Claude, Cursor et d’autres. En savoir plus dans notre [guide MCP](/fr/ai/model-context-protocol).
+  Déployez des serveurs Model Context Protocol (MCP) hébergés directement via Mintlify pour les intégrer à des outils d’IA comme Claude, Cursor et d’autres. Pour en savoir plus, consultez notre [guide MCP](/fr/ai/model-context-protocol).
 
-  Aidez les utilisateurs à connecter rapidement votre serveur MCP à Cursor ou VS Code depuis n’importe quelle page de votre documentation via le menu contextuel. Voir [Menu contextuel](/fr/ai/contextual-menu) pour plus d’informations.
+  Aidez les utilisateurs à connecter rapidement votre serveur MCP à Cursor ou VS Code depuis n’importe quelle page de votre documentation via le menu contextuel. Consultez [Menu contextuel](/fr/ai/contextual-menu) pour plus d’informations.
 
   ## Améliorations des blocs de code
 
-  * Coloration syntaxique améliorée
-  * Ajout de davantage d’options de personnalisation, y compris mode focus, blocs de code extensibles, réactivité aux modes sombre et clair, menu déroulant de langue, numérotation des lignes et icônes
+  * Amélioration de la coloration syntaxique
+  * Ajout de davantage d’options de personnalisation, notamment le mode focus, les blocs de code extensibles, l’adaptation aux modes sombre et clair, le menu déroulant des langages, la numérotation des lignes et les icônes
 </Update>
 
-<Update label="juin 2025" tags={["New releases", "Improvements"]} rss={{ title: "Mises à jour produit de juin", description: "Mises à jour de l’assistant IA et journaux de changements abonnables" }}>
+<Update label="juin 2025" tags={["Nouvelles versions", "Améliorations"]} rss={{ title: "Mises à jour produit de juin", description: "Mises à jour de l’assistant IA et journaux des modifications auxquels il est possible de s’abonner" }}>
   ## Mises à jour de l’assistant IA
 
-  * Précision améliorée grâce au RAG agentique avec appels d’outils
-  * Fournit des liens navigables vers les pages référencées afin que les utilisateurs puissent aller directement à la source des réponses
+  * Précision améliorée grâce au RAG agentique avec appel d’outils
+  * Fournit des liens navigables vers les pages référencées afin que les utilisateurs puissent accéder directement à la source des réponses
   * Raccourci de copie pour les exemples de code générés par l’assistant
-  * Raccourci « Ask AI » sur les blocs de code de la documentation pour générer des explications à partir de l’assistant
+  * Raccourci &quot;Ask AI&quot; sur les blocs de code de la documentation pour générer des explications via l’assistant
 
-  En savoir plus dans la [documentation de l’assistant](/fr/ai/assistant).
+  Pour en savoir plus, consultez la [documentation de l’assistant](/fr/ai/assistant).
 
-  ## Journaux de changements abonnables
+  ## Journaux des modifications auxquels il est possible de s’abonner
 
-  * Génération automatique d’un flux RSS à partir des pages de journal de changements
-  * Intégration des mises à jour compatibles RSS avec Slack, l’e‑mail et d’autres outils
+  * Générez automatiquement un flux RSS à partir des pages de journal des modifications
+  * Intégrez les mises à jour compatibles RSS avec Slack, les e-mails et d’autres outils
 
-  En savoir plus dans notre nouveau [guide Changelog](/fr/create/changelogs)
+  Pour en savoir plus, consultez notre nouveau [guide du journal des modifications](/fr/create/changelogs)
 </Update>
 
-<Update label="mai 2025" tags={["Improvements"]}>
-  ## Mises à jour de stabilité de l’API playground
+<Update label="mai 2025" tags={["Améliorations"]}>
+  ## Mises à jour de stabilité du Bac à sable API
 
-  * Utiliser la recherche pour trouver un endpoint
-  * Indiquer un endpoint obsolète à l’aide d’une étiquette
-  * Masquer les pages d’API générées automatiquement dans la navigation
-  * Téléverser des fichiers multipart ou form data
+  * Rechercher un endpoint
+  * Indiquer un endpoint obsolète avec une étiquette
+  * Masquer les pages API générées automatiquement de la navigation
+  * Téléverser des fichiers multipart ou form-data
 
-  En savoir plus dans la [documentation de l’API playground.](/fr/api-playground/)
+  Pour en savoir plus, consultez la [documentation du Bac à sable API.](/fr/api-playground/)
 
   ## `mint update`
 
   Vous pouvez désormais utiliser `mint update` pour mettre à jour votre CLI.
 </Update>
 
-<Update label="Avril 2025" tags={["Nouvelles versions", "Améliorations"]}>
+<Update label="Avril 2025" tags={["Nouveautés", "Améliorations"]}>
   ## Éditeur Web 3.0
 
   <Frame>
     ![Webeditor3 Jpe](/images/webeditor3.jpeg)
   </Frame>
 
-  Refonte complète de l’ergonomie de l’éditeur WYSIWYG.
+  Ergonomie entièrement repensée dans l’éditeur WYSIWYG.
 
   **Améliorations majeures**
 
-  * Recherchez des noms de fichiers avec le raccourci ⌘ + P
+  * Recherchez des fichiers avec le raccourci ⌘ + P
   * Les pages se chargent 10x plus vite
-  * Temps de chargement réduits lors de la recherche d’une branche
-  * Onglet des options de page pour configurer la mise en page, le titre et les métadonnées pour le SEO
-  * Barre d’outils flottante lorsque vous mettez du texte en surbrillance
+  * Chargement plus rapide lors de la recherche d’une branche
+  * Onglet d’options de page pour configurer la mise en page, le titre et les métadonnées SEO
+  * Barre d’outils flottante lorsque vous sélectionnez du texte
 
   **Corrections supplémentaires**
 
-  * Correction de la marge supérieure pour les composants du journal des modifications
+  * Correction de la marge supérieure des composants de journal des modifications
   * Fiabilité améliorée du clic droit
-  * Après avoir cliqué sur « Publier », vous restez sur la même page au lieu d’être redirigé vers une page vide
-  * Couleurs des icônes de fichiers harmonisées
-  * Fiabilité améliorée après avoir sélectionné de nouvelles branches plusieurs fois de suite
+  * Après avoir cliqué sur Publier, vous restez sur la même page au lieu d’être redirigé vers un écran vide
+  * Uniformisation des couleurs des icônes de fichiers
+  * Fiabilité améliorée après plusieurs sélections successives de branches
   * Suppression du mode Diff
-  * Comportement plus cohérent lors de la création d’un nouveau dossier depuis le menu déroulant
-  * Correction d’un problème où les blocs de citation créaient d’autres blocs de citation lors de la tentative de désélection
+  * Création d’un nouveau dossier plus cohérente depuis le menu déroulant
+  * Correction d’un problème où les citations en bloc en créaient d’autres lors de la désélection
 
   ## Traductions IA en bêta
 
   <Frame>
-    ![Graphique Traductions IA](/images/changelog/translations.png)
+    ![AI Translations graphic](/images/changelog/translations.png)
   </Frame>
 
-  Traduisez l’intégralité de votre documentation avec l’IA. [En savoir plus.](organize/navigation#localization)
+  Traduisez toute votre documentation avec l’IA. [En savoir plus.](organize/navigation#localization)
 
-  ## Export de la documentation en PDF (bêta)
+  ## Export des docs en PDF en bêta
 
   Exportez toute votre documentation, un sous-répertoire ou une seule page au format PDF.
 
   ## Prise en charge des hooks React
 
-  Rendez votre documentation interactive. Tous les hooks React standard sont automatiquement disponibles dans vos fichiers MDX. [En savoir plus.](customize/react-components)
+  Ajoutez de l’interactivité à votre documentation. Tous les hooks React standard sont automatiquement disponibles dans vos fichiers MDX. [En savoir plus.](customize/react-components)
 </Update>
 
-<Update label="Mars 2025" tags={["Nouvelles versions", "Améliorations"]}>
+<Update label="Mars 2025" tags={["Nouveautés", "Améliorations"]}>
   ## Générateur de serveur MCP
 
   <Frame>
-    ![capture d’écran du générateur de serveur MCP](/images/changelog/mcpgenerator.png)
+    ![screenshot of MCP server generator](/images/changelog/mcpgenerator.png)
   </Frame>
 
-  Générez des serveurs MCP pour que les applications d’IA puissent interagir avec votre documentation ou vos API. Le contenu rédigé est automatiquement exposé sous forme de serveur MCP, et vous pouvez générer un serveur MCP à partir de votre spécification OpenAPI en un clic. Consultez la [documentation pour bien démarrer avec MCP.](/fr/ai/model-context-protocol)
+  Générez des serveurs MCP pour permettre aux applications d’IA d’interagir avec votre documentation ou vos API. Le contenu rédigé est automatiquement généré sous forme de serveur MCP, et vous pouvez générer un serveur MCP à partir de votre spécification OpenAPI en un clic. Consultez la [documentation pour bien démarrer avec MCP.](/fr/ai/model-context-protocol)
 
   ## Améliorations
 
-  * Ajoutez des étiquettes aux mises à jour du journal des modifications pour permettre aux utilisateurs finaux de filtrer les mises à jour
-  * Sonnet-3.7 est désormais pris en charge pour AI Chat. Configurez votre modèle préféré depuis le tableau de bord
-  * Modifiez le nom de votre déploiement directement dans les paramètres du tableau de bord
+  * Ajoutez des tags aux mises à jour du journal des modifications pour permettre aux utilisateurs finaux de les filtrer
+  * Sonnet-3.7 est pris en charge pour le chat IA. Configurez le modèle de votre choix depuis le tableau de bord
+  * Modifiez directement le nom de votre déploiement dans les paramètres du tableau de bord
 
-  ## Corrections de bogues
+  ## Corrections de bugs
 
   * Correction des images OG
   * Correction de l’incohérence de style des icônes pour les ancres sans conteneur
-  * Amélioration de petits détails de style pour la bordure du tableau de bord afin d’assurer une bonne réactivité sur mobiles, tablettes et ordinateurs de bureau
-  * Affichage des exemples de code même en mode simple pour l’aire de test de l’API
-  * Prise en charge du raccourci « commande + k » pour la recherche dans l’éditeur web
-  * Les blocs de code dans les encadrés s’étendent pour occuper toute la largeur de la zone de l’encadré
+  * Ajustements mineurs du style des bordures du tableau de bord pour le responsive mobile, tablette et bureau
+  * Affichez les exemples de code même en mode simple dans le Bac à sable API
+  * Prise en charge du raccourci &quot;command + k&quot; pour la recherche dans l’éditeur web
+  * Les blocs de code dans les encadrés s’étendent sur toute la largeur de la zone de l’encadré
 </Update>
 
 <Update label="Février 2025" tags={["Nouvelles versions", "Améliorations"]}>
@@ -1030,9 +1030,9 @@ noindex: true
     ![capture d’écran de docs.json](/images/changelog/docsjson.png)
   </Frame>
 
-  Nous avons introduit un nouveau schéma `docs.json` pour remplacer `mint.json`, afin de prendre en charge un meilleur versionnage multi-niveaux, une compréhension visuelle plus aisée et une terminologie plus cohérente. Pour plus d’informations sur ce qui a changé, [consultez notre article de blog](https://mintlify.com/blog/refactoring-mint-json-into-docs-json).
+  Nous avons introduit un nouveau schéma `docs.json` pour remplacer `mint.json`, afin de mieux prendre en charge le versioning multiniveau, d’améliorer la lisibilité visuelle et d’adopter une terminologie plus cohérente. Pour en savoir plus sur les changements, [consultez notre blog](https://mintlify.com/blog/refactoring-mint-json-into-docs-json).
 
-  Passez de `mint.json` à `docs.json` en suivant les étapes suivantes :
+  Passez de `mint.json` à `docs.json` en suivant les étapes ci-dessous :
 
   1. Assurez-vous que votre CLI est à jour
 
@@ -1040,21 +1040,21 @@ noindex: true
   npm i mint@latest -g
   ```
 
-  1. Dans votre dépôt de documentation, exécutez
+  1. Dans votre dépôt de documentation, exécutez :
 
   ```bash
   mint upgrade
   ```
 
-  1. Supprimez votre ancien fichier `mint.json` et envoyez vos modifications
+  1. Supprimez votre ancien fichier `mint.json`, puis poussez vos modifications
 
   ## Vérifications CI
 
-  Analysez automatiquement votre documentation pour trouver les liens cassés, détecter les problèmes d’orthographe et de grammaire, ou appliquer des styles rédactionnels avec votre propre configuration Vale. En savoir plus dans nos [docs](deploy/ci).
+  Analysez automatiquement votre documentation pour repérer les liens rompus, détecter les problèmes d’orthographe et de grammaire, ou appliquer vos propres règles de style avec votre configuration Vale. Pour en savoir plus, consultez notre [documentation](deploy/ci).
 
-  ## Prise en charge des fichiers .md pour les LLM
+  ## Prise en charge de .md pour les LLM
 
-  Toutes les pages de documentation sont désormais automatiquement disponibles en simples fichiers Markdown — il suffit d’ajouter `.md` à l’URL. Cela facilite l’ingestion de pages individuelles de votre documentation par les LLM.
+  Toutes les pages de documentation sont désormais automatiquement disponibles sous forme de fichiers Markdown bruts : il suffit d’ajouter `.md` à l’URL. Cela permet aux LLM d’ingérer plus facilement des pages individuelles de votre documentation.
 
   ## Plus de thèmes
 
@@ -1062,7 +1062,7 @@ noindex: true
     ![graphique avec le texte "Themes v2"](/images/changelog/themes.png)
   </Frame>
 
-  Nouveaux [thèmes prédéfinis](customize/themes) pour modifier l’apparence et l’ergonomie de votre documentation. Configurez-les via votre [fichier docs.json](organize/settings).
+  De nouveaux [thèmes prédéfinis](customize/themes) pour modifier l’apparence de votre documentation. Configurez-les via votre [fichier docs.json](organize/settings).
 
   Désormais disponibles :
 
@@ -1072,34 +1072,34 @@ noindex: true
 
   ## Autres améliorations
 
-  * [Guide de rédaction technique :](https://mintlify.com/guides/introduction) bonnes pratiques pour rédiger une documentation technique, y compris l’étude du public, les types de contenus et des conseils d’écriture.
-  * [Composant Dropdown](organize/navigation#dropdowns) : organisez la navigation avec un menu déroulant, en plus des onglets et des ancres.
-  * [Correcteur de syntaxe IA](https://x.com/ricardonunez_io/status/1892334887644123192) : l’éditeur web détecte les erreurs d’analyse et utilise l’IA pour suggérer des corrections.
+  * [Guide de la rédaction technique :](https://mintlify.com/guides/introduction)Bonnes pratiques pour rédiger de la documentation technique, notamment sur la recherche d’audience, les types de contenu et les conseils de rédaction.
+  * [Composant Dropdown](organize/navigation#dropdowns) : Organisez la navigation avec un menu déroulant, en plus des onglets et des ancres.
+  * [Correcteur de syntaxe IA](https://x.com/ricardonunez_io/status/1892334887644123192) : L’éditeur web détecte les erreurs d’analyse et utilise l’IA pour suggérer des corrections.
 </Update>
 
 <Update label="Janvier 2025" tags={["Améliorations"]}>
   ## Améliorations de l’assistant IA
 
-  * Nouvelle interface avec page de discussion dédiée et invites préremplies
-  * Améliorations de la stabilité. Par exemple, correction de bugs comme la modification du mauvais fichier ou l’absence de modification
-  * Logique plus robuste pour l’ajout et la modification de composants
-  * Amélioration de l’édition du fichier `docs.json`
+  * Nouvelle interface avec une page de chat dédiée et des prompts préremplis
+  * Améliorations de la stabilité. Par exemple, correction de bugs où le mauvais fichier, voire aucun fichier, était modifié
+  * Capacités renforcées pour ajouter et modifier des composants
+  * Amélioration de la modification du fichier `docs.json`
 
   ## Authentification partielle
 
-  Personnalisez l’accès à n’importe quelle page ou section de contenu en fonction des autorisations de l’utilisateur. Prend en charge la connexion à votre propre système d’authentification.
+  Personnalisez l’accès à n’importe quelle page ou section de contenu en fonction des autorisations des utilisateurs. Prend en charge la connexion à votre propre système d’authentification.
 
-  ## Playground API repensé
+  ## Refonte du Bac à sable API
 
-  Nous avons entièrement revu la conception et les performances de l’[API Playground](/fr/api-playground/). Les mises à jour incluent :
+  Nous avons entièrement revu la conception et les performances du [Bac à sable API](/fr/api-playground/). Les mises à jour incluent :
 
-  * Affichage détaillé plus simple pour obtenir une vue d’ensemble d’un champ
-  * Structure imbriquée plus intuitive. Par exemple, ajout ou suppression d’éléments
+  * Affichage plus simple des détails pour obtenir une vue d’ensemble d’un champ
+  * Conception imbriquée plus intuitive. Par exemple, pour ajouter ou supprimer des éléments
   * Temps de réponse plus rapides
 
-  ## Améliorations de qualité
+  ## Améliorations de la qualité
 
-  * Possibilité d’exiger une authentification pour accéder aux déploiements de prévisualisation
+  * Prise en charge de l’authentification obligatoire pour accéder aux déploiements de prévisualisation
 </Update>
 
 <Update label="Décembre 2024">
@@ -1109,7 +1109,7 @@ noindex: true
     ![capture d’écran de l’authentification](/images/changelog/authentication.png)
   </Frame>
 
-  Rendez la documentation privée en configurant l’authentification via JWT, OAuth ou un mot de passe universel. Avec ce niveau de confidentialité, vous pouvez créer une base de connaissances interne ou empêcher vos concurrents de consulter votre documentation.
+  Rendez votre documentation privée en configurant l’authentification via JWT, OAuth ou un mot de passe universel. Vous pouvez ainsi créer une base de connaissances interne ou empêcher vos concurrents de consulter votre documentation.
 </Update>
 
 <Update label="Novembre 2024">
@@ -1119,21 +1119,21 @@ noindex: true
     ![Assistant IA](/images/changelog/ai-assistant.jpg)
   </Frame>
 
-  Vous pouvez désormais demander à l’IA de modifier vos documents, en tenant compte du contexte de toute la documentation existante. Saisissez un prompt et le rédacteur proposera des modifications en générant une pull request.
+  Vous pouvez désormais demander à l’IA d’apporter des modifications à votre documentation en s’appuyant sur l’ensemble de la documentation existante. Saisissez un prompt, et le rédacteur proposera des modifications en générant une pull request.
 
   ## Amélioration de l’intégration GitLab
 
-  Nous avons amélioré notre prise en charge de la synchronisation avec GitLab, notamment en activant les mises à jour automatisées et les déploiements de prévisualisation. Consultez notre [documentation sur GitLab](/fr/deploy/gitlab) pour commencer.
+  Nous avons amélioré la synchronisation avec GitLab, notamment en activant les mises à jour automatiques et les déploiements de prévisualisation. Consultez notre [documentation sur GitLab](/fr/deploy/gitlab) pour commencer.
 
-  ## Éditeur web
+  ## Éditeur Web
 
   <Frame>
     ![Éditeur Web](/images/changelog/webeditor.jpg)
   </Frame>
 
-  Nous avons repensé notre éditeur web afin que vous puissiez désormais mettre à jour vos documents avec une expérience entièrement WYSIWYG, tout en les synchronisant avec Markdown.
+  Nous avons repensé notre éditeur web pour que vous puissiez désormais mettre à jour votre documentation avec une expérience entièrement WYSIWYG, tout en la synchronisant avec le markdown.
 
-  Consultez notre [documentation pour bien démarrer avec l’éditeur web](/fr/editor).
+  Consultez notre [documentation pour bien démarrer avec l’Éditeur Web](/fr/editor).
 
   ## Prise en charge de /llms.txt
 
@@ -1141,32 +1141,32 @@ noindex: true
     ![Prise en charge de llms.txt](/images/changelog/llms.jpg)
   </Frame>
 
-  Toutes les instances de documentation sont désormais automatiquement hébergées sur /llms.txt et /llms-full.txt afin que les LLM puissent facilement exploiter votre documentation. Pour plus d’informations, lisez la [documentation sur le nouveau standard llms.txt.](https://llmstxt.org)
+  Toutes les instances de documentation sont désormais automatiquement hébergées à l’adresse /llms.txt et /llms-full.txt afin que les LLM puissent facilement ingérer votre documentation. Pour en savoir plus, consultez la [documentation sur la nouvelle norme llms.txt.](https://llmstxt.org)
 
   ## Localisation
 
-  Vous pouvez désormais localiser votre documentation, selon un fonctionnement similaire au versionnage. Ajoutez un `locale` à une version et le contenu fixe dans Mintlify, comme « Was this page helpful? », sera également adapté à cette langue.
+  Vous pouvez désormais localiser votre documentation, de manière similaire au versionnage. Ajoutez un `locale` à une version, et le contenu fixe dans Mintlify, comme &quot;Was this page helpful?&quot;, s’adaptera également à la langue sélectionnée.
 
   ### Améliorations de la qualité
 
-  * Retourner les résultats de chat et de recherche en fonction de la version actuelle que l’utilisateur est en train de lire
-  * Authentifier les utilisateurs avec OAuth, en plus des jetons JWT ou des sessions partagées.
+  * Afficher les résultats du chat et de la recherche en fonction de la version actuellement consultée par l’utilisateur
+  * Authentifier les utilisateurs avec OAuth, en plus de JWT ou des jetons Shared Session.
 </Update>
 
-<Update label="Octobre 2024">
-  ## Notes de version
+<Update label="October 2024">
+  ## Journal des modifications
 
-  Lancement d’un nouveau [composant Update](/fr/components/update) pour faciliter l’affichage et la communication des mises à jour (comme celle-ci) à vos utilisateurs.
+  Lancement d’un nouveau [composant Update](/fr/components/update) pour faciliter l’affichage et le partage des mises à jour (comme celle-ci) auprès de vos utilisateurs.
 
   <Frame>
-    ![Changelog](/images/changelog/changelog.jpg)
+    ![Journal des modifications](/images/changelog/changelog.jpg)
   </Frame>
 
-  ## Surlignage de lignes de code
+  ## Mise en surbrillance des lignes de code
 
-  Vous pouvez désormais surligner des lignes de code dans votre documentation pour mettre en évidence des parties importantes et y attirer l’attention en ajoutant un commentaire spécial après l’identifiant de langue. Utilisez des accolades `{}` et indiquez des numéros de lignes ou des plages de lignes séparés par des virgules.
+  Vous pouvez désormais mettre en surbrillance des lignes de code dans votre documentation pour faire ressortir les parties importantes en ajoutant un commentaire spécial après l’identifiant du langage. Utilisez des accolades `{}` et indiquez les numéros de ligne ou les plages, séparés par des virgules.
 
-  ```javascript Exemple de surlignage de lignes {1,3,4,5}
+  ```javascript Exemple de mise en surbrillance de lignes {1,3,4,5}
   const greeting = "Hello, World!";
   function sayHello() {
     console.log(greeting);
@@ -1175,7 +1175,7 @@ noindex: true
   ```
 
   ````mdx
-  ```javascript Exemple de surlignage de lignes {1,3-5}
+  ```javascript Exemple de mise en surbrillance de lignes {1,3-5}
   const greeting = "Hello, World!";
   function sayHello() {
     console.log(greeting);
@@ -1186,7 +1186,7 @@ noindex: true
 
   ## Blocs de code en mode clair
 
-  Les blocs de code disposent désormais d’une variante en mode clair qui peut être activée en ajoutant ce qui suit à votre `docs.json` :
+  Les blocs de code disposent désormais d’une variante en mode clair, que vous pouvez activer en ajoutant ce qui suit à votre `docs.json` :
 
   ```json
   "codeBlock": {
@@ -1197,41 +1197,41 @@ noindex: true
   ## Pied de page avancé
 
   <Frame>
-    ![Advanced Footer](/images/changelog/advanced-footer.gif)
+    ![Pied de page avancé](/images/changelog/advanced-footer.gif)
   </Frame>
 
-  Vous pouvez désormais ajouter davantage de liens au pied de page standard. Cette amélioration apporte plus de cohérence entre les pages d’accueil et la documentation, ou une plus grande personnalisation si vous souhaitez mettre en avant des pages spécifiques comme les réseaux sociaux ou les pages de statut.
+  Vous pouvez désormais ajouter plus de liens au pied de page standard. Cette amélioration apporte davantage de cohérence entre les pages d’accueil et la documentation, ou plus de possibilités de personnalisation si vous souhaitez mettre en avant certaines pages, comme les réseaux sociaux ou les pages de statut.
 
   ## Filtrer la recherche en fonction de l’utilisateur actuel
 
-  Lorsque la personnalisation est activée, les résultats de recherche sont désormais filtrés en fonction de l’utilisateur actuellement connecté afin qu’il ne voie que le contenu pertinent.
+  Lorsque la personnalisation est activée, les résultats de recherche sont désormais filtrés en fonction de l’utilisateur connecté afin qu’il ne voie que le contenu pertinent.
 
   ## Prompts personnalisés pour le chat IA
 
-  Vous pouvez désormais personnaliser les prompts pour le chat IA. Veuillez contacter le [support](mailto:support@mintlify.com) si vous souhaitez personnaliser ces prompts.
+  Vous pouvez désormais personnaliser les prompts du chat IA. Contactez le [support](mailto:support@mintlify.com) si vous souhaitez les personnaliser.
 
   ## Améliorations du tableau de bord
 
-  * Ajout de la possibilité de changer le domaine personnalisé pour qu’il soit /docs directement via les paramètres du tableau de bord.
-  * Fusion des pages de connexion et d’inscription afin de réduire les frictions et la confusion.
-  * Implémentation du flux de connexion Discovery afin que les utilisateurs membres de plusieurs organisations puissent désormais basculer entre elles.
-  * Ajout de la connexion avec Google OAuth.
-  * Ajout de la possibilité d’ajouter un nouveau déploiement via les paramètres du tableau de bord.
+  * Ajout de la possibilité de définir directement un domaine personnalisé sur /docs depuis les paramètres du tableau de bord.
+  * Regroupement des pages de connexion et d’inscription afin de réduire les frictions et la confusion.
+  * Mise en place du flux de connexion par découverte afin que les utilisateurs membres de plusieurs organisations puissent désormais passer de l’une à l’autre.
+  * Ajout de la connexion avec Google OAuth
+  * Ajout de la possibilité d’ajouter un nouveau déploiement depuis les paramètres du tableau de bord.
 
   ## Corrections de bugs
 
   * Il est désormais possible d’utiliser des barres obliques initiales dans la navigation.
-  * Il est désormais possible de modifier les fichiers CSS &amp; JS dans l’éditeur web.
-  * Correction de `suggestEdit` qui ne s’affichait pas même lorsqu’il était activé.
-  * Correction de la navigation au clavier pour Search et Chat, de sorte que vous puissiez désormais utiliser les flèches haut et bas pour parcourir les résultats.
-  * Empêcher les moteurs de recherche d’indexer les pages protégées par authentification utilisateur.
-  * Revalidation du cache lorsqu’une organisation est supprimée.
-  * Nous utilisons désormais l’analyseur OpenAPI Scalar pour analyser les définitions OpenAPI, ce qui améliore les performances, corrige les problèmes d’analyse et fournit de meilleurs messages d’erreur.
-  * Les descriptions de niveau supérieur sont désormais prises en charge dans les pages de référence d’API générées automatiquement à partir de définitions OpenAPI.
-  * Ajout de la prise en charge du style inline pour les icônes.
-  * Correction de l’effet de pop-in du CSS personnalisé dans la documentation.
-  * Affichage correct du style de code inline en combinaison avec les liens.
-  * Conservation de la position de défilement lorsque vous cliquez sur le bouton de retour du navigateur.
+  * Il est désormais possible de modifier les fichiers CSS et JS dans l’éditeur web.
+  * Correction d’un problème qui empêchait `suggestEdit` de s’afficher même lorsqu’il était activé.
+  * Correction de la navigation au clavier pour Search et Chat : vous pouvez désormais utiliser les touches fléchées haut et bas pour parcourir les résultats.
+  * Empêcher les moteurs de recherche d’explorer les pages protégées par l’authentification utilisateur.
+  * Révalidation du cache lorsqu’une organisation est supprimée.
+  * Nous utilisons désormais l’analyseur OpenAPI de Scalar pour analyser les définitions OpenAPI, ce qui améliore les performances, corrige les problèmes d’analyse et fournit de meilleurs messages d’erreur.
+  * Les descriptions de premier niveau sont désormais prises en charge dans les pages de référence d’API générées automatiquement à partir de définitions OpenAPI.
+  * Ajout de la prise en charge du style en ligne pour les icônes
+  * Correction de l’apparition tardive du CSS personnalisé dans la documentation.
+  * Affichage correct du style du code en ligne en combinaison avec les liens.
+  * Conservation de la position de défilement lorsque vous cliquez sur le bouton Retour dans un navigateur.
 </Update>
 
 <Update label="Septembre 2024">
@@ -1241,128 +1241,128 @@ noindex: true
     ![Polices personnalisées](/images/changelog/custom-fonts.jpeg)
   </Frame>
 
-  Personnalisez la police de vos docs en utilisant votre propre police hébergée sur un CDN ou en choisissant parmi les polices Google pour aligner votre documentation sur votre marque.
+  Personnalisez la police de votre documentation avec votre propre police hébergée sur un CDN, ou choisissez parmi les polices Google pour l’aligner sur votre marque.
 
   ## Images dans les composants Card
 
-  Ajoutez une propriété `img` à une carte pour afficher une image en haut de la carte. En savoir plus à ce sujet [ici](/fr/components/cards#image-card).
+  Ajoutez une propriété `img` à une carte pour afficher une image en haut de celle-ci. Pour en savoir plus, cliquez [ici](/fr/components/cards#image-card).
 
-  ## Amélioration de la vitesse de mise à jour
+  ## Amélioration des performances des mises à jour
 
   <Frame>
     ![Améliorations des performances](/images/changelog/performance-improvements.png)
   </Frame>
 
-  Pour les grands projets (~3 000 fichiers), l&#39;étape de téléchargement lors des mises à jour de la documentation est désormais ~440x plus rapide – soit une réduction de temps de 99,8 %. De manière générale, les téléchargements de fichiers pendant les mises à jour sont désormais ~5,5x plus rapides – soit une réduction de temps de 81,8 %.
+  Pour les grands projets (~3 000 fichiers), l’étape de téléchargement lors des mises à jour de la documentation est désormais ~440x plus rapide, soit une réduction du temps de 99,8 %. Globalement, les téléchargements de fichiers pendant les mises à jour sont désormais ~5,5x plus rapides, soit une réduction du temps de 81,8 %.
 
-  ## Améliorations du référencement (SEO)
+  ## Améliorations SEO
 
   <Frame>
     ![Améliorations SEO](/images/changelog/seo-improvements.jpeg)
   </Frame>
 
-  Nous avons corrigé la mise en page mobile et bureau de notre documentation afin qu&#39;elle soit plus adaptée au référencement – notamment en ajoutant des balises aria appropriées à la barre de navigation et aux éléments de bascule.
+  Nous avons corrigé les mises en page mobile et desktop de notre documentation pour la rendre plus favorable au SEO, notamment en ajoutant les balises aria appropriées aux éléments de la barre de navigation et de bascule.
 
   ## Améliorations du tableau de bord
 
-  * Migration vers l’App Router dans le tableau de bord.
-  * Les analytics de recherche sont désormais disponibles dans le tableau de bord.
+  * Migration vers App Router dans le tableau de bord.
+  * Les analyses de recherche sont désormais disponibles dans le tableau de bord.
   * Une fonctionnalité de suppression d’organisation a été ajoutée au tableau de bord.
-  * Interface de connexion GitLab déployée.
-  * Correction de données d’analytics incorrectes.
-  * Les modules complémentaires peuvent désormais être achetés directement via le tableau de bord.
+  * Déploiement de l’interface de connexion GitLab.
+  * Correction de données d’analyse incorrectes.
+  * Les modules complémentaires peuvent désormais être achetés directement depuis le tableau de bord.
 
   ## Corrections de bugs
 
   * Correction d’un bug où la barre supérieure ne s’étendait pas sur toute la largeur de l’écran lorsqu’elle était en mode personnalisé et que la mise en page de la barre latérale était `sidenav`.
-  * Correction du positionnement relatif du widget d’IA.
+  * Correction du positionnement relatif du widget IA.
 
   ## Plus
 
-  * **Dépannage pour les pages d’API** : les pages d’API peuvent être complexes, nous avons donc répertorié les problèmes courants pour vous aider à les résoudre rapidement — [Lire la documentation](/fr/api-playground/troubleshooting)
+  * **Résolution des problèmes sur les pages API** : les pages API peuvent être complexes, nous avons donc répertorié les problèmes courants pour vous aider à les résoudre rapidement — [Lire la documentation](/fr/api-playground/troubleshooting)
 </Update>
 
 <Update label="Août 2024">
   ## Pages de référence OpenAPI
 
-  * Les endpoints définis par OpenAPI qui sont complexes et récursifs sont désormais 98 % plus légers.
+  * Les endpoints définis par OpenAPI qui sont complexes et récursifs sont désormais 98 % plus petits.
   * Nous affichons désormais [additionalProperties](https://swagger.io/docs/specification/data-models/dictionaries/) dans les pages OpenAPI.
 
-  ## Téléversement de fichiers dans API Playground
+  ## Téléversements de fichiers dans le Bac à sable API
 
-  Par défaut, les requêtes depuis API Playground transitent via un proxy Mintlify. Vous pouvez maintenant utiliser `disableProxy` pour désactiver ce comportement et prendre en charge des types de requêtes comme le téléversement de fichiers.
+  Par défaut, les requêtes du Bac à sable API sont relayées par Mintlify. Vous pouvez désormais utiliser `disableProxy` pour désactiver ce comportement et prendre en charge des types de requêtes comme les téléversements de fichiers.
 
-  * [En savoir plus sur les configurations d’API](organize/settings#api-configurations)
+  * [En savoir plus sur les configurations API](organize/settings#api-configurations)
 
-  ## Améliorations du SEO mobile
+  ## Améliorations SEO sur mobile
 
-  Nous avons corrigé la mise en page mobile de notre documentation afin qu’elle soit plus adaptée au référencement – notamment en ajoutant des balises aria appropriées aux éléments.
+  Nous avons corrigé la mise en page mobile de notre documentation pour la rendre plus favorable au SEO, notamment en ajoutant les balises aria appropriées aux éléments.
 
   ## Formulaire d’assistance
 
-  Nous avons ajouté un formulaire d’assistance plus détaillé dans le tableau de bord Mintlify. Vous pouvez désormais soumettre un formulaire pour entrer en contact avec nous.
+  Nous avons ajouté un formulaire d’assistance plus détaillé au tableau de bord Mintlify. Vous pouvez désormais en envoyer un pour nous contacter.
 
   ## Corrections de bugs
 
-  * Correction d’un bug pour la fonctionnalité d’intégration Segment.
-  * Nous générons désormais des messages d’erreur plus détaillés pour les autorisations GitHub lors de l’utilisation de l’éditeur.
+  * Correction d’un bug lié à la fonctionnalité d’intégration Segment.
+  * Nous affichons désormais des messages d’erreur plus précis pour les autorisations GitHub lors des interactions avec l’éditeur.
   * Correction de bugs où la navigation ne se développait pas correctement lorsqu’un lien direct était utilisé.
 </Update>
 
 <Update label="Juillet 2024">
-  ## Widget d’IA
+  ## Widget IA
 
   <Frame>
-    ![Widget d'IA](/images/changelog/widget.png)
+    ![Widget IA](/images/changelog/widget.png)
   </Frame>
 
-  Pour les utilisateurs `Pro`, nous avons lancé Mintlify Widget, une extension de votre documentation pour répondre aux questions de vos utilisateurs là et au moment où elles sont posées. Vous pouvez ajouter ce chatbot alimenté par l’IA à n’importe quelle page web : votre landing page, à l’intérieur de votre produit ou sur vos pages de documentation existantes.
+  Pour les utilisateurs `Pro`, nous avons lancé Mintlify Widget, une extension de votre documentation conçue pour répondre aux questions de vos utilisateurs au moment et à l’endroit où ils les posent. Vous pouvez ajouter ce chatbot alimenté par l’IA à n’importe quelle page web : votre page d’accueil, votre produit ou vos pages de documentation existantes.
 
   * [Lire l’annonce sur le blog](https://mintlify.com/blog/widget)
 
   ## Offre Pro
 
-  Nous avons également mis à jour nos offres tarifaires pour une meilleure personnalisation et une meilleure mise à l’échelle.
+  Nous avons également mis à jour nos offres tarifaires pour offrir plus de personnalisation et une meilleure évolutivité.
 
   * [Lire l’annonce sur le blog](https://mintlify.com/blog/pro-plan)
 
-  ## Synchronisation des exemples de code dans API Playground
+  ## Synchronisation des exemples de code du Bac à sable API
 
-  Lorsque vous parcourez la documentation d’API, l’exemple de code sélectionné est désormais synchronisé d’une page à l’autre.
+  Lorsque vous parcourez la documentation API, l’exemple de code sélectionné se synchronise désormais d’une page à l’autre.
 
   ## Insights
 
-  Actuellement en bêta, cette fonctionnalité résume les questions récurrentes des utilisateurs et les tendances générales dans des rapports faciles à comprendre, avec des suggestions alimentées par l’IA sur la manière d’améliorer votre produit.
+  Actuellement en bêta, cette fonctionnalité résume les questions et tendances récurrentes des utilisateurs dans des rapports faciles à consulter, avec des suggestions alimentées par l’IA pour améliorer votre produit.
 </Update>
 
 <Update label="Juin 2024">
-  ## Temps forts de la Launch Week
+  ## Temps forts de la semaine de lancement
 
-  * Thèmes : personnalisez le style de vos docs avec des thèmes préconfigurés. Ajoutez simplement le thème Quill, Prism ou Venus à votre fichier `docs.json` et le style de votre documentation sera mis à jour.
-  * Search V2 : interrogez directement les descriptions et titres des endpoints OpenAPI pour accéder aux pages de référence API, supprimez les pages masquées des résultats de recherche et profitez de notre barre de recherche au design actualisé.
-  * Branches dans le Web Editor : créez des branches dans notre éditeur web sans IDE.
-  * Personnalisation utilisateur : authentifiez les utilisateurs avec Shared Session ou JWT afin de pouvoir leur afficher du contenu personnalisé, comme le préremplissage de clés d’API ou l’affichage de contenu spécifique pour certains clients.
-  * Améliorations de l’automatisation OpenAPI : pour préremplir automatiquement les pages API Playground, vous pouvez ajouter un champ `openapi` à un objet dans les tableaux `tabs` ou `anchors` du `docs.json`.
+  * Thèmes : personnalisez le style de votre documentation avec des thèmes préconfigurés. Ajoutez simplement le thème Quill, Prism ou Venus à votre fichier `docs.json` pour mettre à jour son apparence.
+  * Search V2 : recherchez directement dans les titres et descriptions des endpoints OpenAPI pour accéder aux pages de référence API, excluez les pages masquées de la recherche et profitez de notre barre de recherche mise à jour.
+  * Branching dans l’éditeur web : créez des branches dans notre éditeur web sans IDE.
+  * Personnalisation utilisateur : authentifiez les utilisateurs avec Shared Session ou JWT pour leur afficher du contenu personnalisé, par exemple en préremplissant les clés API ou en affichant du contenu spécifique aux clients.
+  * Améliorations de l’automatisation OpenAPI : pour renseigner automatiquement les pages du Bac à sable API, vous pouvez ajouter un champ `openapi` à un objet dans les tableaux tabs ou anchors du `docs.json`.
 </Update>
 
 <Update label="Mai 2024">
   ## Okta SSO
 
-  Nous prenons désormais en charge la connexion via Okta SAML et OIDC.
+  Nous prenons désormais en charge l’authentification via Okta SAML et OIDC.
 
-  ## Mintlify REST API
+  ## API REST Mintlify
 
-  Déclenchez des mises à jour de votre documentation de manière programmatique.
+  Déclenchez des mises à jour de votre documentation par programmation.
 </Update>
 
 <Update label="Avril 2024">
   ## Mode personnalisé
 
-  Ajoutez une configuration aux métadonnées pour supprimer tous les éléments, à l’exception de la barre du haut. Exemples de cas d’usage :
+  Ajoutez une configuration aux métadonnées pour supprimer tous les éléments sauf la barre supérieure. Exemples de cas d’usage :
 
-  * Créer une page d’accueil globale personnalisée avec des composants sur mesure
-  * Ajouter des vidéos ou des galeries d’images en plein écran
-  * Intégrer des éléments de démo iFrame personnalisés pour ajouter de l’interactivité à votre documentation
+  * Créez une page d’accueil globale personnalisée avec des composants sur mesure
+  * Ajoutez des vidéos en plein écran ou des galeries d’images
+  * Intégrez des éléments de démonstration iFrame personnalisés pour rendre votre documentation plus interactive
 
   Consultez notre [documentation sur le mode personnalisé](organize/pages#custom-mode).
 </Update>
@@ -1370,23 +1370,23 @@ noindex: true
 <Update label="Mars 2024">
   ## Mintlify MDX pour VSCode
 
-  Insérez des extraits de nos composants préconstruits et encarts sans quitter VSCode. [Installez l’extension ici](https://marketplace.visualstudio.com/items?itemName=mintlify.mintlify-snippets).
+  Insérez des Extraits de nos composants prédéfinis et encadrés sans quitter VSCode. [Installez l’extension ici](https://marketplace.visualstudio.com/items?itemName=mintlify.mintlify-snippets).
 </Update>
 
 <Update label="Février 2024">
   ## Améliorations de qualité
 
-  * Améliorations du tableau de bord : visualisez les journaux de mise à jour pour voir ce qui a changé et le statut d’une mise à jour, et basculez entre les projets Mintlify pour gérer les déploiements
-  * Versioning avec onglets entièrement pris en charge
-  * Redirections génériques (wildcard) désormais prises en charge
-  * Détection d’erreurs dans le CLI : nous affichons désormais la position du frontmatter invalide lorsqu’il y a des problèmes d’analyse pendant le développement local
+  * Améliorations du tableau de bord : consultez les journaux de mise à jour pour voir ce qui a changé et l’état d’une mise à jour, et passez d’un projet Mintlify à l’autre pour gérer les déploiements
+  * Gestion des versions avec tabs désormais entièrement prise en charge
+  * Les redirections génériques sont désormais prises en charge
+  * Détection des erreurs de la CLI : nous affichons désormais l’emplacement d’un Frontmatter invalide en cas de problème d’analyse pendant le développement local
 </Update>
 
 <Update label="Janvier 2024">
-  ## Temps forts de la Launch Week
+  ## Temps forts de la semaine de lancement
 
-  * Déploiements de prévisualisation : lorsque vous créez une pull request, nous générons un lien unique qui affiche un aperçu en temps réel de l’apparence de votre documentation en production. Vous pouvez partager ce lien avec vos coéquipiers.
-  * Snippets V2 : nous prenons désormais en charge des composants et des variables entièrement réutilisables pour les snippets.
-  * Moteur MDX open source : nous avons exposé deux API — `getCompiledMdx` et `MDXComponent` — afin que vous puissiez accéder au markdown Mintlify et à la coloration syntaxique du code. [Les contributions au projet](https://github.com/mintlify/mdx) sont les bienvenues.
-  * Insights AI Chat : segmentez l’historique de chat par date, augmentez le quota d’AI Chat depuis le tableau de bord et voyez à quelle fréquence une requête spécifique apparaît.
+  * Déploiements de prévisualisation : lorsque vous créez une pull request, nous générons un lien unique qui affiche un aperçu en direct de votre documentation telle qu’elle apparaîtra en production. Vous pouvez partager ce lien avec vos coéquipiers.
+  * Extraits V2 : nous prenons désormais en charge des composants et variables entièrement réutilisables pour les extraits.
+  * Moteur MDX open source : nous avons exposé deux API — getCompiledMdx et MDXComponent — pour vous permettre d’accéder au markdown Mintlify et à la coloration syntaxique du code. Les [contributions au projet](https://github.com/mintlify/mdx) sont les bienvenues.
+  * Insights chat IA : segmentez l’historique du chat par date, augmentez le quota du chat IA depuis le tableau de bord et voyez à quelle fréquence une requête spécifique apparaît.
 </Update>

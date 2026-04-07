@@ -1,12 +1,12 @@
 ---
 title: "Google Analytics 4"
-description: "Suivez le comportement et l’engagement de vos visiteurs avec Google Analytics."
+description: "Suivez le comportement et l’engagement des visiteurs avec Google Analytics."
 keywords: ["intégration GA4", "ID de mesure", "flux Web", "Universal Analytics"]
 ---
 
-Vous devrez générer une nouvelle propriété <Tooltip tip="Google Analytics 4">GA4</Tooltip> à utiliser dans Mintlify. Les données collectées seront envoyées dans le même projet que vos autres données Google Analytics.
+Vous devrez générer une nouvelle propriété <Tooltip tip="Google Analytics 4">GA4</Tooltip> à utiliser avec Mintlify. Les données collectées seront regroupées dans le même projet que vos autres données Google Analytics.
 
-Si vous utilisez la version précédente de Google Analytics, Universal Analytics, vous pourrez tout de même générer une propriété <Tooltip tip="Google Analytics 4">GA4</Tooltip>. Les données <Tooltip tip="Google Analytics 4">GA4</Tooltip> sont légèrement différentes des données UA, mais elles sont tout de même rassemblées dans le même projet.
+Si vous utilisez l’ancienne version de Google Analytics, Universal Analytics, vous pourrez quand même générer une propriété <Tooltip tip="Google Analytics 4">GA4</Tooltip>. Les données <Tooltip tip="Google Analytics 4">GA4</Tooltip> sont légèrement différentes des données UA, mais elles sont tout de même regroupées dans le même projet.
 
 <div id="how-to-connect-ga4-to-mintlify">
   ## Comment connecter GA4 à Mintlify
@@ -16,21 +16,21 @@ Si vous utilisez la version précédente de Google Analytics, Universal Analytic
   ### Créer un flux Web
 </div>
 
-Vous devez créer un flux Web pour obtenir l’ID de mesure à intégrer dans Mintlify.
+Vous devez créer un flux Web pour obtenir l’ID de mesure à renseigner dans Mintlify.
 
-Cliquez sur l’icône en forme de roue dentée en bas à gauche de l’écran Google Analytics, puis cliquez sur Data Streams.
+Cliquez sur l’icône en forme d’engrenage en bas à gauche de l’interface Google Analytics. Cliquez ensuite sur Data Streams.
 
 <Frame>![Capture d’écran de la page Data Streams dans le tableau de bord Google Analytics.](/images/ga4-web-streams.png)</Frame>
 
-Créez un flux Web et indiquez l’URL de votre site de documentation Mintlify comme URL du flux.
+Créez un flux Web, puis saisissez l’URL de votre site de documentation Mintlify comme URL du flux.
 
-Votre ID de mesure ressemble à `G-XXXXXXX` et apparaîtra dans Stream Details immédiatement après la création du flux Web.
+Votre ID de mesure ressemble à `G-XXXXXXX` et s’affiche sous Stream Details immédiatement après la création du flux Web.
 
 <div id="put-measurement-id-in-docsjson">
-  ### Placez l’ID de mesure dans docs.json
+  ### Ajoutez l’ID de mesure dans docs.json
 </div>
 
-Ajoutez votre ID de mesure dans votre fichier `docs.json` comme ceci :
+Ajoutez votre ID de mesure dans votre fichier `docs.json`, comme suit :
 
 ```json docs.json
 "integrations": {
@@ -47,10 +47,8 @@ Ajoutez votre ID de mesure dans votre fichier `docs.json` comme ceci :
 
 Google Analytics met deux à trois jours à afficher vos données.
 
-Vous pouvez utiliser le [Google Analytics Debugger](https://chrome.google.com/webstore/detail/google-analytics-debugger/jnkmfdileelhofjcijamephohjechhna?hl=en) pour vérifier que le suivi Analytics est correctement activé. L’extension consignera dans la console de votre navigateur chaque fois que GA4 envoie une requête.
+Vous pouvez utiliser le [Google Analytics Debugger](https://chrome.google.com/webstore/detail/google-analytics-debugger/jnkmfdileelhofjcijamephohjechhna?hl=en) pour vérifier que Google Analytics est correctement activé. L’extension affichera un message dans la console de votre navigateur chaque fois que GA4 envoie une requête.
 
 <Note>
-
-Les liens de prévisualisation ont le suivi Analytics désactivé.
-
+  Le suivi analytique est désactivé sur les liens de prévisualisation.
 </Note>

@@ -1,10 +1,10 @@
 ---
-title: "Desplegables"
-description: "Alternar la visualización de propiedades anidadas"
-keywords: ["desplegables", "propiedades anidadas", "campos desplegables", "alternar contenido"]
+title: "Expandibles"
+description: "Muestra u oculta propiedades anidadas"
+keywords: ["expandibles", "propiedades anidadas", "campos expandibles", "contenido desplegable"]
 ---
 
-Utiliza elementos desplegables para mostrar u ocultar contenido anidado dentro de los campos de respuesta. Estos elementos son especialmente útiles para mostrar las propiedades de objetos complejos en la documentación de la API.
+Usa expandibles para mostrar y ocultar contenido anidado en los campos de respuesta. Los expandibles son especialmente útiles para mostrar propiedades de objetos complejos en la documentación de API.
 
 <ResponseField name="user" type="User Object">
   <Expandable title="propiedades">
@@ -22,11 +22,11 @@ Utiliza elementos desplegables para mostrar u ocultar contenido anidado dentro d
 <ResponseField name="user" type="User Object">
   <Expandable title="properties">
     <ResponseField name="full_name" type="string">
-      El nombre completo del usuario
+      The full name of the user
     </ResponseField>
 
     <ResponseField name="is_over_21" type="boolean">
-      Si el usuario es mayor de 21 años
+      Whether the user is over 21 years old
     </ResponseField>
   </Expandable>
 </ResponseField>
@@ -38,9 +38,9 @@ Utiliza elementos desplegables para mostrar u ocultar contenido anidado dentro d
 </div>
 
 <ResponseField name="title" type="string">
-  El nombre del objeto que se está mostrando.
+  El nombre del objeto que se muestra.
 </ResponseField>
 
 <ResponseField name="defaultOpen" type="boolean" default="false">
-  Configúralo en `true` para que el elemento desplegable se abra cuando se cargue la página.
+  Establece `true` para que el elemento expandible se abra al cargar la página
 </ResponseField>

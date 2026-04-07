@@ -5,15 +5,15 @@ description: "了解如何从 Docusaurus、ReadMe 或其他平台迁移到 Mintl
 keywords: ["migration", "Docusaurus", "ReadMe", "import"]
 ---
 
-本指南将帮助你将现有文档迁移到 Mintlify。对于受支持的平台，你可以选择自动迁移；如果你希望对整个过程实现全程掌控，可以选择手动迁移。
+本指南将帮助你把现有文档迁移到 Mintlify。对于受支持的平台，你可以选择自动迁移；如果希望完全掌控整个过程，则可以选择手动迁移。
 
 <div id="choose-your-migration-path">
-  ## 选择迁移方式
+  ## 选择你的迁移方式
 </div>
 
 <CardGroup cols="2">
   <Card title="自动迁移" icon="wand-sparkles">
-    如果你是从 Docusaurus 或 ReadMe 迁移过来，可以使用我们的工具自动完成迁移。
+    如果你是从 Docusaurus 或 ReadMe 迁移，请使用我们的工具自动完成迁移。
   </Card>
 
   <Card title="手动迁移" icon="pencil-ruler">
@@ -23,7 +23,7 @@ keywords: ["migration", "Docusaurus", "ReadMe", "import"]
 
 <Tabs>
   <Tab title="自动化迁移">
-    使用 [@mintlify/scraping 包](https://www.npmjs.com/package/@mintlify/scraping) 迁移您的文档。该工具包会抓取您的内容并将其转换为 Mintlify 组件格式。
+    使用 [@mintlify/scraping 包](https://www.npmjs.com/package/@mintlify/scraping) 迁移您的文档。该包会抓取您的内容并将其转换为使用 Mintlify 组件的格式。
 
     ### 支持的平台
 
@@ -104,7 +104,7 @@ keywords: ["migration", "Docusaurus", "ReadMe", "import"]
       />
 
       <Card
-        title="自述文件"
+        title="ReadMe"
         icon={<svg fill="#177fc4" className="h-6 w-6" width="36" height="36" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
 <path d="M29.35 4.361h-7.767c-2.672 0-4.994 1.85-5.578 4.461-0.589-2.611-2.906-4.461-5.578-4.461h-7.761c-1.472 0-2.667 1.194-2.667 2.667v13.656c0 1.472 1.194 2.667 2.667 2.667h4.983c5.678 0 7.372 1.355 8.183 4.167 0.039 0.156 0.289 0.156 0.333 0 0.817-2.811 2.511-4.167 8.183-4.167h4.983c1.472 0 2.667-1.194 2.667-2.667v-13.65c0-1.467-1.183-2.661-2.65-2.672zM13.444 19.105c0 0.106-0.083 0.194-0.194 0.194h-8.906c-0.105 0-0.194-0.083-0.194-0.194v-1.272c0-0.105 0.083-0.194 0.194-0.194h8.911c0.105 0 0.194 0.083 0.194 0.194v1.272zM13.444 15.722c0 0.105-0.083 0.194-0.194 0.194h-8.906c-0.105 0-0.194-0.083-0.194-0.194v-1.272c0-0.106 0.083-0.194 0.194-0.194h8.911c0.105 0 0.194 0.083 0.194 0.194v1.272zM13.444 12.339c0 0.105-0.083 0.194-0.194 0.194h-8.906c-0.105 0-0.194-0.083-0.194-0.194v-1.272c0-0.105 0.083-0.194 0.194-0.194h8.911c0.105 0 0.194 0.083 0.194 0.194v1.272zM27.85 19.1c0 0.105-0.083 0.194-0.194 0.194h-8.906c-0.105 0-0.194-0.083-0.194-0.194v-1.272c0-0.105 0.083-0.194 0.194-0.194h8.911c0.106 0 0.194 0.083 0.194 0.194v1.272zM27.85 15.717c0 0.106-0.083 0.194-0.194 0.194h-8.906c-0.105 0-0.194-0.083-0.194-0.194v-1.272c0-0.105 0.083-0.194 0.194-0.194h8.911c0.106 0 0.194 0.083 0.194 0.194v1.272zM27.85 12.333c0 0.105-0.083 0.194-0.194 0.194h-8.906c-0.105 0-0.194-0.083-0.194-0.194v-1.267c0-0.105 0.083-0.194 0.194-0.194h8.911c0.106 0 0.194 0.083 0.194 0.194v1.267z"/>
 </svg>}
@@ -116,17 +116,17 @@ keywords: ["migration", "Docusaurus", "ReadMe", "import"]
 
     ### 安装爬虫
 
-    安装 `@mintlify/scraping` 包以开始使用。
+    安装 `@mintlify/scraping` 包即可开始使用。
 
     ```bash
     npm install @mintlify/scraping@latest -g
     ```
 
-    ### 抓取页面和部分
+    ### 抓取页面和章节
 
-    迁移工具会自动检测您的文档平台并转换内容。转换后的文件默认存储在本地 `./docs` 目录中。
+    迁移工具会自动检测您的文档平台并转换内容。转换后的文件默认存储在本地的 `./docs` 目录中。
 
-    对于大型文档站点，建议每次迁移较小的部分，而非一次性迁移整个站点。
+    对于大型文档站点，建议逐步迁移较小的部分，而非一次性迁移整个站点。
 
     **迁移整个章节：**
 
@@ -146,38 +146,38 @@ keywords: ["migration", "Docusaurus", "ReadMe", "import"]
     mintlify-scrape openapi-file [openApiFilename]
     ```
 
-    ### 将准备好的内容添加到您的 Mintlify 项目中
+    ### 将准备好的内容添加到 Mintlify 项目中
 
-    抓取现有文档平台的内容后，您就可以开始在 Mintlify 上构建文档了。
+    抓取现有文档平台的内容后，您便可以开始在 Mintlify 上构建文档了。
 
-    确认所有页面均已迁移完成后，将这些文件添加到您在入门流程中创建的文档仓库。该仓库通常是一个 GitHub 仓库。
+    确认所有页面均已迁移完成后，将这些文件添加到您在引导流程中创建的文档仓库。该仓库通常是 GitHub 仓库。
   </Tab>
 
   <Tab title="手动迁移">
-    将你的文档从任何平台迁移到 Mintlify，并在整个过程中保持完全掌控。
+    将你的文档从任何平台迁移到 Mintlify，并全程掌控迁移过程。
 
     ### 内容迁移
 
-    要将你的内容迁移到 Mintlify，你需要：
+    要将内容迁移到 Mintlify，你需要准备：
 
-    * 一个有效的 `docs.json` 文件，用于站点设置和导航。更多信息参见 [Global settings](/zh/organize/settings) 和 [Navigation](/zh/organize/navigation)。
-    * 每个文档页面对应一个 Markdown 文件（`.md` 或 `.mdx`）。推荐使用 MDX 格式。更多信息参见 [Pages](/zh/organize/pages)。
-    * （可选）用于 API 端点页面的 OpenAPI 规范文件。更多信息参见 [OpenAPI setup](/zh/api-playground/openapi-setup)。
+    * 一个有效的 `docs.json`，用于配置站点设置和导航。更多信息请参阅 [全局设置](/zh/organize/settings) 和 [导航](/zh/organize/navigation)。
+    * 为文档中的每个页面准备一个 Markdown 文件 (`.md` 或 `.mdx`) 。推荐使用 MDX 格式。更多信息请参阅 [页面](/zh/organize/pages)。
+    * (可选) 为 API 接口页面准备一份 OpenAPI 规范。更多信息请参阅 [OpenAPI 设置](/zh/api-playground/openapi-setup)。
 
-    1. 如果你的内容已经是 Markdown 格式，将内容复制到你的 Mintlify 项目中。否则，将内容转换为 MDX 格式。
-    2. 创建你的 `docs.json`，在其中引用各个 Markdown 页面的路径。
-    3. 如果你有 OpenAPI 规范，将它们添加到 `docs.json` 并配置 API playground。
+    1. 如果你的内容已经是 Markdown 格式，请将其复制到 Mintlify 项目中。否则，请将内容转换为 MDX 格式。
+    2. 创建 `docs.json`，并在其中引用各个 Markdown 页面的路径。
+    3. 如果你有 OpenAPI 规范，请将其添加到 `docs.json` 中，并配置 API 操作台。
 
     <Tip>
-      如果你以 `.md` 文件形式迁移内容，请将它们转换为 `.mdx`，以支持 React 组件等交互式功能。
+      如果你将内容迁移为 `.md` 文件，建议将其转换为 `.mdx`，以支持 React 组件等交互功能。
     </Tip>
 
     ### 资源迁移
 
-    1. 将资源复制到你的仓库的 `images/` 目录。
-    2. 在 Markdown 文件中更新引用：
+    1. 将资源复制到仓库的 `images/` 目录中。
+    2. 更新 Markdown 文件中的引用：
        ```mdx
-       ![Alt text](/images/screenshot.png)
+       ![替代文本](/images/screenshot.png)
        ```
   </Tab>
 </Tabs>
@@ -186,13 +186,13 @@ keywords: ["migration", "Docusaurus", "ReadMe", "import"]
   ## 迁移后检查清单
 </div>
 
-在完成迁移（自动或手动）后，我们建议检查：
+完成迁移 (自动或手动) 后，建议检查以下内容：
 
 * 所有页面均可正常渲染
-* 导航功能按预期运行
-* 内部链接能正确跳转
-* 图片和资源能正确加载
-* 代码块语法高亮显示正常
+* 导航功能符合预期
+* 内部链接可正常解析
+* 图片和资源加载正常
+* 代码块显示正常，并具有正确的语法高亮
 * 搜索功能正常
-* 部署已正确配置
-* 自定义域名已正确配置
+* 已完成部署配置
+* 已设置自定义域名

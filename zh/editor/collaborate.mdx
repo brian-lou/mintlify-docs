@@ -1,49 +1,49 @@
 ---
-title: "在 Web 编辑器中协作"
+title: "在网页编辑器中协作"
 sidebarTitle: "协作"
-description: "使用分支、拉取请求、预览部署和可分享的编辑器链接，与团队协同编写文档。"
+description: "通过分支、拉取请求、预览部署和可共享的编辑器链接与团队协作文档。"
 keywords: ["editor", "collaboration", "branches", "pull requests", "preview deployments", "share links"]
 ---
 
-使用基于分支的工作流、拉取请求和预览部署，与团队协作撰写文档。
+通过基于分支的工作流、拉取请求和预览部署，与团队协作文档。
 
-如果你还不熟悉 Git，请参阅 [Git 概念](/zh/guides/git-concepts)。
+如果你不熟悉 Git，请参阅 [Git 概念](/zh/guides/git-concepts).
 
 <div id="branch-based-collaboration">
   ## 基于分支的协作
 </div>
 
-使用分支并行开展文档更新工作，而不影响你的线上站点。
+使用分支可并行进行文档更新，而不会影响你的线上站点。
 
 <div id="why-use-branches">
   ### 为什么使用分支
 </div>
 
-* **隔离变更**：在不影响线上文档的情况下进行更新。
-* **发布前审查**：在变更上线前先获得团队成员的反馈。
-* **并行协作**：多名团队成员可以同时在不同分支上开展工作。
+* **隔离改动**：在不影响线上文档的情况下进行更新。
+* **发布前评审**：在更改上线前先获取团队成员的反馈。
+* **并行协作**：多个团队成员可以同时在不同分支上工作。
 
 <div id="recommended-workflow">
   ## 推荐工作流程
 </div>
 
-在合并到线上文档之前，使用 pull request 提出更改并与团队协作。此工作流程可确保团队在发布前审查更改，并保持清晰可追溯的更新记录。
+在合并到线上文档之前，使用拉取请求提出更改并与团队协作。这样可以确保团队在发布前完成审核，并保留清晰的更新历史。
 
 <Steps>
-  <Step title="创建 pull request">
-    当你准备好发布更改时，在编辑器中创建一个 pull request。有关使用 pull request 的更多信息，请参阅 <a href="/zh/editor/publish">在网页编辑器中发布更改</a>。
+  <Step title="创建拉取请求">
+    准备发布更改时，请在编辑器中创建拉取请求。有关如何使用拉取请求的更多信息，请参阅<a href="/zh/editor/publish">在网页编辑器中发布更改</a>。
   </Step>
 
-  <Step title="审查 pull request">
-    在你的 Git 托管服务（如 GitHub 或 GitLab）中审查 pull request。
+  <Step title="审核拉取请求">
+    在 GitHub 或 GitLab 等 Git 托管平台中审核拉取请求。
   </Step>
 
-  <Step title="回应反馈">
-    当审阅者请求更改时，按要求进行修改并保存。后续的更改会自动推送到现有的 pull request。
+  <Step title="处理反馈">
+    当审核者要求修改时，按要求完成修改并保存。后续更改会自动推送到现有的拉取请求。
   </Step>
 
-  <Step title="合并 pull request">
-    在处理完所有要求的更改、必需的审阅者已批准 pull request，且所有自动检查均已通过后，合并你的 pull request。
+  <Step title="合并拉取请求">
+    在完成所有要求的修改、获得所有必需审核者批准且自动检查全部通过后，合并拉取请求。
   </Step>
 </Steps>
 
@@ -51,7 +51,7 @@ keywords: ["editor", "collaboration", "branches", "pull requests", "preview depl
   ## 预览部署
 </div>
 
-预览部署会创建临时 URL，允许你在更改正式生效之前查看渲染后的修改效果。使用预览部署来收集关于这些修改的反馈。
+预览部署会创建临时 URL，让你在更改正式上线前查看渲染后的效果。使用预览部署来收集对这些更改的反馈。
 
 <div id="access-preview-deployments">
   ### 访问预览部署
@@ -71,23 +71,23 @@ keywords: ["editor", "collaboration", "branches", "pull requests", "preview depl
   ### 分享预览
 </div>
 
-将预览部署 URL 分享给团队成员以获取反馈。每当你保存新的更改时，预览都会自动更新。
+将预览部署 URL 分享给团队成员，以收集反馈。保存后续更改后，预览会自动更新。
 
 <div id="preview-authentication">
   ### 预览身份验证
 </div>
 
-预览 URL 默认对公众开放。前往仪表盘中的 [Add-ons](https://dashboard.mintlify.com/products/addons) 页面启用预览身份验证，以将访问权限限制为组织内已通过身份验证的成员。
+预览 URL 默认可公开访问。请在控制台的 [Add-ons](https://dashboard.mintlify.com/products/addons) 页面启用预览身份验证，将访问权限仅限于已通过身份验证的组织成员。
 
 <div id="share-editor-links">
   ## 分享编辑器链接
 </div>
 
-将编辑器中某个特定页面的直接链接分享给你的团队成员。使用编辑器链接来共同更新并修改页面。
+与团队成员分享可直接打开编辑器中特定页面的链接。你可以使用编辑器链接协作更新并修改页面。
 
-当你打开一个页面时，编辑器会将路径保存在 URL 中。从浏览器的地址栏复制该 URL，与有编辑器访问权限的团队成员分享。
+打开某个页面时，编辑器会将该页面路径保存在 URL 中。复制浏览器地址栏中的 URL，即可分享给有权访问编辑器的团队成员。
 
-URL 的格式为：
+URL 格式如下：
 
 ```
 https://dashboard.mintlify.com/{org}/{project}/editor/{branch}?file={filepath}
@@ -95,8 +95,8 @@ https://dashboard.mintlify.com/{org}/{project}/editor/{branch}?file={filepath}
 
 例如，`https://dashboard.mintlify.com/acme/docs/editor/main?file=guides/quickstart.mdx` 会在 `main` 分支中打开 `quickstart.mdx`。
 
-任何拥有你 Mintlify 组织访问权限的人都可以使用该链接，在编辑器中直接打开该文件。
+任何有权访问你的 Mintlify 组织的人员，都可以通过该链接直接在编辑器中打开此文件。
 
 <Tip>
-  当你分享页面时，告诉对方你正在使用哪个分支，这样他们就能确认自己看到的是正确的版本。
+  分享页面时，请告知对方你正在使用哪个分支，以便他们确认自己查看的是正确版本。
 </Tip>

@@ -1,54 +1,54 @@
 ---
-title: "自定义 agent 行为"
-description: "通过 AGENTS.md 配置 agent 处理文档任务的方式。"
-keywords: ["AGENTS.md", "agent 配置", "自定义指令", "agent 自定义"]
+title: "自定义代理行为"
+description: "使用 AGENTS.md 配置代理处理文档任务的方式。"
+keywords: ["AGENTS.md", "代理配置", "自定义说明", "代理自定义"]
 ---
 
-在你的仓库中创建一个 `AGENTS.md` 文件来自定义 agent 的行为（文件名 `Agents.md` 也可以）。agent 会读取此文件并遵循你提供的所有指令。
+在你的仓库中创建一个 `AGENTS.md` 文件，以自定义代理的行为 (`Agents.md` 也可以) 。代理会读取此文件，并遵循你提供的任何说明。
 
-或者使用 `CLAUDE.md`。
+或者，也可以使用 CLAUDE.md
 
-agent 会在两个位置搜索 `AGENTS.md` 文件。它首先检查文档目录，然后检查仓库根目录。如果这两个位置都有 `AGENTS.md` 文件，agent 会使用文档目录中的那个文件。
+代理会在两个位置查找 `AGENTS.md` 文件。它会先检查文档目录，然后检查仓库根目录。如果这两个位置都有 `AGENTS.md` 文件，代理会使用文档目录中的文件。
 
-将你希望 agent 遵循的任何指令添加到该文件中。agent 会把这些指令追加到它的 system prompt 中，因此这些指令会应用于所有任务，无论你是在仪表板中、在 Slack 上，还是通过 API 使用 agent。
+添加任何你希望代理遵循的说明。代理会将这些说明附加到其系统提示词中，因此这些说明会应用于所有任务，无论你是在仪表板中、在 Slack 中，还是通过 API 使用代理。
 
 <div id="what-to-include-in-agentsmd">
   ## AGENTS.md 中应包含的内容
 </div>
 
-可以考虑添加以下指引：
+可以考虑补充以下说明：
 
-- **风格偏好**：与文档相关的语气、风格、格式和术语等偏好。
-- **代码规范**：示例中应使用的编程语言、框架和编码约定。
-- **内容要求**：不同类型页面需要包含哪些部分或信息。
-- **项目背景**：会影响文档决策的产品、架构或用户群体等具体细节。
+* **风格偏好**：文档所采用的语气、文风、格式和术语。
+* **代码标准**：示例中使用的编程语言、框架和代码规范。
+* **内容要求**：不同类型的页面应包含哪些章节或信息。
+* **项目背景**：会影响文档编写决策的产品、架构或用户群体等具体信息。
 
 <div id="example-agentsmd-file">
   ## AGENTS.md 示例文件
 </div>
 
 ```markdown AGENTS.md
-# Documentation agent instructions
+# 文档代理说明
 
-## Code examples
-- Use TypeScript for all code examples. Our users are primarily TypeScript developers.
-- Always include error handling in API call examples.
-- Show both success and error response examples for all endpoints.
-- Include import statements at the top of code examples.
+## 代码示例
+- 所有代码示例均使用 TypeScript。我们的用户主要是 TypeScript 开发者。
+- API 调用示例中始终包含错误处理。
+- 为所有端点展示成功和错误响应示例。
+- 在代码示例顶部包含导入语句。
 
-## API documentation standards
-- Every endpoint must document: authentication requirements, rate limits, and common error codes.
-- Use real-world parameter values in examples (not foo/bar placeholders).
-- Include a complete request/response cycle for each endpoint.
+## API 文档规范
+- 每个端点必须说明：身份验证要求、速率限制和常见错误代码。
+- 示例中使用真实的参数值（而非 foo/bar 占位符）。
+- 为每个端点提供完整的请求/响应流程。
 
-## Style and formatting
-- Write for developers with 2-5 years of experience. Don't oversimplify, but explain non-obvious concepts.
-- Use active voice and second person ("you").
-- Date format: ISO 8601 (YYYY-MM-DD).
-- When referencing UI elements, use bold: **Settings** button.
+## 风格与格式
+- 面向有 2-5 年经验的开发者写作。不要过度简化，但需解释不易理解的概念。
+- 使用主动语态和第二人称（"你"）。
+- 日期格式：ISO 8601（YYYY-MM-DD）。
+- 引用 UI 元素时使用粗体：**Settings** 按钮。
 
-## What to include
-- Add prerequisite sections to guides when users need API keys, environment setup, or dependencies.
-- Include "Next steps" sections linking to related documentation.
-- Add troubleshooting sections for common issues we see in support tickets.
+## 应包含的内容
+- 当用户需要 API 密钥、环境配置或依赖项时，在指南中添加前提条件章节。
+- 包含链接到相关文档的"后续步骤"章节。
+- 针对支持工单中常见问题添加故障排查章节。
 ```

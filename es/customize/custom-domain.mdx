@@ -7,26 +7,26 @@ keywords: ["configuración de dominio personalizado", "configuración de DNS", "
 
 Para alojar tu documentación en un dominio personalizado:
 
-1. Agrega tu dominio en tu panel de control.
-2. Configura la DNS en tu proveedor de dominios.
-3. Espera a que la DNS se propague y los certificados TLS se aprovisionen automáticamente.
+1. Añade tu dominio en el panel.
+2. Configura la configuración de DNS con tu proveedor de dominios.
+3. Espera a que el DNS se propague y a que los certificados TLS se aprovisionen automáticamente.
 
 <Info>
-  ¿Quieres configurar una subruta como `example.com/docs`? Consulta [/docs subpath](/es/deploy/docs-subpath).
+  ¿Quieres configurar una subruta como `example.com/docs`? Consulta [Subruta /docs](/es/deploy/docs-subpath).
 </Info>
 
 <div id="add-your-custom-domain">
   ## Añade tu dominio personalizado
 </div>
 
-1. Ve a la página de [configuración de dominio personalizado](https://dashboard.mintlify.com/settings/deployment/custom-domain) en tu panel.
-2. Introduce el nombre de tu dominio. Por ejemplo, `docs.example.com` o `www.example.com`.
-3. Haz clic en **Add domain**.
+1. Ve a la página de [configuración del dominio personalizado](https://dashboard.mintlify.com/settings/deployment/custom-domain) en tu panel.
+2. Introduce tu nombre de dominio. Por ejemplo, `docs.example.com` o `www.example.com`.
+3. Haz clic en **Añadir dominio**.
 
 <Frame>
-  <img alt="La página de configuración de dominio personalizado donde se muestra el campo para introducir la URL de tu dominio personalizado." className="block dark:hidden" src="/images/domain/add-custom-domain-light.png" />
+  <img alt="La página de configuración del dominio personalizado muestra el campo para introducir la URL de tu dominio personalizado." className="block dark:hidden" src="/images/domain/add-custom-domain-light.png" />
 
-  <img alt="La página de configuración de dominio personalizado donde se muestra el campo para introducir la URL de tu dominio personalizado." className="hidden dark:block" src="/images/domain/add-custom-domain-dark.png" />
+  <img alt="La página de configuración del dominio personalizado muestra el campo para introducir la URL de tu dominio personalizado." className="hidden dark:block" src="/images/domain/add-custom-domain-dark.png" />
 </Frame>
 
 <div id="configure-your-dns">
@@ -41,30 +41,30 @@ CNAME | docs | cname.mintlify-dns.com.
 ```
 
 <Tip>
-  Cada proveedor de dominios tiene su propio método para añadir registros DNS. Consulta la documentación de tu proveedor para obtener instrucciones específicas.
+  Cada proveedor de dominios tiene distintas formas de añadir registros DNS. Consulta la documentación de tu proveedor de dominios para obtener instrucciones específicas.
 </Tip>
 
 <div id="dns-propagation">
   ### Propagación de DNS
 </div>
 
-Los cambios de DNS suelen tardar entre 1 y 24 horas en propagarse globalmente, aunque en algunos casos pueden tardar hasta 48 horas. Puedes verificar que tu DNS esté configurado correctamente usando [DNSChecker](https://dnschecker.org).
+Los cambios de DNS suelen tardar entre 1 y 24 horas en propagarse a nivel global, aunque en algunos casos pueden tardar hasta 48 horas. Puedes verificar que tu DNS esté configurado correctamente con [DNSChecker](https://dnschecker.org).
 
-Una vez que tus registros DNS estén activos, tu documentación será accesible primero a través de HTTP. HTTPS estará disponible después de que Vercel aprovisione tu certificado TLS.
+Una vez que tus registros DNS estén activos, tu documentación será accesible primero a través de HTTP. HTTPS estará disponible después de que Vercel emita tu certificado TLS.
 
 <div id="automatic-tls-provisioning">
   ### Aprovisionamiento automático de TLS
 </div>
 
-Una vez que tus registros DNS se hayan propagado y resuelvan correctamente, Vercel aprovisiona automáticamente un certificado SSL/TLS gratuito para tu dominio mediante Let&#39;s Encrypt.
+Una vez que tus registros DNS se propaguen y se resuelvan correctamente, Vercel aprovisionará automáticamente un certificado SSL/TLS gratuito para tu dominio mediante Let&#39;s Encrypt.
 
-Esto suele completarse en unas pocas horas después de la propagación del DNS, aunque en casos poco frecuentes puede tardar hasta 24 horas. Los certificados se renuevan automáticamente antes de su fecha de vencimiento.
+Esto suele completarse en unas horas tras la propagación del DNS, aunque en casos excepcionales puede tardar hasta 24 horas. Los certificados se renuevan automáticamente antes de su vencimiento.
 
 <div id="caa-records">
   ### Registros CAA
 </div>
 
-Si tu dominio utiliza registros CAA (Certification Authority Authorization), debes autorizar a Let&#39;s Encrypt para emitir certificados para tu dominio. Añade el siguiente registro CAA a la configuración de DNS:
+Si tu dominio usa registros CAA (Certification Authority Authorization), debes autorizar a Let&#39;s Encrypt para que emita certificados para tu dominio. Añade el siguiente registro CAA a la configuración de DNS:
 
 ```text
 0 issue "letsencrypt.org"
@@ -74,7 +74,7 @@ Si tu dominio utiliza registros CAA (Certification Authority Authorization), deb
   ### Rutas reservadas
 </div>
 
-La ruta `/.well-known/acme-challenge` está reservada para la validación de certificados y no puede redirigirse ni reescribirse. Si has configurado reglas de redirección o reescritura para esta ruta, el proceso de emisión del certificado fallará.
+La ruta `/.well-known/acme-challenge` está reservada para la validación de certificados y no se puede redirigir ni reescribir. Si has configurado redirecciones o reescrituras para esta ruta, la emisión del certificado fallará.
 
 <div id="provider-specific-settings">
   ### Configuración específica del proveedor
@@ -82,21 +82,21 @@ La ruta `/.well-known/acme-challenge` está reservada para la validación de cer
 
 <AccordionGroup>
   <Accordion title="Verificación de Vercel">
-    Si Vercel es tu proveedor de dominios, debes agregar un registro de verificación `TXT`. Esta información aparece en tu panel de control después de enviar tu dominio personalizado y también se te envía por correo electrónico.
+    Si Vercel es tu proveedor de dominio, debes agregar un registro `TXT` de verificación. Esta información aparece en tu panel después de enviar tu dominio personalizado y también se te envía por correo electrónico.
   </Accordion>
 
   <Accordion title="Modo de cifrado de Cloudflare">
-    Si Cloudflare es tu proveedor de DNS, debes habilitar el modo &quot;Full (strict)&quot; en la configuración de cifrado SSL/TLS. Además, desactiva &quot;Always Use HTTPS&quot; en la configuración de Edge Certificates. La redirección HTTPS de Cloudflare impedirá que Let&#39;s Encrypt pueda validar tu dominio durante el aprovisionamiento del certificado.
+    Si Cloudflare es tu proveedor de DNS, debes habilitar el modo &quot;Full (strict)&quot; en la configuración de cifrado SSL/TLS. Además, desactiva &quot;Always Use HTTPS&quot; en la configuración de Edge Certificates. La redirección HTTPS de Cloudflare impedirá que Let&#39;s Encrypt valide tu dominio durante la emisión del certificado.
   </Accordion>
 </AccordionGroup>
 
 <div id="set-a-canonical-url">
-  ## Establecer una URL canónica
+  ## Configura una URL canónica
 </div>
 
-Después de configurar tu DNS, establece una URL canónica para asegurarte de que los motores de búsqueda indexen tu dominio preferido. Una URL canónica les indica a los motores de búsqueda qué versión de tu documentación es la principal. Esto mejora el SEO cuando tu documentación es accesible desde varias URL y evita problemas de contenido duplicado.
+Después de configurar tu DNS, define una URL canónica para asegurarte de que los motores de búsqueda indexen tu dominio preferido. Una URL canónica les indica a los motores de búsqueda qué versión de tu documentación es la principal. Esto mejora el SEO cuando tu documentación está disponible desde varias URL y evita problemas de contenido duplicado.
 
-Agrega la etiqueta meta `canonical` a tu `docs.json`:
+Agrega la metaetiqueta `canonical` a tu `docs.json`:
 
 ```json
 "seo": {
@@ -106,7 +106,7 @@ Agrega la etiqueta meta `canonical` a tu `docs.json`:
 }
 ```
 
-Sustituye `https://www.your-custom-domain-here.com` por tu propio dominio personalizado. Por ejemplo, si tu dominio personalizado es `docs.mintlify.com`, usarías:
+Reemplaza `https://www.your-custom-domain-here.com` por tu dominio personalizado. Por ejemplo, si tu dominio personalizado es `docs.mintlify.com`, usarías:
 
 ```json
 "seo": {

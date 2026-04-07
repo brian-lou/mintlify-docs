@@ -1,47 +1,47 @@
 ---
 title: "边框"
-description: "通过为图像和其他组件添加样式边框来增强视觉重点。"
-keywords: ["图像边框", "视觉强调", "说明文字", "边框"]
+description: "为图片和其他组件添加样式化边框，增强视觉强调。"
+keywords: ["图片边框", "视觉强调", "说明文字", "边框"]
 ---
 
-使用边框来展示图像、图表或其他视觉内容，以保持统一的样式，并可选配说明文字。边框会将内容居中显示，并与周围文本形成清晰的视觉分隔。
+使用边框以统一样式展示图片、图表或其他视觉内容，并可选择添加说明文字。边框会将内容居中，并在视觉上与周围文本区隔开来。
 
 <Frame>
-  <img src="https://mintlify-assets.b-cdn.net/yellowstone.jpeg" alt="黄石国家公园中，一座被树木环绕的湖泊，远处可见群山的照片。" />
+  <img src="https://mintlify-assets.b-cdn.net/yellowstone.jpeg" alt="黄石国家公园中，一片被树木环绕、远处有群山的湖泊照片。" />
 </Frame>
 
 <div id="captions">
-  ## 说明文字
+  ## 图注
 </div>
 
-使用可选的 `caption` 属性为图片添加额外说明。说明文字会显示在图片下方的框架中。
+使用可选的 `caption` prop 为图片添加补充图注。图注会显示在图片下方的边框中。
 
 <Frame caption="优胜美地国家公园每年接待超过 350 万名游客。">
   <img src="https://mintlify-assets.b-cdn.net/yosemite.jpg" alt="优胜美地山谷的照片。" />
 </Frame>
 
 <div id="markdown-in-captions">
-  ### 说明文字中的 Markdown
+  ### 图注中的 Markdown
 </div>
 
-说明文字中支持使用 Markdown 格式，包括链接和加粗文本。
+图注支持 Markdown 格式，包括链接和粗体文本。
 
-<Frame caption="深入了解[优胜美地国家公园](https://www.nps.gov/yose/index.htm)，并规划你的行程。">
+<Frame caption="进一步了解 [优胜美地国家公园](https://www.nps.gov/yose/index.htm)，并规划您的行程。">
   <img src="https://mintlify-assets.b-cdn.net/yosemite.jpg" alt="优胜美地山谷的照片。" />
 </Frame>
 
-<Frame caption="**重要：** 请查看[公园官网](https://www.nps.gov/yose/index.htm)了解最新情况。">
-  <img src="https://mintlify-assets.b-cdn.net/yellowstone.jpeg" alt="黄石国家公园中，一座被树林环绕、远处群山环抱的湖泊照片。" />
+<Frame caption="**重要：**请查看[公园官网](https://www.nps.gov/yose/index.htm)了解当前情况。">
+  <img src="https://mintlify-assets.b-cdn.net/yellowstone.jpeg" alt="黄石国家公园中一片被树木环绕、远处可见群山的湖泊照片。" />
 </Frame>
 
 <div id="hints">
   ## 提示
 </div>
 
-使用可选的 `hint` 属性为框架添加前置文本。提示会显示在框架上方。
+使用可选的 `hint` prop 添加显示在边框前面的文本。提示会显示在边框上方。
 
-<Frame hint="如果你打算前往 Yosemite National Park，出发前务必先办好许可。" caption="优胜美地国家公园每年接待超过 350 万名游客。">
-  <img src="https://mintlify-assets.b-cdn.net/yellowstone.jpeg" alt="一张在黄石国家公园拍摄的照片：远处是群山，近处是一座被树林环绕的湖泊。" />
+<Frame hint="如果你计划前往优胜美地国家公园，请在出发前办妥许可证。" caption="优胜美地国家公园每年接待超过 350 万名游客。">
+  <img src="https://mintlify-assets.b-cdn.net/yellowstone.jpeg" alt="一张照片：黄石国家公园中，远处群山连绵，湖泊四周环绕着树木。" />
 </Frame>
 
 <div id="properties">
@@ -49,48 +49,47 @@ keywords: ["图像边框", "视觉强调", "说明文字", "边框"]
 </div>
 
 <ResponseField name="caption" type="string">
-  作为框架的一部分展示的文本，居中显示在内容下方。支持 Markdown 格式，包括链接和加粗文本。
+  显示在边框中、居中位于内容下方的图注。支持 Markdown 格式，包括链接和粗体文本。
 </ResponseField>
 
 <ResponseField name="hint" type="string">
-  显示在框架前的文本。
+  显示在边框前面的文本。
 </ResponseField>
 
 <CodeGroup>
+  ```mdx Frame
+  <Frame>
+    <img src="/path/image.jpg" alt="Descriptive alt text" />
+  </Frame>
+  ```
 
-```mdx Frame 示例
-<Frame>
-  <img src="/path/image.jpg" alt="Descriptive alt text" />
-</Frame>
-```
+  ```mdx 带说明文字的 Frame
+  <Frame caption="Caption text">
+    <img src="/path/image.jpg" alt="Descriptive alt text" />
+  </Frame>
+  ```
 
-```mdx 带有说明文字的 Frame
-<Frame caption="Caption text">
-  <img src="/path/image.jpg" alt="Descriptive alt text" />
-</Frame>
-```
+  ```mdx 说明文字中包含 Markdown 的 Frame
+  <Frame caption="Visit the [documentation](/docs) for more details">
+    <img src="/path/image.jpg" alt="Descriptive alt text" />
+  </Frame>
+  ```
 
-```mdx 在说明文字中使用 Markdown 的 Frame
-<Frame caption="Visit the [documentation](/docs) for more details">
-  <img src="/path/image.jpg" alt="Descriptive alt text" />
-</Frame>
-```
+  ```mdx 说明文字中包含粗体文本和链接的 Frame
+  <Frame caption="**Note:** See the [official guide](https://example.com) for setup instructions">
+    <img src="/path/image.jpg" alt="Descriptive alt text" />
+  </Frame>
+  ```
 
-```mdx 在说明文字中包含加粗文本和链接的 Frame
-<Frame caption="**Note:** See the [official guide](https://example.com) for setup instructions">
-  <img src="/path/image.jpg" alt="Descriptive alt text" />
-</Frame>
-```
+  ```mdx 带提示文本的 Frame
+  <Frame hint="Hint text">
+    <img src="/path/image.jpg" alt="Descriptive alt text" />
+  </Frame>
+  ```
 
-```mdx 带有提示的 Frame
-<Frame hint="Hint text">
-  <img src="/path/image.jpg" alt="Descriptive alt text" />
-</Frame>
-```
-
-```mdx 同时带有提示和说明文字的 Frame
-<Frame hint="Hint text" caption="Caption text">
-  <img src="/path/image.jpg" alt="Descriptive alt text" />
-</Frame>
-```
+  ```mdx 同时包含提示文本和说明文字的 Frame
+  <Frame hint="Hint text" caption="Caption text">
+    <img src="/path/image.jpg" alt="Descriptive alt text" />
+  </Frame>
+  ```
 </CodeGroup>

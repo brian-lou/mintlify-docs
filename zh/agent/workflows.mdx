@@ -1,40 +1,40 @@
 ---
 title: "工作流"
-description: "在文档流程中使用 agent 的示例。"
-keywords: ["agent 工作流", "文档工作流", "自动化示例"]
+description: "在文档流程中使用代理的示例。"
+keywords: ["代理工作流", "文档工作流", "自动化示例"]
 ---
 
-agent 可以协助处理各类文档任务。以下工作流展示了几种将 agent 集成到文档工作流程中的方式。选择一种符合你团队现有工作方式的方案，并根据你的具体需求进行调整。
+代理可协助处理多种文档任务。这些工作流展示了将代理融入文档流程的几种方式。你可以先选择一种符合团队当前工作方式的方法，再根据具体需求进行调整。
 
 <div id="iterate-on-a-prompt-in-a-slack-thread">
-  ## 在 Slack 线程中迭代优化提示词
+  ## 在 Slack 线程中迭代完善提示
 </div>
 
-先向 agent 发送提示词，然后在同一条线程中继续使用 `@mintlify` 提及它，以便对它创建的 pull request 进行不断完善和迭代。
+向代理发送提示，然后继续在同一线程中使用 `@mintlify` 提及它，以完善并迭代它创建的拉取请求。
 
-例如：`@mintlify Our quickstart page needs a new section on inviting collaborators`。然后：`@mintlify The new section should be called "Inviting collaborators"`。之后可以继续进行其他任何迭代调整。
+例如：`@mintlify Our quickstart page needs a new section on inviting collaborators`。然后再输入 `@mintlify The new section should be called "Inviting collaborators"`。之后可继续进行其他迭代。
 
 <div id="start-with-the-agent-finish-manually">
-  ## 先由 agent 起步，最后手动完成
+  ## 先让代理开始，再手动完成
 </div>
 
-先让 agent 开始一个项目，然后检出它创建的分支，在本地环境或 Web 编辑器中完成任务。agent 可以帮你起好头，之后你再接手完成整个任务。
+提示代理先开始一个项目，然后检出它创建的分支，并在本地环境或网页编辑器中完成任务。代理可以帮你快速起步，之后再由你接手完成剩余工作。
 
-例如：`@mintlify Update the quickstart page to include information about inviting collaborators`，然后检出该分支，使用你惯用的方式进行任何额外修改。
+例如：`@mintlify Update the quickstart page to include information about inviting collaborators`，然后检出该分支，并用你偏好的方式进行其他修改。
 
 <div id="update-docs-when-merging-feature-changes">
-  ## 在合并功能变更时更新文档
+  ## 合并功能改动时更新文档
 </div>
 
-当你合并一个功能相关的 pull request 时，把 PR 链接分享给 agent，以便更新相关文档。
+合并功能拉取请求后，将 PR 链接发给代理，以更新相关文档。
 
-例如：`@mintlify This PR adds a new authentication method. Update the docs to include the new auth flow: [PR link]`.
+例如：`@mintlify This PR adds a new authentication method. Update the docs to include the new auth flow: [PR link]`。
 
 <div id="generate-release-notes-from-a-pull-request">
-  ## 从拉取请求生成发布说明
+  ## 根据拉取请求生成发布说明
 </div>
 
-向 agent 提供一个特定的拉取请求，让它根据提交历史生成发布说明或更新变更日志。
+提示代理指定一个具体的拉取请求，让它根据提交历史生成发布说明或更新变更日志。
 
 例如：`@mintlify Generate release notes for this PR: [PR link]`。
 
@@ -42,34 +42,34 @@ agent 可以协助处理各类文档任务。以下工作流展示了几种将 a
   ## 生成代码示例
 </div>
 
-提示 agent 为文档中的各个功能或特定页面生成代码示例。
+提示代理为整个文档中的功能或特定页面生成代码示例。
 
-例如：`@mintlify Generate a code example to make the authentication method easier to understand`.
+例如：`@mintlify Generate a code example to make the authentication method easier to understand`。
 
 <div id="review-existing-content">
-  ## 审阅现有内容
+  ## 审核现有内容
 </div>
 
-提示智能体审阅现有内容，以检查技术准确性、文风、语法等问题。
+提示代理审核现有内容的技术准确性、风格、语法或其他问题。
 
-例如：`@mintlify Review the API rate limiting section. We changed limits last month`.
+例如：`@mintlify Review the API rate limiting section. We changed limits last month`。
 
 <div id="respond-to-user-feedback">
-  ## 回应用户反馈
+  ## 根据用户反馈进行回应
 </div>
 
-基于用户的反馈为 agent 提供提示，从而对文档进行有针对性的更新。
+将用户反馈提示给代理，以便有针对性地更新你的文档。
 
-例如：`@mintlify Users are getting confused by step 3 in the setup guide. What might be making it unclear?`.
+例如：`@mintlify Users are getting confused by step 3 in the setup guide. What might be making it unclear?`。
 
 <div id="automate-with-the-api">
   ## 使用 API 实现自动化
 </div>
 
-将 agent 集成到你现有的自动化工具中，在代码发生变更时自动更新文档、触发内容审核，或在多个代码仓库之间同步文档更新。
+将代理集成到现有的自动化工具中，以便在代码发生变更时自动更新文档、触发内容审核，或在多个代码库之间同步文档更新。
 
-使用 agent 的 API 端点来[创建任务](/zh/api-reference/agent/create-agent-job)、[获取特定任务](/zh/api-reference/agent/get-agent-job)以及[获取所有任务](/zh/api-reference/agent/get-all-jobs)。
+使用代理端点来[创建作业](/zh/api-reference/agent/create-agent-job)、[获取特定作业](/zh/api-reference/agent/get-agent-job)和[获取所有作业](/zh/api-reference/agent/get-all-jobs)。
 
-通过 API 创建任务时，你可以使用 `asDraft` 参数（默认为 `true`）控制拉取请求是否以草稿模式打开。将 `asDraft` 设置为 `false`，即可创建非草稿拉取请求，让其在自动化工作流中能够立即进行审核和合并。
+通过 API 创建作业时，你可以使用 `asDraft` 参数控制拉取请求是否以草稿模式创建 (默认为 `true`) 。将 `asDraft` 设为 `false`，即可创建非草稿拉取请求，以便在自动化工作流中立即审核和合并。
 
-在[代码合并后自动更新文档](/zh/guides/automate-agent)教程中了解如何设置 API 自动化。
+请参阅[代码合并时自动更新文档](/zh/guides/automate-agent)教程，了解如何设置 API 自动化。

@@ -1,53 +1,53 @@
 ---
-title: "Tutoriel : créer un assistant de documentation intégré à votre application"
-sidebarTitle: "Créer un assistant intégré à votre application"
-description: "Intégrez l'assistant à votre application pour qu'il réponde aux questions en s'appuyant sur votre documentation."
-keywords: ["assistant intégré", "chat in-app", "widget", "chatbot"]
+title: "Tutoriel : Créer un assistant de documentation dans l'application"
+sidebarTitle: "Créer un assistant dans l'application"
+description: "Intégrez l'assistant à votre application pour répondre aux questions à partir des informations de votre documentation."
+keywords: ["intégration de l'assistant", "chat dans l'application", "widget", "chatbot"]
 ---
 
 <div id="what-you-will-build">
   ## Ce que vous allez créer
 </div>
 
-Un widget réutilisable qui intègre directement l’[assistant](/fr/ai/assistant) dans votre application. Le widget offre :
+Un widget réutilisable qui intègre l’[assistant](/fr/ai/assistant) directement dans votre application. Le widget fournit :
 
 * Un bouton flottant qui ouvre un panneau de discussion au clic
-* Des réponses diffusées en temps réel à partir des informations de votre documentation
-* Un affichage des messages avec prise en charge de Markdown
+* Des réponses générées en temps réel à partir des informations de votre documentation
+* Le rendu des messages avec prise en charge de Markdown
 
 Les utilisateurs peuvent utiliser le widget pour obtenir de l’aide sur votre produit sans quitter votre application.
 
 <Frame>
-  <img src="/images/assistant/assistant-embed-demo.gif" alt="Démonstration de l’ouverture du widget d’assistant, puis de l’utilisateur qui saisit « How do I get started? », et de la réponse de l’assistant." />
+  <img src="/images/assistant/assistant-embed-demo.gif" alt="Démo de l’ouverture du widget de l’assistant et d’un utilisateur saisissant « How do I get started? », puis de la réponse de l’assistant." />
 </Frame>
 
 <div id="prerequisites">
   ## Prérequis
 </div>
 
-* [Abonnement Mintlify Pro ou Enterprise](https://mintlify.com/pricing)
-* Votre nom de domaine, qui apparaît à la fin de l’URL de votre tableau de bord. Par exemple, si l’URL de votre tableau de bord est `https://dashboard.mintlify.com/org-name/domain-name`, votre nom de domaine est `domain-name`
-* Une [clé d’API Assistant](https://dashboard.mintlify.com/settings/organization/api-keys)
-* Node.js v18 ou une version ultérieure et npm installés
+* [Offre Mintlify Pro ou Enterprise](https://mintlify.com/pricing)
+* Votre nom de domaine, qui figure à la fin de l’URL de votre tableau de bord. Par exemple, si l’URL de votre tableau de bord est `https://dashboard.mintlify.com/org-name/domain-name`, votre nom de domaine est `domain-name`
+* Une [clé API de l’assistant](https://dashboard.mintlify.com/settings/organization/api-keys)
+* Node.js v18 ou une version ultérieure, ainsi que npm, installés
 * Des connaissances de base en React
 
 <div id="get-your-assistant-api-key">
-  ### Obtenir votre clé d&#39;API Assistant
+  ### Obtenez la clé API de votre assistant
 </div>
 
-1. Accédez à la page [API keys](https://dashboard.mintlify.com/settings/organization/api-keys) de votre tableau de bord.
+1. Accédez à la page des [clés API](https://dashboard.mintlify.com/settings/organization/api-keys) dans votre tableau de bord.
 2. Cliquez sur **Create Assistant API Key**.
-3. Copiez la clé d&#39;API Assistant (elle commence par `mint_dsc_`) et conservez-la en lieu sûr.
+3. Copiez la clé API de l’assistant (elle commence par `mint_dsc_`) et conservez-la en lieu sûr.
 
 <Note>
-  La clé d&#39;API Assistant est un jeton public que vous pouvez utiliser dans du code front-end. Les appels effectués avec ce jeton sont décomptés de votre quota de messages et peuvent entraîner des dépassements.
+  La clé API de l’assistant est un token public que vous pouvez utiliser dans du code front-end. Les appels effectués avec ce token sont comptabilisés dans le quota de messages de votre forfait et peuvent entraîner des frais de dépassement.
 </Note>
 
 <div id="set-up-the-example">
-  ## Configurer l&#39;exemple
+  ## Configurer l’exemple
 </div>
 
-Clonez le [dépôt d&#39;exemple](https://github.com/mintlify/assistant-embed-example) et personnalisez-le selon vos besoins.
+Clonez le [dépôt d’exemple](https://github.com/mintlify/assistant-embed-example) et adaptez-le à vos besoins.
 
 <Steps>
   <Step title="Cloner le dépôt">
@@ -58,7 +58,7 @@ Clonez le [dépôt d&#39;exemple](https://github.com/mintlify/assistant-embed-ex
   </Step>
 
   <Step title="Choisir votre outil de développement">
-    Le dépôt inclut des exemples Next.js et Vite. Choisissez l&#39;outil que vous préférez utiliser.
+    Le dépôt comprend des exemples pour Next.js et Vite. Choisissez l’outil que vous préférez.
 
     <CodeGroup>
       ```bash title="Next.js"
@@ -83,20 +83,20 @@ Clonez le [dépôt d&#39;exemple](https://github.com/mintlify/assistant-embed-ex
     };
     ```
 
-    Remplacez :
+    Remplacez :
 
-    * `your-domain` par le domaine de votre projet Mintlify, indiqué à la fin de l&#39;URL de votre tableau de bord Mintlify.
-    * `https://yourdocs.mintlify.app` par l&#39;URL réelle de votre documentation.
+    * `your-domain` par le domaine de votre projet Mintlify, indiqué à la fin de l’URL de votre tableau de bord.
+    * `https://yourdocs.mintlify.app` par l’URL de votre documentation.
   </Step>
 
-  <Step title="Ajouter votre jeton d'API">
+  <Step title="Ajouter votre token API">
     Créez un fichier `.env` à la racine du projet.
 
     ```bash .env
     VITE_MINTLIFY_TOKEN=mint_dsc_your_token_here
     ```
 
-    Remplacez `mint_dsc_your_token_here` par votre clé d&#39;API de l&#39;assistant.
+    Remplacez `mint_dsc_your_token_here` par votre clé API de l’assistant.
   </Step>
 
   <Step title="Démarrer le serveur de développement">
@@ -104,7 +104,7 @@ Clonez le [dépôt d&#39;exemple](https://github.com/mintlify/assistant-embed-ex
     npm run dev
     ```
 
-    Ouvrez votre application dans un navigateur et cliquez sur le bouton **Ask** pour ouvrir le widget de l&#39;assistant.
+    Ouvrez votre application dans un navigateur, puis cliquez sur le bouton **Ask** pour ouvrir le widget de l’assistant.
   </Step>
 </Steps>
 
@@ -113,10 +113,10 @@ Clonez le [dépôt d&#39;exemple](https://github.com/mintlify/assistant-embed-ex
 </div>
 
 <div id="source-citations">
-  ### Citations de sources
+  ### Citations des sources
 </div>
 
-Extraire et afficher les sources depuis les réponses de l’assistant :
+Extrayez et affichez les sources des réponses de l’assistant :
 
 ```jsx
 const extractSources = (parts) => {
@@ -151,10 +151,10 @@ const extractSources = (parts) => {
 ```
 
 <div id="track-conversation-thread-ids">
-  ### Suivre les identifiants de fils de discussion
+  ### Suivre les identifiants des fils de conversation
 </div>
 
-Enregistrez les identifiants de fil pour conserver l’historique des conversations d’une session à l’autre :
+Stockez les identifiants des fils pour conserver l’historique des conversations d’une session à l’autre :
 
 ```jsx
 import { useState, useEffect } from 'react';
@@ -178,7 +178,7 @@ export function AssistantWidget({ domain, docsURL }) {
     body: {
       fp: 'anonymous',
       retrievalPageSize: 5,
-      ...(threadId && { threadId }), // Inclure l'ID de fil s'il est disponible
+      ...(threadId && { threadId }), // Inclure l'ID de fil si disponible
     },
     streamProtocol: 'data',
     sendExtraMessageFields: true,
@@ -201,7 +201,7 @@ export function AssistantWidget({ domain, docsURL }) {
   ### Ajouter des raccourcis clavier
 </div>
 
-Autorisez les utilisateurs à ouvrir le widget et à soumettre des messages au moyen de raccourcis clavier :
+Permettez aux utilisateurs d’ouvrir le widget et d’envoyer des messages à l’aide de raccourcis clavier :
 
 ```jsx
 useEffect(() => {

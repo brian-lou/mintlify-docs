@@ -1,12 +1,12 @@
 ---
 title: "可展开项"
-description: "通过切换显示嵌套属性"
+description: "切换显示嵌套属性"
 keywords: ["可展开项", "嵌套属性", "可展开字段", "切换内容"]
 ---
 
-使用可展开项在响应字段中显示或隐藏嵌套内容。可展开项在 API 文档中展示复杂对象属性时尤其有用。
+使用可展开项可显示或隐藏响应字段中的嵌套内容。可展开项特别适合在 API 文档中展示复杂对象的属性。
 
-<ResponseField name="user" type="User Object">
+<ResponseField name="user" type="用户对象">
   <Expandable title="属性">
     <ResponseField name="full_name" type="string">
       用户的全名
@@ -38,9 +38,9 @@ keywords: ["可展开项", "嵌套属性", "可展开字段", "切换内容"]
 </div>
 
 <ResponseField name="title" type="string">
-  要显示的对象名称。
+  你要显示的对象名称。
 </ResponseField>
 
 <ResponseField name="defaultOpen" type="boolean" default="false">
-  设为 `true` 时，可展开项会在页面加载时自动展开。
+  设为 `true` 以在页面加载时默认展开该可展开项
 </ResponseField>

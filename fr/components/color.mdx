@@ -1,16 +1,16 @@
 ---
-title: "Couleur"
-description: "Affichez des palettes de couleurs avec une fonction de copie au clic."
-keywords: ["color", "palette", "colors", "design system", "hex", "rgb", "rgba", "hsl", "oklch"]
+title: "Color"
+description: "Affichez des palettes de couleurs avec une fonction de copie en un clic."
+keywords: ["couleur", "palette", "couleurs", "design system", "hex", "rgb", "rgba", "hsl", "oklch"]
 ---
 
-Utilisez le composant Color pour présenter des palettes de couleurs dans votre documentation. Les couleurs peuvent être affichées dans une grille compacte ou organisées dans une table avec des lignes libellées.
+Utilisez le composant Color pour présenter des palettes de couleurs dans votre documentation. Les couleurs peuvent être affichées dans une grille compacte ou organisées dans un tableau avec des lignes libellées.
 
 <div id="compact-variant">
   ## Variante compacte
 </div>
 
-Afficher les couleurs dans une grille simple avec leurs noms et valeurs.
+Affichez les couleurs dans une grille simple avec leur nom et leur valeur.
 
 <Color variant="compact">
   <Color.Item name="blue-500" value="#3B82F6" />
@@ -33,13 +33,13 @@ Afficher les couleurs dans une grille simple avec leurs noms et valeurs.
 
 
 <div id="table-variant">
-  ## Variante en tableau
+  ## Variante tableau
 </div>
 
-Organisez les couleurs en lignes portant un libellé pour la documentation de votre système de design.
+Organisez les couleurs en lignes nommées pour la documentation du design system.
 
 <Color variant="table">
-  <Color.Row title="Principal">
+  <Color.Row title="Primaire">
     <Color.Item name="primary-500" value="#3B82F6" />
 
     <Color.Item name="primary-600" value="#2563EB" />
@@ -70,10 +70,10 @@ Organisez les couleurs en lignes portant un libellé pour la documentation de vo
 
 
 <div id="color-formats">
-  ## Formats de couleur
+  ## Formats de couleurs
 </div>
 
-Le composant prend en charge tous les formats de couleur pris en charge par CSS, notamment hex, rgb, rgba, hsl et oklch.
+Le composant prend en charge tous les formats de couleur CSS, notamment hex, rgb, rgba, hsl et oklch.
 
 <Color variant="compact">
   <Color.Item name="hex" value="#FF5733" />
@@ -99,10 +99,10 @@ Le composant prend en charge tous les formats de couleur pris en charge par CSS,
 
 
 <div id="theme-aware-colors">
-  ## Couleurs adaptées au thème
+  ## Couleurs selon le thème
 </div>
 
-Définissez différentes couleurs pour les modes clair et sombre à l’aide d’un objet avec les propriétés `light` et `dark`.
+Définissez des couleurs distinctes pour les modes clair et sombre à l’aide d’un objet contenant les propriétés `light` et `dark`.
 
 <Color variant="compact">
   <Color.Item name="bg-primary" value={{ light: "#FFFFFF", dark: "#000000" }} />
@@ -126,15 +126,15 @@ Définissez différentes couleurs pour les modes clair et sombre à l’aide d�
 </div>
 
 <div id="color">
-  ### Couleur
+  ### Color
 </div>
 
 <ResponseField name="variant" type="string" required>
-  Style d'affichage de la palette de couleurs. Options possibles : `compact` ou `table`.
+  Style d’affichage de la palette de couleurs. Options : `compact` ou `table`.
 </ResponseField>
 
 <ResponseField name="children" type="Color.Item | Color.Row" required>
-  Éléments ou lignes de couleur à afficher.
+  Éléments ou lignes de la palette de couleurs à afficher.
 </ResponseField>
 
 <div id="colorrow">
@@ -142,11 +142,11 @@ Définissez différentes couleurs pour les modes clair et sombre à l’aide d�
 </div>
 
 <ResponseField name="title" type="string">
-  Libellé pour la rangée de couleurs.
+  Libellé de la ligne de couleurs.
 </ResponseField>
 
 <ResponseField name="children" type="Color.Item" required>
-  Éléments de couleur à afficher dans la rangée.
+  Couleurs à afficher dans la ligne.
 </ResponseField>
 
 <div id="coloritem">
@@ -158,5 +158,5 @@ Définissez différentes couleurs pour les modes clair et sombre à l’aide d�
 </ResponseField>
 
 <ResponseField name="value" type="string | { light: string, dark: string }" required>
-  Valeur de couleur dans n'importe quel format CSS, ou objet avec des valeurs distinctes pour les modes clair et sombre.
+  Valeur de la couleur dans n’importe quel format CSS, ou objet contenant des valeurs pour les modes clair et sombre.
 </ResponseField>

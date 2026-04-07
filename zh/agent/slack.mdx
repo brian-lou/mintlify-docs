@@ -1,56 +1,57 @@
 ---
-title: "将智能体添加到 Slack"
-description: "在 Slack 中使用智能体，从对话中更新文档并沉淀团队知识。"
-keywords: ["Slack integration", "Slack bot", "team collaboration", "agent integration", "knowledge capture"]
+title: "将代理接入 Slack"
+description: "在 Slack 中使用代理，根据对话更新文档并沉淀团队知识。"
+keywords: ["Slack 集成", "Slack 机器人", "团队协作", "代理集成", "知识沉淀"]
 ---
 
 <Note>
-  如果你的 Slack 工作区所有者要求对安装应用进行管理员审批，请在你连接之前让他们先批准 Mintlify 应用。
+  如果你的 Slack 工作区所有者要求安装应用前需获得管理员批准，请先让其批准 Mintlify 应用，然后再进行连接。
 </Note>
 
 <div id="connect-your-slack-workspace">
   ## 连接你的 Slack 工作区
 </div>
 
-1. 在仪表盘中打开 agent 面板。
-2. 点击 **Settings** 按钮。
-    <Frame>
-    <img src="/images/agent/dashboard-settings-light.png" alt="浅色模式下的设置按钮。" className="block dark:hidden" />
-    <img src="/images/agent/dashboard-settings-dark.png" alt="深色模式下的设置按钮。" className="hidden dark:block" />
-    </Frame>
-3. 在 Slack 集成部分，点击 **Connect**。
-4. 按照 Slack 中的提示，将 `mintlify` 应用添加到你的工作区。
-5. 按照 Slack 中的提示，将你的 Mintlify 账号绑定到你的 Slack 工作区。
-6. 测试 agent 是否正常工作，并在以下情况下做出响应：
-   - 向它发送一条私信。
-   - 在频道中使用 `@mintlify` 提及它。
+1. 在控制面板中打开代理面板。
+2. 点击 **设置** 按钮。
+   <Frame>
+     <img src="/images/agent/dashboard-settings-light.png" alt="浅色模式下的设置按钮。" className="block dark:hidden" />
+
+     <img src="/images/agent/dashboard-settings-dark.png" alt="深色模式下的设置按钮。" className="hidden dark:block" />
+   </Frame>
+3. 在 Slack 集成部分中，点击 **Connect**。
+4. 按照 Slack 的提示，将 `mintlify` 应用添加到你的工作区。
+5. 按照 Slack 的提示，将你的 Mintlify 账户与 Slack 工作区关联。
+6. 测试代理是否正常工作，并会在以下情况下响应：
+   * 向它发送私信。
+   * 在通道中使用 `@mintlify` 提及它。
 
 <div id="use-the-agent-in-slack">
-  ## 在 Slack 中使用 agent
+  ## 在 Slack 中使用代理
 </div>
 
-连接完成后，你可以：
+连接后，你可以：
 
-- 向 agent 发送私信，以私密方式使用它来更新文档。
-- 在频道中提及 `@mintlify`，以公开、协作的方式使用它。
-- 在线程中继续对话，以便反复迭代修改。
-- 将 pull request 的链接分享给 agent，让它更新相关文档。
+* 向代理发送私信，私下更新你的文档。
+* 在通道中提及 `@mintlify`，以公开协作的方式使用它。
+* 在讨论串中继续对话，反复完善更改。
+* 向代理分享拉取请求链接，以更新相关文档。
 
 <div id="update-documentation">
   ## 更新文档
 </div>
 
-使用 agent 通过新请求或在现有对话线程中更新你的文档。
+使用代理通过新请求或在现有讨论串中更新文档。
 
-- **新请求**：向 agent 发送私信，或在频道中提及 `@mintlify`，并附上需要更新的内容说明。
-- **现有线程**：在该线程中回复并提及 `@mintlify`，并附上需要更新的内容说明。
+* **新请求**：向代理发送私信，或在通道中提及 `@mintlify`，并说明需要更新的内容。
+* **现有讨论串**：在讨论串中回复并提及 `@mintlify`，说明需要更新的内容。
 
-agent 会读取请求或对话线程的上下文，并在你已连接的代码仓库中创建一个包含这些更新的 pull request。
+代理会读取请求或讨论串的上下文，并在你已连接的仓库中创建一个包含这些更新的拉取请求。
 
 <div id="best-practices">
   ## 最佳实践
 </div>
 
-- **务必具体**：清楚告诉 agent 你希望记录哪些内容，以及应该放在什么位置。
-- **补充上下文**：如果对话中不包含所有必要信息，请在发给 agent 的消息中补充更多细节。
-- **仔细审查**：在合并之前，你应始终先审查 agent 创建的 pull request。
+* **尽量具体**：明确告诉代理你希望文档涵盖哪些内容，以及应放在哪个位置。
+* **补充上下文**：如果某个讨论串没有包含所有必要信息，请在发给代理的消息中补充更多细节。
+* **认真审核**：代理创建拉取请求后，你应始终在合并前仔细审核。

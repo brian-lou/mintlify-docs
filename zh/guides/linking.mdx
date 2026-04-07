@@ -1,16 +1,16 @@
 ---
 title: "链接"
-description: "了解如何创建内部链接、引用 API 端点，并在整套文档中维护链接的完整性。"
-keywords: ["内部链接", "交叉引用", "锚点链接", "无效链接"]
+description: "了解如何创建内部链接、引用 API 端点，以及在整个文档中保持链接有效。"
+keywords: ["内部链接", "交叉引用", "锚点链接", "失效链接"]
 ---
 
-有效的链接能够打造连贯的文档体验，帮助用户发现相关内容并高效导航。链接过多或存在无效链接都会让用户感到困惑，降低文档的有效性。本指南介绍如何在整套文档中创建和维护链接。
+合理使用链接可以打造连贯的文档体验，帮助用户发现相关内容并高效导航。链接过多或存在失效链接，都可能让用户感到困惑，降低文档的可用性。本指南将介绍如何在整个文档中创建和维护链接。
 
 <div id="internal-links">
   ## 内部链接
 </div>
 
-使用根相对路径链接到文档中的其他页面。根相对路径从文档目录的根开始计算，无论当前链接所在的页面位于何处，都能保持一致、可靠的行为。
+使用根相对路径链接到文档中的其他页面。根相对路径从文档目录的根目录开始，无论链接页面位于何处，都能保持一致的效果。
 
 ```mdx
 * [Quickstart guide](/quickstart)
@@ -26,25 +26,25 @@ keywords: ["内部链接", "交叉引用", "锚点链接", "无效链接"]
   ## 锚点链接
 </div>
 
-锚点链接可以让你直接跳转到页面中的特定部分。每个标题都会根据其文字内容自动生成一个锚点链接。
+锚点链接让你可以直接链接到页面中的特定部分。每个标题都会根据其文本自动生成对应的锚点链接。
 
 <div id="link-to-headers-on-the-same-page">
-  ### 链接到本页标题
+  ### 链接到同一页面中的标题
 </div>
 
-使用 # 号引用本页中的标题：
+使用井号 (#) 引用当前页面中的标题：
 
 ```mdx
 [Jump to best practices](#best-practices)
 ```
 
-[跳至“最佳实践”](#best-practices)
+[跳转至最佳实践](#best-practices)
 
 <div id="link-to-headers-on-other-pages">
   ### 链接到其他页面的标题
 </div>
 
-将页面路径与锚点链接拼接在一起。
+将页面路径与锚点链接组合使用。
 
 ```mdx
 * [Customize your playground](/api-playground/overview#customize-your-playground)
@@ -52,42 +52,42 @@ keywords: ["内部链接", "交叉引用", "锚点链接", "无效链接"]
 ```
 
 * [自定义你的 Playground](/zh/api-playground/overview#customize-your-playground)
-* [卡片属性](/zh/components/cards#properties)
+* [Cards 的属性](/zh/components/cards#properties)
 
 <div id="how-anchor-links-are-generated">
   ### 锚点链接的生成方式
 </div>
 
-锚点链接会根据标题文本自动创建。
+锚点链接会根据标题文本自动生成。
 
 * 转为小写
 * 将空格替换为连字符
 * 移除特殊字符
 * 保留数字和字母
 
-| 标题文本 | 锚点链接 |
-|-------------|-------------|
-| `## Getting Started` | `#getting-started` |
+| 标题文本                     | 锚点链接                  |
+| ------------------------ | --------------------- |
+| `## Getting Started`     | `#getting-started`    |
 | `### API Authentication` | `#api-authentication` |
-| `#### Step 1: Install` | `#step-1-install` |
+| `#### Step 1: Install`   | `#step-1-install`     |
 
 <Note>
-  带有 `noAnchor` 属性的标题不会生成锚点链接。详情参见 [格式化文本](/zh/create/text#disabling-anchor-links)。
+  带有 `noAnchor` 属性的标题不会生成锚点链接。详见[文本格式](/zh/create/text#disabling-anchor-links)。
 </Note>
 
 <div id="link-to-api-endpoints">
   ## 链接到 API 端点
 </div>
 
-在编写 API 文档时，你可以在文档中的任意位置链接到特定端点。
+编写 API 文档时，你可以从文档中的任何位置链接到特定端点。
 
-在导航中通过端点页面的路径来链接到相应的 API 端点页面。
+使用这些端点在导航中的路径链接到对应的 API 端点页面。
 
 <div id="link-to-external-pages">
   ## 链接到外部页面
 </div>
 
-当你链接到外部资源时，要清楚地标明该链接会跳转到文档之外的页面。
+链接到外部资源时，应明确说明该链接会跳转到文档站点之外。
 
 ```mdx
 Learn more about [Markdown syntax](https://www.markdownguide.org/) (external link).
@@ -100,43 +100,43 @@ See the [OpenAPI specification](https://swagger.io/specification/) in the Swagge
 </div>
 
 <div id="write-descriptive-link-text">
-  ### 编写描述性链接文本
+  ### 编写描述明确的链接文本
 </div>
 
-使用清晰、具有描述性的文本，让用户了解点击后会看到什么内容。
+使用清晰、明确的文本，让用户一看就知道点击后会看到什么内容。
 
 <CodeGroup>
-  ```mdx Good examples
-  有关更多信息，请参见 [Hidden pages](/organize/hidden-pages)。
-  [Configure custom domains](/customize/custom-domain)
+  ```mdx 好的示例
+  有关更多信息，请参阅 [隐藏页面](/organize/hidden-pages)。
+  [配置自定义域名](/customize/custom-domain)
   ```
 
-  ```mdx Avoid
-  [Click here](/api-playground/overview)
-  [Read more](/deploy/deployments)
-  [See this page](/customize/custom-domain)
+  ```mdx 避免
+  [点击此处](/api-playground/overview)
+  [阅读更多](/deploy/deployments)
+  [查看此页面](/customize/custom-domain)
   ```
 </CodeGroup>
 
 <div id="create-topic-clusters">
-  ### 创建主题集群
+  ### 构建主题群组
 </div>
 
-将相关内容互相链接起来，帮助用户发现更多相关信息。
+将相关内容相互链接，帮助用户发现所需的相关信息。
 
 ```mdx
-## Related topics
+## 相关主题
 
-- [API authentication](/api-playground/overview#authentication)
-- [Adding SDK examples](/api-playground/adding-sdk-examples)
-- [Managing page visibility](/api-playground/managing-page-visibility)
+- [API 身份验证](/api-playground/overview#authentication)
+- [添加 SDK 示例](/api-playground/adding-sdk-examples)
+- [管理页面可见性](/api-playground/managing-page-visibility)
 ```
 
 <div id="use-contextual-links">
-  ### 使用上下文链接
+  ### 使用上下文相关的链接
 </div>
 
-在内容中，在能提供实际价值的地方自然插入链接。
+在内容中自然地添加有价值的链接。
 
 ```mdx
 To customize your documentation appearance, configure [themes](/customize/themes) 
@@ -145,10 +145,10 @@ and [fonts](/customize/fonts) in your settings. You can also add
 ```
 
 <div id="link-to-prerequisites">
-  ### 链接到前置内容
+  ### 链接到前提内容
 </div>
 
-通过链接到前置内容来帮助用户做好准备：
+通过链接到前提内容，帮助用户提前做好准备：
 
 ```mdx
 ## Prerequisites
@@ -164,35 +164,35 @@ Before deploying your documentation, ensure you have:
   ### 避免循环链接
 </div>
 
-不要创建让用户在同一组页面之间来回跳转的链接。
+不要创建让用户在相同页面之间来回跳转的链接。
 
 <div id="check-for-broken-links">
-  ### 检查无效链接
+  ### 检查失效链接
 </div>
 
-使用 Mintlify CLI 检测文档中的无效链接。
+使用 Mintlify CLI 检查文档中的失效链接。
 
 ```bash
 mint broken-links
 ```
 
 <div id="update-links-when-reorganizing">
-  ### 在重组内容时更新链接
+  ### 重新整理时更新链接
 </div>
 
-在移动或重命名页面时：
+移动或重命名页面时：
 
-1. 在导航配置中更新页面路径。
-2. 将旧路径设置为重定向到新路径。
+1. 更新导航配置中的页面路径。
+2. 为旧路径到新路径设置重定向。
 3. 在文档中搜索所有对旧路径的引用。
-4. 将所有内部链接更新为使用新路径。
-5. 运行 `mint broken-links` 以验证所有链接是否正常。
+4. 更新所有内部链接，使其指向新路径。
+5. 运行 `mint broken-links`，确认所有链接都能正常使用。
 
 <div id="use-redirects-for-moved-content">
-  ### 对已移动的内容使用重定向
+  ### 为已移动的内容使用重定向
 </div>
 
-在永久移动内容时，添加重定向以避免链接失效。
+永久移动内容时，请添加重定向，避免链接失效。
 
 ```json
 {
@@ -205,12 +205,12 @@ mint broken-links
 }
 ```
 
-请参阅[重定向](/zh/create/redirects)了解更多信息。
+更多信息，请参阅 [重定向](/zh/create/redirects)。
 
 <div id="related-resources">
   ## 相关资源
 </div>
 
-* [格式化文本](/zh/create/text): 了解 Markdown 格式语法。
-* [导航](/zh/organize/navigation): 配置文档结构。
-* [重定向](/zh/create/redirects): 为已迁移的内容设置重定向。
+* [文本格式](/zh/create/text)：了解 Markdown 格式。
+* [导航](/zh/organize/navigation)：配置文档结构。
+* [重定向](/zh/create/redirects)：为已移动的内容设置重定向。

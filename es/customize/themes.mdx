@@ -1,8 +1,8 @@
 ---
 title: "Temas"
-description: "Selecciona la apariencia de tu documentación."
+description: "Elige el aspecto de tu documentación."
 mode: "frame"
-keywords: ["selección de tema", "Mint", "Maple", "personalizar la apariencia"]
+keywords: ["selección de temas", "Mint", "Maple", "personalizar aspecto"]
 ---
 
 export const ThemeCard = ({ title, value, description, href }) => {
@@ -20,7 +20,7 @@ export const ThemeCard = ({ title, value, description, href }) => {
         <div class="mt-1 prose-sm prose-gray mb-2 text-gray-500 dark:text-gray-400">{description}</div>
         <div className="flex items-center gap-1 mt-2 text-green-600 group-hover:text-green-800 dark:text-green-500 dark:group-hover:text-green-400">
           <span className="text-sm font-medium">
-            Ver la vista previa
+            Ver vista previa
           </span>
           <svg className="size-3 group-hover:translate-x-0.5 transition-all" width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M5.05566 2.70996L9.91678 7.57107L5.05566 12.4322" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -34,23 +34,23 @@ export const ThemeCard = ({ title, value, description, href }) => {
 <div className="pt-10 pb-24 px-4 px-4 max-w-3xl mx-auto prose prose-gray">
   <label className="eyebrow h-5 text-primary dark:text-primary-light text-sm font-semibold">Conceptos fundamentales</label>
   <h1 className="mt-1 mb-2 text-2xl sm:text-3xl text-gray-900 tracking-tight dark:text-gray-200 font-semibold">Temas</h1>
-  <label className="text-lg prose prose-gray dark:prose-invert">Personaliza la apariencia de tu documentación<br /><br />Configura [theme](/es/organize/settings#param-theme) en docs.json utilizando uno de los siguientes temas.</label>
+  <label className="text-lg prose prose-gray dark:prose-invert">Personaliza el aspecto de tu documentación<br /><br />Configura [theme](/es/organize/settings#param-theme) en docs.json con uno de los siguientes temas.</label>
 
   <br />
 
   <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-8 not-prose">
-    <ThemeCard title="Mint" value="mint" description="Tema de documentación clásico con diseños probados y navegación familiar." href="https://mint.mintlify.app" />
+    <ThemeCard title="Mint" value="mint" description="Tema clásico para documentación, con diseños consolidados y una navegación familiar." href="https://mint.mintlify.app" />
 
-    <ThemeCard title="Maple" value="maple" description="Estética moderna y limpia, perfecta para productos de IA y SaaS." href="https://maple.mintlify.app" />
+    <ThemeCard title="Maple" value="maple" description="Estética moderna y limpia, ideal para productos de IA y SaaS." href="https://maple.mintlify.app" />
 
-    <ThemeCard title="Palm" value="palm" description="Tema fintech sofisticado con amplias opciones de personalización para documentación empresarial." href="https://palm.mintlify.app" />
+    <ThemeCard title="Palm" value="palm" description="Sofisticado tema fintech con amplias opciones de personalización para documentación empresarial." href="https://palm.mintlify.app" />
 
-    <ThemeCard title="Willow" value="willow" description="Lo esencial, simplificado, para una documentación sin distracciones." href="https://willow.mintlify.app" />
+    <ThemeCard title="Willow" value="willow" description="Lo esencial, sin adornos, para una documentación sin distracciones." href="https://willow.mintlify.app" />
 
-    <ThemeCard title="Linden" value="linden" description="Estética retro de terminal con fuentes monoespaciadas para ese estilo hacker de los 80." href="https://linden.mintlify.app" />
+    <ThemeCard title="Linden" value="linden" description="Estilo retro de terminal con fuentes monoespaciadas para una estética hacker de los 80." href="https://linden.mintlify.app" />
 
-    <ThemeCard title="Almond" value="almond" description="Organización basada en tarjetas combinada con un diseño minimalista para una navegación intuitiva." href="https://almond.mintlify.app" />
+    <ThemeCard title="Almond" value="almond" description="La organización basada en tarjetas se combina con un diseño minimalista para ofrecer una navegación intuitiva." href="https://almond.mintlify.app" />
 
-    <ThemeCard title="Aspen" value="aspen" description="Documentación moderna pensada para navegación compleja y componentes personalizados." href="https://aspen.mintlify.app" />
+    <ThemeCard title="Aspen" value="aspen" description="Documentación moderna creada para una navegación compleja y componentes personalizados." href="https://aspen.mintlify.app" />
   </div>
 </div>

@@ -1,37 +1,37 @@
 ---
-title: "Collaborer dans l’éditeur web"
+title: "Collaborer dans l’éditeur Web"
 sidebarTitle: "Collaborer"
-description: "Travaillez ensemble sur la documentation à l’aide de branches, de pull requests, de déploiements de prévisualisation et de liens partageables vers l’éditeur."
-keywords: ["éditeur", "collaboration", "branches", "pull requests", "déploiements de prévisualisation", "liens partageables"]
+description: "Collaborez sur la documentation avec des branches, des pull requests, des déploiements de prévisualisation et des liens de partage de l’éditeur."
+keywords: ["éditeur", "collaboration", "branches", "pull requests", "déploiements de prévisualisation", "liens de partage"]
 ---
 
-Collaborez avec votre équipe sur la documentation à l’aide de workflows basés sur des branches, de pull requests et de déploiements de prévisualisation.
+Collaborez avec votre équipe sur la documentation grâce à un workflow basé sur des branches, aux pull requests et aux déploiements de prévisualisation.
 
-Si vous n’êtes pas à l’aise avec Git, consultez la page [Concepts Git](/fr/guides/git-concepts).
+Si vous ne connaissez pas bien Git, consultez [les concepts Git](/fr/guides/git-concepts).
 
 <div id="branch-based-collaboration">
-  ## Collaboration basée sur les branches
+  ## Collaboration avec des branches
 </div>
 
-Utilisez des branches pour travailler sur des mises à jour de la documentation en parallèle, sans affecter votre site en production.
+Utilisez des branches pour travailler en parallèle sur des mises à jour de la documentation sans affecter votre site en production.
 
 <div id="why-use-branches">
   ### Pourquoi utiliser des branches
 </div>
 
-* **Isoler les modifications** : Travaillez sur des mises à jour sans impacter votre documentation publiée.
-* **Relire avant de publier** : Obtenez des retours de l’équipe avant que les modifications ne soient mises en ligne.
-* **Travail en parallèle** : Plusieurs membres de l’équipe peuvent travailler simultanément sur différentes branches.
+* **Isoler les modifications** : Travaillez sur des mises à jour sans affecter votre documentation en ligne.
+* **Relire avant de publier** : Recueillez les retours de votre équipe avant la mise en ligne des modifications.
+* **Travail en parallèle** : Plusieurs membres de l&#39;équipe peuvent travailler simultanément sur différentes branches.
 
 <div id="recommended-workflow">
   ## Workflow recommandé
 </div>
 
-Utilisez des pull requests pour proposer des modifications et collaborer avec votre équipe avant de fusionner dans votre documentation en production. Ce workflow garantit que votre équipe passe en revue les modifications avant la publication et permet de conserver un historique clair des mises à jour.
+Utilisez des pull requests pour proposer des modifications et collaborer avec votre équipe avant de les fusionner dans votre documentation en ligne. Ce workflow permet à votre équipe de relire les modifications avant leur publication et de conserver un historique clair des mises à jour.
 
 <Steps>
   <Step title="Créer une pull request">
-    Créez une pull request depuis l&#39;éditeur lorsque vous êtes prêt à publier vos modifications. Consultez <a href="/fr/editor/publish">Publier des modifications dans l’éditeur web</a> pour plus d&#39;informations sur l&#39;utilisation des pull requests.
+    Créez une pull request depuis l’éditeur lorsque vous êtes prêt à publier vos modifications. Consultez <a href="/fr/editor/publish">Publier des modifications dans l’éditeur web</a> pour en savoir plus sur l’utilisation des pull requests.
   </Step>
 
   <Step title="Examiner les pull requests">
@@ -39,11 +39,11 @@ Utilisez des pull requests pour proposer des modifications et collaborer avec vo
   </Step>
 
   <Step title="Répondre aux retours">
-    Lorsque les relecteurs demandent des modifications, effectuez les changements demandés et enregistrez vos modifications. Les changements supplémentaires sont automatiquement envoyés vers la pull request existante.
+    Lorsque les réviseurs demandent des modifications, apportez les changements demandés et enregistrez-les. Les changements supplémentaires sont automatiquement ajoutés à la pull request existante.
   </Step>
 
   <Step title="Fusionner les pull requests">
-    Fusionnez votre pull request une fois que vous avez traité toutes les modifications demandées, que les relecteurs requis ont approuvé la pull request et que tous les contrôles automatisés ont abouti.
+    Fusionnez votre pull request après avoir apporté toutes les modifications demandées, obtenu l’approbation des réviseurs requis et validé toutes les vérifications automatiques.
   </Step>
 </Steps>
 
@@ -51,7 +51,7 @@ Utilisez des pull requests pour proposer des modifications et collaborer avec vo
   ## Déploiements de prévisualisation
 </div>
 
-Les déploiements de prévisualisation créent des URL temporaires où vous pouvez voir le rendu de vos modifications avant leur mise en production. Utilisez les déploiements de prévisualisation pour recueillir des commentaires sur vos modifications.
+Les déploiements de prévisualisation créent des URL temporaires qui vous permettent de voir le rendu de vos modifications avant leur mise en ligne. Utilisez-les pour recueillir des retours sur ces modifications.
 
 <div id="access-preview-deployments">
   ### Accéder aux déploiements de prévisualisation
@@ -59,7 +59,7 @@ Les déploiements de prévisualisation créent des URL temporaires où vous pouv
 
 1. Cliquez sur **Share** dans la barre d’outils de l’éditeur.
 2. Cliquez sur **Preview** pour ouvrir le déploiement de prévisualisation dans un nouvel onglet.
-3. L’URL de prévisualisation affiche votre documentation avec toutes les modifications enregistrées.
+3. L’URL de prévisualisation affiche votre documentation avec toutes les modifications enregistrées prises en compte.
 
 <Frame>
   <img src="/images/editor/share-preview-light.png" className="block dark:hidden" alt="Bouton Share dans la barre d’outils de l’éditeur" />
@@ -68,24 +68,24 @@ Les déploiements de prévisualisation créent des URL temporaires où vous pouv
 </Frame>
 
 <div id="share-previews">
-  ### Partager des aperçus
+  ### Partager les aperçus
 </div>
 
-Partagez l’URL du déploiement de prévisualisation avec les membres de votre équipe pour recueillir des retours. Les aperçus sont automatiquement mis à jour lorsque vous enregistrez de nouvelles modifications.
+Partagez l’URL de déploiement de prévisualisation avec les membres de l’équipe pour recueillir leurs retours. Les aperçus se mettent à jour automatiquement lorsque vous enregistrez de nouvelles modifications.
 
 <div id="preview-authentication">
   ### Authentification des aperçus
 </div>
 
-Les URL d’aperçu sont accessibles publiquement par défaut. Activez l’authentification des aperçus sur la page [Add-ons](https://dashboard.mintlify.com/products/addons) de votre tableau de bord afin de restreindre l’accès aux membres authentifiés de votre organisation.
+Les URL d’aperçu sont accessibles publiquement par défaut. Activez l’authentification des aperçus sur la page [Add-ons](https://dashboard.mintlify.com/products/addons) de votre tableau de bord afin de réserver l’accès aux membres authentifiés de votre organisation.
 
 <div id="share-editor-links">
   ## Partager des liens de l’éditeur
 </div>
 
-Partagez un lien direct vers une page spécifique de l’éditeur avec vos collègues. Utilisez les liens de l’éditeur pour collaborer aux mises à jour et apporter des modifications aux pages.
+Partagez un lien direct vers une page précise de l’éditeur avec vos collaborateurs. Utilisez les liens de l’éditeur pour collaborer sur les mises à jour et modifier les pages.
 
-Quand vous ouvrez une page, l’éditeur enregistre le chemin de la page dans l’URL. Copiez l’URL à partir de la barre d’adresse de votre navigateur pour la partager avec les collègues qui ont accès à l’éditeur.
+Lorsque vous ouvrez une page, l’éditeur enregistre son chemin dans l’URL. Copiez l’URL depuis la barre d’adresse de votre navigateur pour la partager avec des collaborateurs ayant accès à l’éditeur.
 
 Le format de l’URL est :
 
@@ -93,10 +93,10 @@ Le format de l’URL est :
 https://dashboard.mintlify.com/{org}/{project}/editor/{branch}?file={filepath}
 ```
 
-Par exemple, `https://dashboard.mintlify.com/acme/docs/editor/main?file=guides/quickstart.mdx` ouvre `quickstart.mdx` sur la branche `main`.
+Par exemple, `https://dashboard.mintlify.com/acme/docs/editor/main?file=guides/quickstart.mdx` ouvre `quickstart.mdx` dans la branche `main`.
 
-Toute personne ayant accès à votre organisation Mintlify peut utiliser ce lien pour ouvrir le fichier directement dans l&#39;éditeur.
+Toute personne ayant accès à votre organisation Mintlify peut utiliser ce lien pour ouvrir directement le fichier dans l’éditeur.
 
 <Tip>
-  Lorsque vous partagez une page, précisez sur quelle branche vous travaillez afin qu&#39;elles puissent vérifier qu&#39;elles consultent la bonne version.
+  Lorsque vous partagez une page, précisez sur quelle branche vous travaillez afin que les autres puissent vérifier qu’ils consultent la bonne version.
 </Tip>

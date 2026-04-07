@@ -1,6 +1,6 @@
 ---
 title: "Configuración de AsyncAPI"
-description: "Crea documentación para WebSocket con especificaciones de AsyncAPI."
+description: "Crea documentación de WebSocket a partir de especificaciones AsyncAPI."
 keywords: ["asyncapi", "websocket"]
 ---
 
@@ -8,13 +8,13 @@ keywords: ["asyncapi", "websocket"]
   ## Demostración
 </div>
 
-Consulta el [entorno de pruebas de WebSocket](/es/api-playground/websocket-playground) para ver un ejemplo del entorno de pruebas de AsyncAPI.
+Consulta el [área de pruebas de WebSocket](/es/api-playground/websocket-playground) para ver un ejemplo del área de pruebas de AsyncAPI.
 
 <div id="add-an-asyncapi-specification-file">
-  ## Añadir un archivo de especificación AsyncAPI
+  ## Agrega un archivo de especificación de AsyncAPI
 </div>
 
-Para crear páginas para tus websockets, debes tener un documento de esquema de AsyncAPI válido en formato JSON o YAML que siga la [especificación AsyncAPI 3.0](https://www.asyncapi.com/docs/reference/specification/v3.0.0).
+Para crear páginas para tus WebSocket, debes tener un documento de esquema de AsyncAPI válido en formato JSON o YAML que siga la [especificación AsyncAPI 3.0](https://www.asyncapi.com/docs/reference/specification/v3.0.0).
 
 <Tip>
   Usa [AsyncAPI Studio](https://studio.asyncapi.com/) para validar tu esquema de AsyncAPI.
@@ -27,10 +27,10 @@ Para crear páginas para tus websockets, debes tener un documento de esquema de 
 ```
 
 <div id="auto-populate-websockets-pages">
-  ## Generar automáticamente páginas de websockets
+  ## Generar automáticamente páginas de WebSocket
 </div>
 
-Para generar automáticamente páginas para todos los canales de tu esquema AsyncAPI, agrega una propiedad `asyncapi` a cualquier elemento de navegación. La propiedad `asyncapi` acepta una ruta a un documento de esquema AsyncAPI en tu repositorio de documentación, una URL a un documento AsyncAPI alojado o una lista de enlaces a documentos de esquema AsyncAPI.
+Para generar automáticamente páginas para todos los canales de tu esquema AsyncAPI, añade una propiedad `asyncapi` a cualquier elemento de navegación. La propiedad `asyncapi` admite una ruta a un documento de esquema AsyncAPI en tu repositorio de documentación, una URL de un documento AsyncAPI alojado o una matriz de enlaces a documentos de esquema AsyncAPI.
 
 <div id="examples-with-tabs">
   ### Ejemplos con pestañas
@@ -76,11 +76,11 @@ Para generar automáticamente páginas para todos los canales de tu esquema Asyn
 </CodeGroup>
 
 <Note>
-  Cuando especificas varios archivos AsyncAPI, cada archivo genera su propio conjunto de páginas de canales.
+  Cuando especificas varios archivos de AsyncAPI, cada uno genera su propio conjunto de páginas de canales.
 </Note>
 
 <div id="examples-with-groups">
-  ### Ejemplos de grupos
+  ### Ejemplos con grupos
 </div>
 
 ```json
@@ -103,14 +103,14 @@ Para generar automáticamente páginas para todos los canales de tu esquema Asyn
 ```
 
 <Note>
-  El campo `directory` es opcional. Si no se especifica, los archivos se guardarán en la carpeta **api-reference** del repositorio de documentación.
+  El campo `directory` es opcional. Si no se especifica, los archivos se colocarán en la carpeta **api-reference** del repositorio de documentación.
 </Note>
 
 <div id="channel-page">
   ## Página del canal
 </div>
 
-Si quieres tener un mayor control sobre el orden de tus canales o quieres hacer referencia únicamente a canales específicos, crea un archivo MDX con la propiedad `asyncapi` en el frontmatter.
+Si quieres tener más control sobre cómo ordenas tus canales o si quieres hacer referencia solo a determinados canales, crea un archivo MDX con la propiedad `asyncapi` en el Frontmatter.
 
 ```mdx
 ---

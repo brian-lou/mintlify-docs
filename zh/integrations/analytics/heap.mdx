@@ -1,27 +1,25 @@
 ---
 title: "Heap"
-description: "使用 Heap Analytics 跟踪用户互动。"
-keywords: ["Heap Analytics", "automatic event tracking", "Heap app ID", "user interaction tracking"]
+description: "使用 Heap 分析跟踪用户交互。"
+keywords: ["Heap Analytics", "自动事件跟踪", "Heap 应用 ID", "用户交互跟踪"]
 ---
 
-在你的 `docs.json` 文件中添加以下内容，将分析数据发送到 Heap。
+将以下内容添加到您的 `docs.json` 文件中，以将分析数据发送到 Heap。
 
 <CodeGroup>
+  ```json docs.json 中的分析选项
+  "integrations": {
+      "heap": {
+          "appId": "required"
+      }
+  }
+  ```
 
-```json docs.json 中的分析选项
-"integrations": {
-    "heap": {
-        "appId": "required"
-    }
-}
-```
-
-```json 示例
-"integrations": {
-    "heap": {
-        "appId": "1234567890"
-    }
-}
-```
-
+  ```json 示例
+  "integrations": {
+      "heap": {
+          "appId": "1234567890"
+      }
+  }
+  ```
 </CodeGroup>

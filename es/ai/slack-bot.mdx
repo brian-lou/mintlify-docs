@@ -1,57 +1,59 @@
 ---
 title: "Bot de Slack"
-description: "Añade un bot a tu espacio de trabajo de Slack que responde preguntas basadas en tu documentación."
-keywords: ["bot", "workspace", "Q&A", "Slack", "app"]
+description: "Añade un bot a tu espacio de trabajo de Slack que responda preguntas basadas en tu documentación."
+keywords: ["bot", "espacio de trabajo", "preguntas y respuestas", "Slack", "aplicación"]
 ---
 
 <Info>
-  La app de Slack está disponible para los [planes Pro y Custom](https://mintlify.com/pricing?ref=slack-app) con acceso al asistente.
+  La aplicación de Slack está disponible en los [planes Pro y Custom](https://mintlify.com/pricing?ref=slack-app) con acceso al asistente.
 </Info>
 
-La app de Slack añade un bot a tu espacio de trabajo que ayuda a tu comunidad con respuestas en tiempo real. El bot usa el asistente de Mintlify para buscar en tu documentación y proporcionar respuestas precisas con referencias, por lo que siempre está actualizado.
+La aplicación de Slack añade un bot a tu espacio de trabajo para ayudar a tu comunidad con respuestas en tiempo real. El bot usa el asistente de Mintlify para buscar en tu documentación y ofrecer respuestas precisas con citas, por lo que siempre está actualizado.
 
-El bot solo puede ver los mensajes en los canales a los que lo añadas específicamente. No tiene acceso global de lectura a tu espacio de trabajo.
+El bot solo puede ver los mensajes de los canales a los que lo añadas específicamente. No tiene acceso de lectura global a tu espacio de trabajo.
 
-El bot responde a las menciones con `@` o a todos los mensajes en un canal específico que configures.
+El bot responde a las menciones con `@` o a todos los mensajes de un canal específico que configures.
 
-Cada mensaje enviado por el bot cuenta para tu uso de mensajes del asistente.
+Cada mensaje que envía el bot cuenta para el uso de mensajes de tu asistente.
 
 <div id="set-up-the-slack-app">
   ## Configura la aplicación de Slack
 </div>
 
 <Note>
-  Solo puedes instalar la aplicación de Slack una vez por espacio de trabajo. Si tienes varias implementaciones de Mintlify, solo puedes conectar una implementación a la vez a un espacio de trabajo. Debes desconectar la aplicación de una implementación antes de conectarla a otra.
+  Solo puedes instalar la aplicación de Slack una vez por espacio de trabajo. Si tienes varias implementaciones de Mintlify, solo puedes conectar una implementación a un espacio de trabajo a la vez. Debes desconectar la aplicación de una implementación antes de conectarla a otra.
 </Note>
 
-Si el propietario del espacio de trabajo de Slack requiere aprobación de administrador para instalar aplicaciones, pídele que apruebe la aplicación de Slack de Mintlify antes de agregarla.
+Si el propietario de tu espacio de trabajo de Slack necesita la aprobación de un administrador para instalar aplicaciones, pídele que apruebe la aplicación de Slack de Mintlify antes de agregarla.
 
-1. Ve a la página [Assistant](https://dashboard.mintlify.com/products/assistant) en tu panel de control.
-1. En la tarjeta de Slack, haz clic en **Configure**. Se abrirá Slack.
-    <Frame>
-      <img src="/images/assistant/connected-apps-light.png" alt="La sección de aplicaciones conectadas de la página del asistente." className="block dark:hidden" />
-      <img src="/images/assistant/connected-apps-dark.png" alt="La sección de aplicaciones conectadas de la página del asistente." className="hidden dark:block" />
-    </Frame>
-1. Sigue las indicaciones de Slack para agregar la aplicación a tu espacio de trabajo.
-1. Menciona al bot para agregarlo a un canal. El nombre predeterminado del bot es `@mintlify-assistant`.
+1. Ve a la página de [Asistente](https://dashboard.mintlify.com/products/assistant) en tu panel de control.
+2. En la tarjeta de Slack, haz clic en **Configure**. Esto abre Slack.
+   <Frame>
+     <img src="/images/assistant/connected-apps-light.png" alt="La sección de aplicaciones conectadas de la página del asistente." className="block dark:hidden" />
+
+     <img src="/images/assistant/connected-apps-dark.png" alt="La sección de aplicaciones conectadas de la página del asistente." className="hidden dark:block" />
+   </Frame>
+3. Sigue las indicaciones de Slack para agregar la aplicación a tu espacio de trabajo.
+4. Menciona al bot para añadirlo a un canal. El nombre predeterminado del bot es `@mintlify-assistant`.
 
 <div id="create-an-ask-ai-channel">
-  ## Crear un canal `#ask-ai`
+  ## Crea un canal `#ask-ai`
 </div>
 
-Para ayudar a tus usuarios a obtener rápidamente respuestas a sus preguntas, el bot puede responder a todos los mensajes en el canal que elijas. De forma predeterminada, el bot responde a todos los mensajes en los canales llamados `#ask-ai`. Crea un canal `#ask-ai` e informa a tus usuarios de que el bot responde a los mensajes en ese canal. Consulta [Crear un canal](https://slack.com/help/articles/201402297-Create-a-channel) en el Centro de ayuda de Slack para obtener más información.
+Para que tus usuarios obtengan respuestas a sus preguntas rápidamente, el bot puede responder a todos los mensajes de un canal que elijas. De forma predeterminada, el bot responde a todos los mensajes de los canales llamados `#ask-ai`. Crea un canal `#ask-ai` y avisa a tus usuarios de que el bot responde a los mensajes de ese canal. Consulta [Crear un canal](https://slack.com/help/articles/201402297-Create-a-channel) en el Centro de ayuda de Slack para obtener más información.
 
-Si quieres que el bot responda a los mensajes en otro canal, selecciona uno en el [menú de configuración](https://dashboard.mintlify.com/products/assistant/settings/integrations) del bot de Slack.
+Si quieres que el bot responda a los mensajes de otro canal, selecciona un canal en el [menú de configuración](https://dashboard.mintlify.com/products/assistant/settings/integrations) del bot de Slack.
 
 <Frame>
   <img src="/images/assistant/slack-configure-light.png" alt="El panel de configuración de Slack en modo claro." className="block dark:hidden" />
+
   <img src="/images/assistant/slack-configure-dark.png" alt="El panel de configuración de Slack en modo oscuro." className="hidden dark:block" />
 </Frame>
 
 <div id="manage-the-slack-app">
-  ## Administrar la aplicación de Slack
+  ## Gestiona la aplicación de Slack
 </div>
 
-Después de agregar la aplicación a tu espacio de trabajo, puedes administrarla o eliminarla desde la pestaña [Integrations](https://dashboard.mintlify.com/products/assistant/settings/integrations).
+Después de añadir la app a tu espacio de trabajo, puedes gestionarla o eliminarla desde la pestaña [Integrations](https://dashboard.mintlify.com/products/assistant/settings/integrations).
 
-En el menú de configuración del bot de Slack, personaliza el bot cambiando su avatar o nombre, y elige el canal en el que responderá automáticamente a todos los mensajes.
+En el menú de configuración del bot de Slack, personaliza el bot cambiando su avatar o nombre y elige en qué canal responderá automáticamente a todos los mensajes.

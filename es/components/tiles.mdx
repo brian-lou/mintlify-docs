@@ -1,19 +1,19 @@
 ---
-title: "Mosaicos"
+title: "Tiles"
 description: "Muestra vistas previas visuales con títulos y descripciones en una cuadrícula."
-keywords: ["tiles", "visual preview", "grid", "showcase"]
+keywords: ["tiles", "vista previa visual", "cuadrícula", "presentación"]
 ---
 
-Usa mosaicos para crear elementos visuales de presentación con un fondo con patrón, título y descripción. Los mosaicos son ideales para mostrar vistas previas de componentes, destacar funciones o elementos de navegación en una cuadrícula.
+Usa tiles para crear elementos visuales de presentación con un fondo con patrón, título y descripción. Los tiles son ideales para mostrar vistas previas de componentes, funciones destacadas o elementos de navegación en una cuadrícula.
 
-<Tile href="/es/components/accordions" title="Acordeón" description="Dos variantes">
+<Tile href="/es/components/accordions" title="Accordion" description="Dos variantes">
   <img src="/images/tiles/accordion-light.svg" alt="Vista previa del componente Accordion" className="block dark:hidden" />
 
   <img src="/images/tiles/accordion-dark.svg" alt="Vista previa del componente Accordion (modo oscuro)" className="hidden dark:block" />
 </Tile>
 
 ```mdx Tile example
-<Tile href="/components/accordions" title="Accordion" description="Dos variantes">
+<Tile href="/components/accordions" title="Accordion" description="Two variants">
   <img src="/images/tiles/accordion-light.svg" alt="Vista previa del componente Accordion" className="block dark:hidden" />
   <img src="/images/tiles/accordion-dark.svg" alt="Vista previa del componente Accordion (modo oscuro)" className="hidden dark:block" />
 </Tile>
@@ -23,7 +23,7 @@ Usa mosaicos para crear elementos visuales de presentación con un fondo con pat
   ## Diseño de cuadrícula
 </div>
 
-Combina tarjetas con el [componente de columnas](/es/components/columns) para crear una cuadrícula adaptable de vistas previas.
+Combina tiles con el [componente Columns](/es/components/columns) para crear una cuadrícula adaptable con vistas previas visuales.
 
 <Columns cols={3}>
   <Tile href="/es/components/accordions" title="Accordion" description="Dos variantes">
@@ -47,17 +47,17 @@ Combina tarjetas con el [componente de columnas](/es/components/columns) para cr
 
 ```mdx Grid layout example
 <Columns cols={3}>
-  <Tile href="/components/accordions" title="Accordion" description="Dos variantes">
-    <img src="/images/tiles/accordion-light.svg" alt="Vista previa del componente Accordion" className="block dark:hidden" />
-    <img src="/images/tiles/accordion-dark.svg" alt="Vista previa del componente Accordion (modo oscuro)" className="hidden dark:block" />
+  <Tile href="/components/accordions" title="Accordion" description="Two variants">
+    <img src="/images/tiles/accordion-light.svg" alt="Accordion component preview" className="block dark:hidden" />
+    <img src="/images/tiles/accordion-dark.svg" alt="Accordion component preview (dark mode)" className="hidden dark:block" />
   </Tile>
-  <Tile href="/components/accordions" title="Accordion" description="Dos variantes">
-    <img src="/images/tiles/accordion-light.svg" alt="Vista previa del componente Accordion" className="block dark:hidden" />
-    <img src="/images/tiles/accordion-dark.svg" alt="Vista previa del componente Accordion (modo oscuro)" className="hidden dark:block" />
+  <Tile href="/components/accordions" title="Accordion" description="Two variants">
+    <img src="/images/tiles/accordion-light.svg" alt="Accordion component preview" className="block dark:hidden" />
+    <img src="/images/tiles/accordion-dark.svg" alt="Accordion component preview (dark mode)" className="hidden dark:block" />
   </Tile>
-  <Tile href="/components/accordions" title="Accordion" description="Dos variantes">
-    <img src="/images/tiles/accordion-light.svg" alt="Vista previa del componente Accordion" className="block dark:hidden" />
-    <img src="/images/tiles/accordion-dark.svg" alt="Vista previa del componente Accordion (modo oscuro)" className="hidden dark:block" />
+  <Tile href="/components/accordions" title="Accordion" description="Two variants">
+    <img src="/images/tiles/accordion-light.svg" alt="Accordion component preview" className="block dark:hidden" />
+    <img src="/images/tiles/accordion-dark.svg" alt="Accordion component preview (dark mode)" className="hidden dark:block" />
   </Tile>
 </Columns>
 ```
@@ -67,7 +67,7 @@ Combina tarjetas con el [componente de columnas](/es/components/columns) para cr
 </div>
 
 <ResponseField name="href" type="string" required>
-  URL a la que se navega cuando se hace clic en la tarjeta.
+  URL a la que se dirige al hacer clic en la tarjeta.
 </ResponseField>
 
 <ResponseField name="title" type="string">
@@ -79,5 +79,5 @@ Combina tarjetas con el [componente de columnas](/es/components/columns) para cr
 </ResponseField>
 
 <ResponseField name="children" type="React.ReactNode" required>
-  Contenido que se muestra dentro del área de vista previa de la tarjeta, generalmente imágenes o SVG.
+  Contenido que se muestra dentro del área de vista previa de la tarjeta, normalmente imágenes o SVG.
 </ResponseField>

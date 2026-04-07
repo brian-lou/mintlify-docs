@@ -1,19 +1,19 @@
 ---
 title: "Exclure des fichiers de la publication"
 sidebarTitle: "Exclure des fichiers"
-description: "Excluez des fichiers et des répertoires spécifiques de votre documentation publiée à l’aide d’un fichier `.mintignore`."
+description: "Excluez certains fichiers et répertoires de votre documentation publiée à l’aide d’un fichier `.mintignore`."
 keywords: ["exclure", "ignorer", "gitignore", "brouillons", "privé"]
 ---
 
-Le fichier `.mintignore` vous permet d’exclure des fichiers et des répertoires spécifiques de votre dépôt de documentation afin d’empêcher leur traitement et leur publication sur votre site de documentation.
+Le fichier `.mintignore` vous permet d’exclure certains fichiers et répertoires de votre dépôt de documentation afin qu’ils ne soient ni traités ni publiés sur votre site de documentation.
 
-Utilisez `.mintignore` pour conserver les brouillons, les notes internes et les fichiers sources en dehors de votre documentation publique tout en les gardant dans votre dépôt.
+Utilisez `.mintignore` pour garder les brouillons, les notes internes et les fichiers source hors de votre documentation publique, tout en les conservant dans votre dépôt.
 
 <div id="create-a-mintignore-file">
   ## Créer un fichier .mintignore
 </div>
 
-Créez un fichier `.mintignore` à la racine de votre dossier de documentation. Ce fichier utilise la même syntaxe de motifs que `.gitignore`.
+Créez un fichier `.mintignore` à la racine de votre répertoire de documentation. Ce fichier utilise la même syntaxe de motifs que le fichier `.gitignore`.
 
 ```plaintext .mintignore
 # Exclure les documents brouillons
@@ -23,24 +23,24 @@ drafts/
 # Exclure la documentation interne
 internal/
 
-# Exclure les fichiers spécifiques
+# Exclure des fichiers spécifiques
 private-notes.md
 ```
 
-Lorsque Mintlify génère votre documentation, il lit le fichier `.mintignore` et exclut du traitement tous les fichiers ou répertoires correspondants.
+Lorsque Mintlify génère votre documentation, il lit le fichier `.mintignore` et exclut du traitement tous les fichiers ou dossiers correspondants.
 
 Fichiers exclus :
 
 * N&#39;apparaissent pas dans votre documentation publiée.
 * Ne sont pas indexés pour la recherche.
 * Ne sont pas accessibles aux visiteurs.
-* Sont ignorés par les [contrôles de liens brisés](/fr/installation#find-broken-links). Les liens qui pointent vers des fichiers ignorés sont considérés comme rompus.
+* Sont ignorés par les [vérifications des liens cassés](/fr/installation#find-broken-links). Les liens qui pointent vers des fichiers ignorés sont cassés.
 
 <div id="default-ignored-patterns">
   ## Motifs ignorés par défaut
 </div>
 
-Mintlify ignore automatiquement les répertoires et fichiers suivants sans nécessiter aucune configuration :
+Mintlify ignore automatiquement les répertoires et fichiers suivants, sans aucune configuration :
 
 * `.git`
 * `.github`
@@ -57,19 +57,19 @@ Vous n&#39;avez pas besoin de les ajouter à votre fichier `.mintignore`.
 
 <Note>
   Contrairement aux [pages masquées](/fr/organize/hidden-pages), les fichiers exclus par `.mintignore`
-  sont complètement supprimés de votre site et ne sont pas accessibles par URL.
+  sont complètement supprimés de votre site et ne sont pas accessibles via une URL.
 </Note>
 
 <div id="pattern-syntax">
   ## Syntaxe des motifs
 </div>
 
-Le fichier `.mintignore` suit la même syntaxe que `.gitignore`. Voici quelques motifs courants :
+Le fichier `.mintignore` suit la syntaxe de `.gitignore`. Voici quelques motifs courants :
 
-| Motif             | Description                                              |
-| ----------------- | -------------------------------------------------------- |
-| `drafts/`         | Exclut l&#39;intégralité du répertoire `drafts`             |
-| `*.draft.mdx`     | Exclut tous les fichiers se terminant par `.draft.mdx`  |
-| `private-notes.md`| Exclut un fichier spécifique                            |
-| `**/internal/**`  | Exclut tout répertoire `internal`, quel que soit son niveau |
-| `!important.mdx`  | Annule un motif précédent (inclut le fichier)           |
+| Motif              | Description                                                |
+| ------------------ | ---------------------------------------------------------- |
+| `drafts/`          | Exclut l’ensemble du répertoire `drafts`                   |
+| `*.draft.mdx`      | Exclut tous les fichiers se terminant par `.draft.mdx`     |
+| `private-notes.md` | Exclut un fichier précis                                   |
+| `**/internal/**`   | Exclut tout répertoire `internal`, à n’importe quel niveau |
+| `!important.mdx`   | Annule un motif précédent (inclut le fichier)              |

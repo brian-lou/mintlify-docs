@@ -1,12 +1,12 @@
 ---
 title: "Acordeones"
-description: "Utiliza acordeones para mostrar y ocultar contenido."
-keywords: ["acordeones", "contenido plegable", "secciones expandibles", "revelación progresiva"]
+description: "Usa acordeones para mostrar y ocultar contenido."
+keywords: ["acordeones", "contenido colapsable", "secciones expandibles", "revelación progresiva"]
 ---
 
 import IconsOptional from "/snippets/es/icons-optional.mdx";
 
-Los acordeones permiten a los usuarios expandir y contraer secciones de contenido. Usa acordeones para mostrar información de forma progresiva y para organizarla.
+Los acordeones permiten a los usuarios expandir y contraer secciones de contenido. Usa acordeones para mostrar la información de forma progresiva y organizarla.
 
 
 <div id="single-accordion">
@@ -14,7 +14,7 @@ Los acordeones permiten a los usuarios expandir y contraer secciones de contenid
 </div>
 
 <Accordion title="Soy un acordeón.">
-  Puedes poner cualquier tipo de contenido aquí, incluidos otros componentes, como código:
+  Puedes poner aquí cualquier contenido, incluidos otros componentes, como código:
 
   ```java HelloWorld.java
    class HelloWorld {
@@ -26,8 +26,8 @@ Los acordeones permiten a los usuarios expandir y contraer secciones de contenid
 </Accordion>
 
 ````mdx Accordion example
-<Accordion title="Soy un Acordeón.">
-  Puedes poner cualquier contenido aquí, incluyendo otros componentes, como código:
+<Accordion title="Soy un acordeón.">
+  Puedes poner cualquier contenido aquí, incluidos otros componentes, como código:
 
    ```java HelloWorld.java
     class HelloWorld {
@@ -44,7 +44,7 @@ Los acordeones permiten a los usuarios expandir y contraer secciones de contenid
   ## Grupos de acordeones
 </div>
 
-Agrupa los acordeones relacionados usando `<AccordionGroup>`. Esto crea una sección coherente de acordeones que se pueden expandir o contraer individualmente.
+Agrupa acordeones relacionados con `<AccordionGroup>`. Esto crea una sección unificada de acordeones que puedes expandir o contraer por separado.
 
 <AccordionGroup>
   <Accordion title="Primeros pasos">
@@ -60,18 +60,18 @@ Agrupa los acordeones relacionados usando `<AccordionGroup>`. Esto crea una secc
   </Accordion>
 
   <Accordion title="Funciones avanzadas" icon="bot">
-    Agrega iconos para hacer que los acordeones sean más distintivos visualmente y fáciles de recorrer con la vista.
+    Agrega iconos para que los acordeones se distingan visualmente y sean más fáciles de identificar de un vistazo.
   </Accordion>
 
   <Accordion title="Solución de problemas">
-    Mantén el contenido relacionado organizado en grupos.
+    Organiza el contenido relacionado en grupos.
   </Accordion>
 </AccordionGroup>
 
 ````mdx Accordion Group Example
 <AccordionGroup>
-  <Accordion title="Getting started">
-    You can put other components inside Accordions.
+  <Accordion title="Primeros pasos">
+    Puedes colocar otros componentes dentro de los acordeones.
 
     ```java HelloWorld.java
     class HelloWorld {
@@ -82,31 +82,30 @@ Agrupa los acordeones relacionados usando `<AccordionGroup>`. Esto crea una secc
     ```
   </Accordion>
 
-  <Accordion title="Advanced features" icon="alien-8bit">
-    Add icons to make accordions more visually distinct and scannable.
+  <Accordion title="Funciones avanzadas" icon="alien-8bit">
+    Añade iconos para que los acordeones sean más visualmente distintos y fáciles de explorar.
   </Accordion>
 
-  <Accordion title="Troubleshooting">
-    Keep related content organized into groups.
+  <Accordion title="Solución de problemas">
+    Mantén el contenido relacionado organizado en grupos.
   </Accordion>
 </AccordionGroup>
 ````
-
 
 <div id="properties">
   ## Propiedades
 </div>
 
 <ResponseField name="title" type="string" required>
-  Título en la vista previa del Accordion.
+  Título en la vista previa del acordeón.
 </ResponseField>
 
 <ResponseField name="description" type="string">
-  Detalle que aparece debajo del título en la vista previa del Accordion.
+  Descripción debajo del título en la vista previa del acordeón.
 </ResponseField>
 
 <ResponseField name="defaultOpen" type="boolean" default="false">
-  Indica si el Accordion está abierto de forma predeterminada.
+  Indica si el acordeón está abierto de forma predeterminada.
 </ResponseField>
 
 <IconsOptional />

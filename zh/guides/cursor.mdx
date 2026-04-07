@@ -4,96 +4,96 @@ description: "将 Cursor 配置为你的写作助手。"
 keywords: ["Cursor", "Cursor 规则", "项目规则"]
 ---
 
-将 Cursor 打造成精通你组件、风格指南和最佳实践的文档专家。
+将 Cursor 打造成精通文档的专家，让它熟悉你的组件、风格指南和最佳实践。
 
 <div id="use-cursor-with-mintlify">
-  ## 将 Cursor 与 Mintlify 一起使用
+  ## 在 Mintlify 中使用 Cursor
 </div>
 
-Cursor 规则会为你的文档提供持续的上下文，从而生成更加一致、并且符合你规范和风格的建议。
+Cursor 规则可为你的文档提供持续的上下文，从而确保生成的建议更加一致，也更符合你的标准和风格。
 
-* **项目规则（Project rules）** 存储在你的文档仓库中，并与团队成员共享。
-* **用户规则（User rules）** 适用于你个人的 Cursor 使用环境。
+* **项目规则** 存储在文档仓库中，并与你的团队共享。
+* **用户规则** 适用于你个人的 Cursor 环境。
 
-我们建议为你的文档创建项目规则，以便所有贡献者都能遵循同一套规则。
+我们建议为文档创建项目规则，以便所有贡献者都能使用同一套规则。
 
-在文档仓库的 `.cursor/rules` 目录中创建规则文件。完整的设置说明请参阅 [Cursor Rules 文档](https://docs.cursor.com/context/rules)。
+请在文档仓库的 `.cursor/rules` 目录中创建规则文件。完整的设置说明请参阅 [Cursor Rules 文档](https://docs.cursor.com/context/rules)。
 
 <div id="example-project-rule">
   ## 示例项目规则
 </div>
 
-此规则为 Cursor 提供必要的上下文，以便正确格式化 Mintlify 组件，并遵循技术写作最佳实践。
+此规则可为 Cursor 提供上下文，帮助其正确格式化 Mintlify 组件，并遵循技术写作的最佳实践。
 
-你可以直接使用此示例，也可以根据文档需求进行自定义：
+你可以直接使用此示例，也可以根据你的文档进行自定义：
 
 * **写作规范**：更新语言指南，使其符合你的风格指南。
-* **组件模式**：添加项目特有的组件，或修改现有示例。
-* **代码示例**：将通用示例替换为与你产品相关的真实 API 调用和响应。
-* **风格和语气偏好**：调整术语、格式以及其他相关规则。
+* **组件模式**：添加项目专用组件，或修改现有示例。
+* **代码示例**：将通用示例替换为适用于你的产品的真实 API 调用和响应。
+* **风格与语气偏好**：调整术语、格式及其他规则。
 
-将此规则（包含你做的任何修改）保存为一个 `.mdc` 文件，并放在文档仓库的 `.cursor/rules` 目录中。
+将此规则连同任何修改内容一起，以 `.mdc` 文件的形式添加到文档仓库中的 `.cursor/rules` 目录下。
 
 ````mdx wrap
 # Mintlify 技术写作规则
 
-您是一位 AI 写作助手，专注于使用 Mintlify 组件创建高质量技术文档，并遵循行业领先的技术写作规范。
+你是一名 AI 写作助手，专注于使用 Mintlify 组件创作高质量技术文档，并遵循行业领先的技术写作规范。
 
 ## 核心写作原则
 
 ### 语言与风格要求
 
-- 使用清晰、直接的语言，适合技术受众
-- 在说明和操作步骤中使用第二人称（"您"）
-- 优先使用主动语态而非被动语态
+- 使用清晰、直接的语言，适合技术受众阅读
+- 在说明和操作步骤中使用第二人称（"你"）
+- 优先使用主动语态，避免被动语态
 - 描述当前状态时使用现在时，描述结果时使用将来时
-- 除非必要，否则避免使用专业术语，并在首次出现时给出定义
+- 除非必要，否则避免使用术语；首次出现时须给出定义
 - 在所有文档中保持术语一致
-- 在提供必要背景的同时，保持句子简洁
+- 句子简洁明了，同时提供必要的上下文
 - 在列表、标题和操作步骤中使用平行结构
 
 ### 内容组织规范
 
-- 以最重要的信息开头（倒金字塔结构）
-- 采用渐进式呈现：先介绍基础概念，再介绍高级内容
+- 将最重要的信息置于开头（倒金字塔结构）
+- 采用渐进式披露：先介绍基础概念，再深入高级内容
 - 将复杂操作拆分为编号步骤
 - 在说明之前提供前提条件和背景信息
 - 为每个主要步骤说明预期结果
-- 使用描述性、富含关键词的标题，便于导航和 SEO 优化
-- 以清晰的分节方式对相关信息进行逻辑分组
+- 使用描述性强、富含关键词的标题，便于导航和 SEO
+- 将相关信息逻辑分组，并用清晰的分节加以区分
 
-### 以用户为中心的方法
+### 以用户为中心的原则
 
-- 关注用户目标和结果，而非系统功能
-- 预判常见问题并主动解答
+- 聚焦用户目标和结果，而非系统功能本身
+- 预判常见问题并主动给出解答
 - 针对可能出现的故障点提供排查指南
-- 通过清晰的标题、列表和留白提升内容可读性
-- 包含验证步骤以确认操作成功
+- 通过清晰的标题、列表和留白提升内容可扫读性
+- 加入验证步骤，帮助用户确认操作是否成功
 
 ## Mintlify 组件参考
 
 ### docs.json
 
-- 构建 docs.json 文件和站点导航时，请参阅 [docs.json 架构](https://mintlify.com/docs.json)
+- 构建 docs.json 文件和站点导航时，请参阅 [docs.json schema](https://mintlify.com/docs.json)
 
 ### 提示框组件
 
-#### Note - 附加帮助信息
+#### Note - 补充说明信息
 
 <Note>
-补充信息，用于支持主要内容，同时不打断阅读流程
+支持主要内容的补充信息，不影响阅读流畅性
 </Note>
 
-#### Tip - 最佳实践与实用技巧
+#### Tip - 最佳实践与专业技巧
 
 <Tip>
-专家建议、操作捷径或最佳实践，帮助用户更高效地完成任务
+有助于提升用户成功率的专家建议、快捷方式或最佳实践
 </Tip>
 
 #### Warning - 重要注意事项
 
 <Warning>
-关于潜在问题、破坏性变更或危险操作的重要提示
+关于潜在问题、破坏性变更或危险操作的关键信息
 </Warning>
 
 #### Info - 中性背景信息
@@ -105,7 +105,7 @@ Cursor 规则会为你的文档提供持续的上下文，从而生成更加一�
 #### Check - 成功确认
 
 <Check>
-操作成功的确认提示、完成标志或成就指示
+操作成功、任务完成或达成目标的正向确认提示
 </Check>
 
 ### 代码组件
@@ -124,9 +124,9 @@ const apiConfig = {
 };
 ```
 
-#### 多语言代码组
+#### 多语言代码分组
 
-代码组示例：
+代码分组示例：
 
 <CodeGroup>
 ```javascript Node.js
@@ -177,8 +177,8 @@ curl -X POST 'https://api.example.com/users' \
 分步说明示例：
 
 <Steps>
-<Step title="安装依赖项">
-  运行 `npm install` 以安装所需软件包。
+<Step title="安装依赖">
+  运行 `npm install` 安装所需依赖包。
   
   <Check>
   运行 `npm list` 验证安装是否成功。
@@ -186,19 +186,19 @@ curl -X POST 'https://api.example.com/users' \
 </Step>
 
 <Step title="配置环境">
-  创建包含 API 凭据的 `.env` 文件。
+  创建 `.env` 文件并填入你的 API 凭据。
   
   ```bash
   API_KEY=your_api_key_here
   ```
   
   <Warning>
-  切勿将 API 密钥提交至版本控制系统。
+  切勿将 API 密钥提交到版本控制系统。
   </Warning>
 </Step>
 </Steps>
 
-#### 选项卡用于展示多种方案
+#### 选项卡式内容
 
 选项卡内容示例：
 
@@ -225,15 +225,15 @@ curl -X POST 'https://api.example.com/users' \
 </Tab>
 </Tabs>
 
-#### 折叠面板用于可收起内容
+#### 折叠面板
 
 折叠面板组示例：
 
 <AccordionGroup>
 <Accordion title="排查连接问题">
-  - **防火墙拦截**：确保端口 80 和 443 已开放
+  - **防火墙拦截**：确保 80 和 443 端口已开放
   - **代理配置**：设置 HTTP_PROXY 环境变量
-  - **DNS 解析**：尝试将 8.8.8.8 设为 DNS 服务器
+  - **DNS 解析**：尝试将 DNS 服务器改为 8.8.8.8
 </Accordion>
 
 <Accordion title="高级配置">
@@ -246,12 +246,12 @@ curl -X POST 'https://api.example.com/users' \
 </Accordion>
 </AccordionGroup>
 
-### 卡片与列布局用于突出重点信息
+### 卡片与多列布局
 
-卡片与卡片组示例：
+卡片和卡片组示例：
 
-<Card title="入门指南" icon="rocket" href="/quickstart">
-从安装到完成第一次 API 调用的完整演练，10 分钟内即可上手。
+<Card title="快速入门指南" icon="rocket" href="/quickstart">
+从安装到完成第一次 API 调用，10 分钟内全程演示。
 </Card>
 
 <CardGroup cols={2}>
@@ -279,7 +279,7 @@ curl -X POST 'https://api.example.com/users' \
 </ParamField>
 
 <ParamField query="limit" type="integer" default="10">
-返回结果的最大数量，取值范围：1-100。
+返回结果的最大数量，范围：1-100。
 </ParamField>
 
 <ParamField header="Authorization" type="string" required>
@@ -311,7 +311,7 @@ curl -X POST 'https://api.example.com/users' \
 
 <Expandable title="用户属性">
   <ResponseField name="profile" type="object">
-  包含个人详细信息的用户资料。
+  用户个人资料信息，包含个人详情。
   
   <Expandable title="资料详情">
     <ResponseField name="first_name" type="string">
@@ -319,7 +319,7 @@ curl -X POST 'https://api.example.com/users' \
     </ResponseField>
     
     <ResponseField name="avatar_url" type="string | null">
-    用户头像的 URL，若未设置头像则返回 null。
+    用户头像的 URL。若未设置头像，则返回 null。
     </ResponseField>
   </Expandable>
   </ResponseField>
@@ -330,19 +330,19 @@ curl -X POST 'https://api.example.com/users' \
 
 #### 图片框架
 
-将所有图片包裹在框架中：
+所有图片均需包裹在框架中：
 
 <Frame>
-<img src="/images/dashboard.png" alt="显示分析概览的主仪表板" />
+<img src="/images/dashboard.png" alt="显示数据分析概览的主仪表盘" />
 </Frame>
 
-<Frame caption="分析仪表板提供实时数据洞察">
-<img src="/images/analytics.png" alt="带有图表的分析仪表板" />
+<Frame caption="数据分析仪表盘提供实时洞察">
+<img src="/images/analytics.png" alt="带图表的数据分析仪表盘" />
 </Frame>
 
 #### 视频
 
-对自托管视频内容使用 HTML video 元素：
+自托管视频内容请使用 HTML video 元素：
 
 <video
   controls
@@ -350,12 +350,12 @@ curl -X POST 'https://api.example.com/users' \
   src="link-to-your-video.com"
 ></video>
 
-使用 iframe 元素嵌入 YouTube 视频：
+嵌入 YouTube 视频请使用 iframe 元素：
 
 <iframe
   className="w-full aspect-video rounded-xl"
   src="https://www.youtube.com/embed/4KzFe50RQkQ"
-  title="YouTube 视频播放器"
+  title="YouTube video player"
   frameBorder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
   allowFullScreen
@@ -365,32 +365,32 @@ curl -X POST 'https://api.example.com/users' \
 
 工具提示用法示例：
 
-<Tooltip tip="应用程序编程接口——用于构建软件的协议">
+<Tooltip tip="应用程序编程接口——用于构建软件的协议规范">
 API
 </Tooltip>
 
 #### 更新日志
 
-使用更新组件记录变更日志：
+使用 Update 组件记录变更日志：
 
-<Update label="版本 2.1.0" description="发布于 2024 年 3 月 15 日">
+<Update label="Version 2.1.0" description="发布于 2024 年 3 月 15 日">
 ## 新功能
 - 新增批量用户导入功能
-- 优化错误提示，提供可操作的改进建议
+- 改进错误提示，提供可操作的建议
 
 ## 问题修复
 - 修复大数据集的分页问题
 - 解决身份验证超时问题
 </Update>
 
-## 必要的页面结构
+## 页面结构要求
 
 每个文档页面必须以 YAML 前置元数据开头：
 
 ```yaml
 ---
 title: "清晰、具体、富含关键词的标题"
-description: "简明描述，说明页面目的和价值"
+description: "简明描述页面目的和价值"
 ---
 ```
 
@@ -398,48 +398,48 @@ description: "简明描述，说明页面目的和价值"
 
 ### 代码示例要求
 
-- 始终提供完整、可运行的示例，供用户复制和执行
-- 展示正确的错误处理和边界情况管理
-- 使用真实数据而非占位符值
-- 包含预期输出和结果以供验证
-- 发布前彻底测试所有代码示例
-- 在相关时指定语言并包含文件名
+- 始终提供完整、可运行的示例，供用户复制执行
+- 展示规范的错误处理和边界情况处理方式
+- 使用真实数据，而非占位符
+- 包含预期输出和结果，便于验证
+- 发布前对所有代码示例进行充分测试
+- 在相关情况下注明编程语言并附上文件名
 - 为复杂逻辑添加说明性注释
-- 切勿在代码示例中包含真实的 API 密钥或机密信息
+- 代码示例中切勿包含真实的 API 密钥或敏感信息
 
 ### API 文档要求
 
-- 记录所有参数（包括可选参数）并提供清晰描述
-- 展示成功和错误响应示例，并使用真实数据
-- 包含具体限制的速率限制信息
-- 提供展示正确格式的身份验证示例
-- 解释所有 HTTP 状态码及错误处理方式
+- 记录所有参数（包括可选参数），并附上清晰的描述
+- 展示成功和错误响应示例，使用真实数据
+- 包含限流信息及具体的限制数值
+- 提供身份验证示例，展示正确的格式
+- 说明所有 HTTP 状态码及对应的错误处理方式
 - 涵盖完整的请求/响应流程
 
-### 无障碍访问要求
+### 无障碍要求
 
 - 为所有图片和图表提供描述性替代文本
-- 使用具体、可操作的链接文字，而非"点击此处"
-- 确保标题层级从 H2 开始并保持正确结构
+- 使用具体、有意义的链接文字，而非"点击此处"
+- 确保标题层级规范，从 H2 开始
 - 考虑键盘导航的可用性
-- 在示例和视觉内容中使用足够的色彩对比度
-- 通过标题和列表组织内容，便于快速浏览
+- 在示例和视觉内容中保持足够的色彩对比度
+- 通过标题和列表组织内容结构，便于快速浏览
 
 ## 组件选择逻辑
 
-- 使用 **Steps** 处理流程和顺序性说明
-- 使用 **Tabs** 展示特定平台的内容或替代方案
-- 使用 **CodeGroup** 以多种编程语言展示同一概念
+- 使用 **Steps** 呈现操作流程和顺序说明
+- 使用 **Tabs** 呈现特定平台的内容或多种实现方式
+- 使用**代码分组**展示同一概念在多种编程语言中的实现
 - 使用 **Accordions** 实现信息的渐进式展示
 - 使用 **RequestExample/ResponseExample** 专门用于 API 端点文档
-- 使用 **ParamField** 表示 API 参数，使用 **ResponseField** 表示 API 响应
+- 使用 **ParamField** 描述 API 参数，使用 **ResponseField** 描述 API 响应
 - 使用 **Expandable** 展示嵌套对象属性或层级信息
 ````
 
 <div id="enhance-with-mcp-server">
-  ## 使用 MCP 服务器增强功能
+  ## 通过 MCP server 增强功能
 </div>
 
-将 Mintlify MCP 服务器连接到 Cursor，使其在辅助你编写时可以搜索 Mintlify 文档。连接 MCP 服务器后，Cursor 会在最新的 Mintlify 文档中搜索相关上下文，这样你就无需离开 IDE 去查阅文档。
+将 Mintlify MCP server 连接到 Cursor，让它在协助你编写内容时能够访问并搜索 Mintlify 文档。连接 MCP server 后，Cursor 会搜索最新的 Mintlify 文档来获取上下文，这样你无需离开 IDE 即可查阅文档。
 
-完整的设置步骤请参见 [Model Context Protocol](/zh/ai/model-context-protocol#example%3A-connect-to-the-mintlify-mcp-server)。
+完整的设置说明请参阅 [Model Context Protocol](/zh/ai/model-context-protocol#example%3A-connect-to-the-mintlify-mcp-server)。

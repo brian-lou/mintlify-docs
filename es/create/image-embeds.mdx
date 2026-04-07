@@ -1,26 +1,26 @@
 ---
-title: "Imágenes y contenido incrustado"
-description: "Añade imágenes, videos e iframes."
-keywords: ["imágenes", "videos", "iframes", "media", "svg"]
+title: "Imágenes e incrustaciones"
+description: "Agrega imágenes, videos e iframes."
+keywords: ["imágenes", "videos", "iframes", "contenido multimedia", "svg"]
 ---
 
-Añade imágenes, inserta videos e incluye contenido interactivo con iframes en tu documentación.
+Agrega imágenes, incrusta videos e incluye contenido interactivo con iframes en tu documentación.
 
 <Frame>
-  <img className="rounded-xl" src="https://mintlify-assets.b-cdn.net/bigbend.jpg" alt="Fotografía de un paisaje panorámico con flores moradas en primer plano, montañas al fondo y un cielo azul con nubes dispersas." />
+  <img className="rounded-xl" src="https://mintlify-assets.b-cdn.net/bigbend.jpg" alt="Fotografía de un paisaje pintoresco con flores moradas en primer plano, montañas al fondo y un cielo azul con nubes dispersas." />
 </Frame>
 
 <div id="images">
   ## Imágenes
 </div>
 
-Añade imágenes para proporcionar contexto visual, ejemplos o elementos decorativos a tu documentación.
+Agrega imágenes para aportar contexto visual, ejemplos o elementos decorativos a tu documentación.
 
 <div id="basic-image-syntax">
   ### Sintaxis básica de imágenes
 </div>
 
-Usa la [sintaxis de Markdown](https://www.markdownguide.org/basic-syntax/#images) para insertar imágenes en tu documentación:
+Usa la [sintaxis de Markdown](https://www.markdownguide.org/basic-syntax/#images) para agregar imágenes a tu documentación:
 
 ```mdx
 ![Alt text describing the image](/path/to/image.png)
@@ -30,10 +30,10 @@ Usa la [sintaxis de Markdown](https://www.markdownguide.org/basic-syntax/#images
   Incluye siempre un texto alternativo descriptivo para mejorar la accesibilidad y el SEO. El texto alternativo debe describir claramente lo que muestra la imagen.
 </Tip>
 
-Los archivos de imagen deben tener menos de 20 MB. Para archivos más grandes, alójalos en un servicio CDN como [Amazon S3](https://aws.amazon.com/s3) o [Cloudinary](https://cloudinary.com).
+Los archivos de imagen deben pesar menos de 20 MB. Si son más grandes, alójalos en un servicio de CDN como [Amazon S3](https://aws.amazon.com/s3) o [Cloudinary](https://cloudinary.com).
 
 <div id="html-image-embeds">
-  ### Inserciones de imágenes HTML
+  ### Incrustaciones de imágenes con HTML
 </div>
 
 Para tener un mayor control sobre cómo se muestran las imágenes, usa etiquetas HTML `<img>`:
@@ -48,10 +48,10 @@ Para tener un mayor control sobre cómo se muestran las imágenes, usa etiquetas
 ```
 
 <div id="resize-images-with-inline-styles">
-  #### Cambiar el tamaño de las imágenes con estilos en línea
+  #### Redimensiona las imágenes con estilos en línea
 </div>
 
-Usa estilos en línea de JSX con el atributo `style` para cambiar el tamaño de las imágenes:
+Usa estilos en línea de JSX con el atributo `style` para redimensionar las imágenes:
 
 ```jsx
 <img
@@ -62,7 +62,7 @@ Usa estilos en línea de JSX con el atributo `style` para cambiar el tamaño de 
 ```
 
 <div id="disable-image-zoom">
-  #### Desactivar el zoom de imágenes
+  #### Desactivar el zoom en las imágenes
 </div>
 
 Para desactivar el zoom predeterminado al hacer clic en las imágenes, añade la propiedad `noZoom`:
@@ -76,10 +76,10 @@ Para desactivar el zoom predeterminado al hacer clic en las imágenes, añade la
 ```
 
 <div id="link-images">
-  #### Enlazar imágenes
+  #### Imágenes con enlace
 </div>
 
-Para convertir una imagen en un enlace en el que se pueda hacer clic, envuelve la imagen en una etiqueta de enlace y añade la propiedad `noZoom`:
+Para convertir una imagen en un enlace en el que se pueda hacer clic, envuelve la imagen en una etiqueta de anclaje y añade la propiedad `noZoom`:
 
 ```html
 <a href="https://mintlify.com" target="_blank">
@@ -92,14 +92,14 @@ Para convertir una imagen en un enlace en el que se pueda hacer clic, envuelve l
 ```
 
 <Note>
-  Las imágenes dentro de etiquetas de enlace muestran automáticamente un cursor en forma de mano para indicar que se puede hacer clic en ellas.
+  Las imágenes dentro de las etiquetas de anclaje muestran automáticamente un cursor de puntero para indicar que se pueden clicar.
 </Note>
 
 <div id="light-and-dark-mode-images">
-  #### Imágenes en modo claro y oscuro
+  #### Imágenes para modo claro y oscuro
 </div>
 
-Para mostrar imágenes diferentes en los temas claro y oscuro, utiliza clases de Tailwind CSS:
+Para mostrar imágenes distintas en los temas claro y oscuro, usa las clases de Tailwind CSS:
 
 ```html
 <!-- Imagen en modo claro -->
@@ -121,25 +121,25 @@ Para mostrar imágenes diferentes en los temas claro y oscuro, utiliza clases de
   ### Imágenes SVG
 </div>
 
-Los archivos SVG que utilizan elementos `foreignObject` se representan de manera diferente en producción que en el entorno de desarrollo local. La CDN de imágenes de Mintlify elimina `foreignObject` de los SVG como medida de seguridad, lo que puede truncar u ocultar texto y otros contenidos HTML incrustados.
+Los archivos SVG que usan elementos `foreignObject` se muestran de forma distinta en producción que en el entorno de desarrollo local. El CDN de imágenes de Mintlify elimina `foreignObject` de los SVG como medida de seguridad, lo que puede truncar u ocultar texto y otro contenido HTML incrustado.
 
-Esto suele afectar a los SVG exportados desde herramientas como [draw.io](https://www.drawio.com) que tienen activado el formato de texto HTML o el ajuste de línea. Para solucionarlo, desactiva **Formatted Text** y **Word Wrap** en todas las etiquetas de tu diagrama antes de exportarlo como SVG. Consulta la [documentación de draw.io](https://www.drawio.com/doc/faq/svg-export-text-problems) para obtener más información sobre las exportaciones de SVG.
+Esto suele afectar a los SVG exportados desde herramientas como [draw.io](https://www.drawio.com) cuando tienen activados el formato de texto HTML o el ajuste de texto. Para solucionarlo, desactiva **Formatted Text** y **Word Wrap** en todos los rótulos del diagrama antes de exportarlo como SVG. Consulta la [documentación de draw.io](https://www.drawio.com/doc/faq/svg-export-text-problems) para obtener más información sobre la exportación de SVG.
 
 <div id="videos">
   ## Videos
 </div>
 
-Mintlify admite [etiquetas HTML en Markdown](https://www.markdownguide.org/basic-syntax/#html), lo que te brinda flexibilidad para crear contenido enriquecido.
+Mintlify admite [etiquetas HTML en Markdown](https://www.markdownguide.org/basic-syntax/#html), lo que te da la flexibilidad de crear contenido enriquecido.
 
 <Tip>
-  Incluye siempre contenido de texto alternativo dentro de los elementos de video para los navegadores que no admiten la reproducción de video.
+  Incluye siempre texto de respaldo dentro de los elementos de video para los navegadores que no admiten la reproducción de video.
 </Tip>
 
 <div id="youtube-embeds">
-  ### Insertar videos de YouTube
+  ### Videos incrustados de YouTube
 </div>
 
-Inserta videos de YouTube mediante elementos iframe:
+Incrusta videos de YouTube con elementos iframe:
 
 ```html
 <iframe
@@ -152,14 +152,14 @@ Inserta videos de YouTube mediante elementos iframe:
 ```
 
 <Frame>
-  <iframe className="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/4KzFe50RQkQ" title="Reproductor de video de YouTube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+  <iframe className="w-full aspect-video rounded-xl" src="https://www.youtube.com/embed/4KzFe50RQkQ" title="Reproductor de vídeo de YouTube" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
 </Frame>
 
 <div id="self-hosted-videos">
-  ### Videos alojados localmente
+  ### Videos autoalojados
 </div>
 
-Usa el elemento HTML `<video>` para contenido de video alojado localmente:
+Usa el elemento HTML `<video>` para contenido de video autoalojado:
 
 ```html
 <video
@@ -170,10 +170,10 @@ Usa el elemento HTML `<video>` para contenido de video alojado localmente:
 ```
 
 <div id="autoplay-videos">
-  ### Reproducción automática de vídeos
+  ### Reproducción automática de videos
 </div>
 
-Para que un vídeo se reproduzca automáticamente, usa:
+Para reproducir un video automáticamente, usa:
 
 ```html
 <video
@@ -187,14 +187,14 @@ Para que un vídeo se reproduzca automáticamente, usa:
 ```
 
 <Note>
-  Al usar la sintaxis JSX, escribe los atributos formados por dos palabras en camelCase: `autoPlay`, `playsInline`, `allowFullScreen`.
+  Al usar la sintaxis JSX, escribe los atributos compuestos en camelCase: `autoPlay`, `playsInline`, `allowFullScreen`.
 </Note>
 
 <div id="iframes">
   ## iframes
 </div>
 
-Incorpora contenido externo mediante elementos iframe:
+Incrusta contenido externo con elementos iframe:
 
 ```html
 <iframe 

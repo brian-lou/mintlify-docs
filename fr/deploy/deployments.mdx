@@ -1,25 +1,25 @@
 ---
 title: "Déploiements"
-description: "Gérez les déploiements, consultez l’historique et surveillez l’état."
+description: "Gérez les déploiements, consultez l'historique et surveillez l'état."
 keywords: ["déploiement manuel", "historique des déploiements", "déclencheurs de déploiement", "supprimer un déploiement"]
 ---
 
-Votre site de documentation est automatiquement déployé lorsque vous envoyez des modifications vers votre dépôt connecté. Pour cela, l’application GitHub Mintlify doit être correctement installée et connectée.
+Votre site de documentation se déploie automatiquement à chaque push vers votre dépôt connecté. Pour cela, l&#39;application GitHub de Mintlify doit être correctement installée et connectée.
 
-Si vos dernières modifications n’apparaissent pas sur votre site en production, vérifiez d’abord que le compte ou l’organisation GitHub qui possède votre dépôt de documentation a bien l’application GitHub installée. Consultez la page [Dépannage GitHub](/fr/deploy/github#troubleshooting) pour plus d’informations.
+Si vos dernières modifications n&#39;apparaissent pas sur votre site en ligne, vérifiez d&#39;abord que le compte ou l&#39;organisation GitHub qui possède votre dépôt de documentation a bien installé la GitHub App. Consultez [Résolution des problèmes GitHub](/fr/deploy/github#troubleshooting) pour plus d&#39;informations.
 
-Si l’application GitHub est bien installée mais que les modifications ne se déploient toujours pas, déclenchez manuellement un déploiement depuis votre tableau de bord.
+Si la GitHub App est installée, mais que les modifications ne sont toujours pas déployées, déclenchez manuellement un déploiement depuis votre tableau de bord.
 
 <div id="manually-trigger-a-deployment">
   ## Déclencher manuellement un déploiement
 </div>
 
 <Steps>
-  <Step title="Vérifier que votre dernier commit s’est bien déroulé.">
-    Vérifiez que votre dernier commit apparaît dans votre dépôt de documentation et qu’il ne comporte aucune erreur.
+  <Step title="Vérifiez que votre dernier commit a bien été pris en compte.">
+    Vérifiez que votre dernier commit apparaît bien dans votre dépôt de documentation et qu’il n’a généré aucune erreur.
   </Step>
 
-  <Step title="Déclencher manuellement un déploiement.">
+  <Step title="Déclenchez manuellement un déploiement.">
     Accédez à votre [tableau de bord](https://dashboard.mintlify.com) et cliquez sur le bouton de déploiement.
 
     <Frame>
@@ -34,21 +34,21 @@ Si l’application GitHub est bien installée mais que les modifications ne se d
   ## Supprimer un déploiement
 </div>
 
-Vous pouvez supprimer définitivement un déploiement à partir de la [Danger zone](https://dashboard.mintlify.com/settings/organization/danger-zone) dans les paramètres de votre tableau de bord. Cette action est irréversible et supprime toutes les données du déploiement, y compris les déploiements de prévisualisation associés.
+Vous pouvez supprimer définitivement un déploiement depuis la [Danger zone](https://dashboard.mintlify.com/settings/organization/danger-zone) dans les paramètres de votre tableau de bord. Cette action est irréversible et supprime toutes les données du déploiement, y compris les déploiements de prévisualisation associés.
 
 <Steps>
   <Step title="Accédez à la Danger zone.">
-    Accédez à la [Danger zone](https://dashboard.mintlify.com/settings/organization/danger-zone) sur la page des paramètres de votre tableau de bord.
+    Ouvrez la [Danger zone](https://dashboard.mintlify.com/settings/organization/danger-zone) dans la page des paramètres de votre tableau de bord.
   </Step>
 
   <Step title="Supprimez le déploiement.">
-    1. Dans la section **Delete my deployment**, indiquez un motif de suppression.
-    2. Cliquez sur le bouton de suppression et confirmez que vous souhaitez supprimer le déploiement.
+    1. Dans la section **Delete my deployment**, indiquez le motif de la suppression.
+    2. Cliquez sur le bouton de suppression, puis confirmez que vous souhaitez supprimer le déploiement.
   </Step>
 </Steps>
 
 <Warning>
-  La suppression d&#39;un déploiement est définitive et ne peut pas être annulée. Si vous avez un abonnement actif, vous recevrez un avoir calculé au prorata pour le temps non utilisé restant dans votre période de facturation.
+  La suppression d’un déploiement est définitive et ne peut pas être annulée. Si vous avez un abonnement actif, vous recevrez un crédit calculé au prorata pour la durée non utilisée restante dans votre période de facturation.
 </Warning>
 
-Si vous avez plusieurs déploiements, vous serez redirigé vers un autre déploiement après la suppression. Si vous supprimez votre seul déploiement, vous serez redirigé vers la page d&#39;accueil de Mintlify. Lorsque vous supprimez un déploiement, l&#39;administrateur de l&#39;organisation reçoit un e-mail de notification confirmant la suppression.
+Si vous avez plusieurs déploiements, vous serez redirigé vers un autre déploiement après la suppression. Si vous supprimez votre unique déploiement, vous serez redirigé vers la page d’accueil de Mintlify. Lorsque vous supprimez un déploiement, l’administrateur de l’organisation reçoit un e-mail de confirmation de suppression.

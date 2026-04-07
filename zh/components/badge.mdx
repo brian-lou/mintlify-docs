@@ -1,16 +1,16 @@
 ---
 title: "徽章"
-description: "使用徽章以内联或独立的形式突出显示状态、标签或元数据。"
+description: "使用徽章以内联或独立形式突出显示状态、标签或元数据。"
 keywords: ["badge", "label", "tag", "status", "indicator"]
 ---
 
 import IconsOptional from "/snippets/zh/icons-optional.mdx";
 
-使用徽章来显示状态指示器、标签或元数据。徽章既可以以内联方式与文本一起使用，也可以作为独立元素使用。
+使用徽章来显示状态标识、标签或元数据。徽章既可内联在文本中使用，也可作为独立元素使用。
 
 
 <div id="basic-badge">
-  ## 基础徽章
+  ## 基本徽章
 </div>
 
 <Badge>徽章</Badge>
@@ -24,7 +24,7 @@ import IconsOptional from "/snippets/zh/icons-optional.mdx";
   ## 颜色
 </div>
 
-Badge 徽章组件支持多种颜色变体，用于传达不同含义。
+徽章支持多种颜色样式，用于表达不同含义。
 
 <Badge color="gray">徽章</Badge>
 <Badge color="blue">徽章</Badge>
@@ -57,7 +57,7 @@ Badge 徽章组件支持多种颜色变体，用于传达不同含义。
   ## 尺寸
 </div>
 
-徽章有四种尺寸，可与内容层级相匹配。
+徽章提供四种尺寸，以适配你的内容层级。
 
 <Badge size="xs">徽章</Badge>
 <Badge size="sm">徽章</Badge>
@@ -76,7 +76,7 @@ Badge 徽章组件支持多种颜色变体，用于传达不同含义。
   ## 形状
 </div>
 
-可选择圆角或胶囊形徽章。
+可选择圆角或胶囊形的徽章样式。
 
 <Badge shape="rounded">徽章</Badge>
 <Badge shape="pill">徽章</Badge>
@@ -91,7 +91,7 @@ Badge 徽章组件支持多种颜色变体，用于传达不同含义。
   ## 图标
 </div>
 
-向徽章添加图标，以提供更多信息。
+为徽章添加图标，以提供更多上下文信息。
 
 <Badge icon="circle-check" color="green">徽章</Badge>
 <Badge icon="clock" color="orange">徽章</Badge>
@@ -105,10 +105,10 @@ Badge 徽章组件支持多种颜色变体，用于传达不同含义。
 
 
 <div id="stroke-variant">
-  ## 描边样式
+  ## 描边变体
 </div>
 
-当你想要更为低调的视觉效果时，可以使用描边样式。
+使用描边变体可呈现更低调的视觉效果。
 
 <Badge stroke color="blue">徽章</Badge>
 <Badge stroke color="green">徽章</Badge>
@@ -127,7 +127,7 @@ Badge 徽章组件支持多种颜色变体，用于传达不同含义。
   ## 禁用状态
 </div>
 
-将徽章设为禁用状态以表示未激活或不可用。
+将徽章设为禁用状态，以表示其处于未激活或不可用状态。
 
 <Badge disabled icon="lock" color="gray">徽章</Badge>
 <Badge disabled icon="lock" color="blue">徽章</Badge>
@@ -142,10 +142,10 @@ Badge 徽章组件支持多种颜色变体，用于传达不同含义。
   ## 内联用法
 </div>
 
-Badge 可以自然地嵌入到文本内容中。例如，此功能需要 <Badge color="orange" size="sm">Premium</Badge> 订阅，或者该 API 端点返回 <Badge color="green" size="sm">JSON</Badge> 格式。
+徽章可自然融入文本内容中。例如，此功能需要 <Badge color="orange" size="sm">高级版</Badge> 订阅，或者此 API 端点返回 <Badge color="green" size="sm">JSON</Badge> 格式。
 
 ```mdx
-此功能需要 <Badge color="orange" size="sm">Premium</Badge> 订阅。
+This feature requires a <Badge color="orange" size="sm">Premium</Badge> subscription.
 ```
 
 
@@ -153,7 +153,7 @@ Badge 可以自然地嵌入到文本内容中。例如，此功能需要 <Badge 
   ## 组合属性
 </div>
 
-组合使用多个属性来自定义徽章样式。
+组合多个属性，以创建自定义徽章样式。
 
 <Badge icon="star" color="blue" size="lg" shape="pill">高级版</Badge>
 <Badge icon="check" stroke color="green" size="sm">已验证</Badge>
@@ -172,27 +172,27 @@ Badge 可以自然地嵌入到文本内容中。例如，此功能需要 <Badge 
 
 <ResponseField name="color" type="string" default="gray">
   徽章颜色样式。
-  
-  选项：`gray`, `blue`, `green`, `yellow`, `orange`, `red`,
-  `purple`, `white`, `surface`, `white-destructive`, `surface-destructive`。
+
+  可选值：`gray`、`blue`、`green`、`yellow`、`orange`、`red`、
+  `purple`、`white`、`surface`、`white-destructive`、`surface-destructive`。
 </ResponseField>
 
 <ResponseField name="size" type="string" default="md">
   徽章尺寸。
-  
-  选项：`xs`, `sm`, `md`, `lg`。
+
+  可选值：`xs`、`sm`、`md`、`lg`。
 </ResponseField>
 
 <ResponseField name="shape" type="string" default="rounded">
   徽章形状。
-  
-  选项：`rounded`, `pill`。
+
+  可选值：`rounded`、`pill`。
 </ResponseField>
 
 <IconsOptional />
 
 <ResponseField name="stroke" type="boolean" default="false">
-  以描边轮廓形式显示徽章，而非填充背景。
+  以描边样式显示徽章，而不是使用填充背景。
 </ResponseField>
 
 <ResponseField name="disabled" type="boolean" default="false">
@@ -200,5 +200,5 @@ Badge 可以自然地嵌入到文本内容中。例如，此功能需要 <Badge 
 </ResponseField>
 
 <ResponseField name="className" type="string">
-  应用于徽章的附加 CSS 类名。
+  要应用于徽章的附加 CSS 类。
 </ResponseField>

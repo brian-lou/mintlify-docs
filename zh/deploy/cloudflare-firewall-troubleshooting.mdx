@@ -1,108 +1,108 @@
 ---
-title: "Cloudflare 防火墙故障排除"
-description: "解决由 Cloudflare WAF 规则引起的请求被阻止和配置问题。"
+title: "Cloudflare 防火墙故障排查"
+description: "修复由 Cloudflare WAF 规则导致的请求被拦截和配置问题。"
 keywords: ["Cloudflare WAF", "防火墙规则", "Bot Fight Mode", "403 错误"]
 ---
 
-如果你的文档站点在加载几秒后出现 500 错误，或导航变得缓慢，可能是 Cloudflare 的防火墙阻止了对 Mintlify 静态资源的请求。
+如果你的文档站点在加载几秒后出现 500 错误，或导航变慢，Cloudflare 的防火墙可能正在拦截对 Mintlify 资源的请求。
 
 <div id="symptoms">
   ## 症状
 </div>
 
-- 文档页面起初可以加载，但在 30–60 秒后失败并返回 500 错误
-- 页面之间的前端导航缓慢或失效
-- 针对 `/mintlify-assets/*` 路径的请求在浏览器控制台中出现 403 错误
-- Cloudflare 安全质询提示“数据格式错误”或“可疑的 URL 模式”
+* 文档页面最初可以正常加载，但在 30–60 秒后会因 500 错误而崩溃
+* 页面之间的客户端导航缓慢或失效
+* 浏览器控制台中，请求 `/mintlify-assets/*` 路径时出现 403 错误
+* Cloudflare 安全验证消息提到“格式错误的数据”或“可疑的 URL 模式”
 
 <div id="root-cause">
   ## 根本原因
 </div>
 
-Cloudflare 的 Web 应用防火墙（WAF）和 Bot Fight Mode 可能会因以下原因将 Mintlify 资源请求标记为可疑：
+Cloudflare 的 Web Application Firewall (WAF) 和 Bot Fight Mode 之所以可能将 Mintlify 资源请求标记为可疑，原因包括：
 
-- URL 编码参数中包含多个 `%` 符号
-- 查询字符串较长且包含特殊字符
-- 来自空闲标签页的自动请求
+* 编码后的 URL 参数中包含多个 `%` 符号
+* 带有特殊字符的超长查询字符串
+* 来自空闲浏览器标签页的自动请求
 
 <div id="solution">
   ## 解决方案
 </div>
 
-创建一个 Cloudflare 防火墙规则，将 Mintlify 资源排除在安全检查之外。
+创建一条 Cloudflare 防火墙规则，使 Mintlify 资源免受安全检查。
 
 <div id="create-the-firewall-exception">
-  ### 创建防火墙例外规则
+  ### 创建防火墙例外
 </div>
 
-1. 登录你的 [Cloudflare 仪表板](https://dash.cloudflare.com/)
+1. 登录你的 [Cloudflare 控制台](https://dash.cloudflare.com/)
 2. 选择你的域名
-3. 导航到 **Security > WAF**
+3. 前往 **Security &gt; WAF**
 4. 选择 **Create rule**
 5. 按以下设置配置规则：
 
-**Rule name：** Allow Mintlify assets
+**规则名称：** 允许 Mintlify 资源
 
-**When incoming requests match：**
+**当传入请求符合以下条件时：**
 
-- Field：`Hostname`
-- Operator：`equals`
-- Value：`docs.yourdomain.com`（替换为你实际的文档域名）
+* 字段：`Hostname`
+* 运算符：`equals`
+* 值：`docs.yourdomain.com` (替换为你的实际文档域名) 
 
-**And：**
+**并且：**
 
-- Field：`URI Path`
-- Operator：`starts with`
-- Value：`/mintlify-assets/`
+* 字段：`URI Path`
+* 运算符：`starts with`
+* 值：`/mintlify-assets/`
 
-**Then：**
+**然后：**
 
-- Action：`Skip`
-- Select：`All remaining custom rules`、`Managed rules` 和 `Super Bot Fight Mode`
+* 操作：`Skip`
+* 选择：`All remaining custom rules`、`Managed rules` 和 `Super Bot Fight Mode`
 
-6. 启用 **Log** 以跟踪匹配的请求
+6. 启用 **Log** 以跟踪匹配到的请求
 7. 选择 **Deploy**
 
 <div id="verify-the-rule">
   ### 验证规则
 </div>
 
-部署完成后：
+部署后：
 
 1. 在浏览器中打开你的文档站点
-2. 让页面保持空闲 2-3 分钟
-3. 在页面之间来回切换
-4. 检查浏览器控制台中是否出现任何 403 错误
+2. 让页面保持静置 2–3 分钟
+3. 在不同页面之间切换
+4. 检查浏览器控制台中是否有 403 错误
 
-如果问题仍然存在，请核实你的规则配置：
+如果问题仍然存在，请检查规则配置：
 
-- 确保主机名与文档站点的域名完全匹配
-- 确认 URI 路径使用 `starts with`（而不是 `contains`）
-- 不要在路径值中包含通配符（`*`）
-- 确认规则已启用并已部署
+* 确保主机名与你的文档域名完全一致
+* 确认 URI 路径使用的是 `starts with` (而不是 `contains`) 
+* 不要在路径值中使用通配符 (`*`) 
+* 确认规则已启用并已部署
 
 <div id="common-mistakes">
   ## 常见错误
 </div>
 
-- 将 `contains` 运算符用于 `/mintlify-assets/*` - 其中的 `*` 会被视为普通字符，而不是通配符
-- 对 URI Path 使用 `equals` - 这只会匹配精确路径 `/mintlify-assets/`，而不会匹配其子路径
-- 忘记跳过 Bot Fight Mode - 必须在跳过操作中显式将其包含在内
-- 主机名错误 - 必须与你实际的文档站点域名完全一致
+* 对 `/mintlify-assets/*` 使用 `contains` 运算符 - `*` 会被视为普通字符，而不是通配符
+* 对 URI Path 使用 `equals` - 这只会匹配精确路径 `/mintlify-assets/`，不会匹配其子路径
+* 忘记跳过 Bot Fight Mode - 必须在跳过操作中明确包含此项
+* 主机名错误 - 必须与你实际使用的文档域名一致
 
 <div id="additional-troubleshooting">
-  ## 其他故障排查
+  ## 进一步排查
 </div>
 
-如果防火墙例外规则仍未解决问题：
+如果防火墙例外仍未解决问题：
 
-1. 在 Cloudflare 的 **Security > Events** 日志中检查被拦截的请求
-2. 确认你的 Cloudflare Worker（如果使用自定义子路径）正确转发了 `Host` 请求头
-3. 暂时将 Security Level 设置为 "Essentially Off"，以确认问题是否确实由 Cloudflare 引起
-4. 检查是否有自定义 Page Rules 覆盖了该防火墙例外规则
+1. 检查 Cloudflare 的 **Security &gt; Events** 日志，查看是否有请求被拦截
+2. 验证你的 Cloudflare Worker (如果使用自定义子路径) 是否正确转发 `Host` 标头
+3. 临时将 Security Level 设置为“Essentially Off”，以确认问题是否由 Cloudflare 导致
+4. 检查是否存在可能覆盖防火墙例外的自定义 Page Rules
 
 <div id="example-working-configuration">
-  ## 工作配置示例
+  ## 可用配置示例
 </div>
 
 ```

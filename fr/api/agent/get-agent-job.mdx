@@ -1,20 +1,20 @@
 ---
 openapi: /fr/admin-openapi.json GET /agent/{projectId}/job/{id}
-keywords: [ "tâche d'agent", "statut", "récupération", "détails" ]
+keywords: [ "tâche d’agent", "statut", "récupérer", "détails" ]
 ---
 
 <div id="usage">
   ## Utilisation
 </div>
 
-Ce point de terminaison permet de récupérer les détails et l’état d’une tâche d’agent spécifique à partir de son identifiant unique. Utilisez-le pour vérifier l’avancement, l’état et les résultats d’une tâche d’agent créée précédemment.
+Ce point de terminaison récupère les détails et le statut d’une tâche d’agent spécifique à partir de son identifiant unique. Utilisez-le pour consulter l’avancement, le statut et les résultats d’une tâche d’agent créée précédemment.
 
 <div id="job-details">
   ## Détails de la tâche
 </div>
 
-La réponse contient des informations telles que :
+La réponse inclut notamment les informations suivantes :
 
-- Statut d'exécution de la tâche et état de finalisation
-- Informations sur la branche et détails de la pull request
-- Métadonnées de session et horodatages
+* Le statut d’exécution de la tâche et son état d’avancement
+* Les informations sur la branche et les détails de la pull request
+* Les métadonnées de session et les horodatages

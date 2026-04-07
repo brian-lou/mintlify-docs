@@ -1,18 +1,18 @@
 ---
 title: "Créer manuellement des pages d’API"
-description: "Documentez manuellement les endpoints d’API avec des fichiers MDX."
-keywords: ["API documentation", "endpoint documentation"]
+description: "Documentez manuellement des points de terminaison d’API dans des fichiers MDX."
+keywords: ["documentation API", "documentation des points de terminaison"]
 ---
 
-Vous pouvez définir manuellement des endpoints d’API dans des pages MDX distinctes. Cette approche est utile pour les petites API ou pour le prototypage.
+Vous pouvez définir manuellement des points de terminaison d’API sur des pages MDX distinctes. Cette approche est utile pour les petites API ou pour le prototypage.
 
 <div id="setup">
   ## Configuration
 </div>
 
 <Steps>
-  <Step title="Configurez vos paramètres d’API">
-    Dans votre fichier `docs.json`, définissez l’URL de base et la méthode d’authentification.
+  <Step title="Configurez les paramètres de votre API">
+    Dans votre fichier `docs.json`, définissez votre URL de base et votre méthode d’authentification.
 
     ```json Example docs.json
     "api": {
@@ -26,7 +26,7 @@ Vous pouvez définir manuellement des endpoints d’API dans des pages MDX disti
     }
     ```
 
-    Si vous souhaitez masquer l&#39;espace de test de l&#39;API, définissez le champ `display` sur `none`. Il n&#39;est pas nécessaire d&#39;inclure de méthode d&#39;authentification si vous masquez l&#39;espace de test.
+    Si vous souhaitez masquer le Bac à sable API, définissez le champ `display` sur `none`. Vous n&#39;avez pas besoin d&#39;inclure de méthode d&#39;authentification si vous masquez le bac à sable.
 
     ```json
     "api": {
@@ -36,11 +36,11 @@ Vous pouvez définir manuellement des endpoints d’API dans des pages MDX disti
     }
     ```
 
-    Consultez la liste complète des configurations d’API dans [Settings](/fr/organize/settings#api-configurations).
+    Retrouvez la liste complète des configurations de l’API dans [Settings](/fr/organize/settings#api-configurations).
   </Step>
 
-  <Step title="Créez les pages de vos points de terminaison">
-    Créez un fichier MDX pour chaque endpoint. Renseignez les champs `title` et `api` dans le frontmatter :
+  <Step title="Créez les pages de vos endpoints">
+    Créez un fichier MDX pour chaque point de terminaison. Définissez `title` et `api` dans le Frontmatter :
 
     ```mdx
     ---
@@ -49,18 +49,18 @@ Vous pouvez définir manuellement des endpoints d’API dans des pages MDX disti
     ---
     ```
 
-    Le champ frontmatter `api` accepte soit une URL complète, soit un chemin relatif :
+    Le champ `api` du Frontmatter accepte soit une URL complète, soit un chemin relatif :
 
     * **URL complète** comme `POST https://api.acme.com/v1/users`. Le champ `server` dans `docs.json` est ignoré pour cet endpoint.
-    * **Chemin relatif** comme `POST /v1/users`. Nécessite un champ `server` dans `docs.json`. L’URL du serveur est ajoutée devant le chemin.
+    * **Chemin relatif** comme `POST /v1/users`. Nécessite un champ `server` dans `docs.json`. L’URL du serveur est ajoutée au chemin.
 
-    Spécifiez les paramètres de chemin en les encadrant de `{}` :
+    Spécifiez les paramètres de chemin en les entourant de `{}` :
 
     ```bash
     https://api.example.com/v1/endpoint/{userId}
     ```
 
-    Pour remplacer le mode d’affichage global du playground pour une page donnée, ajoutez `playground` au frontmatter :
+    Pour remplacer le mode d’affichage global du `playground` sur une page spécifique, ajoutez `playground` au frontmatter :
 
     ```mdx
     ---
@@ -72,35 +72,35 @@ Vous pouvez définir manuellement des endpoints d’API dans des pages MDX disti
 
     Options :
 
-    * `playground: 'interactive'` - Afficher le playground interactif (par défaut)
-    * `playground: 'simple'` - Afficher un endpoint à copier, sans playground
-    * `playground: 'none'` - Masquer complètement le playground
+    * `playground: 'interactive'` - Affiche le playground interactif (par défaut)
+    * `playground: 'simple'` - Affiche un endpoint copiable, sans playground
+    * `playground: 'none'` - Masque entièrement le playground
   </Step>
 
   <Step title="Ajouter des paramètres et des réponses">
-    Utilisez les [champs de paramètres et de réponse](/fr/components/fields) pour documenter les paramètres et les valeurs renvoyées par votre endpoint.
+    Utilisez les [champs de paramètres et de réponse](/fr/components/fields) pour documenter les paramètres de votre point de terminaison et les valeurs qu’il renvoie.
 
     ```mdx
     <ParamField path="userId" type="string" required>
-      Identifiant unique de l’utilisateur
+      Unique identifier for the user
     </ParamField>
 
     <ParamField body="email" type="string" required>
-      Adresse e-mail de l’utilisateur
+      User's email address
     </ParamField>
 
     <ResponseField name="id" type="string" required>
-      Identifiant unique de l’utilisateur nouvellement créé
+      Unique identifier for the newly created user
     </ResponseField>
 
     <ResponseField name="email" type="string" required>
-      Adresse e-mail de l’utilisateur
+      User's email address
     </ResponseField>
     ```
   </Step>
 
   <Step title="Ajoutez vos endpoints à votre documentation">
-    Ajoutez les pages de vos points de terminaison à la navigation en mettant à jour le champ `pages` dans votre `docs.json` :
+    Ajoutez les pages de vos endpoints à la navigation en mettant à jour le champ `pages` de votre `docs.json` :
 
     ```json docs.json
     "navigation": {
@@ -129,11 +129,11 @@ Vous pouvez définir manuellement des endpoints d’API dans des pages MDX disti
     }
     ```
 
-    Chaque chemin de page correspond à un fichier MDX dans votre dépôt de documentation. Par exemple, `api-reference/users/create-user.mdx`. Pour en savoir plus sur la structuration de votre documentation, consultez [Navigation](/fr/organize/navigation).
+    Chaque chemin de page correspond à un fichier MDX dans votre dépôt de documentation. Par exemple, `api-reference/users/create-user.mdx`. Pour en savoir plus sur l&#39;organisation de votre documentation, consultez [Navigation](/fr/organize/navigation).
 
-    ### Utilisation des endpoints OpenAPI dans la navigation
+    ### Utiliser des endpoints OpenAPI dans la navigation
 
-    Si vous avez une spécification OpenAPI, vous pouvez référencer des endpoints directement dans votre navigation, sans créer de fichiers MDX individuels. Pour référencer des endpoints spécifiques, incluez le chemin du fichier OpenAPI ainsi que l’endpoint :
+    Si vous disposez d&#39;une spécification OpenAPI, vous pouvez faire référence directement à des endpoints dans votre navigation sans créer de fichiers MDX individuels. Pour faire référence à des endpoints spécifiques, incluez le chemin du fichier OpenAPI et l&#39;endpoint :
 
     ```json docs.json
     "navigation": {
@@ -145,7 +145,7 @@ Vous pouvez définir manuellement des endpoints d’API dans des pages MDX disti
     }
     ```
 
-    Vous pouvez également définir une spécification OpenAPI par défaut pour un groupe de navigation, puis référencer les endpoints par méthode et chemin :
+    Vous pouvez également définir une spécification OpenAPI par défaut pour un groupe de navigation et référencer les endpoints par méthode et chemin :
 
     ```json docs.json
     {
@@ -168,7 +168,7 @@ Vous pouvez définir manuellement des endpoints d’API dans des pages MDX disti
     }
     ```
 
-    Pour plus de détails sur l&#39;intégration d&#39;OpenAPI, consultez [Configuration d&#39;OpenAPI](/fr/api-playground/openapi-setup).
+    Pour en savoir plus sur l’intégration d’OpenAPI, consultez [la configuration d’OpenAPI](/fr/api-playground/openapi-setup).
   </Step>
 </Steps>
 
@@ -176,10 +176,10 @@ Vous pouvez définir manuellement des endpoints d’API dans des pages MDX disti
   ## Activer l’authentification
 </div>
 
-Vous pouvez configurer l’authentification globalement dans `docs.json` ou la remplacer pour des pages spécifiques à l’aide du champ `authMethod` dans le frontmatter. Une méthode définie pour une page précise a priorité sur le paramètre global.
+Vous pouvez définir l’authentification globalement dans `docs.json` ou la redéfinir sur des pages individuelles à l’aide du champ `authMethod` dans le Frontmatter. Une méthode définie pour une page spécifique remplace le paramètre global.
 
 <div id="bearer-token">
-  ### Jeton d’accès Bearer
+  ### Jeton d’authentification Bearer
 </div>
 
 <CodeGroup>
@@ -202,7 +202,7 @@ Vous pouvez configurer l’authentification globalement dans `docs.json` ou la r
 </CodeGroup>
 
 <div id="basic-authentication">
-  ### Authentification de base
+  ### Authentification basique
 </div>
 
 <CodeGroup>
@@ -252,7 +252,7 @@ Vous pouvez configurer l’authentification globalement dans `docs.json` ou la r
   ### Aucun
 </div>
 
-Pour désactiver l’authentification pour une page donnée, définissez `authMethod` sur `none` :
+Pour désactiver l’authentification sur une page spécifique, définissez `authMethod` sur `none` :
 
 ```mdx Page Metadata
 ---

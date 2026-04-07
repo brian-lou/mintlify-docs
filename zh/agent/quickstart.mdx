@@ -1,46 +1,47 @@
 ---
-title: "快速入门"
-description: "在控制台中使用 agent 来创建文档更新。"
-keywords: ["agent setup"]
+title: "快速开始"
+description: "开始在控制台中使用代理创建文档更新。"
+keywords: ["代理设置"]
 ---
 
 <div id="open-the-agent-panel">
-  ## 打开 Agent 面板
+  ## 打开代理面板
 </div>
 
-在桌面端，Agent 面板可以调整大小。在移动设备上，Agent 会以全屏方式打开。
+在桌面端，代理面板可调整大小。在移动设备上，代理会以全屏模式打开。
 
-要打开 Agent 面板：
+要打开代理面板：
 
-- 在仪表板中的任意页面，使用快捷键 <kbd>⌘</kbd>+<kbd>I</kbd>（macOS）或 <kbd>Ctrl</kbd>+<kbd>I</kbd>（Windows/Linux）。
-- 在 [Overview](https://dashboard.mintlify.com/) 页面，点击 **Ask agent**。
+* 在控制台的任意页面上，使用键盘快捷键 <kbd>⌘</kbd>+<kbd>I</kbd> (macOS) 或 <kbd>Ctrl</kbd>+<kbd>I</kbd> (Windows/Linux) 。
+* 在 [Overview](https://dashboard.mintlify.com/) 页面上，点击 **Ask agent**。
 
 <div id="agent-panel-views">
-  ### Agent 面板视图
+  ### 代理面板视图
 </div>
 
 <Frame>
-  <img src="/images/agent/views-light.png" alt="Agent 面板中的视图：新建对话、建议、历史记录和设置。" className="block dark:hidden" />
-  <img src="/images/agent/views-dark.png" alt="Agent 面板中的视图：新建对话、建议、历史记录和设置。" className="hidden dark:block" />
+  <img src="/images/agent/views-light.png" alt="代理面板中的视图：新聊天、建议、历史记录和设置。" className="block dark:hidden" />
+
+  <img src="/images/agent/views-dark.png" alt="代理面板中的视图：新聊天、建议、历史记录和设置。" className="hidden dark:block" />
 </Frame>
 
-- **Chat**：点击加号图标 <Icon icon="plus" /> 开始新的对话。在 Chat 视图中，向 agent 发送提示，让它更新文档或回答与你的文档相关的问题。Agent 会根据你的指令创建 pull request，并显示链接，方便你查看这些 pull request，或在 Web 编辑器中打开更改。
-- **Suggestions**：如果已启用，Suggestions 面板会根据 pull request 中的更改以及用户与助手的对话，提供对文档的更新建议。
-- **History**：点击历史记录图标 <Icon icon="clock" />，浏览过去的对话，并继续处理之前的请求。点击任意对话即可在 Chat 视图中加载它。
-- **Settings**：点击设置图标 <Icon icon="settings" />，配置 agent 的集成和代码仓库访问权限。
+* **聊天**：点击加号图标 <Icon icon="plus" />，开始新聊天。在聊天视图中，向代理发送提示词，以更新文档或询问与文档相关的问题。代理会根据你的指示创建拉取请求，并显示可用于查看拉取请求或在网页编辑器中打开更改的链接。
+* **建议**：如果已启用，建议面板会根据拉取请求中的更改以及用户与助手的对话，显示建议的文档更新。
+* **历史记录**：点击历史记录图标 <Icon icon="clock" />，浏览之前的对话，并继续处理先前的请求。点击任意对话即可在聊天视图中将其加载出来。
+* **设置**：点击设置图标 <Icon icon="settings" />，配置代理的集成和仓库访问权限。
 
 <Tip>
-  为每个任务单独与 agent 开启一段新的对话。这样可以让 agent 的上下文更加聚焦，并帮助你将对话与特定项目关联起来。
+  每项任务都与代理开启一段新对话。这样可以让代理的上下文更聚焦，也有助于你将对话与特定项目对应起来。
 </Tip>
 
 <div id="connect-your-github-account">
   ## 连接你的 GitHub 账户
 </div>
 
-默认情况下，代理会以 Mintlify 机器人的身份创建 pull request。若要将 pull request 归属到你的账号名下，请在仪表盘的 [My profile](https://dashboard.mintlify.com/settings/account) 页面连接你的 GitHub 账户。
+默认情况下，代理会以 Mintlify bot 的名义发起拉取请求。若要将拉取请求关联到你的账户，请在控制台的 [My profile](https://dashboard.mintlify.com/settings/account) 页面连接你的 GitHub 账户。
 
 <div id="connect-repositories-as-context">
-  ## 将代码仓库连接为上下文
+  ## 连接仓库作为上下文
 </div>
 
-代理只能访问你通过 Mintlify GitHub App 连接的代码仓库。你可以在代理面板的 **Settings** 或 [GitHub App settings](https://github.com/apps/mintlify/installations/new) 中配置代理可访问的代码仓库。
+代理只能访问你通过 Mintlify GitHub App 连接的仓库。你可以在代理面板的 **设置** 中，或在 [GitHub App settings](https://github.com/apps/mintlify/installations/new) 中配置代理可访问的仓库。

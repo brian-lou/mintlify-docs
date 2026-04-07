@@ -1,16 +1,16 @@
 ---
-title: "选项卡"
-description: "使用选项卡组织内容，以展示不同的选项或版本。"
-keywords: ["选项卡内容", "内容面板", "可切换内容"]
+title: "标签页"
+description: "使用标签页整理内容，以展示不同的选项或版本。"
+keywords: ["标签页内容", "内容面板", "可切换内容"]
 ---
 
-使用选项卡将内容组织为多个可切换的面板。你可以添加任意数量的选项卡，并在每个选项卡中放入其他组件。
+使用标签页将内容组织成多个面板，用户可以在这些面板之间切换。你可以添加任意数量的标签页，并在每个标签页中包含其他组件。
 
 <Tabs>
-  <Tab title="第一个选项卡">
-    ☝️ 欢迎来到只能在第一个选项卡中看到的内容。
+  <Tab title="第一个标签页">
+    ☝️ 欢迎查看仅在第一个标签页中显示的内容。
 
-    你可以在选项卡中添加任意数量的组件。比如，一个代码块：
+    你可以在标签页中添加任意数量的组件。例如，一个代码块：
 
     ```java HelloWorld.java
       class HelloWorld {
@@ -21,14 +21,14 @@ keywords: ["选项卡内容", "内容面板", "可切换内容"]
     ```
   </Tab>
 
-  <Tab title="第二个选项卡" icon="leaf">
-    ✌️ 这里是仅在第二个选项卡中显示的内容。
+  <Tab title="第二个标签页" icon="leaf">
+    ✌️ 这里是仅在第二个标签页中显示的内容。
 
-    这个选项卡还有一个 <Icon icon="leaf" /> 图标！
+    这个标签页带有一个 <Icon icon="leaf" /> 图标！
   </Tab>
 
-  <Tab title="第三个选项卡">
-    💪 这里是仅在第三个选项卡中显示的内容。
+  <Tab title="第三个标签页">
+    💪 这里是仅在第三个标签页中显示的内容。
   </Tab>
 </Tabs>
 
@@ -57,9 +57,9 @@ keywords: ["选项卡内容", "内容面板", "可切换内容"]
 </Tabs>
 ````
 
-具有相同标题的 Tabs 会在整个页面中保持同步。例如，如果你有多个选项卡组都包含一个 `JavaScript` 选项卡标题，在其中一个选项卡组中选择 `JavaScript` 时，其他选项卡组中的 `JavaScript` 也会自动被选中。这样，用户只需选择一次语言或框架，就能在各处看到这一选择得到体现。Tabs 也会与具有相同标题的[代码组](/zh/components/code-groups)同步。
+标题相同的标签页会在整个页面内保持同步。例如，如果你有多个标签页组都包含 `JavaScript` 标签页，那么在其中一个标签页组中选择 `JavaScript` 时，其他标签页组中的 `JavaScript` 也会自动选中。这有助于用户在选择一次语言或框架后，在所有相关位置都看到该选择。标签页还会与标题相同的 [代码组](/zh/components/code-groups) 同步。
 
-若要禁用选项卡同步，请在 `<Tabs>` 组件上添加 `sync={false}`。
+如需禁用标签页同步，请在 `<Tabs>` 组件中添加 `sync={false}`。
 
 ```mdx Disable tab sync example
 <Tabs sync={false}>
@@ -77,21 +77,21 @@ keywords: ["选项卡内容", "内容面板", "可切换内容"]
 </div>
 
 <ResponseField name="title" type="string" required>
-  选项卡的标题。较短的标题更便于导航。具有相同标题的选项卡会同步其选中内容。
+  标签页的标题。标题越短，越便于浏览和切换。标题相同的标签页会同步选中状态。
 </ResponseField>
 
 <ResponseField name="icon" type="string">
-  一个 [Font Awesome](https://fontawesome.com/icons) 图标、[Lucide](https://lucide.dev/icons) 图标、图标的 URL，或图标的相对路径。
+  [Font Awesome](https://fontawesome.com/icons) 图标、[Lucide](https://lucide.dev/icons) 图标、图标 URL，或图标的相对路径。
 </ResponseField>
 
 <ResponseField name="iconType" type="string">
-  仅适用于 Font Awesome 图标：`regular`、`solid`、`light`、`thin`、`sharp-solid`、`duotone`、`brands` 之一。
+  仅适用于 Font Awesome 图标：可选值为 `regular`、`solid`、`light`、`thin`、`sharp-solid`、`duotone`、`brands`。
 </ResponseField>
 
 <ResponseField name="sync" type="boolean" default="true">
-  当为 `true` 时，选项卡会与页面上其他具有相同标题的选项卡和代码组同步。将其设为 `false` 可使选项卡相互独立。
+  当为 `true` 时，标签页会与页面上其他标题相同的标签页和代码组同步。设为 `false` 可使各个标签页彼此独立。
 </ResponseField>
 
 <ResponseField name="borderBottom" type="boolean">
-  为选项卡容器添加底部边框和内边距。用于在视觉上将选项卡内容与页面的其余部分分隔开，尤其是当选项卡中包含长短不一的内容时。
+  为标签页容器添加底部边框和内边距。适合在视觉上将标签页内容与页面其余部分区分开来，尤其是在标签页包含不同长度的内容时。
 </ResponseField>

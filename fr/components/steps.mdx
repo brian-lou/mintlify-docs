@@ -1,44 +1,44 @@
 ---
-title: "Étapes"
-description: "Créez des procédures numérotées, étape par étape."
-keywords: ["séquences", "étapes numérotées", "procédures", "étapes de tutoriel"]
+title: "Steps"
+description: "Créez des procédures étape par étape numérotées."
+keywords: ["séquence", "étapes numérotées", "procédures", "étapes d'un tutoriel"]
 ---
 
 import IconsOptional from "/snippets/fr/icons-optional.mdx";
 
-Utilisez les étapes pour afficher une série d’actions ou d’événements successifs. Vous pouvez ajouter autant d’étapes que nécessaire.
+Utilisez Steps pour afficher une série d’actions ou d’événements successifs. Vous pouvez ajouter autant d’étapes que nécessaire.
 
 <Steps>
   <Step title="Première étape">
-    Instructions ou contenu concernant uniquement la première étape.
+    Il s’agit d’instructions ou de contenu qui concernent uniquement la première étape.
   </Step>
 
   <Step title="Deuxième étape">
-    Instructions ou contenu concernant uniquement la deuxième étape.
+    Il s’agit d’instructions ou de contenu qui concernent uniquement la deuxième étape.
   </Step>
 
   <Step title="Troisième étape">
-    Instructions ou contenu concernant uniquement la troisième étape.
+    Il s’agit d’instructions ou de contenu qui concernent uniquement la troisième étape.
   </Step>
 </Steps>
 
 ```mdx Steps example
 <Steps>
   <Step title="Première étape">
-    Voici les instructions ou le contenu qui ne concernent que la première étape.
+    Voici les instructions ou le contenu relatifs uniquement à la première étape.
   </Step>
   <Step title="Deuxième étape">
-    Voici les instructions ou le contenu qui ne concernent que la deuxième étape.
+    Voici les instructions ou le contenu relatifs uniquement à la deuxième étape.
   </Step>
   <Step title="Troisième étape">
-    Voici les instructions ou le contenu qui ne concernent que la troisième étape.
+    Voici les instructions ou le contenu relatifs uniquement à la troisième étape.
   </Step>
 </Steps>
 ```
 
 
 <div id="steps-properties">
-  ## Propriétés des étapes
+  ## Propriétés du composant Steps
 </div>
 
 <ResponseField name="children" type="ReactElement<StepProps>[]" required>
@@ -46,27 +46,27 @@ Utilisez les étapes pour afficher une série d’actions ou d’événements su
 </ResponseField>
 
 <ResponseField name="titleSize" type="string" default="p">
-  La taille des titres des étapes. Doit être l’une des valeurs suivantes&nbsp;: `p`, `h2` ou `h3`.
+  La taille des titres des étapes. Valeurs possibles : `p`, `h2` et `h3`.
 </ResponseField>
 
 <div id="individual-step-properties">
-  ## Propriétés individuelles d'une étape
+  ## Propriétés de chaque étape
 </div>
 
 <ResponseField name="children" type="string | ReactNode" required>
-  Le contenu d'une étape, soit sous forme de texte brut, soit sous forme de composants.
+  Le contenu d’une étape, sous forme de texte brut ou de composants.
 </ResponseField>
 
 <IconsOptional />
 
 <ResponseField name="title" type="string">
-  Le titre est le texte principal de l'étape et apparaît à côté de l'indicateur.
+  Le titre est le texte principal de l’étape et s’affiche à côté de l’indicateur.
 </ResponseField>
 
 <ResponseField name="stepNumber" type="number">
-  Le numéro de l'étape.
+  Le numéro de l’étape.
 </ResponseField>
 
 <ResponseField name="titleSize" type="string" default="p">
-  La taille du titre de l'étape. L'une des valeurs `p`, `h2` ou `h3`.
+  La taille des titres des étapes. Valeurs possibles : `p`, `h2` et `h3`.
 </ResponseField>

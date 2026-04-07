@@ -1,5 +1,5 @@
 ---
-title: "AsyncAPI 设置"
+title: "AsyncAPI 配置"
 description: "使用 AsyncAPI 规范创建 WebSocket 文档。"
 keywords: ["asyncapi", "websocket"]
 ---
@@ -8,16 +8,16 @@ keywords: ["asyncapi", "websocket"]
   ## 示例
 </div>
 
-请参阅 [WebSocket Playground](/zh/api-playground/websocket-playground)，查看 AsyncAPI Playground 的示例。
+参见 [WebSocket API 操作台](/zh/api-playground/websocket-playground)，查看 AsyncAPI API 操作台示例。
 
 <div id="add-an-asyncapi-specification-file">
   ## 添加 AsyncAPI 规范文件
 </div>
 
-要为你的 WebSocket 创建页面，必须有一个有效的 AsyncAPI 规范文档，使用 JSON 或 YAML 格式，并遵循 [AsyncAPI 3.0 规范](https://www.asyncapi.com/docs/reference/specification/v3.0.0)。
+要为你的 WebSocket 创建页面，你必须提供一份有效的 AsyncAPI 模式文档，格式为 JSON 或 YAML，并且符合 [AsyncAPI 3.0 规范](https://www.asyncapi.com/docs/reference/specification/v3.0.0)。
 
 <Tip>
-  使用 [AsyncAPI Studio](https://studio.asyncapi.com/) 来验证你的 AsyncAPI 规范。
+  使用 [AsyncAPI Studio](https://studio.asyncapi.com/) 验证你的 AsyncAPI 模式。
 </Tip>
 
 ```json {3}
@@ -27,13 +27,13 @@ keywords: ["asyncapi", "websocket"]
 ```
 
 <div id="auto-populate-websockets-pages">
-  ## 自动生成 websockets 页面
+  ## 自动填充 WebSocket 页面
 </div>
 
-要为 AsyncAPI 规范中的所有 channel 自动生成页面，请在任意导航项中添加一个 `asyncapi` 属性。`asyncapi` 属性可以接受文档仓库中 AsyncAPI 规范文档的路径、托管的 AsyncAPI 文档的 URL，或指向多个 AsyncAPI 规范文档的链接数组。
+要为 AsyncAPI 模式中的所有通道自动生成页面，请在任一导航元素中添加 `asyncapi` 属性。`asyncapi` 属性可以接受以下内容：文档仓库中 AsyncAPI 模式文档的路径、托管的 AsyncAPI 文档 URL，或指向 AsyncAPI 模式文档的链接数组。
 
 <div id="examples-with-tabs">
-  ### 使用选项卡的示例
+  ### 标签页示例
 </div>
 
 <CodeGroup>
@@ -76,11 +76,11 @@ keywords: ["asyncapi", "websocket"]
 </CodeGroup>
 
 <Note>
-  当你指定多个 AsyncAPI 文件时，每个文件都会生成自己的一组通道页面。
+  当你指定多个 AsyncAPI 文件时，每个文件都会生成各自的一组通道页面。
 </Note>
 
 <div id="examples-with-groups">
-  ### 包含分组的示例
+  ### 分组示例
 </div>
 
 ```json
@@ -103,14 +103,14 @@ keywords: ["asyncapi", "websocket"]
 ```
 
 <Note>
-  `directory` 字段为可选项。如果未指定，文件将被放在文档仓库的 **api-reference** 文件夹中。
+  `directory` 字段为可选项。若未指定，文件将放在文档仓库的 **api-reference** 文件夹中。
 </Note>
 
 <div id="channel-page">
-  ## Channel 页面
+  ## 通道页面
 </div>
 
-如果你想更灵活地控制频道的排序方式，或者只想引用特定频道，请创建一个在 frontmatter 中带有 `asyncapi` 属性的 MDX 文件。
+如果你想更灵活地控制通道的排序，或者只引用特定通道，请创建一个在前置元数据中包含 `asyncapi` 属性的 MDX 文件。
 
 ```mdx
 ---

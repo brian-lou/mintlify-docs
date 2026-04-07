@@ -1,20 +1,20 @@
 ---
-title: "Tutorial: Actualizar automáticamente la documentación cuando cambie el código"
-sidebarTitle: "Automatizar las actualizaciones de la documentación"
-description: "Usa la API de agentes para actualizar automáticamente tu documentación."
-keywords: ["automatización con agentes", "n8n", "GitHub Actions", "actualización automática de la documentación"]
+title: "Tutorial: Actualiza automáticamente la documentación cuando cambia el código"
+sidebarTitle: "Automatiza las actualizaciones de la documentación"
+description: "Usa la API del agente para actualizar automáticamente tu documentación."
+keywords: ["automatización de agentes", "n8n", "GitHub Actions", "actualizaciones automáticas de documentación"]
 ---
 
 <div id="what-you-will-build">
-  ## Qué vas a construir
+  ## Lo que vas a crear
 </div>
 
-Una automatización que actualiza tu documentación cuando se hace push de código a tu rama principal. El flujo de trabajo se puede crear en varias plataformas, incluidas GitHub Actions y n8n. Supervisa tu repositorio de código y luego llama a la API del agente para actualizar tu documentación en un repositorio de documentación separado.
+Una automatización que actualiza tu documentación cuando haces push de código a tu rama principal. Puedes crear este flujo de trabajo en varias plataformas, incluidas GitHub Actions y n8n. Supervisa tu repositorio de código y luego llama a la API del agente para actualizar tu documentación en un repositorio de documentación independiente.
 
 Este flujo de trabajo conecta dos repositorios independientes:
 
-* **Repositorio de código**: Donde almacenas el código de la aplicación. Configurarás el disparador de la automatización en este repositorio. Algunos ejemplos incluyen una API de backend, una aplicación de frontend, un SDK o una herramienta de CLI.
-* **Repositorio de documentación**: Donde almacenas tu documentación y la conectas a tu proyecto de Mintlify. El agente crea pull requests con actualizaciones de documentación en este repositorio.
+* **Repositorio de código**: Donde almacenas el código de la aplicación. Configurarás el desencadenante de la automatización en este repositorio. Algunos ejemplos son una API de backend, una aplicación frontend, un SDK o una herramienta de CLI.
+* **Repositorio de documentación**: Donde almacenas tu documentación y la conectas a tu proyecto de Mintlify. El agente crea pull requests con actualizaciones de la documentación en este repositorio.
 
 Este tutorial asume que tu documentación está en un repositorio separado del código de tu aplicación. Si tienes un monorepo, modifica el flujo de trabajo para que apunte al directorio donde almacenas tu documentación.
 
@@ -22,10 +22,10 @@ Este tutorial asume que tu documentación está en un repositorio separado del c
   ### Descripción general del flujo de trabajo
 </div>
 
-1. Alguien envía código a tu rama principal.
+1. Alguien hace push de código a tu rama principal.
 2. Se activa el flujo de trabajo.
-3. El flujo de trabajo invoca la API del agente para actualizar tu documentación.
-4. El agente crea una solicitud de incorporación de cambios (pull request) con actualizaciones de la documentación en tu repositorio de documentación.
+3. El flujo de trabajo llama a la API del agente para actualizar tu documentación.
+4. El agente abre una pull request con actualizaciones de la documentación en tu repositorio de documentación.
 
 <div id="choose-your-platform">
   ## Elige tu plataforma
@@ -33,50 +33,50 @@ Este tutorial asume que tu documentación está en un repositorio separado del c
 
 <Tabs>
   <Tab title="GitHub Actions">
-    GitHub Actions es la opción más sencilla si tu código ya está en GitHub. No se necesitan servicios adicionales.
+    GitHub Actions es la opción más sencilla si tu código ya está en GitHub. No necesitas ningún servicio adicional.
 
     ## Requisitos previos
 
     * GitHub Actions activado en tus repositorios de código y documentación
-    * [Aplicación de GitHub de Mintlify](/es/deploy/github) instalada en tus repositorios de código y documentación
-    * [Clave de la API de administrador de Mintlify](https://dashboard.mintlify.com/settings/organization/api-keys)
+    * [Mintlify GitHub App](/es/deploy/github) instalada tanto en tu repositorio de código como en el de documentación
+    * [clave de API de administración de Mintlify](https://dashboard.mintlify.com/settings/organization/api-keys)
     * [ID del proyecto de Mintlify](https://dashboard.mintlify.com/settings/organization/api-keys)
-    * [Plan empresarial de Mintlify](https://mintlify.com/pricing)
-    * Acceso de administrador a tus repositorios de GitHub de código y documentación
+    * [plan Enterprise de Mintlify](https://mintlify.com/pricing)
+    * Acceso de administrador a los repositorios de GitHub de tu código y tu documentación
 
     ### Instala la aplicación de Mintlify en tu repositorio de código
 
-    La aplicación de Mintlify debe estar instalada en tu repositorio de código para que el agente pueda obtener contexto de tu base de código. Para añadir la aplicación a nuevos repositorios:
+    La aplicación de Mintlify debe estar instalada en tu repositorio de código para que el agente pueda obtener contexto de tu base de código. Para agregar la aplicación a nuevos repositorios:
 
-    1. Abre el panel del agente en tu panel de control de Mintlify.
+    1. Abre el panel del agente en el panel de control de Mintlify.
 
        <Frame>
          <img src="/images/agent/dashboard-light.png" alt="El panel del agente en modo claro." className="block dark:hidden" />
 
          <img src="/images/agent/dashboard-dark.png" alt="El panel del agente en modo oscuro." className="hidden dark:block" />
        </Frame>
-    2. Haz clic en el botón **Settings**.
+    2. Haz clic en el botón **Configuración**.
 
        <Frame>
-         <img src="/images/agent/dashboard-settings-light.png" alt="El botón de ajustes en modo claro." className="block dark:hidden" />
+         <img src="/images/agent/dashboard-settings-light.png" alt="El botón de configuración en modo claro." className="block dark:hidden" />
 
-         <img src="/images/agent/dashboard-settings-dark.png" alt="El botón de ajustes en modo oscuro." className="hidden dark:block" />
+         <img src="/images/agent/dashboard-settings-dark.png" alt="El botón de configuración en modo oscuro." className="hidden dark:block" />
        </Frame>
-    3. Haz clic en **Add to New Organization**. Irás a la página de instalación de la aplicación en GitHub.
-    4. Selecciona en la lista los repositorios a los que quieres otorgar acceso.
+    3. Haz clic en **Add to New Organization**. Se te redirigirá a la página de instalación de la aplicación en GitHub.
+    4. Selecciona de la lista los repositorios a los que quieres conceder acceso.
     5. Guarda los cambios.
 
     ### Obtén tu clave de API de administrador
 
-    1. Ve a la página de [claves de API](https://dashboard.mintlify.com/settings/organization/api-keys) en tu panel de control.
-    2. Haz clic en **Create Admin API Key**.
-    3. Copia la clave y consérvala en un lugar seguro.
+    1. Ve a la página de [claves de API](https://dashboard.mintlify.com/settings/organization/api-keys) de tu panel.
+    2. Selecciona **Crear clave de API de administrador**.
+    3. Copia la clave y guárdala en un lugar seguro.
 
     ## Crea el flujo de trabajo
 
-    ### Crear el archivo de flujo de trabajo
+    ### Crea el archivo de flujo de trabajo
 
-    1. En tu repositorio de código, crea un nuevo archivo: `.github/workflows/update-docs.yml`
+    1. En tu repositorio de código, crea un archivo nuevo: `.github/workflows/update-docs.yml`
     2. Añade este flujo de trabajo:
 
        ```yaml
@@ -164,87 +164,87 @@ Este tutorial asume que tu documentación está en un repositorio separado del c
 
     ### Agregar secretos
 
-    1. En tu repositorio de código, ve a **Settings** → **Secrets and variables** → **Actions**.
+    1. En tu repositorio de código, ve a **Configuración** → **Secrets and variables** → **Actions**.
     2. Haz clic en **New repository secret**.
     3. Añade los siguientes secretos:
        * Nombre: `MINTLIFY_API_KEY`, Secreto: Tu clave de API de administrador de Mintlify
-       * Nombre: `MINTLIFY_PROJECT_ID`, Secreto: Tu ID del proyecto de Mintlify (se encuentra en la página de [API keys](https://dashboard.mintlify.com/settings/organization/api-keys) de tu panel de control)
+       * Nombre: `MINTLIFY_PROJECT_ID`, Secreto: Tu ID de proyecto de Mintlify (se encuentra en la página de [API keys](https://dashboard.mintlify.com/settings/organization/api-keys) de tu panel de control)
 
-    Para más información, consulta [Uso de secretos en GitHub Actions](https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets) en la documentación de GitHub.
+    Para más información, consulta [Using secrets in GitHub Actions](https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets) en la documentación de GitHub.
 
     ## Prueba la automatización
 
-    1. Realiza un pequeño cambio en tu repositorio de código y haz push a la rama main:
+    1. Haz un pequeño cambio en tu repositorio y súbelo a `main`:
        ```bash
        git add .
        git commit -m "Test: trigger docs automation"
        git push origin main
        ```
 
-    2. Comprueba la pestaña **Actions** de tu repositorio de código para ver la ejecución del flujo de trabajo.
+    2. Consulta la pestaña **Actions** de tu repositorio de código para ver la ejecución del flujo de trabajo.
 
-    3. Después de que se ejecute el flujo de trabajo, revisa tu repositorio de documentación para ver si hay una nueva rama y una pull request con actualizaciones de la documentación.
+    3. Después de que se ejecute el flujo de trabajo, revisa tu repositorio de documentación para ver si hay una nueva rama y una pull request con actualizaciones en la documentación.
 
     ## Solución de problemas
 
     ### El flujo de trabajo no se ejecuta
 
-    * Comprueba que GitHub Actions esté habilitado en tu repositorio de código.
-    * Consulta la pestaña **Actions** para ver los mensajes de error.
-    * Asegúrate de que el archivo de flujo de trabajo esté en `.github/workflows/` y tenga extensión `.yml`.
+    * Verifica que GitHub Actions esté habilitado en tu repositorio.
+    * Revisa la pestaña **Actions** para ver los mensajes de error.
+    * Asegúrate de que el archivo del flujo de trabajo esté en `.github/workflows/` y tenga la extensión `.yml`.
 
     ### Error 401 de la API del agente
 
-    * Asegúrate de que tu clave de API empiece con `mint_`.
-    * Verifica que el encabezado Authorization tenga el formato `Bearer mint_yourkey`.
-    * Confirma que la clave de API pertenece a la organización correcta de Mintlify.
+    * Verifica que tu clave de API empiece por `mint_`.
+    * Comprueba que el encabezado Authorization tenga el formato `Bearer mint_yourkey`.
+    * Comprueba que la clave de API corresponda a la organización correcta de Mintlify.
 
-    ### No aparecen actualizaciones de documentación
+    ### Las actualizaciones de la documentación no aparecen
 
-    * Comprueba que el repositorio de documentación esté conectado a tu proyecto de Mintlify.
+    * Comprueba que el repositorio de documentación esté conectado a tu proyecto en Mintlify.
     * Comprueba que el agente tenga acceso de escritura al repositorio de documentación.
-    * Consulta los registros del flujo de trabajo para ver si hay mensajes de error del agente.
+    * Revisa los registros del flujo de trabajo para detectar mensajes de error del agente.
   </Tab>
 
   <Tab title="n8n">
-    n8n proporciona un editor visual de flujos de trabajo y puede integrarse con múltiples servicios.
+    n8n ofrece un editor visual de flujos de trabajo y puede integrarse con múltiples servicios.
 
     ## Requisitos previos
 
     * espacio de trabajo de n8n
     * [Plan Enterprise de Mintlify](https://mintlify.com/pricing)
-    * Aplicación Mintlify instalada en tu repositorio de código
-    * Clave de la API de administración de Mintlify
-    * Acceso de administrador a los repositorios de GitHub que contienen tu código y documentación
-    * Token de acceso personal de GitHub
+    * Aplicación de Mintlify instalada en tu repositorio
+    * Clave de API de administración de Mintlify
+    * Acceso de administrador a los repositorios de GitHub de tu código y de tu documentación
+    * token de acceso personal de GitHub
 
     ### Instala la aplicación de Mintlify en tu repositorio de código
 
-    La aplicación de Mintlify debe estar instalada en tu repositorio de código para que el agente pueda obtener contexto de tu base de código. Para añadir la aplicación a nuevos repositorios:
+    La aplicación de Mintlify debe estar instalada en tu repositorio de código para que el agente pueda obtener contexto de tu base de código. Para agregar la aplicación a nuevos repositorios:
 
-    1. Abre el panel del agente en tu panel de Mintlify.
-
-       <Frame>
-         <img src="/images/agent/dashboard-light.png" alt="El panel del agente en modo claro." className="block dark:hidden" />
-
-         <img src="/images/agent/dashboard-dark.png" alt="El panel del agente en modo oscuro." className="hidden dark:block" />
-       </Frame>
-    2. Haz clic en el botón **Settings**.
+    1. Abre el panel del agente en el panel de control de Mintlify.
 
        <Frame>
-         <img src="/images/agent/dashboard-settings-light.png" alt="El botón de configuración en modo claro." className="block dark:hidden" />
+         <img src="/images/agent/dashboard-light.png" alt="Panel del agente en modo claro." className="block dark:hidden" />
 
-         <img src="/images/agent/dashboard-settings-dark.png" alt="El botón de configuración en modo oscuro." className="hidden dark:block" />
+         <img src="/images/agent/dashboard-dark.png" alt="Panel del agente en modo oscuro." className="hidden dark:block" />
        </Frame>
-    3. Haz clic en **Add to New Organization**. Irás a la página de instalación de la aplicación en GitHub.
-    4. Selecciona en la lista los repositorios a los que quieres conceder acceso.
+    2. Haz clic en el botón **Configuración**.
+
+       <Frame>
+         <img src="/images/agent/dashboard-settings-light.png" alt="El botón de ajustes en modo claro." className="block dark:hidden" />
+
+         <img src="/images/agent/dashboard-settings-dark.png" alt="El botón de ajustes en modo oscuro." className="hidden dark:block" />
+       </Frame>
+    3. Haz clic en **Add to New Organization**. Se abrirá la página de instalación de la aplicación en GitHub.
+    4. Selecciona en la lista los repositorios a los que quieres dar acceso.
     5. Guarda los cambios.
 
     ### Obtén tu clave de API de administrador
 
     1. Ve a la página de [API keys](https://dashboard.mintlify.com/settings/organization/api-keys) en tu panel de control.
-    2. Selecciona la opción **Create Admin API Key**.
-    3. Copia la clave y consérvala en un lugar seguro.
+    2. Selecciona **Create Admin API Key**.
+    3. Copia la clave y guárdala en un lugar seguro.
 
     ### Obtén tu token de acceso personal de GitHub
 
@@ -253,26 +253,26 @@ Este tutorial asume que tu documentación está en un repositorio separado del c
     3. Haz clic en **Personal access tokens**.
     4. Haz clic en **Tokens (classic)**.
     5. Haz clic en **Generate new token (classic)**.
-    6. Selecciona estos ámbitos:
+    6. Selecciona los siguientes permisos:
        * `repo` (control total sobre los repositorios privados)
-       * `admin:repo_hook` (si deseas que n8n cree webhooks)
+       * `admin:repo_hook` (si quieres que n8n cree webhooks)
     7. Genera y guarda el token de forma segura.
 
-    Para obtener más información, consulta [Crear un token de acceso personal (clásico)](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens?versionId=free-pro-team%40latest\&productId=account-and-profile#creating-a-personal-access-token-classic) en la documentación de GitHub.
+    Para más información, consulta [Crear un token de acceso personal (clásico)](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens?versionId=free-pro-team%40latest\&productId=account-and-profile#creating-a-personal-access-token-classic) en la documentación de GitHub.
 
     ## Crea el flujo de trabajo
 
-    ### Crear el disparador de webhook
+    ### Crea el disparador de webhook
 
-    1. Crea un nuevo flujo de trabajo en n8n.
-    2. Agrega un nodo de webhook.
+    1. En n8n, crea un flujo de trabajo nuevo.
+    2. Añade un nodo de webhook.
     3. Configura el webhook:
        * Método HTTP: `POST`
        * Ruta: `auto-update-documentation` (o cualquier ruta única)
-       * Autenticación: ninguna
-       * Respuesta: inmediata
+       * Autenticación: Ninguna
+       * Responder: De inmediato
     4. Guarda el flujo de trabajo.
-    5. Copia la URL del webhook de producción. Tiene el siguiente formato: `https://your-n8n-instance.app.n8n.cloud/webhook/auto-update-documentation`
+    5. Copia la URL del webhook de producción. Se verá así: `https://your-n8n-instance.app.n8n.cloud/webhook/auto-update-documentation`
 
     <Frame>
       <img
@@ -287,12 +287,12 @@ height: '700px',
 
     ### Configura el webhook de GitHub
 
-    1. Ve a tu repositorio de código en GitHub.
+    1. Accede a tu repositorio de código en GitHub.
     2. Haz clic en **Configuración**.
     3. Haz clic en **Webhooks**.
     4. Haz clic en **Add webhook**.
     5. Configura el webhook:
-       * URL de carga: pega la URL de tu webhook de n8n
+       * URL del payload: pega la URL de tu webhook de n8n
        * Tipo de contenido: `application/json`
        * ¿Qué eventos quieres que activen este webhook?
          * Selecciona **Let me select individual events.**
@@ -305,24 +305,24 @@ height: '700px',
     Añade un nodo de código después del webhook para filtrar los pushes a main y extraer la información relevante.
 
     1. Añade un nodo de código.
-    2. Asígnale el nombre &quot;Filter main pushes.&quot;
-    3. Establece el modo en **Run Once for All Items**.
-    4. Añade este código JavaScript:
+    2. Llámalo &quot;Filtrar los pushes a main.&quot;
+    3. Establece el modo en **Ejecutar una vez para todos los elementos**.
+    4. Añade este JavaScript:
 
     ```javascript
     const webhookData = $input.first().json.body;
 
-    // Only continue if this is a push to main
+    // Solo continuar si es un push a main
     if (webhookData.ref !== "refs/heads/main") {
       return [];
     }
 
-    // Extract information
+    // Extraer información
     const repository = webhookData.repository;
     const pusher = webhookData.pusher;
 
-    // Build message for agent
-    const agentMessage = `Update documentation for changes pushed to main in ${repository.name}. Always edit files and create a pull request.`;
+    // Construir mensaje para el agente
+    const agentMessage = `Actualiza la documentación para los cambios enviados a main en ${repository.name}. Siempre edita los archivos y crea un pull request.`;
 
     return {
       json: {
@@ -334,29 +334,29 @@ height: '700px',
     ```
 
     <Frame>
-      <img src="/images/guides/n8n/filter-merged-PRs-node.png" alt="Captura de pantalla de la configuración del nodo «Filter main pushes»." />
+      <img src="/images/guides/n8n/filter-merged-PRs-node.png" alt="Captura de pantalla de la configuración del nodo para filtrar los pushes principales." />
     </Frame>
 
     Este código detiene el flujo de trabajo si el push no fue a main, extrae toda la información relevante del webhook de GitHub y crea un mensaje para la API del agente.
 
     ### Llama a la API del agente
 
-    Agrega un nodo de solicitud HTTP para crear un trabajo de documentación.
+    Añade un nodo de solicitud HTTP para crear un trabajo de documentación.
 
     1. Añade un nodo de solicitud HTTP.
-    2. Asígnale el nombre &quot;Create agent job.&quot;
+    2. Ponle el nombre &quot;Create agent job&quot;.
     3. Configura la solicitud:
 
        * Método: `POST`
        * URL: `https://api.mintlify.com/v1/agent/YOUR_PROJECT_ID/job` (reemplaza `YOUR_PROJECT_ID` por tu ID de proyecto de la página de [API keys](https://dashboard.mintlify.com/settings/organization/api-keys))
        * Autenticación: Generic Credential Type → Header Auth
-         * Crea una nueva credencial:
+         * Crea una credencial nueva:
            * Nombre: `Authorization`
-           * Valor: `Bearer mint_YOUR_API_KEY` (reemplaza con tu clave de API)
-       * Enviar body: Activado
-       * Tipo de contenido del body: JSON
-       * Especificar body: Using JSON
-       * Agrega este JSON:
+           * Valor: `Bearer mint_YOUR_API_KEY` (sustitúyelo por tu clave de API)
+       * Enviar cuerpo: Activado
+       * Tipo de contenido del cuerpo: JSON
+       * Especificar cuerpo: Con JSON
+       * Añade este JSON:
 
        ```json
        {
@@ -382,59 +382,59 @@ height: '700px',
       />
     </Frame>
 
-    El agente crea una solicitud de extracción en tu repositorio de documentación usando un nombre de rama descriptivo que incluye el nombre del repositorio de origen y la marca de tiempo.
+    El agente crea una solicitud de extracción en tu repositorio de documentación con un nombre de rama descriptivo que incluye el nombre del repositorio de origen y la marca de tiempo.
 
-    ### Activar el flujo de trabajo
+    ### Activa el flujo de trabajo
 
-    1. Guarda el flujo de trabajo.
+    1. Guarda tu flujo de trabajo.
     2. Actívalo.
 
-    Tu flujo de trabajo ahora está monitorizando tu repositorio de código para detectar cambios enviados a main.
+    Tu flujo de trabajo ahora está monitoreando tu repositorio de código para detectar cambios enviados a main.
 
     <Frame>
-      <img src="/images/guides/n8n/workflow.png" alt="Captura de pantalla del flujo de trabajo de automatización en el editor de n8n." />
+      <img src="/images/guides/n8n/workflow.png" alt="Captura de pantalla del flujo de automatización en el editor de n8n." />
     </Frame>
 
     ## Prueba la automatización
 
-    1. Crea una rama de prueba en tu repositorio de código:
+    1. Crea una rama de prueba en tu repositorio de código fuente:
        ```bash
        git checkout -b test-docs-automation
        ```
 
-    2. Realiza un pequeño cambio y crea un commit:
+    2. Haz un pequeño cambio y crea un commit:
        ```bash
        git add .
        git commit -m "Test: trigger docs automation"
        git push origin test-docs-automation
        ```
 
-    3. Abre una pull request en GitHub.
+    3. Abre un pull request en GitHub.
 
-    4. Fusiona la solicitud de extracción.
+    4. Fusiona el pull request.
 
     ### Verificar la automatización
 
-    Deberías ver una nueva ejecución de n8n con todos los nodos completados correctamente, y una nueva rama y pull request en tu repositorio de documentación.
+    Deberías ver una nueva ejecución de n8n con todos los nodos completados correctamente, junto con una nueva rama y un pull request en tu repositorio de documentación.
 
     ## Solución de problemas
 
     ### El webhook no se activa
 
-    * Asegúrate de que el flujo de trabajo esté activo en n8n.
-    * Consulta la sección Settings → Webhooks → Recent Deliveries del repositorio de GitHub para ver el código de respuesta.
-    * Asegúrate de que la URL del webhook coincida exactamente con la URL del webhook de n8n.
+    * Verifica que el flujo de trabajo esté activo en n8n.
+    * Consulta la configuración del repositorio de GitHub: Settings → Webhooks → Recent Deliveries para ver el código de respuesta.
+    * Confirma que la URL del webhook coincida exactamente con la de tu webhook de n8n.
 
     ### Error 401 de la API del agente
 
-    * Asegúrate de que tu clave de API empiece por `mint_`.
-    * Comprueba que el encabezado Authorization esté en el formato `Bearer mint_yourkey`.
-    * Asegúrate de que la clave de API sea de la organización de Mintlify correcta.
+    * Comprueba que tu clave de API empiece por `mint_`.
+    * Verifica que el encabezado `Authorization` tenga el formato `Bearer mint_yourkey`.
+    * Confirma que la clave de API corresponda a la organización correcta de Mintlify.
 
     ### Error 401 de GitHub
 
-    * Asegúrate de que tu token tenga el permiso `repo`.
+    * Verifica que tu token tenga el permiso `repo`.
     * Comprueba que el token no haya caducado.
-    * Asegúrate de haber incluido el encabezado `User-Agent` en la solicitud a GitHub.
+    * Confirma que hayas incluido el encabezado `User-Agent` en la solicitud a GitHub.
   </Tab>
 </Tabs>

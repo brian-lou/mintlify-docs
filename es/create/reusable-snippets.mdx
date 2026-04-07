@@ -1,73 +1,73 @@
 ---
-title: "Fragmentos reutilizables"
-description: "Crea fragmentos reutilizables para mantener la coherencia en todas las páginas."
-keywords: ["fragmentos de contenido", "contenido reutilizable", "variables"]
+title: "Snippets reutilizables"
+description: "Crea snippets reutilizables para mantener la coherencia entre páginas."
+keywords: ["snippets de contenido", "contenido reutilizable", "variables"]
 ---
 
-Uno de los principios fundamentales del desarrollo de software es DRY (Don&#39;t Repeat Yourself), que también se aplica a la documentación. Si te encuentras repitiendo el mismo contenido en varios lugares, crea un fragmento personalizado para ese contenido. Los fragmentos incluyen contenido que puedes importar en otros archivos para reutilizarlo. Tú controlas dónde aparece el fragmento en una página. Si alguna vez necesitas actualizar el contenido, solo tendrás que editar el fragmento en lugar de cada archivo donde se use.
+Uno de los principios fundamentales del desarrollo de software es DRY (No te repitas), y también se aplica a la documentación. Si ves que repites el mismo contenido en varios lugares, crea un snippet personalizado para ese contenido. Los snippets contienen contenido que puedes importar en otros archivos para reutilizarlo. Tú decides dónde aparece el snippet en una página. Si alguna vez necesitas actualizar ese contenido, solo tienes que editar el snippet en lugar de hacerlo en cada archivo donde se usa.
 
 <div id="how-snippets-work">
   ## Cómo funcionan los snippets
 </div>
 
-Los snippets son archivos `.mdx`, `.md` o `.jsx` que se importan en otro archivo. Puedes colocar los archivos de snippets en cualquier parte de tu proyecto.
+Los snippets son archivos `.mdx`, `.md` o `.jsx` que se importan en otro archivo. Puedes colocar los archivos de snippet en cualquier parte de tu proyecto.
 
-Cuando importas un snippet en otro archivo, este solo aparece en el lugar donde lo importas y no se renderiza como una página independiente. Cualquier archivo dentro de la carpeta `/snippets/` siempre es un snippet, incluso si no se importa desde otro archivo.
+Cuando importas un snippet en otro archivo, solo aparece donde lo importas y no se muestra como una página independiente. Cualquier archivo de la carpeta `/snippets/` siempre es un snippet, aunque no se importe en otro archivo.
 
 <div id="create-snippets">
-  ## Crear fragmentos
+  ## Crear snippets
 </div>
 
-Crea un archivo con el contenido que desees reutilizar. Los fragmentos pueden contener todos los tipos de contenido que admite Mintlify y pueden importar otros fragmentos.
+Crea un archivo con el contenido que quieras reutilizar. Los snippets pueden incluir todos los tipos de contenido compatibles con Mintlify y pueden importar otros snippets.
 
 <div id="import-snippets-into-pages">
-  ## Importar fragmentos en páginas
+  ## Importa Snippets en páginas
 </div>
 
-Importa fragmentos en las páginas usando una ruta absoluta o relativa.
+Importa Snippets en páginas con una ruta absoluta o relativa.
 
-* **Importaciones absolutas**: Empiezan con `/` para importar desde la raíz de tu proyecto.
-* **Importaciones relativas**: Usa `./` o `../` para importar fragmentos en relación con la ubicación del archivo actual.
+* **Importaciones absolutas**: Comienzan con `/` para importar desde la raíz de tu proyecto.
+* **Importaciones relativas**: Usa `./` o `../` para importar Snippets en relación con la ubicación del archivo actual.
 
 <Tip>
-  Las importaciones relativas permiten la navegación en tu IDE. Pulsa <kbd>CMD</kbd> y haz clic en un nombre de fragmento en tu editor para ir directamente a la definición del fragmento.
+  Las importaciones relativas permiten la navegación del IDE. Presiona <kbd>CMD</kbd> y haz clic en el nombre de un Snippet en tu editor para ir directamente a la definición del Snippet.
 </Tip>
 
 <div id="import-text">
   ### Importar texto
 </div>
 
-1. Añade contenido al archivo de fragmento (snippet) que quieras reutilizar.
+1. Agrega al archivo del snippet el contenido que quieras reutilizar.
 
    ```mdx shared/my-snippet.mdx wrap
    ¡Hola, mundo! Este es el contenido que quiero reutilizar en varias páginas.
    ```
 
-2. Importa el fragmento (snippet) en tu archivo de destino usando una ruta absoluta o relativa.
+2. Importa el snippet en el archivo de destino con una ruta absoluta o relativa.
 
    <CodeGroup>
-     ```mdx Absolute import
+     ```mdx Importación absoluta
      ---
      title: "Una página de ejemplo"
-     description: "Esta es una página de ejemplo que importa un fragmento (snippet)."
+     description: "Esta es una página de ejemplo que importa un snippet."
      ---
 
      import MySnippet from "/shared/my-snippet.mdx";
 
-     El contenido del fragmento se muestra debajo de esta frase.
+     El contenido del snippet se muestra debajo de esta frase.
 
      <MySnippet />
      ```
 
-     ```mdx Relative import
+     ```mdx Importación relativa
      ---
      title: "Una página de ejemplo"
-     description: "Esta es una página de ejemplo que importa un fragmento (snippet)."
+     description: "Esta es una página de ejemplo que importa un snippet."
      ---
 
      import MySnippet from "../shared/my-snippet.mdx";
 
-     El contenido del fragmento se muestra debajo de esta frase.
+     El contenido del snippet se muestra debajo de esta frase.
 
      <MySnippet />
      ```
@@ -77,7 +77,7 @@ Importa fragmentos en las páginas usando una ruta absoluta o relativa.
   ### Importar variables
 </div>
 
-Haz referencia a variables definidas en un snippet dentro de una página.
+Haz referencia a variables de un snippet en una página.
 
 1. Exporta variables desde un archivo de snippet.
 
@@ -89,7 +89,7 @@ Haz referencia a variables definidas en un snippet dentro de una página.
    ;
    ```
 
-2. Importa el snippet desde tu archivo de destino y usa la variable.
+2. Importa el snippet en tu archivo de destino y usa la variable.
 
    ```mdx destination-file.mdx
    ---
@@ -103,18 +103,18 @@ Haz referencia a variables definidas en un snippet dentro de una página.
    ```
 
 <div id="import-snippets-with-variables">
-  ### Importar fragmentos con variables
+  ### Importa snippets con variables
 </div>
 
-Usa variables para pasar datos a un fragmento al importarlo.
+Usa variables para pasar datos a un snippet al importarlo.
 
-1. Agrega variables a tu fragmento y pasa propiedades al importarlo. En este ejemplo, la variable es `{word}`.
+1. Agrega variables a tu snippet y pasa propiedades al importarlo. En este ejemplo, la variable es `{word}`.
 
    ```mdx shared/my-snippet.mdx
    My keyword of the day is {word}.
    ```
 
-2. Importa el fragmento en tu archivo de destino con la variable. La propiedad que pases reemplaza la variable en la definición del fragmento.
+2. Importa el snippet en tu archivo de destino con la variable. La propiedad que pases reemplaza la variable en la definición del snippet.
 
    ```mdx destination-file.mdx
    ---
@@ -131,7 +131,7 @@ Usa variables para pasar datos a un fragmento al importarlo.
   ### Importar componentes de React
 </div>
 
-1. Crea un snippet con un componente JSX. Consulta [Componentes de React](/es/customize/react-components) para obtener más información.
+1. Crea un snippet con un componente JSX. Consulta [componentes de React](/es/customize/react-components) para más información.
 
    ```js components/my-jsx-snippet.jsx
    export const MyJSXSnippet = () => {
@@ -144,7 +144,7 @@ Usa variables para pasar datos a un fragmento al importarlo.
    ```
 
 <Note>
-  Al crear snippets de JSX, utiliza la sintaxis de función flecha (`=>`) en lugar de declaraciones de función. La palabra clave `function` no es compatible en los snippets.
+  Al crear snippets de JSX, usa la sintaxis de función flecha (`=>`) en lugar de declaraciones de función. La palabra clave `function` no se admite en los snippets.
 </Note>
 
 2. Importa el snippet.

@@ -1,39 +1,39 @@
 ---
-title: "在 Vercel 中使用外部代理"
-description: "为你的 Vercel 部署配置前置外部代理。"
-keywords: ["Vercel", "external proxy", "CloudFront", "domain verification", "SSL certificates"]
+title: "Vercel 的外部代理"
+description: "为 Vercel 部署配置前置外部代理。"
+keywords: ["Vercel", "外部代理", "CloudFront", "域名验证", "SSL 证书"]
 ---
 
-如果你在 Vercel 部署前面使用了 Cloudflare 或 AWS CloudFront 等外部代理，必须对其进行正确配置，以避免与 Vercel 的域名验证和 SSL 证书签发产生冲突。
+如果你在 Vercel 部署前面使用了 Cloudflare 或 AWS CloudFront 之类的外部代理，则必须正确配置它，以避免与 Vercel 的域名验证和 SSL 证书签发发生冲突。
 
-错误的代理配置可能会阻止 Vercel 签发 Let's Encrypt SSL 证书，并导致域名验证失败。
+代理配置不当可能会导致 Vercel 无法签发 Let&#39;s Encrypt SSL 证书，并造成域名验证失败。
 
 请参阅 Vercel 文档中的[受支持的提供商](https://vercel.com/guides/how-to-setup-verified-proxy#supported-providers-verified-proxy-lite)。
 
 <div id="required-path-allowlist">
-  ## 必需路径白名单
+  ## 必须放行的路径
 </div>
 
-你的外部代理必须允许到这些特定路径的流量直接通过，不得拦截、重定向或进行强缓存：
+你的外部代理必须允许流量访问以下特定路径，且不得拦截、重定向或进行强缓存：
 
-- `/.well-known/acme-challenge/*` - Let's Encrypt 证书验证所必需
-- `/.well-known/vercel/*` - Vercel 域名验证所必需
-- `/mintlify-assets/_next/static/*` - 静态资源所必需
+* `/.well-known/acme-challenge/*` - Let&#39;s Encrypt 证书验证所必需
+* `/.well-known/vercel/*` - Vercel 域名验证所必需
+* `/mintlify-assets/_next/static/*` - 静态资源所必需
 
-这些路径应当原样直接透传到你的 Vercel 部署。
+这些路径应直接透传到你的 Vercel 部署，不做任何修改。
 
 <div id="header-forwarding-requirements">
   ## 请求头转发要求
 </div>
 
-请确保你的代理服务器正确转发 `HOST` 请求头。否则，验证请求将会失败。
+确保你的代理能够正确转发 `HOST` 请求头。否则，验证请求将会失败。
 
 <div id="testing-your-proxy-setup">
   ## 测试你的代理设置
 </div>
 
-要验证你的代理是否配置正确：
+要验证代理是否已正确配置：
 
-1. 测试 `https://[yourdomain].com/.well-known/vercel/` 是否有返回响应。
-2. 确认 SSL 证书在你的 Vercel 仪表盘中正确签发。
+1. 测试 `https://[yourdomain].com/.well-known/vercel/` 是否有响应返回。
+2. 确保 SSL 证书能在 Vercel 控制台中正确签发。
 3. 检查域名验证是否已成功完成。

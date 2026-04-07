@@ -1,12 +1,12 @@
 ---
-tag: "Dernier"
+tag: "Dernière version"
 openapi: /fr/discovery-openapi.json POST /v2/assistant/{domain}/message
 keywords:
   [
-    "assistant message",
-    "embed",
+    "message de l’assistant",
+    "intégration",
     "chat",
-    "integrate",
+    "intégrer",
     "v2",
     "ai sdk v5",
     "ai sdk v6"
@@ -14,19 +14,18 @@ keywords:
 ---
 
 <Info>
-  L’endpoint assistant message v2 est compatible avec **AI SDK v5+**. Si vous
-  utilisez AI SDK v4, utilisez plutôt l’[endpoint assistant message
-  v1](/fr/api-reference/assistant/create-assistant-message).
+  Le point de terminaison assistant message v2 est compatible avec **AI SDK v5+**. Si vous
+  utilisez AI SDK v4, utilisez plutôt le [point de terminaison assistant message v1](/fr/api-reference/assistant/create-assistant-message).
 </Info>
 
 <div id="integration-with-usechat">
   ## Intégration avec `useChat`
 </div>
 
-Le hook `useChat` du SDK d’IA de Vercel est la méthode recommandée pour intégrer l’API Assistant dans votre application.
+Le hook `useChat` du AI SDK de Vercel est la méthode recommandée pour intégrer l’API de l’assistant à votre application.
 
 <Steps>
-  <Step title="Installer le SDK d’IA">
+  <Step title="Installer le SDK AI">
     ```bash
     npm i ai@^6 @ai-sdk/react
     ```
@@ -82,7 +81,7 @@ Le hook `useChat` du SDK d’IA de Vercel est la méthode recommandée pour int�
             }}
           >
             <input value={input} onChange={(e) => setInput(e.target.value)} />
-            <button type="submit">Envoyer</button>
+            <button type="submit">Send</button>
           </form>
         </div>
       );
@@ -95,24 +94,24 @@ Le hook `useChat` du SDK d’IA de Vercel est la méthode recommandée pour int�
     * `body.fp` - Identifiant d’empreinte (utilisez `'anonymous'` ou un identifiant utilisateur unique).
     * `body.retrievalPageSize` - Nombre de résultats de recherche à utiliser (recommandé : 5).
 
-    **Configuration optionnelle :**
+    **Configuration facultative :**
 
-    * `body.context` - Tableau d’informations contextuelles à fournir à l’assistant. Chaque objet de contexte contient :
-      * `type` - Soit `'code'` soit `'textSelection'`.
-      * `value` - L’extrait de code ou le texte sélectionné.
-      * `path` (facultatif) - Chemin vers le fichier ou la page source.
-      * `elementId` (facultatif) - Identifiant de l’élément d’interface utilisateur contenant le contexte.
+    * `body.context` - Tableau d’informations contextuelles à transmettre à l’assistant. Chaque objet de contexte contient :
+      * `type` - Soit `'code'`, soit `'textSelection'`.
+      * `value` - L’extrait de code ou le contenu du texte sélectionné.
+      * `path` (facultatif) - Chemin vers le fichier source ou la page.
+      * `elementId` (facultatif) - Identifiant de l’élément d’interface contenant le contexte.
   </Step>
 </Steps>
 
-Consultez la documentation du SDK d’IA, sections [useChat](https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-chat) et [Transport](https://ai-sdk.dev/docs/ai-sdk-ui/transport), pour plus d’informations.
+Consultez la documentation de l’AI SDK pour plus de détails sur [useChat](https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-chat) et [Transport](https://ai-sdk.dev/docs/ai-sdk-ui/transport).
 
 <div id="rate-limits">
   ## Limites de débit
 </div>
 
-L&#39;API Assistant présente les limites suivantes :
+L&#39;API de l&#39;assistant est soumise aux limites suivantes :
 
-* 10 000 utilisations par clé API et par mois
-* 10 000 requêtes par organisation Mintlify et par heure
-* 10 000 requêtes par adresse IP et par jour
+* 10 000 utilisations par clé, par mois
+* 10 000 requêtes par organisation Mintlify, par heure
+* 10 000 requêtes par IP, par jour

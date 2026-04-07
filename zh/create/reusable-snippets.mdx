@@ -1,73 +1,73 @@
 ---
-title: "可复用内容片段"
-description: "创建可复用的内容片段，在各个页面之间保持一致性。"
-keywords: ["content snippets", "reusable content", "variables"]
+title: "可复用片段"
+description: "创建可复用的片段，保持各页面内容一致。"
+keywords: ["内容片段", "可复用内容", "变量"]
 ---
 
-软件开发的核心原则之一是 DRY（Don&#39;t Repeat Yourself，不要重复自己），这一原则同样适用于文档。如果你发现自己在多个地方重复相同的内容，可以为这部分内容创建一个自定义片段。片段中包含的内容可以被导入到其他文件中复用，你可以自行控制片段在页面上的展示位置。如果之后需要更新这段内容，只需编辑片段本身，而不必修改所有使用了该片段的文件。
+软件开发的一项核心原则是 DRY (不要重复自己) ，这同样适用于文档编写。如果你发现同样的内容在多个地方反复出现，就应当为这部分内容创建一个自定义片段。片段中包含可导入到其他文件中复用的内容。你可以控制片段在页面中的显示位置。如果之后需要更新内容，你只需编辑片段，而不必逐个修改使用该片段的文件。
 
 <div id="how-snippets-work">
-  ## 片段的工作原理
+  ## 片段如何工作
 </div>
 
-片段是被导入到其他文件中的任意 `.mdx`、`.md` 或 `.jsx` 文件。你可以在项目中的任意位置存放片段文件。
+片段是指导入到其他文件中的任何 `.mdx`、`.md` 或 `.jsx` 文件。你可以将片段文件放在项目中的任何位置。
 
-当你将片段导入到另一个文件时，它只会出现在被导入的位置，而不会单独渲染为一个页面。`/snippets/` 文件夹中的任何文件都会始终被视为片段，即使它没有被导入到其他文件中。
+当你将片段导入到另一个文件时，片段只会出现在导入它的位置，不会渲染为独立页面。`/snippets/` 文件夹中的任何文件始终都属于片段，即使没有被导入到其他文件中也是如此。
 
 <div id="create-snippets">
   ## 创建片段
 </div>
 
-创建一个文件，其中包含你想要复用的内容。片段可以包含 Mintlify 支持的所有内容类型，也可以导入其他片段。
+创建一个文件，写入你想要复用的内容。片段可以包含 Mintlify 支持的所有内容类型，也可以导入其他片段。
 
 <div id="import-snippets-into-pages">
-  ## 将片段导入页面
+  ## 在页面中导入片段
 </div>
 
-可以使用绝对路径或相对路径将片段导入页面。
+可使用绝对路径或相对路径将片段导入页面。
 
-* **绝对导入**：从项目根目录导入时，以 `/` 开头。
-* **相对导入**：使用 `./` 或 `../` 按照当前文件的位置导入片段。
+* **绝对导入**：以 `/` 开头，用于从项目根目录导入。
+* **相对导入**：使用 `./` 或 `../`，按当前文件的位置相对导入片段。
 
 <Tip>
-  相对导入支持 IDE 导航。在编辑器中按下 <kbd>CMD</kbd> 并单击片段名称即可直接跳转到该片段的定义。
+  相对导入支持 IDE 导航。按住 <kbd>CMD</kbd> 并点击编辑器中的片段名称，即可直接跳转到片段定义。
 </Tip>
 
 <div id="import-text">
-  ### 导入文本
+  ### 导入文本片段
 </div>
 
-1. 在要复用的 snippet 文件中添加内容。
+1. 在片段文件中添加你想要复用的内容。
 
    ```mdx shared/my-snippet.mdx wrap
-   Hello world! This is my content I want to reuse across pages.
+   你好，世界！这是我想在多个页面中复用的内容。
    ```
 
-2. 使用绝对路径或相对路径，将该 snippet 导入到目标文件中。
+2. 使用绝对路径或相对路径，将片段导入目标文件。
 
    <CodeGroup>
-     ```mdx Absolute import
+     ```mdx 绝对导入
      ---
-     title: "An example page"
-     description: "This is an example page that imports a snippet."
+     title: "示例页面"
+     description: "这是一个导入片段的示例页面。"
      ---
 
      import MySnippet from "/shared/my-snippet.mdx";
 
-     The snippet content displays beneath this sentence.
+     片段内容会显示在这句话下方。
 
      <MySnippet />
      ```
 
-     ```mdx Relative import
+     ```mdx 相对导入
      ---
-     title: "An example page"
-     description: "This is an example page that imports a snippet."
+     title: "示例页面"
+     description: "这是一个导入片段的示例页面。"
      ---
 
      import MySnippet from "../shared/my-snippet.mdx";
 
-     The snippet content displays beneath this sentence.
+     片段内容会显示在这句话下方。
 
      <MySnippet />
      ```
@@ -77,9 +77,9 @@ keywords: ["content snippets", "reusable content", "variables"]
   ### 导入变量
 </div>
 
-在页面中引用代码片段中的变量。
+在页面中引用片段里的变量。
 
-1. 从代码片段文件中导出变量。
+1. 从片段文件中导出变量。
 
    ```mdx shared/custom-variables.mdx
    export const myName = "Ronan";
@@ -89,7 +89,7 @@ keywords: ["content snippets", "reusable content", "variables"]
    ;
    ```
 
-2. 在目标文件中导入该代码片段并使用变量。
+2. 在目标文件中导入该片段并使用这些变量。
 
    ```mdx destination-file.mdx
    ---
@@ -103,18 +103,18 @@ keywords: ["content snippets", "reusable content", "variables"]
    ```
 
 <div id="import-snippets-with-variables">
-  ### 使用带变量的代码片段
+  ### 导入片段并传入变量
 </div>
 
-在导入代码片段时，使用变量向其传递数据。
+导入片段时，可以使用变量向其传递数据。
 
-1. 向代码片段添加变量，并在导入时传入对应的属性值。在此示例中，变量为 `{word}`。
+1. 在片段中添加变量，并在导入时传入属性。本例中的变量是 `{word}`。
 
    ```mdx shared/my-snippet.mdx
    My keyword of the day is {word}.
    ```
 
-2. 在目标文件中导入带变量的代码片段。传入的属性值会替换代码片段定义中的变量。
+2. 在目标文件中导入该片段并传入变量。传入的属性会替换片段定义中的变量。
 
    ```mdx destination-file.mdx
    ---
@@ -131,7 +131,7 @@ keywords: ["content snippets", "reusable content", "variables"]
   ### 导入 React 组件
 </div>
 
-1. 创建一个包含 JSX 组件的代码片段。更多信息请参阅 [React 组件](/zh/customize/react-components)。
+1. 创建一个包含 JSX 组件的片段。更多信息，请参阅 [React 组件](/zh/customize/react-components)。
 
    ```js components/my-jsx-snippet.jsx
    export const MyJSXSnippet = () => {
@@ -144,15 +144,15 @@ keywords: ["content snippets", "reusable content", "variables"]
    ```
 
 <Note>
-  创建 JSX 代码片段时，请使用箭头函数语法（`=>`），而不要使用函数声明。代码片段中不支持 `function` 关键字。
+  创建 JSX 片段时，请使用箭头函数语法 (`=>`)，不要使用函数声明。片段不支持 `function` 关键字。
 </Note>
 
-2. 导入该代码片段。
+2. 导入该片段。
 
    ```mdx destination-file.mdx
    ---
    title: "示例页面"
-   description: "这是一个示例页面，它导入了包含 React 组件的代码片段。"
+   description: "这是一个导入了包含 React 组件的片段的示例页面。"
    ---
 
    import { MyJSXSnippet } from "/components/my-jsx-snippet.jsx";

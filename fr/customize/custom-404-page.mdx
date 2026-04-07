@@ -4,15 +4,15 @@ description: "Personnalisez le titre et la description de votre page d’erreur 
 keywords: ["page d’erreur 404", "pages d’erreur personnalisées"]
 ---
 
-Toutes les pages 404 suggèrent automatiquement des pages pertinentes en fonction de l’URL demandée. Si des utilisateurs arrivent sur une page 404, un agent analyse le chemin d’accès et récupère des pages au contenu sémantiquement proche dans votre documentation pour les aider à trouver ce qu’ils cherchent.
+Toutes les pages 404 suggèrent automatiquement des pages pertinentes en fonction de l’URL demandée. Si les utilisateurs arrivent sur une page 404, un agent analyse le chemin et récupère dans votre documentation des pages sémantiquement proches pour les aider à trouver ce qu’ils cherchent.
 
-Vous pouvez personnaliser le titre et la description de la page d’erreur 404. Utilisez la description pour ajouter des liens utiles ou des indications.
+Vous pouvez personnaliser le titre et la description de la page d’erreur 404. Utilisez la description pour ajouter des liens utiles ou des conseils.
 
 <div id="configuration">
   ## Configuration
 </div>
 
-Configurez la page 404 dans la section `errors.404` de votre fichier `docs.json` :
+Configurez votre page 404 dans la section `errors.404` de votre fichier `docs.json` :
 
 ```json
 "errors": {
@@ -30,17 +30,17 @@ Configurez la page 404 dans la section `errors.404` de votre fichier `docs.json`
 </div>
 
 <ResponseField name="redirect" type="boolean">
-  Indique s'il faut automatiquement rediriger vers la page d’accueil lorsqu’une page est introuvable.
-  
-  Réglez sur `true` pour rediriger vers la page d’accueil.
+  Indique si la redirection vers la page d’accueil doit se faire automatiquement lorsqu’une page est introuvable.
 
-  Réglez sur `false` pour afficher la page 404 personnalisée.
+  Définissez `true` pour rediriger vers la page d’accueil.
+
+  Définissez `false` pour afficher la page 404 personnalisée.
 </ResponseField>
 
 <ResponseField name="title" type="string">
-  Titre personnalisé pour la page d’erreur 404. Remplace le titre par défaut « Page introuvable ».
+  Titre personnalisé de la page d’erreur 404. Remplace le titre par défaut « Page not found ».
 </ResponseField>
 
 <ResponseField name="description" type="string">
-  Description personnalisée pour la page d’erreur 404. Prend en charge la mise en forme Markdown.
+  Description personnalisée de la page d’erreur 404. Prend en charge la mise en forme Markdown.
 </ResponseField>

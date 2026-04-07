@@ -2,7 +2,7 @@
   "openapi": "3.0.1",
   "info": {
     "title": "Mintlify Assistant API",
-    "description": "用于将 Mintlify Discover 功能集成到你产品中的 API。",
+    "description": "一个可将 Mintlify 发现功能集成到你的产品中的 API。",
     "version": "1.0.0"
   },
   "servers": [
@@ -19,7 +19,7 @@
     "/v1/assistant/{domain}/message": {
       "post": {
         "summary": "助手消息 v1",
-        "description": "为指定域生成助手的回复消息。兼容 AI SDK v4。",
+        "description": "为指定域生成助手响应消息。兼容 AI SDK v4。",
         "parameters": [
           {
             "name": "domain",
@@ -28,7 +28,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "来自你的 `domain.mintlify.app` URL 的域标识符。可以在仪表板 URL 的末尾找到。例如，`dashboard.mintlify.com/organization/domain` 的域标识符为 `domain`。"
+            "description": "你的 `domain.mintlify.app` URL 中的域标识符。可在 dashboard URL 的末尾找到。例如，`dashboard.mintlify.com/organization/domain` 的域标识符是 `domain`。"
           }
         ],
         "requestBody": {
@@ -44,12 +44,12 @@
                 "properties": {
                   "fp": {
                     "type": "string",
-                    "description": "用于跟踪会话的指纹标识符。对匿名用户使用 \"anonymous\"，或提供唯一的用户标识符。"
+                    "description": "用于跟踪对话会话的指纹标识符。匿名用户请使用 `anonymous`，或提供唯一的用户标识符。"
                   },
                   "threadId": {
                     "default": null,
                     "type": "string",
-                    "description": "一个可选标识符，用于在多条消息之间保持对话的连续性。提供该值时，系统可以将后续消息关联到同一会话线程。threadId 会在 event.type === 'finish' 的响应中以 event.threadId 返回。"
+                    "description": "用于在多条消息之间保持对话连续性的可选标识符。提供后，系统可将后续消息关联到同一对话线程。当 `event.type === 'finish'` 时，响应会在 `event.threadId` 中返回 threadId。"
                   },
                   "messages": {
                     "type": "array",
@@ -86,16 +86,16 @@
                         "createdAt": {
                           "type": "string",
                           "format": "date-time",
-                          "description": "消息创建时的时间戳。"
+                          "description": "消息的创建时间戳。"
                         },
                         "content": {
                           "type": "string",
-                          "description": "消息的内容。"
+                          "description": "消息内容。"
                         },
                         "annotations": {
                           "type": "array",
                           "items": {},
-                          "description": "消息的可选标注数组。"
+                          "description": "消息的可选注释数组。"
                         },
                         "parts": {
                           "type": "array",
@@ -342,7 +342,7 @@
                               }
                             ]
                           },
-                          "description": "由不同类型的消息片段组成的数组，包括文本、推理、来源以及工具调用等。"
+                          "description": "由不同类型的消息部分组成的数组，包括文本、推理、来源和工具调用。"
                         },
                         "experimental_attachments": {
                           "type": "array",
@@ -373,12 +373,12 @@
                         "parts"
                       ]
                     },
-                    "description": "会话中的消息数组。在前端通常建议使用 @ai-sdk 包中的 useChat 钩子的 handleSubmit 函数来追加用户消息并处理流式响应，而不是在此数组中手动定义对象，因为它们包含的参数较多。"
+                    "description": "对话中的消息数组。在前端，你通常会希望使用 @ai-sdk 包中 useChat 钩子的 handleSubmit 函数来追加用户消息并处理流式响应，而不是手动定义此数组中的对象，因为这些对象包含很多参数。"
                   },
                   "retrievalPageSize": {
                     "type": "number",
                     "default": 5,
-                    "description": "用于生成回复的文档搜索结果数量。数值越高，提供的上下文越多，但可能会增加响应时间。推荐值：5。"
+                    "description": "用于生成响应的文档搜索结果数量。值越高，可提供的上下文越多，但也可能增加响应时间。建议值：5。"
                   },
                   "filter": {
                     "type": "object",
@@ -386,14 +386,14 @@
                     "properties": {
                       "version": {
                         "type": "string",
-                        "description": "可选的版本过滤器。"
+                        "description": "可选版本筛选器。"
                       },
                       "language": {
                         "type": "string",
-                        "description": "可选的语言过滤器。"
+                        "description": "可选语言筛选器。"
                       }
                     },
-                    "description": "搜索的可选筛选条件。"
+                    "description": "可选的搜索筛选条件。"
                   }
                 }
               }
@@ -402,12 +402,12 @@
         },
         "responses": {
           "200": {
-            "description": "消息生成成功。",
+            "description": "消息已成功生成",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "包含数据流片段的响应对象，这些片段会根据指定的状态码、响应头和内容进行格式化。更多信息请参阅 AI SDK 文档：[ai-sdk.dev/docs/ai-sdk-ui/streaming-data](https://ai-sdk.dev/docs/ai-sdk-ui/streaming-data)。使用 [ai-sdk 提供的 useChat hook](https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-chat#usechat) 来处理响应流。"
+                  "description": "响应对象，其中的数据流部分会按指定的状态、标头和内容进行格式化。更多信息，请参阅 AI SDK 文档：[ai-sdk.dev/docs/ai-sdk-ui/streaming-data](https://ai-sdk.dev/docs/ai-sdk-ui/streaming-data)。使用 [ai-sdk 的 useChat 钩子](https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-chat#usechat) 处理响应流。"
                 }
               }
             }
@@ -418,7 +418,7 @@
     "/v2/assistant/{domain}/message": {
       "post": {
         "summary": "助手消息 v2",
-        "description": "为指定域生成来自助手的回复消息。兼容 AI SDK v5 及更高版本。",
+        "description": "为指定域生成助手响应消息。兼容 AI SDK v5+。",
         "parameters": [
           {
             "name": "domain",
@@ -427,7 +427,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "来自你的 `domain.mintlify.app` URL 的域标识符。可以在仪表盘 URL 的末尾找到。例如，`dashboard.mintlify.com/organization/domain` 的域标识符是 `domain`。"
+            "description": "你的 `domain.mintlify.app` URL 中的域标识符。可在 dashboard URL 的末尾找到。例如，`dashboard.mintlify.com/organization/domain` 的域标识符是 `domain`。"
           }
         ],
         "requestBody": {
@@ -443,12 +443,12 @@
                 "properties": {
                   "fp": {
                     "type": "string",
-                    "description": "用于跟踪会话的指纹标识符。对于匿名用户请使用 `anonymous`，或提供一个唯一的用户标识符。"
+                    "description": "用于跟踪对话会话的指纹标识符。匿名用户请使用 `anonymous`，或提供唯一的用户标识符。"
                   },
                   "threadId": {
                     "default": null,
                     "type": "string",
-                    "description": "一个可选的标识符，用于在多条消息之间保持会话的连贯性。提供该标识符后，系统可以将后续消息关联到同一会话线程。当 `event.type === 'finish'` 时，响应中会以 `event.threadId` 的形式返回该 `threadId`。"
+                    "description": "用于在多条消息之间保持对话连续性的可选标识符。提供后，系统可将后续消息关联到同一对话线程中。当 `event.type === 'finish'` 时，响应中会以 `event.threadId` 的形式返回 `threadId`。"
                   },
                   "messages": {
                     "type": "array",
@@ -483,7 +483,7 @@
                         "createdAt": {
                           "type": "string",
                           "format": "date-time",
-                          "description": "消息创建时的时间戳。"
+                          "description": "消息的创建时间戳。"
                         },
                         "parts": {
                           "type": "array",
@@ -491,7 +491,7 @@
                             "oneOf": [
                               {
                                 "type": "object",
-                                "description": "文本内容片段。",
+                                "description": "文本内容部分。",
                                 "properties": {
                                   "type": {
                                     "type": "string",
@@ -510,7 +510,7 @@
                               },
                               {
                                 "type": "object",
-                                "description": "包含可选服务提供商元数据的推理结果片段。",
+                                "description": "推理内容部分，可包含可选的提供程序元数据。",
                                 "properties": {
                                   "type": {
                                     "type": "string",
@@ -523,7 +523,7 @@
                                   },
                                   "providerMetadata": {
                                     "type": "object",
-                                    "description": "可选的、特定于服务提供商的元数据。"
+                                    "description": "可选的提供程序专属元数据。"
                                   }
                                 },
                                 "required": [
@@ -533,7 +533,7 @@
                               },
                               {
                                 "type": "object",
-                                "description": "来源 URL 的引用片段。",
+                                "description": "源 URL 参考部分。",
                                 "properties": {
                                   "type": {
                                     "type": "string",
@@ -552,7 +552,7 @@
                                   },
                                   "providerMetadata": {
                                     "type": "object",
-                                    "description": "特定于提供方的可选元数据。"
+                                    "description": "可选的提供程序专属元数据。"
                                   }
                                 },
                                 "required": [
@@ -589,7 +589,7 @@
                               },
                               {
                                 "type": "object",
-                                "description": "标记一个新步骤的开始。",
+                                "description": "标记新步骤的开始。",
                                 "properties": {
                                   "type": {
                                     "type": "string",
@@ -604,7 +604,7 @@
                               }
                             ]
                           },
-                          "description": "消息内容片段的数组。每个片段都有一个类型以及与该类型相关的字段。"
+                          "description": "消息部分的数组。每个部分都包含一个类型以及该类型对应的字段。"
                         },
                         "metadata": {
                           "type": "object",
@@ -617,12 +617,12 @@
                         "parts"
                       ]
                     },
-                    "description": "会话中的消息数组。请使用 @ai-sdk/react 包中 useChat 钩子提供的 handleSubmit 函数来管理消息及其流式响应。"
+                    "description": "对话中的消息数组。使用 @ai-sdk/react 包中 useChat 钩子的 handleSubmit 函数来管理消息和流式响应。"
                   },
                   "retrievalPageSize": {
                     "type": "number",
                     "default": 5,
-                    "description": "用于生成回复的文档搜索结果数量。数值越高，可提供的上下文越多，但可能会增加响应时间。推荐值：5。"
+                    "description": "用于生成响应的文档搜索结果数量。值越高，提供的上下文越多，但也可能增加响应时间。建议值：5。"
                   },
                   "filter": {
                     "type": "object",
@@ -630,21 +630,21 @@
                     "properties": {
                       "version": {
                         "type": "string",
-                        "description": "可选的版本筛选器。"
+                        "description": "可选的版本筛选条件。"
                       },
                       "language": {
                         "type": "string",
-                        "description": "可选的语言筛选器。"
+                        "description": "可选的语言筛选条件。"
                       },
                       "groups": {
                         "type": "array",
                         "items": {
                           "type": "string"
                         },
-                        "description": "用于筛选结果的可选分组标识符数组。"
+                        "description": "用于筛选结果的可选组标识符数组。"
                       }
                     },
-                    "description": "用于搜索的可选筛选条件。"
+                    "description": "可选的搜索筛选条件。"
                   },
                   "context": {
                     "type": "array",
@@ -657,11 +657,11 @@
                             "code",
                             "textSelection"
                           ],
-                          "description": "提供的上下文类型。"
+                          "description": "所提供上下文的类型。"
                         },
                         "value": {
                           "type": "string",
-                          "description": "代码片段或选中文本的内容。"
+                          "description": "代码片段或选中的文本内容。"
                         },
                         "path": {
                           "type": "string",
@@ -686,12 +686,12 @@
         },
         "responses": {
           "200": {
-            "description": "消息已成功生成",
+            "description": "消息生成成功",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "object",
-                  "description": "与 AI SDK v5 兼容的流式响应。请使用 [@ai-sdk/react 中的 useChat hook](https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-chat#usechat) 来处理响应流。"
+                  "description": "与 AI SDK v5 兼容的流式响应。使用 [@ai-sdk/react 的 useChat 钩子](https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-chat#usechat) 处理响应流。"
                 }
               }
             }
@@ -707,7 +707,7 @@
           }
         },
         "summary": "搜索文档",
-        "description": "在你的文档中执行语义搜索和关键词搜索，并支持可配置的过滤和分页。",
+        "description": "通过可配置的筛选和分页，在文档中执行语义搜索和关键词搜索。",
         "parameters": [
           {
             "name": "domain",
@@ -716,7 +716,7 @@
             "schema": {
               "type": "string"
             },
-            "description": "来自你的 `domain.mintlify.app` URL 的域标识符。你可以在控制台 URL 的末尾找到它。例如，`dashboard.mintlify.com/organization/domain` 的域标识符是 `domain`。"
+            "description": "你的 `domain.mintlify.app` URL 中的域标识符。可在 dashboard URL 的末尾找到。例如，`dashboard.mintlify.com/organization/domain` 的域标识符是 `domain`。"
           }
         ],
         "requestBody": {
@@ -731,24 +731,24 @@
                 "properties": {
                   "query": {
                     "type": "string",
-                    "description": "在你的文档内容中要执行的搜索查询。"
+                    "description": "要针对文档内容执行的搜索 query。"
                   },
                   "pageSize": {
                     "type": "number",
                     "default": 10,
-                    "description": "要返回的搜索结果数量。如果未指定，默认为 10。"
+                    "description": "要返回的搜索结果数量。若未指定，则默认为 10。"
                   },
                   "filter": {
                     "type": "object",
-                    "description": "用于缩小搜索结果范围的可选过滤参数。",
+                    "description": "用于缩小搜索结果范围的可选筛选参数。",
                     "properties": {
                       "version": {
                         "type": "string",
-                        "description": "按文档版本过滤结果。"
+                        "description": "按文档版本筛选结果。"
                       },
                       "language": {
                         "type": "string",
-                        "description": "按内容语言过滤结果。"
+                        "description": "按内容语言筛选搜索结果。"
                       }
                     }
                   }
@@ -769,7 +769,7 @@
                     "properties": {
                       "content": {
                         "type": "string",
-                        "description": "与你的文档中相匹配的内容。"
+                        "description": "文档中与搜索条件匹配的内容。"
                       },
                       "path": {
                         "type": "string",
@@ -777,7 +777,7 @@
                       },
                       "metadata": {
                         "type": "object",
-                        "description": "关于搜索结果的附加元数据。"
+                        "description": "搜索结果的附加元数据。"
                       }
                     }
                   }
@@ -794,7 +794,7 @@
       "bearerAuth": {
         "type": "http",
         "scheme": "bearer",
-        "description": "Authorization 头部需要携带 Bearer 令牌。请使用前缀为 `mint_dsc_` 的 Assistant API 密钥。该密钥为公共密钥，可安全用于客户端代码。你可以在控制面板的 [API keys 页面](https://dashboard.mintlify.com/settings/organization/api-keys) 中生成一个。"
+        "description": "Authorization 标头需要使用 Bearer 令牌。请使用助手 API 密钥（前缀为 `mint_dsc_`）。这是一个可安全用于客户端代码的公钥。请在 dashboard 的 [API keys 页面](https://dashboard.mintlify.com/settings/organization/api-keys) 生成。"
       }
     }
   }

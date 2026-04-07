@@ -7,33 +7,33 @@ keywords: ["configuration de domaine personnalisé", "configuration DNS", "enreg
 
 Pour héberger votre documentation sur un domaine personnalisé :
 
-1. Ajoutez votre domaine dans votre tableau de bord.
+1. Ajoutez votre domaine dans votre dashboard.
 2. Configurez les paramètres DNS chez votre fournisseur de domaine.
-3. Laissez le temps à la propagation DNS et au provisionnement automatique des certificats TLS.
+3. Laissez le temps à la propagation DNS de s’effectuer et aux certificats TLS d’être provisionnés automatiquement.
 
 <Info>
   Vous souhaitez configurer un sous-chemin comme `example.com/docs` ? Consultez [/docs subpath](/fr/deploy/docs-subpath).
 </Info>
 
 <div id="add-your-custom-domain">
-  ## Ajouter un domaine personnalisé
+  ## Ajoutez votre domaine personnalisé
 </div>
 
-1. Accédez à la page [Custom domain setup](https://dashboard.mintlify.com/settings/deployment/custom-domain) de votre tableau de bord.
-2. Saisissez votre nom de domaine, par exemple `docs.example.com` ou `www.example.com`.
+1. Accédez à la page [Configuration du domaine personnalisé](https://dashboard.mintlify.com/settings/deployment/custom-domain) dans votre dashboard.
+2. Saisissez votre nom de domaine. Par exemple, `docs.example.com` ou `www.example.com`.
 3. Cliquez sur **Add domain**.
 
 <Frame>
-  <img alt="La page « Custom domain setup » montrant le champ permettant de saisir l’URL de votre domaine personnalisé." className="block dark:hidden" src="/images/domain/add-custom-domain-light.png" />
+  <img alt="La page Configuration du domaine personnalisé affichant le champ dans lequel saisir l’URL de votre domaine personnalisé." className="block dark:hidden" src="/images/domain/add-custom-domain-light.png" />
 
-  <img alt="La page « Custom domain setup » montrant le champ permettant de saisir l’URL de votre domaine personnalisé." className="hidden dark:block" src="/images/domain/add-custom-domain-dark.png" />
+  <img alt="La page Configuration du domaine personnalisé affichant le champ dans lequel saisir l’URL de votre domaine personnalisé." className="hidden dark:block" src="/images/domain/add-custom-domain-dark.png" />
 </Frame>
 
 <div id="configure-your-dns">
   ## Configurez votre DNS
 </div>
 
-1. Sur le site web de votre fournisseur de nom de domaine, accédez aux paramètres DNS de votre domaine.
+1. Sur le site web de votre fournisseur de domaine, accédez aux paramètres DNS de votre domaine.
 2. Créez un nouvel enregistrement DNS avec les valeurs suivantes :
 
 ```text
@@ -41,30 +41,30 @@ CNAME | docs | cname.mintlify-dns.com.
 ```
 
 <Tip>
-  Chaque fournisseur de domaine peut avoir une procédure différente pour ajouter des enregistrements DNS. Consultez la documentation de votre fournisseur de domaine pour obtenir des instructions détaillées.
+  Chaque fournisseur de domaine a sa propre méthode pour ajouter des enregistrements DNS. Consultez la documentation de votre fournisseur de domaine pour obtenir des instructions précises.
 </Tip>
 
 <div id="dns-propagation">
-  ### Propagation du DNS
+  ### Propagation DNS
 </div>
 
-Les modifications DNS prennent généralement entre 1 et 24 heures pour se propager à l’échelle mondiale, bien que cela puisse prendre jusqu’à 48 heures dans certains cas. Vous pouvez vérifier que vos enregistrements DNS sont correctement configurés à l’aide de [DNSChecker](https://dnschecker.org).
+Les modifications DNS prennent généralement entre 1 et 24 heures pour se propager dans le monde entier, mais cela peut aller jusqu’à 48 heures dans certains cas. Vous pouvez vérifier que votre configuration DNS est correcte à l’aide de [DNSChecker](https://dnschecker.org).
 
-Une fois que vos enregistrements DNS sont actifs, votre documentation est d’abord accessible en HTTP. Le HTTPS devient disponible une fois que Vercel a provisionné votre certificat TLS.
+Une fois vos enregistrements DNS actifs, votre documentation est d’abord accessible en HTTP. Le HTTPS est disponible une fois que Vercel a provisionné votre certificat TLS.
 
 <div id="automatic-tls-provisioning">
   ### Provisionnement TLS automatique
 </div>
 
-Une fois que vos enregistrements DNS ont été propagés et se résolvent correctement, Vercel provisionne automatiquement un certificat SSL/TLS gratuit pour votre domaine à l&#39;aide de Let&#39;s Encrypt.
+Une fois vos enregistrements DNS propagés et correctement résolus, Vercel provisionne automatiquement un certificat SSL/TLS gratuit pour votre domaine via Let&#39;s Encrypt.
 
-Cette opération s&#39;effectue généralement dans les quelques heures qui suivent la propagation du DNS, mais peut prendre jusqu&#39;à 24 heures dans de rares cas. Les certificats sont automatiquement renouvelés avant leur expiration.
+Cette opération s’effectue généralement dans les heures qui suivent la propagation des enregistrements DNS, bien qu’elle puisse prendre jusqu’à 24 heures dans de rares cas. Les certificats sont automatiquement renouvelés avant leur expiration.
 
 <div id="caa-records">
   ### Enregistrements CAA
 </div>
 
-Si votre domaine utilise des enregistrements CAA (Certification Authority Authorization), vous devez autoriser Let&#39;s Encrypt à délivrer des certificats pour votre domaine. Ajoutez l&#39;enregistrement CAA suivant à votre configuration DNS :
+Si votre domaine utilise des enregistrements CAA (Certification Authority Authorization), vous devez autoriser Let&#39;s Encrypt à émettre des certificats pour ce domaine. Ajoutez l’enregistrement CAA suivant à vos paramètres DNS :
 
 ```text
 0 issue "letsencrypt.org"
@@ -74,7 +74,7 @@ Si votre domaine utilise des enregistrements CAA (Certification Authority Author
   ### Chemins réservés
 </div>
 
-Le chemin `/.well-known/acme-challenge` est réservé à la validation des certificats et ne peut pas être redirigé ni réécrit. Si vous avez configuré des redirections ou des réécritures pour ce chemin, l’émission des certificats échouera.
+Le chemin `/.well-known/acme-challenge` est réservé à la validation des certificats et ne peut faire l’objet ni d’une redirection ni d’une réécriture. Si vous avez configuré des redirections ou des réécritures pour ce chemin, le provisionnement des certificats échouera.
 
 <div id="provider-specific-settings">
   ### Paramètres spécifiques au fournisseur
@@ -82,11 +82,11 @@ Le chemin `/.well-known/acme-challenge` est réservé à la validation des certi
 
 <AccordionGroup>
   <Accordion title="Vérification Vercel">
-    Si Vercel est votre fournisseur de noms de domaine, vous devez ajouter un enregistrement de vérification `TXT`. Ces informations apparaissent sur votre tableau de bord après avoir ajouté votre domaine personnalisé et vous sont également envoyées par e-mail.
+    Si Vercel est votre fournisseur de domaine, vous devez ajouter un enregistrement `TXT` de vérification. Ces informations apparaissent dans votre dashboard après l’ajout de votre domaine personnalisé et vous sont également envoyées par e-mail.
   </Accordion>
 
-  <Accordion title="Mode de chiffrement Cloudflare">
-    Si Cloudflare est votre fournisseur DNS, vous devez activer le mode &quot;Full (strict)&quot; pour le paramètre de chiffrement SSL/TLS. Désactivez également &quot;Always Use HTTPS&quot; dans vos paramètres Edge Certificates. La redirection HTTPS de Cloudflare empêchera Let&#39;s Encrypt de valider votre domaine lors de la délivrance du certificat.
+  <Accordion title="Mode de chiffrement de Cloudflare">
+    Si Cloudflare est votre fournisseur DNS, vous devez activer le mode « Full (strict) » dans les paramètres de chiffrement SSL/TLS. Désactivez également « Always Use HTTPS » dans vos paramètres Edge Certificates. La redirection HTTPS de Cloudflare empêchera Let’s Encrypt de valider votre domaine pendant le provisionnement des certificats.
   </Accordion>
 </AccordionGroup>
 
@@ -94,9 +94,9 @@ Le chemin `/.well-known/acme-challenge` est réservé à la validation des certi
   ## Définir une URL canonique
 </div>
 
-Après avoir configuré votre DNS, définissez une URL canonique pour faire en sorte que les moteurs de recherche indexent votre domaine principal. Une URL canonique indique aux moteurs de recherche quelle version de votre documentation est la version de référence. Cela améliore le référencement (SEO) lorsque votre documentation est accessible depuis plusieurs URL et évite les problèmes de contenu dupliqué.
+Après avoir configuré votre DNS, définissez une URL canonique afin que les moteurs de recherche indexent le domaine de votre choix. Une URL canonique indique aux moteurs de recherche quelle version de votre documentation doit être considérée comme principale. Cela améliore le SEO lorsque votre documentation est accessible depuis plusieurs URL et évite les problèmes de contenu dupliqué.
 
-Ajoutez la balise meta `canonical` à votre `docs.json` :
+Ajoutez la balise méta `canonical` à votre `docs.json` :
 
 ```json
 "seo": {
@@ -106,7 +106,7 @@ Ajoutez la balise meta `canonical` à votre `docs.json` :
 }
 ```
 
-Remplacez `https://www.your-custom-domain-here.com` par votre nom de domaine personnalisé. Par exemple, si votre nom de domaine personnalisé est `docs.mintlify.com`, vous utiliseriez alors :
+Remplacez `https://www.your-custom-domain-here.com` par votre véritable domaine personnalisé. Par exemple, si votre domaine personnalisé est `docs.mintlify.com`, vous utiliserez :
 
 ```json
 "seo": {

@@ -1,27 +1,25 @@
 ---
 title: "Amplitude"
-description: "Realiza el seguimiento del comportamiento de los usuarios y de la analítica de la documentación con Amplitude."
-keywords: ["integración de Amplitude", "clave API de Amplitude", "seguimiento del comportamiento de usuarios", "analítica de producto"]
+description: "Haz seguimiento del comportamiento de los usuarios y de la analítica de la documentación con Amplitude."
+keywords: ["integración de Amplitude", "clave API de Amplitude", "seguimiento del comportamiento de los usuarios", "analítica de producto"]
 ---
 
-Añade lo siguiente a tu archivo `docs.json` para enviar datos de analítica a Amplitude.
+Agrega lo siguiente a tu archivo `docs.json` para enviar datos analíticos a Amplitude.
 
 <CodeGroup>
+  ```json Opciones de analítica en docs.json
+  "integrations": {
+      "amplitude": {
+          "apiKey": "required"
+      }
+  }
+  ```
 
-```json Analytics options in docs.json
-"integrations": {
-    "amplitude": {
-        "apiKey": "required"
-    }
-}
-```
-
-```json Example
-"integrations": {
-    "amplitude": {
-        "apiKey": "76bb138bf3fbf58186XXX00000"
-    }
-}
-```
-
+  ```json Ejemplo
+  "integrations": {
+      "amplitude": {
+          "apiKey": "76bb138bf3fbf58186XXX00000"
+      }
+  }
+  ```
 </CodeGroup>

@@ -1,7 +1,7 @@
 ---
 title: "教程：构建应用内文档助手"
 sidebarTitle: "构建应用内助手"
-description: "将助手嵌入到你的应用中，让它基于你的文档信息回答问题。"
+description: "将助手嵌入到你的应用中，让它根据文档内容回答问题。"
 keywords: ["assistant embed", "in-app chat", "widget", "chatbot"]
 ---
 
@@ -9,45 +9,45 @@ keywords: ["assistant embed", "in-app chat", "widget", "chatbot"]
   ## 你将构建的内容
 </div>
 
-一个可复用的组件，将 [assistant](/zh/ai/assistant) 直接嵌入到你的应用中。该组件提供：
+一个可复用的小部件，可将[助手](/zh/ai/assistant)直接嵌入你的应用中。该小部件提供：
 
-* 一个浮动按钮，点击后会打开聊天面板
-* 基于你文档内容的实时流式回答
+* 一个悬浮按钮，点击后可打开聊天面板
+* 基于你的文档内容进行实时流式响应
 * 支持 Markdown 的消息渲染
 
-用户可以通过该组件在不离开你的应用的情况下，获取使用你产品的帮助。
+用户无需离开你的应用，即可通过该小部件获取产品相关帮助。
 
 <Frame>
-  <img src="/images/assistant/assistant-embed-demo.gif" alt="演示助手组件被打开后，用户输入 How do I get started?，随后助手作出回应。" />
+  <img src="/images/assistant/assistant-embed-demo.gif" alt="助手 小部件打开的演示：用户输入“如何开始？”，随后 助手 作出回复。" />
 </Frame>
 
 <div id="prerequisites">
-  ## 前提条件
+  ## 前置条件
 </div>
 
 * [Mintlify Pro 或 Enterprise 计划](https://mintlify.com/pricing)
-* 你的域名，它会出现在仪表盘 URL 的末尾。例如，如果你的仪表盘 URL 是 `https://dashboard.mintlify.com/org-name/domain-name`，你的域名就是 `domain-name`
-* 一个 [助手 API 密钥](https://dashboard.mintlify.com/settings/organization/api-keys)
-* 已安装 Node.js v18 或更高版本以及 npm
-* 基本的 React 知识
+* 您的域名，即显示在仪表板 URL 末尾的名称。例如，如果您的仪表板 URL 是 `https://dashboard.mintlify.com/org-name/domain-name`，则您的域名是 `domain-name`
+* 一个[助手 API 密钥](https://dashboard.mintlify.com/settings/organization/api-keys)
+* 已安装 Node.js v18 或更高版本及 npm
+* 具备基本的 React 知识
 
 <div id="get-your-assistant-api-key">
-  ### 获取你的 Assistant API 密钥
+  ### 获取助手 API 密钥
 </div>
 
-1. 在控制台中前往 [API keys](https://dashboard.mintlify.com/settings/organization/api-keys) 页面。
+1. 前往控制台中的 [API keys](https://dashboard.mintlify.com/settings/organization/api-keys) 页面。
 2. 点击 **Create Assistant API Key**。
-3. 复制 Assistant API 密钥（以 `mint_dsc_` 开头）并妥善保存。
+3. 复制助手 API 密钥 (以 `mint_dsc_` 开头) 并妥善保管。
 
 <Note>
-  Assistant API 密钥是一个可以在前端代码中使用的公开令牌。使用此令牌发起的调用将计入你套餐的消息配额，并且可能产生超额费用。
+  助手 API 密钥是可在前端代码中使用的公开令牌。使用此令牌发起的调用会计入你的套餐消息额度，并且可能产生超额费用。
 </Note>
 
 <div id="set-up-the-example">
-  ## 设置示例项目
+  ## 设置示例
 </div>
 
-克隆[示例仓库](https://github.com/mintlify/assistant-embed-example)，并根据你的需求进行自定义。
+克隆[示例仓库](https://github.com/mintlify/assistant-embed-example)，并根据你的需求进行定制。
 
 <Steps>
   <Step title="克隆仓库">
@@ -58,7 +58,7 @@ keywords: ["assistant embed", "in-app chat", "widget", "chatbot"]
   </Step>
 
   <Step title="选择开发工具">
-    该仓库提供了 Next.js 和 Vite 的示例项目，可按你的习惯选择其一。
+    该仓库包含 Next.js 和 Vite 示例。选择你想使用的工具。
 
     <CodeGroup>
       ```bash title="Next.js"
@@ -74,7 +74,7 @@ keywords: ["assistant embed", "in-app chat", "widget", "chatbot"]
   </Step>
 
   <Step title="配置项目">
-    打开 `src/config.js`，并填入你的 Mintlify 项目信息。
+    打开 `src/config.js`，填入你的 Mintlify 项目信息。
 
     ```js src/config.js
     export const ASSISTANT_CONFIG = {
@@ -83,20 +83,20 @@ keywords: ["assistant embed", "in-app chat", "widget", "chatbot"]
     };
     ```
 
-    将以下内容替换为：
+    替换：
 
-    * `your-domain`：替换为你在控制台 URL 末尾看到的 Mintlify 项目域名。
-    * `https://yourdocs.mintlify.app`：替换为你的实际文档地址。
+    * 将 `your-domain` 替换为你的 Mintlify 项目域名，可在控制台 URL 的末尾找到。
+    * 将 `https://yourdocs.mintlify.app` 替换为你的实际文档 URL。
   </Step>
 
-  <Step title="添加 API 令牌">
+  <Step title="添加 API token">
     在项目根目录创建一个 `.env` 文件。
 
     ```bash .env
     VITE_MINTLIFY_TOKEN=mint_dsc_your_token_here
     ```
 
-    将 `mint_dsc_your_token_here` 替换为你的 Assistant API 密钥。
+    将 `mint_dsc_your_token_here` 替换为你的 助手 API 密钥。
   </Step>
 
   <Step title="启动开发服务器">
@@ -104,7 +104,7 @@ keywords: ["assistant embed", "in-app chat", "widget", "chatbot"]
     npm run dev
     ```
 
-    在浏览器中打开你的应用，并点击 **Ask** 按钮以打开助手组件。
+    在浏览器中打开你的应用，然后点击 **Ask** 按钮以打开 助手 小部件。
   </Step>
 </Steps>
 
@@ -113,10 +113,10 @@ keywords: ["assistant embed", "in-app chat", "widget", "chatbot"]
 </div>
 
 <div id="source-citations">
-  ### 引用来源
+  ### 来源引用
 </div>
 
-从助手的回复中提取并展示引用来源：
+从助手回复中提取并显示来源：
 
 ```jsx
 const extractSources = (parts) => {
@@ -129,7 +129,7 @@ const extractSources = (parts) => {
     })) || [];
 };
 
-// 在您的消息渲染中：
+// 在消息渲染中：
 {messages.map((message) => {
   const sources = message.role === 'assistant' ? extractSources(message.parts) : [];
   return (
@@ -137,7 +137,7 @@ const extractSources = (parts) => {
       {/* 消息内容 */}
       {sources.length > 0 && (
         <div className="mt-2 text-xs">
-          <p className="font-semibold">来源：</p>
+          <p className="font-semibold">Sources:</p>
           {sources.map((s, i) => (
             <a key={i} href={s.url} target="_blank" rel="noopener noreferrer" className="text-blue-600">
               {s.title}
@@ -154,7 +154,7 @@ const extractSources = (parts) => {
   ### 跟踪对话线程 ID
 </div>
 
-保存线程 ID，以在不同会话间保留对话历史：
+存储线程 ID，以便在不同会话之间保留对话历史：
 
 ```jsx
 import { useState, useEffect } from 'react';
@@ -178,7 +178,7 @@ export function AssistantWidget({ domain, docsURL }) {
     body: {
       fp: 'anonymous',
       retrievalPageSize: 5,
-      ...(threadId && { threadId }), // 如果存在线程 ID，则将其包含在内
+      ...(threadId && { threadId }), // 如果存在线程 ID 则包含它
     },
     streamProtocol: 'data',
     sendExtraMessageFields: true,
@@ -193,7 +193,7 @@ export function AssistantWidget({ domain, docsURL }) {
     },
   });
 
-  // ... 组件的其余部分
+  // ... 组件其余部分
 }
 ```
 
@@ -201,18 +201,18 @@ export function AssistantWidget({ domain, docsURL }) {
   ### 添加键盘快捷键
 </div>
 
-允许用户使用键盘快捷键打开小组件并发送消息：
+让用户可以通过键盘快捷键打开小部件并发送消息：
 
 ```jsx
 useEffect(() => {
   const handleKeyDown = (e) => {
-    // Cmd/Ctrl + Shift + I 切换小组件
+    // Cmd/Ctrl + Shift + I 切换小部件
     if ((e.metaKey || e.ctrlKey) && e.shiftKey && e.key === 'I') {
       e.preventDefault();
       setIsOpen((prev) => !prev);
     }
 
-    // 按 Enter 键（小组件获得焦点时）提交
+    // Enter（当小部件获得焦点时）提交
     if (e.key === 'Enter' && !e.shiftKey && document.activeElement.id === 'assistant-input') {
       e.preventDefault();
       handleSubmit();

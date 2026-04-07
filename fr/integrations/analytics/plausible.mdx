@@ -1,32 +1,30 @@
 ---
 title: "Plausible"
-description: "Suivez des statistiques simples et respectueuses de la vie privée avec Plausible."
-keywords: ["Plausible Analytics", "analyses respectueuses de la vie privée", "analyses auto-hébergées", "configuration de domaine"]
+description: "Suivez des analyses simples et respectueuses de la vie privée avec Plausible."
+keywords: ["Plausible Analytics", "analyses respectueuses de la vie privée", "analyses auto-hébergées", "configuration du domaine"]
 ---
 
-Ajoutez le domaine de votre site à `docs.json` pour envoyer des données d'analyse à Plausible.
+Ajoutez le domaine de votre site à `docs.json` pour envoyer les données d’analyse à Plausible.
 
 <Info>
-  N'incluez pas `https://` dans le domaine ou le serveur.
+  N’incluez pas `https://` dans le domaine ou le serveur.
 </Info>
 
 <CodeGroup>
+  ```json Options d’analyse dans docs.json
+  "integrations": {
+      "plausible": {
+          "domain": "obligatoire - le domaine de votre documentation",
+          "server": "facultatif - l’URL de votre serveur Plausible auto-hébergé"
+      }
+  }
+  ```
 
-```json Analytics options in docs.json
-"integrations": {
-    "plausible": {
-        "domain": "obligatoire - le domaine de votre documentation",
-        "server": "facultatif - l’URL de votre serveur Plausible auto-hébergé"
-    }
-}
-```
-
-```json Example
-"integrations": {
-    "plausible": {
-        "domain": "docs.domain.com"
-    }
-}
-```
-
+  ```json Exemple
+  "integrations": {
+      "plausible": {
+          "domain": "docs.domain.com"
+      }
+  }
+  ```
 </CodeGroup>

@@ -1,56 +1,57 @@
 ---
-title: "什么是 Agent？"
-description: "使用 Agent 实现文档更新自动化。可基于 Slack 消息、PR 或 API 调用创建更新。"
-keywords: ["automation", "automate", "AI", "autoupdate", "maintenance"]
+title: "什么是代理？"
+description: "使用代理自动更新文档。可根据 Slack 消息、PR 或 API 调用生成更新。"
+keywords: ["自动化", "自动执行", "AI", "自动更新", "维护"]
 ---
 
 <Info>
-  任何拥有你仪表盘访问权限的用户，都可以在 [Pro 和 Enterprise 方案](https://mintlify.com/pricing?ref=agent) 中使用 Agent。
+  任何有权访问你的控制面板的用户，都可以在 [Pro 和 Enterprise 方案](https://mintlify.com/pricing?ref=agent) 中使用代理。
 </Info>
 
-Agent 会根据你的提示，为文档提出修改建议并创建 pull request。你向 Agent 发送请求时，它会参考你的文档、已连接的代码仓库以及 Slack 消息，生成符合技术写作最佳实践并遵循 Mintlify schema 的内容。
+代理会根据你的提示，为你的文档生成包含建议修改的拉取请求。当你向代理发送请求时，它会结合你的文档、已连接的代码仓库和 Slack 消息，生成遵循技术写作最佳实践且符合 Mintlify schema 的内容。
 
 <div id="what-you-can-do-with-the-agent">
-  ## 这个 agent 能帮你做什么
+  ## 你可以用代理做什么
 </div>
 
-使用该 agent 可以：
+使用代理可以：
 
-* 根据你的提示、Pull Request 链接或 Slack 线程撰写新内容。
-* 更新过时的代码示例和 API 文档。
+* 根据你的提示、拉取请求链接或 Slack 线程撰写新内容。
+* 修订过时的代码示例和 API 参考资料。
 * 搜索并更新现有内容。
-* 解答关于你的文档和技术写作相关主题的问题。
-* 在 Slack 对话和 Pull Request 中的知识流失之前，将其沉淀并记录下来。
+* 回答有关你的文档和技术写作的问题。
+* 在知识流失之前，从 Slack 对话和拉取请求中整理并留存知识。
 
 <div id="where-you-can-use-the-agent">
-  ## 可以在哪里使用 Agent
+  ## 你可以在何处使用代理
 </div>
 
-* **Dashboard**：在 Dashboard 的任意页面，使用键盘快捷键 <kbd>⌘</kbd>+<kbd>I</kbd>（macOS）或 <kbd>Ctrl</kbd>+<kbd>I</kbd>（Windows/Linux）来打开 Agent 面板。或者在 [Overview](https://dashboard.mintlify.com/) 页面点击 **Ask agent**。
-  <Frame>
-    <img src="/images/agent/dashboard-light.png" alt="在 Dashboard 中打开的 Agent 面板。" className="block dark:hidden" />
+* **Dashboard**：在 控制面板 的任意页面，使用键盘快捷键 <kbd>⌘</kbd>+<kbd>I</kbd> (macOS) 或 <kbd>Ctrl</kbd>+<kbd>I</kbd> (Windows/Linux) 打开代理面板。或者点击 [Overview](https://dashboard.mintlify.com/) 页面上的 **Ask agent**。
 
-    <img src="/images/agent/dashboard-dark.png" alt="在 Dashboard 中打开的 Agent 面板。" className="hidden dark:block" />
+  <Frame>
+    <img src="/images/agent/dashboard-light.png" alt="在 控制面板 中打开的代理面板。" className="block dark:hidden" />
+
+    <img src="/images/agent/dashboard-dark.png" alt="在 控制面板 中打开的代理面板。" className="hidden dark:block" />
   </Frame>
-* **Slack**：将 Agent 添加到你的 Slack 工作区，并提及 `@mintlify` 来触发它。
-* **API**：使用 [agent endpoints](/zh/api/agent/create-agent-job) 将 Agent 集成到自定义应用程序中。
+* **Slack**：将代理添加到你的 Slack 工作区，并通过提及 `@mintlify` 向其发出提示。
+* **API**：使用[代理端点](/zh/api/agent/create-agent-job)将代理嵌入自定义应用中。
 
 <div id="next-steps">
   ## 后续步骤
 </div>
 
-<Card title="快速开始" horizontal icon="rocket" href="/zh/agent/quickstart">
-  在你的控制台中开始使用 agent。
+<Card title="快速入门" horizontal icon="rocket" href="/zh/agent/quickstart">
+  在控制面板中开始使用代理。
 </Card>
 
 <Card title="连接 Slack" horizontal icon="slack" href="/zh/agent/slack">
-  将 agent 添加到你的 Slack 工作区。
+  将代理添加到你的 Slack 工作区。
 </Card>
 
 <Card title="自定义行为" horizontal icon="wrench" href="/zh/agent/customize">
-  使用 `AGENTS.md` 文件配置 agent。
+  使用 `AGENTS.md` 文件配置代理。
 </Card>
 
-<Card title="编写高效提示词" horizontal icon="pen" href="/zh/agent/effective-prompts">
-  通过更聚焦的提示词获得更好的效果。
+<Card title="编写高效提示" horizontal icon="pen" href="/zh/agent/effective-prompts">
+  使用更聚焦的提示，获得更好的结果。
 </Card>

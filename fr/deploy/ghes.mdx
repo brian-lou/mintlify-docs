@@ -1,33 +1,33 @@
 ---
 title: "GitHub Enterprise Server"
-description: "Configurer l'application GitHub de Mintlify sur votre installation GitHub Enterprise Server."
+description: "Configurez la GitHub App sur votre installation GitHub Enterprise Server."
 keywords: ["GitHub Enterprise Server", "GHES", "GitHub Enterprise"]
 ---
 
-Ce guide vous accompagne pas à pas dans la configuration de l&#39;application GitHub de Mintlify sur votre installation GitHub Enterprise Server (GHES). Pour connecter une instance GHES à Mintlify, vous devez créer, dans votre environnement auto‑hébergé, une version locale de notre application qui communique avec notre serveur distant.
+Ce guide vous explique comment configurer la GitHub App de Mintlify sur votre installation GitHub Enterprise Server (GHES). Pour connecter une instance GHES à Mintlify, vous devez créer une version locale de notre application dans votre environnement auto-hébergé afin qu’elle puisse communiquer avec notre serveur distant.
 
-Si vous utilisez une instance GitHub hébergée dans le cloud, consultez la page [GitHub](/fr/deploy/github) pour les instructions de configuration.
+Si vous utilisez une instance GitHub hébergée dans le cloud, consultez la page [GitHub](/fr/deploy/github) pour obtenir les instructions de configuration.
 
 <div id="prerequisites">
   ## Prérequis
 </div>
 
-* Droits d’administrateur sur l’organisation GitHub Enterprise Server où vous souhaitez installer l’application
+* Droits d’administrateur sur votre organisation GitHub Enterprise Server où vous souhaitez installer l’application
 * Accès aux dépôts de votre organisation où vous souhaitez installer l’application
-* Connectivité réseau pour communiquer avec nos services externes (voir la section [Exigences réseau](#network-requirements) ci-dessous)
+* Connectivité réseau nécessaire pour communiquer avec nos services externes (voir la section [exigence réseau](#network-requirements) ci-dessous)
 
 <div id="network-requirements">
-  ### Configuration réseau requise
+  ### Exigences réseau
 </div>
 
 <div id="outbound-connectivity">
   #### Connectivité sortante
 </div>
 
-Votre instance GitHub Enterprise Server doit pouvoir accéder :
+Votre GitHub Enterprise Server doit pouvoir accéder à :
 
-* aux points de terminaison de l’API Mintlify (https://leaves.mintlify.com)
-* aux récepteurs de webhooks (port 443)
+* les endpoints de l&#39;API Mintlify (https://leaves.mintlify.com)
+* les récepteurs de webhook (port 443)
 
 <div id="firewall-configuration">
   #### Configuration du pare-feu
@@ -35,56 +35,56 @@ Votre instance GitHub Enterprise Server doit pouvoir accéder :
 
 Les connexions sortantes suivantes doivent être autorisées :
 
-* Connexions depuis l’adresse IP statique de Mintlify : `54.242.90.151`
+* Connexions provenant de l&#39;adresse IP statique de Mintlify : `54.242.90.151`
 * HTTPS (port 443) vers les domaines de service de Mintlify
 * Résolution DNS des domaines de service de Mintlify
 
 <div id="step-1-register-the-github-app">
-  ## Étape 1 : Enregistrer l’application GitHub
+  ## Étape 1 : Enregistrer la GitHub App
 </div>
 
-Consultez la page [Enregistrement d’une application GitHub](https://docs.github.com/en/enterprise-server@3.18/apps/creating-github-apps/registering-a-github-app/registering-a-github-app) dans la documentation GitHub pour obtenir des instructions détaillées.
+Consultez [Registering a GitHub App](https://docs.github.com/en/enterprise-server@3.18/apps/creating-github-apps/registering-a-github-app/registering-a-github-app) dans la documentation GitHub pour obtenir des instructions détaillées.
 
 <Steps>
   <Step title="Accédez aux paramètres de votre organisation">
-    1. Dans l’angle supérieur droit de n’importe quelle page GitHub, cliquez sur votre photo de profil.
-    2. Cliquez sur **Your organizations**.
-    3. Cliquez sur **Settings** à côté de l’organisation pour laquelle vous souhaitez créer l’application.
+    1. Dans l’angle supérieur droit de n’importe quelle page de GitHub, cliquez sur votre photo de profil.
+    2. Cliquez sur **Vos organisations**.
+    3. Cliquez sur **Paramètres** à côté de l’organisation pour laquelle vous souhaitez créer l’application.
   </Step>
 
-  <Step title="Créer une nouvelle application GitHub">
-    1. Dans la barre latérale gauche, cliquez sur **Developer settings**.
+  <Step title="Créez une nouvelle GitHub App">
+    1. Dans la barre latérale de gauche, cliquez sur **Paramètres de développement**.
     2. Cliquez sur **GitHub Apps**.
-    3. Cliquez sur **New GitHub App**.
+    3. Cliquez sur **Nouvelle GitHub App**.
   </Step>
 
-  <Step title="Configurer les informations de base de l’application">
+  <Step title="Configurez les informations de base de l’application">
     Définissez les éléments suivants :
 
-    * **GitHub App name :** `Mintlify`
+    * **Nom de la GitHub App :** `Mintlify`
     * **Description :** `Integration with Mintlify services`
-    * **Homepage URL :** `https://mintlify.com`
-    * **User authorization callback URL :** `https://your-github-server.com/` (remplacez par votre domaine GHES réel)
+    * **URL de la page d’accueil :** `https://mintlify.com`
+    * **URL de rappel d’autorisation utilisateur :** `https://your-github-server.com/` (remplacez-la par votre véritable domaine GHES)
   </Step>
 </Steps>
 
 <div id="step-2-configure-app-permissions">
-  ## Étape 2 : Configurer les autorisations de l’application
+  ## Étape 2 : Configurer les autorisations de l’application
 </div>
 
 <Steps>
   <Step title="Définir les autorisations du dépôt">
     Définissez les autorisations suivantes pour l’application. Aucune autorisation au niveau de l’organisation, du compte ou de l’entreprise n’est requise :
 
-    * **Checks :** lecture et écriture
-    * **Contents :** lecture et écriture
-    * **Deployments :** lecture et écriture
-    * **Metadata :** lecture seule
-    * **Pull Requests :** lecture et écriture
+    * **Checks:** Lecture et écriture
+    * **Contents:** Lecture et écriture
+    * **Deployments:** Lecture et écriture
+    * **Metadata:** Lecture seule
+    * **Pull Requests:** Lecture et écriture
   </Step>
 
   <Step title="S’abonner aux événements">
-    Sélectionnez les événements de webhook suivants :
+    Sélectionnez les événements webhook suivants :
 
     * Installation
     * Installation Target
@@ -102,49 +102,49 @@ Consultez la page [Enregistrement d’une application GitHub](https://docs.githu
 </div>
 
 <Steps>
-  <Step title="Créer l'application">
+  <Step title="Créer l’application">
     Cliquez sur **Create GitHub App**.
 
-    Vous serez redirigé vers la page des paramètres de l&#39;application.
+    Vous serez redirigé vers la page des paramètres de l’application.
   </Step>
 
-  <Step title="Générer la clé privée">
-    1. Faites défiler la page jusqu&#39;à la section **Private keys**.
+  <Step title="Générer une clé privée">
+    1. Faites défiler la page jusqu’à la section **Private keys**.
     2. Cliquez sur **Generate a private key**.
     3. Téléchargez le fichier `.pem` et conservez-le en lieu sûr.
   </Step>
 
-  <Step title="Noter les identifiants de l'application">
+  <Step title="Noter les identifiants de l’application">
     Notez les éléments suivants :
 
     * **App ID** (visible en haut de la page des paramètres)
-    * **Client ID** (dans la section « About »)
-    * **Client Secret** (générez-le, puis enregistrez-le en lieu sûr)
+    * **Client ID** (dans la section &quot;About&quot;)
+    * **Client Secret** (générez-le et notez-le en lieu sûr)
   </Step>
 </Steps>
 
 <div id="step-4-install-the-app">
-  ## Étape 4 : Installer l’application
+  ## Étape 4 : Installez l’application
 </div>
 
 <Steps>
-  <Step title="Accéder à l’installation de l’application">
+  <Step title="Accédez à l’installation de l’application">
     1. Depuis la page des paramètres de l’application, cliquez sur **Install App** dans la barre latérale gauche.
     2. Sélectionnez votre organisation dans la liste.
   </Step>
 
-  <Step title="Choisir le périmètre de l’installation">
+  <Step title="Choisissez le périmètre d’installation">
     Sélectionnez l’une des options suivantes :
 
-    * **All repositories** (pour un accès à tous les dépôts de l’organisation)
+    * **All repositories** (pour un accès à l’échelle de l’organisation)
     * **Only select repositories** (pour choisir des dépôts spécifiques)
 
     <Tip>
-      Nous recommandons de sélectionner « Only select repositories » et de limiter l’application uniquement aux dépôts où se trouve votre documentation.
+      Nous vous recommandons de sélectionner &quot;Only select repositories&quot; et de limiter l’application aux seuls dépôts où se trouve votre documentation.
     </Tip>
   </Step>
 
-  <Step title="Terminer l’installation">
+  <Step title="Terminez l’installation">
     1. Cliquez sur **Install**.
     2. Relevez l’ID d’installation dans l’URL. Par exemple, dans `https://your-github-server.com/settings/installations/12345`, la chaîne `12345` correspond à l’ID d’installation.
   </Step>
@@ -155,16 +155,16 @@ Consultez la page [Enregistrement d’une application GitHub](https://docs.githu
 </div>
 
 <Steps>
-  <Step title="Revenir aux paramètres de l’application">
+  <Step title="Retournez aux paramètres de l’application">
     1. Revenez à la page des paramètres de votre application.
-    2. Faites défiler jusqu’à la section **Webhook**.
+    2. Faites défiler la page jusqu’à la section **Webhook**.
   </Step>
 
-  <Step title="Définir l’URL du webhook">
+  <Step title="Définissez l’URL du webhook">
     Configurez les éléments suivants :
 
-    * **Webhook URL :** `https://leaves.mintlify.com/github-enterprise/:subdomain` (remplacez `:subdomain` par l’URL que nous vous communiquerons)
-    * **Webhook secret :** Générez une chaîne aléatoire (32 caractères ou plus) et conservez-la en lieu sûr. Mintlify peut également la générer pour vous et vous la fournir.
+    * **Webhook URL:** `https://leaves.mintlify.com/github-enterprise/:subdomain` (remplacez `:subdomain` par l’URL que nous vous fournirons)
+    * **Webhook secret:** Générez une chaîne aléatoire (32 caractères minimum) et conservez-la en lieu sûr. Mintlify peut également la générer pour vous et vous la fournir.
   </Step>
 </Steps>
 
@@ -172,41 +172,41 @@ Consultez la page [Enregistrement d’une application GitHub](https://docs.githu
   ## Communiquez-nous vos identifiants
 </div>
 
-Veuillez transmettre les informations suivantes à notre équipe en utilisant la méthode sécurisée de transfert d’informations de votre choix.
+Veuillez transmettre les informations suivantes à notre équipe via la méthode sécurisée de transfert d’informations de votre choix.
 
 <div id="required-credentials">
   ### Identifiants requis
 </div>
 
-* URL de base GitHub Enterprise Server : https://your-github-server.com
-* App ID : (depuis l’étape 3)
-* App client ID : (depuis l’étape 3)
-* App client secret : (depuis l’étape 3)
-* Installation ID : (depuis l’étape 4)
-* Private key : l’intégralité du contenu du fichier `.pem` (à partager via un transfert de fichier sécurisé)
-* Webhook secret : (depuis l’étape 5)
+* URL de base de GitHub Enterprise Server : https://your-github-server.com
+* ID de l’application : (voir étape 3)
+* ID client de l’application : (voir étape 3)
+* Secret client de l’application : (voir étape 3)
+* ID d’installation : (voir étape 4)
+* Clé privée : l’intégralité du contenu du fichier `.pem` (à partager via un transfert de fichier sécurisé)
+* Secret du webhook : (voir étape 5)
 
 <div id="optional-credentials-for-troubleshooting">
-  ### Informations facultatives pour le dépannage
+  ### Identifiants facultatifs pour le dépannage
 </div>
 
-* Organization name : le nom de votre organisation GitHub
-* Repository names : les dépôts spécifiques où l&#39;application est installée
-* GitHub Enterprise Server version : la version figurant dans le tableau de bord d&#39;administration de votre site
+* Nom de l’organisation : le nom de votre organisation GitHub
+* Noms des dépôts : les dépôts précis où l’application est installée
+* Version de GitHub Enterprise Server : indiquée dans le dashboard d’administration de votre site
 
 <div id="mintlify-connection">
   ## Connexion à Mintlify
 </div>
 
-Nous utilisons les identifiants que vous nous fournissez et les stockons, chiffrés, dans un emplacement sécurisé. Ensuite, nous collaborons avec vous pour :
+Nous récupérons les identifiants que vous nous fournissez et les stockons, chiffrés, dans un emplacement sécurisé. Nous travaillons ensuite avec vous afin de :
 
-* Intégrer votre environnement GHES à un déploiement Mintlify existant.
-* Intégrer votre environnement GHES à un nouveau déploiement Mintlify que nous mettons à votre disposition.
+* intégrer votre environnement GHES à un déploiement Mintlify existant ;
+* intégrer votre environnement GHES à un nouveau déploiement Mintlify que nous provisionnons pour vous.
 
-Une fois que votre environnement GHES est intégré à un déploiement Mintlify, vous pouvez activer les webhooks pour votre application GitHub.
+Une fois votre environnement GHES intégré à un déploiement Mintlify, vous pouvez activer les webhooks pour votre GitHub App.
 
 <Note>
-  L’URL du webhook peut changer en fonction de notre configuration. Nous testons l’intégration et vous fournissons la nouvelle URL.
+  L’URL du webhook peut changer selon notre configuration. Nous testons l’intégration et vous communiquons la nouvelle URL.
 </Note>
 
 <div id="test-the-integration">
@@ -214,79 +214,79 @@ Une fois que votre environnement GHES est intégré à un déploiement Mintlify,
 </div>
 
 <Steps>
-  <Step title="Vérifier la livraison du webhook">
-    1. Allez dans les paramètres de votre application GitHub.
+  <Step title="Vérifier l’envoi du webhook">
+    1. Accédez aux paramètres de votre GitHub App.
     2. Cliquez sur l’onglet **Advanced**.
-    3. Vérifiez les « Recent Deliveries » pour confirmer la réussite des livraisons de webhooks.
+    3. Vérifiez dans &quot;Recent Deliveries&quot; que les webhooks ont bien été envoyés.
     4. Recherchez des réponses HTTP 200.
   </Step>
 
   <Step title="Tester l’accès au dépôt">
     1. Créez une issue de test ou une pull request dans un dépôt où l’application est installée.
-    2. Vérifiez que Mintlify réagit correctement.
+    2. Vérifiez que Mintlify répond correctement.
   </Step>
 </Steps>
 
 <div id="faq-and-troubleshooting">
-  ## FAQ et dépannage
+  ## FAQ et résolution des problèmes
 </div>
 
 <AccordionGroup>
-  <Accordion title="L'installation de l'application échoue avec des erreurs de permissions.">
-    Assurez-vous de disposer :
+  <Accordion title="L’installation de l’application échoue avec des erreurs d’autorisation.">
+    Assurez-vous d’avoir :
 
-    * Des privilèges d’administrateur du site pour la création d’applications
-    * Des droits de propriétaire ou d’administrateur de l’organisation pour l’installation de l’application.
-    * Des permissions de dépôt appropriées si vous l’installez sur des dépôts spécifiques.
+    * Les privilèges d’administrateur du site pour créer des applications
+    * Les droits de propriétaire ou d’administrateur de l’organisation pour installer l’application.
+    * Les autorisations de dépôt appropriées si vous installez l’application sur des dépôts spécifiques.
   </Accordion>
 
   <Accordion title="Les webhooks ne sont pas livrés">
     * Vérifiez que l’URL du webhook est correcte et accessible.
     * Assurez-vous que votre pare-feu autorise les connexions HTTPS sortantes.
-    * Vérifiez que le secret du webhook correspond à ce qui a été configuré.
+    * Vérifiez que le secret du webhook correspond à celui qui a été configuré.
     * Consultez les journaux de livraison des webhooks dans l’onglet &quot;Advanced&quot; des paramètres de votre GitHub App.
   </Accordion>
 
-  <Accordion title="Je reçois des erreurs de certificat SSL/TLS">
-    Il est possible que votre GHES utilise des certificats auto-signés. Nos services ne peuvent pas vérifier le certificat de votre serveur.
+  <Accordion title="J’obtiens des erreurs de certificat SSL/TLS">
+    Votre GHES utilise peut-être des certificats auto-signés. Nos services ne peuvent pas vérifier le certificat de votre serveur.
 
-    **Solution :** assurez-vous que votre GHES dispose d’un certificat SSL valide.
+    **Solution :** Assurez-vous que votre GHES dispose d’un certificat SSL valide.
   </Accordion>
 
-  <Accordion title="L’application s’installe, mais ne réagit pas aux événements.">
-    * Assurez-vous que les webhooks sont bien livrés et que notre serveur en accuse réception avec un code de réponse 200.
-    * Vérifiez que les permissions requises ont été accordées lors de l’installation.
+  <Accordion title="L’application s’installe, mais ne répond pas aux événements.">
+    * Assurez-vous que les webhooks sont bien livrés et que notre serveur les accepte avec un code de réponse 200.
+    * Vérifiez que les autorisations requises ont bien été accordées lors de l’installation.
   </Accordion>
 
-  <Accordion title="Puis-je limiter les dépôts auxquels l’application accède ?">
-    Oui, lors de l’installation, vous pouvez sélectionner &quot;Only select repositories&quot; et choisir des dépôts spécifiques. Vous pouvez modifier ce paramètre plus tard dans les paramètres des applications installées de votre organisation. C’est le mode d’installation recommandé.
+  <Accordion title="Puis-je limiter les dépôts auxquels l’application a accès ?">
+    Oui, lors de l’installation, vous pouvez sélectionner &quot;Only select repositories&quot; et choisir des dépôts spécifiques. Vous pourrez modifier cela plus tard dans les paramètres des applications installées de votre organisation. C’est le mode d’installation recommandé.
   </Accordion>
 
-  <Accordion title="Comment mettre à jour les permissions de l’application plus tard ?">
+  <Accordion title="Comment mettre à jour les autorisations de l’application plus tard ?">
     * Accédez aux paramètres de l’application en tant qu’administrateur du site.
-    * Modifiez les permissions selon vos besoins.
-    * L’application devra être à nouveau approuvée par les propriétaires de l’organisation.
-    * Informez-nous de tout changement de permissions, car cela peut affecter les fonctionnalités.
+    * Modifiez les autorisations selon vos besoins.
+    * L’application devra être de nouveau approuvée par les propriétaires de l’organisation.
+    * Informez-nous de tout changement d’autorisation, car cela peut affecter le fonctionnement.
   </Accordion>
 
-  <Accordion title="Notre GHES est derrière un pare-feu d’entreprise, un proxy nginx ou une configuration similaire.">
+  <Accordion title="Notre GHES se trouve derrière un pare-feu d’entreprise, un proxy nginx ou une configuration similaire.">
     Vous devez :
 
-    * Ajouter nos domaines de service à la liste d’autorisation de votre pare-feu.
-    * Assurer la connectivité HTTPS sortante (port 443).
-    * Si l’accès direct à Internet n’est pas autorisé, configurez un proxy.
+    * Ajouter les domaines de notre service à la liste blanche de votre pare-feu.
+    * Assurer une connectivité HTTPS sortante (port 443).
+    * Si l’accès direct à Internet n’est pas autorisé, configurer un proxy.
   </Accordion>
 
-  <Accordion title="Cela peut-il fonctionner avec un GHES dans un environnement isolé (air-gapped) ?">
+  <Accordion title="Cela peut-il fonctionner avec GHES dans des environnements isolés du réseau ?">
     Non, votre GHES doit pouvoir communiquer avec notre serveur hébergé dans le cloud.
   </Accordion>
 
   <Accordion title="Qui dois-je contacter si j’ai besoin d’aide ?">
-    Veuillez contacter votre interlocuteur Customer Success avec qui vous avez échangé chez Mintlify, ou notre équipe d’assistance à l’adresse <a href="mailto:support@mintlify.com">support@mintlify.com</a> avec :
+    Veuillez contacter votre interlocuteur Customer Success chez Mintlify, ou notre équipe d’assistance à l’adresse <a href="mailto:support@mintlify.com">support@mintlify.com</a>, avec :
 
-    * Votre version de GitHub Enterprise Server.
+    * La version de votre GitHub Enterprise Server.
     * Les messages d’erreur spécifiques.
-    * Des captures d’écran de tout problème.
-    * Les détails de configuration réseau/pare-feu (le cas échéant).
+    * Des captures d’écran des éventuels problèmes.
+    * Les détails de configuration réseau/pare-feu (si pertinent).
   </Accordion>
 </AccordionGroup>

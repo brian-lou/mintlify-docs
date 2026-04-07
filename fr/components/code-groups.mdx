@@ -1,10 +1,10 @@
 ---
 title: "Groupes de code"
 description: "Afficher plusieurs exemples de code dans un seul composant"
-keywords: ["code groups", "tabbed code", "multi-language examples", "CodeGroup"]
+keywords: ["groupes de code", "code par onglets", "exemples multilingues", "CodeGroup"]
 ---
 
-Utilisez le composant `CodeGroup` pour afficher plusieurs blocs de code dans une interface à onglets, afin de permettre aux utilisateurs de comparer des implémentations dans différents langages de programmation ou d&#39;examiner des approches alternatives pour une même tâche.
+Utilisez le composant `CodeGroup` pour afficher plusieurs blocs de code dans une interface à onglets, afin que les utilisateurs puissent comparer des implémentations dans différents langages de programmation ou voir d&#39;autres approches pour une même tâche.
 
 <CodeGroup>
   ```javascript helloWorld.js
@@ -24,15 +24,15 @@ Utilisez le composant `CodeGroup` pour afficher plusieurs blocs de code dans une
   ```
 </CodeGroup>
 
-Les groupes de code héritent du style global de votre fichier `docs.json`. Personnalisez votre thème à l&#39;aide de `styling.codeblocks`. Consultez [Paramètres](/fr/organize/settings#styling) pour les options de configuration.
+Les groupes de code héritent du style global défini dans votre fichier `docs.json`. Personnalisez votre thème avec `styling.codeblocks`. Consultez [Paramètres](/fr/organize/settings#styling) pour voir les options de configuration.
 
-Les groupes de code se synchronisent automatiquement avec d&#39;autres groupes de code et [onglets](/fr/components/tabs) sur la même page lorsque leurs libellés correspondent. Lorsque vous sélectionnez un langage dans un groupe de code, tous les onglets et groupes de code portant des libellés correspondants sont mis à jour pour afficher le même langage.
+Les groupes de code se synchronisent automatiquement avec les autres groupes de code et les [onglets](/fr/components/tabs) de la même page lorsque leurs libellés correspondent. Lorsque vous sélectionnez un langage dans un groupe de code, tous les onglets et groupes de code portant les mêmes libellés se mettent à jour pour afficher ce même langage.
 
 <div id="create-code-groups">
   ## Créer des groupes de code
 </div>
 
-Pour créer un groupe de code, entourez plusieurs blocs de code avec des balises `<CodeGroup>`. Chaque bloc de code doit inclure un titre, qui devient le libellé de l’onglet.
+Pour créer un groupe de code, entourez plusieurs blocs de code avec les balises `<CodeGroup>`. Chaque bloc de code doit inclure un titre, qui devient le libellé de l’onglet.
 
 ````mdx
 <CodeGroup>
@@ -60,7 +60,7 @@ class HelloWorld {
   ## Menu déroulant de langue
 </div>
 
-Vous pouvez remplacer les onglets d’un groupe de code par un menu déroulant pour basculer entre les langues en utilisant la propriété `dropdown`.
+Vous pouvez remplacer les onglets d’un groupe de code par un menu déroulant pour passer d’une langue à l’autre à l’aide de la prop `dropdown`.
 
 <CodeGroup dropdown>
   ```javascript helloWorld.js

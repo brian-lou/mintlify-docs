@@ -1,27 +1,25 @@
 ---
 title: "Segment"
-description: "将分析事件发送到 Segment 和下游工具。"
-keywords: ["Segment 集成", "write key", "事件流", "CDP 集成"]
+description: "将分析事件发送到 Segment 及其下游工具。"
+keywords: ["Segment 集成", "写入密钥", "事件流", "CDP 集成"]
 ---
 
-将你的 Segment write key 添加到 `docs.json` 文件中，即可将分析事件发送到 Segment。
+将 Segment 写入密钥添加到 `docs.json` 文件中，即可将分析事件发送到 Segment。
 
 <CodeGroup>
+  ```json docs.json 中的分析选项
+  "integrations": {
+      "segment": {
+          "key": "required",
+      }
+  }
+  ```
 
-```json 在 docs.json 中的分析选项
-"integrations": {
-    "segment": {
-        "key": "required",
-    }
-}
-```
-
-```json 示例
-"integrations": {
-    "segment": {
-        "key": "nqJxiRG15Y6M594P8Sb8ESEciU3VC2"
-    }
-}
-```
-
+  ```json 示例
+  "integrations": {
+      "segment": {
+          "key": "nqJxiRG15Y6M594P8Sb8ESEciU3VC2"
+      }
+  }
+  ```
 </CodeGroup>

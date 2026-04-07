@@ -1,13 +1,13 @@
 ---
 openapi: /es/admin-openapi.json GET /agent/{projectId}/job/{id}
-keywords: [ "tarea de agente", "estado", "obtener", "detalles" ]
+keywords: [ "trabajo del agente", "estado", "obtener", "detalles" ]
 ---
 
 <div id="usage">
   ## Uso
 </div>
 
-Este endpoint obtiene los detalles y el estado de un trabajo de agente específico por su identificador único. Úsalo para verificar el progreso, el estado y los resultados de un trabajo de agente creado anteriormente.
+Este endpoint devuelve los detalles y el estado de un trabajo del agente específico mediante su identificador único. Úsalo para consultar el progreso, el estado y los resultados de un trabajo del agente creado previamente.
 
 <div id="job-details">
   ## Detalles del trabajo
@@ -15,6 +15,6 @@ Este endpoint obtiene los detalles y el estado de un trabajo de agente específi
 
 La respuesta incluye información como:
 
-- Estado de ejecución y de finalización del trabajo
-- Información de la rama y detalles del pull request
-- Metadatos de la sesión y marcas de tiempo
+* El estado de ejecución y finalización del trabajo
+* Información de la rama y detalles de la pull request
+* Metadatos de la sesión y marcas temporales

@@ -1,39 +1,39 @@
 ---
-title: "Proxys externes avec Vercel"
-description: "Configurer des proxys externes en amont de votre déploiement Vercel."
+title: "Proxies externes avec Vercel"
+description: "Configurez des proxies externes devant votre déploiement Vercel."
 keywords: ["Vercel", "proxy externe", "CloudFront", "vérification de domaine", "certificats SSL"]
 ---
 
-Si vous utilisez un proxy externe comme Cloudflare ou AWS CloudFront en amont de votre déploiement Vercel, vous devez le configurer correctement afin d’éviter tout conflit avec la vérification de domaine et l’émission de certificats SSL par Vercel.
+Si vous utilisez un proxy externe comme Cloudflare ou AWS CloudFront devant votre déploiement Vercel, vous devez le configurer correctement afin d’éviter les conflits avec la vérification de domaine de Vercel et le provisionnement des certificats SSL.
 
-Une mauvaise configuration du proxy peut empêcher Vercel d’émettre des certificats SSL Let's Encrypt et entraîner des échecs de vérification de domaine.
+Une mauvaise configuration du proxy peut empêcher Vercel de provisionner des certificats SSL Let&#39;s Encrypt et entraîner des échecs de vérification de domaine.
 
 Consultez la liste des [fournisseurs pris en charge](https://vercel.com/guides/how-to-setup-verified-proxy#supported-providers-verified-proxy-lite) dans la documentation Vercel.
 
 <div id="required-path-allowlist">
-  ## Liste d’autorisation de chemins obligatoire
+  ## Liste d’autorisation des chemins requise
 </div>
 
-Votre proxy externe doit autoriser le trafic vers ces chemins spécifiques sans le bloquer, le rediriger ni le mettre en cache de manière agressive :
+Votre proxy externe doit autoriser le trafic sur ces chemins spécifiques, sans le bloquer, le rediriger ni le mettre fortement en cache :
 
-- `/.well-known/acme-challenge/*` - Requis pour la vérification des certificats Let's Encrypt
-- `/.well-known/vercel/*` - Requis pour la vérification des domaines Vercel
-- `/mintlify-assets/_next/static/*` - Requis pour les ressources statiques
+* `/.well-known/acme-challenge/*` - Requis pour la vérification du certificat Let&#39;s Encrypt
+* `/.well-known/vercel/*` - Requis pour la vérification du domaine Vercel
+* `/mintlify-assets/_next/static/*` - Requis pour les ressources statiques
 
-Ces chemins doivent être acheminés directement vers votre déploiement Vercel sans modification.
+Ces chemins doivent être transmis directement à votre déploiement Vercel, sans modification.
 
 <div id="header-forwarding-requirements">
   ## Exigences relatives au transfert des en-têtes
 </div>
 
-Assurez-vous que votre proxy transmet correctement l’en-tête `HOST`. Sans un transfert correct des en-têtes, les requêtes de vérification échoueront.
+Assurez-vous que votre proxy transmet correctement l’en-tête `HOST`. Sans transmission correcte des en-têtes, les requêtes de vérification échoueront.
 
 <div id="testing-your-proxy-setup">
-  ## Tester la configuration de votre proxy
+  ## Tester votre configuration de proxy
 </div>
 
 Pour vérifier que votre proxy est correctement configuré :
 
 1. Vérifiez que `https://[yourdomain].com/.well-known/vercel/` renvoie bien une réponse.
-2. Assurez-vous que les certificats SSL sont correctement provisionnés dans votre tableau de bord Vercel.
-3. Vérifiez que la vérification du domaine s’effectue correctement.
+2. Assurez-vous que les certificats SSL sont correctement en provisionnement dans votre tableau de bord Vercel.
+3. Vérifiez que la vérification du domaine se termine correctement.

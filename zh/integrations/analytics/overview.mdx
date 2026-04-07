@@ -1,19 +1,19 @@
 ---
 title: "分析集成"
-description: "连接分析平台以跟踪用户参与度和文档使用情况。"
-keywords: ["third-party analytics", "engagement tracking", "analytics platforms", "usage tracking"]
+description: "连接分析平台，跟踪用户参与度和文档使用情况。"
+keywords: ["第三方分析", "参与度跟踪", "分析平台", "使用情况跟踪"]
 ---
 
-通过连接第三方分析平台，跟踪用户如何与您的文档交互。Mintlify 会将用户参与事件发送到您配置的分析服务提供商。
+通过连接第三方分析平台，你可以跟踪用户如何与文档互动。Mintlify 会将互动事件发送给你配置的分析服务提供商。
 
 <div id="how-analytic-integrations-work">
-  ## 分析集成的工作原理
+  ## 分析集成如何工作
 </div>
 
-当你在文档站点中添加分析集成时，Mintlify 会跟踪用户交互，例如页面浏览、搜索查询、API playground 请求和反馈提交，并将它们发送到你的分析服务提供商。你可以在 `docs.json` 文件中添加你的 API 密钥，以连接任意数量的受支持分析服务提供商。一旦你在配置中添加了它们，分析事件就会立即开始发送到这些服务提供商，无需任何额外配置。
+当你为文档站点添加分析集成后，Mintlify 会跟踪页面浏览、搜索查询、API 操作台请求和反馈提交等用户交互，并将这些数据发送到你的分析服务提供商。你可以通过将 API 密钥添加到 `docs.json` 文件中，连接任意数量的受支持分析服务提供商。只要将它们添加到配置中，分析事件就会立即发送到相应的服务提供商，无需任何额外配置。
 
 <div id="supported-platforms">
-  ## 支持平台
+  ## 支持的平台
 </div>
 
 <CardGroup cols={2}>
@@ -136,7 +136,7 @@ viewBox="0 0 64 64"
   />
 
   <Card
-    title="Google 标签管理器"
+    title="Google 跟踪代码管理器"
     href="/zh/integrations/analytics/google-tag-manager"
     horizontal
     icon={
@@ -198,7 +198,7 @@ fill="none"
   />
 
   <Card
-    title="Hotjar"
+    title="HotJar"
     href="/zh/integrations/analytics/hotjar"
     horizontal
     icon={
@@ -555,10 +555,10 @@ clip-rule="evenodd"
   ## 设置
 </div>
 
-将分析服务提供商的凭据添加到 `docs.json` 文件中的 `integrations` 对象中。只需包含你打算使用的平台。
+将你的分析服务提供商凭证添加到 `docs.json` 的 `integrations` 对象中。只添加你想使用的平台。
 
 <Note>
-  分析集成只需要公共 API 密钥，任何访问你的文档站点的人都可以看到这些密钥。与你的公共密钥在分析服务提供商端配对使用的私有 API 密钥必须严格保密。不要在 `docs.json` 中包含私有 API 密钥。
+  分析集成只需要公开 API 密钥，任何查看你的文档站点的人都可以访问这些密钥。与你的公开密钥在分析服务提供商端配对的私有 API 密钥必须保密。不要在 `docs.json` 中包含私有 API 密钥。
 </Note>
 
 ```json docs.json
@@ -643,76 +643,76 @@ clip-rule="evenodd"
   ## 跟踪事件
 </div>
 
-所有被跟踪的事件都使用 `docs.` 作为前缀。
+所有跟踪事件都使用 `docs.` 作为前缀。
 
 <div id="navigation-and-page-views">
   ### 导航和页面浏览
 </div>
 
-| 事件名称                              | 描述                                                                                               |
-| :-------------------------------------- | :-------------------------------------------------------------------------------------------------------- |
-| `docs.content.view`                     | 用户查看页面。仅发送给默认不会跟踪页面浏览的服务提供商。 |
-| `docs.content.md.view`                  | 用户查看页面的 Markdown 版本。                                                          |
-| `docs.navitem.click`                    | 用户点击顶部导航项。                                                              |
-| `docs.navitem.cta_click`                | 用户点击行动号召按钮。                                                                      |
-| `docs.footer.powered_by_mintlify_click` | 用户点击“Powered by Mintlify”链接。                                                        |
+| Event name                              | Description                  |
+| :-------------------------------------- | :--------------------------- |
+| `docs.content.view`                     | 用户查看页面。仅会发送给默认不跟踪页面浏览的服务提供商。 |
+| `docs.content.md.view`                  | 用户查看页面的 Markdown 版本。         |
+| `docs.navitem.click`                    | 用户点击顶部导航项。                   |
+| `docs.navitem.cta_click`                | 用户点击行动引导按钮。                  |
+| `docs.footer.powered_by_mintlify_click` | 用户点击“Powered by Mintlify”链接。 |
 
 <div id="search">
   ### 搜索
 </div>
 
-| 事件名称                                | 说明                                                                                                     |
-| :-------------------------------------- | :-------------------------------------------------------------------------------------------------------- |
-| `docs.search.query`                     | 用户发起搜索。                                                                                            |
-| `docs.search.close`                     | 用户关闭搜索框。                                                                                          |
-| `docs.search.result_click`              | 用户点击搜索结果。                                                                                        |
+| 事件名称                       | 描述        |
+| :------------------------- | :-------- |
+| `docs.search.query`        | 用户发起搜索。   |
+| `docs.search.close`        | 用户关闭搜索栏。  |
+| `docs.search.result_click` | 用户点击搜索结果。 |
 
 <div id="code-and-api-playground">
-  ### 代码和 API 体验区
+  ### 代码和 API 操作台
 </div>
 
-| Event name                              | Description                                                                                               |
-| :-------------------------------------- | :-------------------------------------------------------------------------------------------------------- |
-| `docs.code_block.copy`                  | 用户从代码块中复制代码。                                                                |
-| `docs.code_block.ask_ai`                | 用户请求助手解释某个代码块。                                                   |
-| `docs.api_playground.request`           | 用户在 API 体验区中发送 API 请求。                                                           |
+| 事件名称                          | 说明                     |
+| :---------------------------- | :--------------------- |
+| `docs.code_block.copy`        | 用户从代码块中复制代码。           |
+| `docs.code_block.ask_ai`      | 用户让助手解释代码块。            |
+| `docs.api_playground.request` | 用户在 API 操作台中发起 API 请求。 |
 
 <div id="interactive-components">
-  ### 互动组件
+  ### 交互组件
 </div>
 
-| 事件名称                              | 描述                                                                                               |
-| :-------------------------------------- | :-------------------------------------------------------------------------------------------------------- |
-| `docs.accordion.open`                   | 用户打开折叠面板。                                                                           |
-| `docs.accordion.close`                  | 用户关闭折叠面板。                                                                          |
-| `docs.expandable.open`                  | 用户打开可展开组件。                                                                          |
-| `docs.expandable.close`                 | 用户关闭可展开组件。                                                                         |
+| 事件名称                    | 描述         |
+| :---------------------- | :--------- |
+| `docs.accordion.open`   | 用户展开折叠面板。  |
+| `docs.accordion.close`  | 用户收起折叠面板。  |
+| `docs.expandable.open`  | 用户展开可展开组件。 |
+| `docs.expandable.close` | 用户收起可展开组件。 |
 
 <div id="assistant-and-agent">
-  ### 助手和代理
+  ### 助手与代理
 </div>
 
-| Event name                              | Description                                                                                               |
-| :-------------------------------------- | :-------------------------------------------------------------------------------------------------------- |
-| `docs.assistant.enter`                  | 用户打开 AI 助手。                                                                             |
-| `docs.assistant.completed`              | 聊天会话结束。                                                                         |
-| `docs.assistant.source_click`           | 用户点击聊天回复中的引用来源。                                                                  |
-| `docs.assistant.suggestion_click`       | 用户点击推荐问题。                                                                |
-| `docs.assistant.ask_ai_on_text_selection` | 用户选中文本并点击“Ask AI”。                                |
-| `docs.assistant.shared`                 | 用户分享一段聊天对话。                                                                   |
-| `docs.assistant.thumbs_up`              | 用户在助手的回复上点击正向反馈按钮。                                 |
-| `docs.assistant.thumbs_down`            | 用户在助手的回复上点击负向反馈按钮。                                 |
-| `docs.assistant.spam_detected`          | 助手在用户消息中检测到垃圾信息。                                                        |
-| `docs.autopilot.suggestion.created`     | 代理创建一条文档更新建议。                                                        |
-| `docs.autopilot.suggestion.no_suggestion` | 代理判定不需要更新文档。                                            |
+| 事件名称                                      | 描述                |
+| :---------------------------------------- | :---------------- |
+| `docs.assistant.enter`                    | 用户打开 AI 助手。       |
+| `docs.assistant.completed`                | 聊天会话结束。           |
+| `docs.assistant.source_click`             | 用户点击聊天回复中的引用来源。   |
+| `docs.assistant.suggestion_click`         | 用户点击建议的问题。        |
+| `docs.assistant.ask_ai_on_text_selection` | 用户选中文本并点击“询问 AI”。 |
+| `docs.assistant.shared`                   | 用户分享聊天对话。         |
+| `docs.assistant.thumbs_up`                | 用户点击助手回复上的好评按钮。   |
+| `docs.assistant.thumbs_down`              | 用户点击助手回复上的差评按钮。   |
+| `docs.assistant.spam_detected`            | 助手检测到用户消息中含有垃圾信息。 |
+| `docs.autopilot.suggestion.created`       | 代理创建了一条文档建议。      |
+| `docs.autopilot.suggestion.no_suggestion` | 代理判定无需更新文档。       |
 
 <div id="contextual-menu">
   ### 上下文菜单
 </div>
 
-| Event name                              | Description                                                                                               |
-| :-------------------------------------- | :-------------------------------------------------------------------------------------------------------- |
-| `docs.context_menu.copy_page`           | 用户将当前页面复制为 Markdown 格式。                                                          |
-| `docs.context_menu.copy_mcp_link`       | 用户复制托管的 MCP server 链接。                                                            |
-| `docs.context_menu.ai_provider_click`   | 用户点击某个 AI 提供商，以当前页面作为上下文创建一次对话。                 |
-| `docs.context_menu.install_mcp_server`  | 用户在代码编辑器中安装托管的 MCP server。                                               |
+| Event name                             | Description                  |
+| :------------------------------------- | :--------------------------- |
+| `docs.context_menu.copy_page`          | 用户将当前页面复制为 Markdown。         |
+| `docs.context_menu.copy_mcp_link`      | 用户复制托管的 MCP 服务器链接。           |
+| `docs.context_menu.ai_provider_click`  | 用户点击某个 AI 提供商，以当前页面为上下文创建对话。 |
+| `docs.context_menu.install_mcp_server` | 用户在代码编辑器中安装托管的 MCP 服务器。      |

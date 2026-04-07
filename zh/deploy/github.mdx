@@ -1,65 +1,61 @@
 ---
 title: "GitHub"
-description: "连接 GitHub 仓库，实现自动部署、Pull Request 预览和持续同步。"
-keywords: ["GitHub 应用","仓库连接","自动部署"]
+description: "连接到 GitHub 仓库，以实现自动部署、拉取请求预览和持续同步。"
+keywords: ["GitHub App","仓库连接","自动部署"]
 ---
 
-Mintlify 使用 GitHub 应用自动将你的文档与 GitHub 仓库同步。
+Mintlify 使用 GitHub App 自动将你的文档与 GitHub 仓库保持同步。
 
 <Tip>
-  **你需要安装 GitHub 应用吗？**
+  **你需要 GitHub App 吗？**
 
-  - `mintlify-community` 组织中的 **由 Mintlify 托管的仓库**：不需要。GitHub 应用已为你配置完成。
-  - **你自己的仓库**：需要。安装 GitHub 应用，以便在你推送更改时启用自动部署。
+  * **由 Mintlify 托管、位于 `mintlify-community` 组织中的仓库**：不需要。GitHub App 已经配置好了。
+  * **你自己的仓库**：需要。安装 GitHub App，以便在你推送更改时启用自动部署。
 
-  在仪表盘的 [Git Settings](https://dashboard.mintlify.com/settings/deployment/git-settings) 页面中查看你的仓库。
+  你可以在控制面板的 [Git Settings](https://dashboard.mintlify.com/settings/deployment/git-settings) 页面查看你的仓库。
 </Tip>
 
-如果你的文档仓库位于 Mintlify 组织名下的私有仓库中，GitHub 应用会由 Mintlify 自动配置和管理。你可以使用 Web 编辑器修改文档。如果你想在本地编辑文档，请将该仓库克隆到你自己的组织下，并在 Git 设置中更新为使用你自己的仓库。
+如果你的仓库是由 Mintlify 组织拥有的私有仓库，GitHub App 会由 Mintlify 自动配置和管理。你可以使用网页编辑器修改文档。如果你想在本地处理文档，请将仓库克隆到你自己的组织中，并更新 Git 设置以使用你自己的仓库。
 
 <div id="clone-to-your-own-repository">
   ## 克隆到你自己的仓库
 </div>
 
-如果你在初始配置时跳过了连接自己的 Git 仓库，你的文档目前存放在由 Mintlify 组织拥有的私有仓库中。要将它迁移到你自己的账号或组织下：
+如果你在初始设置时跳过了连接自己的 Git 仓库，那么你的文档会存放在由 Mintlify 组织拥有的私有仓库中。要将其转移到你自己的账户或组织中：
 
-1. 前往仪表板中的 [Git Settings](https://dashboard.mintlify.com/settings/deployment/git-settings)。
-2. 点击 **Clone as Private** 或 **Clone as Public**。Public 仓库允许任何人查看你的文档源代码并提交 issue 或建议；Private 仓库则仅限你的团队访问。
-3. 按照下方 [Install the GitHub App](#install-the-github-app) 中的步骤安装 GitHub 应用。
+1. 前往控制面板中的 [Git Settings](https://dashboard.mintlify.com/settings/deployment/git-settings)。
+2. 点击 **Clone as Private** 或 **Clone as Public**。公开仓库允许任何人查看你的文档源码，并提交问题或建议。私有仓库则仅限你的团队访问。
+3. 按照下方 [Install the GitHub App](#install-the-github-app) 中的步骤安装 GitHub App。
 
 <div id="alternative-download-and-create-your-own-repository">
-  ### 备选方案：下载并创建你自己的仓库
+  ### 另一种方式：下载并创建你自己的仓库
 </div>
 
-如果你想在不授予更高级别 OAuth 权限的前提下使用私有仓库，可以手动迁移你的文档：
+如果你想使用私有仓库，又不想授予更高权限的 OAuth 访问权限，可以手动迁移文档：
 
-1. 在控制台中前往 [Git Settings](https://dashboard.mintlify.com/settings/deployment/git-settings)。
+1. 在控制面板中前往 [Git Settings](https://dashboard.mintlify.com/settings/deployment/git-settings)。
 2. 将文档下载为 zip 文件。
 3. 在 GitHub 或 GitLab 上创建一个新仓库。
-4. 解压 zip 文件的内容并将其推送到你的新仓库。
-5. 返回 [Git Settings](https://dashboard.mintlify.com/settings/deployment/git-settings)，将你的新仓库连接到 Mintlify。
-6. 按照下方 [安装 GitHub 应用](#install-the-github-app) 中的步骤安装 GitHub 应用。
+4. 解压 zip 文件内容，并将其推送到新仓库。
+5. 返回 [Git Settings](https://dashboard.mintlify.com/settings/deployment/git-settings)，将新仓库连接到 Mintlify。
+6. 按照下方 [Install the GitHub App](#install-the-github-app) 中的步骤安装 GitHub App。
 
 <div id="install-the-github-app">
-  ## 安装 GitHub 应用
+  ## 安装 GitHub App
 </div>
 
 <Note>
-  你必须是组织所有者，或在仓库中拥有管理员权限，才能安装该应用。如果你没有相应权限，则需要由仓库所有者批准安装请求。
+  你必须拥有组织所有者权限，或仓库的管理员权限，才能安装该应用。如果你没有所需权限，则需由仓库所有者批准安装请求。
 </Note>
 
-通过你的[控制台](https://dashboard.mintlify.com/settings/organization/github-app)安装 Mintlify GitHub 应用。
+通过你的[控制面板](https://dashboard.mintlify.com/settings/organization/github-app)安装 Mintlify GitHub App。
 
 <Tip>
-  我们建议只授予对文档仓库的访问权限。
+  我们建议仅向你的文档仓库授予访问权限。
 </Tip>
 
 <Frame>
-  <img
-    className="h-80"
-    alt="Mintlify GitHub App 安装页面，其中选中了“Only select repositories”选项。"
-    src="/images/github/select-repos.png"
-  />
+  <img className="h-80" alt="Mintlify GitHub App 安装页面，其中已选中“仅选择仓库”选项。" src="/images/github/select-repos.png" />
 </Frame>
 
 <div id="permissions">
@@ -68,80 +64,82 @@ Mintlify 使用 GitHub 应用自动将你的文档与 GitHub 仓库同步。
 
 安装 GitHub App 时，请授予以下权限。
 
-读取权限：
+只读权限：
 
-- `metadata`: 基本仓库信息
+* `metadata`：基本仓库信息
 
 读写权限：
 
-- `checks`: 在拉取请求上创建状态检查
-- `code`: 在你向文档分支提交时读取文件更改
-- `deployments`: 为拉取请求生成预览部署
-- `pull requests`: 通过 Web 编辑器创建分支和拉取请求
+* `checks`：在拉取请求中创建状态检查
+* `code`：当你向文档分支提交内容时，读取文件变更
+* `deployments`：为拉取请求生成预览部署
+* `pull requests`：通过网页编辑器创建分支和拉取请求
 
 <Info>
-  该应用只会访问你明确授予访问权限的仓库。如果你启用了分支保护规则，该应用无法直接向受保护分支推送。
+  该应用仅可访问你明确授权的仓库。如果你启用了分支保护规则，该应用将无法直接推送到受保护分支。
 </Info>
 
 <div id="manage-repository-access">
-  ## 管理代码仓库访问权限
+  ## 管理仓库访问权限
 </div>
 
-在安装 GitHub 应用时，你可以授予其访问所有代码仓库，或仅访问特定仓库。我们建议只为你的文档仓库，以及你希望作为 agent 上下文提供的仓库授予访问权限。你可以随时在 [GitHub 应用设置](https://github.com/apps/mintlify/installations/new) 中修改这一选择。
+安装 GitHub App 时，你可以授予其访问所有仓库或特定仓库的权限。我们建议仅授予其访问你的文档仓库，以及你希望作为代理上下文提供的其他仓库的权限。你可以随时在 [GitHub App 设置](https://github.com/apps/mintlify/installations/new)中更改此选项。
 
 <div id="configure-docs-source">
-  ## 配置文档源
+  ## 配置文档来源
 </div>
 
-在仪表盘的 [Git Settings](https://dashboard.mintlify.com/settings/deployment/git-settings) 部分更改文档构建所基于的组织、仓库或分支。
+在控制面板的 [Git Settings](https://dashboard.mintlify.com/settings/deployment/git-settings) 部分，更改用于构建文档的组织、仓库或分支。
 
 <div id="github-enterprise-with-ip-allowlists">
-  ## 启用 IP 允许列表的 GitHub Enterprise
+  ## 使用 IP 允许列表的 GitHub Enterprise
 </div>
 
-如果你的 GitHub Enterprise Cloud 组织启用了 IP 允许列表，你需要将 Mintlify 的出站 IP 地址（`54.242.90.151`）添加到允许列表中，以确保 GitHub 应用能够正常运行。
+如果你的 GitHub Enterprise Cloud 组织启用了 IP 允许列表，则需要将 Mintlify 的出站 IP 地址 (`54.242.90.151`) 添加到允许列表中，以确保 GitHub App 能正常运行。
 
-请按照 [GitHub 的文档](https://docs.github.com/en/enterprise-cloud@latest/organizations/keeping-your-organization-secure/managing-security-settings-for-your-organization/managing-allowed-ip-addresses-for-your-organization) 配置你的 IP 允许列表。
+请按照 [GitHub 文档](https://docs.github.com/en/enterprise-cloud@latest/organizations/keeping-your-organization-secure/managing-security-settings-for-your-organization/managing-allowed-ip-addresses-for-your-organization) 配置 IP 允许列表。
 
 <div id="troubleshooting">
-  ## 疑难解答
+  ## 故障排查
 </div>
 
 <div id="deployment-not-triggering-automatically">
   ### 部署未自动触发
 </div>
 
-如果向代码仓库推送后没有触发部署，请检查以下可能的问题。
+如果推送到仓库后没有触发部署，请检查以下可能原因。
 
 <AccordionGroup>
-  <Accordion title="验证 GitHub App 安装情况">
-    检查是否在正确的代码仓库中安装了该应用。
+  <Accordion title="验证 GitHub App 安装">
+    确认已在正确的仓库中安装该应用。
 
-    1. 在仪表盘中前往 [GitHub App settings](https://dashboard.mintlify.com/settings/organization/github-app)。
-    1. 检查你的代码仓库是否出现在该应用的已启用安装列表中。
+    1. 前往控制面板中的 [GitHub App settings](https://dashboard.mintlify.com/settings/organization/github-app)。
+    2. 检查你的仓库是否在有效的应用安装列表中。
   </Accordion>
+
   <Accordion title="检查部署分支">
-    确保你正在推送到正确的分支。
+    确认你推送到了正确的分支。
 
     1. 前往 [Git Settings](https://dashboard.mintlify.com/settings/deployment/git-settings)
-    1. 在仪表盘中确认配置的分支与你实际推送的分支是否一致。
+    2. 确认控制面板中的分支与您推送到的分支一致。
   </Accordion>
 </AccordionGroup>
 
 <div id="github-app-connection-issues">
-  ### GitHub 应用连接问题
+  ### GitHub App 连接问题
 </div>
 
-如果你在使用 GitHub 应用时遇到问题，重置连接通常可以解决大多数问题。
+如果你在使用 GitHub App 时遇到问题，重置连接通常可以解决大多数问题。
 
 <Steps>
   <Step title="通过 GitHub 卸载 Mintlify 应用。">
-    1. 在 GitHub 中，前往 [installations](https://github.com/settings/installations)，在 Mintlify 应用旁选择 **Configure**。向下滚动并选择 **Uninstall**。
-    2. 前往 [Authorized GitHub Apps](https://github.com/settings/apps/authorizations)，在 Mintlify 应用旁选择 **Revoke**。
+    1. 在 GitHub 中，前往 [installations](https://github.com/settings/installations)，然后在 Mintlify 应用旁点击 **Configure**。向下滚动并点击 **Uninstall**。
+    2. 前往 [Authorized GitHub Apps](https://github.com/settings/apps/authorizations)，然后在 Mintlify 应用旁点击 **Revoke**。
   </Step>
+
   <Step title="重新安装 Mintlify 应用。">
-    1. 在你的 Mintlify 控制面板中，前往 [Git Settings](https://dashboard.mintlify.com/settings/deployment/git-settings) 并安装 GitHub 应用。
-    2. 在控制面板的 [My Profile](https://dashboard.mintlify.com/settings/account) 部分为你的账户授权。
+    1. 在你的 Mintlify 控制面板中，前往 [Git Settings](https://dashboard.mintlify.com/settings/deployment/git-settings) 并安装 GitHub App。
+    2. 在控制面板的 [My Profile](https://dashboard.mintlify.com/settings/account) 页面中授权你的账户。
   </Step>
 </Steps>
 
@@ -149,29 +147,22 @@ Mintlify 使用 GitHub 应用自动将你的文档与 GitHub 仓库同步。
   ### 反馈附加功能不可用
 </div>
 
-“编辑建议”和“提出问题”这两项反馈功能仅适用于公开的 GitHub 仓库。如果这些选项在你的仪表盘中被禁用，请检查你的仓库可见性。
+“编辑建议”和“提交问题”这两项反馈功能仅适用于公开的 GitHub 仓库。如果这些选项在您的控制面板中被禁用，请检查仓库的可见性。
 
-如果你的仓库是公开的，但仍无法在仪表盘中启用“编辑建议”或“提出问题”选项，请重新验证你的 Git 设置。
+如果您的仓库是公开的，但仍无法在控制面板中启用“编辑建议”或“提交问题”选项，请重新验证您的 Git 设置。
 
 <Steps>
-  <Step title="前往 Git Settings">
-    在你的仪表盘中进入 [Git Settings](https://dashboard.mintlify.com/settings/deployment/git-settings)。
+  <Step title="前往 Git 设置">
+    在控制面板中前往 [Git Settings](https://dashboard.mintlify.com/settings/deployment/git-settings)。
   </Step>
-  <Step title="重新验证你的设置">
-    点击 Git 设置卡片角落中的绿色勾号，重新验证你的仓库设置。这样会强制更新你的仓库设置，以反映你的仓库当前是公开还是私有。
+
+  <Step title="重新验证设置">
+    点击 Git 设置框角的绿色勾选标记，重新验证仓库设置。这会强制更新仓库设置，以反映仓库是公开还是私有。
 
     <Frame>
-      <img
-        src="/images/github/revalidate-settings-light.png"
-        alt="Mintlify 仪表盘中的 Git Settings 页面。一个橙色箭头指向用于重新验证仓库设置的绿色勾号。"
-        className="block dark:hidden"
-      />
+      <img src="/images/github/revalidate-settings-light.png" alt="Mintlify 控制面板中的 Git Settings 页面。橙色箭头指向用于重新验证仓库设置的绿色勾选标记。" className="block dark:hidden" />
 
-      <img
-        src="/images/github/revalidate-settings-dark.png"
-        alt="Mintlify 仪表盘中的 Git Settings 页面。一个橙色箭头指向用于重新验证仓库设置的绿色勾号。"
-        className="hidden dark:block"
-      />
+      <img src="/images/github/revalidate-settings-dark.png" alt="Mintlify 控制面板中的 Git Settings 页面。橙色箭头指向用于重新验证仓库设置的绿色勾选标记。" className="hidden dark:block" />
     </Frame>
   </Step>
 </Steps>

@@ -1,16 +1,16 @@
 ---
 title: "Enlaces"
-description: "Aprende a crear enlaces internos, hacer referencia a endpoints de API y mantener la integridad de los enlaces en toda tu documentación."
-keywords: ["enlaces internos", "referencias cruzadas", "enlaces de anclaje", "enlaces rotos"]
+description: "Aprende a crear enlaces internos, hacer referencia a endpoints de la API y mantener la integridad de los enlaces en toda tu documentación."
+keywords: ["enlaces internos", "referencias cruzadas", "enlaces ancla", "enlaces rotos"]
 ---
 
-Un uso eficaz de los enlaces crea una experiencia de documentación cohesionada que ayuda a los usuarios a descubrir contenido relacionado y a navegar de forma eficiente. Un exceso de enlaces o los enlaces rotos pueden confundir a los usuarios y hacer que tu documentación sea menos efectiva. Esta guía muestra cómo crear y mantener enlaces en toda tu documentación.
+Un enlazado eficaz crea una experiencia de documentación conectada que ayuda a los usuarios a descubrir contenido relacionado y navegar con eficiencia. Demasiados enlaces o enlaces rotos pueden confundir a los usuarios y hacer que tu documentación sea menos eficaz. Esta guía explica cómo crear y mantener enlaces en toda tu documentación.
 
 <div id="internal-links">
   ## Enlaces internos
 </div>
 
-Crea enlaces a otras páginas de tu documentación mediante rutas relativas a la raíz. Las rutas relativas a la raíz comienzan en la raíz de tu directorio de documentación y funcionan de forma consistente independientemente de la ubicación de la página que contiene el enlace.
+Enlaza con otras páginas de tu documentación mediante rutas relativas a la raíz. Las rutas relativas a la raíz parten de la raíz del directorio de tu documentación y funcionan de forma coherente independientemente de dónde esté la página que contiene el enlace.
 
 ```mdx
 * [Quickstart guide](/quickstart)
@@ -19,20 +19,20 @@ Crea enlaces a otras páginas de tu documentación mediante rutas relativas a la
 ```
 
 * [Guía de inicio rápido](/es/quickstart)
-* [Descripción general de la API](/es/api-playground/overview)
+* [Resumen de la API](/es/api-playground/overview)
 * [Componentes personalizados](/es/customize/react-components)
 
 <div id="anchor-links">
-  ## Enlaces de anclaje
+  ## Enlaces de ancla
 </div>
 
-Los enlaces de anclaje te permiten crear enlaces directos a secciones específicas de una página. Cada encabezado genera automáticamente un enlace de anclaje a partir de su texto.
+Los enlaces de ancla te permiten enlazar directamente a secciones específicas de una página. Cada encabezado genera automáticamente un enlace de ancla en función de su texto.
 
 <div id="link-to-headers-on-the-same-page">
-  ### Enlazar a encabezados en la misma página
+  ### Enlace a encabezados de la misma página
 </div>
 
-Haz referencia a encabezados en la página actual usando el símbolo # (almohadilla):
+Haz referencia a los encabezados de la página actual con el símbolo de almohadilla:
 
 ```mdx
 [Jump to best practices](#best-practices)
@@ -41,58 +41,58 @@ Haz referencia a encabezados en la página actual usando el símbolo # (almohadi
 [Ir a las prácticas recomendadas](#best-practices)
 
 <div id="link-to-headers-on-other-pages">
-  ### Vincular a encabezados de otras páginas
+  ### Enlazar a encabezados de otras páginas
 </div>
 
-Combina las rutas de página con enlaces de ancla.
+Combina las rutas de las páginas con enlaces de ancla.
 
 ```mdx
 * [Customize your playground](/api-playground/overview#customize-your-playground)
 * [Cards properties](/components/cards#properties)
 ```
 
-* [Personaliza tu Playground](/es/api-playground/overview#customize-your-playground)
+* [Personaliza tu playground](/es/api-playground/overview#customize-your-playground)
 * [Propiedades de Cards](/es/components/cards#properties)
 
 <div id="how-anchor-links-are-generated">
-  ### Cómo se generan los enlaces de anclaje
+  ### Cómo se generan los enlaces de ancla
 </div>
 
-Los enlaces de anclaje se crean automáticamente a partir del texto de los encabezados.
+Los enlaces de ancla se crean automáticamente a partir del texto del encabezado.
 
 * Convertir a minúsculas
-* Reemplazar espacios con guiones
-* Eliminar caracteres especiales
+* Reemplazar los espacios por guiones
+* Eliminar los caracteres especiales
 * Conservar números y letras
 
-| Texto del encabezado | Enlace de anclaje |
-|-------------|-------------|
-| `## Getting Started` | `#getting-started` |
+| Texto del encabezado     | Enlace de ancla       |
+| ------------------------ | --------------------- |
+| `## Getting Started`     | `#getting-started`    |
 | `### API Authentication` | `#api-authentication` |
-| `#### Step 1: Install` | `#step-1-install` |
+| `#### Step 1: Install`   | `#step-1-install`     |
 
 <Note>
-  Los encabezados con la prop `noAnchor` no generarán enlaces de anclaje. Consulta [Formatear texto](/es/create/text#disabling-anchor-links) para más información.
+  Los encabezados con la propiedad `noAnchor` no generan enlaces de ancla. Consulta [Formato de texto](/es/create/text#disabling-anchor-links) para obtener más información.
 </Note>
 
 <div id="link-to-api-endpoints">
-  ## Enlazar a endpoints de API
+  ## Enlazar con endpoints de la API
 </div>
 
-Al documentar APIs, puedes enlazar a endpoints específicos desde cualquier parte de tu documentación.
+Al documentar APIs, puedes enlazar con endpoints específicos desde cualquier parte de tu documentación.
 
-Enlaza a las páginas de endpoints de API usando su ruta en la navegación.
+Enlaza con las páginas de endpoints de la API mediante su ruta en la navegación.
 
 <div id="link-to-external-pages">
-  ## Enlace a páginas externas
+  ## Enlaces a páginas externas
 </div>
 
-Cuando enlaces a recursos externos, asegúrate de dejar claro que el enlace lleva fuera de tu documentación.
+Cuando enlaces a recursos externos, deja claro que el enlace dirige fuera de tu documentación.
 
 ```mdx
-Learn more about [Markdown syntax](https://www.markdownguide.org/) (external link).
+Obtén más información sobre la [sintaxis de Markdown](https://www.markdownguide.org/) (enlace externo).
 
-See the [OpenAPI specification](https://swagger.io/specification/) in the Swagger documentation for details.
+Consulta la [especificación OpenAPI](https://swagger.io/specification/) en la documentación de Swagger para más detalles.
 ```
 
 <div id="best-practices">
@@ -100,43 +100,43 @@ See the [OpenAPI specification](https://swagger.io/specification/) in the Swagge
 </div>
 
 <div id="write-descriptive-link-text">
-  ### Redacta texto de enlace descriptivo
+  ### Escribe un texto de enlace descriptivo
 </div>
 
-Usa un texto claro y descriptivo que indique qué encontrarán las personas usuarias cuando hagan clic.
+Usa un texto claro y descriptivo que indique lo que encontrarán los usuarios al hacer clic.
 
 <CodeGroup>
-  ```mdx Buenos ejemplos
+  ```mdx Good examples
   Consulta [Páginas ocultas](/organize/hidden-pages) para obtener más información.
-  [Configura dominios personalizados](/customize/custom-domain)
+  [Configurar dominios personalizados](/customize/custom-domain)
   ```
 
-  ```mdx Evita
+  ```mdx Avoid
   [Haz clic aquí](/api-playground/overview)
-  [Leer más](/deploy/deployments)
-  [Ver esta página](/customize/custom-domain)
+  [Más información](/deploy/deployments)
+  [Consulta esta página](/customize/custom-domain)
   ```
 </CodeGroup>
 
 <div id="create-topic-clusters">
-  ### Crea grupos de temas
+  ### Crear grupos temáticos
 </div>
 
-Enlaza contenido relacionado para ayudar a los usuarios a encontrar información relevante.
+Enlaza contenido relacionado para ayudar a los usuarios a descubrir información relevante.
 
 ```mdx
-## Related topics
+## Temas relacionados
 
-- [API authentication](/api-playground/overview#authentication)
-- [Adding SDK examples](/api-playground/adding-sdk-examples)
-- [Managing page visibility](/api-playground/managing-page-visibility)
+- [Autenticación de API](/api-playground/overview#authentication)
+- [Agregar ejemplos de SDK](/api-playground/adding-sdk-examples)
+- [Gestionar la visibilidad de páginas](/api-playground/managing-page-visibility)
 ```
 
 <div id="use-contextual-links">
   ### Usa enlaces contextuales
 </div>
 
-Incorpora enlaces de forma natural en el contenido, allí donde aporten valor.
+Añade enlaces de forma natural en el contenido cuando aporten valor.
 
 ```mdx
 To customize your documentation appearance, configure [themes](/customize/themes) 
@@ -145,26 +145,26 @@ and [fonts](/customize/fonts) in your settings. You can also add
 ```
 
 <div id="link-to-prerequisites">
-  ### Enlaza a los requisitos previos
+  ### Enlace al contenido previo necesario
 </div>
 
-Ayuda a los usuarios a prepararse mediante enlaces al contenido de requisitos previos:
+Ayuda a los usuarios a prepararse enlazando al contenido previo necesario:
 
 ```mdx
-## Prerequisites
+## Requisitos previos
 
-Before deploying your documentation, ensure you have:
+Antes de desplegar tu documentación, asegúrate de haber:
 
-- Completed the [quickstart guide](/quickstart)
-- Configured your [custom domain](/customize/custom-domain)
-- Set up [authentication](/deploy/authentication-setup) if needed
+- Completado la [guía de inicio rápido](/quickstart)
+- Configurado tu [dominio personalizado](/customize/custom-domain)
+- Configurado la [autenticación](/deploy/authentication-setup) si es necesario
 ```
 
 <div id="avoid-circular-links">
   ### Evita los enlaces circulares
 </div>
 
-No crees enlaces que hagan que los usuarios vayan y vengan entre las mismas páginas.
+No crees enlaces que hagan que los usuarios vayan de una página a otra entre las mismas páginas.
 
 <div id="check-for-broken-links">
   ### Comprueba si hay enlaces rotos
@@ -180,19 +180,19 @@ mint broken-links
   ### Actualiza los enlaces al reorganizar
 </div>
 
-Al mover o renombrar páginas:
+Al mover o cambiar de nombre páginas:
 
 1. Actualiza la ruta de la página en la configuración de navegación.
-2. Configura redirecciones de la ruta antigua a la nueva.
-3. Busca en tu documentación cualquier referencia a la ruta antigua.
-4. Actualiza todos los enlaces internos para usar la nueva ruta.
-5. Ejecuta `mint broken-links` para verificar que todos los enlaces funcionan.
+2. Configura redirecciones desde la ruta anterior a la nueva.
+3. Busca en la documentación referencias a la ruta anterior.
+4. Actualiza todos los enlaces internos para que usen la nueva ruta.
+5. Ejecuta `mint broken-links` para verificar que todos los enlaces funcionen.
 
 <div id="use-redirects-for-moved-content">
-  ### Usa redirecciones para el contenido que hayas movido
+  ### Usa redirecciones para el contenido movido
 </div>
 
-Cuando muevas contenido de forma permanente, añade redirecciones para evitar enlaces rotos.
+Cuando muevas contenido de forma permanente, agrega redirecciones para evitar enlaces rotos.
 
 ```json
 {
@@ -205,12 +205,12 @@ Cuando muevas contenido de forma permanente, añade redirecciones para evitar en
 }
 ```
 
-Para más información, consulta [Redirecciones](/es/create/redirects).
+Consulta [Redirecciones](/es/create/redirects) para obtener más información.
 
 <div id="related-resources">
   ## Recursos relacionados
 </div>
 
-* [Formatear texto](/es/create/text): Obtén información sobre el formato de Markdown.
+* [Dar formato al texto](/es/create/text): Aprende sobre el formato en Markdown.
 * [Navegación](/es/organize/navigation): Configura la estructura de tu documentación.
-* [Redirecciones](/es/create/redirects): Configura redirecciones para el contenido movido.
+* [Redirecciones](/es/create/redirects): Configura redirecciones para contenido movido.

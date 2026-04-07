@@ -1,50 +1,50 @@
 ---
 title: "Windsurf"
 description: "将 Windsurf 配置为你的写作助手。"
-keywords: ["Windsurf", "Cascade", "workspace rules", "memories"]
+keywords: ["Windsurf", "Cascade", "工作区规则", "记忆"]
 ---
 
-通过 workspace rules 和 memories，将 Windsurf 打造成一名文档专家，使其理解你的风格指南、组件以及项目上下文。
+通过工作区规则和记忆功能，将 Windsurf 打造成一名熟悉你的风格指南、组件和项目上下文的文档专家。
 
 <div id="use-windsurf-with-mintlify">
-  ## 将 Windsurf 与 Mintlify 搭配使用
+  ## 将 Windsurf 与 Mintlify 结合使用
 </div>
 
-Windsurf 的 Cascade AI 助手可以通过 Mintlify 组件进行定制，使其按照你的标准撰写文档。Workspace 规则和 Memories 会为你的项目提供持久的上下文，确保 Cascade 提供更加一致的建议。
+Windsurf 的 Cascade AI 助手可进行调校，借助 Mintlify 组件按照你的标准编写文档。工作区规则和记忆可为你的项目提供持续性的上下文，从而让 Cascade 给出更一致的建议。
 
-* **Workspace rules** 会存储在你的文档仓库中，并与你的团队共享。
-* **Memories** 提供的是个人上下文，并会随时间逐步累积。
+* **工作区规则** 存储在你的文档仓库中，并与你的团队共享。
+* **记忆** 提供会随着时间逐渐积累的个人上下文。
 
-我们建议为共享的文档规范设置 Workspace rules。你可以在工作过程中逐步建立 Memories，但由于它们不会被共享，因此在不同团队成员之间可能不一致。
+我们建议为团队共用的文档标准设置工作区规则。你可以在工作过程中逐步积累记忆，但由于这些记忆不会共享，因此团队成员之间的结果不会保持一致。
 
-在文档仓库的 `.windsurf/rules` 目录中创建 Workspace rules。更多信息请参见 Windsurf 文档中的 [Memories &amp; Rules](https://docs.windsurf.com/windsurf/cascade/memories)。
+请在文档仓库的 `.windsurf/rules` 目录中创建工作区规则。更多信息，请参阅 Windsurf 文档中的 [Memories &amp; Rules](https://docs.windsurf.com/windsurf/cascade/memories)。
 
 <div id="example-workspace-rule">
   ## 示例工作区规则
 </div>
 
-此规则为 Cascade 提供关于 Mintlify 组件以及通用技术写作最佳实践的上下文。
+此规则为 Cascade 提供有关 Mintlify 组件和通用技术写作最佳实践的上下文信息。
 
-你可以直接使用此示例规则，或根据你的文档需求进行自定义：
+你可以直接使用此示例规则，也可以根据你的文档进行自定义：
 
-* **写作规范**：更新语言指南，使其与你的风格指南保持一致。
-* **组件模式**：添加项目特有的组件或修改现有示例。
-* **代码示例**：将通用示例替换为你产品中真实的 API 调用和响应。
+* **写作标准**：更新语言指南，使其符合你的风格指南。
+* **组件模式**：添加项目专用组件，或修改现有示例。
+* **代码示例**：将通用示例替换为与你产品相关的真实 API 调用和响应。
 * **风格和语气偏好**：调整术语、格式和其他规则。
 
-将你的规则保存为 `.md` 文件，放在文档仓库的 `.windsurf/rules` 目录中。
+将规则保存为文档仓库 `.windsurf/rules` 目录中的 `.md` 文件。
 
 ````mdx
 # Mintlify 技术写作规范
 
 ## 项目背景
 
-- 本项目是基于 Mintlify 平台的文档项目
-- 我们使用带有 YAML frontmatter 的 MDX 文件
-- 导航配置在 `docs.json` 中
+- 这是一个基于 Mintlify 平台的文档项目
+- 我们使用带有 YAML 前置元数据的 MDX 文件
+- 导航结构在 `docs.json` 中配置
 - 我们遵循技术写作最佳实践
 
-## 写作标准
+## 写作规范
 
 - 使用第二人称（"你"）撰写操作说明
 - 使用主动语态和现在时
@@ -53,14 +53,14 @@ Windsurf 的 Cascade AI 助手可以通过 Mintlify 组件进行定制，使其�
 - 使用描述性强、富含关键词的标题
 - 保持句子简洁且信息充分
 
-## 必要的页面结构
+## 页面必要结构
 
-每个页面必须以 frontmatter 开头：
+每个页面必须以前置元数据开头：
 
 ```yaml
 ---
-title: "清晰、具体的标题"
-description: "简洁的描述，用于 SEO 和导航"
+title: "Clear, specific title"
+description: "Concise description for SEO and navigation"
 ---
 ```
 
@@ -68,19 +68,19 @@ description: "简洁的描述，用于 SEO 和导航"
 
 ### docs.json
 
-- 构建 docs.json 文件和站点导航时，请参考 [docs.json schema](https://mintlify.com/docs.json)
+- 构建 docs.json 文件和站点导航时，请参阅 [docs.json schema](https://mintlify.com/docs.json)
 
-### 标注框
+### 提示框
 
-- `<Note>` 用于有帮助的补充信息
-- `<Warning>` 用于重要警告和重大变更
+- `<Note>` 用于有用的补充信息
+- `<Warning>` 用于重要警告和破坏性变更
 - `<Tip>` 用于最佳实践和专家建议
 - `<Info>` 用于中性的背景信息
 - `<Check>` 用于成功确认
 
 ### 代码示例
 
-- 在适当情况下，提供完整、可运行的示例
+- 在适当情况下，提供完整且可运行的示例
 - 使用 `<CodeGroup>` 展示多语言示例
 - 为所有代码块指定语言标签
 - 使用真实数据，而非占位符
@@ -88,16 +88,16 @@ description: "简洁的描述，用于 SEO 和导航"
 
 ### 操作步骤
 
-- 使用 `<Steps>` 组件呈现顺序说明
+- 使用 `<Steps>` 组件呈现顺序操作说明
 - 在适当时使用 `<Check>` 组件添加验证步骤
-- 将复杂步骤拆分为更小的子步骤
+- 将复杂流程拆分为更小的步骤
 
 ### 内容组织
 
-- 使用 `<Tabs>` 展示特定平台的内容
-- 使用 `<Accordion>` 实现渐进式信息展示
+- 使用 `<Tabs>` 呈现特定平台的内容
+- 使用 `<Accordion>` 实现渐进式展开
 - 使用 `<Card>` 和 `<CardGroup>` 突出显示内容
-- 将图片包裹在带有描述性替代文本的 `<Frame>` 组件中
+- 将图片包裹在 `<Frame>` 组件中，并添加描述性替代文本
 
 ## API 文档要求
 
@@ -113,20 +113,20 @@ description: "简洁的描述，用于 SEO 和导航"
 - 内部链接使用相对路径
 - 为所有图片添加替代文本
 - 确保标题层级正确（从 h2 开始）
-- 检查现有模式以保持一致性
+- 参照现有模式保持一致性
 ````
 
 <div id="working-with-cascade">
   ## 使用 Cascade
 </div>
 
-在完成规则设置后，你可以使用 Cascade 来协助处理各种文档相关任务。有关更多信息，请参阅 Windsurf 文档中的 [Cascade](https://docs.windsurf.com/windsurf/cascade)。
+规则设置完成后，你可以使用 Cascade 协助处理各种文档任务。更多信息，请参阅 Windsurf 文档中的 [Cascade](https://docs.windsurf.com/windsurf/cascade)。
 
 <div id="example-prompts">
   ### 示例提示词
 </div>
 
-**编写新内容**:
+**撰写新内容**：
 
 ```text wrap
 创建一个新页面，说明如何通过我们的 API 进行身份验证。包含 JavaScript、Python 和 cURL 的代码示例。
@@ -135,16 +135,16 @@ description: "简洁的描述，用于 SEO 和导航"
 **优化现有内容**：
 
 ```text wrap
-Review this page and suggest improvements for clarity and component usage. Focus on making the steps easier to follow.
+审阅此页面并提出关于清晰度和组件使用的改进建议。重点让步骤更易于理解。
 ```
 
-**编写代码示例**:
+**创建代码示例**：
 
 ```text wrap
 Generate a complete code example showing error handling for this API endpoint. Use realistic data and include expected responses.
 ```
 
-**确保一致性**：
+**保持一致**：
 
 ```text wrap
 Check if this new page follows our documentation standards and suggest any needed changes.
@@ -154,6 +154,6 @@ Check if this new page follows our documentation standards and suggest any neede
   ## 通过 MCP 服务器增强功能
 </div>
 
-将 Mintlify MCP 服务器连接到 Windsurf，让 Cascade 在协助你写作时能够搜索 Mintlify 文档。连接 MCP 服务器后，Cascade 会在最新的 Mintlify 文档中搜索相关上下文，这样你就不必离开 IDE 去查阅文档。
+将 Mintlify MCP 服务器连接到 Windsurf，让 Cascade 在协助你编写内容时可以搜索 Mintlify 文档。连接 MCP 服务器后，Cascade 会搜索最新的 Mintlify 文档来获取上下文，因此你无需离开 IDE 即可查阅文档。
 
-完整的设置说明请参见 [Model Context Protocol](/zh/ai/model-context-protocol#example%3A-connect-to-the-mintlify-mcp-server)。
+完整的设置说明请参阅 [Model Context Protocol](/zh/ai/model-context-protocol#example%3A-connect-to-the-mintlify-mcp-server)。

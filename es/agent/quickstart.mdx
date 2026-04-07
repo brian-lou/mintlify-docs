@@ -1,19 +1,19 @@
 ---
-title: "Guía rápida"
-description: "Empieza a usar el agente en el panel del agente para crear actualizaciones de la documentación."
+title: "Inicio rápido"
+description: "Empieza a usar el agente en el panel de control para crear actualizaciones de la documentación."
 keywords: ["configuración del agente"]
 ---
 
 <div id="open-the-agent-panel">
-  ## Abrir el panel del agente
+  ## Abre el panel del agente
 </div>
 
-En computadoras de escritorio, puedes cambiar el tamaño del panel del agente. En dispositivos móviles, el agente se abre en pantalla completa.
+En computadoras de escritorio, el panel del agente puede redimensionarse. En dispositivos móviles, el agente se abre en pantalla completa.
 
 Para abrir el panel del agente:
 
-- Desde cualquier página del panel de control, usa la combinación de teclas <kbd>⌘</kbd>+<kbd>I</kbd> (macOS) o <kbd>Ctrl</kbd>+<kbd>I</kbd> (Windows/Linux).
-- En la página [Overview](https://dashboard.mintlify.com/), haz clic en **Ask agent**.
+* Desde cualquier página de tu panel de control, usa el atajo de teclado <kbd>⌘</kbd>+<kbd>I</kbd> (macOS) o <kbd>Ctrl</kbd>+<kbd>I</kbd> (Windows/Linux).
+* En la página [Overview](https://dashboard.mintlify.com/), haz clic en **Ask agent**.
 
 <div id="agent-panel-views">
   ### Vistas del panel del agente
@@ -21,26 +21,27 @@ Para abrir el panel del agente:
 
 <Frame>
   <img src="/images/agent/views-light.png" alt="Vistas en el panel del agente: nuevo chat, sugerencias, historial y configuración." className="block dark:hidden" />
+
   <img src="/images/agent/views-dark.png" alt="Vistas en el panel del agente: nuevo chat, sugerencias, historial y configuración." className="hidden dark:block" />
 </Frame>
 
-- **Chat**: Haz clic en el ícono de más, <Icon icon="plus" />, para iniciar un nuevo chat. En la vista de chat, envía instrucciones al agente para actualizar tu documentación o hacer preguntas sobre ella. El agente crea pull requests según tus instrucciones y muestra enlaces para ver los pull requests o abrir los cambios en el editor web.
-- **Suggestions**: Si está habilitado, el panel de sugerencias muestra actualizaciones sugeridas para tu documentación a partir de los cambios en los pull requests y de las conversaciones de los usuarios con el asistente.
-- **History**: Haz clic en el ícono de historial, <Icon icon="clock" />, para explorar conversaciones anteriores y continuar trabajando en solicitudes previas. Haz clic en cualquier conversación para cargarla en la vista de chat.
-- **Settings**: Haz clic en el ícono de configuración, <Icon icon="settings" />, para configurar las integraciones del agente y el acceso al repositorio.
+* **Chat**: Haz clic en el icono de más, <Icon icon="plus" />, para iniciar un nuevo chat. En la vista de chat, envía prompts al agente para actualizar tu documentación o hacer preguntas sobre ella. El agente crea pull requests según tus instrucciones y muestra enlaces para verlos o abrir los cambios en el editor web.
+* **Suggestions**: Si está habilitado, el panel de sugerencias muestra actualizaciones sugeridas para tu documentación en función de los cambios en los pull requests y de las conversaciones de los usuarios con el asistente.
+* **History**: Haz clic en el icono del historial, <Icon icon="clock" />, para explorar conversaciones anteriores y seguir trabajando en peticiones previas. Haz clic en cualquier conversación para cargarla en la vista de chat.
+* **Settings**: Haz clic en el icono de configuración, <Icon icon="settings" />, para configurar las integraciones del agente y el acceso al repositorio.
 
 <Tip>
-  Inicia una nueva conversación con el agente para cada tarea. Esto mantiene centrado el contexto del agente y te ayuda a asociar las conversaciones con proyectos específicos.
+  Inicia una nueva conversación con el agente para cada tarea. Esto mantiene el contexto del agente enfocado y te ayuda a asociar las conversaciones con proyectos específicos.
 </Tip>
 
 <div id="connect-your-github-account">
   ## Conecta tu cuenta de GitHub
 </div>
 
-Por defecto, el agente abre pull requests atribuidos al bot de Mintlify. Para que los pull requests aparezcan a tu nombre, conecta tu cuenta de GitHub en la página de [Mi perfil](https://dashboard.mintlify.com/settings/account) del panel de control.
+Por defecto, el agente crea pull requests atribuidos al bot de Mintlify. Para que los pull requests se te atribuyan a ti, conecta tu cuenta de GitHub en la página [Mi perfil](https://dashboard.mintlify.com/settings/account) del panel de control.
 
 <div id="connect-repositories-as-context">
-  ## Conecta repositorios como contexto
+  ## Conecta repositorios para usarlos como contexto
 </div>
 
-El agente solo puede acceder a los repositorios que conectes mediante la aplicación de GitHub de Mintlify. Configura a qué repositorios puede acceder el agente en **Settings** del panel del agente o en la [configuración de la aplicación de GitHub](https://github.com/apps/mintlify/installations/new).
+El agente solo puede acceder a los repositorios que conectes mediante la GitHub App de Mintlify. Configura a qué repositorios puede acceder el agente en **Settings** del panel del agente o en la [configuración de la GitHub App](https://github.com/apps/mintlify/installations/new).

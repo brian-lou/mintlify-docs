@@ -1,108 +1,108 @@
 ---
-title: "Dépannage du pare-feu Cloudflare"
-description: "Résolvez les requêtes bloquées et les problèmes de configuration liés aux règles WAF de Cloudflare."
+title: "Résolution des problèmes liés au pare-feu Cloudflare"
+description: "Corrigez les requêtes bloquées et les problèmes de configuration liés aux règles WAF de Cloudflare."
 keywords: ["Cloudflare WAF", "règles de pare-feu", "Bot Fight Mode", "erreurs 403"]
 ---
 
-Si votre site de documentation affiche des erreurs 500 après quelques secondes ou subit une navigation lente, il est possible que le pare-feu de Cloudflare bloque les requêtes vers les ressources Mintlify.
+Si votre site de documentation affiche des erreurs 500 après quelques secondes ou si la navigation est lente, le pare-feu de Cloudflare bloque peut-être les requêtes vers les ressources Mintlify.
 
 <div id="symptoms">
   ## Symptômes
 </div>
 
-- La page de documentation se charge au départ mais finit par renvoyer une erreur 500 après 30 à 60 secondes
-- Navigation côté client lente ou défaillante entre les pages
-- Erreurs 403 dans la console du navigateur pour les requêtes vers les chemins `/mintlify-assets/*`
-- Messages de défi de sécurité Cloudflare concernant des « données malformées » ou des « motifs d’URL suspects »
+* La page de documentation se charge au départ, puis plante avec une erreur 500 après 30 à 60 secondes
+* Navigation côté client lente ou défaillante entre les pages
+* Erreurs 403 dans la console du navigateur pour les requêtes vers les chemins `/mintlify-assets/*`
+* Messages de vérification de sécurité Cloudflare concernant des « données malformées » ou des « schémas d’URL suspects »
 
 <div id="root-cause">
-  ## Cause principale
+  ## Cause du problème
 </div>
 
-Le pare-feu applicatif Web (WAF) de Cloudflare et le Bot Fight Mode peuvent signaler les requêtes de ressources Mintlify comme suspectes en raison de :
+Le pare-feu d’applications web (WAF) de Cloudflare et Bot Fight Mode peuvent considérer comme suspectes les requêtes vers les ressources Mintlify en raison de :
 
-- Plusieurs symboles `%` dans les paramètres d’URL encodés
-- Longues chaînes de requête avec des caractères spéciaux
-- Requêtes automatisées provenant d’onglets inactifs
+* La présence de plusieurs symboles `%` dans des paramètres d’URL encodés
+* De longues chaînes de requête contenant des caractères spéciaux
+* Des requêtes automatisées provenant d’onglets inactifs
 
 <div id="solution">
   ## Solution
 </div>
 
-Créer une règle de pare-feu Cloudflare pour exclure les ressources Mintlify des vérifications de sécurité.
+Créez une règle de pare-feu Cloudflare pour exclure les ressources Mintlify des contrôles de sécurité.
 
 <div id="create-the-firewall-exception">
-  ### Créer l’exception de pare-feu
+  ### Créer une exception de pare-feu
 </div>
 
 1. Connectez-vous à votre [tableau de bord Cloudflare](https://dash.cloudflare.com/)
 2. Sélectionnez votre domaine
-3. Accédez à **Security > WAF**
+3. Accédez à **Security &gt; WAF**
 4. Sélectionnez **Create rule**
 5. Configurez la règle avec les paramètres suivants :
 
-**Rule name :** Allow Mintlify assets
+**Nom de la règle :** Autoriser les ressources Mintlify
 
-**When incoming requests match :**
+**Lorsque les requêtes entrantes correspondent à :**
 
-- Field : `Hostname`
-- Operator : `equals`
-- Value : `docs.yourdomain.com` (remplacez par le domaine réel de votre documentation)
+* Champ : `Hostname`
+* Opérateur : `equals`
+* Valeur : `docs.yourdomain.com` (remplacez par le domaine réel de votre documentation)
 
-**And :**
+**Et :**
 
-- Field : `URI Path`
-- Operator : `starts with`
-- Value : `/mintlify-assets/`
+* Champ : `URI Path`
+* Opérateur : `starts with`
+* Valeur : `/mintlify-assets/`
 
-**Then :**
+**Alors :**
 
-- Action : `Skip`
-- Select : `All remaining custom rules`, `Managed rules`, and `Super Bot Fight Mode`
+* Action : `Skip`
+* Sélectionnez : `All remaining custom rules`, `Managed rules` et `Super Bot Fight Mode`
 
 6. Activez **Log** pour suivre les requêtes correspondantes
 7. Sélectionnez **Deploy**
 
 <div id="verify-the-rule">
-  ### Vérifier la règle
+  ### Vérifiez la règle
 </div>
 
-Après le déploiement :
+Après le déploiement :
 
 1. Ouvrez votre site de documentation dans un navigateur
 2. Laissez la page inactive pendant 2 à 3 minutes
 3. Naviguez d’une page à l’autre
-4. Recherchez d’éventuelles erreurs 403 dans la console du navigateur
+4. Vérifiez dans la console du navigateur s’il y a des erreurs 403
 
-Si les problèmes persistent, vérifiez la configuration de votre règle :
+Si les problèmes persistent, vérifiez la configuration de votre règle :
 
-- Assurez-vous que le nom d’hôte correspond exactement au domaine de votre site de documentation
-- Confirmez que le chemin d’URI utilise `starts with` (et non `contains`)
-- N’incluez pas de caractères génériques (`*`) dans la valeur du chemin
-- Vérifiez que la règle est activée et déployée
+* Assurez-vous que le nom d’hôte correspond exactement au domaine de votre documentation
+* Vérifiez que le chemin d’URI utilise `starts with` (et non `contains`)
+* N’incluez pas de caractères génériques (`*`) dans la valeur du chemin
+* Vérifiez que la règle est activée et déployée
 
 <div id="common-mistakes">
   ## Erreurs courantes
 </div>
 
-- Utiliser l’opérateur `contains` avec `/mintlify-assets/*` - Le `*` est interprété comme un caractère littéral, pas comme un caractère générique
-- Utiliser `equals` pour le chemin d’URI - Cela ne correspond qu’au chemin exact `/mintlify-assets/` et non aux sous-chemins
-- Oublier d’exclure Bot Fight Mode - Celui-ci doit être explicitement inclus dans l’action d’exclusion
-- Mauvais nom d’hôte - Doit correspondre au domaine réel de votre documentation
+* Utiliser l’opérateur `contains` avec `/mintlify-assets/*` - Le `*` est interprété comme un caractère littéral, et non comme un joker
+* Utiliser `equals` pour URI Path - Cela correspond uniquement au chemin exact `/mintlify-assets/`, et non aux sous-chemins
+* Oublier d’exclure Bot Fight Mode - Cela doit être explicitement inclus dans l’action d’exclusion
+* Nom d’hôte incorrect - Il doit correspondre à votre véritable domaine de documentation
 
 <div id="additional-troubleshooting">
   ## Dépannage supplémentaire
 </div>
 
-Si l’exception de pare-feu ne résout pas le problème :
+Si l&#39;exception de pare-feu ne résout pas le problème :
 
-1. Consultez le journal **Security > Events** de Cloudflare pour y trouver les requêtes bloquées
-2. Vérifiez que votre Cloudflare Worker (si vous utilisez un sous-chemin personnalisé) transmet correctement l’en-tête `Host`
-3. Réglez temporairement le niveau de sécurité sur « Essentially Off » pour confirmer que Cloudflare est bien la cause
-4. Passez en revue toutes les règles de page personnalisées susceptibles de remplacer l’exception de pare-feu
+1. Consultez le journal **Security &gt; Events** de Cloudflare pour repérer les requêtes bloquées
+2. Vérifiez que votre Cloudflare Worker (si vous utilisez un sous-chemin personnalisé) transmet correctement l&#39;en-tête `Host`
+3. Définissez temporairement le niveau de sécurité sur « Essentially Off » pour confirmer que Cloudflare est bien en cause
+4. Vérifiez si des règles de page personnalisées pourraient prendre le pas sur l&#39;exception de pare-feu
 
 <div id="example-working-configuration">
-  ## Exemple de configuration opérationnelle
+  ## Exemple de configuration fonctionnelle
 </div>
 
 ```

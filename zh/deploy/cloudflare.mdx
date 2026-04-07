@@ -1,15 +1,15 @@
 ---
 title: "Cloudflare"
-description: "在 Cloudflare Workers 的子路径下托管文档。"
+description: "通过 Cloudflare Workers 在子路径上托管文档。"
 keywords: ["Cloudflare Workers", "子路径路由", "反向代理设置", "Worker 配置"]
 ---
 
 import Propagating from "/snippets/zh/custom-subpath-propagating.mdx";
 
-要使用 Cloudflare 将文档托管在 `yoursite.com/docs` 这类子路径下，你必须创建并配置一个 Cloudflare Worker。
+要通过 Cloudflare 将文档托管在 `yoursite.com/docs` 这类子路径下，你必须创建并配置一个 Cloudflare Worker。
 
 <Info>
-  在开始之前，你需要一个 Cloudflare 账户和一个域名（该域名可以在 Cloudflare 上或 Cloudflare 之外进行管理）。
+  开始前，你需要一个 Cloudflare 账户和一个域名 (可由 Cloudflare 或其他服务商管理) 。
 </Info>
 
 
@@ -17,45 +17,45 @@ import Propagating from "/snippets/zh/custom-subpath-propagating.mdx";
   ## 设置 Cloudflare Worker
 </div>
 
-如果你还没有创建 Cloudflare Worker，请按照 [Cloudflare Workers 入门指南](https://developers.cloudflare.com/workers/get-started/dashboard/) 进行创建。
+如果你还没有设置 Cloudflare Worker，请按照 [Cloudflare Workers 入门指南](https://developers.cloudflare.com/workers/get-started/dashboard/) 进行创建。
 
 <Tip>
-  如果你的 DNS 服务提供商是 Cloudflare，请为该 CNAME 记录关闭代理功能，以避免潜在的配置问题。
+  如果你的 DNS 提供商是 Cloudflare，请关闭该 CNAME 记录的代理，以避免潜在的配置问题。
 </Tip>
 
 <div id="proxies-with-vercel-deployments">
-  ### 将代理与 Vercel 部署配合使用
+  ### 与 Vercel 部署配合使用代理
 </div>
 
-如果你在 Vercel 部署中使用 Cloudflare 作为代理，必须确保正确配置，以避免与 Vercel 的域名验证和 SSL 证书签发产生冲突。
+如果你将 Cloudflare 用作 Vercel 部署的代理，必须确保配置正确，以避免与 Vercel 的域名验证和 SSL 证书签发发生冲突。
 
-错误的代理配置可能会阻止 Vercel 为你签发 Let's Encrypt SSL 证书，并导致域名验证失败。
+代理配置不当可能会导致 Vercel 无法签发 Let&#39;s Encrypt SSL 证书，并造成域名验证失败。
 
 <div id="required-path-allowlist">
-  #### 必需的路径允许列表
+  #### 必需的路径白名单
 </div>
 
-你的 Cloudflare Worker 必须允许访问以下特定路径，不得阻止或重定向：
+你的 Cloudflare Worker 必须允许流量通过以下特定路径，且不得拦截或重定向：
 
-- `/.well-known/acme-challenge/*` - Let's Encrypt 证书验证所必需
-- `/.well-known/vercel/*` - Vercel 域名验证所必需
+* `/.well-known/acme-challenge/*` - Let&#39;s Encrypt 证书验证所必需
+* `/.well-known/vercel/*` - Vercel 域名验证所必需
 
-虽然 Cloudflare 会自动处理许多验证规则，但创建额外的自定义规则可能会在无意中阻止这些关键请求。
+虽然 Cloudflare 会自动处理许多验证规则，但如果创建了额外的自定义规则，可能会无意中拦截这些关键流量。
 
 <div id="header-forwarding-requirements">
-  #### 请求标头转发要求
+  #### 请求头转发要求
 </div>
 
-确保在你的 Worker 配置中正确转发 `HOST` 请求标头。如果未正确转发该标头，验证请求将会失败。
+请确保在 Worker 配置中正确转发 `HOST` 请求头。否则，验证请求将失败。
 
 <div id="configure-routing">
   ### 配置路由
 </div>
 
-在 Cloudflare 控制台中选择 **Edit Code**，并将以下脚本添加到你的 Worker 代码中。有关编辑 Worker 的更多信息，请参阅 [Cloudflare 文档](https://developers.cloudflare.com/workers-ai/get-started/dashboard/#development)。
+在 Cloudflare 控制台中，选择 **Edit Code**，然后将以下脚本添加到 Worker 代码中。有关如何编辑 Worker 的更多信息，请参阅 [Cloudflare 文档](https://developers.cloudflare.com/workers-ai/get-started/dashboard/#development)。
 
 <Tip>
-  将 `[SUBDOMAIN]` 替换为你的专用子域名，将 `[YOUR_DOMAIN]` 替换为你网站的根 URL；如果你想使用不同的路径，则将 `/docs` 替换为你想要的子路径。
+  将 `[SUBDOMAIN]` 替换为你的专属子域名，将 `[YOUR_DOMAIN]` 替换为你网站的基础 URL；如果你想使用其他子路径，请将 `/docs` 替换为所需的子路径。
 </Tip>
 
 ```javascript
@@ -92,65 +92,64 @@ async function handleRequest(request) {
       return await fetch(proxyRequest);
     }
   } catch (error) {
-    // 如果未匹配到任何路由，执行常规请求
+    // 如果未匹配到任何操作，按常规方式处理请求
     return await fetch(request);
   }
 }
 ```
 
-选择 **Deploy**，并等待更改生效。
+选择 **Deploy**，等待更改生效。
 
 <Propagating />
-
 
 <div id="test-your-worker">
   ### 测试你的 Worker
 </div>
 
-代码部署完成后，测试你的 Worker，确保它正确指向你的 Mintlify 文档。
+代码部署完成后，测试一下你的 Worker，确保它能正确路由到你的 Mintlify 文档。
 
 1. 使用 Worker 的预览 URL 进行测试：`your-worker.your-subdomain.workers.dev/docs`
-2. 确认 Worker 能正确访问你的 Mintlify 文档和你的网站。
+2. 确认 Worker 会将请求正确路由到你的 Mintlify 文档和网站。
 
 <div id="add-custom-domain">
   ### 添加自定义域名
 </div>
 
-1. 在你的 [Cloudflare dashboard](https://dash.cloudflare.com/) 中，进入你的 Worker。
-2. 前往 **Settings > Domains & Routes > Add > Custom Domain**。
+1. 在你的 [Cloudflare 控制台](https://dash.cloudflare.com/)中，进入你的 Worker。
+2. 前往 **Settings &gt; Domains &amp; Routes &gt; Add &gt; Custom Domain**。
 3. 添加你的域名。
 
 <Tip>
-  我们建议你同时添加带有 `www.` 前缀和不带该前缀的域名。
+  我们建议你同时添加带 `www.` 和不带 `www.` 前缀的域名。
 </Tip>
 
-更多信息请参阅 Cloudflare 文档中的 [Add a custom domain](https://developers.cloudflare.com/workers/configuration/routing/custom-domains/#add-a-custom-domain)。 
+如需了解更多信息，请参阅 Cloudflare 文档中的 [Add a custom domain](https://developers.cloudflare.com/workers/configuration/routing/custom-domains/#add-a-custom-domain)。 
 
 <div id="resolve-dns-conflicts">
   ### 解决 DNS 冲突
 </div>
 
-如果你的域名已经指向其他服务，你必须删除现有的 DNS 记录。必须将 Cloudflare Worker 配置为管理你域名的全部流量。
+如果你的域名已指向其他服务，则必须先删除现有的 DNS 记录。你的 Cloudflare Worker 必须配置为接管该域名的全部流量。
 
-1. 删除你域名现有的 DNS 记录。更多信息请参阅 Cloudflare 文档中的 [Delete DNS records](https://developers.cloudflare.com/dns/manage-dns-records/how-to/create-dns-records/#delete-dns-records)。
-2. 返回你的 Worker 并添加自定义域名。
+1. 删除域名现有的 DNS 记录。更多信息请参阅 Cloudflare 文档中的 [删除 DNS 记录](https://developers.cloudflare.com/dns/manage-dns-records/how-to/create-dns-records/#delete-dns-records)。
+2. 返回 Worker 并添加你的自定义域名。
 
 <div id="webflow-custom-routing">
   ## Webflow 自定义路由
 </div>
 
-如果你使用 Webflow 托管主站点，并希望在同一域名下通过 `/docs` 路径访问 Mintlify 文档，你需要通过 Cloudflare Workers 配置自定义路由，将所有非 docs 流量代理到你的主站点。
+如果你使用 Webflow 托管主站，并希望在同一域名下通过 `/docs` 提供 Mintlify 文档，就需要通过 Cloudflare Workers 配置自定义路由，将所有非文档流量代理到你的主站。
 
 <Warning>
-  在部署这个 Worker 之前，请确保你的主站点已指向某个落地页，否则访问你主站点的访客将会看到错误。
+  部署此 Worker 之前，请确保你的主站已先设置在一个落地页上，否则访问主站的用户会看到错误。
 </Warning>
 
-1. 在 Webflow 中，为你的主站点设置一个落地页，例如 `landing.yoursite.com`。这是访客访问你网站时首先会看到的页面。
-2. 将你的主站点部署到这个落地页上。这样可以确保在你配置 Worker 的过程中，你的主站点始终可访问。
-3. 为避免冲突，将主站点中的任何绝对 URL 更新为相对路径。
-4. 在 Cloudflare 中选择 **Edit Code**，并将以下脚本添加到你的 Worker 代码中。
+1. 在 Webflow 中，为你的主站设置一个落地页，例如 `landing.yoursite.com`。用户访问你的网站时，就会看到这个页面。
+2. 将你的主站部署到该落地页。这样可以确保你在配置 Worker 期间，主站仍然可以正常访问。
+3. 为避免冲突，请将主站中的所有绝对 URL 更新为相对 URL。
+4. 在 Cloudflare 中，选择 **Edit Code**，然后将以下脚本添加到你的 Worker 代码中。
 
-<Tip> 将 `[SUBDOMAIN]` 替换为你的唯一子域名，将 `[YOUR_DOMAIN]` 替换为你网站的基础 URL，将 `[LANDING_DOMAIN]` 替换为你的落地页 URL；如果使用不同的路径，将 `/docs` 替换为你希望使用的子路径。 </Tip>
+<Tip> 将 `[SUBDOMAIN]` 替换为你的唯一子域名，将 `[YOUR_DOMAIN]` 替换为你网站的基础 URL，将 `[LANDING_DOMAIN]` 替换为你的落地页 URL；如果你想使用其他子路径，请将 `/docs` 替换为所需的路径。 </Tip>
 
 ```javascript
   addEventListener("fetch", (event) => {
@@ -192,12 +191,12 @@ async function handleRequest(request) {
       });
     }
   } catch (error) {
-    // 如果没有匹配的处理逻辑，则正常转发请求
+    // 如果未匹配到任何操作，按原始请求处理
     return await fetch(request);
   }
   }
 ```
 
-5. 选择 **Deploy** 并等待更改生效。
+5. 选择 **Deploy**，然后等待更改生效。
 
 <Propagating />

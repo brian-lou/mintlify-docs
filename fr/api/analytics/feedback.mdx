@@ -1,25 +1,25 @@
 ---
 openapi: /fr/analytics.openapi.json GET /api/external/v1/analytics/{projectId}/feedback
-keywords: [ "analytics", "feedback", "export", "retours utilisateurs" ]
+keywords: [ "analyse", "retours", "export", "retours utilisateurs" ]
 ---
 
 <div id="usage">
   ## Utilisation
 </div>
 
-Utilisez cet endpoint pour exporter les commentaires d'utilisateurs recueillis à partir de votre documentation. Les commentaires incluent les retours contextuels provenant des évaluations de page et les commentaires sur les extraits de code.
+Utilisez cet endpoint pour exporter les retours utilisateur recueillis dans votre documentation. Ces retours comprennent les retours contextuels issus des évaluations de page ainsi que les retours sur les extraits de code.
 
-Parcourez les résultats à l'aide du paramètre `cursor` renvoyé dans la réponse. Continuez à récupérer les données tant que `hasMore` est défini sur `true`.
+Parcourez les résultats à l’aide de la pagination avec le paramètre `cursor` renvoyé dans la réponse. Continuez à récupérer les résultats tant que `hasMore` vaut `true`.
 
 <div id="filtering">
   ## Filtrage
 </div>
 
-Filtrez les commentaires par :
+Filtrez les retours selon :
 
-- **Plage de dates** : utilisez `dateFrom` et `dateTo` pour limiter les résultats à une période spécifique
-- **Source** : filtrez par types de commentaires `code_snippet` ou `contextual`
-- **Statut** : filtrez par des valeurs de statut telles que `pending`, `in_progress`, `resolved` ou `dismissed`
+* **Plage de dates** : utilisez `dateFrom` et `dateTo` pour limiter les résultats à une période donnée
+* **Source** : filtrez selon les types de retours `code_snippet` ou `contextual`
+* **Statut** : filtrez selon des valeurs de statut comme `pending`, `in_progress`, `resolved` ou `dismissed`
 
 <div id="response-types">
   ## Types de réponse
@@ -27,5 +27,5 @@ Filtrez les commentaires par :
 
 La réponse contient différents types de retour selon la source :
 
-- **Retour contextuel** : comprend le booléen `helpful` et éventuellement l’email de `contact`
-- **Retour sur extrait de code** : comprend les champs `code`, `filename` et `lang`
+* **Retour contextuel** : inclut le booléen `helpful` et l’adresse e-mail `contact` facultative
+* **Retour sur les extraits de code** : inclut les champs `code`, `filename` et `lang`

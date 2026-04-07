@@ -1,6 +1,6 @@
 ---
-title: "Intégrations pour la protection de la vie privée"
-description: "Intégrez des plateformes de protection des données pour rester conforme aux réglementations."
+title: "Intégrations de protection des données"
+description: "Intégrez des plateformes de protection des données pour assurer votre conformité."
 keywords: ["plateformes de protection des données", "intégrations de conformité", "outils de confidentialité", "consentement aux cookies"]
 ---
 
@@ -12,7 +12,7 @@ keywords: ["plateformes de protection des données", "intégrations de conformit
   ## Consentement aux cookies et désactivation de la télémétrie
 </div>
 
-Si vous devez vérifier qu’un utilisateur a déjà donné son consentement aux cookies afin de respecter le RGPD, vous pouvez spécifier dans `cookies` une clé et une valeur de stockage local :
+Si vous devez vérifier si un utilisateur a déjà consenti aux cookies afin de respecter le RGPD, vous pouvez spécifier une clé et une valeur dans le stockage local sous `cookies` :
 
 ```json
   "integrations": {
@@ -23,7 +23,7 @@ Si vous devez vérifier qu’un utilisateur a déjà donné son consentement aux
   }
 ```
 
-Si ces valeurs sont définies, votre site vérifie le stockage local à la recherche de la clé et de la valeur spécifiées afin de déterminer si un utilisateur a consenti aux cookies. Si un utilisateur n&#39;a pas consenti aux cookies, votre site désactive la télémétrie pour cet utilisateur.
+Si ces valeurs sont définies, votre site vérifie dans le stockage local la clé et la valeur spécifiées afin de déterminer si un utilisateur a consenti aux cookies. Si un utilisateur n’a pas consenti aux cookies, votre site désactive la télémétrie pour cet utilisateur.
 
 Si vous souhaitez désactiver la télémétrie pour tous les utilisateurs, ajoutez ce qui suit à votre fichier `docs.json` :
 
@@ -36,5 +36,5 @@ Si vous souhaitez désactiver la télémétrie pour tous les utilisateurs, ajout
 ```
 
 <Note>
-  Si vous désactivez la télémétrie, vous ne pourrez pas recueillir de feedback sur vos pages de documentation, même si vous activez l’option de feedback dans votre tableau de bord.
+  Si vous désactivez la télémétrie, vous ne pourrez pas collecter de commentaires sur vos pages de documentation, même si vous activez les commentaires dans votre tableau de bord.
 </Note>
