@@ -109,6 +109,5 @@
         ]
       }
     }
-  },
-  "baseUrl": "https://brian-api.ngrok.app"
+  }
 }
