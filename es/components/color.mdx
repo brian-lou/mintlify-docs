@@ -1,16 +1,16 @@
 ---
 title: "Color"
-description: "Muestra paletas de colores con función de copia con un clic."
-keywords: ["color", "palette", "colors", "design system", "hex", "rgb", "rgba", "hsl", "oklch"]
+description: "Muestra paletas de colores con función de copiar al hacer clic."
+keywords: ["color", "paleta", "colores", "sistema de diseño", "hex", "rgb", "rgba", "hsl", "oklch"]
 ---
 
-Utiliza el componente Color para mostrar paletas de colores en tu documentación. Los colores pueden mostrarse en una cuadrícula compacta o bien en una tabla con filas etiquetadas.
+Usa el componente Color para mostrar paletas de colores en tu documentación. Los colores pueden mostrarse en una cuadrícula compacta o en una tabla con filas etiquetadas.
 
 <div id="compact-variant">
   ## Variante compacta
 </div>
 
-Muestra los colores en una cuadrícula sencilla con sus nombres y valores.
+Muestra los colores en un diseño de cuadrícula sencillo con los nombres y valores de los colores.
 
 <Color variant="compact">
   <Color.Item name="blue-500" value="#3B82F6" />
@@ -33,7 +33,7 @@ Muestra los colores en una cuadrícula sencilla con sus nombres y valores.
 
 
 <div id="table-variant">
-  ## Variante en tabla
+  ## Variante de tabla
 </div>
 
 Organiza los colores en filas con etiquetas para la documentación del sistema de diseño.
@@ -73,7 +73,7 @@ Organiza los colores en filas con etiquetas para la documentación del sistema d
   ## Formatos de color
 </div>
 
-El componente es compatible con todos los formatos de color de CSS, incluidos hex, rgb, rgba, hsl y oklch.
+El componente admite todos los formatos de color de CSS, incluidos hex, rgb, rgba, hsl y oklch.
 
 <Color variant="compact">
   <Color.Item name="hex" value="#FF5733" />
@@ -99,10 +99,10 @@ El componente es compatible con todos los formatos de color de CSS, incluidos he
 
 
 <div id="theme-aware-colors">
-  ## Colores adaptados al tema
+  ## Colores según el tema
 </div>
 
-Define distintos colores para el modo claro y el modo oscuro usando un objeto con las propiedades `light` y `dark`.
+Define distintos colores para los modos claro y oscuro mediante un objeto con las propiedades `light` y `dark`.
 
 <Color variant="compact">
   <Color.Item name="bg-primary" value={{ light: "#FFFFFF", dark: "#000000" }} />
@@ -130,7 +130,7 @@ Define distintos colores para el modo claro y el modo oscuro usando un objeto co
 </div>
 
 <ResponseField name="variant" type="string" required>
-  Modo de visualización de la paleta de colores. Opciones: `compact` o `table`.
+  Estilo de visualización de la paleta de colores. Opciones: `compact` o `table`.
 </ResponseField>
 
 <ResponseField name="children" type="Color.Item | Color.Row" required>
@@ -142,11 +142,11 @@ Define distintos colores para el modo claro y el modo oscuro usando un objeto co
 </div>
 
 <ResponseField name="title" type="string">
-  Etiqueta para la fila de colores.
+  Etiqueta de la fila de colores.
 </ResponseField>
 
 <ResponseField name="children" type="Color.Item" required>
-  Elementos de color que se mostrarán en la fila.
+  Elementos de color que se muestran en la fila.
 </ResponseField>
 
 <div id="coloritem">
@@ -158,5 +158,5 @@ Define distintos colores para el modo claro y el modo oscuro usando un objeto co
 </ResponseField>
 
 <ResponseField name="value" type="string | { light: string, dark: string }" required>
-  Valor del color en cualquier formato CSS, o un objeto con valores para los modos claro y oscuro.
+  Valor del color en cualquier formato CSS, o un objeto con valores para el modo claro y el modo oscuro.
 </ResponseField>

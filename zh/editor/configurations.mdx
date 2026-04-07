@@ -1,125 +1,125 @@
 ---
 title: "配置"
-description: "使用配置表来配置页面、导航元素和媒体。"
-keywords: ["editor", "configurations", "settings"]
+description: "使用配置表设置页面、导航元素和媒体。"
+keywords: ["编辑器", "配置", "设置"]
 ---
 
-在 Web 编辑器的 **Configurations** 面板中配置文档站点的品牌、外观和功能。
+在网页编辑器的 **配置** 面板中，自定义文档站点的品牌、外观和功能。
 
 <Frame>
-  <img src="/images/editor/configurations-light.png" alt="浅色模式侧边栏中的 Configurations 设置。" className="block dark:hidden" />
+  <img src="/images/editor/configurations-light.png" alt="浅色模式下侧边栏中的配置设置。" className="block dark:hidden" />
 
-  <img src="/images/editor/configurations-dark.png" alt="深色模式侧边栏中的 Configurations 设置。" className="hidden dark:block" />
+  <img src="/images/editor/configurations-dark.png" alt="深色模式下侧边栏中的配置设置。" className="hidden dark:block" />
 </Frame>
 
 <div id="brand-your-site">
-  ## 为站点打造品牌
+  ## 塑造你的网站品牌形象
 </div>
 
-设置站点的品牌形象以及在访客面前的呈现方式。
+设置网站的品牌标识以及访客看到的呈现方式。
 
-* **Docs title**: 文档的标题。会显示在浏览器标签页和搜索结果中。
-* **Description**: 文档的简短摘要。用于 SEO 和站点元数据。
-* **Favicon**: 显示在浏览器标签页中的小图标。可上传 ICO、PNG、GIF 或 JPG 文件。
-* **Theme**: 为文档的整体外观选择一个[主题](/zh/customize/themes)。
+* **Docs title**：文档名称。会显示在浏览器标签页和搜索结果中。
+* **Description**：文档的简要说明。用于 SEO 和网站元数据。
+* **Favicon**：显示在浏览器标签页中的小图标。可上传 ICO、PNG、GIF 或 JPG 文件。
+* **Theme**：为文档的整体外观选择一个[主题](/zh/customize/themes)。
 
 <div id="customize-colors-and-appearance">
   ## 自定义颜色和外观
 </div>
 
-控制你的网站的视觉风格和配色方案。
+控制站点的视觉风格和配色方案。
 
-* **主色**：全站用于链接、按钮和高亮内容的主要强调颜色。
-* **浅色模式颜色**：浅色模式下的强调色变体，具体呈现方式因主题而异。
-* **深色模式颜色**：深色模式下的强调色变体，具体呈现方式因主题而异。
-* **Logo**：你的品牌 Logo。可上传 SVG、PNG 或 JPG 文件。你可以为浅色和深色模式分别设置不同的 Logo。
-* **Logo 链接**：用户点击 Logo 时跳转的位置，通常是你的首页或营销网站。
-* **背景颜色**：分别为浅色和深色模式设置自定义背景颜色。
-* **背景图片**：为网站添加背景图片。可上传 PNG、GIF 或 JPG 文件。
-* **背景装饰**：为背景图片应用视觉效果或装饰样式。
-* **主题切换**：显示或隐藏供用户切换浅色/深色模式的开关。
-* **默认主题**：设置网站默认以浅色模式还是深色模式加载。
+* **Primary color**：站点中用于链接、按钮和高亮等元素的主强调色。
+* **Light mode color**：浅色模式下的强调色变体。具体应用方式因主题而异。
+* **Dark mode color**：深色模式下的强调色变体。具体应用方式因主题而异。
+* **Logo**：品牌 Logo。可上传 SVG、PNG 或 JPG 文件。你可以为浅色和深色模式分别设置不同的 Logo。
+* **Logo link**：用户点击 Logo 后跳转到的位置。通常是你的主页或营销站点。
+* **Background colors**：分别为浅色和深色模式设置自定义背景色。
+* **Background image**：为站点添加背景图片。可上传 PNG、GIF 或 JPG 文件。
+* **Background decoration**：为背景图片应用视觉样式。
+* **Theme toggle**：显示或隐藏供用户切换浅色/深色模式的开关。
+* **Default theme**：设置站点默认以浅色模式还是深色模式加载。
 
 <div id="set-custom-fonts">
   ## 设置自定义字体
 </div>
 
-将默认字体替换为你品牌的字体体系。
+将默认字体替换为符合品牌风格的字体。
 
-* **默认字体**：适用于所有文本的基础字体系列和字重。需要提供字体文件的 URL 地址和格式（WOFF 或 WOFF2）。
-* **标题字体**：专用于标题（h1、h2 等）的字体系列和字重，与正文字体分开设置。
-* **正文字体**：用于正文文本和段落的字体系列和字重。
+* **默认字体**：所有文本使用的基础字体族和字重。需提供来源 URL 和格式 (WOFF 或 WOFF2) 。
+* **标题字体**：专门用于标题 (h1、h2 等) 的字体族和字重。与正文字体分开设置。
+* **正文字体**：用于正文和段落的字体族和字重。
 
-对于每种字体，需要指定字体系列名称、字重、字体文件的 URL 地址（如 Google Fonts）以及格式。
+对于每种字体，请指定字体族名称、字重、来源 URL (如 Google Fonts) 和格式。
 
 <div id="configure-header">
-  ## 配置页眉
+  ## 配置页头
 </div>
 
 在网站顶部添加导航元素。
 
-* **导航栏按钮**：在页眉中添加一个主要行动按钮（CTA）。设置按钮类型、文案和目标 URL。
-* **导航栏链接**：在页眉中添加更多导航链接。每个链接都包含文本和一个 URL。
+* **导航栏按钮**：在页头中添加一个主要行动按钮。设置按钮类型、标签和目标 URL。
+* **导航栏链接**：在页头中添加额外的导航链接。每个链接都包含文本和 URL。
 
 <div id="configure-footer">
   ## 配置页脚
 </div>
 
-在站点页脚中添加链接和社交媒体帐号。
+在网站页脚中添加链接和社交媒体账号。
 
-* **社交链接**：添加你在 GitHub、X（Twitter）、LinkedIn、Discord、YouTube、Slack 等平台上的个人主页链接。
-* **页脚列**：通过自定义标题和链接分组，将页脚链接组织成多列。
+* **社交链接**：添加你在 GitHub、X (Twitter) 、LinkedIn、Discord、YouTube、Slack 等平台上的个人主页链接。
+* **页脚列**：使用自定义标题和链接分组，将页脚链接组织成多列。
 
 <div id="enhance-content">
   ## 增强内容
 </div>
 
-自定义站点上内容的呈现方式。
+自定义站点上的内容呈现方式。
 
-* **缩略图背景**：为页面缩略图和社交分享预览设置自定义背景图像。
+* **缩略图背景**：为页面缩略图和社交预览设置自定义背景图。
 * **缩略图外观**：控制缩略图的显示效果。
 * **缩略图字体**：为缩略图中的文本设置自定义字体。
-* **页面眉标**：在页面标题上方添加小标签。
+* **标题上方标签**：在页面标题上方添加小标签。
 * **代码块主题**：为代码块选择语法高亮主题。
-* **LaTeX 支持**：启用基于 LaTeX 的数学公式渲染。
+* **LaTeX 支持**：启用 LaTeX 数学公式渲染。
 
 <div id="set-up-ai-chat-and-search">
-  ## 配置 AI 聊天和搜索
+  ## 设置 AI 聊天和搜索
 </div>
 
 自定义搜索体验。
 
-* **搜索占位符**：在用户开始输入前显示在搜索框中的文本。默认值为“Search or ask...”。
+* **搜索框占位文本**：用户输入前显示在搜索框中的提示文本。默认值为“搜索或提问...”。
 
 <div id="configure-api-specifications">
   ## 配置 API 规范
 </div>
 
-添加 [OpenAPI](/zh/api-playground/openapi-setup) 或 [AsyncAPI](/zh/api-playground/asyncapi-setup) 规范文件，用于为端点提供文档说明。
+添加 [OpenAPI](/zh/api-playground/openapi-setup) 或 [AsyncAPI](/zh/api-playground/asyncapi-setup) 规范文件，为端点编写文档。
 
-* **OpenAPI specs**：上传一个 OpenAPI 规范文件，或输入外部 OpenAPI 文件的 URL。
-* **AsyncAPI specs**：上传一个 AsyncAPI 规范文件，或输入外部 AsyncAPI 文件的 URL。
-* **Playground display**：选择显示[交互式 API Playground](/zh/api-playground/overview#visibility-modes)、基础版 API Playground，或不显示 API Playground。
-* **Proxy server**：为 API 请求启用或禁用代理服务器。
+* **OpenAPI 规范**：上传 OpenAPI 规范文件，或输入外部 OpenAPI 文件的 URL。
+* **AsyncAPI 规范**：上传 AsyncAPI 规范文件，或输入外部 AsyncAPI 文件的 URL。
+* **操作台显示**：选择显示[交互式 API 操作台](/zh/api-playground/overview#visibility-modes)、简易 API 操作台，或不显示 API 操作台。
+* **代理服务器**：启用或禁用 API 请求的代理服务器。
 
 <div id="add-analytics-and-integrations">
   ## 添加分析与集成
 </div>
 
-将分析和第三方工具连接到你的文档。
+将分析工具和第三方工具接入你的文档站点。
 
-通过以下工具跟踪访客行为：
+使用以下工具跟踪访客行为：
 
-* **Amplitude, Mixpanel, Heap**：产品分析平台
-* **Google Analytics, Google Tag Manager**：网站分析
-* **PostHog, Plausible, Fathom**：注重隐私的分析工具
-* **Segment, Hightouch**：客户数据平台
-* **Hotjar, LogRocket**：会话回放与热图
-* **Microsoft Clarity**：用户行为分析
-* **Intercom**：客户消息沟通
-* **Clearbit, Koala**：访客识别
+* **Amplitude, Mixpanel, Heap**: 产品分析平台
+* **Google Analytics, Google Tag Manager**: Web 分析工具
+* **PostHog, Plausible, Fathom**: 注重隐私的分析工具
+* **Segment, Hightouch**: 客户数据平台
+* **Hotjar, LogRocket**: 会话回放和热力图工具
+* **Microsoft Clarity**: 用户行为分析
+* **Intercom**: 客户消息工具
+* **Clearbit, Koala**: 访客身份识别
 
 其他集成：
 
-* **Telemetry**：启用或禁用使用情况遥测
-* **Cookies**：设置自定义 Cookie 键值对
+* **Telemetry**: 启用或禁用使用情况遥测
+* **Cookies**: 设置自定义 Cookie 键值对

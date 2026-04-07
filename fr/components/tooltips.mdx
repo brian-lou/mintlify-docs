@@ -1,15 +1,15 @@
 ---
 title: "Info-bulles"
-description: "Ajoutez une aide contextuelle au survol pour les termes et les concepts."
-keywords: ["info-bulles", "aide au survol", "informations contextuelles", "explications", "définitions"]
+description: "Ajoutez une aide contextuelle avec des info-bulles au survol pour les termes et les concepts."
+keywords: ["info-bulles", "aide au survol", "informations contextuelles", "explicatif", "définitions"]
 ---
 
-Utilisez des info-bulles pour fournir un contexte supplémentaire ou des définitions lorsqu’un utilisateur survole une partie de texte. Les info-bulles peuvent inclure des liens d’appel à l’action facultatifs.
+Utilisez des info-bulles pour fournir un contexte supplémentaire ou des définitions lorsqu’un utilisateur survole un passage de texte. Les info-bulles peuvent inclure des liens d’appel à l’action facultatifs.
 
-**Exemple** : La documentation <Tooltip headline="API" tip="Application Programming Interface : un ensemble de protocoles permettant à des applications logicielles de communiquer." cta="Lire notre guide API" href="/fr/api-reference">API</Tooltip> aide les développeurs à comprendre comment s’intégrer à votre service.
+**Exemple** : la documentation <Tooltip headline="API" tip="Application Programming Interface : un ensemble de protocoles permettant aux applications logicielles de communiquer." cta="Lire notre guide sur l’API" href="/fr/api-reference">API</Tooltip> aide les développeurs à comprendre comment intégrer votre service.
 
 ```mdx Tooltip example wrap
-<Tooltip headline="API" tip="Interface de programmation d'application : un ensemble de protocoles permettant aux applications logicielles de communiquer." cta="Lire notre guide API" href="/api-reference">API</Tooltip> La documentation aide les développeurs à comprendre comment s'intégrer à votre service.
+<Tooltip headline="API" tip="Application Programming Interface : un ensemble de protocoles permettant aux applications logicielles de communiquer." cta="Lire notre guide API" href="/api-reference">API</Tooltip> La documentation aide les développeurs à comprendre comment s'intégrer à votre service.
 ```
 
 <div id="properties">
@@ -21,7 +21,7 @@ Utilisez des info-bulles pour fournir un contexte supplémentaire ou des défini
 </ResponseField>
 
 <ResponseField name="headline" type="string">
-  Texte affiché au-dessus du texte de `tip`.
+  Le texte affiché au-dessus de `tip`.
 </ResponseField>
 
 <ResponseField name="cta" type="string">
@@ -29,5 +29,5 @@ Utilisez des info-bulles pour fournir un contexte supplémentaire ou des défini
 </ResponseField>
 
 <ResponseField name="href" type="string">
-  URL du lien de l’appel à l’action. Obligatoire lorsque `cta` est utilisé.
+  URL du lien d’appel à l’action. Obligatoire lors de l’utilisation de `cta`.
 </ResponseField>

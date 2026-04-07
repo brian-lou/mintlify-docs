@@ -1,27 +1,25 @@
 ---
 title: "Heap"
 description: "Suivez les interactions utilisateur avec Heap Analytics."
-keywords: ["Heap Analytics", "suivi automatique des événements", "ID d'application Heap", "suivi des interactions utilisateur"]
+keywords: ["Heap Analytics", "suivi automatique des événements", "identifiant d’application Heap", "suivi des interactions utilisateur"]
 ---
 
-Ajoutez ce qui suit à votre fichier `docs.json` pour envoyer des données d'analyse à Heap.
+Ajoutez ce qui suit à votre fichier `docs.json` pour envoyer les données d’analyse à Heap.
 
 <CodeGroup>
+  ```json Options d’analyse dans docs.json
+  "integrations": {
+      "heap": {
+          "appId": "required"
+      }
+  }
+  ```
 
-```json Options d'analyse dans docs.json
-"integrations": {
-    "heap": {
-        "appId": "required"
-    }
-}
-```
-
-```json Exemple
-"integrations": {
-    "heap": {
-        "appId": "1234567890"
-    }
-}
-```
-
+  ```json Exemple
+  "integrations": {
+      "heap": {
+          "appId": "1234567890"
+      }
+  }
+  ```
 </CodeGroup>

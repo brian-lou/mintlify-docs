@@ -1,23 +1,23 @@
 ---
 title: "Cadres"
-description: "Mettez en valeur vos contenus grâce à des cadres stylisés autour des images et d'autres composants."
-keywords: ["cadres d'image", "mise en valeur visuelle", "légendes", "bordure"]
+description: "Mettez en valeur vos visuels avec des cadres stylisés autour des images et d'autres composants."
+keywords: ["cadres d’images", "mise en valeur visuelle", "légendes", "bordure"]
 ---
 
-Utilisez des cadres pour afficher des images, des schémas ou d'autres contenus visuels avec un style cohérent et, si besoin, des légendes. Les cadres centrent le contenu et le distinguent visuellement du texte environnant.
+Utilisez des cadres pour afficher des images, des diagrammes ou d&#39;autres contenus visuels avec une présentation homogène et des légendes facultatives. Les cadres centrent le contenu et le distinguent visuellement du texte environnant.
 
 <Frame>
-  <img src="https://mintlify-assets.b-cdn.net/yellowstone.jpeg" alt="Photo d'un lac entouré d'arbres, avec des montagnes au loin dans le parc national de Yellowstone." />
+  <img src="https://mintlify-assets.b-cdn.net/yellowstone.jpeg" alt="Photographie d’un lac entouré d’arbres, avec des montagnes au loin, dans le parc national de Yellowstone." />
 </Frame>
 
 <div id="captions">
   ## Légendes
 </div>
 
-Ajoutez un contexte supplémentaire à une image en utilisant la prop optionnelle `caption`. Les légendes apparaissent dans le cadre sous l’image.
+Ajoutez du contexte à une image à l’aide de la prop facultative `caption`. Les légendes apparaissent dans le cadre sous l’image.
 
 <Frame caption="Le parc national de Yosemite est visité par plus de 3,5 millions de personnes chaque année.">
-  <img src="https://mintlify-assets.b-cdn.net/yosemite.jpg" alt="Photo de la vallée de Yosemite." />
+  <img src="https://mintlify-assets.b-cdn.net/yosemite.jpg" alt="Photographie de la vallée de Yosemite." />
 </Frame>
 
 <div id="markdown-in-captions">
@@ -26,22 +26,22 @@ Ajoutez un contexte supplémentaire à une image en utilisant la prop optionnell
 
 Les légendes prennent en charge la mise en forme Markdown, y compris les liens et le texte en gras.
 
-<Frame caption="En savoir plus sur le [parc national de Yosemite](https://www.nps.gov/yose/index.htm) et planifiez votre visite.">
+<Frame caption="Découvrez [Yosemite National Park](https://www.nps.gov/yose/index.htm) et planifiez votre visite.">
   <img src="https://mintlify-assets.b-cdn.net/yosemite.jpg" alt="Photographie de la vallée de Yosemite." />
 </Frame>
 
-<Frame caption="**Important :** consultez le [site du parc](https://www.nps.gov/yose/index.htm) pour connaître les conditions en vigueur.">
-  <img src="https://mintlify-assets.b-cdn.net/yellowstone.jpeg" alt="Photographie d’un lac bordé d’arbres, avec des montagnes au loin dans le parc national de Yellowstone." />
+<Frame caption="**Important :** Consultez le [site du parc](https://www.nps.gov/yose/index.htm) pour connaître les conditions actuelles.">
+  <img src="https://mintlify-assets.b-cdn.net/yellowstone.jpeg" alt="Photographie d'un lac entouré d'arbres, avec des montagnes au loin, dans le parc national de Yellowstone." />
 </Frame>
 
 <div id="hints">
-  ## Conseils
+  ## Textes d’aide
 </div>
 
-Ajoutez du texte qui précède le cadre en utilisant la prop optionnelle `hint`. Les conseils apparaissent au-dessus du cadre.
+Ajoutez du texte avant le cadre à l’aide de la prop facultative `hint`. Les textes d’aide s’affichent au-dessus du cadre.
 
-<Frame hint="Si vous prévoyez de visiter le parc national de Yosemite, obtenez vos permis avant de partir." caption="Le parc national de Yosemite est visité par plus de 3,5 millions de personnes chaque année.">
-  <img src="https://mintlify-assets.b-cdn.net/yellowstone.jpeg" alt="Photographie d'un lac entouré d'arbres avec des montagnes au loin dans le parc national de Yellowstone." />
+<Frame hint="Si vous prévoyez de visiter le parc national de Yosemite, veillez à obtenir vos permis avant de partir." caption="Le parc national de Yosemite accueille plus de 3,5 millions de visiteurs chaque année.">
+  <img src="https://mintlify-assets.b-cdn.net/yellowstone.jpeg" alt="Photographie d’un lac entouré d’arbres, avec des montagnes au loin, dans le parc national de Yellowstone." />
 </Frame>
 
 <div id="properties">
@@ -49,48 +49,47 @@ Ajoutez du texte qui précède le cadre en utilisant la prop optionnelle `hint`.
 </div>
 
 <ResponseField name="caption" type="string">
-  Texte qui apparaît dans le cadre, centré sous le contenu. Prend en charge la mise en forme Markdown, y compris les liens et le texte en gras.
+  Texte affiché comme partie intégrante du cadre, centré sous le contenu. Prend en charge la mise en forme Markdown, y compris les liens et le texte en gras.
 </ResponseField>
 
 <ResponseField name="hint" type="string">
-  Texte qui précède le cadre.
+  Texte affiché avant le cadre.
 </ResponseField>
 
 <CodeGroup>
+  ```mdx Frame
+  <Frame>
+    <img src="/path/image.jpg" alt="Texte alternatif descriptif" />
+  </Frame>
+  ```
 
-```mdx Frame
-<Frame>
-  <img src="/path/image.jpg" alt="Texte alternatif descriptif" />
-</Frame>
-```
+  ```mdx Frame avec une légende
+  <Frame caption="Texte de la légende">
+    <img src="/path/image.jpg" alt="Texte alternatif descriptif" />
+  </Frame>
+  ```
 
-```mdx Frame avec une légende
-<Frame caption="Texte de légende">
-  <img src="/path/image.jpg" alt="Texte alternatif descriptif" />
-</Frame>
-```
+  ```mdx Frame avec du Markdown dans la légende
+  <Frame caption="Consultez la [documentation](/docs) pour plus de détails">
+    <img src="/path/image.jpg" alt="Texte alternatif descriptif" />
+  </Frame>
+  ```
 
-```mdx Frame avec du markdown dans la légende
-<Frame caption="Consultez la [documentation](/docs) pour plus de détails">
-  <img src="/path/image.jpg" alt="Texte alternatif descriptif" />
-</Frame>
-```
+  ```mdx Frame avec du texte en gras et des liens dans la légende
+  <Frame caption="**Remarque :** Consultez le [guide officiel](https://example.com) pour les instructions de configuration">
+    <img src="/path/image.jpg" alt="Texte alternatif descriptif" />
+  </Frame>
+  ```
 
-```mdx Frame avec du texte en gras et des liens dans la légende
-<Frame caption="**Remarque :** consultez le [guide officiel](https://example.com) pour les instructions de configuration">
-  <img src="/path/image.jpg" alt="Texte alternatif descriptif" />
-</Frame>
-```
+  ```mdx Frame avec un texte d’aide
+  <Frame hint="Texte d’aide">
+    <img src="/path/image.jpg" alt="Texte alternatif descriptif" />
+  </Frame>
+  ```
 
-```mdx Frame avec une indication
-<Frame hint="Texte d’indication">
-  <img src="/path/image.jpg" alt="Texte alternatif descriptif" />
-</Frame>
-```
-
-```mdx Frame avec indication et légende
-<Frame hint="Texte d’indication" caption="Texte de légende">
-  <img src="/path/image.jpg" alt="Texte alternatif descriptif" />
-</Frame>
-```
+  ```mdx Frame avec un texte d’aide et une légende
+  <Frame hint="Texte d’aide" caption="Texte de la légende">
+    <img src="/path/image.jpg" alt="Texte alternatif descriptif" />
+  </Frame>
+  ```
 </CodeGroup>

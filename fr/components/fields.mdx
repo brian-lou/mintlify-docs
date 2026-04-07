@@ -1,16 +1,16 @@
 ---
 title: "Champs"
-description: "Documentez les paramètres et les réponses de l’API avec leurs types."
-keywords: ["ParamField", "ResponseField", "request parameters", "response documentation"]
+description: "Documentez les paramètres de requête et de réponse de l’API avec des informations sur leur type."
+keywords: ["ParamField", "ResponseField", "paramètres de requête", "documentation des réponses"]
 ---
 
-Utilisez des champs pour documenter les paramètres et les réponses de l’API. Il existe deux types de champs : les champs de paramètres et les champs de réponse.
+Utilisez les champs pour documenter les paramètres et les réponses de l’API. Il existe deux types de champs : les champs de paramètres et les champs de réponse.
 
 <div id="parameter-field">
   ## Champ de paramètre
 </div>
 
-Le composant `<ParamField>` est utilisé pour définir les paramètres de vos API ou SDK. L’ajout d’un `ParamField` crée automatiquement un [API Playground](/fr/api-playground/overview).
+Le composant `<ParamField>` sert à définir des paramètres pour vos API ou SDK. L’ajout d’un `ParamField` ajoute automatiquement un [Bac à sable API](/fr/api-playground/overview).
 
 <ParamField path="param" type="string" required>
   Un exemple de champ de paramètre
@@ -26,9 +26,9 @@ Le composant `<ParamField>` est utilisé pour définir les paramètres de vos AP
   ### Propriétés
 </div>
 
-<ParamField body="query, path, body, ou header" type="string">
-  Indique s’il s’agit d’un paramètre de requête (query), de chemin (path), de corps (body) ou d’en-tête (header). Suivi du
-  nom du paramètre.
+<ParamField body="query, path, body, or header" type="string">
+  Indique si le paramètre se trouve dans la query, le path, le body ou le header. Suivi du nom
+  du paramètre.
 </ParamField>
 
 <ParamField body="type" type="string">
@@ -36,7 +36,7 @@ Le composant `<ParamField>` est utilisé pour définir les paramètres de vos AP
 
   Prend en charge `number`, `string`, `boolean`, `object`.
 
-  Les tableaux peuvent être définis à l’aide du suffixe `[]`. Par exemple `string[]`.
+  Les tableaux peuvent être définis à l&#39;aide du suffixe `[]`. Par exemple, `string[]`.
 </ParamField>
 
 <ParamField body="required" type="boolean">
@@ -48,11 +48,11 @@ Le composant `<ParamField>` est utilisé pour définir les paramètres de vos AP
 </ParamField>
 
 <ParamField body="default" type="any">
-  Valeur par défaut appliquée lorsque la valeur dans la requête est vide.
+  Valeur par défaut renseignée lorsque la valeur de la requête est vide
 </ParamField>
 
 <ParamField body="placeholder" type="string">
-  Texte indicatif affiché dans le champ de saisie du playground.
+  Texte d&#39;espace réservé du champ de saisie dans le playground.
 </ParamField>
 
 <ParamField body="children" type="string">
@@ -66,7 +66,7 @@ Le composant `<ParamField>` est utilisé pour définir les paramètres de vos AP
 Le composant `<ResponseField>` définit les valeurs renvoyées par une API.
 
 <ResponseField name="response" type="string" required>
-  Un exemple de champ de réponse
+  Exemple de champ de réponse
 </ResponseField>
 
 ```mdx
@@ -80,11 +80,11 @@ Le composant `<ResponseField>` définit les valeurs renvoyées par une API.
 </div>
 
 <ResponseField name="name" type="string" required>
-  Le nom de la valeur de la réponse.
+  Le nom de la valeur de retour.
 </ResponseField>
 
 <ResponseField name="type" type="string" required>
-  Type attendu de la valeur de la réponse. Il peut s’agir de n’importe quelle chaîne de caractères.
+  Le type attendu de la valeur de retour. Il peut s’agir de n’importe quelle chaîne.
 </ResponseField>
 
 <ResponseField name="default" type="string">
@@ -92,11 +92,11 @@ Le composant `<ResponseField>` définit les valeurs renvoyées par une API.
 </ResponseField>
 
 <ResponseField name="required" type="boolean">
-  Indique si la réponse est requise.
+  Indique si la valeur de retour est requise.
 </ResponseField>
 
 <ResponseField name="deprecated" type="boolean">
-  Indique si le champ est obsolète.
+  Indique si un champ est obsolète.
 </ResponseField>
 
 <ResponseField name="pre" type="string[]">

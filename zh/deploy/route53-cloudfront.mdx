@@ -1,159 +1,160 @@
 ---
 title: "AWS Route 53 和 CloudFront"
 sidebarTitle: "AWS"
-description: "使用 Route 53 DNS 和 CloudFront CDN 将文档部署在 AWS 上的子路径下。"
+description: "通过 Route 53 DNS 和 CloudFront CDN 在 AWS 上将文档部署到子路径。"
 keywords: ["AWS 部署", "Route 53 DNS", "CloudFront CDN", "缓存策略"]
 ---
 
 import Propagating from "/snippets/zh/custom-subpath-propagating.mdx";
 
-要使用 AWS Route 53 和 CloudFront 将文档托管在 `yoursite.com/docs` 这样的子路径上，你必须在 DNS 服务提供商处将 DNS 记录配置为指向你的 CloudFront 分配。
+要使用 AWS Route 53 和 CloudFront 将文档托管在 `yoursite.com/docs` 这样的子路径下，你必须将 DNS 提供商的设置配置为指向你的 CloudFront 分配。
 
 
 <div id="overview">
-  ## 概览
+  ## 概述
 </div>
 
-将指向这些路径的流量路由到使用 **CachingDisabled** 缓存策略的行为：
+将流量路由到以下路径，并将缓存策略设为 **CachingDisabled**：
 
-- `/.well-known/acme-challenge/*` - 用于 Let's Encrypt 证书验证
-- `/.well-known/vercel/*` - 用于域名验证
-- `/docs/*` - 用于子路径路由
-- `/docs/` - 用于子路径路由
+* `/.well-known/acme-challenge/*` - Let&#39;s Encrypt 证书验证所必需
+* `/.well-known/vercel/*` - 域名验证所必需
+* `/docs/*` - 子路径路由所必需
+* `/docs/` - 子路径路由所必需
 
-将指向以下路径的流量路由到使用 **CachingEnabled** 缓存策略的行为：
+将流量路由到此路径，并将缓存策略设为 **CachingEnabled**：
 
-- `/mintlify-assets/_next/static/*`
-- `Default (*)` - 你的网站首页
+* `/mintlify-assets/_next/static/*`
+* `Default (*)`	- 你的网站首页
 
-所有 Behaviors 都必须将 **origin request policy** 设置为 `AllViewerExceptHostHeader`。
+所有 Behavior 的 **origin request policy** 都必须设为 `AllViewerExceptHostHeader`。
 
-![CloudFront "Behaviors" 页面，其中有 4 个行为：`/docs/*`、`/docs`、`Default` 和 `/.well-known/*`。](/images/cloudfront/all-behaviors.png)
+![CloudFront“Behaviors”页面，包含 4 个 behavior：/docs/\*、/docs、Default 和 /.well-known/\*。](/images/cloudfront/all-behaviors.png)
 
 <div id="create-cloudfront-distribution">
   ## 创建 CloudFront 分配
 </div>
 
-1. 在 AWS 控制台中进入 [CloudFront](https://aws.amazon.com/cloudfront)。
+1. 在 AWS 控制台中打开 [CloudFront](https://aws.amazon.com/cloudfront)。
 2. 选择 **Create distribution**。
 
 <Frame>
-    ![CloudFront 分配页面，其中 “Create distribution” 按钮被突出显示。](/images/cloudfront/create-distribution.png)
-  </Frame>
+  ![CloudFront Dis配页面，突出显示了“Create distribution”按钮。](/images/cloudfront/create-distribution.png)
+</Frame>
 
-3. 在 Origin domain 中输入 `[SUBDOMAIN].mintlify.dev`，其中 `[SUBDOMAIN]` 是你的项目的唯一子域名。
-
-<Frame>
-    ![CloudFront “Create distribution” 页面中显示 “acme.mintlify.dev” 作为 Origin domain。](/images/cloudfront/origin-name.png)
-  </Frame>
-
-4. 在 “Web Application Firewall (WAF)” 中启用安全防护。
+3. 在 Origin domain 中输入 `[SUBDOMAIN].mintlify.dev`，其中 `[SUBDOMAIN]` 是你项目的唯一子域名。
 
 <Frame>
-    ![Web Application Firewall (WAF) 选项中选择了 “Enable security protections”。](/images/cloudfront/enable-security-protections.png)
-  </Frame>
+  ![CloudFront“Create distribution”页面，显示“acme.mintlify.dev”为源域名。](/images/cloudfront/origin-name.png)
+</Frame>
 
-5. 其余设置保持默认值。
+4. 对于“Web Application Firewall (WAF)”，启用安全保护。
+
+<Frame>
+  ![Web Application Firewall (WAF) 选项，已选择“Enable security protections”。](/images/cloudfront/enable-security-protections.png)
+</Frame>
+
+5. 其余设置保持默认即可。
 6. 选择 **Create distribution**。
 
 <div id="add-default-origin">
-  ## 添加默认 Origin
+  ## 添加默认源站
 </div>
 
-1. 创建 distribution 之后，进入 "Origins" 选项卡。
+1. 创建分配后，前往“Origins”标签页。
 
 <Frame>
-    ![A CloudFront distribution with the "Origins" tab highlighted.](/images/cloudfront/origins.png)
-  </Frame>
+  ![高亮显示“Origins”标签页的 CloudFront 分配。](/images/cloudfront/origins.png)
+</Frame>
 
-2. 找到与你主域名对应的 staging URL。这个地址会根据你的落地页托管方式有很大差异。比如，Mintlify 的 staging URL 是 [mintlify-landing-page.vercel.app](https://mintlify-landing-page.vercel.app)。
+2. 找到与你主域名对应的预发布 URL。这会因你的落地页托管方式不同而有很大差异。例如，Mintlify 的预发布 URL 是 [mintlify-landing-page.vercel.app](https://mintlify-landing-page.vercel.app)。
 
 <Info>
-  如果你的落地页托管在 Webflow 上，请使用 Webflow 的 staging URL，一般会以 `.webflow.io` 结尾。
+  如果你的落地页托管在 Webflow 上，请使用 Webflow 的预发布 URL，通常类似于 `.webflow.io`。
 
-  如果你使用 Vercel，则使用每个项目默认提供的 `.vercel.app` 域名。
+  如果你使用 Vercel，请使用每个项目都会提供的 `.vercel.app` 域名。
 </Info>
 
-3. 创建一个新的 Origin，并将你的 staging URL 填入 "Origin domain" 字段。
+3. 创建一个新的源站，并将你的预发布 URL 添加为“Origin domain”。
 
 <Frame>
-    ![CloudFront "Create origin" page with a "Origin domain" input field highlighted.](/images/cloudfront/default-origin.png)
-  </Frame>
+  ![CloudFront“Create origin”页面，其中“Origin domain”输入框已高亮显示。](/images/cloudfront/default-origin.png)
+</Frame>
 
-到这一步为止，你应该已经有两个 Origins：一个是 `[SUBDOMAIN].mintlify.app`，另一个是你的 staging URL。
+完成后，你应该会有两个源站：一个使用 `[SUBDOMAIN].mintlify.app`，另一个使用你的预发布 URL。
 
 <Frame>
-  ![CloudFront "Origins" page with two origins: One for `mintlify` and another for `mintlify-landing-page`.](/images/cloudfront/final-origins.png)
+  ![CloudFront“Origins”页面中有两个源站：一个用于 mintlify，另一个用于 mintlify-landing-page。](/images/cloudfront/final-origins.png)
 </Frame>
 
 <div id="set-behaviors">
   ## 设置行为
 </div>
 
-CloudFront 中的行为可用于控制子路径逻辑。总体来说，我们希望实现如下逻辑：
+CloudFront 中的行为可用于控制子路径逻辑。概括来说，我们要实现以下逻辑：
 
-- **如果用户访问的是你的自定义子路径**，则转到 `[SUBDOMAIN].mintlify.dev`。
-- **如果用户访问的是任何其他页面**，则转到当前落地页。
+* **如果用户访问你的自定义子路径**，则跳转到 `[SUBDOMAIN].mintlify.dev`。
+* **如果用户访问其他任意页面**，则跳转到当前着陆页。
 
-1. 打开你的 CloudFront 分配的 "Behaviors" 选项卡。
+1. 前往 CloudFront 分配的“Behaviors”选项卡。
 
 <Frame>
-	![CloudFront "Behaviors" 选项卡高亮显示。](/images/cloudfront/behaviors.png)
+  ![高亮显示的 CloudFront“Behaviors”选项卡。](/images/cloudfront/behaviors.png)
 </Frame>
 
-2. 选择 **Create behavior** 按钮，然后创建以下行为。
+2. 选择 **Create behavior** 按钮，并创建以下行为。
 
 <div id="well-known">
   ### `/.well-known/*`
 </div>
 
-为 Vercel 域名验证路径创建一个 **Path pattern** 为 `/.well-known/*` 的 behavior，并将 **Origin and origin groups** 指向你的文档站点 URL。
+为 Vercel 域名验证路径创建行为，将 **Path pattern** 设为 `/.well-known/*`，并将 **Origin and origin groups** 设为你的文档 URL。
 
-对于 **Cache policy**，选择 **CachingDisabled**，以确保这些验证请求不经过缓存，直接透传。
+对于“Cache policy”，请选择 **CachingDisabled**，以确保这些验证请求能够直接透传且不被缓存。
 
 <Frame>
-  ![CloudFront "Create behavior" page with a "Path pattern" of "/.well-known/*" and "Origin and origin groups" pointing to the staging URL.](/images/cloudfront/well-known-policy.png)
+  ![CloudFront“Create behavior”页面，其中“Path pattern”设为“/.well-known/\*”，“Origin and origin groups”指向暂存 URL。](/images/cloudfront/well-known-policy.png)
 </Frame>
 
 <Info>
-如果 `.well-known/*` 过于通用，可以至少为 Vercel 拆分为两个 behavior：
-  - `/.well-known/vercel/*` - Vercel 域名验证所需
-  - `/.well-known/acme-challenge/*` - Let's Encrypt 证书验证所需
+  如果 `.well-known/*` 过于宽泛，至少可以将其细化为 Vercel 所需的 2 个行为：
+
+  * `/.well-known/vercel/*` - Vercel 域名验证所必需
+  * `/.well-known/acme-challenge/*` - Let&#39;s Encrypt 证书验证所必需
 </Info>
 
 <div id="your-subpath">
   ### 你的子路径
 </div>
 
-创建一个行为，将 **Path pattern** 设置为你选定的子路径，例如 `/docs`，并将 **Origin and origin groups** 指向 `.mintlify.dev` 的 URL（在我们的示例中为 `acme.mintlify.dev`）。
+创建一条行为规则，将 **Path pattern** 设为你选择的子路径，例如 `/docs`，并将 **Origin and origin groups** 指向 `.mintlify.dev` URL (本例中为 `acme.mintlify.dev`) 。
 
-- 将 "Cache policy" 设置为 **CachingOptimized**
-- 将 "Origin request policy" 设置为 **AllViewerExceptHostHeader**
-- 将 "Viewer Protocol Policy" 设置为 **Redirect HTTP to HTTPS**
+* 将 &quot;Cache policy&quot; 设置为 **CachingOptimized**。
+* 将 &quot;Origin request policy&quot; 设置为 **AllViewerExceptHostHeader**。
+* 将 Viewer Protocol Policy 设置为 **Redirect HTTP to HTTPS**
 
 <Frame>
-  ![CloudFront “Create behavior” 页面，其中 “Path pattern” 为 “/docs/*”，并且 “Origin and origin groups” 指向 `acme.mintlify.dev` URL。](/images/cloudfront/behavior-1.png)
+  ![CloudFront“Create behavior”页面，其中“Path pattern”设为“/docs/\*”，且“Origin and origin groups”指向 acme.mintlify.dev URL。](/images/cloudfront/behavior-1.png)
 </Frame>
 
 <div id="your-subpath-with-wildcard">
   ### 带通配符的子路径
 </div>
 
-创建一个行为，使用你选定的子路径并在其后添加 `/*` 作为 **Path pattern**（例如 `/docs/*`），并将 **Origin and origin groups** 指向同一个 `.mintlify.dev` URL。
+创建一个行为，将你选择的子路径后加上 `/*` 作为 **Path pattern**，例如 `/docs/*`，并将 **Origin and origin groups** 指向同一个 `.mintlify.dev` URL。
 
-这些设置应与基础子路径行为完全一致，**唯独 Path pattern 例外**。
+除 **Path pattern** 外，这些设置应与你的基础子路径行为完全一致。
 
-- 将 "Cache policy" 设置为 **CachingOptimized**。
-- 将 "Origin request policy" 设置为 **AllViewerExceptHostHeader**。
-- 将 "Viewer protocol policy" 设置为 **Redirect HTTP to HTTPS**。
+* 将“Cache policy”设置为 **CachingOptimized**。
+* 将“Origin request policy”设置为 **AllViewerExceptHostHeader**。
+* 将“Viewer protocol policy”设置为 **Redirect HTTP to HTTPS**
 
 <div id="mintlify-assets_nextstatic">
   ### `/mintlify-assets/_next/static/*`
 </div>
 
-- 将“Cache policy”设置为 **CachingOptimized**
- - 将“Origin request policy”设置为 **AllViewerExceptHostHeader**
- - 将“Viewer protocol policy”设置为 **Redirect HTTP to HTTPS**
+* 将“缓存策略”设置为 **CachingOptimized**
+* 将“源请求策略”设置为 **AllViewerExceptHostHeader**
+* 将“查看器协议策略”设置为 **Redirect HTTP to HTTPS**
 
 <div id="default">
   ### `Default (*)`
@@ -162,71 +163,71 @@ CloudFront 中的行为可用于控制子路径逻辑。总体来说，我们希
 最后，我们来编辑 `Default (*)` 行为。
 
 <Frame>
-  ![选中 "Default (*)" 行为并突出显示 Edit 按钮的 CloudFront 分配。](/images/cloudfront/default-behavior-1.png)
+  ![已选中“Default (\*)”行为并突出显示“Edit”按钮的 CloudFront 分配。](/images/cloudfront/default-behavior-1.png)
 </Frame>
 
-1. 将默认行为的 **Origin and origin groups** 更改为预发布环境的 URL（在我们的示例中是 `mintlify-landing-page.vercel.app`）。
+1. 将默认行为的 **Origin and origin groups** 改为暂存环境的 URL (本例中为 `mintlify-landing-page.vercel.app`) 。
 
 <Frame>
-  ![CloudFront "Edit behavior" 页面，其中高亮显示了 "Origin and origin groups" 输入字段。](/images/cloudfront/default-behavior-2.png)
+  ![CloudFront“Edit behavior”页面，其中“Origin and origin groups”输入字段已高亮显示。](/images/cloudfront/default-behavior-2.png)
 </Frame>
 
 2. 选择 **Save changes**。
 
 <div id="check-behaviors-are-set-up-correctly">
-  ### 检查行为是否已正确设置
+  ### 检查行为配置是否正确
 </div>
 
-如果你按照上述步骤操作，你的行为配置应如下所示：
+如果你按照上述步骤操作，行为配置应如下所示：
 
 <Frame>
-  ![CloudFront “Behaviors” 页面，包含 4 个行为：`/docs/*`、`/docs`、`Default` 和 `/.well-known/*`。](/images/cloudfront/all-behaviors.png)
+  ![CloudFront“Behaviors”页面，包含 4 条行为：/docs/\*、/docs、Default 和 /.well-known/\*。](/images/cloudfront/all-behaviors.png)
 </Frame>
 
 <div id="preview-distribution">
-  ## 预览分配
+  ## 预览分发
 </div>
 
-现在你可以通过进入 “General” 选项卡并访问 **Distribution domain name** URL，来测试你的分配是否已正确配置。
+你现在可以前往“General”选项卡，访问 **Distribution domain name** URL，检查你的分发是否已正确设置。
 
 <Frame>
-  ![CloudFront "General" tab with the "Distribution domain name" URL highlighted.](/images/cloudfront/preview-distribution.png)
+  ![CloudFront“General”选项卡，其中“Distribution domain name”URL 已高亮显示。](/images/cloudfront/preview-distribution.png)
 </Frame>
 
-所有页面都应该指向你的主落地页，但如果你在 URL 后追加你选择的子路径，例如 `/docs`，则应该会看到它跳转到你的 Mintlify 文档实例。
+现在，所有页面都应指向你的主落地页；但如果你在该 URL 后加上你选择的子路径，例如 `/docs`，就应该会看到它跳转到你的 Mintlify 文档实例。
 
 <div id="connect-with-route53">
-  ## 通过 Route53 进行连接
+  ## 连接 Route53
 </div>
 
-现在，我们要将 CloudFront 分配的功能接入到你的主域名中。
+现在，我们要将 CloudFront 分配关联到你的主域名上。
 
 <Note>
-  在本节中，你也可以参考 AWS 官方指南：[Configuring
-  Amazon Route 53 to route traffic to a CloudFront
-  distribution](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html#routing-to-cloudfront-distribution-config)
+  在本节中，你也可以参考 AWS 官方指南：[配置 Amazon Route 53 将流量路由到
+  CloudFront
+  分配](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html#routing-to-cloudfront-distribution-config)
 </Note>
 
-1. 在 AWS 控制台中进入 [Route53](https://aws.amazon.com/route53)。
-2. 打开你主域名对应的 "Hosted zone"。
+1. 在 AWS 控制台中打开 [Route53](https://aws.amazon.com/route53)。
+2. 进入你的主域名对应的“Hosted zone”。
 3. 选择 **Create record**。
 
 <Frame>
-  ![Route 53 的“Records”页面，其中“Create record”按钮被突出显示。](/images/cloudfront/route53-create-record.png)
+  ![Route 53“Records”页面，已突出显示“Create record”按钮。](/images/cloudfront/route53-create-record.png)
 </Frame>
 
-4. 启用 `Alias`，然后在 **Route traffic to** 中选择 `Alias to CloudFront distribution` 选项。
+4. 打开 `Alias`，然后将 **Route traffic to** 设置为 `Alias to CloudFront distribution`。
 
 <Frame>
-  ![Route 53 的“Create record”页面，其中“Alias”开关和“Route traffic to”菜单被高亮显示。](/images/cloudfront/create-record-alias.png)
+  ![Route 53“Create record”页面，已高亮显示“Alias”开关和“Route traffic to”菜单。](/images/cloudfront/create-record-alias.png)
 </Frame>
 
 5. 选择 **Create records**。
 
 <Note>
-  如果当前已存在 A 记录，你可能需要先将其删除。
+  如果当前已存在 A 记录，你可能需要先删除它。
 </Note>
 
-你的文档现在已经可以通过主域名中你所选择的子路径进行访问了。
+现在，你的文档已在主域名下所选的子路径上正式上线。
 
 <Propagating />

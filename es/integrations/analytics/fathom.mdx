@@ -1,29 +1,27 @@
 ---
 title: "Fathom"
-description: "Haz un seguimiento de las analíticas de tu documentación con Fathom."
-keywords: ["Fathom Analytics", "analítica centrada en la privacidad", "ID del sitio", "analítica sencilla"]
+description: "Supervisa la analítica de tu documentación con Fathom."
+keywords: ["Fathom Analytics", "analítica centrada en la privacidad", "ID del sitio", "analítica simple"]
 ---
 
 Añade lo siguiente a tu archivo `docs.json` para enviar datos de analítica a Fathom.
 
-Puedes obtener el `siteId` desde la configuración de tu script.
+Puedes obtener el `siteId` en la configuración de tu script.
 
 <CodeGroup>
+  ```json Opciones de analítica en docs.json
+  "integrations": {
+      "fathom": {
+          "siteId": "required"
+      }
+  }
+  ```
 
-```json Opciones de analítica en docs.json
-"integrations": {
-    "fathom": {
-        "siteId": "required"
-    }
-}
-```
-
-```json Ejemplo
-"integrations": {
-    "fathom": {
-        "siteId": "YSVMSDAY"
-    }
-}
-```
-
+  ```json Ejemplo
+  "integrations": {
+      "fathom": {
+          "siteId": "YSVMSDAY"
+      }
+  }
+  ```
 </CodeGroup>

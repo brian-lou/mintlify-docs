@@ -1,29 +1,27 @@
 ---
 title: "Clarity"
-description: "Realiza un seguimiento de las sesiones de usuario con la analítica de Microsoft Clarity."
+description: "Haz un seguimiento de las sesiones de usuario con Microsoft Clarity."
 keywords: ["Microsoft Clarity", "grabación de sesiones", "mapas de calor", "sesiones de usuario"]
 ---
 
 Añade lo siguiente a tu archivo `docs.json` para enviar datos de analítica a Microsoft Clarity.
 
 <CodeGroup>
+  ```json Opciones de analítica en docs.json
+  "integrations": {
+      "clarity": {
+          "projectId": "required"
+      }
+  }
+  ```
 
-```json Opciones de analítica en docs.json
-"integrations": {
-    "clarity": {
-        "projectId": "required"
-    }
-}
-```
-
-```json Ejemplo
-"integrations": {
-    "clarity": {
-        "projectId": "abc123xyz"
-    }
-}
-```
-
+  ```json Ejemplo
+  "integrations": {
+      "clarity": {
+          "projectId": "abc123xyz"
+      }
+  }
+  ```
 </CodeGroup>
 
 <div id="get-your-project-id">
@@ -31,5 +29,5 @@ Añade lo siguiente a tu archivo `docs.json` para enviar datos de analítica a M
 </div>
 
 1. Crea una [cuenta de Clarity](https://clarity.microsoft.com/projects).
-2. Haz clic en **Get tracking code.**
+2. Haz clic en **Obtener código de seguimiento**.
 3. Copia el ID de tu proyecto del código de seguimiento.

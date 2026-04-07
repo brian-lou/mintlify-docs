@@ -1,16 +1,16 @@
 ---
 title: "Osano"
-description: "Gérez le consentement aux cookies avec la plateforme de protection de la vie privée Osano."
-keywords: ["intégration Osano", "gestionnaire de consentement aux cookies", "conformité RGPD"]
+description: "Gérez le consentement aux cookies avec la plateforme de confidentialité Osano."
+keywords: ["intégration Osano", "gestionnaire de consentement aux cookies", "conformité au RGPD"]
 ---
 
-Ajoutez la gestion du consentement aux cookies [Osano](https://www.osano.com/) à votre documentation à l&#39;aide d&#39;un [fichier JavaScript personnalisé](/fr/customize/custom-scripts#custom-javascript) dans votre dépôt.
+Ajoutez [Osano](https://www.osano.com/) à votre documentation pour gérer le consentement aux cookies à l’aide d’un [fichier JavaScript personnalisé](/fr/customize/custom-scripts#custom-javascript) dans votre dépôt.
 
 <div id="setup">
   ## Configuration
 </div>
 
-Créez un fichier `osano.js` dans votre dépôt de documentation avec le contenu suivant :
+Créez un fichier `osano.js` dans le dépôt de votre documentation avec le contenu suivant :
 
 <CodeGroup>
   ```js Format
@@ -19,25 +19,25 @@ Créez un fichier `osano.js` dans votre dépôt de documentation avec le contenu
   document.head.appendChild(script);
   ```
 
-  ```js Example
+  ```js Exemple
   var script = document.createElement("script");
   script.src = "https://cmp.osano.com/your-tenant-id/your-site-id/osano.js";
   document.head.appendChild(script);
   ```
 </CodeGroup>
 
-Remplacez `OSANO_SCRIPT_URL` par l’URL de votre script Osano. L’URL de votre script correspond à la valeur de l’attribut `src` dans l’extrait de code fourni par Osano. L’URL de votre script commence toujours par `https://cmp.osano.com/` et se termine par `/osano.js`.
+Remplacez `OSANO_SCRIPT_URL` par l’URL de votre script Osano. Cette URL correspond à la valeur `src` dans l’extrait de code généré par Osano. Elle commence toujours par `https://cmp.osano.com/` et se termine par `/osano.js`.
 
 <div id="troubleshooting">
   ## Dépannage
 </div>
 
 <Accordion title="Les pages ne se chargent pas en mode de conformité Strict">
-  Si vos pages de documentation ne se chargent pas correctement lorsque vous utilisez le mode de conformité **Strict** d’Osano, vous devez ajouter le domaine de Mintlify à la liste d’autorisation afin de permettre le chargement des images et autres ressources.
+  Si vos pages de documentation ne se chargent pas correctement lorsque vous utilisez le mode de conformité **Strict** d’Osano, vous devez autoriser le domaine de Mintlify pour permettre le chargement des images et autres ressources.
 
   <Steps>
     <Step title="Accéder à Managed Rules">
-      Dans votre tableau de bord Osano, allez dans **Scripts** → **Managed Rules**.
+      Dans votre tableau de bord Osano, accédez à **Scripts** → **Managed Rules**.
     </Step>
 
     <Step title="Ajouter le domaine Mintlify">
@@ -48,7 +48,7 @@ Remplacez `OSANO_SCRIPT_URL` par l’URL de votre script Osano. L’URL de votre
       </Frame>
 
       <Info>
-        Cela garantit que toutes les ressources servies par Mintlify (y compris les images, les feuilles de style et les autres ressources de documentation) sont considérées comme essentielles et s’affichent même lorsqu’Osano bloque du contenu tiers non catégorisé.
+        Cela garantit que toutes les ressources fournies par Mintlify (y compris les images, les feuilles de style et les autres ressources de documentation) sont considérées comme essentielles et se chargent même lorsqu’Osano bloque le contenu tiers non catégorisé.
       </Info>
     </Step>
   </Steps>

@@ -1,18 +1,18 @@
 ---
 title: "页面"
-description: "配置页面元数据、标题和 frontmatter 属性。"
-keywords: ["标签", "标签", "frontmatter", "元数据", "布局"]
+description: "配置页面元数据、标题和前置元数据属性。"
+keywords: ["标签", "标签", "前置元数据", "元数据", "布局"]
 ---
 
-每个页面都是一个 Markdown 文件。支持 `.mdx` 和 `.md` 两种文件类型。我们推荐使用 MDX，它将 Markdown 与 React 组件结合起来，用于创建丰富、交互性强的文档。纯 Markdown（`.md`）也同样支持，便于从其他平台迁移，但应尽量更新为 MDX，以获得完整功能。
+每个页面都是一个 Markdown 文件。支持 `.mdx` 和 `.md` 两种文件类型。我们推荐使用 MDX，它将 Markdown 与 React 组件结合，可用于创建丰富的交互式文档。为便于从其他平台迁移，也支持纯 Markdown (`.md`) ，但若要使用完整功能，应将其更新为 MDX。
 
 <div id="page-metadata">
   ## 页面元数据
 </div>
 
-每个页面都以 frontmatter 开头，即位于文件开头、由 `---` 包裹的 YAML 元数据。这些元数据定义了页面的外观和行为。
+每个页面都以前置元数据开头，即文件开头由 `---` 包裹的 YAML 元数据。它定义了页面的显示方式和行为。
 
-使用 frontmatter 可以控制：
+你可以使用前置元数据来控制：
 
 * 页面标题和描述
 * 侧边栏标题、图标和标签
@@ -21,11 +21,11 @@ keywords: ["标签", "标签", "frontmatter", "元数据", "布局"]
 * 自定义元数据
 
 <ResponseField name="title" type="string" required>
-  出现在导航和浏览器标签页中的页面标题。
+  显示在导航和浏览器标签页中的页面标题。
 </ResponseField>
 
 <ResponseField name="description" type="string">
-  对本页面内容的简要说明。显示在标题下方，有助于提升 SEO。
+  对本页内容的简要说明。会显示在标题下方，并有助于提升 SEO 效果。
 </ResponseField>
 
 <ResponseField name="sidebarTitle" type="string">
@@ -37,31 +37,31 @@ keywords: ["标签", "标签", "frontmatter", "元数据", "布局"]
 
   可选值：
 
-  * [Font Awesome 图标](https://fontawesome.com/icons) 名称
-  * [Lucide 图标](https://lucide.dev/icons) 名称
+  * [Font Awesome icon](https://fontawesome.com/icons) 名称
+  * [Lucide icon](https://lucide.dev/icons) 名称
   * 外部托管图标的 URL
   * 项目中图标文件的路径
 </ResponseField>
 
 <ResponseField name="iconType" type="string">
-  [Font Awesome](https://fontawesome.com/icons) 图标样式。仅在使用 Font Awesome 图标时生效。
+  [Font Awesome](https://fontawesome.com/icons) 图标样式。仅用于 Font Awesome 图标。
 
-  可选值：`regular`, `solid`, `light`, `thin`, `sharp-solid`, `duotone`, `brands`。
+  可选值：`regular`、`solid`、`light`、`thin`、`sharp-solid`、`duotone`、`brands`。
 </ResponseField>
 
 <ResponseField name="tag" type="string">
-  显示在侧边栏中页面标题旁边的标签。
+  显示在侧边栏页面标题旁的标签。
 </ResponseField>
 
 <ResponseField name="<custom>" type="string">
-  任何有效的 YAML frontmatter 字段。例如，`product: "API"` 或 `version: "1.0.0"`。
+  任何有效的 YAML 前置元数据。例如，`product: "API"` 或 `version: "1.0.0"`。
 </ResponseField>
 
 ```yaml Example YAML frontmatter wrap
 ---
-title: "关于 frontmatter"
-description: "Frontmatter 是控制页面外观和行为的元数据"
-sidebarTitle: "Frontmatter"
+title: "关于前置元数据"
+description: "前置元数据是控制页面外观和行为的元数据"
+sidebarTitle: "前置元数据"
 icon: "book"
 tag: "NEW"
 ---
@@ -71,13 +71,13 @@ tag: "NEW"
   ## 页面模式
 </div>
 
-通过 `mode` 设置来控制页面的显示方式。
+通过 `mode` 设置控制页面的显示方式。
 
 <div id="default">
-  ### 默认模式
+  ### 默认
 </div>
 
-如果未指定模式，将使用带有侧边导航栏和目录的标准布局。
+如果未定义模式，则默认使用标准布局，包含侧边栏导航和目录。
 
 ```yaml
 ---
@@ -89,7 +89,7 @@ title: "Default page title"
   ### 宽屏
 </div>
 
-宽屏模式会隐藏目录。这对没有任何标题的页面，或是你希望利用额外横向空间时非常实用。所有主题都支持宽屏模式。
+宽屏模式会隐藏目录。对于没有任何标题的页面，或者你想利用额外横向空间时，这会很有用。所有主题都支持宽屏模式。
 
 ```yaml
 ---
@@ -102,7 +102,7 @@ mode: "wide"
   ### 自定义
 </div>
 
-自定义模式提供极简布局，只保留顶部导航栏，其余元素全部移除。自定义模式是一块空白画布，可用于创建落地页或任何你希望仅保留最少导航元素的独特布局。自定义模式适用于所有主题。
+自定义模式提供一种极简布局，除顶部导航栏外会移除所有元素。自定义模式就像一块空白画布，可用于创建落地页或任何其他希望仅保留最少导航元素的独特布局。自定义模式适用于所有主题。
 
 ```yaml
 ---
@@ -112,14 +112,14 @@ mode: "custom"
 ```
 
 <Warning>
-  在自定义模式页面中使用 `style` 属性可能会在页面加载时导致布局偏移。请改用 [Tailwind CSS 或自定义 CSS](/zh/customize/custom-scripts) 以避免此问题。
+  在自定义模式页面中使用 `style` 属性，可能会导致页面加载时出现布局偏移。为避免此问题，请改用 [Tailwind CSS 或自定义 CSS](/zh/customize/custom-scripts)。
 </Warning>
 
 <div id="frame">
   ### Frame
 </div>
 
-Frame 模式提供了与 custom 模式类似的布局，但会保留侧边栏导航。此页面模式在保持默认导航体验的同时支持自定义 HTML 和组件。Frame 模式仅适用于 Aspen 和 Almond 主题。
+Frame 模式提供与自定义模式类似的布局，但会保留侧边栏导航。该页面模式支持使用自定义 HTML 和组件，同时保留默认的导航体验。Frame 模式仅适用于 Aspen 和 Almond 主题。
 
 ```yaml
 ---
@@ -132,7 +132,7 @@ mode: "frame"
   ### 居中
 </div>
 
-居中模式会移除侧边栏和目录，并将内容居中展示。对于变更日志或其他需要突出内容本身的页面，这种模式非常实用。居中模式适用于 Mint 和 Linden 主题。
+居中模式会移除侧边栏和目录，并将内容置于页面中央。这适用于更新日志或其他需要突出内容的页面。居中模式可用于 Mint 和 Linden 主题。
 
 ```yaml
 ---
@@ -145,7 +145,7 @@ mode: "center"
   ## API 页面
 </div>
 
-在你的 frontmatter 中添加 API 规范（`api` 或 `openapi`），即可创建交互式 API 操作环境。
+在前置元数据中添加 API 规范 (`api` 或 `openapi`) ，即可创建交互式 API 操作台。
 
 ```yaml
 ---
@@ -153,13 +153,13 @@ openapi: "GET /endpoint"
 ---
 ```
 
-了解更多关于构建 [API 文档](/zh/api-playground/overview) 的信息。
+进一步了解如何构建 [API 文档](/zh/api-playground/overview)。
 
 <div id="external-links">
   ## 外部链接
 </div>
 
-在导航中使用 `url` 元数据即可直接链接到外部网站。
+使用 `url` 元数据，可直接在导航中链接到外部网站。
 
 ```yaml
 ---
@@ -172,10 +172,10 @@ url: "https://www.npmjs.com/package/mint"
   ## 搜索引擎优化
 </div>
 
-大多数 SEO meta 标签都会自动生成。你也可以手动设置这些标签，以提升网站的 SEO 效果、社交分享表现和浏览器兼容性。
+大多数 SEO 元标签都会自动生成。你也可以手动设置 SEO 元标签，以提升网站的 SEO、社交分享效果和浏览器兼容性。
 
 <Note>
-  带有冒号的 meta 标签必须用引号括起来。
+  带有冒号的元标签必须用引号括起来。
 </Note>
 
 ```yaml
@@ -184,13 +184,13 @@ url: "https://www.npmjs.com/package/mint"
 ---
 ```
 
-请参阅 [SEO](/zh/optimize/seo) 了解所有 SEO 元数据选项。
+有关 SEO 元数据的完整选项，请参阅 [SEO](/zh/optimize/seo)。
 
 <div id="internal-search-keywords">
   ## 内部搜索关键词
 </div>
 
-在元数据中添加 `keywords`，可以提高特定页面在内置搜索中的可见性。这些关键词不会出现在页面内容或搜索结果中，但当用户搜索这些关键词时，仍会在结果中显示该页面。
+你可以在元数据中提供 `keywords`，以提升特定页面在内置搜索中的可发现性。这些关键词不会显示在页面内容中，也不会出现在搜索结果里，但用户搜索这些关键词时，页面仍会显示在结果中。
 
 ```yaml
 ---
@@ -202,7 +202,7 @@ keywords: ['configuration', 'setup', 'getting started']
   ## 最后修改时间
 </div>
 
-在你的[全局设置](/zh/organize/settings#metadata)中启用 `metadata.timestamp`，即可为所有页面添加“最后修改于 [日期]”的时间戳。
+在[全局设置](/zh/organize/settings#metadata)中启用 `metadata.timestamp`，即可为所有页面添加“最后修改于 [date]”时间。
 
 ```json docs.json
 "metadata": {
@@ -210,7 +210,7 @@ keywords: ['configuration', 'setup', 'getting started']
 }
 ```
 
-通过在单个页面中使用 `timestamp` frontmatter 字段来覆写全局时间戳设置。使用此字段可以选择性地在特定页面上显示或隐藏时间戳。
+使用前置元数据中的 `timestamp` 字段覆盖单个页面的全局时间戳设置。你可以使用此字段，有选择地在特定页面上显示或隐藏时间戳。
 
 ```yaml
 ---
@@ -219,4 +219,4 @@ timestamp: false
 ---
 ```
 
-当设置为 `true` 时，即使全局设置为 `false`，仍会显示时间戳。当设置为 `false` 时，即使全局设置为 `true`，时间戳也会被隐藏。
+设置为 `true` 时，即使全局设置为 `false`，也会显示时间戳。设置为 `false` 时，即使全局设置为 `true`，也会隐藏时间戳。

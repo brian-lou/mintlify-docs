@@ -1,40 +1,40 @@
 ---
-title: "Workflows"
-description: "Exemples d'utilisation de l'agent dans votre processus de documentation."
-keywords: ["agent workflows", "documentation workflows", "automation examples"]
+title: "Flux de travail"
+description: "Exemples d’utilisation de l’agent dans votre processus de documentation."
+keywords: ["flux de travail avec l’agent", "flux de travail de documentation", "exemples d’automatisation"]
 ---
 
-L&#39;agent vous assiste dans de nombreuses tâches liées à la documentation. Ces workflows illustrent différentes manières d&#39;intégrer l&#39;agent à votre processus de documentation. Choisissez une approche adaptée au fonctionnement actuel de votre équipe, puis ajustez-la à vos besoins spécifiques.
+L’agent vous aide dans de nombreuses tâches de documentation. Ces flux de travail illustrent différentes façons de l’intégrer à votre processus de documentation. Essayez une approche qui correspond à la façon dont votre équipe travaille aujourd’hui, puis adaptez-la à vos besoins spécifiques.
 
 <div id="iterate-on-a-prompt-in-a-slack-thread">
-  ## Itérer sur un prompt dans un fil Slack
+  ## Itérer sur un prompt dans un fil de discussion Slack
 </div>
 
-Soumettez un prompt à l’agent, puis continuez à le mentionner avec `@mintlify` dans le même fil pour affiner et itérer sur la pull request qu’il crée.
+Donnez un prompt à l’agent, puis continuez à le mentionner avec `@mintlify` dans le même fil de discussion pour affiner et faire évoluer la pull request qu’il crée.
 
-Par exemple : `@mintlify Our quickstart page needs a new section on inviting collaborators`. Puis : `@mintlify The new section should be called "Inviting collaborators"`. Puis autant d’autres itérations que nécessaire.
+Par exemple : `@mintlify Our quickstart page needs a new section on inviting collaborators`. Puis `@mintlify The new section should be called "Inviting collaborators"`. Et ainsi de suite au fil des itérations.
 
 <div id="start-with-the-agent-finish-manually">
   ## Commencez par l’agent, terminez manuellement
 </div>
 
-Demandez à l’agent de lancer un projet, puis basculez sur la branche qu’il crée et terminez la tâche dans votre environnement de développement local ou dans l’éditeur web. L’agent peut vous aider à démarrer, puis vous pouvez prendre le relais pour finaliser la tâche.
+Donnez un prompt à l’agent pour démarrer un projet, puis basculez sur la branche qu’il crée et terminez la tâche dans votre environnement local ou dans l’éditeur web. L’agent peut vous aider à démarrer, puis vous pouvez prendre le relais pour finaliser la tâche.
 
-Par exemple : `@mintlify Update the quickstart page to include information about inviting collaborators`, puis basculez sur la branche pour effectuer des modifications supplémentaires avec la méthode de votre choix.
+Par exemple : `@mintlify Update the quickstart page to include information about inviting collaborators`, puis basculez sur la branche pour apporter toute modification supplémentaire avec la méthode de votre choix.
 
 <div id="update-docs-when-merging-feature-changes">
-  ## Mettre à jour la documentation lors de la fusion de changements de fonctionnalités
+  ## Mettre à jour la documentation lors de la fusion de modifications liées à une fonctionnalité
 </div>
 
-Lorsque vous fusionnez une pull request introduisant une nouvelle fonctionnalité, partagez le lien de la PR avec l&#39;agent afin de mettre à jour la documentation concernée.
+Lorsque vous fusionnez une pull request liée à une fonctionnalité, partagez le lien de la PR avec l’agent pour mettre à jour la documentation correspondante.
 
 Par exemple : `@mintlify This PR adds a new authentication method. Update the docs to include the new auth flow: [PR link]`.
 
 <div id="generate-release-notes-from-a-pull-request">
-  ## Générer des notes de version à partir d&#39;une pull request
+  ## Générer des notes de publication à partir d’une pull request
 </div>
 
-Demandez à l&#39;agent, en lui fournissant une pull request spécifique, de générer des notes de version ou des mises à jour du changelog à partir de l&#39;historique des commits.
+Donnez un prompt à l’agent avec une pull request précise pour générer des notes de publication ou mettre à jour le journal des modifications à partir de l’historique des commits.
 
 Par exemple : `@mintlify Generate release notes for this PR: [PR link]`.
 
@@ -42,34 +42,34 @@ Par exemple : `@mintlify Generate release notes for this PR: [PR link]`.
   ## Générer des exemples de code
 </div>
 
-Demandez à l’agent de générer des exemples de code pour les fonctionnalités de l’ensemble de votre documentation ou pour des pages spécifiques.
+Donnez un prompt à l’agent pour générer des exemples de code pour des fonctionnalités dans toute votre documentation ou sur des pages spécifiques.
 
 Par exemple : `@mintlify Generate a code example to make the authentication method easier to understand`.
 
 <div id="review-existing-content">
-  ## Revoir le contenu existant
+  ## Passer en revue le contenu existant
 </div>
 
-Demandez à l’agent de revoir le contenu existant pour en vérifier la précision technique, le style, la grammaire ou d’éventuels autres problèmes.
+Donnez un prompt à l’agent pour passer en revue le contenu existant afin de vérifier l’exactitude technique, le style, la grammaire et repérer d’autres problèmes.
 
 Par exemple : `@mintlify Review the API rate limiting section. We changed limits last month`.
 
 <div id="respond-to-user-feedback">
-  ## Réagir aux retours des utilisateurs
+  ## Répondre aux retours des utilisateurs
 </div>
 
-Fournissez à l’agent les retours de vos utilisateurs pour lui permettre d’apporter des mises à jour ciblées à votre documentation.
+Soumettez à l’agent un prompt contenant les retours de vos utilisateurs afin d’apporter des mises à jour ciblées à votre documentation.
 
 Par exemple : `@mintlify Users are getting confused by step 3 in the setup guide. What might be making it unclear?`.
 
 <div id="automate-with-the-api">
-  ## Automatiser avec l&#39;API
+  ## Automatisez avec l’API
 </div>
 
-Intégrez l&#39;agent à vos outils d&#39;automatisation existants pour mettre automatiquement à jour la documentation lorsque le code change, déclencher des relectures de contenu ou synchroniser les mises à jour de la documentation entre plusieurs dépôts.
+Intégrez l’agent à vos outils d’automatisation existants pour mettre automatiquement à jour la documentation lorsque le code change, déclencher des revues de contenu ou synchroniser les mises à jour de la documentation entre plusieurs dépôts.
 
-Utilisez les endpoints de l&#39;agent pour [créer des jobs](/fr/api-reference/agent/create-agent-job), [récupérer un job spécifique](/fr/api-reference/agent/get-agent-job) et [récupérer tous les jobs](/fr/api-reference/agent/get-all-jobs).
+Utilisez les endpoints de l’agent pour [créer des jobs](/fr/api-reference/agent/create-agent-job), [récupérer un job spécifique](/fr/api-reference/agent/get-agent-job) et [récupérer tous les jobs](/fr/api-reference/agent/get-all-jobs).
 
-Lors de la création de jobs via l&#39;API, vous pouvez contrôler si les pull requests s&#39;ouvrent en mode brouillon à l&#39;aide du paramètre `asDraft` (valeur par défaut : `true`). Définissez `asDraft: false` pour créer des pull requests non brouillon, prêtes pour une relecture et une fusion immédiates dans des workflows automatisés.
+Lorsque vous créez des jobs via l’API, vous pouvez définir si les pull requests s’ouvrent en mode brouillon à l’aide du paramètre `asDraft` (valeur par défaut : `true`). Définissez `asDraft: false` pour créer des pull requests prêtes à être examinées et fusionnées immédiatement dans des flux de travail automatisés.
 
-Découvrez comment configurer l&#39;automatisation via l&#39;API dans le tutoriel [Mettre automatiquement à jour la documentation lorsque le code est fusionné](/fr/guides/automate-agent).
+Découvrez comment configurer l’automatisation via l’API dans le tutoriel [Mettre à jour automatiquement la documentation lorsque le code est fusionné](/fr/guides/automate-agent).

@@ -1,15 +1,15 @@
 ---
 title: "Cloudflare"
-description: "Héberger la documentation dans un sous-chemin avec Cloudflare Workers."
-keywords: ["Cloudflare Workers", "routage par sous-chemin", "configuration de proxy inverse", "configuration du worker"]
+description: "Hébergez votre documentation sur un sous-chemin avec Cloudflare Workers."
+keywords: ["Cloudflare Workers", "routage par sous-chemin", "configuration de proxy inverse", "configuration du Worker"]
 ---
 
 import Propagating from "/snippets/fr/custom-subpath-propagating.mdx";
 
-Pour héberger votre documentation à un sous-chemin tel que `yoursite.com/docs` avec Cloudflare, vous devez créer et configurer un Cloudflare Worker.
+Pour héberger votre documentation sur un sous-chemin tel que `yoursite.com/docs` avec Cloudflare, vous devez créer et configurer un Worker Cloudflare.
 
 <Info>
-  Avant de commencer, vous avez besoin d’un compte Cloudflare et d’un nom de domaine (que vous pouvez gérer avec ou sans Cloudflare).
+  Avant de commencer, vous devez disposer d’un compte Cloudflare et d’un nom de domaine (géré sur Cloudflare ou ailleurs).
 </Info>
 
 
@@ -20,42 +20,42 @@ Pour héberger votre documentation à un sous-chemin tel que `yoursite.com/docs`
 Créez un Worker Cloudflare en suivant le [guide de prise en main de Cloudflare Workers](https://developers.cloudflare.com/workers/get-started/dashboard/), si ce n’est pas déjà fait.
 
 <Tip>
-  Si votre fournisseur DNS est Cloudflare, désactivez le proxy pour l’enregistrement de type CNAME afin d’éviter d’éventuels problèmes de configuration.
+  Si votre fournisseur DNS est Cloudflare, désactivez le proxy pour l’enregistrement CNAME afin d’éviter d’éventuels problèmes de configuration.
 </Tip>
 
 <div id="proxies-with-vercel-deployments">
   ### Proxies avec les déploiements Vercel
 </div>
 
-Si vous utilisez Cloudflare comme proxy avec des déploiements Vercel, vous devez veiller à une configuration correcte afin d’éviter les conflits avec la vérification de domaine de Vercel et l’émission des certificats SSL.
+Si vous utilisez Cloudflare comme proxy avec des déploiements Vercel, vous devez veiller à une configuration correcte afin d’éviter les conflits avec la vérification du domaine par Vercel et le provisionnement des certificats SSL.
 
-Une mauvaise configuration du proxy peut empêcher Vercel d’émettre des certificats SSL Let's Encrypt et entraîner des échecs de vérification de domaine.
+Une configuration incorrecte du proxy peut empêcher Vercel d’assurer le provisionnement des certificats SSL Let&#39;s Encrypt et entraîner des échecs de vérification du domaine.
 
 <div id="required-path-allowlist">
-  #### Liste d’autorisation de chemins obligatoire
+  #### Chemins à autoriser
 </div>
 
-Votre Cloudflare Worker doit autoriser le trafic vers ces chemins spécifiques sans le bloquer ni le rediriger :
+Votre Cloudflare Worker doit autoriser le trafic vers ces chemins spécifiques, sans le bloquer ni le rediriger :
 
-- `/.well-known/acme-challenge/*` - Requis pour la vérification du certificat Let's Encrypt
-- `/.well-known/vercel/*` - Requis pour la vérification du domaine Vercel
+* `/.well-known/acme-challenge/*` - Requis pour la vérification du certificat Let&#39;s Encrypt
+* `/.well-known/vercel/*` - Requis pour la vérification du domaine Vercel
 
-Bien que Cloudflare gère automatiquement de nombreuses règles de vérification, la création de règles personnalisées supplémentaires peut, par inadvertance, bloquer ce trafic essentiel.
+Bien que Cloudflare gère automatiquement de nombreuses règles de vérification, la création de règles personnalisées supplémentaires peut bloquer involontairement ce trafic critique.
 
 <div id="header-forwarding-requirements">
-  #### Exigences pour la transmission des en-têtes
+  #### Exigences relatives au transfert des en-têtes
 </div>
 
-Assurez-vous que l’en-tête `HOST` est correctement transmis dans la configuration de votre Worker. Si les en-têtes ne sont pas transmis correctement, les requêtes de vérification échoueront.
+Assurez-vous que l’en-tête `HOST` est correctement transmis dans la configuration de votre Worker. Si les en-têtes ne sont pas correctement transmis, les requêtes de vérification échoueront.
 
 <div id="configure-routing">
   ### Configurer le routage
 </div>
 
-Dans votre tableau de bord Cloudflare, sélectionnez **Edit Code** et ajoutez le script suivant au code de votre Worker. Consultez la [documentation Cloudflare](https://developers.cloudflare.com/workers-ai/get-started/dashboard/#development) pour plus d’informations sur la modification d’un Worker.
+Dans le tableau de bord Cloudflare, sélectionnez **Edit Code** et ajoutez le script suivant au code de votre Worker. Consultez la [documentation Cloudflare](https://developers.cloudflare.com/workers-ai/get-started/dashboard/#development) pour en savoir plus sur la modification d’un Worker.
 
 <Tip>
-  Remplacez `[SUBDOMAIN]` par votre sous-domaine unique, `[YOUR_DOMAIN]` par l’URL de base de votre site web, et `/docs` par le sous-chemin de votre choix si vous souhaitez en utiliser un autre.
+  Remplacez `[SUBDOMAIN]` par votre sous-domaine unique, `[YOUR_DOMAIN]` par l’URL de base de votre site, et `/docs` par le sous-chemin souhaité si nécessaire.
 </Tip>
 
 ```javascript
@@ -74,7 +74,7 @@ async function handleRequest(request) {
     
     // Si la requête concerne le sous-chemin docs
     if (/^\/docs/.test(urlObject.pathname)) {
-      // Rediriger vers Mintlify via proxy
+      // Proxy vers Mintlify
       const DOCS_URL = "[SUBDOMAIN].mintlify.dev";
       const CUSTOM_URL = "[YOUR_DOMAIN]";
 
@@ -92,13 +92,13 @@ async function handleRequest(request) {
       return await fetch(proxyRequest);
     }
   } catch (error) {
-    // Si aucune action trouvée, exécuter la requête normale
+    // Si aucune action trouvée, traiter la requête normalement
     return await fetch(request);
   }
 }
 ```
 
-Sélectionnez **Deploy**, puis attendez la propagation des modifications.
+Sélectionnez **Deploy** et attendez que les modifications soient prises en compte.
 
 <Propagating />
 
@@ -107,50 +107,50 @@ Sélectionnez **Deploy**, puis attendez la propagation des modifications.
   ### Testez votre Worker
 </div>
 
-Après le déploiement de votre code, testez votre Worker pour vous assurer qu’il redirige vers votre documentation Mintlify.
+Une fois votre code déployé, testez votre Worker pour vous assurer qu’il dirige bien vers votre documentation Mintlify.
 
 1. Testez à l’aide de l’URL de prévisualisation du Worker : `your-worker.your-subdomain.workers.dev/docs`
-2. Vérifiez que le Worker redirige bien vers votre documentation Mintlify et votre site web.
+2. Vérifiez que le Worker dirige correctement vers votre documentation Mintlify et votre site web.
 
 <div id="add-custom-domain">
   ### Ajouter un domaine personnalisé
 </div>
 
-1. Dans votre [tableau de bord Cloudflare](https://dash.cloudflare.com/), ouvrez votre Worker.
-2. Accédez à **Settings > Domains & Routes > Add > Custom Domain**.
-3. Ajoutez votre domaine. 
+1. Dans votre [tableau de bord Cloudflare](https://dash.cloudflare.com/), accédez à votre Worker.
+2. Accédez à **Settings &gt; Domains &amp; Routes &gt; Add &gt; Custom Domain**.
+3. Ajoutez votre domaine.
 
 <Tip>
-  Nous vous recommandons d’ajouter votre domaine à la fois avec et sans le préfixe `www.`.
+  Nous vous recommandons d’ajouter votre domaine avec et sans le préfixe `www.`.
 </Tip>
 
-Pour en savoir plus, consultez la section [Add a custom domain](https://developers.cloudflare.com/workers/configuration/routing/custom-domains/#add-a-custom-domain) de la documentation Cloudflare. 
+Pour en savoir plus, consultez [Add a custom domain](https://developers.cloudflare.com/workers/configuration/routing/custom-domains/#add-a-custom-domain) dans la documentation Cloudflare. 
 
 <div id="resolve-dns-conflicts">
   ### Résoudre les conflits DNS
 </div>
 
-Si votre domaine pointe déjà vers un autre service, vous devez supprimer l’enregistrement DNS existant. Votre Cloudflare Worker doit être configuré pour contrôler l’ensemble du trafic de votre domaine.
+Si votre domaine pointe déjà vers un autre service, vous devez supprimer l’enregistrement DNS existant. Votre Cloudflare Worker doit être configuré pour gérer l’ensemble du trafic de votre domaine.
 
-1. Supprimez l’enregistrement DNS existant pour votre domaine. Pour plus d’informations, consultez la documentation Cloudflare, section [Delete DNS records](https://developers.cloudflare.com/dns/manage-dns-records/how-to/create-dns-records/#delete-dns-records).
+1. Supprimez l’enregistrement DNS existant associé à votre domaine. Consultez [Delete DNS records](https://developers.cloudflare.com/dns/manage-dns-records/how-to/create-dns-records/#delete-dns-records) dans la documentation Cloudflare pour en savoir plus.
 2. Revenez à votre Worker et ajoutez votre domaine personnalisé.
 
 <div id="webflow-custom-routing">
   ## Routage personnalisé Webflow
 </div>
 
-Si vous utilisez Webflow pour héberger votre site principal et que vous souhaitez servir la documentation Mintlify à `/docs` sur le même domaine, vous devrez configurer un routage personnalisé via Cloudflare Workers pour faire passer en proxy tout le trafic non lié à la documentation vers votre site principal.
+Si vous utilisez Webflow pour héberger votre site principal et que vous souhaitez proposer la documentation Mintlify à l’adresse `/docs` sur le même domaine, vous devrez configurer un routage personnalisé via Cloudflare Workers afin de rediriger par proxy tout le trafic qui ne concerne pas la documentation vers votre site principal.
 
 <Warning>
-  Assurez-vous que votre site principal est hébergé sur une page de destination avant de déployer ce Worker, sinon les visiteurs de votre site principal verront des erreurs.
+  Assurez-vous que votre site principal est configuré sur une page de destination avant de déployer ce Worker, sinon les visiteurs de votre site principal verront des erreurs.
 </Warning>
 
-1. Dans Webflow, configurez une page de destination pour votre site principal, par exemple `landing.yoursite.com`. Ce sera la page que les visiteurs verront lorsqu’ils se rendront sur votre site.
+1. Dans Webflow, configurez une page de destination pour votre site principal, par exemple `landing.yoursite.com`. C’est cette page que les visiteurs verront lorsqu’ils accéderont à votre site.
 2. Déployez votre site principal sur cette page de destination. Cela garantit que votre site principal reste accessible pendant que vous configurez le Worker.
-3. Pour éviter les conflits, mettez à jour toutes les URL absolues de votre site principal afin qu’elles deviennent relatives.
-4. Dans Cloudflare, sélectionnez **Edit Code** et ajoutez le script suivant dans le code de votre Worker.
+3. Pour éviter les conflits, remplacez toutes les URL absolues de votre site principal par des URL relatives.
+4. Dans Cloudflare, sélectionnez **Edit Code** et ajoutez le script suivant au code de votre Worker.
 
-<Tip> Remplacez `[SUBDOMAIN]` par votre sous-domaine unique, `[YOUR_DOMAIN]` par l’URL de base de votre site web, `[LANDING_DOMAIN]` par l’URL de votre page de destination, et `/docs` par le sous-chemin souhaité si vous en utilisez un autre. </Tip>
+<Tip> Remplacez `[SUBDOMAIN]` par votre sous-domaine unique, `[YOUR_DOMAIN]` par l’URL de base de votre site web, `[LANDING_DOMAIN]` par l’URL de votre page de destination et `/docs` par le sous-chemin souhaité si besoin. </Tip>
 
 ```javascript
   addEventListener("fetch", (event) => {
@@ -198,6 +198,6 @@ Si vous utilisez Webflow pour héberger votre site principal et que vous souhait
   }
 ```
 
-5. Sélectionnez **Deploy** et attendez la propagation des modifications.
+5. Sélectionnez **Deploy** et attendez que les modifications soient prises en compte.
 
 <Propagating />

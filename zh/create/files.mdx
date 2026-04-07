@@ -1,44 +1,44 @@
 ---
 title: "文件"
-description: "为文档站点提供静态资源服务。"
+description: "从文档中提供静态资源。"
 keywords: ["静态资源", "支持的文件类型"]
 ---
 
-Mintlify 会自动从你的文档仓库中托管静态资源，并在你的域名下通过相应路径对外提供。例如，如果你的仓库中有 `/images/my-logo.png`，那么该图片文件可以通过 `https://docs.your-project.com/images/my-logo.png` 访问。
+Mintlify 会自动通过你的域名上的相应路径，提供文档仓库中的静态资源。例如，如果你的仓库中有 `/images/my-logo.png`，则可通过 `https://docs.your-project.com/images/my-logo.png` 访问该图片文件。
 
-你可以向用户提供任意受支持的文件类型，包括 OpenAPI 规范、图片、视频等。
+你可以向用户提供任何受支持的文件类型，包括 OpenAPI 规范、图片、视频等。
 
-图片文件必须小于 20 MB，其他文件类型必须小于 100 MB。
+图片必须小于 20 MB，其他文件类型必须小于 100 MB。
 
 <Note>
-启用身份验证的文档站点不支持静态文件服务。如果你的站点需要身份验证，静态文件将无法通过其直接 URL 访问。
+  启用身份验证的文档站点不支持文件托管。如果你的站点需要身份验证，静态文件将无法通过其直接 URL 访问。
 </Note>
 
 <div id="supported-file-types">
   ## 支持的文件类型
 </div>
 
-所有套餐支持的文件类型：
+所有套餐均支持以下文件类型：
 
-- **图像**：`.png`, `.jpg`, `.jpeg`, `.gif`, `.webp`, `.svg`, `.ico`
-- **视频**：`.mp4`, `.webm`
-- **音频**：`.mp3`, `.wav`
-- **数据**：`.json`, `.yaml`
-- **样式表**：`.css`
-- **脚本**：`.js`
-- **字体**：`.woff`, `.woff2`, `.ttf`, `.eot`
+* **图片**：`.png`, `.jpg`, `.jpeg`, `.gif`, `.webp`, `.svg`, `.ico`
+* **视频**：`.mp4`, `.webm`
+* **音频**：`.mp3`, `.wav`
+* **数据**：`.json`, `.yaml`
+* **样式表**：`.css`
+* **脚本**：`.js`
+* **字体**：`.woff`, `.woff2`, `.ttf`, `.eot`
 
-Enterprise 套餐支持的文件类型：
+Enterprise 套餐支持以下文件类型：
 
-- **文档**：`.pdf`, `.txt`
-- **数据**：`.xml`, `.csv`
-- **归档文件**：`.zip`
+* **文档**：`.pdf`, `.txt`
+* **数据**：`.xml`, `.csv`
+* **压缩文件**：`.zip`
 
 <div id="file-organization">
   ## 文件组织
 </div>
 
-使用文件夹来组织你的文件，使仓库结构清晰、便于浏览：
+使用文件夹整理文件，便于浏览仓库：
 
 ```text
 /your-project
@@ -52,4 +52,4 @@ Enterprise 套餐支持的文件类型：
     |- demo-video.mp4
 ```
 
-文件会从你的域名根目录提供服务，因此仓库中的目录结构会直接对应到 URL 结构。根据前面的示例，`assets/whitepaper.pdf` 将可以通过 `https://docs.your-project.com/assets/whitepaper.pdf` 访问。
+文件会从你的域名根路径提供，因此仓库中的目录结构会直接映射到 URL 结构。沿用前面的示例，`assets/whitepaper.pdf` 可通过 `https://docs.your-project.com/assets/whitepaper.pdf` 访问。

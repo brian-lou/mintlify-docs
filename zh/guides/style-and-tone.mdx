@@ -1,43 +1,43 @@
 ---
 title: "风格与语气"
-description: "以统一的文风撰写高效的技术文档。"
-keywords: ["写作原则", "主动语态", "技术写作", "文体指南"]
+description: "以统一的风格撰写有效的技术文档。"
+keywords: ["写作原则", "主动语态", "技术写作", "风格指南"]
 ---
 
 <Tip>
-  本页介绍撰写技术文档时的风格选择、常见错误以及实践建议。
+  本页介绍撰写技术文档时的风格选择、常见错误和实践建议。
 </Tip>
 
 <div id="writing-principles">
   ## 写作原则
 </div>
 
-* **保持简洁。** 人们阅读文档是为了完成任务，要尽快切入正题。
-* **清晰胜于花哨。** 表达要简单直接，避免使用术语或复杂句式。
-* **使用主动语态。** 不要说“应创建一个配置文件”，而要说“创建一个配置文件。”
-* **便于快速浏览。** 用标题帮助读者定位内容，拆分大段文字，使用项目符号和列表，方便快速扫读。
-* **使用第二人称写作。** 直接称呼读者能让步骤更易于理解，也能让文档显得更亲切。
+* **保持简洁。** 人们阅读文档是为了实现某个目标。要尽快切入重点。
+* **清晰胜过卖弄。** 表达要简单直接，避免使用术语或复杂句式。
+* **使用主动语态。** 与其写“应创建一个配置文件”，不如写“创建一个配置文件”。
+* **方便快速浏览。** 用标题帮助读者快速了解内容。把大段文字拆开。使用项目符号和列表，让内容更便于扫读。
+* **使用第二人称。** 直接面向读者，更便于他们按说明操作，也能让文档更有亲和力。
 
 <div id="common-writing-mistakes">
   ## 常见写作错误
 </div>
 
-* **拼写和语法错误。** 即使文档中只有少量拼写和语法错误，也会降低其可信度，并让读者更难阅读。
-* **术语不一致。** 在一段中把某个概念称为“API key”，在下一段中又称为“API token”，会让用户难以理解和跟进。
-* **过于产品中心的术语。** 你的用户并不了解你产品的完整上下文。请使用用户更熟悉的语言。
-* **口语化表达。** 尤其是在本地化场景中，口语化表达会损害内容的清晰度。
+* **拼写和语法错误。** 即使文档里只有少量拼写或语法错误，也会降低内容的可信度，并让阅读体验变差。
+* **术语不一致。** 同一个概念，这一段叫“API key”，下一段又叫“API token”，会让用户难以理解。
+* **以产品为中心的术语。** 用户并不像你一样了解产品的全部背景。请使用用户熟悉的表达方式。
+* **口语化表达。** 尤其在本地化时，口语化表达会影响内容的清晰度。
 
 <div id="tips-for-enforcing-style">
-  ## 规范文档风格的技巧
+  ## 统一风格的技巧
 </div>
 
-利用现有的风格指南来统一和规范文档写作：
+利用现有的风格指南来统一文档风格：
 
 * [Microsoft Style Guide](https://learn.microsoft.com/en-us/style-guide/welcome/)
 * [Splunk Style Guide](https://docs.splunk.com/Documentation/StyleGuide/current/StyleGuide/Howtouse)
 * [Google Developer Documentation Style Guide](https://developers.google.com/style)
 
-当你明确了要采用哪些写作原则后，要尽可能实现自动化。你可以使用 [CI 检查](/zh/deploy/ci) 或像 [Vale](https://vale.sh) 这样的风格检查工具（linter）。
+当你明确了要落实哪些写作原则后，就尽可能将其自动化。你可以使用 [CI 检查](/zh/deploy/ci) 或 [Vale](https://vale.sh) 这类 linter。
 
 <div id="related-pages">
   ## 相关页面
@@ -45,18 +45,18 @@ keywords: ["写作原则", "主动语态", "技术写作", "文体指南"]
 
 <CardGroup cols={2}>
   <Card title="内容类型" icon="folder-tree" href="/zh/guides/content-types">
-    根据你的文档目标选择合适的内容类型。
+    根据文档目标选择合适的内容类型。
   </Card>
 
-  <Card title="无障碍访问" icon="person-standing" href="/zh/guides/accessibility">
-    让更多用户都能顺畅使用你的文档。
+  <Card title="无障碍" icon="person-standing" href="/zh/guides/accessibility">
+    让更多用户能够无障碍地使用你的文档。
   </Card>
 
-  <Card title="格式化文本" icon="case-sensitive" href="/zh/create/text">
-    了解文本排版和样式选项。
+  <Card title="设置文本格式" icon="case-sensitive" href="/zh/create/text">
+    了解文本格式设置和样式选项。
   </Card>
 
   <Card title="SEO 最佳实践" icon="search" href="/zh/guides/seo">
-    提高文档的可发现性。
+    提升文档的可搜索性。
   </Card>
 </CardGroup>

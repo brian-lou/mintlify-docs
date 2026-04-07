@@ -1,20 +1,20 @@
 ---
-title: "Mettre en forme le code"
-description: "Afficher et styliser le code en ligne et les blocs de code."
+title: "Formater le code"
+description: "Affichez et mettez en forme le code en ligne ainsi que les blocs de code."
 keywords: ["blocs de code", "coloration syntaxique", "mise en forme du code"]
 ---
 
 <div id="adding-code-samples">
-  ## Ajout d&#39;exemples de code
+  ## Ajouter des exemples de code
 </div>
 
-Vous pouvez ajouter des extraits de code en ligne ou des blocs de code. Les blocs de code acceptent des options méta pour la coloration syntaxique, les titres, la mise en surbrillance de lignes, les icônes, et plus encore.
+Vous pouvez ajouter des extraits de code en ligne ou des blocs de code. Les blocs de code offrent des options méta pour la coloration syntaxique, les titres, la mise en évidence de lignes, les icônes, et plus encore.
 
 <div id="inline-code">
   ### Code en ligne
 </div>
 
-Pour indiquer qu&#39;un `mot` ou une `expression` correspond à du code, entourez-les de backticks (`).
+Pour indiquer qu’un `mot` ou une `expression` est du code, entourez-le de backticks (`).
 
 ```mdx
 To denote a `word` or `phrase` as code, enclose it in backticks (`).
@@ -24,9 +24,9 @@ To denote a `word` or `phrase` as code, enclose it in backticks (`).
   ### Blocs de code
 </div>
 
-Utilisez des [blocs de code délimités](https://www.markdownguide.org/extended-syntax/#fenced-code-blocks) en encadrant le code de trois accents graves. Les blocs de code sont copiables et, si vous avez activé l&#39;assistant, les utilisateurs peuvent demander à l’IA d’expliquer le code.
+Utilisez des [blackets de code délimités](https://www.markdownguide.org/extended-syntax/#fenced-code-blocks) en encadrant le code avec trois backticks. Les blocs de code sont copiables et, si l’assistant est activé, les utilisateurs peuvent demander à l’IA d’expliquer le code.
 
-Indiquez le langage de programmation pour la coloration syntaxique et pour activer les options méta. Ajoutez les options méta, comme un titre ou une icône, après le langage.
+Indiquez le langage de programmation pour activer la coloration syntaxique et les options méta. Ajoutez les options méta, comme un titre ou une icône, après le langage.
 
 <CodeGroup>
   ```java HelloWorld.java example icon=java lines
@@ -49,31 +49,31 @@ Indiquez le langage de programmation pour la coloration syntaxique et pour activ
 </CodeGroup>
 
 <div id="code-block-options">
-  ## Options pour les blocs de code
+  ## Options des blocs de code
 </div>
 
-Ajoutez des options méta à vos blocs de code pour personnaliser leur apparence.
+Ajoutez des options méta à vos blocs de code pour en personnaliser l’apparence.
 
 <Note>
-  Vous devez spécifier un langage de programmation pour un bloc de code avant d’ajouter d’autres options méta.
+  Vous devez spécifier un langage de programmation pour un bloc de code avant d’ajouter toute autre option méta.
 </Note>
 
 <div id="option-syntax">
   ### Syntaxe des options
 </div>
 
-* **Options de type chaîne de caractères et booléennes** : Entourez-les de `""`, `''` ou ne mettez pas de guillemets.
-* **Options d&#39;expression** : Entourez-les de `{}`, `""` ou `''`.
+* **Options de type chaîne et booléennes** : placez-les entre `""`, `''`, ou sans guillemets.
+* **Options d’expression** : placez-les entre `{}`, `""` ou `''`.
 
 <div id="syntax-highlighting">
   ### Coloration syntaxique
 </div>
 
-Activez la coloration syntaxique en spécifiant le langage de programmation après les accents graves ouvrants d’un bloc de code.
+Activez la coloration syntaxique en indiquant le langage de programmation après les backticks ouvrants d’un bloc de code.
 
 Nous utilisons [Shiki](https://shiki.style/) pour la coloration syntaxique et prenons en charge tous les langages disponibles. Consultez la liste complète des [langages](https://shiki.style/languages) dans la documentation de Shiki.
 
-Personnalisez globalement les thèmes des blocs de code à l’aide de `styling.codeblocks` dans votre fichier `docs.json`. Définissez des thèmes simples comme `system` ou `dark`, ou configurez des [thèmes Shiki](https://shiki.style/themes) personnalisés pour les modes clair et sombre. Consultez [Settings](/fr/organize/settings#param-styling) pour les options de configuration.
+Personnalisez globalement les thèmes des blocs de code avec `styling.codeblocks` dans votre fichier `docs.json`. Définissez des thèmes simples comme `system` ou `dark`, ou configurez des [thèmes Shiki](https://shiki.style/themes) personnalisés pour les modes clair et sombre. Consultez [Paramètres](/fr/organize/settings#param-styling) pour voir les options de configuration.
 
 <CodeGroup>
   ```java Exemple de coloration syntaxique
@@ -96,26 +96,26 @@ Personnalisez globalement les thèmes des blocs de code à l’aide de `styling.
 </CodeGroup>
 
 <Accordion title="Thème de coloration syntaxique personnalisé">
-  Pour les thèmes personnalisés, définissez votre thème dans `docs.json` sur `"css-variables"` et remplacez les couleurs de coloration syntaxique à l’aide de variables CSS avec le préfixe `--mint-`.
+  Pour utiliser des thèmes personnalisés, définissez votre thème sur `"css-variables"` dans `docs.json`, puis remplacez les couleurs de coloration syntaxique à l’aide de variables CSS avec le préfixe `--mint-`.
 
   Les variables suivantes sont disponibles :
 
   **Couleurs de base**
 
-  * `--mint-color-text` : couleur de texte par défaut
-  * `--mint-color-background` : couleur d’arrière-plan
+  * `--mint-color-text` : Couleur du texte par défaut
+  * `--mint-color-background` : Couleur d’arrière-plan
 
-  **Couleurs des jetons**
+  **Couleurs des tokens**
 
-  * `--mint-token-constant` : constantes et littéraux
-  * `--mint-token-string` : valeurs de chaîne
-  * `--mint-token-comment` : commentaires
-  * `--mint-token-keyword` : mots-clés
-  * `--mint-token-parameter` : paramètres de fonction
-  * `--mint-token-function` : noms de fonctions
-  * `--mint-token-string-expression` : expressions de chaîne
-  * `--mint-token-punctuation` : signes de ponctuation
-  * `--mint-token-link` : liens
+  * `--mint-token-constant` : Constantes et littéraux
+  * `--mint-token-string` : Chaînes de caractères
+  * `--mint-token-comment` : Commentaires
+  * `--mint-token-keyword` : Mots-clés
+  * `--mint-token-parameter` : Paramètres de fonction
+  * `--mint-token-function` : Noms de fonction
+  * `--mint-token-string-expression` : Expressions de chaînes
+  * `--mint-token-punctuation` : Signes de ponctuation
+  * `--mint-token-link` : Liens
 
   **Couleurs ANSI**
 
@@ -138,7 +138,7 @@ Personnalisez globalement les thèmes des blocs de code à l’aide de `styling.
 
   **Coloration syntaxique personnalisée**
 
-  Ajoutez une coloration syntaxique pour les langages qui ne sont pas inclus dans l’ensemble par défaut de Shiki en fournissant des fichiers de grammaire TextMate personnalisés. Créez un fichier JSON suivant le [format de grammaire TextMate](https://macromates.com/manual/en/language_grammars), puis référencez-le dans votre `docs.json`. Vous pouvez ajouter plusieurs langages personnalisés en incluant des chemins supplémentaires dans le tableau.
+  Ajoutez une coloration syntaxique pour les langages qui ne font pas partie de l’ensemble par défaut de Shiki en fournissant des fichiers de grammaire TextMate personnalisés. Créez un fichier JSON au [format de grammaire TextMate](https://macromates.com/manual/en/language_grammars), puis faites-y référence dans votre `docs.json`. Vous pouvez ajouter plusieurs langages personnalisés en incluant des chemins supplémentaires dans le tableau.
 
   ```json docs.json
   {
@@ -157,7 +157,7 @@ Personnalisez globalement les thèmes des blocs de code à l’aide de `styling.
   ### Twoslash
 </div>
 
-Dans les blocs de code JavaScript et TypeScript, utilisez `twoslash` pour activer des informations de typage interactives. Les utilisateurs peuvent survoler les variables, fonctions et paramètres pour voir les types et les erreurs comme dans un IDE.
+Dans les blocs de code JavaScript et TypeScript, utilisez `twoslash` pour activer des informations de type interactives. Vous pouvez survoler les variables, les fonctions et les paramètres pour voir les types et les erreurs, comme dans un IDE.
 
 <CodeGroup>
   ```ts twoslash Exemple Twoslash
@@ -189,7 +189,7 @@ Dans les blocs de code JavaScript et TypeScript, utilisez `twoslash` pour active
   ### Titre
 </div>
 
-Ajoutez un titre pour identifier votre exemple de code. Utilisez `title="Your title"` ou une chaîne de caractères sur une seule ligne.
+Ajoutez un titre pour légender votre exemple de code. Utilisez `title="Your title"` ou une chaîne sur une seule ligne.
 
 <CodeGroup>
   ```javascript Title example
@@ -207,15 +207,15 @@ Ajoutez un titre pour identifier votre exemple de code. Utilisez `title="Your ti
   ### Icône
 </div>
 
-Ajoutez une icône à votre bloc de code en utilisant la propriété `icon`. Consultez [Icons](/fr/components/icons) pour voir toutes les options disponibles.
+Ajoutez une icône à votre bloc de code à l’aide de la propriété `icon`. Consultez [Icons](/fr/components/icons) pour découvrir toutes les options disponibles.
 
 <CodeGroup>
-  ```javascript Icon example icon=square-js
+  ```javascript Exemple d’icône icon=square-js
   const hello = "world";
   ```
 
   ````mdx Format
-  ```javascript Icon example icon="square-js"
+  ```javascript Exemple d’icône icon="square-js"
   const hello = "world";
   ```
   ````
@@ -225,10 +225,10 @@ Ajoutez une icône à votre bloc de code en utilisant la propriété `icon`. Con
   ### Surlignage de lignes
 </div>
 
-Mettez en surbrillance des lignes précises dans vos blocs de code en utilisant `highlight` avec les numéros de ligne ou les plages de lignes que vous souhaitez mettre en évidence.
+Mettez en surbrillance des lignes spécifiques dans vos blocs de code à l’aide de `highlight`, en indiquant les numéros ou plages de lignes à surligner.
 
 <CodeGroup>
-  ```javascript Line highlighting example {1,2,5}
+  ```javascript Exemple de surlignage de lignes {1,2,5}
   const greeting = "Hello, World!";
   function sayHello() {
     console.log(greeting);
@@ -237,7 +237,7 @@ Mettez en surbrillance des lignes précises dans vos blocs de code en utilisant 
   ```
 
   ````mdx Format
-  ```javascript Line highlighting example highlight={1-2,5}
+  ```javascript Exemple de surlignage de lignes highlight={1-2,5}
   const greeting = "Hello, World!";
   function sayHello() {
     console.log(greeting);
@@ -251,10 +251,10 @@ Mettez en surbrillance des lignes précises dans vos blocs de code en utilisant 
   ### Mise en évidence de lignes
 </div>
 
-Mettez en évidence des lignes spécifiques dans vos blocs de code en utilisant `focus` avec des numéros ou des intervalles de lignes.
+Mettez en évidence des lignes précises dans vos blocs de code à l’aide de `focus` avec des numéros de ligne ou des plages.
 
 <CodeGroup>
-  ```javascript Line focusing example focus=2,4,5
+  ```javascript Exemple de mise en évidence de lignes focus=2,4,5
   const greeting = "Hello, World!";
   function sayHello() {
     console.log(greeting);
@@ -263,7 +263,7 @@ Mettez en évidence des lignes spécifiques dans vos blocs de code en utilisant 
   ```
 
   ````mdx Format
-  ```javascript Line focusing example focus={2,4-5}
+  ```javascript Exemple de mise en évidence de lignes focus={2,4-5}
   const greeting = "Hello, World!";
   function sayHello() {
     console.log(greeting);
@@ -277,10 +277,10 @@ Mettez en évidence des lignes spécifiques dans vos blocs de code en utilisant 
   ### Afficher les numéros de ligne
 </div>
 
-Affichez les numéros de ligne à gauche de votre bloc de code à l&#39;aide de `lines`.
+Affichez les numéros de ligne dans la marge gauche de votre bloc de code à l’aide de `lines`.
 
 <CodeGroup>
-  ```javascript Show line numbers example lines
+  ```javascript Exemple d’affichage des numéros de ligne lines
   const greeting = "Hello, World!";
   function sayHello() {
     console.log(greeting);
@@ -289,7 +289,7 @@ Affichez les numéros de ligne à gauche de votre bloc de code à l&#39;aide de 
   ```
 
   ````mdx Format
-  ```javascript Show line numbers example lines
+  ```javascript Exemple d’affichage des numéros de ligne lines
   const greeting = "Hello, World!";
   function sayHello() {
     console.log(greeting);
@@ -303,7 +303,7 @@ Affichez les numéros de ligne à gauche de votre bloc de code à l&#39;aide de 
   ### Dépliable
 </div>
 
-Permettez aux utilisateurs de développer et de réduire de longs blocs de code à l&#39;aide de `expandable`.
+Permet aux utilisateurs d’afficher ou de masquer les longs blocs de code à l’aide de `expandable`.
 
 <CodeGroup>
   ```python Exemple dépliable expandable
@@ -322,7 +322,7 @@ Permettez aux utilisateurs de développer et de réduire de longs blocs de code 
   class Library:
       def __init__(self):
           self.books: Dict[str, Book] = {}
-          self.checkouts: Dict[str, List[str]] = {} # lecteur -> liste d'ISBN
+          self.checkouts: Dict[str, List[str]] = {} # patron -> list of ISBNs
 
       def add_book(self, book: Book) -> None:
           if book.isbn in self.books:
@@ -360,7 +360,7 @@ Permettez aux utilisateurs de développer et de réduire de longs blocs de code 
           book.checked_out = False
           book.due_date = None
 
-          # Retirer des emprunts du lecteur
+          # Supprimer des emprunts du lecteur
           for patron, books in self.checkouts.items():
               if isbn in books:
                   books.remove(isbn)
@@ -387,7 +387,7 @@ Permettez aux utilisateurs de développer et de réduire de longs blocs de code 
       for book in books:
           library.add_book(book)
 
-      # Exemple d'emprunt et de retour
+      # Exemple d’emprunt et de retour
       library.checkout_book("978-0-261-10295-4", "patron123")
       late_fee = library.return_book("978-0-261-10295-4")
       print(f"Late fee: ${late_fee:.2f}")
@@ -411,13 +411,13 @@ Permettez aux utilisateurs de développer et de réduire de longs blocs de code 
 </CodeGroup>
 
 <div id="wrap">
-  ### Renvoi à la ligne
+  ### Retour à la ligne
 </div>
 
-Activez le renvoi à la ligne automatique pour les longues lignes de texte à l&#39;aide de `wrap`. Cela évite le défilement horizontal et rend les longues lignes plus faciles à lire.
+Activez le retour à la ligne pour les lignes longues avec `wrap`. Cela évite le défilement horizontal et rend les longues lignes plus faciles à lire.
 
 <CodeGroup>
-  ```javascript Wrap example wrap
+  ```javascript Exemple de retour à la ligne wrap
   const greeting =
     "Hello, World! I am a long line of text that will wrap to the next line.";
   function sayHello() {
@@ -427,7 +427,7 @@ Activez le renvoi à la ligne automatique pour les longues lignes de texte à l&
   ```
 
   ````mdx Format
-  ```javascript Wrap example wrap
+  ```javascript Exemple de retour à la ligne wrap
   const greeting =
     "Hello, World! I am a long line of text that will wrap to the next line.";
   function sayHello() {
@@ -446,18 +446,18 @@ Affichez un diff visuel des lignes ajoutées ou supprimées dans vos blocs de co
 
 Pour créer des diffs, ajoutez ces commentaires spéciaux à la fin des lignes de votre bloc de code :
 
-* `// [!code ++]` : indique qu’une ligne a été ajoutée (surlignage vert).
-* `// [!code --]` : indique qu’une ligne a été supprimée (surlignage rouge).
+* `// [!code ++]` : marque une ligne comme ajoutée (surlignage vert).
+* `// [!code --]` : marque une ligne comme supprimée (surlignage rouge).
 
 Pour plusieurs lignes consécutives, indiquez le nombre de lignes après un deux-points :
 
-* `// [!code ++:3]` : indique que la ligne actuelle plus les deux lignes suivantes ont été ajoutées.
-* `// [!code --:5]` : indique que la ligne actuelle plus les quatre lignes suivantes ont été supprimées.
+* `// [!code ++:3]` : marque la ligne actuelle et les deux suivantes comme ajoutées.
+* `// [!code --:5]` : marque la ligne actuelle et les quatre suivantes comme supprimées.
 
-La syntaxe des commentaires doit correspondre à votre langage de programmation (par exemple, `//` pour JavaScript ou `#` pour Python).
+La syntaxe du commentaire doit correspondre à votre langage de programmation (par exemple, `//` pour JavaScript ou `#` pour Python).
 
 <CodeGroup>
-  ```js Diff example lines
+  ```js Exemple de lignes de diff
   const greeting = "Hello, World!"; // [!code ++]
   function sayHello() {
     console.log("Hello, World!"); // [!code --]
@@ -467,7 +467,7 @@ La syntaxe des commentaires doit correspondre à votre langage de programmation 
   ```
 
   ````text Format
-  ```js Diff example lines
+  ```js Exemple de lignes de diff
   const greeting = "Hello, World!"; // [!code ++]
   function sayHello() {
     console.log("Hello, World!"); // [!code --]
@@ -482,10 +482,10 @@ La syntaxe des commentaires doit correspondre à votre langage de programmation 
   ## Composant CodeBlock
 </div>
 
-Utilisez le composant `<CodeBlock>` dans des composants React personnalisés pour générer des blocs de code avec le même style et les mêmes fonctionnalités que les blocs de code Markdown.
+Utilisez le composant `<CodeBlock>` dans des composants React personnalisés pour afficher des blocs de code de manière programmatique, avec le même style et les mêmes fonctionnalités que les blocs de code Markdown.
 
 <div id="props">
-  ### Props
+  ### Propriétés
 </div>
 
 <ResponseField name="language" type="string">
@@ -493,24 +493,24 @@ Utilisez le composant `<CodeBlock>` dans des composants React personnalisés pou
 </ResponseField>
 
 <ResponseField name="filename" type="string">
-  Le nom du fichier à afficher dans l&#39;en-tête du bloc de code.
+  Le nom du fichier à afficher dans l’en-tête du bloc de code.
 </ResponseField>
 
 <ResponseField name="icon" type="string">
-  L&#39;icône à afficher dans l&#39;en-tête du bloc de code. Voir [Icons](/fr/components/icons)
-  pour les options disponibles.
+  L’icône à afficher dans l’en-tête du bloc de code. Consultez [Icons](/fr/components/icons)
+  pour voir les options disponibles.
 </ResponseField>
 
 <ResponseField name="lines" type="boolean">
-  Indique si les numéros de ligne doivent être affichés.
+  Indique s’il faut afficher les numéros de ligne.
 </ResponseField>
 
 <ResponseField name="wrap" type="boolean">
-  Indique s&#39;il faut activer le retour à la ligne dans le bloc de code.
+  Indique s’il faut activer le retour à la ligne dans le bloc de code.
 </ResponseField>
 
 <ResponseField name="expandable" type="boolean">
-  Indique s&#39;il faut permettre d&#39;agrandir le bloc de code.
+  Indique si le bloc de code est dépliable.
 </ResponseField>
 
 <ResponseField name="highlight" type="string">
@@ -519,7 +519,7 @@ Utilisez le composant `<CodeBlock>` dans des composants React personnalisés pou
 </ResponseField>
 
 <ResponseField name="focus" type="string">
-  Les lignes sur lesquelles se concentrer. Fournissez un tableau de nombres sous forme de chaîne. Exemple :
+  Les lignes à mettre en avant. Fournissez un tableau de nombres sous forme de chaîne. Exemple :
   `"[1,3,4,5]"`.
 </ResponseField>
 

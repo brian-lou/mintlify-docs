@@ -1,6 +1,6 @@
 ---
-title: "Configuration d’AsyncAPI"
-description: "Créer une documentation WebSocket avec les spécifications AsyncAPI."
+title: "Configuration d'AsyncAPI"
+description: "Créez une documentation WebSocket à l’aide de spécifications AsyncAPI."
 keywords: ["asyncapi", "websocket"]
 ---
 
@@ -14,7 +14,7 @@ Consultez le [bac à sable WebSocket](/fr/api-playground/websocket-playground) p
   ## Ajouter un fichier de spécification AsyncAPI
 </div>
 
-Pour créer des pages pour vos websockets, vous devez disposer d’un document de schéma AsyncAPI valide au format JSON ou YAML, conforme à la [spécification AsyncAPI 3.0](https://www.asyncapi.com/docs/reference/specification/v3.0.0).
+Pour créer des pages pour vos WebSockets, vous devez disposer d’un document de schéma AsyncAPI valide au format JSON ou YAML, conforme à la [spécification AsyncAPI 3.0](https://www.asyncapi.com/docs/reference/specification/v3.0.0).
 
 <Tip>
   Utilisez [AsyncAPI Studio](https://studio.asyncapi.com/) pour valider votre schéma AsyncAPI.
@@ -60,7 +60,7 @@ Pour générer automatiquement des pages pour tous les canaux de votre schéma A
   }
   ```
 
-  ```json Fichiers multiples
+  ```json Plusieurs fichiers
   "navigation": {
     "tabs": [
       {
@@ -76,7 +76,7 @@ Pour générer automatiquement des pages pour tous les canaux de votre schéma A
 </CodeGroup>
 
 <Note>
-  Lorsque vous spécifiez plusieurs fichiers AsyncAPI, chaque fichier génère son propre ensemble de pages de canaux.
+  Lorsque vous spécifiez plusieurs fichiers AsyncAPI, chacun génère son propre ensemble de pages de canal.
 </Note>
 
 <div id="examples-with-groups">
@@ -103,14 +103,14 @@ Pour générer automatiquement des pages pour tous les canaux de votre schéma A
 ```
 
 <Note>
-  Le champ `directory` est facultatif. S&#39;il n&#39;est pas défini, les fichiers seront placés dans le dossier **api-reference** du dépôt de documentation.
+  Le champ `directory` est facultatif. S’il n’est pas indiqué, les fichiers seront placés dans le dossier **api-reference** du dépôt de documentation.
 </Note>
 
 <div id="channel-page">
   ## Page de canal
 </div>
 
-Si vous souhaitez disposer d’un contrôle plus fin sur l’ordre de vos canaux ou ne faire référence qu’à certains d’entre eux, créez un fichier MDX avec la propriété `asyncapi` dans le front matter.
+Si vous souhaitez mieux contrôler l’ordre de vos canaux, ou ne référencer que certains canaux, créez un fichier MDX avec la propriété `asyncapi` dans le Frontmatter.
 
 ```mdx
 ---

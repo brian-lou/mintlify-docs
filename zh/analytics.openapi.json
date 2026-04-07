@@ -3,7 +3,7 @@
   "info": {
     "title": "Mintlify Analytics Export API",
     "version": "1.0.0",
-    "description": "用于导出文档分析数据的 API"
+    "description": "用于导出文档 analytics 数据的 API"
   },
   "servers": [
     {
@@ -16,13 +16,13 @@
       "bearerAuth": {
         "type": "http",
         "scheme": "bearer",
-        "description": "Authorization 请求头需携带 Bearer 令牌。请使用管理员 API 密钥（以 `mint_` 开头）。这是服务端密钥，可在你的控制台 [API keys 页面](https://dashboard.mintlify.com/settings/organization/api-keys) 中生成。"
+        "description": "Authorization 标头需要使用 Bearer 令牌。请使用管理员 API 密钥（前缀为 `mint_`）。这是服务器端的私密密钥。可在控制台的 [API keys page](https://dashboard.mintlify.com/settings/organization/api-keys) 生成。"
       }
     },
     "schemas": {
       "projectId": {
         "type": "string",
-        "description": "你的项目 ID。可在控制台的 [API keys](https://dashboard.mintlify.com/settings/organization/api-keys) 页面中复制。"
+        "description": "你的项目 ID。可从控制台中的 [API keys](https://dashboard.mintlify.com/settings/organization/api-keys) 页面复制。"
       },
       "FeedbackResponse": {
         "type": "object",
@@ -37,7 +37,7 @@
                   "properties": {
                     "id": {
                       "type": "string",
-                      "description": "反馈的唯一标识符。"
+                      "description": "唯一反馈标识符。"
                     },
                     "path": {
                       "type": "string",
@@ -48,14 +48,14 @@
                         "string",
                         "null"
                       ],
-                      "description": "用户反馈评论的文本内容。"
+                      "description": "用户反馈评论的内容。"
                     },
                     "createdAt": {
                       "type": [
                         "string",
                         "null"
                       ],
-                      "description": "提交该反馈时的时间戳。"
+                      "description": "提交反馈时的时间戳。"
                     },
                     "source": {
                       "type": "string",
@@ -63,7 +63,7 @@
                         "code_snippet",
                         "contextual"
                       ],
-                      "description": "反馈的来源类型。`code_snippet` 表示针对代码块的反馈，`contextual` 表示针对整个页面的反馈。"
+                      "description": "反馈来源。`code_snippet` 表示对代码块的反馈，`contextual` 表示页面级反馈。"
                     },
                     "status": {
                       "type": "string",
@@ -73,7 +73,7 @@
                         "resolved",
                         "dismissed"
                       ],
-                      "description": "该条反馈当前的审核状态。"
+                      "description": "反馈当前的审核状态。"
                     }
                   },
                   "required": [
@@ -90,7 +90,7 @@
                   "properties": {
                     "id": {
                       "type": "string",
-                      "description": "反馈的唯一标识符。"
+                      "description": "唯一反馈标识符。"
                     },
                     "path": {
                       "type": "string",
@@ -101,14 +101,14 @@
                         "string",
                         "null"
                       ],
-                      "description": "用户填写的反馈评论内容。"
+                      "description": "用户反馈评论的内容。"
                     },
                     "createdAt": {
                       "type": [
                         "string",
                         "null"
                       ],
-                      "description": "提交该反馈时的时间戳。"
+                      "description": "提交反馈时的时间戳。"
                     },
                     "source": {
                       "type": "string",
@@ -116,7 +116,7 @@
                         "code_snippet",
                         "contextual"
                       ],
-                      "description": "反馈的来源类型。`code_snippet` 表示针对代码块的反馈，`contextual` 表示针对整个页面的反馈。"
+                      "description": "反馈来源。`code_snippet` 表示对代码块的反馈，`contextual` 表示页面级反馈。"
                     },
                     "status": {
                       "type": "string",
@@ -126,18 +126,18 @@
                         "resolved",
                         "dismissed"
                       ],
-                      "description": "该条反馈当前的审核状态。"
+                      "description": "反馈当前的审核状态。"
                     },
                     "helpful": {
                       "type": "boolean",
-                      "description": "用户是否认为该内容有帮助。"
+                      "description": "用户是否认为内容有帮助。"
                     },
                     "contact": {
                       "type": [
                         "string",
                         "null"
                       ],
-                      "description": "用户提供的用于后续联系的电子邮箱地址。"
+                      "description": "用户提供的用于后续跟进的电子邮件地址。"
                     }
                   },
                   "required": [
@@ -156,18 +156,18 @@
                   "properties": {
                     "id": {
                       "type": "string",
-                      "description": "该反馈的唯一标识。"
+                      "description": "唯一反馈标识符。"
                     },
                     "path": {
                       "type": "string",
-                      "description": "源文档的路径或 URL 地址。"
+                      "description": "源文档的路径或 URL。"
                     },
                     "comment": {
                       "type": [
                         "string",
                         "null"
                       ],
-                      "description": "用户反馈意见的文本内容。"
+                      "description": "用户反馈评论的内容。"
                     },
                     "createdAt": {
                       "type": [
@@ -182,7 +182,7 @@
                         "code_snippet",
                         "contextual"
                       ],
-                      "description": "反馈的来源类型。`code_snippet` 表示对代码块的反馈，`contextual` 表示页面级反馈。"
+                      "description": "反馈来源。`code_snippet` 表示对代码块的反馈，`contextual` 表示页面级反馈。"
                     },
                     "status": {
                       "type": "string",
@@ -192,25 +192,25 @@
                         "resolved",
                         "dismissed"
                       ],
-                      "description": "该反馈当前的审核状态。"
+                      "description": "反馈当前的审核状态。"
                     },
                     "code": {
                       "type": "string",
-                      "description": "与该反馈相关的代码片段。"
+                      "description": "该反馈关联的代码片段。"
                     },
                     "filename": {
                       "type": [
                         "string",
                         "null"
                       ],
-                      "description": "与该代码片段关联的文件名。"
+                      "description": "与代码片段关联的文件名。"
                     },
                     "lang": {
                       "type": [
                         "string",
                         "null"
                       ],
-                      "description": "该代码片段所使用的编程语言。"
+                      "description": "代码片段所用的编程语言。"
                     }
                   },
                   "required": [
@@ -233,11 +233,11 @@
               "string",
               "null"
             ],
-            "description": "用于检索下一页结果的游标。如果没有更多结果，则为 null 值。"
+            "description": "用于获取下一页结果的游标。如果没有更多结果，则为 null。"
           },
           "hasMore": {
             "type": "boolean",
-            "description": "是否在当前页面之外还有更多可用结果。"
+            "description": "此页之后是否还有更多结果。"
           }
         },
         "required": [
@@ -251,17 +251,17 @@
         "properties": {
           "error": {
             "type": "string",
-            "description": "描述出错原因的错误消息。"
+            "description": "说明出错原因的错误消息。"
           },
           "details": {
             "type": "array",
-            "description": "关于该错误的更多详细信息。",
+            "description": "有关该错误的更多详细信息。",
             "items": {
               "type": "object",
               "properties": {
                 "message": {
                   "type": "string",
-                  "description": "对特定校验或处理错误的描述。"
+                  "description": "对特定验证或处理错误的说明。"
                 }
               },
               "required": [
@@ -279,17 +279,17 @@
         "properties": {
           "conversations": {
             "type": "array",
-            "description": "助手会话列表。",
+            "description": "助手对话列表。",
             "items": {
               "type": "object",
               "properties": {
                 "id": {
                   "type": "string",
-                  "description": "唯一的会话标识符。"
+                  "description": "唯一的对话标识符。"
                 },
                 "timestamp": {
                   "type": "string",
-                  "description": "会话创建时的时间戳。"
+                  "description": "对话发生时的时间戳。"
                 },
                 "query": {
                   "type": "string",
@@ -301,17 +301,17 @@
                 },
                 "sources": {
                   "type": "array",
-                  "description": "在响应中引用的文档页面。",
+                  "description": "回答中引用的文档页面。",
                   "items": {
                     "type": "object",
                     "properties": {
                       "title": {
                         "type": "string",
-                        "description": "被引用文档页面的标题。"
+                        "description": "所引用文档页面的标题。"
                       },
                       "url": {
                         "type": "string",
-                        "description": "被引用文档页面的 URL。"
+                        "description": "所引用文档页面的 URL。"
                       }
                     },
                     "required": [
@@ -325,7 +325,7 @@
                     "string",
                     "null"
                   ],
-                  "description": "（如适用）会话的自动分类分组。"
+                  "description": "对话的自动分配分类（如适用）。"
                 }
               },
               "required": [
@@ -343,11 +343,11 @@
               "string",
               "null"
             ],
-            "description": "用于获取下一页结果的游标；如果没有更多结果，则为 null。"
+            "description": "用于获取下一页结果的游标。如果没有更多结果，则为 null。"
           },
           "hasMore": {
             "type": "boolean",
-            "description": "是否在当前页之外还有更多结果。"
+            "description": "此页之后是否还有更多结果。"
           }
         },
         "required": [
@@ -372,7 +372,7 @@
     "/api/external/v1/analytics/{projectId}/feedback": {
       "get": {
         "summary": "获取用户反馈",
-        "description": "返回分页的用户反馈，并支持可选筛选条件。",
+        "description": "返回带可选筛选条件的分页用户反馈",
         "tags": [
           "Analytics"
         ],
@@ -388,7 +388,7 @@
           {
             "schema": {
               "type": "string",
-              "description": "ISO 8601 或 YYYY-MM-DD 格式的日期。",
+              "description": "ISO 8601 或 YYYY-MM-DD 格式的日期",
               "example": "2024-01-01"
             },
             "required": false,
@@ -398,7 +398,7 @@
           {
             "schema": {
               "type": "string",
-              "description": "ISO 8601 或 YYYY-MM-DD 格式的日期。",
+              "description": "ISO 8601 或 YYYY-MM-DD 格式的日期",
               "example": "2024-01-01"
             },
             "required": false,
@@ -412,7 +412,7 @@
                 "code_snippet",
                 "contextual"
               ],
-              "description": "按反馈来源进行筛选。"
+              "description": "按反馈来源筛选"
             },
             "required": false,
             "name": "source",
@@ -421,7 +421,7 @@
           {
             "schema": {
               "type": "string",
-              "description": "要筛选的状态列表，使用逗号分隔"
+              "description": "用于筛选的逗号分隔状态列表"
             },
             "required": false,
             "name": "status",
@@ -433,7 +433,7 @@
               "minimum": 1,
               "maximum": 100,
               "default": 50,
-              "description": "每页返回的最大结果数"
+              "description": "每页最大结果数"
             },
             "required": false,
             "name": "limit",
@@ -451,7 +451,7 @@
         ],
         "responses": {
           "200": {
-            "description": "分页的反馈数据",
+            "description": "带分页信息的反馈数据",
             "content": {
               "application/json": {
                 "schema": {
@@ -485,7 +485,7 @@
     },
     "/api/external/v1/analytics/{projectId}/assistant": {
       "get": {
-        "summary": "获取助手对话记录",
+        "summary": "获取助手对话",
         "description": "返回分页的 AI 助手对话历史记录",
         "tags": [
           "Analytics"
@@ -525,7 +525,7 @@
               "minimum": 1,
               "maximum": 1000,
               "default": 100,
-              "description": "每页返回的最大结果数"
+              "description": "每页最大结果数"
             },
             "required": false,
             "name": "limit",
@@ -544,7 +544,7 @@
         ],
         "responses": {
           "200": {
-            "description": "分页的会话数据",
+            "description": "带分页信息的对话数据",
             "content": {
               "application/json": {
                 "schema": {

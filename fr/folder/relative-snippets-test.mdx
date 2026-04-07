@@ -1,21 +1,21 @@
 ---
 title: "Test des snippets relatifs"
-description: "Page de test cachée pour valider les imports relatifs de snippets"
+description: "Page de test masquée pour valider les imports relatifs de snippets"
 ---
 
 <div id="relative-snippets-test-page">
-  # Page de test des extraits relatifs
+  # Page de test des snippets relatifs
 </div>
 
-Cette page de test cachée permet de valider la fonctionnalité d'importation relative des extraits.
+Il s’agit d’une page de test masquée permettant de valider la fonctionnalité d’import de snippets relatifs.
 
----
+***
 
 <div id="test-1-parent-directory-import-snippets">
-  ## Test 1 : Import depuis le répertoire parent (`../snippets/`)
+  ## Test 1 : Import du répertoire parent (`../snippets/`)
 </div>
 
-Import de `/snippets/test-snippet-a.mdx` via `../snippets/test-snippet-a.mdx` :
+Import depuis `/snippets/test-snippet-a.mdx` à l’aide de `../snippets/test-snippet-a.mdx` :
 
 import TestSnippetA from "../snippets/test-snippet-a.mdx";
 
@@ -43,7 +43,7 @@ import TestSnippetB from "../snippets/test-snippet-b.mdx";
   ## Test 3 : Import depuis le même répertoire (`./`)
 </div>
 
-Import depuis `local-snippet.mdx` dans le même répertoire :
+Import de `local-snippet.mdx` depuis le même dossier :
 
 import LocalSnippet, { localMessage } from "./local-snippet.mdx";
 
@@ -55,10 +55,10 @@ import LocalSnippet, { localMessage } from "./local-snippet.mdx";
 
 
 <div id="test-4-child-directory-import-nested">
-  ## Test 4 : import depuis un sous-répertoire (`./nested/`)
+  ## Test 4 : Import depuis le sous-répertoire (`./nested/`)
 </div>
 
-Import à partir de `nested/deep-snippet.mdx` :
+Import depuis `nested/deep-snippet.mdx` :
 
 import DeepSnippet, { deepMessage } from "./nested/deep-snippet.mdx";
 
@@ -70,10 +70,10 @@ import DeepSnippet, { deepMessage } from "./nested/deep-snippet.mdx";
 
 
 <div id="test-5-absolute-import-for-comparison">
-  ## Test 5 : import absolu (pour comparaison)
+  ## Test 5 : Import absolu (à titre de comparaison)
 </div>
 
-Import en utilisant le chemin absolu `/snippets/icons-optional.mdx` :
+Import avec le chemin absolu `/snippets/icons-optional.mdx` :
 
 import IconsOptional from "/snippets/fr/icons-optional.mdx";
 
@@ -83,13 +83,13 @@ import IconsOptional from "/snippets/fr/icons-optional.mdx";
 
 
 <div id="summary">
-  ## Récapitulatif
+  ## Résumé
 </div>
 
-| Test | Chemin d’import | Type | Statut |
-|------|-----------------|------|--------|
-| 1 | `../snippets/test-snippet-a.mdx` | Répertoire parent | Voir ci-dessus |
-| 2 | `../snippets/test-snippet-b.mdx` | Répertoire parent + export | Voir ci-dessus |
-| 3 | `./local-snippet.mdx` | Même répertoire | Voir ci-dessus |
-| 4 | `./nested/deep-snippet.mdx` | Répertoire enfant | Voir ci-dessus |
-| 5 | `/snippets/icons-optional.mdx` | Chemin absolu | Voir ci-dessus |
+| Test | Chemin d&#39;importation         | Type                       | Statut         |
+| ---- | -------------------------------- | -------------------------- | -------------- |
+| 1    | `../snippets/test-snippet-a.mdx` | Répertoire parent          | Voir ci-dessus |
+| 2    | `../snippets/test-snippet-b.mdx` | Répertoire parent + export | Voir ci-dessus |
+| 3    | `./local-snippet.mdx`            | Même répertoire            | Voir ci-dessus |
+| 4    | `./nested/deep-snippet.mdx`      | Sous-répertoire            | Voir ci-dessus |
+| 5    | `/snippets/icons-optional.mdx`   | Chemin absolu              | Voir ci-dessus |

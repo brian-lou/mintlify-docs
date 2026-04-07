@@ -1,44 +1,44 @@
 ---
 title: "管理页面可见性"
-description: "控制哪些 API 端点会出现在文档导航中。"
-keywords: ["x-hidden", "x-excluded", "hide endpoints", "page visibility", "internal endpoints"]
+description: "控制哪些 API 端点会显示在文档导航中。"
+keywords: ["x-hidden", "x-excluded", "隐藏端点", "页面可见性", "内部端点"]
 ---
 
-对于仅供内部使用的端点、已弃用的操作、测试版功能，或那些应当可以通过直接 URL 访问但不应通过站点导航被发现的端点，你可以控制哪些 OpenAPI 操作会被发布为文档页面，以及它们在导航中的可见性。
+对于仅供内部使用的端点、已弃用的操作、测试版功能，或应可通过直接 URL 访问但不应在站点导航中显示的端点，你可以控制哪些 OpenAPI 操作会发布为文档页面，以及它们在导航中的显示方式。
 
-如果你的页面是从 OpenAPI 文档自动生成的，请使用 `x-hidden` 和 `x-excluded` 扩展来管理页面可见性。
+如果你的页面是根据 OpenAPI 文档自动生成的，请使用 `x-hidden` 和 `x-excluded` 扩展来管理页面可见性。
 
 <div id="x-hidden">
   ## `x-hidden`
 </div>
 
-`x-hidden` 扩展会为某个 endpoint 创建页面，但会将其从导航中隐藏。该页面只能通过直接访问其 URL 才能打开。
+`x-hidden` 扩展会为某个端点创建页面，但不会在导航中显示。只有直接访问其 URL 才能打开该页面。
 
-`x-hidden` 的常见用例包括：
+`x-hidden` 的常见用途包括：
 
-- 需要编写文档但不希望在界面中突出展示的 endpoints。
-- 将从其他内容中添加链接指向的页面。
-- 面向特定用户的 endpoints。
+* 你想编写文档，但不想突出展示的端点。
+* 你会从其他内容链接到的页面。
+* 面向特定用户的端点。
 
 <div id="x-excluded">
   ## `x-excluded`
 </div>
 
-`x-excluded` 扩展会将某个 endpoint 从你的文档中完全排除。
+`x-excluded` 扩展会将某个端点从文档中完全排除。
 
 `x-excluded` 的常见使用场景包括：
 
-- 仅供内部使用的 endpoints。
-- 你不打算在文档中保留的已弃用 endpoints。
-- 尚未准备好对外公开文档的 Beta（测试版）功能。
+* 仅供内部使用的端点。
+* 不希望在文档中体现的已弃用端点。
+* 尚未准备好对外公开文档的 测试版功能。
 
 <div id="implementation">
   ## 实现
 </div>
 
-在 OpenAPI 规范中，将 `x-hidden` 或 `x-excluded` 扩展添加到对应的 HTTP 方法下。
+在 OpenAPI 规范中，于 HTTP 方法下添加 `x-hidden` 或 `x-excluded` 扩展。
 
-下面是一些示例，展示如何在 OpenAPI 架构文档中，为某个端点和一个 webhook 路径分别使用每个属性。
+以下示例展示了如何在 OpenAPI Schema 文档中，针对端点和 webhook 路径使用这两个属性。
 
 ```json Endpoint example {11, 19}
 "paths": {
@@ -72,19 +72,19 @@ keywords: ["x-hidden", "x-excluded", "hide endpoints", "page visibility", "inter
 "webhooks": {
   "/plants_hook": {
     "post": {
-      "description": "关于新植物添加到商店的 Webhook 信息",
+      "description": "Webhook for information about a new plant added to the store",
     }
   },
   "/hidden_plants_hook": {
     "post": {
       "x-hidden": true,
-      "description": "关于新植物添加到商店的半保密 Webhook 信息"
+      "description": "Webhook for somewhat secret information about a new plant added to the store"
     }
   },
   "/secret_plants_hook": {
     "post": {
       "x-excluded": true,
-      "description": "关于新植物添加到商店的绝密 Webhook 信息（请勿发布此端点！）"
+      "description": "Webhook for top secret information about a new plant added to the store (do not publish this endpoint!)"
     }
   }
 }

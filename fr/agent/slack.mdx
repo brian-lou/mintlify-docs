@@ -1,11 +1,11 @@
 ---
 title: "Ajouter l'agent à Slack"
-description: "Utilisez l'agent dans Slack pour mettre à jour la documentation à partir des conversations et capitaliser les connaissances de l'équipe."
-keywords: ["Intégration Slack", "Bot Slack", "Collaboration d'équipe", "Intégration de l'agent", "Capitalisation des connaissances"]
+description: "Utilisez l'agent dans Slack pour mettre à jour la documentation à partir de conversations et consigner les connaissances de l'équipe."
+keywords: ["intégration Slack", "bot Slack", "collaboration d'équipe", "intégration de l'agent", "capture des connaissances"]
 ---
 
 <Note>
-  Si le propriétaire de votre espace de travail Slack exige l’approbation d’un administrateur pour installer des applications, demandez-lui d’approuver l’application Mintlify avant de la connecter.
+  Si le propriétaire de votre espace de travail Slack exige une approbation de l’administrateur pour installer des applications, demandez-lui d’approuver l’application Mintlify avant de la connecter.
 </Note>
 
 <div id="connect-your-slack-workspace">
@@ -14,43 +14,44 @@ keywords: ["Intégration Slack", "Bot Slack", "Collaboration d'équipe", "Intég
 
 1. Ouvrez le panneau de l’agent dans votre tableau de bord.
 2. Cliquez sur le bouton **Settings**.
-    <Frame>
-    <img src="/images/agent/dashboard-settings-light.png" alt="Le bouton des paramètres en mode clair." className="block dark:hidden" />
-    <img src="/images/agent/dashboard-settings-dark.png" alt="Le bouton des paramètres en mode sombre." className="hidden dark:block" />
-    </Frame>
+   <Frame>
+     <img src="/images/agent/dashboard-settings-light.png" alt="Le bouton des paramètres en mode clair." className="block dark:hidden" />
+
+     <img src="/images/agent/dashboard-settings-dark.png" alt="Le bouton des paramètres en mode sombre." className="hidden dark:block" />
+   </Frame>
 3. Dans la section d’intégration Slack, cliquez sur **Connect**.
-4. Suivez les instructions affichées par Slack pour ajouter l’application `mintlify` à votre espace de travail.
-5. Suivez les instructions affichées par Slack pour lier votre compte Mintlify à votre espace de travail Slack.
-6. Vérifiez que l’agent fonctionne correctement et répond lorsque vous :
-   - Lui envoyez un message direct.
-   - Le mentionnez avec `@mintlify` dans un canal.
+4. Suivez les instructions de Slack pour ajouter l’application `mintlify` à votre espace de travail.
+5. Suivez les instructions de Slack pour associer votre compte Mintlify à votre espace de travail Slack.
+6. Vérifiez que l’agent fonctionne et répond lorsque vous :
+   * lui envoyez un message direct.
+   * le mentionnez avec `@mintlify` dans un canal.
 
 <div id="use-the-agent-in-slack">
-  ## Utiliser l'agent dans Slack
+  ## Utiliser l’agent dans Slack
 </div>
 
 Une fois connecté, vous pouvez :
 
-- Envoyer des messages directs à l'agent pour l'utiliser en privé et mettre à jour votre documentation.
-- Mentionner `@mintlify` dans un salon pour l'utiliser publiquement et de manière collaborative.
-- Poursuivre les conversations dans des fils de discussion pour affiner les modifications.
-- Partager des liens de pull request avec l'agent pour mettre à jour la documentation associée.
+* Envoyer des messages directs à l’agent pour l’utiliser en privé afin de mettre à jour votre documentation.
+* Mentionner `@mintlify` dans un canal pour l’utiliser publiquement et de manière collaborative.
+* Poursuivre les conversations dans des fils de discussion pour affiner les modifications.
+* Partager des liens de pull request avec l’agent pour mettre à jour la documentation associée.
 
 <div id="update-documentation">
   ## Mettre à jour la documentation
 </div>
 
-Utilisez l’agent pour mettre à jour votre documentation via une nouvelle requête ou dans un fil de discussion existant.
+Utilisez l’agent pour mettre à jour votre documentation dans le cadre d’une nouvelle demande ou d’un fil de discussion existant.
 
-- **Nouvelle requête** : envoyez un message direct à l’agent ou mentionnez `@mintlify` dans un canal avec des instructions sur ce qu’il faut mettre à jour.
-- **Fil existant** : répondez dans le fil et mentionnez `@mintlify` avec des instructions sur ce qu’il faut mettre à jour.
+* **Nouvelle demande** : Envoyez un message direct à l’agent ou mentionnez `@mintlify` dans un canal avec des instructions sur ce que vous souhaitez mettre à jour.
+* **Fil existant** : Répondez dans le fil de discussion et mentionnez `@mintlify` avec des instructions sur ce que vous souhaitez mettre à jour.
 
-L’agent lit le contexte de la requête ou du fil de discussion et crée une pull request avec les mises à jour dans votre dépôt connecté.
+L’agent prend en compte le contexte de la demande ou du fil de discussion et ouvre une pull request dans votre dépôt connecté avec les modifications.
 
 <div id="best-practices">
   ## Bonnes pratiques
 </div>
 
-- **Soyez précis** : Indiquez à l'agent exactement ce que vous voulez documenter et où cela doit être ajouté.
-- **Ajoutez du contexte** : Si un fil de discussion ne contient pas toutes les informations nécessaires, incluez des détails supplémentaires dans votre message à l'agent.
-- **Relisez attentivement** : Relisez systématiquement les pull requests créées par l'agent avant de les fusionner.
+* **Soyez précis** : indiquez à l’agent exactement ce que vous voulez documenter et où cela doit être ajouté.
+* **Ajoutez du contexte** : si une conversation ne contient pas toutes les informations nécessaires, ajoutez des détails supplémentaires dans votre message à l’agent.
+* **Vérifiez attentivement** : relisez toujours les pull requests créées par l’agent avant de les fusionner.

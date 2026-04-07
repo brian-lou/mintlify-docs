@@ -1,21 +1,21 @@
 ---
-title: "深层相对片段测试"
-description: "用于验证深层嵌套相对片段导入的隐藏测试页面"
+title: "深度相对代码片段测试"
+description: "用于验证深度嵌套的相对代码片段导入的隐藏测试页面"
 ---
 
 <div id="deep-relative-snippets-test">
-  # 深层相对代码片段测试
+  # 深层相对 片段 测试
 </div>
 
-此页面位于 `/folder/nested/deep-relative-test.mdx`，用于测试多级相对路径导入。
+此页面位于 `/folder/nested/deep-relative-test.mdx`，用于测试多层级相对导入。
 
----
+***
 
 <div id="test-1-two-levels-up-snippets">
-  ## 测试 1：向上两级目录（`../../snippets/`）
+  ## 测试 1：向上两级 (`../../snippets/`)
 </div>
 
-使用 `../../snippets/` 从 `/snippets/test-snippet-a.mdx` 导入：
+使用 `../../snippets/` 从 `/snippets/test-snippet-a.mdx` 中导入：
 
 import TestSnippetA from "../../snippets/test-snippet-a.mdx";
 
@@ -25,25 +25,25 @@ import TestSnippetA from "../../snippets/test-snippet-a.mdx";
 
 
 <div id="test-2-two-levels-up-with-named-export">
-  ## 测试 2：从上两级目录进行具名导出
+  ## 测试 2：向上两级，使用命名导出
 </div>
 
-从 `/snippets/test-snippet-b.mdx` 中导入：
+从 `/snippets/test-snippet-b.mdx` 导入：
 
 import TestSnippetB, { testVariable } from "../../snippets/test-snippet-b.mdx";
 
 <TestSnippetB />
 
-**导出的变量值：** {testVariable}
+**导出变量的值：** {testVariable}
 
 ***
 
 
 <div id="test-3-one-level-up">
-  ## 测试 3：上一级目录（`../`）
+  ## 测试 3：上一级目录 (`../`)
 </div>
 
-从父目录中的 `/folder/local-snippet.mdx` 导入：
+从 `/folder/local-snippet.mdx` (上级目录) 导入：
 
 import LocalSnippet, { localMessage } from "../local-snippet.mdx";
 
@@ -55,22 +55,22 @@ import LocalSnippet, { localMessage } from "../local-snippet.mdx";
 
 
 <div id="test-4-same-directory-sibling">
-  ## 测试 4：同级目录（`./`）
+  ## 测试 4：同目录同级文件 (`./`)
 </div>
 
-从同一目录下的 `/folder/nested/deep-snippet.mdx` 导入：
+从 `/folder/nested/deep-snippet.mdx` 导入 (同一目录) ：
 
 import DeepSnippet, { deepMessage } from "./deep-snippet.mdx";
 
 <DeepSnippet />
 
-**导出的变量值：** {deepMessage}
+**导出变量的值：** {deepMessage}
 
 ***
 
 
 <div id="test-5-mixed-absolute-path-for-comparison">
-  ## 测试 5：混合方式 - 绝对路径（用于比较）
+  ## 测试 5：混合 - 绝对路径 (供比较)
 </div>
 
 使用绝对路径导入：
@@ -83,13 +83,13 @@ import IconsRequired from "/snippets/zh/icons-required.mdx";
 
 
 <div id="path-resolution-summary">
-  ## 路径解析概览
+  ## 路径解析说明
 </div>
 
-在此页面 `/folder/nested/deep-relative-test.mdx` 中：
+以位于 `/folder/nested/deep-relative-test.mdx` 的此页面为例：
 
-| 相对路径 | 解析为 |
-|---------------|-------------|
-| `../../snippets/test-snippet-a.mdx` | `/snippets/test-snippet-a.mdx` |
-| `../local-snippet.mdx` | `/folder/local-snippet.mdx` |
-| `./deep-snippet.mdx` | `/folder/nested/deep-snippet.mdx` |
+| 相对路径                                | 解析结果                              |
+| ----------------------------------- | --------------------------------- |
+| `../../snippets/test-snippet-a.mdx` | `/snippets/test-snippet-a.mdx`    |
+| `../local-snippet.mdx`              | `/folder/local-snippet.mdx`       |
+| `./deep-snippet.mdx`                | `/folder/nested/deep-snippet.mdx` |

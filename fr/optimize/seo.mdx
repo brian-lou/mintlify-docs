@@ -1,23 +1,23 @@
 ---
 title: "SEO"
-description: "Optimisez le référencement grâce à la configuration des balises meta pour une meilleure visibilité dans les résultats de recherche."
-keywords: ["meta tags", "sitemap", "robots.txt", "SEO", "search engine optimization"]
+description: "Optimisez votre SEO en configurant les balises méta pour améliorer votre visibilité dans les moteurs de recherche."
+keywords: ["balises méta", "plan de site", "robots.txt", "SEO", "optimisation pour les moteurs de recherche"]
 ---
 
-Mintlify gère automatiquement de nombreuses bonnes pratiques SEO, notamment :
+Mintlify applique automatiquement de nombreuses bonnes pratiques SEO, notamment :
 
-* Génération de balises meta
-* Génération du fichier sitemap et de `robots.txt`
+* Génération des balises méta
+* Génération du plan de site et du fichier `robots.txt`
 * Structure HTML sémantique
 * Optimisation pour mobile
 
-Vous pouvez entièrement personnaliser les balises meta de votre site en ajoutant le champ `metatags` à votre `docs.json` ou au frontmatter d&#39;une page.
+Vous pouvez personnaliser entièrement les balises méta de votre site en ajoutant le champ `metatags` à votre `docs.json` ou au frontmatter d’une page.
 
 <div id="automatically-generated-meta-tags">
-  ## Balises meta générées automatiquement
+  ## Balises méta générées automatiquement
 </div>
 
-Mintlify génère les balises meta suivantes pour chaque page. Vous pouvez remplacer ces balises meta en les spécifiant dans votre `docs.json` ou dans le frontmatter d&#39;une page.
+Mintlify génère les balises méta suivantes pour chaque page. Vous pouvez remplacer ces balises méta en les définissant dans votre `docs.json` ou dans le `Frontmatter` d&#39;une page.
 
 **Métadonnées de base :**
 
@@ -26,47 +26,47 @@ Mintlify génère les balises meta suivantes pour chaque page. Vous pouvez rempl
 * `og:site_name` - Nom de votre site de documentation
 * `twitter:card: summary_large_image` - Type de carte Twitter
 
-**Métadonnées spécifiques à la page :**
+**Métadonnées propres à la page :**
 
-* `title` - Titre de la page, au format « Titre de la page - Nom du site »
+* `title` - Titre de la page, au format &quot;Titre de la page - Nom du site&quot;
 * `og:title` - Titre Open Graph, identique au titre de la page
 * `twitter:title` - Titre Twitter, identique au titre de la page
 * `description` - Description de la page
 * `og:description` - Description Open Graph, identique à la description de la page
 * `twitter:description` - Description Twitter, identique à la description de la page
 
-**URL et balise canonique :**
+**URL et canonique :**
 
-* `canonical` - Générée automatiquement à partir de l’URL de la page
-* `og:url` - Définie sur l’URL canonique
+* `canonical` - Générée automatiquement à partir de l&#39;URL de la page
+* `og:url` - Définie sur l&#39;URL canonique
 
 **SEO et indexation :**
 
 * `robots` - Générée à partir des métadonnées de la page
 * `noindex` - Générée à partir des métadonnées de la page
-* `keywords` - Générée à partir des métadonnées de la page
+* `keywords` - Générés à partir des métadonnées de la page
 
 **Images :**
 
-* `og:image` - Image Open Graph, `og:image:width` définie sur 1200 et `og:image:height` sur 630
-* `twitter:image` - Image Twitter, `twitter:image:width` définie sur 1200 et `twitter:image:height` sur 630
+* `og:image` - Image Open Graph, `og:image:width` défini sur 1200 et `og:image:height` sur 630
+* `twitter:image` - Image Twitter, `twitter:image:width` défini sur 1200 et `twitter:image:height` sur 630
 
-**Métadonnées du navigateur et de l’application :**
+**Métadonnées du navigateur et de l&#39;application :**
 
 * `applicationName` - Nom de votre site de documentation
-* `generator: Mintlify` - Indique que le générateur du site est Mintlify
-* `apple-mobile-web-app-title` - Nom de l’application sur l’écran d’accueil iOS
+* `generator: Mintlify` - Identifie Mintlify comme générateur du site
+* `apple-mobile-web-app-title` - Nom de l&#39;application sur l&#39;écran d&#39;accueil iOS
 * `msapplication-TileColor` - Couleur de la tuile Windows
-* Favicons et icônes provenant de votre configuration
-* Lien vers le sitemap
+* Favicons et icônes issus de votre configuration
+* Lien de référence vers le sitemap
 
-Toutes les balises meta définies dans la configuration `docs.json` `seo.metatags` sont également automatiquement injectées dans chaque page, comme `google-site-verification` pour la validation via la Search Console.
+Toutes les balises méta de `seo.metatags` dans votre `docs.json` sont également injectées automatiquement dans chaque page, par exemple `google-site-verification` pour la validation dans la Search Console.
 
 <div id="global-meta-tags">
   ## Balises méta globales
 </div>
 
-Pour définir des balises méta par défaut pour toutes les pages, ajoutez le champ `metatags` dans votre fichier `docs.json`.
+Pour définir des balises méta par défaut pour toutes les pages, ajoutez le champ `metatags` à votre `docs.json`.
 
 ```json
 "seo": {
@@ -80,7 +80,7 @@ Pour définir des balises méta par défaut pour toutes les pages, ajoutez le ch
   ### Définir une URL canonique
 </div>
 
-Si vous utilisez un domaine personnalisé, définissez la balise meta `canonical` pour vous assurer que les moteurs de recherche indexent votre domaine préféré. Une URL canonique indique aux moteurs de recherche quelle version de votre documentation est la principale. Cela améliore le référencement lorsque votre documentation est accessible depuis plusieurs URL et évite les problèmes de contenu dupliqué.
+Si vous utilisez un domaine personnalisé, définissez la balise méta `canonical` pour vous assurer que les moteurs de recherche indexent le domaine de votre choix. Une URL canonique indique aux moteurs de recherche quelle version de votre documentation doit être considérée comme principale. Cela améliore le référencement lorsque votre documentation est accessible via plusieurs URL et évite les problèmes de contenu dupliqué.
 
 ```json
 "seo": {
@@ -91,32 +91,32 @@ Si vous utilisez un domaine personnalisé, définissez la balise meta `canonical
 ```
 
 <div id="page-specific-meta-tags">
-  ## Balises meta spécifiques à la page
+  ## Balises méta spécifiques à une page
 </div>
 
-Pour définir des balises meta spécifiques à une page, ajoutez-les au frontmatter de la page.
+Pour définir des balises méta spécifiques à une page, ajoutez-les au Frontmatter de la page.
 
-Les balises meta suivantes sont prises en charge au niveau de la page :
+Les balises méta suivantes sont prises en charge au niveau de la page :
 
 * `title` - Titre de la page
-* `description` - La description de la page apparaît sous le titre sur la page et dans certains résultats de moteurs de recherche
+* `description` - La description de la page s’affiche sous le titre sur la page et dans certains résultats de moteurs de recherche
 * `keywords` - Mots-clés séparés par des virgules
 * `og:title` - Titre Open Graph pour le partage sur les réseaux sociaux
 * `og:description` - Description Open Graph
-* `og:image` - URL de l&#39;image Open Graph
+* `og:image` - URL de l’image Open Graph
 * `og:url` - URL Open Graph
-* `og:type` - Type Open Graph comme &quot;article&quot; ou &quot;website&quot;
-* `og:image:width` - Largeur de l&#39;image Open Graph
-* `og:image:height` - Hauteur de l&#39;image Open Graph
+* `og:type` - Type Open Graph, comme &quot;article&quot; ou &quot;website&quot;
+* `og:image:width` - Largeur de l’image Open Graph
+* `og:image:height` - Hauteur de l’image Open Graph
 * `twitter:title` - Titre de la carte Twitter
 * `twitter:description` - Description de la carte Twitter
 * `twitter:image` - Image de la carte Twitter
-* `twitter:card` - Type de carte Twitter comme &quot;summary&quot; ou &quot;summary&#95;large&#95;image&quot;
-* `twitter:site` - Compte Twitter du site
-* `twitter:image:width` - Largeur de l&#39;image Twitter
-* `twitter:image:height` - Hauteur de l&#39;image Twitter
-* `noindex` - Mettre à `true` pour empêcher l&#39;indexation par les moteurs de recherche
-* `robots` - Valeur de la balise meta robots
+* `twitter:card` - Type de carte Twitter, comme &quot;summary&quot; ou &quot;summary&#95;large&#95;image&quot;
+* `twitter:site` - Identifiant du site sur Twitter
+* `twitter:image:width` - Largeur de l’image Twitter
+* `twitter:image:height` - Hauteur de l’image Twitter
+* `noindex` - Définissez cette valeur sur `true` pour empêcher l’indexation par les moteurs de recherche
+* `robots` - Valeur de la balise méta robots
 
 ```mdx
 ---
@@ -129,20 +129,20 @@ keywords: ["keyword1", "keyword2"]
 ```
 
 <Note>
-  Les balises meta comportant des deux-points doivent être placées entre guillemets. Le champ `keywords` doit être formaté sous forme de tableau YAML.
+  Les balises méta contenant des deux-points doivent être mises entre guillemets. Le champ `keywords` doit être formaté sous forme de tableau YAML.
 </Note>
 
 <div id="common-meta-tags-reference">
-  ## Référence des balises meta courantes
+  ## Référence des balises méta courantes
 </div>
 
-Vous trouverez ci-dessous une liste complète des balises meta que vous pouvez ajouter à votre `docs.json`. Ces balises meta contribuent à améliorer le SEO de votre site, le partage sur les réseaux sociaux et la compatibilité avec les navigateurs.
+Vous trouverez ci-dessous une liste complète des balises méta que vous pouvez ajouter à votre `docs.json`. Ces balises méta permettent d’améliorer le référencement de votre site, son partage sur les réseaux sociaux et sa compatibilité avec les navigateurs.
 
 <Note>
-  La balise `og:image` ajoute une image d&#39;arrière-plan que Mintlify superpose automatiquement avec votre logo, le titre de la page et la description lors de la génération des aperçus sur les réseaux sociaux.
+  `og:image` ajoute une image d’arrière-plan sur laquelle Mintlify superpose automatiquement votre logo, le titre de la page et la description lors de la génération des aperçus sur les réseaux sociaux.
 </Note>
 
-Vous pouvez prévisualiser l’apparence de vos balises meta sur différentes plateformes en utilisant [metatags.io](https://metatags.io/).
+Vous pouvez prévisualiser l’apparence de vos balises méta sur différentes plateformes à l’aide de [metatags.io](https://metatags.io/).
 
 ```json expandable
 "seo": {
@@ -239,12 +239,12 @@ Vous pouvez prévisualiser l’apparence de vos balises meta sur différentes pl
 ```
 
 <div id="sitemaps-and-robotstxt-files">
-  ## Fichiers sitemap et robots.txt
+  ## Sitemaps et fichiers robots.txt
 </div>
 
-Mintlify génère automatiquement les fichiers `sitemap.xml` et `robots.txt`. Vous pouvez consulter votre sitemap en ajoutant `/sitemap.xml` à l’URL de votre site de documentation.
+Mintlify génère automatiquement un fichier `sitemap.xml` et un fichier `robots.txt`. Vous pouvez consulter votre sitemap en ajoutant `/sitemap.xml` à l’URL de votre site de documentation.
 
-Seules les pages présentes dans votre fichier `docs.json` sont incluses par défaut. Pour inclure des liens masqués, ajoutez `seo.indexing` à votre `docs.json` :
+Par défaut, seules les pages incluses dans votre `docs.json` sont incluses. Pour inclure les liens masqués, ajoutez `seo.indexing` à votre `docs.json` :
 
 ```json
 "seo": {
@@ -253,16 +253,16 @@ Seules les pages présentes dans votre fichier `docs.json` sont incluses par dé
 ```
 
 <div id="custom-sitemaps-and-robotstxt-files">
-  ### Sitemaps personnalisés et fichiers robots.txt
+  ### Sitemaps et fichiers robots.txt personnalisés
 </div>
 
-Pour ajouter un fichier `sitemap.xml` ou `robots.txt` personnalisé, créez un fichier `sitemap.xml` ou `robots.txt` à la racine de votre projet. L’ajout d’un fichier personnalisé remplacera le fichier généré automatiquement portant le même nom. Si vous supprimez un fichier personnalisé, le fichier par défaut sera de nouveau utilisé.
+Pour ajouter un fichier `sitemap.xml` ou `robots.txt` personnalisé, créez un fichier `sitemap.xml` ou `robots.txt` à la racine de votre projet. L’ajout d’un fichier personnalisé remplace le fichier du même nom généré automatiquement. Si vous supprimez un fichier personnalisé, le fichier par défaut sera à nouveau utilisé.
 
 <div id="disabling-indexing">
   ## Désactiver l’indexation
 </div>
 
-Si vous souhaitez empêcher une page d’être indexée par les moteurs de recherche, vous pouvez inclure ce qui suit dans le [frontmatter](/fr/organize/pages) de votre page :
+Si vous souhaitez empêcher une page d’être indexée par les moteurs de recherche, vous pouvez ajouter ce qui suit dans le [frontmatter](/fr/organize/pages) de votre page :
 
 ```
 ---
@@ -270,7 +270,7 @@ noindex: true
 ---
 ```
 
-Vous pouvez également spécifier `noindex` pour l’ensemble des pages de votre documentation en définissant le champ `metatags.robots` sur `"noindex"` dans votre `docs.json` :
+Vous pouvez également appliquer `noindex` à toutes les pages de votre documentation en définissant le champ `metatags.robots` sur `"noindex"` dans votre `docs.json` :
 
 ```json
 "seo": {
@@ -281,36 +281,36 @@ Vous pouvez également spécifier `noindex` pour l’ensemble des pages de votre
 ```
 
 <div id="seo-best-practices">
-  ## Bonnes pratiques SEO
+  ## Bonnes pratiques en matière de SEO
 </div>
 
 <AccordionGroup>
   <Accordion title="Rédiger des titres et descriptions explicites">
-    * Utiliser des titres de page clairs et descriptifs (50-60 caractères)
-    * Rédiger des descriptions convaincantes (150-160 caractères)
-    * Inclure des mots-clés pertinents
-    * Veiller à ce que chaque titre de page et chaque description soient uniques
+    * Utilisez des titres de page clairs et explicites (50-60 caractères)
+    * Rédigez des descriptions convaincantes (150-160 caractères)
+    * Incluez des mots-clés pertinents
+    * Veillez à ce que chaque page ait un titre et une description uniques
   </Accordion>
 
   <Accordion title="Optimiser la structure de votre contenu">
-    * Utiliser une hiérarchie de titres appropriée (H1 → H2 → H3)
-    * Écrire d’abord pour les humains, ensuite pour les moteurs de recherche
-    * Inclure des mots-clés pertinents dans les titres et le contenu
-    * Garder des URL courtes, descriptives et organisées de façon hiérarchique
-    * Scinder le contenu long avec des sous-titres et des listes
+    * Utilisez une hiérarchie de titres appropriée (H1 → H2 → H3)
+    * Écrivez d&#39;abord pour les humains, puis pour les moteurs de recherche
+    * Incluez des mots-clés pertinents dans les titres et le contenu
+    * Gardez des URL courtes, explicites et organisées de manière hiérarchique
+    * Structurez les contenus longs avec des sous-titres et des listes
   </Accordion>
 
-  <Accordion title="Stratégie de maillage interne">
-    * Créer des liens vers des pages liées au sein de votre documentation
-    * Utiliser un texte d’ancrage descriptif plutôt que « cliquez ici »
-    * Créer des grappes thématiques en liant les concepts associés
-    * Utiliser les fonctionnalités de renvoi automatique
+  <Accordion title="Stratégie de liens internes">
+    * Ajoutez des liens vers des pages connexes dans votre documentation
+    * Utilisez un texte d&#39;ancrage explicite au lieu de « cliquez ici »
+    * Créez des groupes thématiques en reliant des concepts connexes
+    * Utilisez les fonctionnalités automatiques de référencement croisé
   </Accordion>
 
-  <Accordion title="SEO pour les images">
-    * Utiliser des noms de fichier descriptifs pour les images
-    * Toujours inclure un texte alternatif pour l’accessibilité et le SEO
-    * Optimiser la taille des fichiers image pour un chargement plus rapide
-    * Utiliser des images pertinentes qui soutiennent votre contenu
+  <Accordion title="SEO des images">
+    * Utilisez des noms de fichiers explicites pour les images
+    * Incluez toujours un texte alternatif pour l&#39;accessibilité et le SEO
+    * Optimisez la taille des fichiers image pour accélérer le chargement
+    * Utilisez des images pertinentes qui enrichissent votre contenu
   </Accordion>
 </AccordionGroup>

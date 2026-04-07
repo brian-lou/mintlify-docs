@@ -1,12 +1,12 @@
 ---
 title: "Accordéons"
 description: "Utilisez des accordéons pour afficher ou masquer du contenu."
-keywords: ["accordéons", "contenu repliable", "sections dépliables", "révélation progressive"]
+keywords: ["accordéons", "contenu rabattable", "sections dépliables", "révélation progressive"]
 ---
 
 import IconsOptional from "/snippets/fr/icons-optional.mdx";
 
-Les accordéons permettent aux utilisateurs de développer et réduire des sections de contenu. Utilisez les accordéons pour dévoiler progressivement les informations et organiser le contenu.
+Les accordéons permettent aux utilisateurs de développer et de réduire des sections de contenu. Utilisez les accordéons pour révéler progressivement les informations et les organiser.
 
 
 <div id="single-accordion">
@@ -14,7 +14,7 @@ Les accordéons permettent aux utilisateurs de développer et réduire des secti
 </div>
 
 <Accordion title="Je suis un accordéon.">
-  Vous pouvez mettre tout type de contenu ici, y compris d&#39;autres composants, comme du code :
+  Vous pouvez mettre n’importe quel contenu ici, y compris d’autres composants, comme du code :
 
   ```java HelloWorld.java
    class HelloWorld {
@@ -26,8 +26,8 @@ Les accordéons permettent aux utilisateurs de développer et réduire des secti
 </Accordion>
 
 ````mdx Accordion example
-<Accordion title="Je suis un Accordéon.">
-  Vous pouvez mettre n'importe quel contenu ici, y compris d'autres composants, comme du code :
+<Accordion title="Je suis un accordéon.">
+  Vous pouvez y mettre n'importe quel contenu, y compris d'autres composants, comme du code :
 
    ```java HelloWorld.java
     class HelloWorld {
@@ -44,11 +44,11 @@ Les accordéons permettent aux utilisateurs de développer et réduire des secti
   ## Groupes d’accordéons
 </div>
 
-Regroupez les accordéons associés à l’aide de `<AccordionGroup>`. Cela crée une section cohérente d’accordéons qui peuvent être dépliés ou repliés individuellement.
+Regroupez des accordéons associés à l’aide de `<AccordionGroup>`. Cela crée une section cohérente d’accordéons qui peuvent être ouverts ou fermés individuellement.
 
 <AccordionGroup>
-  <Accordion title="Pour commencer">
-    Vous pouvez placer d’autres composants à l’intérieur des accordéons.
+  <Accordion title="Premiers pas">
+    Vous pouvez placer d’autres composants dans des accordéons.
 
     ```java HelloWorld.java
     class HelloWorld {
@@ -60,18 +60,18 @@ Regroupez les accordéons associés à l’aide de `<AccordionGroup>`. Cela cré
   </Accordion>
 
   <Accordion title="Fonctionnalités avancées" icon="bot">
-    Ajoutez des icônes pour rendre les accordéons visuellement plus distincts et plus faciles à parcourir.
+    Ajoutez des icônes pour rendre les accordéons plus faciles à distinguer et à parcourir.
   </Accordion>
 
   <Accordion title="Dépannage">
-    Conservez les contenus liés bien organisés par groupes.
+    Organisez le contenu connexe en groupes.
   </Accordion>
 </AccordionGroup>
 
 ````mdx Accordion Group Example
 <AccordionGroup>
-  <Accordion title="Getting started">
-    You can put other components inside Accordions.
+  <Accordion title="Premiers pas">
+    Vous pouvez placer d'autres composants à l'intérieur des accordéons.
 
     ```java HelloWorld.java
     class HelloWorld {
@@ -82,12 +82,12 @@ Regroupez les accordéons associés à l’aide de `<AccordionGroup>`. Cela cré
     ```
   </Accordion>
 
-  <Accordion title="Advanced features" icon="alien-8bit">
-    Add icons to make accordions more visually distinct and scannable.
+  <Accordion title="Fonctionnalités avancées" icon="alien-8bit">
+    Ajoutez des icônes pour rendre les accordéons plus distincts visuellement et plus faciles à parcourir.
   </Accordion>
 
-  <Accordion title="Troubleshooting">
-    Keep related content organized into groups.
+  <Accordion title="Résolution des problèmes">
+    Organisez le contenu connexe en groupes.
   </Accordion>
 </AccordionGroup>
 ````
@@ -98,11 +98,11 @@ Regroupez les accordéons associés à l’aide de `<AccordionGroup>`. Cela cré
 </div>
 
 <ResponseField name="title" type="string" required>
-  Titre affiché dans l’aperçu de l’accordéon.
+  Titre dans l’aperçu de l’accordéon.
 </ResponseField>
 
 <ResponseField name="description" type="string">
-  Texte affiché sous le titre dans l’aperçu de l’accordéon.
+  Description affichée sous le titre dans l’aperçu de l’accordéon.
 </ResponseField>
 
 <ResponseField name="defaultOpen" type="boolean" default="false">

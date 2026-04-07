@@ -1,253 +1,253 @@
 ---
 title: "助手"
-description: "为你的文档添加 AI 驱动的聊天助手，可回答问题、标注引用来源并生成代码示例。"
-keywords: ["chat", "RAG", "user support"]
+description: "为你的文档添加 AI 驱动的聊天功能，用于回答问题、引用来源并生成代码示例。"
+keywords: ["聊天", "RAG", "用户支持"]
 ---
 
 <Info>
-  助手会在 [Pro 和 Enterprise 套餐](https://mintlify.com/pricing?ref=assistant) 中自动启用。
+  助手会在 [Pro and Enterprise plans](https://mintlify.com/pricing?ref=assistant) 中自动启用。
 </Info>
 
 <div id="about-the-assistant">
   ## 关于助手
 </div>
 
-助手通过自然语言查询来回答与你文档相关的问题。用户可以在你的文档网站上使用助手，即使不知道从何查起，也能快速找到答案，在使用你的产品时更加顺利、取得成功。
+助手通过自然语言问答，回答与你的文档相关的问题。用户可以在你的文档站点中使用助手，因此即使不知道该去哪里查找，也能快速找到答案，顺利使用你的产品。
 
-助手使用带工具调用的 agentic RAG（检索增强生成）。当用户提问时，助手会：
+助手采用具备工具调用能力的 agentic RAG (检索增强生成) 。当用户提问时，助手会：
 
-* **搜索并检索** 你文档中的相关内容，以提供准确的答案。
-* **引用来源** 并提供可导航的链接，将用户直接带到被引用的页面。
-* **生成可复制的代码示例**，帮助用户基于你的文档实现解决方案。
+* **搜索并检索**你的文档中的相关内容，提供准确的答案。
+* **引用来源**并提供可跳转的链接，直接将用户带到所引用的页面。
+* **生成可复制的代码示例**，帮助用户根据你的文档实现解决方案。
 
-你可以通过仪表板查看助手的使用情况，以了解用户行为和文档的有效性。导出并分析查询数据，以帮助识别：
+你可以通过控制面板查看助手的使用情况，了解用户行为以及文档的有效性。导出并分析查询数据，有助于识别：
 
-* 可能需要更充分覆盖的常见问题。
-* 用户难以找到答案的内容缺口。
-* 可能受益于补充内容的热门主题。
+* 可能需要更全面覆盖的常见问题。
+* 用户难以找到答案的内容空白。
+* 适合补充更多内容的热门主题。
 
 <div id="how-indexing-works">
-  ### 索引的工作原理
+  ### 索引如何工作
 </div>
 
-助手会自动索引你已发布的文档，以便准确回答问题。当你发布更改时，助手会立即为新增、更新或删除的内容重新建立索引。助手不会索引草稿分支或预览部署。
+助手会自动为你已发布的文档编制索引，以便准确回答问题。当你发布更改时，助手会立即为新增、更新或删除的内容更新索引。助手不会为草稿分支或预览部署编制索引。
 
-默认情况下，助手不会索引隐藏页面。若要将隐藏页面包含在助手的索引中，请在 `docs.json` 中将 `seo.indexing` 设置为 `"all"`。更多信息请参见[隐藏页面](/zh/organize/hidden-pages#search-seo-and-ai-indexing)。
+默认情况下，助手不会为隐藏页面编制索引。若要将隐藏页面纳入助手的索引范围，请在 `docs.json` 中将 `seo.indexing` 设置为 `"all"`。更多信息，请参阅[隐藏页面](/zh/organize/hidden-pages#search-seo-and-ai-indexing)。
 
 <div id="how-the-assistant-handles-unknown-questions">
-  ### 助理如何处理无法解答的问题
+  ### 助手如何处理未识别的问题
 </div>
 
-助理只会根据你的文档信息来回答问题。如果在搜索后仍然找不到相关信息，它会回复自己没有足够的信息来作答。
+助手只会根据文档中的信息回答问题。如果搜索后仍然找不到相关信息，它会说明自己没有足够的信息来回答。
 
-你可以[设置分流邮件](/zh/ai/assistant#set-deflection-email)，这样当助理无法回答用户的问题时，就会向用户提供你的支持邮箱。即使文档没有涵盖他们的具体问题，这也能为用户提供后续的解决途径。
+你可以[设置转接邮箱](/zh/ai/assistant#set-deflection-email)，这样当助手无法回答用户的问题时，就会向用户提供你的支持邮箱。即使文档没有涉及他们的具体问题，这也能为用户提供下一步求助途径。
 
 <div id="configure-the-assistant">
   ## 配置助手
 </div>
 
-在 Pro 和 Enterprise 方案中，助手默认处于启用状态。
+默认情况下，Pro 和 Enterprise 套餐已启用助手。
 
-在控制台的 [Assistant Configurations](https://dashboard.mintlify.com/products/assistant/settings) 页面管理助手。你可以启用或禁用助手、配置回复处理方式、添加默认问题，以及管理消息额度。
+你可以在控制面板的 [Assistant Configurations](https://dashboard.mintlify.com/products/assistant/settings) 页面管理助手。你可以启用或禁用助手、配置响应处理、添加默认问题，以及管理消息额度。
 
 <div id="enable-or-disable-the-assistant">
-  ### 启用或停用助手
+  ### 启用或禁用助手
 </div>
 
-通过切换助手状态，在您的文档站点中启用或停用助手。
+通过切换助手状态，为你的文档站点启用或禁用助手。
 
 <Frame>
-  <img src="/images/assistant/status-light.png" alt="控制台中的助手状态切换开关。" className="block dark:hidden" />
+  <img src="/images/assistant/status-light.png" alt="控制面板中的助手状态切换开关。" className="block dark:hidden" />
 
-  <img src="/images/assistant/status-dark.png" alt="控制台中的助手状态切换开关。" className="hidden dark:block" />
+  <img src="/images/assistant/status-dark.png" alt="控制面板中的助手状态切换开关。" className="hidden dark:block" />
 </Frame>
 
 <div id="set-deflection-email">
-  ### 设置分流邮箱
+  ### 设置转接邮箱
 </div>
 
-在“Response Handling”部分中，可以启用助手，将未解答的问题转交给你的支持团队。
+在“响应处理”部分，启用助手将无法回答的问题转给你的支持团队。
 
-指定一个电子邮箱地址，当助手无法回答用户的问题时，会将该邮箱地址提供给用户。你也可以启用在助手聊天面板中显示“Contact support”按钮。
+为助手指定一个电子邮箱地址，以便在它无法回答用户问题时提供给用户。你还可以启用“联系支持”按钮，让它显示在助手聊天面板中。
 
 <Frame>
-  <img src="/images/assistant/deflection-light.png" alt="仪表盘中的助手分流面板。助手分流已开启，support@mintlify.com 被设置为分流邮箱。" className="block dark:hidden" />
+  <img src="/images/assistant/deflection-light.png" alt="控制面板中的助手转接面板。助手转接已开启，且 support@mintlify.com 已设置为转接邮箱。" className="block dark:hidden" />
 
-  <img src="/images/assistant/deflection-dark.png" alt="仪表盘中的助手分流面板。助手分流已开启，support@mintlify.com 被设置为分流邮箱。" className="hidden dark:block" />
+  <img src="/images/assistant/deflection-dark.png" alt="控制面板中的助手转接面板。助手转接已开启，且 support@mintlify.com 已设置为转接邮箱。" className="hidden dark:block" />
 </Frame>
 
 <div id="search-domains">
   ### 搜索域名
 </div>
 
-在 “Response Handling” 部分中，配置助手在进行网页搜索以获取回答问题所需的额外上下文时可以使用的域名。
+在“响应处理”部分，配置助手可用于网页搜索的域名，以便在回答问题时查找更多相关上下文。
 
-* 域名必须对公众可访问。
-* 依赖 JavaScript 才能加载内容的域名不受支持。
+* 域名必须可公开访问。
+* 不支持必须依赖 JavaScript 才能加载的域名。
 
 <Frame>
-  <img src="/images/assistant/search-domains-light.png" alt="在控制台中启用的助手搜索域名面板。助手被配置为搜索 mintlify.com/pricing 域名。" className="block dark:hidden" />
+  <img src="/images/assistant/search-domains-light.png" alt="控制面板中已启用的助手搜索域名面板。助手已配置为搜索 mintlify.com/pricing 域名。" className="block dark:hidden" />
 
-  <img src="/images/assistant/search-domains-dark.png" alt="在控制台中启用的助手搜索域名面板。助手被配置为搜索 mintlify.com/pricing 域名。" className="hidden dark:block" />
+  <img src="/images/assistant/search-domains-dark.png" alt="控制面板中已启用的助手搜索域名面板。助手已配置为搜索 mintlify.com/pricing 域名。" className="hidden dark:block" />
 </Frame>
 
-若想更精细地控制助手的搜索范围，请使用过滤语法。
+如需更精细地控制助手可搜索的内容，请使用过滤语法。
 
-* **域级过滤**
-  * `example.com`: 只搜索 `example.com` 域名
-  * `docs.example.com`: 只搜索 `docs.example.com` 子域名
-  * `*.example.com`: 搜索 `example.com` 的所有子域名
+* **域名级过滤**
+  * `example.com`：仅搜索 `example.com` 域名
+  * `docs.example.com`：仅搜索 `docs.example.com` 子域名
+  * `*.example.com`：搜索 `example.com` 的所有子域名
 * **路径级过滤**
-  * `docs.example.com/api`: 搜索 `/api` 子路径下的所有页面
-* **多种模式**
-  * 可添加多个条目来覆盖站点的不同部分
+  * `docs.example.com/api`：搜索 `/api` 路径下的所有页面
+* **多个模式**
+  * 添加多个条目，以覆盖网站的不同部分
 
 <div id="add-sample-questions">
   ### 添加示例问题
 </div>
 
-通过添加示例问题，帮助你的用户开始与助手对话。你可以添加常见问题，或与希望用户了解的主题相关的问题。点击 **Ask AI**，即可根据你的文档获取推荐问题。
+添加引导问题，帮助用户开始与助手对话。你可以添加常见问题，或与希望用户了解的主题相关的问题。点击 **Ask AI**，即可根据你的文档获取推荐问题。
 
 <Frame>
-  <img src="/images/assistant/search-suggestions-light.png" alt="在仪表盘中启用示例问题后，填充了三个问题的搜索建议面板。" className="block dark:hidden" />
+  <img src="/images/assistant/search-suggestions-light.png" alt="控制面板中的搜索建议面板，已启用引导问题并填充了三个问题。" className="block dark:hidden" />
 
-  <img src="/images/assistant/search-suggestions-dark.png" alt="在仪表盘中启用示例问题后，填充了三个问题的搜索建议面板。" className="hidden dark:block" />
+  <img src="/images/assistant/search-suggestions-dark.png" alt="控制面板中的搜索建议面板，已启用引导问题并填充了三个问题。" className="hidden dark:block" />
 </Frame>
 
 <div id="manage-billing">
-  ## 管理计费
+  ## 管理账单
 </div>
 
-该助手使用分级消息配额。消息指的是任何能收到有效回复的用户与助手的交互。如果你有未使用的消息配额，最多可以将一半结转到下一个计费周期。比如，如果你的消息配额是 1,000 条且你只使用了 300 条，则有 500 条消息会结转到下一个计费周期，这样你在下一个计费周期总共有 1,500 条消息可用。
+助手采用分层消息额度。消息是指用户与助手之间一次获得有效回复的交互。如果你有未用完的消息，最多可将一半的消息额度结转到下一个计费周期。例如，如果你的消息额度为 1,000 条，而你使用了 300 条，则有 500 条会结转到下一个计费周期，使你在下一个计费周期内的总额度达到 1,500 条消息。
 
-默认情况下，助手允许超额使用。你可以禁用超额使用，以避免因超出当前档位的用量而产生额外费用。如果在禁用超额使用的情况下用完消息配额，助手将不可用，直到你的消息配额重置。如果你允许超额使用，每条超出配额的消息都会产生超额费用，但根据你的使用情况，偶尔的超额使用可能比升级到更高档位更便宜。
+默认情况下，助手允许超额使用。你可以禁用超额使用，以避免因超出当前套餐额度而产生额外费用。如果你在禁用超额使用的情况下用完消息额度，助手将无法使用，直到你的消息额度重置。如果你允许超额使用，则每条超出额度的消息都会产生超额费用；但根据你的使用情况，偶尔超额使用可能比升级到更高套餐更划算。
 
 <div id="change-your-assistant-tier">
-  ### 更改你的 Assistant 等级
+  ### 更改您的助手层级
 </div>
 
-Assistant 等级决定你的每月消息额度和价格。
+助手层级决定您每月的消息额度和价格。
 
-在控制台中 Assistant 页面里的 [Billing 选项卡](https://dashboard.mintlify.com/products/assistant/settings/billing) 查看并更改你当前的等级。
+您可以在控制面板的助手页面中，前往 [账单标签页](https://dashboard.mintlify.com/products/assistant/settings/billing)查看并更改当前层级。
 
-在 **Spending Controls** 部分，从下拉菜单中选择你想要的等级。
+在 **Spending Controls** 部分，从下拉菜单中选择您想要的层级。
 
-**升级等级：**
+**升级层级：**
 
-* 新的消息额度会立即生效。
-* 你需为当前结算周期支付按比例计算的差额。
+* 您的新消息额度会立即生效。
+* 您只需按比例补足当前计费周期的差价。
 
-**降级等级：**
+**降级层级：**
 
-* 你的消息额度会立即更新。
-* 价格变更会在下一个结算周期开始时生效。
-* 当前等级中未使用的消息**不会**结转到下个周期。
+* 您的消息额度会立即更新。
+* 价格变更将在下一个计费周期开始时生效。
+* 当前层级中未使用的消息**不会**结转。
 
 <div id="allow-overages">
   ### 允许超额使用
 </div>
 
-如果你想禁止超额使用，请在控制台的助手页面中打开 [Billing 选项卡](https://dashboard.mintlify.com/products/assistant/settings/billing)，并在其中的 **Billing Controls** 部分将其禁用。
+如果你想禁止超额使用，请前往控制面板中助手页面的[账单](https://dashboard.mintlify.com/products/assistant/settings/billing)标签页，并在 **Billing Controls** 部分将其禁用。
 
 <div id="set-usage-alerts">
   ### 设置用量提醒
 </div>
 
-在 Billing Controls 部分，设置用量提醒，以便当您的消息配额达到指定百分比时收到电子邮件通知。
+在 Billing Controls 部分设置用量提醒，这样当你的消息额度达到某一百分比时，你就会收到电子邮件通知。
 
 <div id="connect-apps">
   ## 连接应用
 </div>
 
-在“连接应用”部分，将 assistant 添加到你的 [Discord](/zh/ai/discord) 服务器和 [Slack](/zh/ai/slack-bot) 工作区，让用户可以在这些平台上基于你的文档获取解答。
+在“连接应用”部分，将助手添加到你的 [Discord](/zh/ai/discord) 服务器和 [Slack](/zh/ai/slack-bot) 工作区，让用户能在这些平台上从你的文档中获取答案。
 
 <div id="assistant-insights">
-  ## 助理洞察
+  ## 助手洞察
 </div>
 
-使用助理洞察功能来了解用户如何与您的文档交互，并发现改进空间。
+使用 助手 洞察了解用户如何使用您的文档，并找出可改进之处。
 
-[助理页面](https://dashboard.mintlify.com/products/assistant) 显示本月至今的使用趋势。您可以在 [分析](/zh/optimize/analytics#assistant) 页面查看更详细的洞察数据。
+[助手页面](https://dashboard.mintlify.com/products/assistant)会显示当月至今的使用趋势。前往[分析](/zh/optimize/analytics#assistant)页面可查看更详细的洞察。
 
 <div id="make-content-ai-ingestible">
-  ## 让内容更易被 AI 理解和处理
+  ## 让内容便于 AI 理解
 </div>
 
-合理规划文档结构，帮助助手提供准确、相关的回答。清晰的组织和完善的上下文既有利于读者，也有利于 AI 理解。
+合理组织文档内容，帮助助手提供准确且相关的回答。清晰的结构和充分的上下文既有利于读者阅读，也有助于 AI 理解。
 
 <Card title="结构与组织">
   * 使用语义化标记。
-  * 为各部分撰写有描述性的标题。
-  * 建立清晰合理的信息层级结构。
-  * 在整套文档中保持一致的格式。
-  * 在页面 frontmatter 中包含完整的元数据。
-  * 将冗长的文本拆分成较短的段落。
+  * 为各部分撰写清晰的描述性标题。
+  * 建立逻辑清晰的信息层级。
+  * 在整个文档中保持格式一致。
+  * 在页面前置元数据中补充完整的元数据。
+  * 将长篇文字拆分成较短的段落。
 </Card>
 
 <Card title="上下文">
-  * 在术语和首字母缩略词首次出现时给出明确的定义。
-  * 提供足够的概念性内容，说明功能和操作流程。
-  * 包含示例和使用场景。
+  * 在术语和缩略语首次出现时给出明确定义。
+  * 为功能和流程提供充分的概念说明。
+  * 提供示例和使用场景。
   * 交叉引用相关主题。
-  * 添加用户无需查看、但助手可以引用的[隐藏页面](/zh/organize/hidden-pages)，以补充更多上下文。
+  * 添加[隐藏页面](/zh/organize/hidden-pages)，补充用户无需查看但助手可参考的额外上下文。
 </Card>
 
 <div id="use-the-assistant">
   ## 使用助手
 </div>
 
-用户有多种方式与助手开始对话。每种方式都会在文档页面右侧打开一个聊天面板。用户可以提出任何问题，助手会在你的文档中搜索答案。如果助手无法检索到相关信息，它会回复自己无法回答该问题。
+用户可以通过多种方式开始与助手对话。每种方式都会在文档右侧打开一个聊天面板。用户可以提出任何问题，助手会在你的文档中搜索答案。如果助手无法检索到相关信息，则会回复无法回答该问题。
 
-将助手作为机器人添加到你的 [Slack 工作区](/zh/ai/slack-bot) 或 [Discord 服务器](/zh/ai/discord)，让你的社区成员无需离开自己惯用的平台就能提问。
+将助手作为机器人添加到你的 [Slack 工作区](/zh/ai/slack-bot) 或 [Discord 服务器](/zh/ai/discord) 中，这样你的社区成员无需离开自己常用的平台即可提问。
 
 <div id="ui-placement">
-  ### 界面位置
+  ### UI 位置
 </div>
 
-Assistant 出现在两个位置：作为搜索栏旁边的一个按钮，以及作为页面底部的一个底部栏。
+助手会显示在两个位置：搜索栏旁的按钮，以及页面底部的横栏。
 
 <Columns cols={2}>
-  <Frame caption="搜索栏旁边的 Assistant 按钮。">
+  <Frame caption="搜索栏旁的助手按钮。">
     <img
       src="/images/assistant/assistant-button-light.png"
       className="block dark:hidden"
       style={{
-  width: '268px',
-  height: 'auto',
+width: '268px',
+height: 'auto',
 }}
-      alt="浅色模式下的搜索栏和 Assistant 按钮。"
+      alt="浅色模式下的搜索栏和助手按钮。"
     />
 
     <img
       src="/images/assistant/assistant-button-dark.png"
       className="hidden dark:block"
       style={{
-  width: '268px',
-  height: 'auto',
+width: '268px',
+height: 'auto',
 }}
-      alt="深色模式下的搜索栏和 Assistant 按钮。"
+      alt="深色模式下的搜索栏和助手按钮。"
     />
   </Frame>
 
-  <Frame caption="页面底部的 Assistant 按钮。">
+  <Frame caption="页面底部的助手横栏。">
     <img
       src="/images/assistant/assistant-bar-light.png"
       className="block dark:hidden"
       style={{
-  width: '268px',
-  height: 'auto',
+width: '268px',
+height: 'auto',
 }}
-      alt="浅色模式下的 Assistant 底部栏。"
+      alt="浅色模式下的助手横栏。"
     />
 
     <img
       src="/images/assistant/assistant-bar-dark.png"
       className="hidden dark:block"
       style={{
-  width: '268px',
-  height: 'auto',
+width: '268px',
+height: 'auto',
 }}
-      alt="深色模式下的 Assistant 底部栏。"
+      alt="深色模式下的助手横栏。"
     />
   </Frame>
 </Columns>
@@ -256,25 +256,25 @@ Assistant 出现在两个位置：作为搜索栏旁边的一个按钮，以及�
   ### 键盘快捷键
 </div>
 
-在 macOS 上使用快捷键 <kbd>Command</kbd> + <kbd>I</kbd>，在 Windows 上使用 <kbd>Ctrl</kbd> + <kbd>I</kbd> 打开助手对话面板。
+在 macOS 上按 <kbd>Command</kbd> + <kbd>I</kbd>，在 Windows 上按 <kbd>Ctrl</kbd> + <kbd>I</kbd>，即可打开助手聊天面板。
 
 <div id="highlight-text">
-  ### 选中文本
+  ### 高亮文本
 </div>
 
-在页面上选中文本，并点击弹出的 **Add to assistant** 按钮，以打开助手聊天面板，并将选中文本添加为上下文。你可以向助手的上下文中添加多个文本片段或代码块。
+在页面上选中文本，然后点击弹出的 **加入助手** 按钮，打开助手聊天面板，并将所选文本添加为上下文。你可以向助手的上下文中添加多个文本片段或代码块。
 
 <Frame>
-  <img src="/images/assistant/highlight-light.png" alt="浅色模式下高亮文本上方的 Add to assistant 按钮。" className="block dark:hidden" />
+  <img src="/images/assistant/highlight-light.png" alt="浅色模式下，高亮文本上方的加入助手按钮。" className="block dark:hidden" />
 
-  <img src="/images/assistant/highlight-dark.png" alt="深色模式下高亮文本上方的 Add to assistant 按钮。" className="hidden dark:block" />
+  <img src="/images/assistant/highlight-dark.png" alt="深色模式下，高亮文本上方的加入助手按钮。" className="hidden dark:block" />
 </Frame>
 
 <div id="code-blocks">
   ### 代码块
 </div>
 
-点击代码块中的 **Ask AI** 按钮，以打开助手对话面板，并将该代码块添加到上下文中。你可以在助手的上下文中添加多个代码块或文本片段。
+点击代码块中的 **Ask AI** 按钮，即可打开助手聊天面板，并将该代码块添加到上下文中。你可以向助手的上下文中添加多个代码块或文本片段。
 
 <Frame>
   <img src="/images/assistant/code-block-light.png" alt="浅色模式下代码块中的 Ask AI 按钮。" className="block dark:hidden" />
@@ -286,19 +286,19 @@ Assistant 出现在两个位置：作为搜索栏旁边的一个按钮，以及�
   ### URL
 </div>
 
-通过在 URL 中添加查询参数打开 assistant，可以创建深度链接，引导用户访问特定信息，或通过预填问题来分享与 assistant 的对话。
+通过 URL 查询参数打开助手，创建可直达特定信息的深层链接，或分享预填问题的助手对话。
 
-* **打开 assistant**：追加 `?assistant=open`，在页面加载时打开 assistant 聊天面板。
+* **打开助手**：添加 `?assistant=open`，在页面加载时打开助手聊天面板。
   * 示例：[https://mintlify.com/docs?assistant=open](https://mintlify.com/docs?assistant=open)
-* **使用预填查询打开**：追加 `?assistant=YOUR_QUERY`，打开 assistant 并自动提交一个问题。
+* **使用预填查询打开**：添加 `?assistant=YOUR_QUERY`，打开助手并自动提交问题。
   * 示例：[https://mintlify.com/docs?assistant=explain webhooks](https://mintlify.com/docs?assistant=explain%20webhooks)
 
 <div id="troubleshooting">
-  ## 疑难解答
+  ## 故障排查
 </div>
 
 <Accordion title="助手聊天栏不可见">
-  如果助手界面在某些浏览器中不可见，您可能需要向 [EasyList](https://easylist.to) 提交误拦截报告。使用 EasyList Cookies 列表的浏览器（如 Brave 和 Comet）有时会屏蔽助手或其他界面元素。EasyList Cookies 列表中包含一条基于域名的规则，会在特定域名上隐藏固定定位的元素以拦截 cookie 横幅。这条规则会在无意中影响正常的界面组件。
+  如果助手界面在某些浏览器中不可见，你可能需要向 [EasyList](https://easylist.to) 提交误报反馈。像 Brave 和 Comet 这类使用 EasyList Cookies List 的浏览器，有时会屏蔽助手或其他 UI 元素。EasyList Cookies List 中有一条针对特定域名的规则，会在某些域名上隐藏固定定位元素，以拦截 Cookie 横幅。该规则会误伤正常的 UI 组件。
 
-  请向 [EasyList](https://github.com/easylist/easylist) 提交误拦截报告，请求移除该规则。一旦过滤列表更新，这个问题就会对所有用户自动得到解决。
+  向 [EasyList](https://github.com/easylist/easylist) 提交误报反馈，请求移除这条规则。过滤器列表更新后，所有用户的问题都会得到解决。
 </Accordion>

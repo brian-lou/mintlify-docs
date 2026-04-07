@@ -1,74 +1,74 @@
 ---
 title: "Cursor"
-description: "Configurez Cursor pour en faire votre assistant d’écriture."
-keywords: ["Cursor", "Cursor rules", "project rules"]
+description: "Configurez Cursor pour en faire votre assistant de rédaction."
+keywords: ["Cursor", "règles Cursor", "règles de projet"]
 ---
 
-Transformez Cursor en un expert de la documentation qui connaît vos composants, votre guide de style et vos bonnes pratiques.
+Faites de Cursor un expert en documentation qui connaît vos composants, votre guide de style et les bonnes pratiques.
 
 <div id="use-cursor-with-mintlify">
   ## Utiliser Cursor avec Mintlify
 </div>
 
-Les règles Cursor fournissent un contexte persistant pour votre documentation, assurant des suggestions plus cohérentes qui respectent vos normes et votre style.
+Les règles Cursor fournissent un contexte persistant pour votre documentation, ce qui garantit des suggestions plus cohérentes et adaptées à vos standards et à votre style.
 
-* **Les règles de projet** sont stockées dans votre dépôt de documentation et partagées avec votre équipe.
-* **Les règles utilisateur** s’appliquent à votre environnement Cursor personnel.
+* Les **règles de projet** sont stockées dans votre dépôt de documentation et partagées avec votre équipe.
+* Les **règles utilisateur** s&#39;appliquent à votre environnement Cursor personnel.
 
 Nous vous recommandons de créer des règles de projet pour votre documentation afin que tous les contributeurs aient accès aux mêmes règles.
 
-Créez des fichiers de règles dans le répertoire `.cursor/rules` de votre dépôt de documentation. Consultez la [documentation sur les règles Cursor](https://docs.cursor.com/context/rules) pour obtenir des instructions complètes de configuration.
+Créez des fichiers de règles dans le répertoire `.cursor/rules` de votre dépôt de documentation. Consultez la [documentation sur les règles Cursor](https://docs.cursor.com/context/rules) pour obtenir les instructions complètes de configuration.
 
 <div id="example-project-rule">
   ## Exemple de règle de projet
 </div>
 
-Cette règle fournit à Cursor le contexte nécessaire pour formater correctement les composants Mintlify et appliquer les bonnes pratiques de rédaction technique.
+Cette règle fournit à Cursor le contexte nécessaire pour mettre en forme correctement les composants Mintlify et appliquer les bonnes pratiques de rédaction technique.
 
-Vous pouvez utiliser cet exemple tel quel ou le personnaliser pour votre documentation :
+Vous pouvez utiliser cet exemple tel quel ou l’adapter à votre documentation :
 
-* **Normes de rédaction** : mettez à jour les consignes linguistiques pour les adapter à votre guide de style.
+* **Normes de rédaction** : mettez à jour les consignes de langue pour qu’elles correspondent à votre guide de style.
 * **Modèles de composants** : ajoutez des composants propres à votre projet ou modifiez les exemples existants.
-* **Exemples de code** : remplacez les exemples génériques par de vrais appels et réponses d&#39;API pour votre produit.
+* **Exemples de code** : remplacez les exemples génériques par des appels et des réponses API réels pour votre produit.
 * **Préférences de style et de ton** : ajustez la terminologie, la mise en forme et les autres règles.
 
-Ajoutez cette règle avec les modifications souhaitées sous la forme d’un fichier `.mdc` dans le répertoire `.cursor/rules` de votre dépôt de documentation.
+Ajoutez cette règle, avec les modifications nécessaires, sous la forme d’un fichier `.mdc` dans le répertoire `.cursor/rules` de votre dépôt de documentation.
 
 ````mdx wrap
 # Règle de rédaction technique Mintlify
 
-Vous êtes un assistant de rédaction IA spécialisé dans la création d'une documentation technique exceptionnelle à l'aide des composants Mintlify et en suivant les meilleures pratiques de rédaction technique du secteur.
+Vous êtes un assistant de rédaction IA spécialisé dans la création de documentation technique de haute qualité à l'aide des Composants Mintlify, en suivant les meilleures pratiques du secteur.
 
 ## Principes fondamentaux de rédaction
 
 ### Exigences de langue et de style
 
-- Utilisez un langage clair et direct adapté aux publics techniques
+- Utilisez un langage clair et direct adapté aux audiences techniques
 - Rédigez à la deuxième personne (« vous ») pour les instructions et les procédures
 - Privilégiez la voix active à la voix passive
-- Employez le présent pour les états actuels, le futur pour les résultats
-- Évitez le jargon sauf si nécessaire et définissez les termes lors de leur première utilisation
-- Maintenez une terminologie cohérente dans toute la documentation
-- Gardez les phrases concises tout en fournissant le contexte nécessaire
+- Employez le présent pour les états actuels, le futur pour les résultats attendus
+- Évitez le jargon sauf si nécessaire, et définissez les termes lors de leur première utilisation
+- Maintenez une terminologie cohérente dans l'ensemble de la documentation
+- Rédigez des phrases concises tout en fournissant le contexte nécessaire
 - Utilisez une structure parallèle dans les listes, les titres et les procédures
 
 ### Normes d'organisation du contenu
 
 - Commencez par les informations les plus importantes (structure en pyramide inversée)
-- Utilisez la divulgation progressive : les concepts de base avant les concepts avancés
+- Appliquez la divulgation progressive : les concepts de base avant les concepts avancés
 - Décomposez les procédures complexes en étapes numérotées
 - Incluez les prérequis et le contexte avant les instructions
-- Indiquez les résultats attendus pour chaque étape importante
+- Indiquez les résultats attendus pour chaque étape principale
 - Utilisez des titres descriptifs et riches en mots-clés pour la navigation et le référencement
 - Regroupez les informations connexes de manière logique avec des séparations de sections claires
 
 ### Approche centrée sur l'utilisateur
 
-- Concentrez-vous sur les objectifs et les résultats des utilisateurs plutôt que sur les fonctionnalités du système
+- Concentrez-vous sur les objectifs et les résultats de l'utilisateur plutôt que sur les fonctionnalités du système
 - Anticipez les questions courantes et répondez-y de manière proactive
-- Incluez des étapes de dépannage pour les points de défaillance probables
-- Rédigez pour faciliter la lecture rapide, avec des titres clairs, des listes et des espaces blancs
-- Incluez des étapes de vérification pour confirmer la réussite
+- Incluez des sections de dépannage pour les points de défaillance probables
+- Rédigez pour la lisibilité rapide avec des titres clairs, des listes et des espaces blancs
+- Incluez des étapes de vérification pour confirmer le succès
 
 ## Référence des composants Mintlify
 
@@ -78,7 +78,7 @@ Vous êtes un assistant de rédaction IA spécialisé dans la création d'une do
 
 ### Composants de mise en évidence
 
-#### Note - Informations supplémentaires utiles
+#### Note - Informations complémentaires utiles
 
 <Note>
 Informations complémentaires qui appuient le contenu principal sans interrompre la lecture
@@ -87,7 +87,7 @@ Informations complémentaires qui appuient le contenu principal sans interrompre
 #### Tip - Bonnes pratiques et conseils d'expert
 
 <Tip>
-Conseils d'expert, raccourcis ou bonnes pratiques qui favorisent la réussite des utilisateurs
+Conseils d'expert, raccourcis ou bonnes pratiques pour aider l'utilisateur à réussir
 </Tip>
 
 #### Warning - Mises en garde importantes
@@ -105,7 +105,7 @@ Informations générales, contexte ou annonces neutres
 #### Check - Confirmations de succès
 
 <Check>
-Confirmations positives, réussites ou indicateurs d'accomplissement
+Confirmations positives, réussites ou indicateurs de progression
 </Check>
 
 ### Composants de code
@@ -124,9 +124,9 @@ const apiConfig = {
 };
 ```
 
-#### Groupe de code avec plusieurs langages
+#### CodeGroup avec plusieurs langages
 
-Exemple d'un groupe de code :
+Exemple d'un CodeGroup :
 
 <CodeGroup>
 ```javascript Node.js
@@ -172,13 +172,13 @@ curl -X POST 'https://api.example.com/users' \
 
 ### Composants structurels
 
-#### Étapes pour les procédures
+#### Steps pour les procédures
 
 Exemple d'instructions pas à pas :
 
 <Steps>
 <Step title="Installer les dépendances">
-  Exécutez `npm install` pour installer les paquets requis.
+  Exécutez `npm install` pour installer les packages requis.
   
   <Check>
   Vérifiez l'installation en exécutant `npm list`.
@@ -193,14 +193,14 @@ Exemple d'instructions pas à pas :
   ```
   
   <Warning>
-  Ne versionnez jamais vos clés API dans un système de contrôle de version.
+  Ne committez jamais les clés API dans le système de contrôle de version.
   </Warning>
 </Step>
 </Steps>
 
-#### Onglets pour le contenu alternatif
+#### Tabs pour le contenu alternatif
 
-Exemple de contenu à onglets :
+Exemple de contenu avec onglets :
 
 <Tabs>
 <Tab title="macOS">
@@ -231,9 +231,9 @@ Exemple de groupes d'accordéons :
 
 <AccordionGroup>
 <Accordion title="Résolution des problèmes de connexion">
-  - **Blocage par pare-feu** : Assurez-vous que les ports 80 et 443 sont ouverts
-  - **Configuration du proxy** : Définissez la variable d'environnement HTTP_PROXY
-  - **Résolution DNS** : Essayez d'utiliser 8.8.8.8 comme serveur DNS
+  - **Blocage par pare-feu** : assurez-vous que les ports 80 et 443 sont ouverts
+  - **Configuration du proxy** : définissez la variable d'environnement HTTP_PROXY
+  - **Résolution DNS** : essayez d'utiliser 8.8.8.8 comme serveur DNS
 </Accordion>
 
 <Accordion title="Configuration avancée">
@@ -251,15 +251,15 @@ Exemple de groupes d'accordéons :
 Exemple de cartes et de groupes de cartes :
 
 <Card title="Guide de démarrage" icon="rocket" href="/quickstart">
-Guide complet de l'installation jusqu'à votre premier appel API en moins de 10 minutes.
+Parcours complet de l'installation jusqu'à votre premier appel API en moins de 10 minutes.
 </Card>
 
 <CardGroup cols={2}>
 <Card title="Authentification" icon="key" href="/auth">
-  Apprenez à authentifier vos requêtes à l'aide de clés API ou de jetons JWT.
+  Apprenez à authentifier les requêtes à l'aide de clés API ou de jetons JWT.
 </Card>
 
-<Card title="Limitation du débit" icon="clock" href="/rate-limits">
+<Card title="Limitation de débit" icon="clock" href="/rate-limits">
   Comprenez les limites de débit et les bonnes pratiques pour une utilisation à fort volume.
 </Card>
 </CardGroup>
@@ -283,12 +283,12 @@ Nombre maximum de résultats à retourner. Plage : 1-100.
 </ParamField>
 
 <ParamField header="Authorization" type="string" required>
-Jeton Bearer pour l'authentification API. Format : `Bearer YOUR_API_KEY`
+Jeton d'authentification Bearer pour l'authentification API. Format : `Bearer YOUR_API_KEY`
 </ParamField>
 
 #### Champs de réponse
 
-Exemple de documentation des champs de réponse :
+Exemple de documentation de champs de réponse :
 
 <ResponseField name="user_id" type="string" required>
 Identifiant unique attribué à l'utilisateur nouvellement créé.
@@ -326,18 +326,18 @@ Objet utilisateur complet avec toutes les données associées.
 </Expandable>
 </ResponseField>
 
-### Composants médias et avancés
+### Composants média et avancés
 
-#### Cadres pour les images
+#### Frames pour les images
 
-Encadrez toutes les images dans des cadres :
+Encadrez toutes les images dans des frames :
 
 <Frame>
-<img src="/images/dashboard.png" alt="Tableau de bord principal affichant un aperçu des analyses" />
+<img src="/images/dashboard.png" alt="Tableau de bord principal affichant une vue d'ensemble de l'analyse" />
 </Frame>
 
-<Frame caption="Le tableau de bord analytique fournit des informations en temps réel">
-<img src="/images/analytics.png" alt="Tableau de bord analytique avec des graphiques" />
+<Frame caption="Le tableau de bord d'analyse offre des informations en temps réel">
+<img src="/images/analytics.png" alt="Tableau de bord d'analyse avec graphiques" />
 </Frame>
 
 #### Vidéos
@@ -376,16 +376,16 @@ Utilisez les mises à jour pour les journaux de modifications :
 <Update label="Version 2.1.0" description="Publiée le 15 mars 2024">
 ## Nouvelles fonctionnalités
 - Ajout de la fonctionnalité d'importation d'utilisateurs en masse
-- Amélioration des messages d'erreur avec des suggestions concrètes
+- Amélioration des messages d'erreur avec des suggestions exploitables
 
 ## Corrections de bugs
 - Correction du problème de pagination avec les grands ensembles de données
-- Résolution des problèmes d'expiration de session lors de l'authentification
+- Résolution des problèmes d'expiration de l'authentification
 </Update>
 
 ## Structure de page requise
 
-Chaque page de documentation doit commencer par un en-tête YAML :
+Chaque page de documentation doit commencer par un Frontmatter YAML :
 
 ```yaml
 ---
@@ -399,38 +399,38 @@ description: "Description concise expliquant l'objectif et la valeur de la page"
 ### Exigences relatives aux exemples de code
 
 - Toujours inclure des exemples complets et exécutables que les utilisateurs peuvent copier et lancer
-- Illustrer une gestion appropriée des erreurs et des cas limites
+- Illustrer une gestion correcte des erreurs et des cas limites
 - Utiliser des données réalistes plutôt que des valeurs fictives
-- Inclure les sorties et résultats attendus pour vérification
+- Inclure les sorties et résultats attendus à des fins de vérification
 - Tester rigoureusement tous les exemples de code avant publication
 - Préciser le langage et inclure le nom du fichier si pertinent
 - Ajouter des commentaires explicatifs pour la logique complexe
-- Ne jamais inclure de vraies clés API ou de secrets dans les exemples de code
+- Ne jamais inclure de vraies clés API ni de secrets dans les exemples de code
 
-### Exigences de la documentation API
+### Exigences pour la documentation API
 
 - Documenter tous les paramètres, y compris les optionnels, avec des descriptions claires
 - Illustrer les réponses en cas de succès et d'erreur avec des données réalistes
-- Inclure les informations de limitation de débit avec des limites précises
-- Fournir des exemples d'authentification illustrant le format approprié
+- Inclure les informations de limitation de débit avec les limites précises
+- Fournir des exemples d'authentification illustrant le format correct
 - Expliquer tous les codes de statut HTTP et la gestion des erreurs
-- Couvrir les cycles complets de requête/réponse
+- Couvrir les cycles complets requête/réponse
 
 ### Exigences d'accessibilité
 
 - Inclure un texte alternatif descriptif pour toutes les images et diagrammes
 - Utiliser un texte de lien précis et explicite plutôt que « cliquez ici »
-- Assurer une hiérarchie de titres correcte en commençant par H2
+- Veiller à une hiérarchie de titres correcte en commençant par H2
 - Prendre en compte la navigation au clavier
-- Utiliser un contraste de couleurs suffisant dans les exemples et les visuels
-- Structurer le contenu pour faciliter la lecture rapide avec des titres et des listes
+- Utiliser un contraste de couleurs suffisant dans les exemples et visuels
+- Structurer le contenu pour faciliter la lecture rapide grâce aux titres et aux listes
 
 ## Logique de sélection des composants
 
 - Utiliser **Steps** pour les procédures et les instructions séquentielles
 - Utiliser **Tabs** pour le contenu spécifique à une plateforme ou les approches alternatives
 - Utiliser **CodeGroup** pour présenter le même concept dans plusieurs langages de programmation
-- Utiliser **Accordions** pour la divulgation progressive d'informations
+- Utiliser **Accordions** pour le dévoilement progressif de l'information
 - Utiliser **RequestExample/ResponseExample** spécifiquement pour la documentation des endpoints API
 - Utiliser **ParamField** pour les paramètres API, **ResponseField** pour les réponses API
 - Utiliser **Expandable** pour les propriétés d'objets imbriqués ou les informations hiérarchiques
@@ -440,6 +440,6 @@ description: "Description concise expliquant l'objectif et la valeur de la page"
   ## Améliorez avec le serveur MCP
 </div>
 
-Connectez le serveur MCP de Mintlify à Cursor pour lui permettre de rechercher dans la documentation Mintlify tout en vous aidant à écrire. Lorsque vous connectez le serveur MCP, Cursor interroge la documentation Mintlify à jour pour obtenir du contexte, afin que vous n&#39;ayez plus à quitter votre IDE pour consulter la documentation.
+Connectez le serveur MCP de Mintlify à Cursor pour lui permettre d’effectuer des recherches dans la documentation Mintlify pendant qu’il vous aide à rédiger. Lorsque vous connectez le serveur MCP, Cursor interroge la documentation Mintlify la plus récente pour obtenir le contexte nécessaire, afin que vous n’ayez pas à quitter votre IDE pour la consulter.
 
 Consultez [Model Context Protocol](/fr/ai/model-context-protocol#example%3A-connect-to-the-mintlify-mcp-server) pour obtenir les instructions de configuration complètes.

@@ -6,19 +6,19 @@ keywords: ["componentes de React", "componentes interactivos", "JSX", "component
 
 import { ColorGenerator } from "/snippets/color-generator.jsx";
 
-[Los componentes de React](https://react.dev) son una forma potente de crear elementos interactivos y reutilizables en tu documentación.
+Los [componentes de React](https://react.dev) son una excelente manera de crear elementos interactivos y reutilizables en tu documentación.
 
 <div id="using-react-components">
   ## Uso de componentes de React
 </div>
 
-Puedes crear componentes de React directamente en tus archivos MDX utilizando los [hooks de React](https://react.dev/reference/react/hooks).
+Puedes crear componentes de React directamente en tus archivos MDX usando [hooks de React](https://react.dev/reference/react/hooks).
 
 <div id="example">
   ### Ejemplo
 </div>
 
-Este ejemplo declara un componente `Counter` y luego lo utiliza con `<Counter />`.
+En este ejemplo, se declara un componente `Counter` y luego se usa con `<Counter />`.
 
 ```mdx
 export const Counter = () => {
@@ -69,7 +69,7 @@ export const Counter = () => {
         <button
           onClick={decrement}
           className="flex items-center justify-center h-8 w-8 text-zinc-950/80 dark:text-white/80 border-r border-zinc-950/20 dark:border-white/20"
-          aria-label="Disminuir valor"
+          aria-label="Reducir"
         >
           -
         </button>
@@ -81,7 +81,7 @@ export const Counter = () => {
         <button
           onClick={increment}
           className="flex items-center justify-center h-8 w-8 text-zinc-950/80 dark:text-white/80 border-l border-zinc-950/20 dark:border-white/20"
-          aria-label="Aumentar valor"
+          aria-label="Incrementar"
         >
           +
         </button>
@@ -90,25 +90,25 @@ export const Counter = () => {
   )
 }
 
-El contador se renderiza como un componente interactivo de React.
+El contador se muestra como un componente interactivo de React.
 
 <Counter />
 
 <div id="importing-components">
-  ## Importar componentes
+  ## Importando componentes
 </div>
 
-Para importar componentes de React en tus archivos MDX, los archivos de componentes deben estar ubicados en la carpeta `/snippets/`. Obtén más información sobre los [fragmentos reutilizables](/es/create/reusable-snippets).
+Para importar componentes de React en tus archivos MDX, los archivos de componentes deben estar en la carpeta `/snippets/`. Más información sobre los [Snippets reutilizables](/es/create/reusable-snippets).
 
 <Note>
-  No se admiten importaciones anidadas. Si un componente de React hace referencia a otros componentes, debes importar todos los componentes directamente en el archivo MDX padre, en lugar de hacer importaciones dentro de los propios archivos de componentes.
+  No se admiten importaciones anidadas. Si un componente de React hace referencia a otros componentes, debes importar todos los componentes directamente en el archivo MDX principal, en lugar de importarlos dentro de los archivos de componentes.
 </Note>
 
 <div id="example">
   ### Ejemplo
 </div>
 
-Este ejemplo declara un componente `ColorGenerator` que utiliza varios hooks de React y luego lo usa en un archivo MDX.
+En este ejemplo se declara un componente `ColorGenerator` que usa varios hooks de React y luego se utiliza en un archivo MDX.
 
 Crea el archivo `color-generator.jsx` en la carpeta `snippets`:
 
@@ -208,7 +208,7 @@ export const ColorGenerator = () => {
               key={idx}
               className="h-16 rounded flex-1 cursor-pointer transition-transform hover:scale-105"
               style={{ backgroundColor: color }}
-              title={`Clic para copiar: ${color}`}
+              title={`Haz clic para copiar: ${color}`}
               onClick={() => copyToClipboard(color)}
             />
           ))}
@@ -225,7 +225,7 @@ export const ColorGenerator = () => {
 }
 ```
 
-Importa el componente `ColorGenerator` y utilízalo en un archivo de MDX:
+Importa el componente `ColorGenerator` y úsalo en un archivo MDX:
 
 ```mdx
 import { ColorGenerator } from "/snippets/color-generator.jsx"
@@ -233,7 +233,7 @@ import { ColorGenerator } from "/snippets/color-generator.jsx"
 <ColorGenerator />
 ```
 
-El generador de colores se renderiza como un componente interactivo de React.
+El generador de colores se muestra como un componente interactivo de React.
 
 <ColorGenerator />
 
@@ -243,17 +243,17 @@ El generador de colores se renderiza como un componente interactivo de React.
 
 <AccordionGroup>
   <Accordion title="Impacto del renderizado en el cliente">
-    Los componentes de React basados en hooks se renderizan en el lado del cliente, lo que tiene varias implicaciones:
+    Los componentes con hooks de React se renderizan en el cliente, lo que tiene varias implicaciones:
 
-    * **SEO**: Es posible que los motores de búsqueda no indexen completamente el contenido dinámico.
-    * **Carga inicial**: Los visitantes pueden experimentar un parpadeo mientras se carga el contenido antes de que se rendericen los componentes.
+    * **SEO**: Es posible que los motores de búsqueda no indexen por completo el contenido dinámico.
+    * **Carga inicial**: Los visitantes pueden ver brevemente un estado de carga antes de que se rendericen los componentes.
     * **Accesibilidad**: Asegúrate de que los cambios en el contenido dinámico se anuncien a los lectores de pantalla.
   </Accordion>
 
   <Accordion title="Prácticas recomendadas de rendimiento">
-    * **Optimiza los arrays de dependencias**: Incluye solo las dependencias necesarias en tus arrays de dependencias de `useEffect`.
-    * **Memoiza los cálculos complejos**: Usa `useMemo` o `useCallback` para operaciones costosas.
-    * **Reduce los re-renderizados**: Divide los componentes grandes en componentes más pequeños para evitar re-renderizados en cadena.
-    * **Carga diferida (lazy loading)**: Considera usar carga diferida para componentes complejos y así mejorar el tiempo de carga inicial de la página.
+    * **Optimiza los arrays de dependencias**: Incluye solo las dependencias necesarias en los arrays de dependencias de `useEffect`.
+    * **Memoiza cálculos complejos**: Usa `useMemo` o `useCallback` para operaciones costosas.
+    * **Reduce los re-renderizados**: Divide los componentes grandes en otros más pequeños para evitar re-renderizados en cascada.
+    * **Carga diferida**: Considera la carga diferida de componentes complejos para mejorar el tiempo de carga inicial de la página.
   </Accordion>
 </AccordionGroup>

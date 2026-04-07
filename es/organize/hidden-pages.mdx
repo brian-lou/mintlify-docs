@@ -1,14 +1,14 @@
 ---
 title: "Páginas ocultas"
-description: "Oculta páginas de la navegación manteniéndolas accesibles."
-keywords: ["ocultar de la navegación", "no listada", "visibilidad de la página"]
+description: "Oculta páginas de la navegación mientras las mantienes accesibles."
+keywords: ["ocultar de la navegación", "páginas no listadas", "visibilidad de la página"]
 ---
 
-Las páginas ocultas no se incluyen en la navegación de tu sitio, pero siguen siendo públicamente accesibles para cualquiera que conozca su URL.
+Las páginas ocultas no se incluyen en la navegación de tu sitio, pero siguen siendo accesibles públicamente para cualquiera que conozca su URL.
 
-Usa páginas ocultas para contenido que quieras que sea accesible en tu sitio o que se utilice como contexto para herramientas de IA, pero que no sea localizable a través de la navegación.
+Usa páginas ocultas para contenido que quieras que esté accesible en tu sitio o que sirva como contexto para herramientas de IA, pero que no pueda descubrirse a través de la navegación.
 
-Para contenido que requiera un control de acceso estricto, debes configurar la [autenticación](/es/deploy/authentication-setup).
+Para el contenido que requiere un control de acceso estricto, debes configurar la [autenticación](/es/deploy/authentication-setup).
 
 Para restringir páginas a grupos específicos de usuarios, configura el [control de acceso basado en grupos](/es/deploy/authentication-setup#control-access-with-groups).
 
@@ -16,21 +16,21 @@ Para restringir páginas a grupos específicos de usuarios, configura el [contro
   ## Ocultar una página
 </div>
 
-Para ocultar una página, elimínala de tu estructura de navegación. Cualquier página que no esté incluida en la navegación de tu `docs.json` quedará oculta.
+Para ocultar una página, elimínala de tu estructura de navegación. Todas las páginas que no estén incluidas en la navegación de tu `docs.json` quedarán ocultas.
 
-Las páginas ocultas usan la misma estructura de URL que las páginas normales, a partir de su ruta de archivo. Por ejemplo, `guides/hidden-page.mdx` sería accesible en `docs.yoursite.com/guides/hidden-page`.
+Las páginas ocultas usan la misma estructura de URL que las páginas normales, según la ruta del archivo. Por ejemplo, `guides/hidden-page.mdx` sería accesible en `docs.yoursite.com/guides/hidden-page`.
 
 Consulta un [ejemplo de página oculta](/es/organize/hidden-page-example).
 
 <Note>
-  Algunos elementos de navegación como barras laterales, menús desplegables y pestañas pueden aparecer vacíos o modificar su distribución en las páginas ocultas.
+  Algunos elementos de navegación, como barras laterales, menús desplegables y pestañas, pueden aparecer vacíos o alterar el diseño en las páginas ocultas.
 </Note>
 
 <div id="hiding-a-group-of-pages">
   ## Ocultar un grupo de páginas
 </div>
 
-Un grupo de páginas queda oculto si la propiedad `hidden` se establece en `true` en tu archivo `docs.json`:
+Un grupo de páginas se oculta cuando la propiedad `hidden` se establece en `true` en tu archivo `docs.json`:
 
 ```json highlight={4}
 "groups": [
@@ -52,13 +52,13 @@ Un grupo de páginas queda oculto si la propiedad `hidden` se establece en `true
 ]
 ```
 
-En este ejemplo, el grupo `Getting started` está oculto, pero el grupo `Guides` está visible.
+En este ejemplo, el grupo `Getting started` está oculto, pero el grupo `Guides` se muestra.
 
 <div id="hiding-a-tab">
   ### Ocultar una pestaña
 </div>
 
-También puedes ocultar una pestaña añadiendo la propiedad `hidden` al archivo `docs.json`:
+También puedes ocultar una pestaña añadiendo la propiedad `hidden` a tu archivo `docs.json`:
 
 ```json highlight={4}
 "tabs": [
@@ -77,7 +77,7 @@ También puedes ocultar una pestaña añadiendo la propiedad `hidden` al archivo
   ## Búsqueda, SEO e indexación con IA
 </div>
 
-De forma predeterminada, las páginas ocultas se excluyen de la indexación para los motores de búsqueda, la búsqueda interna de tu documentación y como contexto para el asistente de IA. Para incluir páginas ocultas en los resultados de búsqueda y como contexto para el asistente, agrega la propiedad `seo` a tu `docs.json`:
+De forma predeterminada, las páginas ocultas se excluyen de la indexación en los motores de búsqueda, de la búsqueda interna de tu documentación y del contexto del asistente de IA. Para incluir páginas ocultas en los resultados de búsqueda y como contexto para el asistente, agrega la propiedad `seo` a tu `docs.json`:
 
 ```json
 "seo": {
@@ -85,4 +85,4 @@ De forma predeterminada, las páginas ocultas se excluyen de la indexación para
 }
 ```
 
-Para excluir una página específica, añade `noindex: true` al frontmatter de esa página.
+Para excluir una página específica, añade `noindex: true` a su frontmatter.

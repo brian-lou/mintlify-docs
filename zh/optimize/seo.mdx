@@ -1,44 +1,44 @@
 ---
 title: "SEO"
-description: "通过配置 meta 标签优化 SEO，提升搜索可见性。"
-keywords: ["meta tags", "sitemap", "robots.txt", "SEO", "search engine optimization"]
+description: "通过配置元标签来优化 SEO，提升搜索可见性。"
+keywords: ["元标签", "站点地图", "robots.txt", "SEO", "搜索引擎优化"]
 ---
 
 Mintlify 会自动处理许多 SEO 最佳实践，包括：
 
-* meta 标签生成
-* 网站地图（sitemap）和 `robots.txt` 文件生成
+* 生成元标签
+* 生成站点地图和 `robots.txt` 文件
 * 语义化 HTML 结构
 * 移动端优化
 
-你可以通过在 `docs.json` 或页面的 frontmatter 中添加 `metatags` 字段，完全自定义站点的 meta 标签。
+你可以通过在 `docs.json` 或页面的前置元数据中添加 `metatags` 字段，完全自定义站点的元标签。
 
 <div id="automatically-generated-meta-tags">
-  ## 自动生成的 meta 标签
+  ## 自动生成的元标签
 </div>
 
-Mintlify 会为每个页面生成以下 meta 标签。你可以在 `docs.json` 或页面的 frontmatter 中指定它们来覆盖这些默认值。
+Mintlify 会为每个页面自动生成以下元标签。你可以在 `docs.json` 或页面的前置元数据中显式指定这些元标签，以覆盖默认值。
 
 **基础元数据：**
 
 * `charset: utf-8` - 字符编码
 * `og:type: website` - Open Graph 类型
-* `og:site_name` - 文档站点名称
+* `og:site_name` - 你的文档站点名称
 * `twitter:card: summary_large_image` - Twitter 卡片类型
 
 **页面级元数据：**
 
-* `title` - 页面标题，格式为 &quot;Page Title - Site Name&quot;
+* `title` - 页面标题，格式为“页面标题 - 站点名称”
 * `og:title` - Open Graph 标题，与页面标题相同
 * `twitter:title` - Twitter 标题，与页面标题相同
 * `description` - 页面描述
 * `og:description` - Open Graph 描述，与页面描述相同
 * `twitter:description` - Twitter 描述，与页面描述相同
 
-**URL 和 canonical：**
+**URL 和规范链接：**
 
 * `canonical` - 根据页面 URL 自动生成
-* `og:url` - 设置为 canonical URL
+* `og:url` - 设为规范 URL
 
 **SEO 和索引：**
 
@@ -53,20 +53,20 @@ Mintlify 会为每个页面生成以下 meta 标签。你可以在 `docs.json` �
 
 **浏览器和应用元数据：**
 
-* `applicationName` - 文档站点名称
-* `generator: Mintlify` - 标识站点生成器为 Mintlify
+* `applicationName` - 你的文档站点名称
+* `generator: Mintlify` - 标明站点生成器为 Mintlify
 * `apple-mobile-web-app-title` - iOS 主屏幕应用名称
 * `msapplication-TileColor` - Windows 磁贴颜色
-* 来自你配置的 favicon 和图标
-* 站点地图（sitemap）引用链接
+* 来自你的配置的 favicon 和图标
+* 站点地图引用链接
 
-`docs.json` 中 `seo.metatags` 配置里的任何 meta 标签也会自动注入到每个页面，例如用于搜索控制台验证的 `google-site-verification`。
+此外，你在 `docs.json` 的 `seo.metatags` 配置中定义的任何元标签，也会自动注入到每个页面中，例如用于 Search Console 验证的 `google-site-verification`。
 
 <div id="global-meta-tags">
-  ## 全局 Meta 标签
+  ## 全局元标签
 </div>
 
-要为所有页面设置默认的 Meta 标签，请在你的 `docs.json` 文件中添加 `metatags` 字段。
+要为所有页面设置默认的元标签，请在 `docs.json` 中添加 `metatags` 字段。
 
 ```json
 "seo": {
@@ -77,10 +77,10 @@ Mintlify 会为每个页面生成以下 meta 标签。你可以在 `docs.json` �
 ```
 
 <div id="set-a-canonical-url">
-  ### 设置规范 URL（canonical URL）
+  ### 设置规范 URL
 </div>
 
-如果你使用自定义域名，请设置 `canonical` meta 标签，以确保搜索引擎将你首选的域名编入索引。规范 URL 会告诉搜索引擎你的文档哪个版本是主要版本。当你的文档可以通过多个 URL 访问时，这有助于提升 SEO，并防止出现重复内容问题。
+如果你使用自定义域名，请设置 `canonical` 元标签，确保搜索引擎将你首选的域名编入索引。规范 URL 会告知搜索引擎，你的文档以哪个版本为主。当文档可通过多个 URL 访问时，这样做有助于提升 SEO，并避免重复内容问题。
 
 ```json
 "seo": {
@@ -91,15 +91,15 @@ Mintlify 会为每个页面生成以下 meta 标签。你可以在 `docs.json` �
 ```
 
 <div id="page-specific-meta-tags">
-  ## 特定页面的 meta 标签
+  ## 页面专用 元标签
 </div>
 
-要设置特定页面的 meta 标签，请将它们添加到页面的 frontmatter 中。
+要设置页面专用的 元标签，请将其添加到页面的前置元数据中。
 
-页面级别支持以下 meta 标签：
+以下 元标签支持在页面级别设置：
 
 * `title` - 页面标题
-* `description` - 页面描述，会显示在页面标题下方以及部分搜索引擎结果中
+* `description` - 页面描述，显示在页面标题下方，也会出现在部分搜索引擎结果中
 * `keywords` - 以逗号分隔的关键词
 * `og:title` - 用于社交分享的 Open Graph 标题
 * `og:description` - Open Graph 描述
@@ -115,8 +115,8 @@ Mintlify 会为每个页面生成以下 meta 标签。你可以在 `docs.json` �
 * `twitter:site` - Twitter 站点账号
 * `twitter:image:width` - Twitter 图片宽度
 * `twitter:image:height` - Twitter 图片高度
-* `noindex` - 设为 `true` 以防止被搜索引擎收录
-* `robots` - Robots meta 标签的值
+* `noindex` - 设为 `true` 可防止被搜索引擎收录
+* `robots` - Robots 元标签的值
 
 ```mdx
 ---
@@ -129,20 +129,20 @@ keywords: ["keyword1", "keyword2"]
 ```
 
 <Note>
-  含有冒号的 meta 标签必须用引号括起来。`keywords` 字段必须写成 YAML 数组的形式。
+  含有冒号的元标签必须用引号括起来。`keywords` 字段必须写成 YAML 数组格式。
 </Note>
 
 <div id="common-meta-tags-reference">
-  ## 常用 meta 标签参考
+  ## 常见 元标签参考
 </div>
 
-下面是可以添加到 `docs.json` 中的 meta 标签的完整清单。这些 meta 标签有助于提升你网站在 SEO、社交分享和浏览器兼容性方面的表现。
+以下汇总了可添加到你的 `docs.json` 中的常用 元标签。这些标签有助于提升网站的 SEO、社交分享效果和浏览器兼容性。
 
 <Note>
-  `og:image` 会添加一张背景图片，Mintlify 在生成社交媒体预览时，会自动将你的 logo、页面标题和描述叠加到这张图片上。
+  `og:image` 会添加一张背景图。Mintlify 在生成社交媒体预览时，会自动将你的 logo、页面标题和描述叠加到这张图片上。
 </Note>
 
-你可以使用 [metatags.io](https://metatags.io/) 预览你的 meta 标签在不同平台上的展示效果。
+你可以使用 [metatags.io](https://metatags.io/) 预览这些 元标签在不同平台上的显示效果。
 
 ```json expandable
 "seo": {
@@ -242,9 +242,9 @@ keywords: ["keyword1", "keyword2"]
   ## 站点地图和 robots.txt 文件
 </div>
 
-Mintlify 会自动生成一个 `sitemap.xml` 文件和一个 `robots.txt` 文件。你可以在文档站点的 URL 后追加 `/sitemap.xml` 来查看你的站点地图。
+Mintlify 会自动生成 `sitemap.xml` 文件和 `robots.txt` 文件。你可以在文档站点 URL 后追加 `/sitemap.xml` 来查看站点地图。
 
-默认情况下，只有包含在 `docs.json` 中的页面才会被纳入 sitemap。要将隐藏链接也包含进来，请在 `docs.json` 中添加 `seo.indexing`：
+默认只会包含 `docs.json` 中列出的页面。若要包含隐藏链接，请在 `docs.json` 中添加 `seo.indexing`：
 
 ```json
 "seo": {
@@ -256,13 +256,13 @@ Mintlify 会自动生成一个 `sitemap.xml` 文件和一个 `robots.txt` 文件
   ### 自定义 sitemap 和 robots.txt 文件
 </div>
 
-要添加自定义的 `sitemap.xml` 或 `robots.txt` 文件，请在项目的根目录下创建一个 `sitemap.xml` 或 `robots.txt` 文件。添加自定义文件会覆盖同名的自动生成的文件。如果你删除了自定义文件，系统会恢复使用默认文件。
+如需添加自定义 `sitemap.xml` 或 `robots.txt` 文件，请在项目根目录下创建相应的 `sitemap.xml` 或 `robots.txt` 文件。添加自定义文件后，会覆盖自动生成的同名文件。删除自定义文件后，则会恢复使用默认文件。
 
 <div id="disabling-indexing">
-  ## 禁止收录
+  ## 禁止索引
 </div>
 
-如果你想阻止某个页面被搜索引擎收录，可以在页面的 [frontmatter](/zh/organize/pages) 中加入以下内容：
+如果你想阻止搜索引擎收录某个页面，可以在该页面的[前置元数据](/zh/organize/pages)中加入以下内容：
 
 ```
 ---
@@ -270,7 +270,7 @@ noindex: true
 ---
 ```
 
-你也可以在 `docs.json` 中将 `metatags.robots` 字段设置为 `"noindex"`，从而为文档中的所有页面指定 `noindex`：
+你还可以在 `docs.json` 中将 `metatags.robots` 字段设为 `"noindex"`，为文档中的所有页面设置 `noindex`：
 
 ```json
 "seo": {
@@ -286,31 +286,31 @@ noindex: true
 
 <AccordionGroup>
   <Accordion title="撰写清晰的标题和描述">
-    * 使用清晰、描述性强的页面标题（50–60 个字符）
-    * 撰写有吸引力的描述（150–160 个字符）
+    * 使用清晰、明确的页面标题 (50–60 个字符)
+    * 撰写有吸引力的页面描述 (150–160 个字符)
     * 包含相关关键词
-    * 确保每个页面标题和描述都是唯一的
+    * 确保每个页面的标题和描述都各不相同
   </Accordion>
 
   <Accordion title="优化内容结构">
-    * 使用正确的标题层级（H1 → H2 → H3）
-    * 写作时先考虑读者，再考虑搜索引擎
-    * 在标题和正文中包含相关关键词
-    * 保持 URL 简短、具描述性，并按层级结构组织
-    * 使用小标题和列表拆分较长内容
+    * 使用正确的标题层级 (H1 → H2 → H3)
+    * 优先为人而写，其次才考虑搜索引擎
+    * 在标题和正文中加入相关关键词
+    * 保持 URL 简短、清晰，并按层级组织
+    * 使用小标题和列表拆分长篇内容
   </Accordion>
 
   <Accordion title="内部链接策略">
     * 在文档中链接到相关页面
-    * 使用具描述性的锚文本，而不是 “click here”
-    * 通过链接相关概念创建主题集群
+    * 使用描述性的锚文本，而不是“点击这里”
+    * 通过链接相关概念构建主题集群
     * 使用自动交叉引用功能
   </Accordion>
 
   <Accordion title="图片 SEO">
-    * 为图片使用具描述性的文件名
-    * 始终为图片添加用于无障碍访问和 SEO 的替代文本（alt 文本）
-    * 优化图片文件大小以加快加载速度
-    * 使用与内容相关、起到辅助说明作用的图片
+    * 为图片使用清晰的文件名
+    * 始终添加 alt 文本，以提升无障碍性和 SEO 效果
+    * 优化图片文件大小，加快加载速度
+    * 使用与内容相关且有助于说明内容的图片
   </Accordion>
 </AccordionGroup>

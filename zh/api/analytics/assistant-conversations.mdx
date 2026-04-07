@@ -4,26 +4,26 @@ keywords: [ "分析", "助手", "会话", "导出", "AI" ]
 ---
 
 <div id="usage">
-  ## 使用方法
+  ## 用法
 </div>
 
-使用此接口从文档中导出 AI 助手的对话历史。每个对话包含用户查询、助手回复、引用的来源以及查询类别。
+使用此端点可从你的文档中导出 AI 助手的对话历史。每条对话都包含用户查询、助手回复、引用来源和查询类别。
 
-使用响应中返回的 `cursor` 参数对结果进行分页；当 `hasMore` 为 `true` 时继续获取。
+使用响应中返回的 `cursor` 参数对结果进行分页。在 `hasMore` 为 `true` 时，继续拉取数据。
 
 <div id="filtering">
-  ## 过滤
+  ## 筛选
 </div>
 
 使用 `dateFrom` 和 `dateTo` 参数按日期范围筛选对话。
 
 <div id="conversation-data">
-  ## 会话数据
+  ## 对话数据
 </div>
 
-每个会话包括：
+每条对话包含：
 
-- **query**: 用户的问题
-- **response**: 助手的回答
-- **sources**: 回答中引用的页面，其标题和 URL
-- **queryCategory**: 查询类型分类（如有）
+* **query**：用户的问题
+* **response**：助手的回答
+* **sources**：回答中引用的页面，包含标题和 URL
+* **queryCategory**：查询类型的分类 (如有)

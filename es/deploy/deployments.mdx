@@ -1,26 +1,26 @@
 ---
 title: "Despliegues"
-description: "Administra despliegues, consulta el historial y supervisa el estado."
-keywords: ["despliegue manual", "historial de despliegues", "disparadores de despliegue", "eliminar despliegue"]
+description: "Administra los despliegues, consulta el historial y supervisa el estado."
+keywords: ["despliegue manual", "historial de despliegues", "desencadenadores de despliegue", "eliminar despliegue"]
 ---
 
-Tu sitio de documentación se despliega automáticamente cuando haces push de cambios a tu repositorio conectado. Esto requiere que la aplicación de GitHub de Mintlify esté correctamente instalada y conectada.
+Tu sitio de documentación se despliega automáticamente cuando envías cambios a tu repositorio conectado. Para ello, la GitHub App de Mintlify debe estar instalada y conectada correctamente.
 
-Si tus últimos cambios no aparecen en tu sitio en producción, primero verifica que la cuenta u organización de GitHub propietaria del repositorio de documentación tenga instalada la aplicación de GitHub. Consulta la sección de [solución de problemas de GitHub](/es/deploy/github#troubleshooting) para obtener más información.
+Si tus cambios más recientes no aparecen en tu sitio publicado, primero verifica que la cuenta u organización de GitHub propietaria de tu repositorio de documentación tenga instalada la GitHub App. Consulta [la guía de solución de problemas de GitHub](/es/deploy/github#troubleshooting) para obtener más información.
 
-Si tienes la aplicación de GitHub instalada, pero los cambios aún no se están desplegando, inicia manualmente un despliegue desde tu panel de control.
+Si tienes instalada la GitHub App, pero los cambios siguen sin desplegarse, activa manualmente un despliegue desde tu panel.
 
 <div id="manually-trigger-a-deployment">
-  ## Iniciar un despliegue manualmente
+  ## Activar manualmente un despliegue
 </div>
 
 <Steps>
-  <Step title="Verifica que tu commit más reciente se haya realizado correctamente.">
-    Comprueba que tu commit más reciente aparezca en tu repositorio de documentación y que se haya completado sin errores.
+  <Step title="Verifica que tu commit más reciente se haya completado correctamente.">
+    Comprueba que tu commit más reciente aparezca en tu repositorio de documentación y que no haya habido ningún error.
   </Step>
 
-  <Step title="Inicia un despliegue manualmente.">
-    Ve a tu [dashboard](https://dashboard.mintlify.com) y selecciona el botón de deploy.
+  <Step title="Activa manualmente un despliegue.">
+    Ve a tu [panel](https://dashboard.mintlify.com) y selecciona el botón de despliegue.
 
     <Frame>
       <img src="/images/deployments/manual-update-light.png" alt="El botón de actualización manual resaltado con un rectángulo naranja." className="block dark:hidden" />
@@ -31,24 +31,24 @@ Si tienes la aplicación de GitHub instalada, pero los cambios aún no se están
 </Steps>
 
 <div id="delete-a-deployment">
-  ## Eliminar un deployment
+  ## Eliminar un despliegue
 </div>
 
-Puedes eliminar permanentemente un deployment desde la [Danger zone](https://dashboard.mintlify.com/settings/organization/danger-zone) en la configuración de tu panel de control. Esta acción es irreversible y elimina todos los datos del deployment, incluidos todos los deployments de vista previa asociados.
+Puedes eliminar permanentemente un despliegue desde la [Zona de peligro](https://dashboard.mintlify.com/settings/organization/danger-zone) en la configuración de tu panel. Esta acción es irreversible y elimina todos los datos del despliegue, incluidos los despliegues de vista previa asociados.
 
 <Steps>
-  <Step title="Ve a la Danger zone.">
-    Ve a la [Danger zone](https://dashboard.mintlify.com/settings/organization/danger-zone) en la página de configuración de tu panel de control.
+  <Step title="Ve a la Zona de peligro.">
+    Ve a la [Zona de peligro](https://dashboard.mintlify.com/settings/organization/danger-zone) en la página de configuración de tu panel.
   </Step>
 
-  <Step title="Elimina el deployment.">
-    1. En la sección **Delete my deployment**, indica un motivo para la eliminación.
-    2. Haz clic en el botón de eliminar y confirma que quieres eliminar el deployment.
+  <Step title="Elimina el despliegue.">
+    1. En la sección **Eliminar mi despliegue**, indica el motivo de la eliminación.
+    2. Haz clic en el botón de eliminar y confirma que quieres eliminar el despliegue.
   </Step>
 </Steps>
 
 <Warning>
-  Eliminar un deployment es permanente y no se puede deshacer. Si tienes una suscripción activa, recibirás un crédito prorrateado por cualquier tiempo no utilizado que quede en tu período de facturación.
+  Eliminar un despliegue es permanente y no se puede deshacer. Si tienes una suscripción activa, recibirás un crédito prorrateado por el tiempo no utilizado que quede en tu período de facturación.
 </Warning>
 
-Si tienes varios deployments, se te redirigirá a otro deployment después de eliminarlo. Si eliminas tu único deployment, se te redirigirá a la página de inicio de Mintlify. Cuando elimines un deployment, el administrador de la organización recibirá una notificación por correo electrónico que confirmará la eliminación.
+Si tienes varios despliegues, se te redirigirá a otro despliegue después de la eliminación. Si eliminas tu único despliegue, se te redirigirá a la página principal de Mintlify. Cuando eliminas un despliegue, el administrador de la organización recibe una notificación por correo electrónico que confirma la eliminación.

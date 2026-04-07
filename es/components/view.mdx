@@ -1,15 +1,36 @@
 ---
-title: "Vista"
-description: "Crea contenido con múltiples vistas para diferentes lenguajes de programación o frameworks."
-keywords: ["selector", "contenido específico por lenguaje", "cambio de contenido"]
+title: "View"
+description: "Crea contenido con varias vistas para distintos lenguajes de programación o frameworks."
+keywords: ["selector", "contenido específico del lenguaje", "cambio de contenido"]
 ---
 
-Usa el componente `View` para crear contenido que cambia según la vista seleccionada en un menú desplegable con varias vistas. Es especialmente útil para mostrar ejemplos de código o documentación específica para distintos lenguajes de programación o frameworks.
+Usa el componente `View` para crear contenido que cambia según la vista seleccionada en un menú desplegable de varias vistas. Esto resulta especialmente útil para mostrar ejemplos de código o documentación específicos de distintos lenguajes de programación o frameworks.
 
 <Tip>
-  Usa un componente View por lenguaje en cada página. Usa [tabs](/es/components/tabs) para procedimientos que varían según el lenguaje y [code groups](/es/components/code-groups) para ejemplos de código que varían según el lenguaje.
+  Usa un componente `View` por lenguaje en cada página. Usa [pestañas](/es/components/tabs) para procedimientos que varían según el lenguaje y [grupos de código](/es/components/code-groups) para ejemplos de código que varían según el lenguaje.
 </Tip>
 
+<View title="JavaScript" icon="js">
+  Este contenido solo se muestra cuando se selecciona JavaScript.
+
+  ```javascript
+  console.log("Hello from JavaScript!");
+  ```
+</View>
+
+<View title="Python" icon="python">
+  Este contenido solo se muestra cuando se selecciona Python.
+
+  ```python
+  print("Hello from Python!")
+  ```
+</View>
+
+<div id="example">
+  ## Ejemplo
+</div>
+
+````mdx JavaScript and Python views
 <View title="JavaScript" icon="js">
   Este contenido solo es visible cuando se selecciona JavaScript.
 
@@ -25,49 +46,28 @@ Usa el componente `View` para crear contenido que cambia según la vista selecci
   print("Hello from Python!")
   ```
 </View>
-
-<div id="example">
-  ## Ejemplo
-</div>
-
-````mdx JavaScript and Python views
-<View title="JavaScript" icon="js">
-  Este contenido solo es visible cuando JavaScript está seleccionado.
-
-  ```javascript
-  console.log("Hello from JavaScript!");
-  ```
-</View>
-
-<View title="Python" icon="python">
-  Este contenido solo es visible cuando Python está seleccionado.
-
-  ```python
-  print("Hello from Python!")
-  ```
-</View>
 ````
 
 <div id="table-of-contents-behavior">
   ## Comportamiento de la tabla de contenidos
 </div>
 
-La tabla de contenidos se actualiza automáticamente para mostrar solo los encabezados de la vista seleccionada en ese momento. Cuando cambias entre vistas usando el menú desplegable de vistas múltiples, la tabla de contenidos se actualiza para mostrar los encabezados relevantes para esa vista.
+La tabla de contenidos se actualiza automáticamente para mostrar solo los encabezados de la vista seleccionada. Cuando cambias de vista con el menú desplegable de varias vistas, la tabla de contenidos se actualiza para mostrar los encabezados correspondientes a esa vista.
 
-Si tienes estructuras de encabezados diferentes en cada vista, los usuarios solo verán los encabezados que sean relevantes para el idioma o framework que hayan seleccionado.
+Si tienes estructuras de encabezados diferentes en cada vista, los usuarios solo verán los encabezados relevantes para el idioma o framework que hayan seleccionado.
 
 <div id="properties">
   ## Propiedades
 </div>
 
 <ResponseField name="title" type="string" required>
-  El título que identifica esta vista. Debe coincidir con una de las opciones del menú desplegable de vistas múltiples.
+  El título que identifica esta vista. Debe coincidir con una de las opciones del menú desplegable de varias vistas.
 </ResponseField>
 
 <ResponseField name="icon" type="string">
-  Un ícono de [Font Awesome](https://fontawesome.com/icons), un ícono de [Lucide](https://lucide.dev/icons), una URL de un ícono o una ruta relativa a un ícono.
+  Un icono de [Font Awesome](https://fontawesome.com/icons), un icono de [Lucide](https://lucide.dev/icons), una URL de un icono o una ruta relativa a un icono.
 </ResponseField>
 
 <ResponseField name="iconType" type="string">
-  Solo para íconos de Font Awesome: uno de `regular`, `solid`, `light`, `thin`, `sharp-solid`, `duotone`, `brands`.
+  Solo para iconos de Font Awesome: uno de estos valores: `regular`, `solid`, `light`, `thin`, `sharp-solid`, `duotone`, `brands`.
 </ResponseField>

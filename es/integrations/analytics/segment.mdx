@@ -1,27 +1,25 @@
 ---
 title: "Segment"
-description: "Envía eventos de analítica a Segment y a las herramientas posteriores."
-keywords: ["integración con Segment", "write key", "event streaming", "integración con CDP"]
+description: "Envía eventos de analítica a Segment y a las herramientas conectadas."
+keywords: ["integración de Segment", "write key", "streaming de eventos", "integración de CDP"]
 ---
 
-Añade tu write key de Segment a tu archivo `docs.json` para enviar datos de analítica a Segment.
+Añade la write key de Segment a tu archivo `docs.json` para enviar analítica a Segment.
 
 <CodeGroup>
+  ```json Opciones de analítica en docs.json
+  "integrations": {
+      "segment": {
+          "key": "required",
+      }
+  }
+  ```
 
-```json Analytics options in docs.json
-"integrations": {
-    "segment": {
-        "key": "required",
-    }
-}
-```
-
-```json Example
-"integrations": {
-    "segment": {
-        "key": "nqJxiRG15Y6M594P8Sb8ESEciU3VC2"
-    }
-}
-```
-
+  ```json Ejemplo
+  "integrations": {
+      "segment": {
+          "key": "nqJxiRG15Y6M594P8Sb8ESEciU3VC2"
+      }
+  }
+  ```
 </CodeGroup>

@@ -1,29 +1,29 @@
 ---
 title: "Mermaid"
-description: "Créez des organigrammes, des diagrammes et des visualisations avec la syntaxe Mermaid."
-keywords: ["Mermaid", "organigrammes", "diagrammes"]
+description: "Créez des diagrammes de flux, des diagrammes et des visualisations avec la syntaxe Mermaid."
+keywords: ["Mermaid", "diagrammes de flux", "diagrammes"]
 ---
 
-[Mermaid](https://mermaid.js.org/) vous permet de créer des organigrammes, des diagrammes de séquence, des diagrammes de Gantt et d&#39;autres diagrammes en utilisant du texte et du code.
+[Mermaid](https://mermaid.js.org/) vous permet de créer des diagrammes de flux, des diagrammes de séquence, des diagrammes de Gantt et d&#39;autres visualisations à partir de texte et de code.
 
-Pour la liste complète des types de diagrammes pris en charge et de leur syntaxe, consultez la [documentation Mermaid](https://mermaid.js.org/intro/).
+Pour consulter la liste complète des types de diagrammes pris en charge et de leur syntaxe, reportez-vous à la [documentation Mermaid](https://mermaid.js.org/intro/).
 
 ```mermaid placement="top-right"
   flowchart LR
-    subgraph subgraph1
+    subgraph Sous-graphe 1
         direction TB
-        top1[top] --> bottom1[bottom]
+        top1[Haut] --> bottom1[Bas]
     end
-    subgraph subgraph2
+    subgraph Sous-graphe 2
         direction TB
-        top2[top] --> bottom2[bottom]
+        top2[Haut] --> bottom2[Bas]
     end
-    %% ^ Ces sous-graphes sont identiques, à l'exception des liens qui y mènent :
+    %% ^ These subgraphs are identical, except for the links to them:
 
-    %% Lien *vers* subgraph1 : la direction de subgraph1 est conservée
+    %% Link *to* subgraph1: subgraph1 direction is maintained
     outside --> subgraph1
-    %% Lien *à l'intérieur de* subgraph2 :
-    %% subgraph2 hérite de la direction du graphe de niveau supérieur (LR)
+    %% Link *within* subgraph2:
+    %% subgraph2 inherits the direction of the top-level graph (LR)
     outside ---> top2
 ```
 
@@ -42,7 +42,7 @@ Pour la liste complète des types de diagrammes pris en charge et de leur syntax
 
     %% Lien *vers* subgraph1 : la direction de subgraph1 est conservée
     outside --> subgraph1
-    %% Lien *dans* subgraph2 :
+    %% Lien *à l'intérieur de* subgraph2 :
     %% subgraph2 hérite de la direction du graphe de niveau supérieur (LR)
     outside ---> top2
 ```
@@ -53,31 +53,31 @@ Pour la liste complète des types de diagrammes pris en charge et de leur syntax
   ## Contrôles interactifs
 </div>
 
-Tous les diagrammes Mermaid incluent des contrôles interactifs de zoom et de déplacement. Par défaut, les contrôles apparaissent lorsque la hauteur du diagramme dépasse 120px.
+Tous les diagrammes Mermaid incluent des contrôles interactifs de zoom et de déplacement. Par défaut, ces contrôles apparaissent lorsque la hauteur du diagramme dépasse 120px.
 
-- **Zoom avant/arrière** : utilisez les boutons de zoom pour augmenter ou diminuer l’échelle du diagramme.
-- **Déplacement** : utilisez les flèches directionnelles pour vous déplacer dans le diagramme.
-- **Réinitialiser la vue** : cliquez sur le bouton de réinitialisation pour revenir à la vue initiale.
+* **Zoom avant/arrière**: utilisez les boutons de zoom pour augmenter ou réduire l’échelle du diagramme.
+* **Déplacement**: utilisez les flèches directionnelles pour naviguer dans le diagramme.
+* **Réinitialiser la vue**: cliquez sur le bouton de réinitialisation pour revenir à la vue d’origine.
 
-Les contrôles sont particulièrement utiles pour les diagrammes de grande taille ou complexes qui ne tiennent pas entièrement dans la zone d’affichage.
+Ces contrôles sont particulièrement utiles pour les diagrammes volumineux ou complexes qui ne tiennent pas entièrement dans la zone d’affichage.
 
 <div id="properties">
   ## Propriétés
 </div>
 
 <ResponseField name="actions" type="boolean">
-  Affiche ou masque les contrôles interactifs. Lorsqu’elle est activée, cette propriété remplace le comportement par défaut (contrôles affichés lorsque la hauteur du diagramme dépasse 120&nbsp;px).
+  Affiche ou masque les contrôles interactifs. Lorsqu’elle est définie, cette option remplace le comportement par défaut (les contrôles s’affichent lorsque la hauteur du diagramme dépasse 120px).
 </ResponseField>
 
 <ResponseField name="placement" type="string" default="bottom-right">
-  Position des contrôles interactifs. Options&nbsp;: `top-left`, `top-right`, `bottom-left`, `bottom-right`.
+  Position des contrôles interactifs. Options : `top-left`, `top-right`, `bottom-left`, `bottom-right`.
 </ResponseField>
 
 <div id="examples">
   ### Exemples
 </div>
 
-Masquer les contrôles sur un diagramme :
+Masquer les contrôles d’un diagramme :
 
 ````mdx
 ```mermaid actions={false}
@@ -86,7 +86,7 @@ flowchart LR
 ```
 ````
 
-Afficher les commandes dans le coin supérieur gauche :
+Affichez les contrôles en haut à gauche :
 
 ````mdx
 ```mermaid placement="top-left"
@@ -95,7 +95,7 @@ flowchart LR
 ```
 ````
 
-Combinez les deux propriétés :
+Combinez ces deux propriétés :
 
 ````mdx
 ```mermaid placement="top-left" actions={true}
@@ -109,7 +109,7 @@ flowchart LR
   ## Syntaxe
 </div>
 
-Pour créer un diagramme Mermaid, écrivez la définition de votre diagramme dans un bloc de code Mermaid.
+Pour créer un diagramme Mermaid, écrivez sa définition dans un bloc de code Mermaid.
 
 ````mdx
 ```mermaid

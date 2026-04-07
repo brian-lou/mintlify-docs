@@ -1,24 +1,24 @@
 ---
 title: "React"
-description: "使用 React 组件构建交互且可复用的界面元素。"
+description: "使用 React 组件构建可交互、可复用的元素。"
 keywords: ["React 组件", "交互式组件", "JSX", "自定义组件"]
 ---
 
 import { ColorGenerator } from "/snippets/color-generator.jsx";
 
-[React components](https://react.dev) 是在文档中创建交互式、可复用元素的一种强大手段。
+[React components](https://react.dev) 是在文档中创建交互式和可复用元素的强大方式。
 
 <div id="using-react-components">
   ## 使用 React 组件
 </div>
 
-你可以在 MDX 文件中直接使用 [React Hook](https://react.dev/reference/react/hooks) 来编写 React 组件。
+你可以借助 [React hooks](https://react.dev/reference/react/hooks) 直接在 MDX 文件中创建 React 组件。
 
 <div id="example">
   ### 示例
 </div>
 
-下面的示例先声明一个 `Counter` 组件，然后使用 `<Counter />`。
+此示例声明了一个 `Counter` 组件，然后通过 `<Counter />` 使用它。
 
 ```mdx
 export const Counter = () => {
@@ -69,7 +69,7 @@ export const Counter = () => {
         <button
           onClick={decrement}
           className="flex items-center justify-center h-8 w-8 text-zinc-950/80 dark:text-white/80 border-r border-zinc-950/20 dark:border-white/20"
-          aria-label="减一"
+          aria-label="减少"
         >
           -
         </button>
@@ -81,7 +81,7 @@ export const Counter = () => {
         <button
           onClick={increment}
           className="flex items-center justify-center h-8 w-8 text-zinc-950/80 dark:text-white/80 border-l border-zinc-950/20 dark:border-white/20"
-          aria-label="加一"
+          aria-label="增加"
         >
           +
         </button>
@@ -90,7 +90,7 @@ export const Counter = () => {
   )
 }
 
-计数器会渲染为一个交互式的 React 组件。
+计数器会显示为一个可交互的 React 组件。
 
 <Counter />
 
@@ -98,19 +98,19 @@ export const Counter = () => {
   ## 导入组件
 </div>
 
-要在 MDX 文件中导入 React 组件，这些组件文件必须放在 `/snippets/` 文件夹中。了解更多关于[可复用代码片段](/zh/create/reusable-snippets)的信息。
+要在 MDX 文件中导入 React 组件，组件文件必须位于 `/snippets/` 文件夹中。详细了解[可复用片段](/zh/create/reusable-snippets)。
 
 <Note>
-  不支持嵌套导入。如果某个 React 组件引用了其他组件，你必须将所有组件直接导入到父级 MDX 文件中，而不是在组件文件内部再导入组件。
+  不支持嵌套导入。如果某个 React 组件引用了其他组件，你必须将所有组件直接导入父级 MDX 文件，而不是在组件文件内部导入。
 </Note>
 
 <div id="example">
   ### 示例
 </div>
 
-本示例声明了一个 `ColorGenerator` 组件，它使用了多个 React hooks，然后在一个 MDX 文件中使用该组件。
+这个示例定义了一个使用多个 React hooks 的 `ColorGenerator` 组件，并在 MDX 文件中使用它。
 
-在 `snippets` 文件夹中创建一个名为 `color-generator.jsx` 的文件：
+在 `snippets` 文件夹中创建 `color-generator.jsx` 文件：
 
 ```mdx /snippets/color-generator.jsx [expandable]
 export const ColorGenerator = () => {
@@ -132,10 +132,10 @@ export const ColorGenerator = () => {
     navigator.clipboard
       .writeText(color)
       .then(() => {
-        console.log(`Copied ${color} to clipboard!`)
+        console.log(`已复制 ${color} 到剪贴板！`)
       })
       .catch((err) => {
-        console.error("Failed to copy: ", err)
+        console.error("复制失败：", err)
       })
   }
 
@@ -144,7 +144,7 @@ export const ColorGenerator = () => {
       <div className="space-y-4">
         <div className="space-y-2">
           <label className="block text-sm text-zinc-950/70 dark:text-white/70">
-            色相: {hue}°
+            色相：{hue}°
             <input
               type="range"
               min="0"
@@ -166,7 +166,7 @@ export const ColorGenerator = () => {
           </label>
 
           <label className="block text-sm text-zinc-950/70 dark:text-white/70">
-            饱和度: {saturation}%
+            饱和度：{saturation}%
             <input
               type="range"
               min="0"
@@ -184,7 +184,7 @@ export const ColorGenerator = () => {
           </label>
 
           <label className="block text-sm text-zinc-950/70 dark:text-white/70">
-            亮度: {lightness}%
+            亮度：{lightness}%
             <input
               type="range"
               min="0"
@@ -208,7 +208,7 @@ export const ColorGenerator = () => {
               key={idx}
               className="h-16 rounded flex-1 cursor-pointer transition-transform hover:scale-105"
               style={{ backgroundColor: color }}
-              title={`点击复制: ${color}`}
+              title={`点击复制：${color}`}
               onClick={() => copyToClipboard(color)}
             />
           ))}
@@ -216,7 +216,7 @@ export const ColorGenerator = () => {
 
         <div className="text-sm font-mono text-zinc-950/70 dark:text-white/70">
           <p>
-            基色: hsl({hue}, {saturation}%, {lightness}%)
+            基础色：hsl({hue}, {saturation}%, {lightness}%)
           </p>
         </div>
       </div>
@@ -225,7 +225,7 @@ export const ColorGenerator = () => {
 }
 ```
 
-导入 `ColorGenerator` 组件，并在 MDX 文件中使用它：
+导入 `ColorGenerator` 组件，并在 MDX 文件中使用该组件：
 
 ```mdx
 import { ColorGenerator } from "/snippets/color-generator.jsx"
@@ -233,7 +233,7 @@ import { ColorGenerator } from "/snippets/color-generator.jsx"
 <ColorGenerator />
 ```
 
-颜色生成器会渲染为一个交互式 React 组件。
+颜色生成器会呈现为一个交互式 React 组件。
 
 <ColorGenerator />
 
@@ -243,17 +243,17 @@ import { ColorGenerator } from "/snippets/color-generator.jsx"
 
 <AccordionGroup>
   <Accordion title="客户端渲染的影响">
-    React Hook 组件在客户端渲染，这会带来一些影响：
+    React hooks 组件在客户端渲染，这会带来以下影响：
 
-    * **SEO**：搜索引擎可能无法完全索引动态内容。
-    * **初始加载**：在组件渲染之前，访问者可能会看到加载中的闪烁内容。
-    * **可访问性**：确保动态内容的变化能够被读屏软件播报。
+    * **SEO**：搜索引擎可能无法完整索引动态内容。
+    * **初始加载**：在组件完成渲染前，访问者可能会短暂看到加载中的内容。
+    * **无障碍**：确保动态内容的变化能够被屏幕阅读器播报。
   </Accordion>
 
   <Accordion title="性能最佳实践">
-    * **优化依赖数组**：在 `useEffect` 的依赖数组中只包含必要的依赖。
-    * **记忆化复杂计算**：对开销较大的操作使用 `useMemo` 或 `useCallback`。
-    * **减少重复渲染**：将大型组件拆分为更小的组件，以防止级联式的多次重新渲染。
-    * **懒加载**：考虑对复杂组件进行懒加载，以改善页面的初始加载时间。
+    * **优化依赖项数组**：在 `useEffect` 的依赖项数组中仅包含必要的依赖。
+    * **缓存复杂计算结果**：对高开销操作使用 `useMemo` 或 `useCallback`。
+    * **减少重新渲染**：将大型组件拆分为较小的组件，以防止级联式重新渲染。
+    * **懒加载**：可以考虑对复杂组件使用懒加载，以缩短页面初始加载时间。
   </Accordion>
 </AccordionGroup>

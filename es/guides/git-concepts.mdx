@@ -1,73 +1,73 @@
 ---
 title: "Conceptos de Git para documentación"
-description: "Aprende los fundamentos del control de versiones y la colaboración para flujos de trabajo de docs-as-code."
-keywords: ["Git","version control","collaboration","commits","pull requests","merge requests"]
+description: "Aprende los fundamentos del control de versiones y la colaboración para flujos de trabajo de documentación como código."
+keywords: ["Git","control de versiones","colaboración","commits","pull requests","merge requests"]
 ---
 
-Git es un sistema de control de versiones que registra los cambios en tu documentación y permite la colaboración en equipo. Con Git, puedes ver qué ha cambiado a lo largo del tiempo en los archivos, quién hizo los cambios, cuándo los hizo y por qué. Git también facilita volver a versiones anteriores de los archivos si necesitas deshacer cambios.
+Git es un sistema de control de versiones que registra los cambios en tu documentación y facilita la colaboración en equipo. Con Git, puedes ver qué ha cambiado en los archivos con el tiempo, quién hizo los cambios, cuándo los hizo y por qué. Git también te permite volver fácilmente a versiones anteriores de los archivos si necesitas deshacer cambios.
 
-El editor web realiza operaciones de Git en segundo plano. Con conocimientos de Git, puedes trabajar de manera más efectiva con el editor web y colaborar con los miembros del equipo que usan desarrollo local.
+El editor web realiza operaciones de Git entre bastidores. Si entiendes Git, podrás trabajar de forma más eficaz con el editor web y colaborar con miembros del equipo que usan un entorno de desarrollo local.
 
 <div id="why-git-for-documentation">
-  ## ¿Por qué Git para la documentación?
+  ## ¿Por qué usar Git para la documentación?
 </div>
 
-Git proporciona capacidades esenciales para gestionar la documentación.
+Git ofrece capacidades esenciales para gestionar la documentación.
 
-* **Historial de versiones**: Ver qué cambió, cuándo y por qué en cada archivo.
-* **Colaboración**: Varias personas pueden trabajar en diferentes partes simultáneamente.
-* **Seguridad**: Experimentar sin afectar la documentación en producción.
+* **Historial de versiones**: Consulta qué cambió, cuándo y por qué en cada archivo.
+* **Colaboración**: Varias personas pueden trabajar en distintas partes al mismo tiempo.
+* **Seguridad**: Experimenta sin afectar la documentación publicada.
 * **Flujos de revisión**: Los miembros del equipo pueden revisar los cambios antes de publicarlos.
-* **Recuperación**: Deshacer errores o restaurar versiones anteriores.
+* **Recuperación**: Deshaz cambios por error o restaura versiones anteriores.
 
 <div id="new-to-git">
-  ## ¿Nuevo en Git?
+  ## ¿Aún no conoces Git?
 </div>
 
-Si eres completamente nuevo en Git y al control de versiones, aquí tienes una ruta para empezar.
+Si estás empezando con Git y el control de versiones, aquí tienes una forma sencilla de comenzar.
 
 <Steps>
   <Step title="Usa primero el editor web.">
-    El [editor web](/es/editor/index) gestiona las operaciones de Git automáticamente.
+    El [editor web](/es/editor/index) gestiona automáticamente las operaciones de Git.
 
-    * Mira visualmente cualquier cambio a medida que lo haces.
+    * Visualiza los cambios a medida que los haces.
     * Crea ramas con un solo clic.
     * Publica y crea pull requests sin usar comandos de Git.
 
-    Esto te permite aprender los conceptos de Git sin usar la línea de comandos.
+    Así puedes aprender los conceptos de Git sin usar la línea de comandos.
   </Step>
 
-  <Step title="Aprende haciendo.">
-    A medida que usas el editor web, estás usando Git.
+  <Step title="Aprende sobre la marcha.">
+    Cuando usas el editor web, ya estás usando Git.
 
-    * **Save changes** crea un commit.
-    * **Create branch** crea una rama de Git.
-    * **Publish** abre un pull request para revisión.
+    * **Guardar cambios** crea un commit.
+    * **Crear rama** crea una rama de Git.
+    * **Publicar** abre un pull request para revisión.
   </Step>
 
   <Step title="Explora el desarrollo local cuando te resulte útil.">
-    Puedes gestionar tu documentación completamente con el editor web y el panel, pero puedes personalizar tu flujo de trabajo trabajando en tu entorno local.
+    Puedes gestionar toda tu documentación con el editor web y el panel, pero también puedes adaptar tu flujo de trabajo trabajando en tu entorno local.
 
     * Crea y edita archivos en tu editor favorito.
-    * Usa Git en la línea de comandos, GitHub Desktop o una extensión en tu editor.
-    * Previsualiza los cambios localmente antes de publicar.
-    * Intégralo con otras herramientas como tickets de soporte, seguimiento de incidencias y sistemas de diseño.
+    * Usa Git desde la línea de comandos, GitHub Desktop o una extensión de tu editor.
+    * Previsualiza los cambios localmente antes de publicarlos.
+    * Intégralo con otras herramientas, como tickets de soporte, seguimiento de incidencias y sistemas de diseño.
   </Step>
 </Steps>
 
 <div id="core-git-concepts">
-  ## Conceptos fundamentales de Git
+  ## Conceptos clave de Git
 </div>
 
 <AccordionGroup>
   <Accordion title="Rama">
-    Una rama apunta a un commit específico en tu repositorio. Tu documentación publicada se genera a partir de una rama de despliegue. Puedes tener cualquier número de otras ramas con cambios que aún no se han publicado en tu documentación. Si quieres incorporar los cambios de una rama en tu documentación publicada, puedes fusionar esa rama en tu rama de despliegue mediante una pull request.
+    Una rama apunta a un commit específico de tu repositorio. Tu documentación publicada se genera a partir de una rama de despliegue. Puedes tener tantas otras ramas como quieras con cambios que aún no se hayan publicado en tu documentación. Si quieres incorporar los cambios de una rama a tu documentación publicada, puedes fusionarla con tu rama de despliegue mediante una pull request.
 
-    Usa ramas para trabajar en cambios sin afectar tu documentación publicada, experimentar de forma segura con nuevas funcionalidades y recibir revisiones antes de publicar.
+    Usa las ramas para trabajar en cambios sin afectar tu documentación publicada, probar nuevas funciones de forma segura y obtener revisiones antes de publicar.
   </Accordion>
 
   <Accordion title="Clonar">
-    Descarga una copia completa de un repositorio en tu computadora, incluyendo todos los archivos y el historial completo. Cuando clonas, obtienes todo lo necesario para trabajar de forma local.
+    Descarga una copia completa de un repositorio en tu equipo, incluidos todos los archivos y todo el historial. Al clonar, obtienes todo lo necesario para trabajar en local.
 
     ```bash
     git clone https://github.com/your-org/your-repo
@@ -75,27 +75,27 @@ Si eres completamente nuevo en Git y al control de versiones, aquí tienes una r
   </Accordion>
 
   <Accordion title="Commit">
-    Una instantánea guardada de tus cambios en un momento específico. Cada commit incluye un mensaje que describe qué cambió y crea un registro permanente en el historial de tu proyecto.
+    Una instantánea guardada de tus cambios en un momento concreto. Cada commit incluye un mensaje que describe qué cambió y crea un registro permanente en el historial de tu proyecto.
   </Accordion>
 
   <Accordion title="Conflicto">
-    Ocurre cuando dos personas cambian de forma diferente la misma parte de un archivo. Git te pide que elijas manualmente qué cambio conservar o si debes combinar ambos cambios.
+    Se produce cuando dos personas cambian de forma distinta la misma parte de un archivo. Git te pide que elijas manualmente qué cambio conservar o que combines ambos cambios.
   </Accordion>
 
   <Accordion title="Rama de despliegue">
-    La rama principal de tu proyecto. Los cambios en esta rama se publican automáticamente en tu sitio de documentación. A menudo se llama `main`, pero puedes configurar cualquier rama como tu rama de despliegue.
+    La rama principal de tu proyecto. Los cambios en esta rama se publican automáticamente en tu sitio de documentación. Suele llamarse `main`, pero puedes configurar cualquier rama como rama de despliegue.
   </Accordion>
 
   <Accordion title="Diff">
-    Un diff (o diferencia) muestra los cambios entre dos versiones de un archivo. Al revisar pull requests, los diffs resaltan qué es diferente con respecto a la versión original del archivo.
+    Un diff (o diferencia) muestra los cambios entre dos versiones de un archivo. Al revisar pull requests, los diffs resaltan qué ha cambiado con respecto a la versión original del archivo.
   </Accordion>
 
   <Accordion title="Fusionar">
-    Combina cambios de una rama en otra. Normalmente se hace mediante una pull request, después de la revisión, para incorporar el trabajo de una funcionalidad en tu rama de despliegue.
+    Combina cambios de una rama en otra. Normalmente se hace mediante una pull request después de la revisión para incorporar el trabajo de una funcionalidad a tu rama de despliegue.
   </Accordion>
 
   <Accordion title="Pull">
-    Obtiene los cambios más recientes desde el repositorio remoto a tu copia local. Te mantiene al día con el trabajo de otras personas.
+    Obtén los cambios más recientes del repositorio remoto en tu copia local. Así te mantienes al día con el trabajo de otras personas.
 
     ```bash
     git pull
@@ -103,11 +103,11 @@ Si eres completamente nuevo en Git y al control de versiones, aquí tienes una r
   </Accordion>
 
   <Accordion title="Pull request">
-    Una forma de proponer fusionar tus cambios en una rama con tu documentación publicada. Permite la revisión y discusión antes de que los cambios se publiquen. Se conoce comúnmente como PR y también se llama merge request en GitLab.
+    Una forma de proponer fusionar los cambios de una rama en tu documentación publicada. Permite revisar y comentar los cambios antes de que se publiquen. Suele llamarse PR, y en GitLab también se conoce como merge request.
   </Accordion>
 
   <Accordion title="Push">
-    Envía tus commits locales al repositorio remoto. Esto hace que tus cambios estén disponibles para otras personas y puede activar despliegues automáticos.
+    Envía tus commits locales al repositorio remoto. Esto pone tus cambios a disposición de otras personas y puede activar despliegues automáticos.
 
     ```bash
     git push
@@ -115,15 +115,15 @@ Si eres completamente nuevo en Git y al control de versiones, aquí tienes una r
   </Accordion>
 
   <Accordion title="Remoto">
-    Una versión de tu repositorio alojada en un servidor. Tu repositorio local se conecta a un repositorio remoto para enviar (push) y obtener (pull) cambios.
+    Una versión de tu repositorio alojada en un servidor. Tu repositorio local se conecta a un repositorio remoto para enviar y recibir cambios.
   </Accordion>
 
   <Accordion title="Repositorio">
     El código fuente de tu documentación, con todos los archivos y su historial, que conforman las páginas de tu sitio de documentación. El editor web se conecta a tu repositorio de documentación para acceder al contenido y modificarlo.
   </Accordion>
 
-  <Accordion title="Preparar (stage)">
-    Prepara cambios específicos para incluirlos en tu próximo commit. Preparar cambios te permite organizarlos en commits lógicos.
+  <Accordion title="Preparar">
+    Prepara cambios concretos para incluirlos en tu próximo commit. El área de preparación te permite organizar los cambios en commits lógicos.
 
     ```bash
     git add filename.mdx
@@ -132,22 +132,22 @@ Si eres completamente nuevo en Git y al control de versiones, aquí tienes una r
 </AccordionGroup>
 
 <div id="how-the-web-editor-uses-git">
-  ## Cómo usa Git el editor web
+  ## Cómo utiliza Git el editor web
 </div>
 
-El editor web se conecta a tu repositorio de Git a través de la [GitHub App](/es/deploy/github) o de la [integración con GitLab](/es/deploy/gitlab) y automatiza operaciones comunes de Git.
+El editor web se conecta a tu repositorio de Git mediante la [GitHub App](/es/deploy/github) o la [integración de GitLab](/es/deploy/gitlab) y automatiza las operaciones habituales de Git.
 
-Cuando haces lo siguiente:
+Cuando:
 
-* **Abres un archivo**: El editor obtiene la versión más reciente de tu repositorio para que siempre trabajes con contenido actualizado.
-* **Haces cambios**: El editor guarda tus cambios como un borrador que puede convertirse en un commit cuando estés listo para guardar tu trabajo.
-* **Guardas cambios**: El editor hace un commit con tus cambios, preservando tu trabajo en el historial del proyecto.
-* **Creas una rama**: El editor crea una nueva rama en tu repositorio que cualquiera con acceso al repositorio puede usar para colaborar y revisar cambios.
-* **Publicas en tu rama de despliegue**: El editor hace un commit y hace push directamente a tu rama de despliegue, lo que publica tus cambios de inmediato.
+* **Abres un archivo**: El editor obtiene la versión más reciente de tu repositorio para garantizar que siempre trabajes con contenido actualizado.
+* **Realizas cambios**: El editor guarda tus cambios como borrador, que puede convertirse en un commit cuando estés listo para guardar tu trabajo.
+* **Guardas los cambios**: El editor crea un commit con tus cambios, lo que conserva tu trabajo en el historial del proyecto.
+* **Creas una rama**: El editor crea una nueva rama en tu repositorio que cualquier persona con acceso puede usar para colaborar y revisar cambios.
+* **Publicas en tu rama de despliegue**: El editor hace commit y push directamente a tu rama de despliegue, lo que publica tus cambios de inmediato.
 * **Publicas en otras ramas**: El editor crea una pull request, lo que te permite recibir comentarios de otras personas antes de fusionar tus cambios en tu rama de despliegue.
 
 <div id="common-workflows">
-  ## Flujos de trabajo habituales
+  ## Flujos de trabajo comunes
 </div>
 
 <div id="publish-directly-to-your-deployment-branch">
@@ -155,55 +155,55 @@ Cuando haces lo siguiente:
 </div>
 
 <Tabs>
-  <Tab title="Usando el editor web">
+  <Tab title="Con el editor web">
     1. Abre el archivo en el [editor web](https://dashboard.mintlify.com/editor).
     2. Realiza los cambios.
-    3. Haz clic en **Publish**.
+    3. Haz clic en **Publicar**.
     4. Los cambios aparecen en el repositorio y se despliegan automáticamente.
   </Tab>
 
-  <Tab title="Usando el desarrollo local">
-    1. Obtén los últimos cambios: `git pull`
+  <Tab title="Con desarrollo local">
+    1. Descarga los cambios más recientes: `git pull`
     2. Edita el archivo en tu editor.
-    3. Añade los cambios: `git add filename.mdx`
-    4. Realiza un commit: `git commit -m "Update documentation"`
+    3. Prepara los cambios: `git add filename.mdx`
+    4. Haz commit: `git commit -m "Update documentation"`
     5. Haz push: `git push`
     6. Los cambios se despliegan automáticamente.
   </Tab>
 </Tabs>
 
 <div id="work-on-a-feature-branch">
-  ### Trabajar en una rama de funcionalidad
+  ### Trabaja en una rama de funcionalidad
 </div>
 
 <Tabs>
-  <Tab title="Usar el editor web">
+  <Tab title="Con el editor web">
     <Note>
-      Para crear pull requests desde el editor web, debes tener una regla de protección de ramas habilitada que requiera pull requests antes de que los cambios puedan fusionarse con tu rama de despliegue. Sin reglas de protección de ramas, los cambios en las ramas se fusionan con tu rama de despliegue cuando se publican.
+      Para crear pull requests desde el editor web, debes tener activada una regla de protección de ramas que exija pull requests antes de fusionar cambios en tu rama de despliegue. Sin reglas de protección de ramas, los cambios de las ramas se fusionan en tu rama de despliegue al publicarse.
     </Note>
 
     1. Crea una rama desde el menú desplegable de ramas en la barra de herramientas del editor.
-    2. Realiza y guarda los cambios en la rama.
-    3. Haz clic en **Publish** para crear un pull request.
-    4. Fusiona el pull request cuando esté listo.
+    2. Haz y guarda los cambios en la rama.
+    3. Haz clic en **Publicar** para crear una pull request.
+    4. Fusiona la pull request cuando esté lista.
   </Tab>
 
-  <Tab title="Usar el desarrollo local">
+  <Tab title="Con desarrollo local">
     1. Crea una rama: `git checkout -b feature-name`
-    2. Realiza y confirma (commit) los cambios.
-    3. Envía la rama (push): `git push -u origin feature-name`
-    4. Crea un pull request.
-    5. Fusiona el pull request cuando esté listo.
+    2. Haz los cambios y confirma el commit.
+    3. Sube la rama: `git push -u origin feature-name`
+    4. Crea una pull request.
+    5. Fusiona la pull request cuando esté lista.
   </Tab>
 </Tabs>
 
 <div id="review-changes-before-publishing">
-  ### Revisar los cambios antes de publicar
+  ### Revisa los cambios antes de publicarlos
 </div>
 
 <Steps>
-  <Step title="Crear una rama de funcionalidad.">
-    Trabaja en los cambios en una rama distinta de tu rama de despliegue para que puedas compartir y revisar los cambios antes de publicar.
+  <Step title="Crea una rama de funcionalidad.">
+    Trabaja en una rama distinta de la rama de despliegue para poder compartir y revisar los cambios antes de publicarlos.
   </Step>
 
   <Step title="Haz tus cambios.">
@@ -215,27 +215,27 @@ Cuando haces lo siguiente:
   </Step>
 
   <Step title="Revisa el diff.">
-    Revisa tus cambios. La pull request muestra las diferencias línea por línea con respecto a la versión original del archivo.
+    Comprueba tus cambios. La pull request muestra las diferencias línea por línea con respecto a la versión original del archivo.
   </Step>
 
-  <Step title="Obtén comentarios del equipo.">
-    Los miembros del equipo pueden comentar líneas específicas o los cambios en general. Realiza los cambios necesarios y haz commit de ellos en la rama de funcionalidad.
+  <Step title="Recibe comentarios del equipo.">
+    Los miembros del equipo pueden dejar comentarios en líneas específicas o sobre los cambios en general. Haz los cambios necesarios y confírmalos en la rama de funcionalidad.
   </Step>
 
-  <Step title="Fusiona cuando esté aprobado.">
-    Fusiona la pull request para publicar los cambios en tu documentación publicada.
+  <Step title="Fusiona cuando se apruebe.">
+    Fusiona la pull request para publicar los cambios en tu documentación en producción.
   </Step>
 </Steps>
 
 <div id="git-best-practices">
-  ## Mejores prácticas de Git
+  ## Buenas prácticas de Git
 </div>
 
-Cada equipo desarrolla sus propios flujos de trabajo y preferencias, pero estas son algunas buenas prácticas generales para comenzar.
+Cada equipo desarrolla sus propios flujos de trabajo y preferencias, pero estas son algunas buenas prácticas generales para empezar.
 
-* **Escribe mensajes de commit descriptivos**: Sé específico sobre los cambios realizados y usa un lenguaje activo. `Fix broken link in API docs` es más informativo que `update page`.
-* **Usa nombres de ramas descriptivos**: Los nombres de las ramas deben explicar el propósito de la rama. Usa nombres informativos como `update-api-reference` en lugar de nombres genéricos como `temp` o `my-branch`.
-* **Mantén las ramas enfocadas**: Mantén los cambios en una rama centrados en una tarea o proyecto específico. Esto facilita las revisiones y reduce los conflictos.
-* **Elimina las ramas después de hacer merge**: Elimina las ramas cuando ya no las necesites para mantener tu repositorio ordenado.
-* **Haz pull antes de hacer push**: Siempre haz pull de los cambios más recientes antes de hacer push para evitar conflictos. El editor web hace esto automáticamente.
-* **Revisa primero tus propios cambios**: Revisa el diff antes de crear un pull request.
+* **Escribe mensajes de commit descriptivos**: Sé específico sobre lo que cambió y usa un lenguaje activo. `Fix broken link in API docs` es más informativo que `update page`.
+* **Usa nombres de rama descriptivos**: Los nombres de las ramas deben explicar su propósito. Usa nombres informativos como `update-api-reference` en lugar de nombres genéricos como `temp` o `my-branch`.
+* **Mantén las ramas centradas en una sola cosa**: Haz que los cambios de una rama se limiten a una tarea o proyecto específicos. Esto facilita las revisiones y reduce los conflictos.
+* **Elimina las ramas después de fusionarlas**: Elimina las ramas cuando ya no las necesites para mantener tu repositorio ordenado.
+* **Haz pull antes de hacer push**: Haz siempre pull de los cambios más recientes antes de hacer push para evitar conflictos. El editor web lo hace automáticamente.
+* **Revisa primero tus propios cambios**: Revisa el diff antes de crear una pull request.

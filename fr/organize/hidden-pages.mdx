@@ -1,36 +1,36 @@
 ---
-title: "Pages cachées"
-description: "Masquez des pages de la navigation tout en les gardant accessibles."
-keywords: ["masquer dans la navigation", "non répertoriée", "visibilité des pages"]
+title: "Pages masquées"
+description: "Masquez des pages de votre navigation tout en les gardant accessibles."
+keywords: ["masquer de la navigation", "non répertorié", "visibilité des pages"]
 ---
 
-Les pages cachées ne sont pas incluses dans la navigation de votre site, mais restent accessibles publiquement à toute personne qui connaît leur URL.
+Les pages masquées n’apparaissent pas dans la navigation de votre site, mais restent accessibles publiquement à toute personne qui connaît leur URL.
 
-Utilisez des pages cachées pour le contenu que vous souhaitez rendre accessible sur votre site ou référencer comme contexte pour les outils d’IA, sans qu’il soit découvrable via la navigation.
+Utilisez les pages masquées pour du contenu que vous souhaitez rendre accessible sur votre site ou fournir comme contexte à des outils d’IA, sans qu’il soit visible dans la navigation.
 
-Pour le contenu nécessitant un contrôle d’accès strict, vous devez configurer [l’authentification](/fr/deploy/authentication-setup).
+Pour le contenu nécessitant un contrôle d’accès strict, vous devez configurer l’[authentification](/fr/deploy/authentication-setup).
 
-Pour restreindre l’accès à certaines pages à des groupes d’utilisateurs spécifiques, configurez le [contrôle d’accès basé sur les groupes](/fr/deploy/authentication-setup#control-access-with-groups).
+Pour limiter l’accès à certaines pages à des groupes d’utilisateurs spécifiques, configurez le [contrôle d’accès basé sur les groupes](/fr/deploy/authentication-setup#control-access-with-groups).
 
 <div id="hiding-a-page">
   ## Masquer une page
 </div>
 
-Pour masquer une page, retirez-la de votre structure de navigation. Toutes les pages qui ne sont pas incluses dans votre navigation `docs.json` sont masquées.
+Pour masquer une page, supprimez-la de votre structure de navigation. Toutes les pages qui ne figurent pas dans la navigation de votre `docs.json` sont masquées.
 
-Les pages masquées utilisent la même structure d’URL que les pages classiques, en fonction de leur chemin de fichier. Par exemple, `guides/hidden-page.mdx` sera accessible à l’adresse `docs.yoursite.com/guides/hidden-page`.
+Les pages masquées utilisent la même structure d’URL que les pages classiques, selon leur chemin de fichier. Par exemple, `guides/hidden-page.mdx` serait accessible à l’adresse `docs.yoursite.com/guides/hidden-page`.
 
-Voir un [exemple de page masquée](/fr/organize/hidden-page-example).
+Consultez un [exemple de page masquée](/fr/organize/hidden-page-example).
 
 <Note>
-  Certains éléments de navigation comme les barres latérales, les menus déroulants et les onglets peuvent apparaître vides ou décaler la mise en page sur les pages masquées.
+  Certains éléments de navigation, comme les barres latérales, les menus déroulants et les onglets, peuvent sembler vides ou se décaler sur les pages masquées.
 </Note>
 
 <div id="hiding-a-group-of-pages">
   ## Masquer un groupe de pages
 </div>
 
-Un groupe de pages est masqué lorsque la propriété `hidden` est définie sur `true` dans votre fichier `docs.json` :
+Un groupe de pages est masqué si la propriété `hidden` est définie sur `true` dans votre fichier `docs.json` :
 
 ```json highlight={4}
 "groups": [
@@ -52,13 +52,13 @@ Un groupe de pages est masqué lorsque la propriété `hidden` est définie sur 
 ]
 ```
 
-Dans cet exemple, le groupe `Getting started` est caché, tandis que le groupe `Guides` est visible.
+Dans cet exemple, le groupe `Getting started` est masqué, tandis que le groupe `Guides` est visible.
 
 <div id="hiding-a-tab">
   ### Masquer un onglet
 </div>
 
-Vous pouvez également masquer un onglet en ajoutant la propriété `hidden` dans votre fichier `docs.json` :
+Vous pouvez également masquer un onglet en ajoutant la propriété `hidden` à votre fichier `docs.json` :
 
 ```json highlight={4}
 "tabs": [
@@ -74,10 +74,10 @@ Vous pouvez également masquer un onglet en ajoutant la propriété `hidden` dan
 ```
 
 <div id="search-seo-and-ai-indexing">
-  ## Recherche, SEO et indexation par l&#39;IA
+  ## Recherche, SEO et indexation par l’IA
 </div>
 
-Par défaut, les pages masquées sont exclues de l’indexation par les moteurs de recherche, de la recherche interne de votre documentation et de l’utilisation comme contexte pour l’assistant IA. Pour inclure les pages masquées dans les résultats de recherche et comme contexte pour l’assistant, ajoutez la propriété `seo` à votre fichier `docs.json` :
+Par défaut, les pages masquées sont exclues de l’indexation par les moteurs de recherche et de la recherche interne dans votre documentation, et ne sont pas utilisées comme contexte par l’assistant IA. Pour inclure les pages masquées dans les résultats de recherche et les utiliser comme contexte pour l’assistant, ajoutez la propriété `seo` à votre `docs.json` :
 
 ```json
 "seo": {
@@ -85,4 +85,4 @@ Par défaut, les pages masquées sont exclues de l’indexation par les moteurs 
 }
 ```
 
-Pour exclure une page en particulier, ajoutez `noindex: true` à son frontmatter.
+Pour exclure une page spécifique, ajoutez `noindex: true` dans le frontmatter de cette page.

@@ -1,47 +1,47 @@
 ---
 title: "Marcos"
-description: "Agrega énfasis visual con marcos estilizados alrededor de imágenes y otros componentes."
+description: "Añade énfasis visual con marcos estilizados alrededor de imágenes y otros componentes."
 keywords: ["marcos para imágenes", "énfasis visual", "pies de foto", "borde"]
 ---
 
-Usa marcos para mostrar imágenes, diagramas u otro contenido visual con un estilo coherente y pies de foto opcionales. Los marcos centran el contenido y lo separan visualmente del texto que lo rodea.
+Usa marcos para mostrar imágenes, diagramas u otro contenido visual con un estilo uniforme y pies de foto opcionales. Los marcos centran el contenido y lo separan visualmente del texto que lo rodea.
 
 <Frame>
-  <img src="https://mintlify-assets.b-cdn.net/yellowstone.jpeg" alt="Fotografía de un lago rodeado de árboles con montañas a lo lejos en el Parque Nacional Yellowstone." />
+  <img src="https://mintlify-assets.b-cdn.net/yellowstone.jpeg" alt="Fotografía de un lago rodeado de árboles con montañas a lo lejos en el Parque Nacional de Yellowstone." />
 </Frame>
 
 <div id="captions">
-  ## Leyendas
+  ## Pies de foto
 </div>
 
-Añade contexto adicional a una imagen mediante la prop opcional `caption`. Las leyendas aparecen en el marco debajo de la imagen.
+Agrega contexto adicional a una imagen con la prop opcional `caption`. Los pies de foto aparecen en el marco debajo de la imagen.
 
-<Frame caption="El Parque Nacional Yosemite es visitado por más de 3,5 millones de personas cada año.">
+<Frame caption="El Parque Nacional de Yosemite recibe a más de 3,5 millones de visitantes cada año.">
   <img src="https://mintlify-assets.b-cdn.net/yosemite.jpg" alt="Fotografía del valle de Yosemite." />
 </Frame>
 
 <div id="markdown-in-captions">
-  ### Markdown en pies de foto
+  ### Markdown en los pies de foto
 </div>
 
-Los pies de foto admiten formato Markdown, incluidos los enlaces y el texto en negrita.
+Los pies de foto admiten formato Markdown, incluidos enlaces y texto en negrita.
 
-<Frame caption="Obtén más información sobre [Yosemite National Park](https://www.nps.gov/yose/index.htm) y planifica tu visita.">
+<Frame caption="Más información sobre [Yosemite National Park](https://www.nps.gov/yose/index.htm) y planifica tu visita.">
   <img src="https://mintlify-assets.b-cdn.net/yosemite.jpg" alt="Fotografía del valle de Yosemite." />
 </Frame>
 
-<Frame caption="**Importante:** Consulta el [sitio web del parque](https://www.nps.gov/yose/index.htm) para ver las condiciones actuales.">
-  <img src="https://mintlify-assets.b-cdn.net/yellowstone.jpeg" alt="Fotografía de un lago rodeado de árboles con montañas al fondo en Yellowstone National Park." />
+<Frame caption="**Importante:** Consulta el [sitio web del parque](https://www.nps.gov/yose/index.htm) para conocer las condiciones actuales.">
+  <img src="https://mintlify-assets.b-cdn.net/yellowstone.jpeg" alt="Fotografía de un lago rodeado de árboles con montañas al fondo en el Parque Nacional de Yellowstone." />
 </Frame>
 
 <div id="hints">
-  ## Indicaciones
+  ## Textos de ayuda
 </div>
 
-Añade texto que preceda al marco mediante la propiedad opcional `hint`. Las indicaciones aparecen encima del marco.
+Agrega texto antes del marco con la prop opcional `hint`. Los textos de ayuda aparecen encima del marco.
 
-<Frame hint="Si planeas visitar el Parque Nacional Yosemite, asegúrate de obtener tus permisos antes de ir." caption="El Parque Nacional Yosemite es visitado por más de 3,5 millones de personas cada año.">
-  <img src="https://mintlify-assets.b-cdn.net/yellowstone.jpeg" alt="Fotografía de un lago rodeado de árboles con montañas a lo lejos en el Parque Nacional Yellowstone." />
+<Frame hint="Si planeas visitar Yosemite National Park, asegúrate de obtener los permisos antes de ir." caption="Yosemite National Park recibe a más de 3,5 millones de visitantes cada año.">
+  <img src="https://mintlify-assets.b-cdn.net/yellowstone.jpeg" alt="Fotografía de un lago rodeado de árboles, con montañas a lo lejos, en Yellowstone National Park." />
 </Frame>
 
 <div id="properties">
@@ -49,48 +49,47 @@ Añade texto que preceda al marco mediante la propiedad opcional `hint`. Las ind
 </div>
 
 <ResponseField name="caption" type="string">
-  Texto que aparece como parte del marco, centrado bajo el contenido. Admite formato Markdown, incluidos enlaces y texto en negrita.
+  Texto que aparece como parte del marco, centrado debajo del contenido. Admite formato Markdown, incluidos enlaces y texto en negrita.
 </ResponseField>
 
 <ResponseField name="hint" type="string">
-  Texto que precede al marco.
+  Texto que aparece antes del marco.
 </ResponseField>
 
 <CodeGroup>
+  ```mdx Frame
+  <Frame>
+    <img src="/path/image.jpg" alt="Texto alternativo descriptivo" />
+  </Frame>
+  ```
 
-```mdx Frame
-<Frame>
-  <img src="/path/image.jpg" alt="Texto alternativo descriptivo" />
-</Frame>
-```
+  ```mdx Frame con pie de foto
+  <Frame caption="Texto del pie de foto">
+    <img src="/path/image.jpg" alt="Texto alternativo descriptivo" />
+  </Frame>
+  ```
 
-```mdx Frame with a caption
-<Frame caption="Texto del título">
-  <img src="/path/image.jpg" alt="Texto alternativo descriptivo" />
-</Frame>
-```
+  ```mdx Frame con Markdown en el pie de foto
+  <Frame caption="Visita la [documentación](/docs) para obtener más detalles">
+    <img src="/path/image.jpg" alt="Texto alternativo descriptivo" />
+  </Frame>
+  ```
 
-```mdx Frame with markdown in caption
-<Frame caption="Visita la [documentación](/docs) para más detalles">
-  <img src="/path/image.jpg" alt="Texto alternativo descriptivo" />
-</Frame>
-```
+  ```mdx Frame con texto en negrita y enlaces en el pie de foto
+  <Frame caption="**Nota:** Consulta la [guía oficial](https://example.com) para ver las instrucciones de configuración">
+    <img src="/path/image.jpg" alt="Texto alternativo descriptivo" />
+  </Frame>
+  ```
 
-```mdx Frame with bold text and links in caption
-<Frame caption="**Nota:** Consulta la [guía oficial](https://example.com) para obtener instrucciones de configuración">
-  <img src="/path/image.jpg" alt="Texto alternativo descriptivo" />
-</Frame>
-```
+  ```mdx Frame con texto de ayuda
+  <Frame hint="Texto de ayuda">
+    <img src="/path/image.jpg" alt="Texto alternativo descriptivo" />
+  </Frame>
+  ```
 
-```mdx Frame with a hint
-<Frame hint="Texto de ayuda">
-  <img src="/path/image.jpg" alt="Texto alternativo descriptivo" />
-</Frame>
-```
-
-```mdx Frame with both hint and caption
-<Frame hint="Texto de ayuda" caption="Texto del título">
-  <img src="/path/image.jpg" alt="Texto alternativo descriptivo" />
-</Frame>
-```
+  ```mdx Frame con texto de ayuda y pie de foto
+  <Frame hint="Texto de ayuda" caption="Texto del pie de foto">
+    <img src="/path/image.jpg" alt="Texto alternativo descriptivo" />
+  </Frame>
+  ```
 </CodeGroup>

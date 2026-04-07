@@ -3,20 +3,20 @@ openapi: /zh/admin-openapi.json POST /agent/{projectId}/job
 keywords: [ "代理任务", "创建", "自动化", "自动执行" ]
 ---
 
-此端点会根据提供的消息和分支信息创建一个代理任务。该任务以异步方式执行，并通过流式响应返回执行详情和结果。
+此接口会根据提供的消息和分支信息创建一个代理任务。该任务会异步执行，并返回包含执行详情和结果的流式响应。
 
-如果分支不存在，代理会创建一个新分支。若文件编辑成功，任务结束时会自动创建一个拉取请求（Pull Request）。
+如果分支不存在，代理会自动创建一个分支。如果文件编辑成功，则会在任务结束时自动创建拉取请求。
 
 <div id="rate-limits">
-  ## 调用频率限制
+  ## 速率限制
 </div>
 
-Agent API 具有以下限制：
+代理 API 有以下限制：
 
-- 每个 Mintlify 项目每小时最多可调用 100 次
+* 每个 Mintlify 项目每小时最多可使用 100 次
 
 <div id="suggested-usage">
-  ## 建议用法
+  ## 推荐用法
 </div>
 
-为了获得最佳效果，请使用 [ai-sdk 中的 useChat hook](https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-chat#usechat) 来发送请求并处理响应。
+为获得最佳效果，请使用 [ai-sdk 提供的 useChat hook](https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-chat#usechat) 来发送请求并处理响应。

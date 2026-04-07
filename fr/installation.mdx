@@ -1,42 +1,42 @@
 ---
-title: "Installer la CLI"
-description: "Utilisez la CLI pour prévisualiser la documentation en local, tester les modifications en temps réel et détecter les problèmes avant de déployer votre site de documentation."
-keywords: ["CLI", "npm", "développement local", "Node.js", "pnpm", "mint dev", "liens cassés", "accessibilité"]
+title: "Installer le CLI"
+description: "Utilisez le CLI pour prévisualiser votre documentation en local, tester les modifications en temps réel et repérer les problèmes avant de déployer votre site de documentation."
+keywords: ["CLI", "npm", "développement local", "Node.js", "pnpm", "mint dev", "liens rompus", "accessibilité"]
 ---
 
-<img className="block dark:hidden my-0 pointer-events-none" src="/images/installation/local-development-light.png" alt="Graphique décoratif représentant la CLI." />
+<img className="block dark:hidden my-0 pointer-events-none" src="/images/installation/local-development-light.png" alt="Illustration décorative représentant le CLI." />
 
-<img className="hidden dark:block my-0 pointer-events-none" src="/images/installation/local-development-dark.png" alt="Graphique décoratif représentant la CLI." />
+<img className="hidden dark:block my-0 pointer-events-none" src="/images/installation/local-development-dark.png" alt="Illustration décorative représentant le CLI." />
 
-Utilisez la [CLI](https://www.npmjs.com/package/mint) pour prévisualiser votre documentation en local au fur et à mesure que vous écrivez et modifiez. Affichez les changements en temps réel avant le déploiement, testez l’apparence et le fonctionnement de votre site de documentation et détectez des problèmes comme des liens cassés ou des défauts d’accessibilité.
+Utilisez le [CLI](https://www.npmjs.com/package/mint) pour prévisualiser votre documentation en local pendant que vous la rédigez et la modifiez. Visualisez les changements en temps réel avant le déploiement, testez l&#39;apparence et le fonctionnement de votre site de documentation, et repérez des problèmes comme les liens rompus ou les défauts d&#39;accessibilité.
 
-La CLI propose également des outils pour maintenir votre documentation, notamment des commandes pour renommer des fichiers, valider des spécifications OpenAPI et migrer du contenu entre différents formats.
+Le CLI inclut aussi des utilitaires pour maintenir votre documentation, notamment des commandes permettant de renommer des fichiers, de valider des spécifications OpenAPI et de migrer du contenu entre différents formats.
 
 <div id="prerequisites">
   ## Prérequis
 </div>
 
-* [Node.js](https://nodejs.org/en) v20.17.0+ (versions LTS recommandées) installé
+* [Node.js](https://nodejs.org/en) v20.17.0+ installé (versions LTS recommandées)
 * [Git](https://git-scm.com/downloads) installé
-* Votre dépôt de documentation cloné localement
+* Votre dépôt de documentation cloné en local
 
 <div id="clone-your-repository">
-  ### Cloner votre dépôt
+  ### Clonez votre dépôt
 </div>
 
 <Steps>
-  <Step title="Repérer votre dépôt">
-    1. Accédez à la page [Git settings](https://dashboard.mintlify.com/settings/deployment/git-settings) de votre tableau de bord.
-    2. Relevez l’emplacement de votre dépôt. Il suit l’un des formats suivants :
+  <Step title="Repérez votre dépôt">
+    1. Accédez à la page des [paramètres Git](https://dashboard.mintlify.com/settings/deployment/git-settings) de votre tableau de bord.
+    2. Notez l’emplacement de votre dépôt. Il se présente sous l’un de ces formats :
 
     * `mintlify-community/docs-{org-name}-{id}` (dépôt hébergé par Mintlify)
     * `your-org/your-repo` (votre propre dépôt GitHub)
   </Step>
 
-  <Step title="Cloner votre dépôt">
+  <Step title="Clonez votre dépôt">
     <Tabs>
       <Tab title="Votre propre dépôt">
-        Remplacez `your-org/your-repo` par les informations exactes de votre dépôt indiquées dans [Git settings](https://dashboard.mintlify.com/settings/deployment/git-settings).
+        Remplacez `your-org/your-repo` par les informations réelles de votre dépôt indiquées dans les [paramètres Git](https://dashboard.mintlify.com/settings/deployment/git-settings).
 
         ```bash
         git clone https://github.com/your-org/your-repo
@@ -44,14 +44,14 @@ La CLI propose également des outils pour maintenir votre documentation, notamme
         ```
 
         <Tip>
-          **GitHub App requise.** Pour activer les déploiements automatiques lorsque vous poussez des modifications, vous devez installer l’application GitHub. Consultez [GitHub](/fr/deploy/github) pour plus d’informations.
+          **GitHub App requise.** Pour activer les déploiements automatiques lorsque vous poussez des modifications, vous devez installer l’application GitHub. Consultez [GitHub](/fr/deploy/github) pour en savoir plus.
         </Tip>
       </Tab>
 
       <Tab title="Dépôt hébergé par Mintlify">
-        Vous pouvez cloner votre dépôt en tant que dépôt privé ou public. Les dépôts publics sont visibles par toute personne qui accède à l’URL du dépôt. Les dépôts privés ne sont visibles que par les membres de votre organisation.
+        Vous pouvez cloner votre dépôt en tant que dépôt privé ou public. Les dépôts publics sont visibles par toute personne accédant à l’URL du dépôt. Les dépôts privés sont visibles uniquement par les membres de votre organisation.
 
-        Sur la page [Git settings](https://dashboard.mintlify.com/settings/deployment/git-settings) de votre tableau de bord, sélectionnez **Clone as private** ou **Clone as public**.
+        Dans la page des [paramètres Git](https://dashboard.mintlify.com/settings/deployment/git-settings) de votre tableau de bord, sélectionnez **Cloner en privé** ou **Cloner en public**.
       </Tab>
     </Tabs>
   </Step>
@@ -74,7 +74,7 @@ Exécutez la commande suivante pour installer la CLI :
 </CodeGroup>
 
 <div id="preview-locally">
-  ## Prévisualiser localement
+  ## Aperçu en local
 </div>
 
 Accédez au répertoire de votre documentation contenant le fichier `docs.json`, puis exécutez :
@@ -83,9 +83,9 @@ Accédez au répertoire de votre documentation contenant le fichier `docs.json`,
 mint dev
 ```
 
-Une prévisualisation locale de votre documentation est disponible à l’adresse `http://localhost:3000`.
+Un aperçu local de votre documentation est disponible à l’adresse `http://localhost:3000`.
 
-Autrement, si vous ne souhaitez pas installer la CLI de manière globale, vous pouvez exécuter un script à usage unique :
+Sinon, si vous ne souhaitez pas installer la CLI globalement, vous pouvez exécuter un script à usage unique :
 
 ```bash
 npx mint dev
@@ -95,35 +95,35 @@ npx mint dev
   ### Ports personnalisés
 </div>
 
-Par défaut, la CLI utilise le port 3000. Vous pouvez personnaliser le port à l&#39;aide du paramètre `--port`. Pour exécuter la CLI sur le port 3333, par exemple, utilisez cette commande :
+Par défaut, la CLI utilise le port 3000. Vous pouvez modifier le port à l’aide de l’option `--port`. Pour l’exécuter sur le port 3333, par exemple, utilisez cette commande :
 
 ```bash
 mint dev --port 3333
 ```
 
-Si vous tentez d’utiliser un port déjà utilisé, la CLI utilise le prochain port disponible :
+Si vous essayez d’utiliser un port déjà occupé, la CLI utilise le port disponible suivant :
 
 ```mdx
-Port 3000 is already in use. Trying 3001 instead.
+Le port 3000 est déjà utilisé. Tentative sur le port 3001.
 ```
 
 <div id="skip-openapi-processing">
-  ## Ignorer le traitement OpenAPI
+  ## Ignorer le traitement d’OpenAPI
 </div>
 
-Si vous avez de nombreux fichiers OpenAPI, vous pouvez ignorer leur traitement lors du développement local afin d’améliorer les performances, en utilisant l’option `--disable-openapi` :
+Si vous avez de nombreux fichiers OpenAPI, ignorez leur traitement pendant le développement local afin d’améliorer les performances à l’aide de l’option `--disable-openapi` :
 
 ```bash
 mint dev --disable-openapi
 ```
 
 <div id="preview-as-a-specific-group">
-  ### Prévisualiser en tant que groupe spécifique
+  ### Prévisualiser en tant que membre d’un groupe spécifique
 </div>
 
-Si vous utilisez un contrôle d&#39;accès basé sur des groupes pour restreindre l&#39;accès à votre documentation, vous pouvez prévisualiser en tant que groupe d&#39;authentification donné à l&#39;aide de l&#39;option `--groups [groupname]`.
+Si vous utilisez un contrôle d’accès par groupe pour restreindre l’accès à votre documentation, vous pouvez prévisualiser la documentation en tant que membre d’un groupe d’authentification précis à l’aide de l’option `--groups [groupname]`.
 
-Par exemple, si vous avez un groupe nommé `admin`, vous pouvez prévisualiser en tant que membre de ce groupe avec la commande :
+Par exemple, si vous avez un groupe nommé `admin`, vous pouvez prévisualiser la documentation en tant que membre de ce groupe avec la commande :
 
 ```bash
 mint dev --groups admin
@@ -139,41 +139,41 @@ Pour créer un nouveau projet de documentation, exécutez la commande suivante 
 mint new [directory]
 ```
 
-Cette commande clone le [starter kit](https://github.com/mintlify/starter) dans un répertoire spécifié. Si vous ne spécifiez pas de répertoire, l’outil CLI vous invite à créer un nouveau sous-répertoire ou à écraser le répertoire actuel.
+Cette commande clone le [starter kit](https://github.com/mintlify/starter) dans le répertoire indiqué. Si vous n’indiquez pas de répertoire, l’outil CLI vous propose de créer un nouveau sous-répertoire ou d’écraser le répertoire actuel.
 
 <Warning>
-  L’écrasement du répertoire actuel supprime tous les fichiers existants.
+  Écraser le répertoire actuel supprime tous les fichiers existants.
 </Warning>
 
-L’outil CLI vous demande un nom de projet et un [thème](/fr/customize/themes) pour terminer la configuration de votre projet.
+L’outil CLI vous demande un nom de projet et un [thème](/fr/customize/themes) pour finaliser la configuration de votre projet.
 
 <div id="flags">
   ### Options
 </div>
 
-| Option | Description | Obligatoire |
-| --- | --- | --- |
-| `--name` | Définit le nom du nouveau projet. | Oui |
-| `--theme` | Définit le [thème](/fr/customize/themes) du nouveau projet. | Oui |
-| `--force` | Remplace le répertoire actuel sans confirmation, même s’il contient déjà des fichiers. | Non |
+| Option    | Description                                                                                          | Obligatoire |
+| --------- | ---------------------------------------------------------------------------------------------------- | ----------- |
+| `--name`  | Définit le nom du nouveau projet.                                                                    | Oui         |
+| `--theme` | Définit le [thème](/fr/customize/themes) du nouveau projet.                                             | Oui         |
+| `--force` | Écrase le répertoire actuel sans demander de confirmation, même s&#39;il contient déjà des fichiers. | Non         |
 
-Lorsque vous exécutez la commande `mint new` dans des environnements non interactifs, comme des pipelines CI/CD ou avec des agents de développement pilotés par IA, vous devez fournir toutes les options obligatoires (`--name` et `--theme`).
+Lorsque vous exécutez `mint new` dans des environnements non interactifs, comme des pipelines CI/CD ou avec des agents IA de programmation, vous devez fournir toutes les options obligatoires (`--name` et `--theme`).
 
 <Tip>
-  La CLI détecte automatiquement les environnements non interactifs. Si des options obligatoires sont manquantes, elle affiche les instructions d’utilisation au lieu de rester bloquée sur des invites.
+  Le CLI détecte automatiquement les environnements non interactifs. Si des options obligatoires sont manquantes, il affiche les instructions d&#39;utilisation au lieu de rester bloqué en attente d&#39;une saisie.
 </Tip>
 
 <div id="update-the-cli">
   ## Mettre à jour la CLI
 </div>
 
-Si votre aperçu local n’est pas synchronisé avec ce que vous voyez sur le web dans la version de production, mettez à jour votre CLI locale :
+Si l’aperçu local n’est pas synchronisé avec ce que vous voyez sur le web dans la version de production, mettez à jour votre CLI locale :
 
 ```bash
 mint update
 ```
 
-Si cette commande `mint update` n’est pas disponible avec votre version locale, réinstallez le CLI avec sa dernière version :
+Si la commande `mint update` n’est pas disponible dans votre version locale, réinstallez la CLI dans sa dernière version :
 
 <CodeGroup>
   ```bash npm
@@ -190,22 +190,22 @@ Si cette commande `mint update` n’est pas disponible avec votre version locale
 </div>
 
 <div id="find-broken-links">
-  ### Trouver les liens brisés
+  ### Repérer les liens rompus
 </div>
 
-Identifiez les liens internes brisés à l’aide de la commande suivante :
+Identifiez les liens internes rompus avec la commande suivante :
 
 ```bash
 mint broken-links
 ```
 
-La commande ignore les fichiers qui correspondent aux motifs définis dans [.mintignore](/fr/organize/mintignore). Les liens qui pointent vers des fichiers ignorés sont signalés comme liens brisés.
+La commande ignore les fichiers qui correspondent aux motifs de [.mintignore](/fr/organize/mintignore). Les liens pointant vers des fichiers ignorés sont signalés comme invalides.
 
 <div id="find-accessibility-issues">
-  ### Détecter les problèmes d’accessibilité
+  ### Repérer les problèmes d’accessibilité
 </div>
 
-Testez les rapports de contraste des couleurs et recherchez les textes alternatifs manquants pour les images et les vidéos de votre documentation avec la commande suivante :
+Testez le contraste des couleurs et recherchez les textes alternatifs manquants dans les images et les vidéos de votre documentation avec la commande suivante :
 
 ```bash
 mint a11y
@@ -214,7 +214,7 @@ mint a11y
 Utilisez des options pour détecter des problèmes d’accessibilité spécifiques.
 
 ```bash
-# Vérifier uniquement le texte alternatif manquant
+# Vérifier uniquement les textes alternatifs manquants
 mint a11y --skip-contrast
 
 # Vérifier uniquement les problèmes de contraste des couleurs
@@ -222,101 +222,101 @@ mint a11y --skip-alt-text
 ```
 
 <div id="validate-documentation-build">
-  ### Valider la génération de la documentation
+  ### Valider la compilation de la documentation
 </div>
 
-Validez la génération de votre documentation en mode strict, qui se termine par une erreur au moindre avertissement ou à la moindre erreur. Utilisez cette commande dans les pipelines CI/CD afin d’éviter le déploiement d’une documentation défaillante.
+Validez la compilation de votre documentation en mode strict, qui échoue au moindre avertissement ou à la moindre erreur. Utilisez cette commande dans les pipelines CI/CD pour éviter de déployer une documentation défectueuse.
 
 ```bash
 mint validate
 ```
 
-Utilisez les options suivantes pour configurer la commande de validation.
+Utilisez des options pour configurer la commande de validation.
 
-* `--groups [nom_groupe]` : Simule des groupes d&#39;utilisateurs pour la validation (utile pour tester un contrôle d&#39;accès basé sur les groupes)
-* `--disable-openapi` : Désactive la génération du fichier OpenAPI lors de la validation
+* `--groups [groupname]` : Simule des groupes d’utilisateurs lors de la validation (utile pour tester le contrôle d’accès basé sur les groupes)
+* `--disable-openapi` : Désactive la génération du fichier OpenAPI pendant la validation
 
 <div id="check-openapi-spec">
   ### Vérifier la spécification OpenAPI
 </div>
 
-Vérifiez si votre fichier OpenAPI contient des erreurs avec la commande suivante :
+Vérifiez si votre fichier OpenAPI contient des erreurs à l’aide de la commande suivante :
 
 ```bash
 mint openapi-check <OpenAPI filename or URL>
 ```
 
-Indiquez un nom de fichier (par exemple `./openapi.yaml`) ou une URL (par exemple `https://petstore3.swagger.io/api/v3/openapi.json`).
+Spécifiez un nom de fichier (par exemple, `./openapi.yaml`) ou une URL (par exemple, `https://petstore3.swagger.io/api/v3/openapi.json`).
 
 <div id="rename-files">
   ### Renommer les fichiers
 </div>
 
-Renommez les fichiers et mettez à jour toutes leurs références avec la commande suivante :
+Renommez les fichiers et mettez à jour toutes les références à ceux-ci avec la commande suivante :
 
 ```bash
 mint rename <path/to/old-filename> <path/to/new-filename>
 ```
 
 <div id="migrate-mdx-endpoint-pages">
-  ### Migrer les pages MDX des points de terminaison
+  ### Migrer les pages d’endpoint MDX
 </div>
 
-Migrez les pages MDX des points de terminaison vers des pages générées automatiquement à partir de votre spécification OpenAPI à l’aide de la commande suivante :
+Migrez les pages d’endpoint MDX vers des pages générées automatiquement à partir de votre spécification OpenAPI à l’aide de la commande suivante :
 
 ```bash
 mint migrate-mdx
 ```
 
-Cette commande convertit les pages MDX d’endpoint individuelles en pages générées automatiquement définies dans votre `docs.json`, déplace le contenu MDX vers l’extension `x-mint` dans votre spécification OpenAPI et met à jour votre navigation. Consultez [Migrating from MDX](/fr/guides/migrating-from-mdx) pour plus de détails.
+Cette commande convertit des pages MDX d’endpoint individuelles en pages générées automatiquement définies dans votre `docs.json`, déplace le contenu MDX vers l’extension `x-mint` de votre spécification OpenAPI et met à jour votre navigation. Consultez [Migration depuis MDX](/fr/guides/migrating-from-mdx) pour plus d’informations.
 
 <div id="formatting">
-  ## Formatage
+  ## Mise en forme
 </div>
 
-Lors du développement en local, nous recommandons d&#39;utiliser des extensions dans votre IDE pour reconnaître et formater les fichiers MDX.
+Lorsque vous développez en local, nous vous recommandons d&#39;utiliser des extensions dans votre IDE afin de reconnaître et de mettre en forme les fichiers MDX.
 
-Si vous utilisez Cursor, Windsurf ou VS Code, nous recommandons l’[extension MDX pour VS Code](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx) pour la coloration syntaxique, ainsi que [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) pour le formatage du code.
+Si vous utilisez Cursor, Windsurf ou VS Code, nous vous recommandons l&#39;[extension MDX pour VS Code](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx) pour la coloration syntaxique, ainsi que [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) pour le formatage du code.
 
-Si vous utilisez JetBrains, nous recommandons le [plugin MDX pour IntelliJ IDEA](https://plugins.jetbrains.com/plugin/14944-mdx) pour la coloration syntaxique, ainsi que la configuration de [Prettier](https://prettier.io/docs/webstorm) pour le formatage du code.
+Si vous utilisez JetBrains, nous vous recommandons le [plugin MDX IntelliJ IDEA](https://plugins.jetbrains.com/plugin/14944-mdx) pour la coloration syntaxique, ainsi que de configurer [Prettier](https://prettier.io/docs/webstorm) pour le formatage du code.
 
 <div id="troubleshooting">
   ## Dépannage
 </div>
 
 <AccordionGroup>
-  <Accordion title="Erreur : impossible de charger le module &#x22;sharp&#x22; avec l’environnement d’exécution darwin-arm64">
-    Cela peut être dû à une version obsolète de Node.js. Essayez ce qui suit :
+  <Accordion title="Erreur : impossible de charger le module &#x22;sharp&#x22; avec le runtime darwin-arm64">
+    Cela peut être dû à une version obsolète de Node.js. Essayez les étapes suivantes :
 
-    1. Supprimez la version actuellement installée de l’interface en ligne de commande mint : `npm uninstall -g mint`
-    2. Installez Node.js v20.17.0 ou une version supérieure.
-    3. Réinstallez l’interface en ligne de commande mint : `npm install -g mint`
+    1. Désinstallez la version actuellement installée du CLI mint : `npm uninstall -g mint`
+    2. Passez à Node.js v20.17.0 ou version ultérieure.
+    3. Réinstallez le CLI mint : `npm install -g mint`
   </Accordion>
 
-  <Accordion title="Problème : erreur inconnue">
-    **Solution** : accédez à la racine de votre système et supprimez le dossier `~/.mintlify`. Ensuite, exécutez à nouveau `mint dev`.
+  <Accordion title="Problème : vous rencontrez une erreur inconnue">
+    **Solution** : accédez à la racine de votre appareil et supprimez le dossier `~/.mintlify`. Ensuite, relancez `mint dev`.
   </Accordion>
 
-  <Accordion title="Erreur : autorisation refusée">
-    Cela est dû à l’absence des autorisations nécessaires pour installer globalement des packages Node.
+  <Accordion title="Erreur : permission refusée">
+    Cela est dû au fait que vous ne disposez pas des autorisations nécessaires pour installer des paquets Node de manière globale.
 
     **Solution** : essayez d’exécuter `sudo npm i -g mint`. Votre mot de passe vous sera demandé ; il s’agit de celui que vous utilisez pour déverrouiller votre ordinateur.
   </Accordion>
 
-  <Accordion title="L’aperçu local n’a pas le même rendu que ma documentation sur le web">
-    Cela est probablement dû à une version obsolète de la CLI.
+  <Accordion title="L’aperçu local n’a pas le même rendu que mes docs sur le web">
+    Cela est probablement dû à une version obsolète du CLI.
 
     **Solution :** exécutez `mint update` pour récupérer les dernières modifications.
   </Accordion>
 
-  <Accordion title="mintlify vs package mint">
-    Si vous rencontrez des problèmes avec le package CLI, commencez par exécuter `npm ls -g`. Cette commande affiche les packages installés globalement sur votre machine.
+  <Accordion title="paquet mintlify ou mint">
+    Si vous rencontrez des problèmes avec le paquet CLI, commencez par exécuter `npm ls -g`. Cette commande affiche les paquets installés globalement sur votre machine.
 
-    Si vous n’utilisez pas npm ou si vous ne le voyez pas dans la liste -g, essayez `which mint` pour localiser l’installation.
+    Si vous n’utilisez pas npm ou que `mint` n’apparaît pas dans la liste -g, essayez `which mint` pour localiser l’installation.
 
-    Si vous avez un package nommé `mint` et un package nommé `mintlify` installés, vous devriez désinstaller `mintlify`.
+    Si les paquets `mint` et `mintlify` sont tous deux installés, vous devez désinstaller `mintlify`.
 
-    1. Désinstallez l’ancien package :
+    1. Désinstallez l’ancien paquet :
 
     ```bash
       npm uninstall -g mintlify
@@ -328,16 +328,16 @@ Si vous utilisez JetBrains, nous recommandons le [plugin MDX pour IntelliJ IDEA]
       npm cache clean --force
     ```
 
-    3. Réinstallez le nouveau package :
+    3. Réinstallez le nouveau paquet :
 
     ```bash
     npm i -g mint
     ```
   </Accordion>
 
-  <Accordion title="La version du client affiche « none » après l’installation">
-    Si vous exécutez `mint version` et que la version du client s’affiche comme `none`, il est possible que la CLI ne puisse pas télécharger l’application cliente en raison d’un pare-feu d’entreprise ou d’un VPN qui bloque le téléchargement.
+  <Accordion title="La version du client affiche 'none' après l’installation">
+    Si vous exécutez `mint version` et que la version du client s’affiche comme `none`, il se peut que le CLI ne parvienne pas à télécharger l’application cliente parce qu’un pare-feu d’entreprise ou un VPN bloque le téléchargement.
 
-    **Solution :** demandez à votre administrateur informatique d’ajouter `releases.mintlify.com` à la liste blanche afin d’autoriser le développement local avec la CLI.
+    **Solution :** demandez à votre administrateur informatique d’ajouter `releases.mintlify.com` à la liste blanche afin d’activer le développement local avec le CLI.
   </Accordion>
 </AccordionGroup>

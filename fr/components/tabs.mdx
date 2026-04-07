@@ -1,6 +1,6 @@
 ---
 title: "Onglets"
-description: "Organisez le contenu avec des onglets pour afficher différentes options ou versions."
+description: "Organisez le contenu avec des onglets pour présenter différentes options ou versions."
 keywords: ["contenu à onglets", "panneaux de contenu", "contenu commutable"]
 ---
 
@@ -8,9 +8,9 @@ Utilisez des onglets pour organiser le contenu en plusieurs panneaux entre lesqu
 
 <Tabs>
   <Tab title="Premier onglet">
-    ☝️ Bienvenue dans le contenu que vous pouvez voir uniquement dans le premier onglet.
+    ☝️ Bienvenue dans le contenu visible uniquement dans le premier onglet.
 
-    Vous pouvez ajouter autant de composants que vous le souhaitez dans des onglets. Par exemple, un bloc de code :
+    Vous pouvez ajouter autant de composants que vous le souhaitez dans les onglets. Par exemple, un bloc de code :
 
     ```java HelloWorld.java
       class HelloWorld {
@@ -22,13 +22,13 @@ Utilisez des onglets pour organiser le contenu en plusieurs panneaux entre lesqu
   </Tab>
 
   <Tab title="Deuxième onglet" icon="leaf">
-    ✌️ Voici du contenu qui se trouve uniquement dans le deuxième onglet.
+    ✌️ Voici le contenu affiché uniquement dans le deuxième onglet.
 
-    Celui-ci a une icône <Icon icon="leaf" /> !
+    Celui-ci comporte une icône <Icon icon="leaf" /> !
   </Tab>
 
   <Tab title="Troisième onglet">
-    💪 Voici du contenu qui se trouve uniquement dans le troisième onglet.
+    💪 Voici le contenu affiché uniquement dans le troisième onglet.
   </Tab>
 </Tabs>
 
@@ -49,7 +49,7 @@ Utilisez des onglets pour organiser le contenu en plusieurs panneaux entre lesqu
   <Tab title="Second tab" icon="leaf">
     ✌️ Voici le contenu visible uniquement dans le deuxième onglet.
 
-    Celui-ci a une icône <Icon icon="leaf" /> !
+    Celui-ci possède une icône <Icon icon="leaf" /> !
   </Tab>
   <Tab title="Third tab">
     💪 Voici le contenu visible uniquement dans le troisième onglet.
@@ -57,17 +57,17 @@ Utilisez des onglets pour organiser le contenu en plusieurs panneaux entre lesqu
 </Tabs>
 ````
 
-Les onglets portant des titres identiques restent synchronisés sur toute la page. Par exemple, si vous avez plusieurs groupes d’onglets qui incluent un onglet intitulé `JavaScript`, si vous sélectionnez `JavaScript` dans un groupe d’onglets, `JavaScript` est automatiquement sélectionné dans les autres. Cela permet aux utilisateurs de choisir un langage ou un framework une seule fois et de voir ce choix reflété partout. Les onglets se synchronisent également avec les [groupes de code](/fr/components/code-groups) qui ont des titres correspondants.
+Les onglets dont les titres correspondent restent synchronisés sur toute la page. Par exemple, si vous avez plusieurs groupes d’onglets contenant un onglet intitulé `JavaScript`, sélectionner `JavaScript` dans l’un d’eux le sélectionne automatiquement dans les autres. Ainsi, lorsqu’un utilisateur choisit une langue ou un framework une fois, ce choix est répercuté partout. Les onglets se synchronisent aussi avec les [groupes de code](/fr/components/code-groups) dont les titres correspondent.
 
 Pour désactiver la synchronisation des onglets, ajoutez `sync={false}` à un composant `<Tabs>`.
 
 ```mdx Disable tab sync example
 <Tabs sync={false}>
   <Tab title="First tab">
-    This tab group operates independently.
+    Ce groupe d'onglets fonctionne de manière indépendante.
   </Tab>
   <Tab title="Second tab">
-    Selecting tabs here won't affect other tab groups.
+    La sélection d'onglets ici n'affectera pas les autres groupes d'onglets.
   </Tab>
 </Tabs>
 ```
@@ -77,21 +77,21 @@ Pour désactiver la synchronisation des onglets, ajoutez `sync={false}` à un co
 </div>
 
 <ResponseField name="title" type="string" required>
-  Le titre de l’onglet. Les titres courts sont plus faciles à parcourir. Les onglets ayant des titres identiques synchronisent leurs sélections.
+  Le titre de l’onglet. Les titres courts sont plus faciles à parcourir. Les onglets dont les titres correspondent synchronisent leur sélection.
 </ResponseField>
 
 <ResponseField name="icon" type="string">
-  Une icône [Font Awesome](https://fontawesome.com/icons), une icône [Lucide](https://lucide.dev/icons), une URL pointant vers une icône ou un chemin relatif vers une icône.
+  Une icône [Font Awesome](https://fontawesome.com/icons), une icône [Lucide](https://lucide.dev/icons), une URL d’icône ou un chemin relatif vers une icône.
 </ResponseField>
 
 <ResponseField name="iconType" type="string">
-  Pour les icônes Font Awesome uniquement : l’une de `regular`, `solid`, `light`, `thin`, `sharp-solid`, `duotone`, `brands`.
+  Uniquement pour les icônes Font Awesome : une des valeurs suivantes : `regular`, `solid`, `light`, `thin`, `sharp-solid`, `duotone`, `brands`.
 </ResponseField>
 
 <ResponseField name="sync" type="boolean" default="true">
-  Lorsque `true`, les onglets se synchronisent avec les autres onglets et groupes de code de la page qui ont des titres identiques. Réglez sur `false` pour rendre les onglets indépendants.
+  Lorsque `true`, les onglets se synchronisent avec les autres onglets et groupes de code de la page dont les titres correspondent. Définissez `false` pour rendre les onglets indépendants.
 </ResponseField>
 
 <ResponseField name="borderBottom" type="boolean">
-  Ajoute une bordure inférieure et un padding au conteneur des onglets. Utile pour séparer visuellement le contenu à onglets du reste de la page, en particulier lorsque les onglets contiennent des contenus de longueurs variables.
+  Ajoute une bordure inférieure et un espacement interne au conteneur des onglets. Utile pour séparer visuellement le contenu à onglets du reste de la page, en particulier lorsque les onglets contiennent du contenu de longueur variable.
 </ResponseField>

@@ -1,147 +1,145 @@
 ---
 title: "GitHub"
-description: "Conecta un repositorio de GitHub para implementaciones automatizadas, vistas previas de pull requests y sincronización continua."
-keywords: ["GitHub App","conexión de repositorio","implementaciones automatizadas"]
+description: "Conecta un repositorio de GitHub para habilitar despliegues automatizados, vistas previas de pull requests y sincronización continua."
+keywords: ["GitHub App","conexión de repositorio","despliegues automatizados"]
 ---
 
-Mintlify usa la GitHub App para sincronizar automáticamente tu documentación con tu repositorio de GitHub.
+Mintlify usa una GitHub App para sincronizar automáticamente tu documentación con tu repositorio de GitHub.
 
 <Tip>
   **¿Necesitas la GitHub App?**
 
-  - **Repositorio alojado en Mintlify** en la organización `mintlify-community`: No. La GitHub App ya está configurada.
-  - **Tu propio repositorio**: Sí. Instala la GitHub App para habilitar implementaciones automáticas cuando hagas push de cambios.
+  * **Repositorio alojado por Mintlify** en la organización `mintlify-community`: No. La GitHub App ya está configurada.
+  * **Tu propio repositorio**: Sí. Instala la GitHub App para habilitar los despliegues automáticos cuando hagas push de cambios.
 
-  Consulta tu repositorio en la página de [Git Settings](https://dashboard.mintlify.com/settings/deployment/git-settings) de tu panel.
+  Consulta tu repositorio en la página [Git Settings](https://dashboard.mintlify.com/settings/deployment/git-settings) de tu panel de control.
 </Tip>
 
-Si tu documentación se encuentra en un repositorio privado propiedad de la organización Mintlify, la GitHub App se configura y administra automáticamente desde Mintlify. Puedes usar el editor web para hacer cambios en tu documentación. Si quieres trabajar en tu documentación de forma local, clona el repositorio en tu propia organización y actualiza tu configuración de Git para usar tu propio repositorio.
+Si tu repositorio es privado y pertenece a la organización de Mintlify, la GitHub App se configura y administra automáticamente por Mintlify. Puedes usar el editor web para hacer cambios en tu documentación. Si quieres trabajar en tu documentación localmente, clona el repositorio en tu propia organización y actualiza la configuración de Git para usar tu propio repositorio.
 
 <div id="clone-to-your-own-repository">
-  ## Clona en tu propio repositorio
+  ## Clona en un repositorio propio
 </div>
 
-Si omitiste conectar tu propio repositorio de Git durante el proceso de incorporación, tu documentación se encuentra en un repositorio privado propiedad de la organización de Mintlify. Para moverla a tu propia cuenta u organización:
+Si omitiste conectar tu propio repositorio de Git durante la configuración inicial, tu documentación está en un repositorio privado de la organización de Mintlify. Para moverla a tu propia cuenta u organización:
 
 1. Ve a [Git Settings](https://dashboard.mintlify.com/settings/deployment/git-settings) en tu panel de control.
-2. Haz clic en **Clone as Private** o **Clone as Public**. Los repositorios públicos permiten que cualquier persona vea el código fuente de tu documentación y cree issues o envíe sugerencias. Los repositorios privados restringen el acceso a tu equipo.
-3. Instala la GitHub App siguiendo los pasos en [Install the GitHub App](#install-the-github-app) a continuación.
+2. Haz clic en **Clone as Private** o **Clone as Public**. Los repositorios públicos permiten que cualquiera vea el código fuente de tu documentación y envíe incidencias o sugerencias. Los repositorios privados restringen el acceso a tu equipo.
+3. Instala la GitHub App siguiendo los pasos de [Instalar la GitHub App](#install-the-github-app) más abajo.
 
 <div id="alternative-download-and-create-your-own-repository">
   ### Alternativa: descarga y crea tu propio repositorio
 </div>
 
-Si deseas un repositorio privado sin otorgar permisos elevados de OAuth, puedes transferir tu documentación manualmente:
+Si quieres un repositorio privado sin conceder permisos elevados de OAuth, puedes transferir tu documentación manualmente:
 
-1. Ve a [Git Settings](https://dashboard.mintlify.com/settings/deployment/git-settings) en tu panel de control.
+1. Ve a [Git Settings](https://dashboard.mintlify.com/settings/deployment/git-settings) en el panel.
 2. Descarga tu documentación como un archivo ZIP.
-3. Crea un nuevo repositorio en GitHub o GitLab.
+3. Crea un repositorio nuevo en GitHub o GitLab.
 4. Extrae el contenido del ZIP y súbelo a tu nuevo repositorio.
-5. Regresa a [Git Settings](https://dashboard.mintlify.com/settings/deployment/git-settings) y conecta tu nuevo repositorio a Mintlify.
-6. Instala la aplicación de GitHub siguiendo los pasos en [Install the GitHub App](#install-the-github-app) a continuación.
+5. Vuelve a [Git Settings](https://dashboard.mintlify.com/settings/deployment/git-settings) y conecta tu nuevo repositorio a Mintlify.
+6. Instala la GitHub App siguiendo los pasos de [Instalar la GitHub App](#install-the-github-app) que aparecen a continuación.
 
 <div id="install-the-github-app">
-  ## Instalar la aplicación de GitHub
+  ## Instala la GitHub App
 </div>
 
 <Note>
-  Debes ser propietario de la organización o tener permisos de administrador en un repositorio para instalar la aplicación. Si no cuentas con los permisos necesarios, el propietario del repositorio debe aprobar la solicitud de instalación.
+  Debes ser propietario de la organización o tener permisos de administrador en un repositorio para instalar la aplicación. Si no tienes los permisos necesarios, el propietario del repositorio debe aprobar la solicitud de instalación.
 </Note>
 
-Instala la aplicación de GitHub de Mintlify desde tu [panel](https://dashboard.mintlify.com/settings/organization/github-app).
+Instala la GitHub App de Mintlify desde tu [panel](https://dashboard.mintlify.com/settings/organization/github-app).
 
 <Tip>
-  Recomendamos otorgar acceso solo a tu repositorio de documentación.
+  Te recomendamos conceder acceso solo a tu repositorio de documentación.
 </Tip>
 
 <Frame>
-  <img
-    className="h-80"
-    alt="Página de instalación de la aplicación de GitHub de Mintlify con la opción 'Only select repositories' seleccionada."
-    src="/images/github/select-repos.png"
-  />
+  <img className="h-80" alt="Página de instalación de la GitHub App de Mintlify con la opción 'Only select repositories' seleccionada." src="/images/github/select-repos.png" />
 </Frame>
 
 <div id="permissions">
   ## Permisos
 </div>
 
-Cuando instalas la GitHub App, debes concederle los siguientes permisos.
+Cuando instales la GitHub App, otorga los siguientes permisos.
 
 Permisos de lectura:
 
-- `metadata`: Información básica del repositorio
+* `metadata`: Información básica del repositorio
 
 Permisos de lectura y escritura:
 
-- `checks`: Crear comprobaciones de estado en solicitudes de extracción
-- `code`: Leer cambios en archivos cuando confirmas cambios en tu rama de documentación
-- `deployments`: Generar despliegues de vista previa para solicitudes de extracción
-- `pull requests`: Crear ramas y solicitudes de extracción desde el editor web
+* `checks`: Crear comprobaciones de estado en las pull requests
+* `code`: Leer cambios en los archivos cuando haces commit en tu rama de documentación
+* `deployments`: Generar despliegues de vista previa para las pull requests
+* `pull requests`: Crear ramas y pull requests desde el editor web
 
 <Info>
-  La aplicación solo accede a los repositorios a los que le concedes acceso explícitamente. Si tienes habilitadas reglas de protección de ramas, la aplicación no puede enviar cambios directamente a las ramas protegidas.
+  La aplicación solo accede a los repositorios a los que le otorgas acceso de forma explícita. Si tienes habilitadas reglas de protección de ramas, la aplicación no puede hacer push directamente a las ramas protegidas.
 </Info>
 
 <div id="manage-repository-access">
-  ## Administrar el acceso a los repositorios
+  ## Gestiona el acceso al repositorio
 </div>
 
-Al instalar la GitHub App, puedes conceder acceso a todos tus repositorios o solo a algunos específicos. Recomendamos conceder acceso únicamente a tu repositorio de documentación y a cualquier otro repositorio que quieras usar como contexto para el agente. Puedes modificar esta selección en cualquier momento en tu [configuración de la GitHub App](https://github.com/apps/mintlify/installations/new).
+Al instalar la GitHub App, puedes conceder acceso a todos tus repositorios o solo a algunos específicos. Te recomendamos conceder acceso únicamente a tu repositorio de documentación y a cualquier repositorio que quieras usar como contexto para el agente. Puedes modificar esta selección en cualquier momento en la [configuración de tu GitHub App](https://github.com/apps/mintlify/installations/new).
 
 <div id="configure-docs-source">
-  ## Configurar el origen de la documentación
+  ## Configura el origen de la documentación
 </div>
 
-Cambia la organización, el repositorio o la rama desde la que se genera tu documentación en la sección [Configuración de Git](https://dashboard.mintlify.com/settings/deployment/git-settings) del panel de control.
+Cambia la organización, el repositorio o la rama a partir de los cuales se genera tu documentación en la sección [Git Settings](https://dashboard.mintlify.com/settings/deployment/git-settings) de tu panel de control.
 
 <div id="github-enterprise-with-ip-allowlists">
-  ## GitHub Enterprise con lista de IP permitidas
+  ## GitHub Enterprise con listas de direcciones IP permitidas
 </div>
 
-Si tu organización de GitHub Enterprise Cloud tiene habilitada una lista de IP permitidas, debes agregar la dirección IP de salida de Mintlify (`54.242.90.151`) a esa lista para que la GitHub App funcione correctamente.
+Si tu organización de GitHub Enterprise Cloud tiene habilitada una lista de direcciones IP permitidas, debes añadir la dirección IP de salida de Mintlify (`54.242.90.151`) a esa lista para que la GitHub App funcione correctamente.
 
-Consulta la [documentación de GitHub](https://docs.github.com/en/enterprise-cloud@latest/organizations/keeping-your-organization-secure/managing-security-settings-for-your-organization/managing-allowed-ip-addresses-for-your-organization) para configurar tu lista de IP permitidas.
+Sigue la [documentación de GitHub](https://docs.github.com/en/enterprise-cloud@latest/organizations/keeping-your-organization-secure/managing-security-settings-for-your-organization/managing-allowed-ip-addresses-for-your-organization) para configurar tu lista de direcciones IP permitidas.
 
 <div id="troubleshooting">
   ## Solución de problemas
 </div>
 
 <div id="deployment-not-triggering-automatically">
-  ### El despliegue no se inicia automáticamente
+  ### El despliegue no se activa automáticamente
 </div>
 
-Si los *push* a tu repositorio no activan despliegues, revisa los siguientes posibles problemas.
+Si los push a tu repositorio no activan los despliegues, revisa estos posibles problemas.
 
 <AccordionGroup>
-  <Accordion title="Verificar la instalación de la GitHub App">
+  <Accordion title="Verifica la instalación de la GitHub App">
     Comprueba que la aplicación esté instalada en el repositorio correcto.
 
-    1. Ve a [GitHub App settings](https://dashboard.mintlify.com/settings/organization/github-app) en tu panel de control.
-    1. Verifica que tu repositorio esté en la lista de instalaciones activas de la aplicación.
+    1. Ve a la [configuración de la GitHub App](https://dashboard.mintlify.com/settings/organization/github-app) en tu panel.
+    2. Comprueba que tu repositorio aparezca en la lista de instalaciones activas de la aplicación.
   </Accordion>
-  <Accordion title="Comprobar la rama de despliegue">
-    Asegúrate de que estás haciendo *push* a la rama correcta.
+
+  <Accordion title="Comprueba la rama de despliegue">
+    Asegúrate de hacer push a la rama correcta.
 
     1. Ve a [Git Settings](https://dashboard.mintlify.com/settings/deployment/git-settings)
-    1. Verifica que la rama en tu panel de control coincida con la rama a la que estás haciendo *push*.
+    2. Verifica que la rama de tu panel coincida con la rama a la que haces push.
   </Accordion>
 </AccordionGroup>
 
 <div id="github-app-connection-issues">
-  ### Problemas de conexión con la app de GitHub
+  ### Problemas de conexión con la GitHub App
 </div>
 
-Si tienes problemas con la app de GitHub, restablecer la conexión puede solucionar la mayoría de ellos.
+Si tienes problemas con la GitHub App, restablecer la conexión puede resolver la mayoría de ellos.
 
 <Steps>
-  <Step title="Desinstala la app de Mintlify desde GitHub.">
-    1. En GitHub, ve a [Installations](https://github.com/settings/installations) y selecciona **Configure** a la derecha de la app de Mintlify. Desplázate hacia abajo y selecciona **Uninstall**.
-    2. Ve a [Authorized GitHub Apps](https://github.com/settings/apps/authorizations) y selecciona **Revoke** a la derecha de la app de Mintlify.
+  <Step title="Desinstala la aplicación de Mintlify desde GitHub.">
+    1. En GitHub, ve a [installations](https://github.com/settings/installations) y selecciona **Configure** junto a la aplicación de Mintlify. Desplázate hasta abajo y selecciona **Uninstall**.
+    2. Ve a [Authorized GitHub Apps](https://github.com/settings/apps/authorizations) y selecciona **Revoke** junto a la aplicación de Mintlify.
   </Step>
-  <Step title="Vuelve a instalar la app de Mintlify.">
-    1. En tu panel de Mintlify, ve a [Git Settings](https://dashboard.mintlify.com/settings/deployment/git-settings) e instala la app de GitHub.
-    2. Autoriza tu cuenta en la sección [My Profile](https://dashboard.mintlify.com/settings/account) de tu panel.
+
+  <Step title="Vuelve a instalar la aplicación de Mintlify.">
+    1. En el panel de Mintlify, ve a [Git Settings](https://dashboard.mintlify.com/settings/deployment/git-settings) e instala la GitHub App.
+    2. Autoriza tu cuenta en la sección [My Profile](https://dashboard.mintlify.com/settings/account) del panel.
   </Step>
 </Steps>
 
@@ -149,29 +147,22 @@ Si tienes problemas con la app de GitHub, restablecer la conexión puede solucio
   ### Los complementos de comentarios no están disponibles
 </div>
 
-Las funciones de comentarios para sugerir ediciones y informar de problemas solo están disponibles para repositorios públicos de GitHub. Si estas opciones están deshabilitadas en tu panel, revisa la visibilidad de tu repositorio.
+Las funciones de comentarios para sugerir ediciones y reportar problemas solo están disponibles para repositorios públicos de GitHub. Si estas opciones están deshabilitadas en tu panel, comprueba la visibilidad de tu repositorio.
 
-Si tu repositorio es público y no puedes activar las opciones de sugerir ediciones o informar de problemas en tu panel, vuelve a validar tu configuración de Git.
+Si tu repositorio es público y no puedes habilitar las opciones para sugerir ediciones o reportar problemas en tu panel, vuelve a validar tu configuración de Git.
 
 <Steps>
-  <Step title="Navega a Git Settings">
+  <Step title="Ve a Git Settings">
     Ve a [Git Settings](https://dashboard.mintlify.com/settings/deployment/git-settings) en tu panel.
   </Step>
+
   <Step title="Vuelve a validar tu configuración">
-    Haz clic en la marca de verificación verde en la esquina del cuadro de configuración de Git para volver a validar la configuración de tu repositorio. Esto fuerza una actualización de la configuración de tu repositorio para reflejar si tu repositorio es público o privado.
+    Haz clic en la marca de verificación verde de la esquina del cuadro de configuración de Git para volver a validar la configuración de tu repositorio. Esto fuerza una actualización de la configuración de tu repositorio para reflejar si es público o privado.
 
     <Frame>
-      <img
-        src="/images/github/revalidate-settings-light.png"
-        alt="La página Git Settings en el panel de Mintlify. Una flecha naranja apunta a la marca de verificación verde que vuelve a validar la configuración del repositorio."
-        className="block dark:hidden"
-      />
+      <img src="/images/github/revalidate-settings-light.png" alt="La página de configuración de Git en el panel de Mintlify. Una flecha naranja señala la marca de verificación verde que vuelve a validar la configuración del repositorio." className="block dark:hidden" />
 
-      <img
-        src="/images/github/revalidate-settings-dark.png"
-        alt="La página Git Settings en el panel de Mintlify. Una flecha naranja apunta a la marca de verificación verde que vuelve a validar la configuración del repositorio."
-        className="hidden dark:block"
-      />
+      <img src="/images/github/revalidate-settings-dark.png" alt="La página de configuración de Git en el panel de Mintlify. Una flecha naranja señala la marca de verificación verde que vuelve a validar la configuración del repositorio." className="hidden dark:block" />
     </Frame>
   </Step>
 </Steps>

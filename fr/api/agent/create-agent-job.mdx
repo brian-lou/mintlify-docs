@@ -1,22 +1,22 @@
 ---
 openapi: /fr/admin-openapi.json POST /agent/{projectId}/job
-keywords: [ "agent job", "create", "automation", "automate" ]
+keywords: [ "tâche d'agent", "créer", "automatisation", "automatiser" ]
 ---
 
-Ce point de terminaison crée une tâche d'agent à partir des messages fournis et des informations de branche. La tâche s'exécute de façon asynchrone et renvoie une réponse en streaming contenant les détails d'exécution et les résultats.
+Ce point de terminaison crée une tâche d&#39;agent à partir des messages fournis et des informations de branche. La tâche s&#39;exécute de manière asynchrone et renvoie une réponse en streaming avec les détails de l&#39;exécution et les résultats.
 
-Si une branche n'existe pas encore, l'agent en crée une. Si les fichiers sont modifiés avec succès, une pull request est automatiquement créée à la fin de la tâche.
+Si une branche n&#39;existe pas, l&#39;agent en crée une. Si des fichiers sont modifiés avec succès, une pull request est automatiquement créée à la fin de la tâche.
 
 <div id="rate-limits">
-  ## Limites de débit
+  ## Limites de taux
 </div>
 
-L’API d’agent comporte les limites suivantes :
+L’API de l’agent est soumise aux limites suivantes :
 
-- 100 utilisations par projet Mintlify et par heure
+* 100 utilisations par heure et par projet Mintlify
 
 <div id="suggested-usage">
   ## Utilisation recommandée
 </div>
 
-Pour de meilleurs résultats, utilisez le [hook useChat d’AI SDK](https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-chat#usechat) pour envoyer des requêtes et gérer les réponses.
+Pour de meilleurs résultats, utilisez le [hook `useChat` de l’ai-sdk](https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-chat#usechat) pour envoyer des requêtes et gérer les réponses.

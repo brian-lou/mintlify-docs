@@ -1,61 +1,61 @@
 ---
 title: "Crear documentación para desarrolladores"
 sidebarTitle: "Documentación para desarrolladores"
-description: "Crea documentación que ayude a los desarrolladores a integrarse con tus APIs, SDKs y herramientas."
-keywords: ["documentación para desarrolladores", "documentación de API", "docs de SDK", "documentación técnica", "portal para desarrolladores"]
+description: "Crea documentación que ayude a los desarrolladores a integrar tus APIs, SDKs y herramientas."
+keywords: ["documentación para desarrolladores", "documentación de API", "documentación de SDK", "documentación técnica", "portal para desarrolladores"]
 ---
 
-La documentación para desarrolladores ayuda a las personas a entender tu producto e integrarse con él. Una buena documentación ayuda a las personas a hacer más con tu producto, reduce la carga de soporte, acelera la adopción y mejora la experiencia de los desarrolladores.
+La documentación para desarrolladores ayuda a entender e integrar tu producto. Una buena documentación permite sacar más partido a tu producto, reduce la carga de soporte, acelera la adopción y mejora la experiencia de los desarrolladores.
 
-Mintlify proporciona infraestructura diseñada específicamente para documentación para desarrolladores.
+Mintlify proporciona una infraestructura diseñada para la documentación para desarrolladores.
 
-* **Generación de referencias de API**: Genera [referencias de API](/es/api-playground/overview) interactivas a partir de especificaciones OpenAPI que permiten a los desarrolladores probar endpoints en tu documentación.
-* **Bloques de código con explicaciones**: El [assistant](/es/ai/assistant) explica ejemplos de código en contexto, ayudando a los desarrolladores a entender detalles de implementación.
-* **Sincronización con Git**: Mantén la documentación sincronizada con tu código base usando [GitHub](/es/deploy/github) o [GitLab](/es/deploy/gitlab).
-* **Versionado**: Mantén documentación para múltiples [versiones](/es/organize/navigation#versions), de modo que los desarrolladores que usen versiones anteriores aún puedan encontrar información precisa.
+* **Generación de referencias de API**: Genera [referencias de API](/es/api-playground/overview) interactivas a partir de especificaciones OpenAPI para que los desarrolladores prueben endpoints directamente en tu documentación.
+* **Bloques de código con explicaciones**: El [asistente](/es/ai/assistant) explica ejemplos de código en contexto, lo que ayuda a los desarrolladores a comprender los detalles de implementación.
+* **Sincronización con Git**: Mantén la documentación sincronizada con tu base de código mediante [GitHub](/es/deploy/github) o [GitLab](/es/deploy/gitlab).
+* **Control de versiones**: Mantén documentación para varias [versiones](/es/organize/navigation#versions) para que los desarrolladores que usan versiones anteriores sigan encontrando información precisa.
 
 <div id="prerequisites">
   ## Requisitos previos
 </div>
 
-Si aún no has creado un proyecto de Mintlify, consulta la [Guía de inicio rápido](/es/quickstart) para publicar tu sitio.
+Si aún no has creado un proyecto de Mintlify, consulta la [Guía de inicio rápido](/es/quickstart) para desplegar tu sitio.
 
-* Tu especificación de la API en formato OpenAPI (si estás documentando una API)
-* Un repositorio Git para tu documentación
+* La especificación de tu API en formato OpenAPI (si vas a documentar una API)
+* Un repositorio de Git para tu documentación
 * Acceso de administrador a tu organización de Mintlify
 
 <div id="migrate-existing-documentation">
-  ## Migrar la documentación existente
+  ## Migra la documentación existente
 </div>
 
-Si estás creando la documentación desde cero, ve a [Planifica la estructura de tu documentación](#plan-your-documentation-structure).
+Si vas a crear la documentación desde cero, pasa a [Planifica la estructura de tu documentación](#plan-your-documentation-structure).
 
 <div id="audit-existing-content">
-  ### Audita el contenido existente
+  ### Revisa el contenido existente
 </div>
 
 Revisa tu documentación actual para entender qué tienes y qué necesitas migrar.
 
-* **Referencia de API**: ¿Se genera a partir de una especificación o está redactada manualmente? ¿Qué endpoints documentas?
+* **Referencia de la API**: ¿Se genera a partir de una especificación o está escrita manualmente? ¿Qué endpoints documentas?
 * **Guías y tutoriales**: ¿Qué guías de integración existen? ¿Están actualizadas?
-* **Ejemplos de código**: ¿Qué lenguajes y frameworks usas?
-* **Documentación de SDK**: ¿Tienes documentación independiente para cada SDK?
-* **Registro de cambios (changelog)**: ¿Mantienes un registro de cambios o notas de lanzamiento?
-* **Metadatos**: ¿Tienes metadatos para tu contenido, como fechas, autores y etiquetas?
+* **Ejemplos de código**: ¿Qué lenguajes y frameworks utilizas?
+* **Documentación del SDK**: ¿Tienes documentación independiente para cada SDK?
+* **Registro de cambios**: ¿Mantienes un registro de cambios o notas de la versión?
+* **Metadatos**: ¿Tu contenido tiene metadatos, como fechas, autores y etiquetas?
 
 <div id="export-your-existing-content">
-  ### Exporta tu contenido existente
+  ### Exporta tu contenido actual
 </div>
 
-* Exporta a **Markdown** para la migración más sencilla a Mintlify.
-* Exporta tus especificaciones **OpenAPI** para el contenido de referencia de API.
+* Exporta a **Markdown** para que la migración a Mintlify sea lo más sencilla posible.
+* Exporta las **especificaciones de OpenAPI** para el contenido de referencia de la API.
 * Exporta a **HTML** si Markdown no está disponible y luego conviértelo a Markdown.
 
 <div id="plan-your-documentation-structure">
   ## Planifica la estructura de tu documentación
 </div>
 
-La documentación para desarrolladores suele incluir distintos tipos de contenido. Organiza la navegación según la forma en que los usuarios entienden tu producto.
+La documentación para desarrolladores suele incluir varios tipos de contenido. Organiza la navegación en función de cómo tus usuarios entienden tu producto.
 
 ```json docs.json example
 {
@@ -100,17 +100,17 @@ La documentación para desarrolladores suele incluir distintos tipos de contenid
 }
 ```
 
-Para más opciones de configuración, consulta [Navegación](/es/organize/navigation).
+Consulta [Navigation](/es/organize/navigation) para conocer otras opciones de configuración.
 
 <div id="set-up-your-api-reference">
-  ## Configura la referencia de tu API
+  ## Configura la referencia de la API
 </div>
 
-Si tienes una API, genera una referencia interactiva a partir de tu especificación de OpenAPI.
+Si tienes una API, genera una referencia interactiva a partir de tu especificación OpenAPI.
 
 <Steps>
-  <Step title="Añade tu especificación de OpenAPI">
-    Añade el archivo de especificación de OpenAPI a tu proyecto. Puedes usar los formatos YAML o JSON.
+  <Step title="Añade tu especificación OpenAPI">
+    Añade el archivo de especificación OpenAPI a tu proyecto. Puedes usar formato YAML o JSON.
 
     ```text
     your-project/
@@ -122,7 +122,7 @@ Si tienes una API, genera una referencia interactiva a partir de tu especificaci
   </Step>
 
   <Step title="Configura la especificación en docs.json">
-    Referencia tu archivo de OpenAPI en la configuración de `docs.json`.
+    Haz referencia a tu archivo OpenAPI en la configuración de `docs.json`.
 
     ```json Ejemplo de configuración
     {
@@ -131,12 +131,12 @@ Si tienes una API, genera una referencia interactiva a partir de tu especificaci
     ```
   </Step>
 
-  <Step title="Añade endpoints a la navegación">
-    Añade los endpoints a la navegación en `docs.json`. Consulta la sección [Configuración de OpenAPI](/es/api-playground/openapi-setup) para ver las opciones de configuración.
+  <Step title="Añade los endpoints a la navegación">
+    Añade los endpoints a la navegación de `docs.json`. Consulta [la configuración de OpenAPI](/es/api-playground/openapi-setup) para ver las opciones de configuración.
 
     ```json Ejemplo de navegación
     {
-      "group": "Referencia de API",
+      "group": "API Reference",
       "pages": [
         "api-reference/overview",
         "api-reference/users/list-users",
@@ -149,19 +149,19 @@ Si tienes una API, genera una referencia interactiva a partir de tu especificaci
 </Steps>
 
 <div id="set-up-the-assistant">
-  ## Configurar el asistente
+  ## Configura el asistente
 </div>
 
-El asistente ayuda a los desarrolladores a encontrar respuestas y comprender ejemplos de código. Configúralo desde tu [dashboard](https://dashboard.mintlify.com/products/assistant/settings).
+El asistente ayuda a los desarrolladores a encontrar respuestas y entender ejemplos de código. Configúralo desde tu [panel de control](https://dashboard.mintlify.com/products/assistant/settings).
 
-* **Preguntas de ejemplo**: Añade preguntas dirigidas a desarrolladores como &quot;¿Cómo autentico solicitudes de API?&quot; o &quot;Muéstrame cómo manejar webhooks&quot;.
-* **Explicaciones de código**: El asistente puede explicar bloques de código en contexto cuando los desarrolladores hacen preguntas sobre ejemplos específicos.
+* **Preguntas de ejemplo**: Añade preguntas orientadas a desarrolladores, como &quot;¿Cómo autentico las solicitudes de API?&quot; o &quot;Muéstrame cómo gestionar webhooks&quot;.
+* **Explicaciones de código**: El asistente puede explicar bloques de código según el contexto cuando los desarrolladores hacen preguntas sobre ejemplos específicos.
 
 <div id="set-up-versioning">
   ## Configura el versionado
 </div>
 
-Si mantienes varias versiones de la API, configura el versionado para que los desarrolladores puedan encontrar la documentación correspondiente a su versión.
+Si mantienes varias versiones de la API, configura el versionado para que los desarrolladores encuentren la documentación de la versión que usan.
 
 ```json Versioning example
 {
@@ -183,49 +183,49 @@ Si mantienes varias versiones de la API, configura el versionado para que los de
 }
 ```
 
-Consulta [Versiones](/es/organize/navigation#versions) para más información.
+Para obtener más información, consulta [Versions](/es/organize/navigation#versions).
 
 <div id="connect-to-your-repository">
   ## Conecta tu repositorio
 </div>
 
-Instala la [GitHub App](/es/deploy/github) de Mintlify para mantener la documentación sincronizada con tu código y habilitar contribuciones.
+Instala la [GitHub App](/es/deploy/github) de Mintlify para mantener la documentación sincronizada con tu código y permitir contribuciones.
 
 <Steps>
   <Step title="Conecta tu repositorio">
-    Vincula tu repositorio de GitHub en el [dashboard](https://dashboard.mintlify.com). Esto permite despliegues automáticos cuando haces push de cambios.
+    Vincula tu repositorio de GitHub en el [panel de control](https://dashboard.mintlify.com). Esto habilita despliegues automáticos cuando haces push de cambios.
   </Step>
 
-  <Step title="Configura la rama">
-    Define tu rama de producción y habilita los despliegues de vista previa para las pull requests. Esto te permite revisar los cambios en la documentación antes de que se publiquen.
+  <Step title="Configura los ajustes de la rama">
+    Define tu rama de producción y habilita despliegues de vista previa para los pull requests. Esto te permite revisar los cambios en la documentación antes de publicarlos.
   </Step>
 </Steps>
 
 <Note>
-  Si usas GitLab, consulta [GitLab](/es/deploy/gitlab) para obtener instrucciones de configuración.
+  Si usas GitLab, consulta [GitLab](/es/deploy/gitlab) para ver las instrucciones de configuración.
 </Note>
 
 <div id="maintain-your-documentation">
   ## Mantén tu documentación
 </div>
 
-La documentación para desarrolladores necesita actualizaciones periódicas para que la información sea precisa y útil.
+La documentación para desarrolladores debe actualizarse con regularidad para que la información sea precisa y útil.
 
 <Steps>
   <Step title="Mantén actualizada la referencia de la API">
-    Actualiza tu especificación OpenAPI cada vez que lances cambios. Si tu especificación se genera a partir del código, automatiza este paso dentro de tu proceso de lanzamiento.
+    Actualiza tu especificación OpenAPI cada vez que publiques cambios. Si tu especificación se genera a partir del código, automatiza este paso en tu proceso de lanzamiento.
   </Step>
 
   <Step title="Actualiza los ejemplos de código">
-    Revisa los ejemplos de código cuando publiques nuevas versiones de tu SDK o actualizaciones del producto. Los ejemplos desactualizados provocan fallos de integración y solicitudes al equipo de soporte.
+    Revisa los ejemplos de código cuando publiques nuevas versiones del SDK o actualizaciones del producto. Los ejemplos desactualizados provocan fallos de integración y solicitudes de soporte.
   </Step>
 
   <Step title="Mantén un registro de cambios">
-    Documenta los cambios incompatibles, las nuevas funcionalidades y las funciones obsoletas. Los desarrolladores dependen de los registros de cambios para entender qué ha cambiado entre versiones. Consulta [Registros de cambios](/es/create/changelogs) para obtener más información.
+    Documenta los cambios importantes, las nuevas funciones y las deprecaciones. Los desarrolladores dependen de los registros de cambios para entender qué cambió entre versiones. Consulta [Changelogs](/es/create/changelogs) para obtener más información.
   </Step>
 
   <Step title="Supervisa los comentarios">
-    Revisa las conversaciones con el asistente y las métricas de búsqueda para identificar lagunas en tu documentación. Si los desarrolladores preguntan repetidamente sobre el mismo tema, mejora esa sección. Consulta [Mantenimiento](/es/guides/maintenance) para obtener más información.
+    Revisa las conversaciones con el asistente y las analíticas de búsqueda para identificar vacíos en tu documentación. Si los desarrolladores preguntan repetidamente sobre el mismo tema, mejora esa sección. Consulta [Maintenance](/es/guides/maintenance) para obtener más información.
   </Step>
 </Steps>
 
@@ -233,9 +233,9 @@ La documentación para desarrolladores necesita actualizaciones periódicas para
   ## Próximos pasos
 </div>
 
-Tu documentación para desarrolladores está lista para publicarse. Después del despliegue:
+Tu documentación para desarrolladores está lista para publicarse. Después de publicarla:
 
 1. Anuncia la documentación a tu comunidad de desarrolladores.
-2. Supervisa los patrones de búsqueda y las conversaciones con el asistente para detectar posibles carencias.
-3. Define un proceso para actualizar la documentación con cada versión de la API.
+2. Supervisa los patrones de búsqueda y la conversación con el asistente para detectar carencias.
+3. Establece un proceso para actualizar la documentación con cada lanzamiento de la API.
 4. Recopila comentarios de los desarrolladores para mejorar el contenido con el tiempo.

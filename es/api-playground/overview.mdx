@@ -1,22 +1,22 @@
 ---
-title: "Playground"
-description: "Permite que los desarrolladores prueben endpoints de la API directamente en tu documentación."
-keywords: ["interactivo", "API", "pruebas de endpoints", "solicitudes de API en tiempo real", "generador de solicitudes"]
+title: "Área de pruebas"
+description: "Permite a los desarrolladores probar endpoints de API directamente en tu documentación."
+keywords: ["interactivo", "API", "prueba de endpoints", "peticiones de API en vivo", "constructor de peticiones"]
 ---
 
-El playground de la API es un entorno interactivo que permite a los usuarios probar y explorar los endpoints de tu API. Los desarrolladores pueden crear solicitudes de API, enviarlas y ver las respuestas sin salir de tu documentación.
+El área de pruebas de API es un entorno interactivo que permite a los usuarios probar y explorar tus endpoints de API. Los desarrolladores pueden crear peticiones de API, enviarlas y ver las respuestas sin salir de tu documentación.
 
-Consulta [Trigger an update](/es/api/update/trigger) para ver un ejemplo del playground de la API en acción.
+Consulta [Activar una actualización](/es/api/update/trigger) para ver un ejemplo del área de pruebas de API en acción.
 
 <Frame>
-  <img src="/images/playground/API-playground-light.png" alt="Playground de la API para el endpoint trigger an update." className="block dark:hidden" />
+  <img src="/images/playground/API-playground-light.png" alt="Área de pruebas de API para el endpoint de activar una actualización." className="block dark:hidden" />
 
-  <img src="/images/playground/API-playground-dark.png" alt="Playground de la API para el endpoint trigger an update." className="hidden dark:block" />
+  <img src="/images/playground/API-playground-dark.png" alt="Área de pruebas de API para el endpoint de activar una actualización." className="hidden dark:block" />
 </Frame>
 
-El playground genera páginas interactivas para tus endpoints a partir de tu especificación OpenAPI o de tu esquema AsyncAPI. Si modificas tu API, el playground actualiza automáticamente las páginas correspondientes.
+El área de pruebas genera páginas interactivas para tus endpoints a partir de tu especificación OpenAPI o tu esquema AsyncAPI. Si modificas tu API, el área de pruebas actualiza automáticamente las páginas correspondientes.
 
-Recomendamos generar tu playground de la API a partir de una especificación OpenAPI. Sin embargo, puedes crear manualmente páginas de referencia de la API después de definir una URL base y un método de autenticación en tu `docs.json`.
+Te recomendamos generar tu área de pruebas de API a partir de una especificación OpenAPI. Sin embargo, puedes crear manualmente páginas de referencia de API después de definir una URL base y un método de autenticación en tu `docs.json`.
 
 <div id="get-started">
   ## Primeros pasos
@@ -25,7 +25,7 @@ Recomendamos generar tu playground de la API a partir de una especificación Ope
 <Steps>
   <Step title="Añade tu archivo de especificación OpenAPI.">
     <Tip>
-      Comprueba tu archivo de especificación OpenAPI usando el [Swagger Editor](https://editor.swagger.io/) o el comando de [Mint CLI](https://www.npmjs.com/package/mint) `mint openapi-check &lt;filename&gt;`.
+      Valida tu archivo de especificación OpenAPI con [Swagger Editor](https://editor.swagger.io/) o con el comando de [Mint CLI](https://www.npmjs.com/package/mint) `mint openapi-check <filename>`.
     </Tip>
 
     ```bash {3}
@@ -35,14 +35,14 @@ Recomendamos generar tu playground de la API a partir de una especificación Ope
     ```
   </Step>
 
-  <Step title="Genera las páginas de endpoints.">
+  <Step title="Genera páginas para endpoints.">
     Actualiza tu `docs.json` para que haga referencia a tu especificación OpenAPI.
 
     **Para generar automáticamente páginas para todos los endpoints de tu especificación OpenAPI**, añade una propiedad `openapi` a cualquier elemento de navegación.
 
     Este ejemplo genera una página para cada endpoint especificado en `openapi.json` y organiza las páginas en el grupo &quot;API reference&quot;.
 
-    ```json Generate all endpoint pages
+    ```json Generar todas las páginas de endpoints
     "navigation": {
       "groups": [
         {
@@ -53,11 +53,11 @@ Recomendamos generar tu playground de la API a partir de una especificación Ope
     }
     ```
 
-    **Para generar páginas solo para endpoints específicos**, incluye los endpoints en la propiedad `pages` del elemento de navegación.
+    **Para generar páginas solo para endpoints específicos**, enumera los endpoints en la propiedad `pages` del elemento de navegación.
 
-    Este ejemplo genera páginas solo para los endpoints `GET /users` y `POST /users`. Para generar páginas de otros endpoints, añade endpoints adicionales a la lista `pages`.
+    Este ejemplo genera páginas solo para los endpoints `GET /users` y `POST /users`. Para generar páginas de otros endpoints, añade endpoints adicionales al array `pages`.
 
-    ```json Generate specific endpoint pages
+    ```json Generar páginas de endpoints específicos
     "navigation": {
       "groups": [
           {
@@ -75,28 +75,28 @@ Recomendamos generar tu playground de la API a partir de una especificación Ope
 </Steps>
 
 <div id="customize-your-playground">
-  ## Personaliza tu entorno de pruebas
+  ## Personaliza tu área de pruebas
 </div>
 
-Personaliza tu entorno de pruebas de API definiendo las siguientes propiedades en tu `docs.json`.
+Personaliza tu área de pruebas definiendo las siguientes propiedades en tu `docs.json`.
 
 <ResponseField name="playground" type="object">
-  Configuración del entorno de pruebas de la API.
+  Configuración del área de pruebas.
 
   <Expandable title="playground" defaultOpen="True">
     <ResponseField name="display" type="&#x22;interactive&#x22; | &#x22;simple&#x22; | &#x22;none&#x22; | &#x22;auth&#x22;">
-      El modo de visualización del entorno de pruebas de la API.
+      El modo de visualización del área de pruebas.
 
-      * `"interactive"`: Muestra el entorno de pruebas interactivo.
-      * `"simple"`: Muestra un endpoint copiable sin entorno de pruebas.
+      * `"interactive"`: Muestra el área de pruebas interactiva.
+      * `"simple"`: Muestra un endpoint copiable sin área de pruebas.
       * `"none"`: No muestra nada.
-      * `"auth"`: Muestra el entorno de pruebas interactivo solo a usuarios autenticados. Los usuarios no autenticados o que no estén en los grupos requeridos no ven ningún entorno de pruebas.
+      * `"auth"`: Muestra el área de pruebas interactiva solo a los usuarios autenticados. Los usuarios no autenticados o que no pertenezcan a los grupos requeridos no verán ninguna área de pruebas.
 
       El valor predeterminado es `interactive`.
     </ResponseField>
 
     <ResponseField name="proxy" type="boolean" defaultOpen="True">
-      Indica si se deben pasar las solicitudes de API a través de un servidor proxy. El valor predeterminado es `true`.
+      Si las solicitudes a la API deben pasar por un servidor proxy. El valor predeterminado es `true`.
     </ResponseField>
   </Expandable>
 </ResponseField>
@@ -106,30 +106,30 @@ Personaliza tu entorno de pruebas de API definiendo las siguientes propiedades e
 
   <Expandable title="examples" defaultOpen="True">
     <ResponseField name="languages" type="array of string">
-      Lenguajes de ejemplo para los fragmentos de API generados automáticamente.
+      Idiomas de ejemplo para los Snippet de API generados automáticamente.
 
-      Los lenguajes se muestran en el orden especificado.
+      Los idiomas se muestran en el orden especificado.
     </ResponseField>
 
     <ResponseField name="defaults" type="&#x22;required&#x22; | &#x22;all&#x22;">
-      Indica si se deben mostrar los parámetros opcionales en los ejemplos de API. El valor predeterminado es `all`.
+      Si se deben mostrar parámetros opcionales en los ejemplos de API. El valor predeterminado es `all`.
     </ResponseField>
 
     <ResponseField name="prefill" type="boolean">
-      Indica si se debe rellenar previamente el entorno de pruebas de la API con datos de ejemplos del esquema. Cuando está habilitado, el entorno de pruebas completa automáticamente los campos de la solicitud con valores de ejemplo de tu especificación OpenAPI. El valor predeterminado es `false`.
+      Si se debe rellenar previamente el área de pruebas con datos de ejemplos de esquemas. Cuando está habilitado, el área de pruebas completa automáticamente los campos de la solicitud con valores de ejemplo de tu especificación OpenAPI. El valor predeterminado es `false`.
     </ResponseField>
 
     <ResponseField name="autogenerate" type="boolean">
-      Indica si se deben generar ejemplos de código para los endpoints a partir de las especificaciones de la API. El valor predeterminado es `true`. Cuando se establece en `false`, en el entorno de pruebas de la API solo aparecen ejemplos de código escritos manualmente (provenientes de `x-codeSamples` en las especificaciones OpenAPI o de componentes `<RequestExample>` en MDX).
+      Si se deben generar ejemplos de código para endpoints a partir de especificaciones de API. El valor predeterminado es `true`. Cuando se establece en `false`, solo aparecen en el área de pruebas los ejemplos de código escritos manualmente (desde `x-codeSamples` en las especificaciones OpenAPI o componentes `<RequestExample>` en MDX).
     </ResponseField>
   </Expandable>
 </ResponseField>
 
 <div id="example-configuration">
-  ### Ejemplo de configuración
+  ### Configuración de ejemplo
 </div>
 
-Este ejemplo configura el playground de la API para que sea interactivo, con fragmentos de código de ejemplo para cURL, Python y JavaScript. Solo se muestran los parámetros obligatorios en los fragmentos de código, y el playground rellena automáticamente el cuerpo de la solicitud con valores de ejemplo.
+Este ejemplo configura el Área de pruebas de API para que sea interactiva, con Snippets de código de ejemplo para cURL, Python y JavaScript. En los Snippets de código solo se muestran los parámetros obligatorios, y el área de pruebas rellena previamente el cuerpo de la solicitud con valores de ejemplo.
 
 ```json
 {
@@ -147,17 +147,17 @@ Este ejemplo configura el playground de la API para que sea interactivo, con fra
 ```
 
 <div id="auth-based-playground-display">
-  ### Visualización del playground basada en la autenticación
+  ### Mostrar el área de pruebas según la autenticación
 </div>
 
-Usa el modo de visualización `auth` para mostrar el playground interactivo solo a los usuarios autenticados. Esto es útil cuando quieres permitir que los usuarios puedan consultar públicamente la documentación de tu API mientras restringes el acceso al playground a los usuarios que han iniciado sesión.
+Usa el modo de visualización `auth` para mostrar el área de pruebas interactiva solo a los usuarios autenticados. Esto resulta útil cuando quieres que los usuarios puedan ver públicamente la documentación de tu API, pero limitar el acceso al área de pruebas a quienes hayan iniciado sesión.
 
 Cuando `display` se establece en `auth`:
 
-* Los usuarios autenticados ven el playground interactivo.
-* Los usuarios no autenticados no ven el playground (equivalente a `none`).
+* Los usuarios autenticados ven el área de pruebas interactiva.
+* Los usuarios no autenticados no ven ninguna área de pruebas (equivalente a `none`).
 
-También puedes combinar `auth` con la propiedad `groups` en el frontmatter de la página para restringir el acceso al playground a grupos específicos de usuarios.
+También puedes combinar `auth` con la propiedad `groups` en el Frontmatter de la página para restringir el acceso al área de pruebas a grupos de usuarios específicos.
 
 ```mdx Page with group-restricted playground
 ---
@@ -172,17 +172,17 @@ public: true
 En este ejemplo:
 
 * La página es pública (cualquiera puede ver la documentación).
-* Solo los usuarios autenticados que pertenecen a los grupos `admin` o `developer` ven el playground interactivo.
-* Los usuarios que no pertenecen a esos grupos no ven ningún playground.
+* Solo los usuarios autenticados que pertenecen a los grupos `admin` o `developer` ven el área de pruebas interactiva.
+* Los usuarios que no pertenecen a esos grupos no ven el área de pruebas.
 
-Si la página no tiene la propiedad `groups`, todos los usuarios autenticados ven el playground interactivo.
+Si la página no tiene la propiedad `groups`, todos los usuarios autenticados ven el área de pruebas interactiva.
 
 <Note>
-  El modo de visualización `auth` requiere que se configure la [autenticación](/es/deploy/authentication-setup) para tu documentación.
+  El modo de visualización `auth` requiere que la [autenticación](/es/deploy/authentication-setup) esté configurada para tu documentación.
 </Note>
 
 <div id="custom-endpoint-pages">
-  ### Páginas de endpoints personalizadas
+  ### Páginas personalizadas para endpoints
 </div>
 
 Cuando necesites más control sobre la documentación de tu API, usa la extensión `x-mint` en tu especificación OpenAPI o crea páginas MDX individuales para tus endpoints.
@@ -190,18 +190,18 @@ Cuando necesites más control sobre la documentación de tu API, usa la extensi�
 Ambas opciones te permiten:
 
 * Personalizar los metadatos de la página
-* Agregar contenido adicional, como ejemplos
-* Controlar el comportamiento del playground en cada página
+* Añadir contenido adicional, como ejemplos
+* Controlar el comportamiento del área de pruebas en cada página
 
-Se recomienda usar la extensión `x-mint` para que toda la documentación de tu API se genere automáticamente a partir de tu especificación OpenAPI y se mantenga en un único archivo.
+Se recomienda usar la extensión `x-mint` para que toda la documentación de tu API se genere automáticamente a partir de tu especificación OpenAPI y se mantenga en un solo archivo.
 
-Se recomiendan las páginas MDX individuales para APIs pequeñas o cuando quieras experimentar con cambios página por página.
+Se recomiendan las páginas MDX individuales para APIs pequeñas o cuando quieras probar cambios en páginas concretas.
 
 <div id="further-reading">
-  ## Lecturas adicionales
+  ## Más información
 </div>
 
-* [Configuración de OpenAPI](/es/api-playground/openapi-setup) para más información sobre cómo crear tu documento OpenAPI.
-* [Extensión x-mint](/es/api-playground/openapi-setup#x-mint-extension) para más información sobre cómo personalizar las páginas de tus endpoints.
-* [Configuración de MDX](/es/api-playground/mdx-setup) para más información sobre cómo crear manualmente páginas de referencia de API individuales.
-* [Configuración de AsyncAPI](/es/api-playground/asyncapi-setup) para más información sobre cómo crear tu esquema AsyncAPI para generar páginas de referencia de WebSocket.
+* [Configuración de OpenAPI](/es/api-playground/openapi-setup) para obtener más información sobre cómo crear tu documento OpenAPI.
+* [Extensión x-mint](/es/api-playground/openapi-setup#x-mint-extension) para obtener más información sobre cómo personalizar las páginas de tus endpoints.
+* [Configuración de MDX](/es/api-playground/mdx-setup) para obtener más información sobre cómo crear manualmente páginas individuales de referencia de la API.
+* [Configuración de AsyncAPI](/es/api-playground/asyncapi-setup) para obtener más información sobre cómo crear tu esquema de AsyncAPI y generar páginas de referencia de WebSocket.

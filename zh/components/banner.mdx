@@ -1,12 +1,12 @@
 ---
-title: "Banner 横幅"
-description: "添加一个横幅，用于显示全站范围内的重要公告和通知。"
-keywords: ["banner", "公告", "全站"]
+title: "横幅"
+description: "添加横幅，用于显示重要的全站公告和通知。"
+keywords: ["横幅", "公告", "全站"]
 ---
 
-使用横幅在整个文档站点中展示重要公告、更新或通知。横幅会显示在每个页面的顶部，支持 Markdown 格式，并且可以设置为可关闭。横幅会使用 `docs.json` 中 `colors.dark` 属性所定义的颜色。
+使用横幅可在整个文档站点中显示重要公告、更新或通知。横幅会显示在每个页面顶部，支持 Markdown 格式，也可设置为可关闭。横幅使用你在 `docs.json` 中通过 `colors.dark` 属性定义的颜色。
 
-要添加横幅，请在 `docs.json` 中使用 `banner` 属性：
+要添加横幅，请在你的 `docs.json` 中使用 `banner` 属性：
 
 <CodeGroup>
   ```json Product announcements wrap
@@ -32,7 +32,7 @@ keywords: ["banner", "公告", "全站"]
 </CodeGroup>
 
 <Note>
-  你也可以通过在 `navigation.languages` 中设置 `banner` 来为不同语言分别配置横幅。参见[语言专属横幅](#language-specific-banners)。
+  你也可以在 `navigation.languages` 中设置 `banner`，按语言配置横幅。参阅[按语言设置横幅](#language-specific-banners)。
 </Note>
 
 <div id="properties">
@@ -40,18 +40,18 @@ keywords: ["banner", "公告", "全站"]
 </div>
 
 <ResponseField name="content" type="string" required>
-  横幅信息。支持纯文本和 Markdown 格式。
+  横幅消息内容。支持纯文本和 Markdown 格式。
 </ResponseField>
 
 <ResponseField name="dismissible" type="boolean">
-  用户是否可以关闭横幅。当为 `true` 时，用户可以关闭横幅，并且在其会话期间横幅不会再次出现。默认为 `false`。
+  用户是否可以关闭横幅。为 `true` 时，用户可以关闭横幅，且在当前会话期间不会再次显示。默认为 `false`。
 </ResponseField>
 
 <div id="language-specific-banners">
-  ## 按语言配置横幅
+  ## 按语言设置的横幅
 </div>
 
-在文档中为每种语言配置不同的横幅内容。在 `docs.json` 的 `navigation.languages` 数组中定义各语言对应的横幅。
+为文档中的每种语言配置不同的横幅内容。在 `docs.json` 的 `navigation.languages` 数组中为各语言定义对应的横幅。
 
 ```json
 {
@@ -97,7 +97,7 @@ keywords: ["banner", "公告", "全站"]
   ### 回退机制
 </div>
 
-在决定展示哪种内容时，横幅会遵循以下优先级顺序：
+横幅在确定显示内容时，按以下优先顺序处理：
 
-1. **语言特定横幅**：如果当前语言配置了 `banner`，则优先生效。
-2. **全局横幅**：如果没有语言特定横幅，则显示全局 `banner`。
+1. **按语言设置的横幅**：如果当前语言配置了 `banner`，则优先显示该横幅。
+2. **全局横幅**：如果没有语言专属横幅，则显示全局 `banner`。

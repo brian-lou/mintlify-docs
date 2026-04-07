@@ -1,27 +1,25 @@
 ---
 title: "Clearbit"
-description: "Enriquece los datos de tus usuarios con la inteligencia de Clearbit."
-keywords: ["Integración con Clearbit", "enriquecimiento de usuarios", "inteligencia de visitantes", "clave de API pública"]
+description: "Enriquece los datos de usuario con la inteligencia de Clearbit."
+keywords: ["integración de Clearbit", "enriquecimiento de usuarios", "inteligencia de visitantes", "clave pública de API"]
 ---
 
-Añade lo siguiente a tu archivo `docs.json` para enviar datos de analítica a Clearbit.
+Añade lo siguiente a tu archivo `docs.json` para enviar datos analíticos a Clearbit.
 
 <CodeGroup>
+  ```json Opciones de analítica en docs.json
+  "integrations": {
+      "clearbit": {
+          "publicApiKey": "required"
+      }
+  }
+  ```
 
-```json Opciones de analítica en docs.json
-"integrations": {
-    "clearbit": {
-        "publicApiKey": "required"
-    }
-}
-```
-
-```json Ejemplo
-"integrations": {
-    "clearbit": {
-        "publicApiKey": "pk_1a1882"
-    }
-}
-```
-
+  ```json Ejemplo
+  "integrations": {
+      "clearbit": {
+          "publicApiKey": "pk_1a1882"
+      }
+  }
+  ```
 </CodeGroup>

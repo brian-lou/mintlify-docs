@@ -1,73 +1,73 @@
 ---
-title: "Snippets réutilisables"
-description: "Créez des snippets réutilisables pour maintenir la cohérence entre les pages."
-keywords: ["content snippets", "reusable content", "variables"]
+title: "Extraits réutilisables"
+description: "Créez des extraits réutilisables pour assurer la cohérence d'une page à l'autre."
+keywords: ["extraits de contenu", "contenu réutilisable", "variables"]
 ---
 
-L&#39;un des principes fondamentaux du développement logiciel est DRY (« Don&#39;t Repeat Yourself »), qui s&#39;applique aussi à la documentation. Si vous constatez que vous répétez le même contenu à plusieurs endroits, créez un snippet personnalisé pour ce contenu. Les snippets contiennent du contenu que vous pouvez importer dans d&#39;autres fichiers afin de le réutiliser. Vous choisissez où le snippet apparaît sur une page. Si vous devez mettre à jour le contenu, il vous suffit de modifier le snippet plutôt que chaque fichier dans lequel il est utilisé.
+L&#39;un des principes fondamentaux du développement logiciel est le DRY (Ne vous répétez pas), qui s&#39;applique aussi à la documentation. Si vous vous retrouvez à répéter le même contenu à plusieurs endroits, créez un extrait personnalisé. Les extraits contiennent du contenu que vous pouvez importer dans d&#39;autres fichiers pour le réutiliser. Vous choisissez où l&#39;extrait apparaît sur une page. Si vous devez un jour mettre à jour ce contenu, il vous suffit de modifier l&#39;extrait plutôt que chaque fichier où il est utilisé.
 
 <div id="how-snippets-work">
-  ## Fonctionnement des snippets
+  ## Fonctionnement des extraits
 </div>
 
-Les snippets sont des fichiers `.mdx`, `.md` ou `.jsx` importés dans un autre fichier. Vous pouvez placer les fichiers de snippet n&#39;importe où dans votre projet.
+Les extraits sont des fichiers `.mdx`, `.md` ou `.jsx` importés dans un autre fichier. Vous pouvez placer les fichiers d’extrait n’importe où dans votre projet.
 
-Lorsque vous importez un snippet dans un autre fichier, il n&#39;apparaît qu&#39;à l&#39;endroit où vous l&#39;importez et ne s&#39;affiche pas comme une page autonome. Tout fichier dans le dossier `/snippets/` est toujours un snippet, même s&#39;il n&#39;est pas importé dans un autre fichier.
+Lorsque vous importez un extrait dans un autre fichier, il n’apparaît qu’à l’endroit où vous l’importez et ne s’affiche pas comme une page autonome. Tout fichier du dossier `/snippets/` est toujours considéré comme un extrait, même s’il n’est pas importé dans un autre fichier.
 
 <div id="create-snippets">
-  ## Créer des snippets
+  ## Créer des extraits
 </div>
 
-Créez un fichier contenant le contenu que vous souhaitez réutiliser. Les snippets peuvent inclure tous les types de contenu pris en charge par Mintlify et peuvent importer d&#39;autres snippets.
+Créez un fichier contenant le contenu que vous souhaitez réutiliser. Les extraits peuvent contenir tous les types de contenu pris en charge par Mintlify et importer d&#39;autres extraits.
 
 <div id="import-snippets-into-pages">
-  ## Importer des snippets dans les pages
+  ## Importer des extraits dans les pages
 </div>
 
-Importez des snippets dans les pages en utilisant un chemin absolu ou un chemin relatif.
+Importez des extraits dans les pages à l’aide d’un chemin absolu ou relatif.
 
-* **Imports absolus** : Commencez le chemin par `/` pour importer depuis la racine de votre projet.
-* **Imports relatifs** : Utilisez `./` ou `../` pour importer des snippets par rapport à l&#39;emplacement du fichier actuel.
+* **Imports absolus** : commencent par `/` pour importer depuis la racine de votre projet.
+* **Imports relatifs** : utilisez `./` ou `../` pour importer des extraits par rapport à l’emplacement du fichier actuel.
 
 <Tip>
-  Les imports relatifs permettent la navigation dans l&#39;IDE. Appuyez sur <kbd>CMD</kbd> et cliquez sur le nom d&#39;un snippet dans votre éditeur pour accéder directement à la définition de ce snippet.
+  Les imports relatifs permettent la navigation dans l’IDE. Appuyez sur <kbd>CMD</kbd> et cliquez sur le nom d’un extrait dans votre éditeur pour accéder directement à sa définition.
 </Tip>
 
 <div id="import-text">
   ### Importer du texte
 </div>
 
-1. Ajoutez dans votre fichier de snippet le contenu que vous souhaitez réutiliser.
+1. Ajoutez au fichier d’extrait le contenu que vous souhaitez réutiliser.
 
    ```mdx shared/my-snippet.mdx wrap
-   Bonjour le monde ! Voici mon contenu que je souhaite réutiliser sur plusieurs pages.
+   Bonjour le monde ! Voici le contenu que je souhaite réutiliser sur plusieurs pages.
    ```
 
-2. Importez le snippet dans votre fichier de destination en utilisant un chemin absolu ou relatif.
+2. Importez l’extrait dans votre fichier de destination à l’aide d’un chemin absolu ou d’un chemin relatif.
 
    <CodeGroup>
-     ```mdx Absolute import
+     ```mdx Import absolu
      ---
-     title: "Une page d’exemple"
-     description: "Il s’agit d’une page d’exemple qui importe un snippet."
+     title: "Une page d'exemple"
+     description: "Voici une page d'exemple qui importe un extrait."
      ---
 
      import MySnippet from "/shared/my-snippet.mdx";
 
-     Le contenu du snippet s’affiche sous cette phrase.
+     Le contenu de l’extrait s’affiche sous cette phrase.
 
      <MySnippet />
      ```
 
-     ```mdx Relative import
+     ```mdx Import relatif
      ---
-     title: "Une page d’exemple"
-     description: "Il s’agit d’une page d’exemple qui importe un snippet."
+     title: "Une page d'exemple"
+     description: "Voici une page d'exemple qui importe un extrait."
      ---
 
      import MySnippet from "../shared/my-snippet.mdx";
 
-     Le contenu du snippet s’affiche sous cette phrase.
+     Le contenu de l’extrait s’affiche sous cette phrase.
 
      <MySnippet />
      ```
@@ -77,9 +77,9 @@ Importez des snippets dans les pages en utilisant un chemin absolu ou un chemin 
   ### Importer des variables
 </div>
 
-Faites référence à des variables définies dans un extrait (snippet) au sein d’une page.
+Utilisez des variables issues d’un extrait dans une page.
 
-1. Exportez des variables à partir d’un fichier d’extrait.
+1. Exportez des variables depuis un fichier d’extrait.
 
    ```mdx shared/custom-variables.mdx
    export const myName = "Ronan";
@@ -93,8 +93,8 @@ Faites référence à des variables définies dans un extrait (snippet) au sein 
 
    ```mdx destination-file.mdx
    ---
-   title: "Une page d'exemple"
-   description: "Ceci est une page d'exemple qui importe un extrait (snippet) avec des variables."
+   title: "An example page"
+   description: "This is an example page that imports a snippet with variables."
    ---
 
    import { myName, myObject } from "/shared/custom-variables.mdx";
@@ -103,18 +103,18 @@ Faites référence à des variables définies dans un extrait (snippet) au sein 
    ```
 
 <div id="import-snippets-with-variables">
-  ### Importer des snippets avec des variables
+  ### Importer des extraits avec des variables
 </div>
 
-Utilisez des variables pour passer des données à un snippet lorsque vous l&#39;importez.
+Utilisez des variables pour transmettre des données à un extrait lors de son importation.
 
-1. Ajoutez des variables à votre snippet et passez des propriétés (props) lorsque vous l&#39;importez. Dans cet exemple, la variable est `{word}`.
+1. Ajoutez des variables à votre extrait et transmettez des propriétés lors de son importation. Dans cet exemple, la variable est `{word}`.
 
    ```mdx shared/my-snippet.mdx
    My keyword of the day is {word}.
    ```
 
-2. Importez le snippet dans votre fichier de destination en lui passant la variable. La propriété passée remplace la variable dans la définition du snippet.
+2. Importez l’extrait dans votre fichier de destination avec la variable. La propriété transmise remplace la variable dans la définition de l’extrait.
 
    ```mdx destination-file.mdx
    ---
@@ -131,7 +131,7 @@ Utilisez des variables pour passer des données à un snippet lorsque vous l&#39
   ### Importer des composants React
 </div>
 
-1. Créez un extrait de code contenant un composant JSX. Consultez [Composants React](/fr/customize/react-components) pour plus d&#39;informations.
+1. Créez un extrait contenant un composant JSX. Consultez [les composants React](/fr/customize/react-components) pour en savoir plus.
 
    ```js components/my-jsx-snippet.jsx
    export const MyJSXSnippet = () => {
@@ -144,15 +144,15 @@ Utilisez des variables pour passer des données à un snippet lorsque vous l&#39
    ```
 
 <Note>
-  Lors de la création d&#39;extraits JSX, utilisez la syntaxe de fonction fléchée (`=>`) plutôt que les déclarations de fonctions. Le mot-clé `function` n&#39;est pas pris en charge dans les extraits de code.
+  Lorsque vous créez des extraits JSX, utilisez la syntaxe de fonction fléchée (`=>`) plutôt que des déclarations de fonction. Le mot-clé `function` n’est pas pris en charge dans les extraits.
 </Note>
 
-2. Importez l&#39;extrait de code.
+2. Importez l’extrait.
 
    ```mdx destination-file.mdx
    ---
-   title: "Une page d'exemple"
-   description: "Voici une page d'exemple qui importe un extrait de code contenant un composant React."
+   title: "Une page d’exemple"
+   description: "Il s’agit d’une page d’exemple qui importe un extrait contenant un composant React."
    ---
 
    import { MyJSXSnippet } from "/components/my-jsx-snippet.jsx";

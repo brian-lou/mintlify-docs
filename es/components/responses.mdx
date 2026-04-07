@@ -1,10 +1,10 @@
 ---
 title: "Campos de respuesta"
-description: "Mostrar los valores de respuesta de una API."
-keywords: ["salida de la API", "valores de retorno", "estructura de respuesta"]
+description: "Muestra los valores de respuesta de la API."
+keywords: ["salida de API", "valores devueltos", "estructura de respuesta"]
 ---
 
-El componente `<ResponseField>` está diseñado para definir los valores de retorno de una API. Gran parte de la documentación también utiliza `<ResponseField>` en páginas donde se necesita enumerar los tipos de algo.
+El componente `<ResponseField>` está diseñado para definir los valores que devuelve una API. En muchas documentaciones, `<ResponseField>` también se usa en páginas en las que necesitas enumerar los tipos de algún elemento.
 
 <ResponseField name="response" type="string" required>
   Un ejemplo de campo de respuesta
@@ -22,11 +22,11 @@ El componente `<ResponseField>` está diseñado para definir los valores de reto
 </div>
 
 <ResponseField name="name" type="string" required>
-  El nombre del valor de la respuesta.
+  El nombre del valor de respuesta.
 </ResponseField>
 
 <ResponseField name="type" type="string" required>
-  Tipo esperado del valor de la respuesta; puede ser cualquier cadena de texto arbitraria.
+  El tipo esperado del valor de respuesta; puede ser cualquier cadena.
 </ResponseField>
 
 <ResponseField name="default" type="string">
@@ -34,27 +34,25 @@ El componente `<ResponseField>` está diseñado para definir los valores de reto
 </ResponseField>
 
 <ResponseField name="required" type="boolean">
-  Muestra "required" junto al nombre del campo.
+  Muestra &quot;required&quot; junto al nombre del campo.
 </ResponseField>
 
 <ResponseField name="deprecated" type="boolean">
-  Indica si un campo está obsoleto o no.
+  Indica si un campo está obsoleto.
 </ResponseField>
 
 <ResponseField name="pre" type="string[]">
-  Etiquetas que se muestran antes del nombre del campo.
+  Etiquetas que se muestran antes del nombre del campo
 </ResponseField>
 
 <ResponseField name="post" type="string[]">
-  Etiquetas que se muestran después del nombre del campo.
+  Etiquetas que se muestran después del nombre del campo
 </ResponseField>
 
 <RequestExample>
-
-```mdx Response Field Example
-<ResponseField name="response" type="string" required>
-  Un ejemplo de campo de respuesta
-</ResponseField>
-```
-
+  ```mdx Ejemplo de campo de respuesta
+  <ResponseField name="response" type="string" required>
+    Un ejemplo de campo de respuesta
+  </ResponseField>
+  ```
 </RequestExample>

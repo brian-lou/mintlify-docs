@@ -1,16 +1,16 @@
 ---
 title: "颜色"
-description: "显示支持点击复制功能的调色板。"
-keywords: ["color", "palette", "colors", "design system", "hex", "rgb", "rgba", "hsl", "oklch"]
+description: "显示支持点击复制的调色板。"
+keywords: ["颜色", "调色板", "颜色", "设计系统", "hex", "rgb", "rgba", "hsl", "oklch"]
 ---
 
-在文档中使用 Color 组件来展示调色板。颜色可以以紧凑的网格显示，或以带标签的行组织成表格。
+使用 Color 组件在文档中展示调色板。颜色既可以显示为紧凑网格，也可以组织成带标签行的表格。
 
 <div id="compact-variant">
   ## 紧凑变体
 </div>
 
-以简单网格布局显示颜色名称及其取值。
+以简洁的网格布局显示颜色名称和值。
 
 <Color variant="compact">
   <Color.Item name="blue-500" value="#3B82F6" />
@@ -33,7 +33,7 @@ keywords: ["color", "palette", "colors", "design system", "hex", "rgb", "rgba", 
 
 
 <div id="table-variant">
-  ## 表格样式
+  ## 表格变体
 </div>
 
 将颜色按带标签的行进行组织，用于设计系统文档。
@@ -73,7 +73,7 @@ keywords: ["color", "palette", "colors", "design system", "hex", "rgb", "rgba", 
   ## 颜色格式
 </div>
 
-此组件支持所有 CSS 颜色格式，包括 hex、rgb、rgba、hsl 和 oklch。
+该组件支持所有 CSS 颜色格式，包括 hex、rgb、rgba、hsl 和 oklch。
 
 <Color variant="compact">
   <Color.Item name="hex" value="#FF5733" />
@@ -99,10 +99,10 @@ keywords: ["color", "palette", "colors", "design system", "hex", "rgb", "rgba", 
 
 
 <div id="theme-aware-colors">
-  ## 主题自适应颜色
+  ## 适配主题的颜色
 </div>
 
-通过一个包含 `light` 和 `dark` 属性的对象，为浅色和深色模式分别定义不同的颜色。
+使用包含 `light` 和 `dark` 属性的对象，为浅色模式和深色模式分别定义不同的颜色。
 
 <Color variant="compact">
   <Color.Item name="bg-primary" value={{ light: "#FFFFFF", dark: "#000000" }} />
@@ -126,7 +126,7 @@ keywords: ["color", "palette", "colors", "design system", "hex", "rgb", "rgba", 
 </div>
 
 <div id="color">
-  ### 颜色
+  ### Color
 </div>
 
 <ResponseField name="variant" type="string" required>
@@ -142,11 +142,11 @@ keywords: ["color", "palette", "colors", "design system", "hex", "rgb", "rgba", 
 </div>
 
 <ResponseField name="title" type="string">
-  颜色行的标题标签。
+  颜色行的名称。
 </ResponseField>
 
 <ResponseField name="children" type="Color.Item" required>
-  要在该行中显示的颜色项。
+  此行中显示的颜色项。
 </ResponseField>
 
 <div id="coloritem">
@@ -158,5 +158,5 @@ keywords: ["color", "palette", "colors", "design system", "hex", "rgb", "rgba", 
 </ResponseField>
 
 <ResponseField name="value" type="string | { light: string, dark: string }" required>
-  以任意 CSS 支持的格式表示的颜色值，或一个包含浅色模式和深色模式值的对象。
+  任意 CSS 格式的颜色值，或包含浅色模式和深色模式值的对象。
 </ResponseField>

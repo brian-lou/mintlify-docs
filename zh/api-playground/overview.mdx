@@ -1,31 +1,31 @@
 ---
-title: "Playground"
-description: "让开发者可以直接在文档中测试 API 端点。"
+title: "API 操作台"
+description: "让开发者直接在文档中测试 API 端点。"
 keywords: ["交互式", "API", "端点测试", "实时 API 请求", "请求构建器"]
 ---
 
-API Playground 是一个交互式环境，可让用户直接在文档中测试和探索你的 API 端点。开发者可以构造 API 请求、提交请求，并在不离开文档的情况下查看响应。
+API 操作台是一个交互式环境，用户可以直接测试和探索你的 API 端点。开发者无需离开文档，即可构建 API 请求、提交请求并查看响应。
 
-参见 [Trigger an update](/zh/api/update/trigger) 以查看 API Playground 的实际用例。
+请参阅[触发更新](/zh/api/update/trigger)，了解 API 操作台的实际效果。
 
 <Frame>
-  <img src="/images/playground/API-playground-light.png" alt="用于 Trigger an update 端点的 API Playground。" className="block dark:hidden" />
+  <img src="/images/playground/API-playground-light.png" alt="“触发更新”端点的 API 操作台。" className="block dark:hidden" />
 
-  <img src="/images/playground/API-playground-dark.png" alt="用于 Trigger an update 端点的 API Playground。" className="hidden dark:block" />
+  <img src="/images/playground/API-playground-dark.png" alt="“触发更新”端点的 API 操作台。" className="hidden dark:block" />
 </Frame>
 
-Playground 会根据你的 OpenAPI 规范或 AsyncAPI 架构为端点生成交互式页面。如果你对 API 做了修改，Playground 会自动更新相关页面。
+操作台会根据你的 OpenAPI 规范或 AsyncAPI 模式，为各个端点生成交互式页面。如果你修改了 API，操作台会自动更新相关页面。
 
-我们建议从 OpenAPI 规范生成 API Playground。不过，在你在 `docs.json` 中定义基础 URL 和认证方式之后，也可以手动创建 API 参考页面。
+我们建议根据 OpenAPI 规范生成 API 操作台。不过，在 `docs.json` 中定义基础 URL 和身份验证方式后，你也可以手动创建 API 参考页面。
 
 <div id="get-started">
   ## 开始使用
 </div>
 
 <Steps>
-  <Step title="添加你的 OpenAPI 规范文件。">
+  <Step title="添加 OpenAPI 规范文件。">
     <Tip>
-      使用 [Swagger Editor](https://editor.swagger.io/) 或 [Mint CLI](https://www.npmjs.com/package/mint) 命令 `mint openapi-check <filename>` 验证你的 OpenAPI 规范文件。
+      使用 [Swagger Editor](https://editor.swagger.io/) 或 [Mint CLI](https://www.npmjs.com/package/mint) 命令 `mint openapi-check <filename>` 验证 OpenAPI 规范文件。
     </Tip>
 
     ```bash {3}
@@ -36,13 +36,13 @@ Playground 会根据你的 OpenAPI 规范或 AsyncAPI 架构为端点生成交�
   </Step>
 
   <Step title="生成端点页面。">
-    更新你的 `docs.json`，让它引用你的 OpenAPI 规范。
+    更新 `docs.json` 以引用 OpenAPI 规范。
 
-    **如果要为 OpenAPI 规范中的所有端点自动生成页面**，请在任一导航元素中添加 `openapi` 属性。
+    **如需为 OpenAPI 规范中的所有端点自动生成页面**，请为任意导航元素添加 `openapi` 属性。
 
-    此示例会为 `openapi.json` 中指定的每个端点生成一个页面，并将这些页面归类到 &quot;API reference&quot; 分组中。
+    此示例会为 `openapi.json` 中定义的每个端点生成一个页面，并将这些页面归入“API reference”分组。
 
-    ```json Generate all endpoint pages
+    ```json 生成所有端点页面
     "navigation": {
       "groups": [
         {
@@ -53,11 +53,11 @@ Playground 会根据你的 OpenAPI 规范或 AsyncAPI 架构为端点生成交�
     }
     ```
 
-    **如果只想为特定端点生成页面**，请在导航元素的 `pages` 属性中列出这些端点。
+    **如仅为特定端点生成页面**，请在导航元素的 `pages` 属性中列出这些端点。
 
-    此示例仅为 `GET /users` 和 `POST /users` 端点生成页面。若要生成其他端点页面，请将对应端点添加到 `pages` 数组中。
+    此示例仅为 `GET /users` 和 `POST /users` 端点生成页面。要生成其他端点页面，请将更多端点添加到 `pages` 数组中。
 
-    ```json Generate specific endpoint pages
+    ```json 生成特定端点页面
     "navigation": {
       "groups": [
           {
@@ -75,22 +75,22 @@ Playground 会根据你的 OpenAPI 规范或 AsyncAPI 架构为端点生成交�
 </Steps>
 
 <div id="customize-your-playground">
-  ## 自定义你的 Playground
+  ## 自定义 API 操作台
 </div>
 
-通过在 `docs.json` 中定义以下属性来自定义 API Playground。
+在 `docs.json` 中定义以下属性，以自定义 API 操作台。
 
 <ResponseField name="playground" type="object">
-  API Playground 的配置。
+  API 操作台的配置。
 
   <Expandable title="playground" defaultOpen="True">
     <ResponseField name="display" type="&#x22;interactive&#x22; | &#x22;simple&#x22; | &#x22;none&#x22; | &#x22;auth&#x22;">
-      API Playground 的显示模式。
+      API 操作台的显示模式。
 
-      * `"interactive"`：显示交互式 Playground。
-      * `"simple"`：显示可复制的端点，而不显示 Playground。
+      * `"interactive"`：显示交互式操作台。
+      * `"simple"`：显示可复制的端点，不显示操作台。
       * `"none"`：不显示任何内容。
-      * `"auth"`：仅向已通过身份验证的用户显示交互式 Playground。未通过身份验证的用户或不在指定用户组中的用户不会看到 Playground。
+      * `"auth"`：仅向已登录用户显示交互式操作台。未登录用户或不在所需组中的用户将看不到操作台。
 
       默认为 `interactive`。
     </ResponseField>
@@ -102,13 +102,13 @@ Playground 会根据你的 OpenAPI 规范或 AsyncAPI 架构为端点生成交�
 </ResponseField>
 
 <ResponseField name="examples" type="object">
-  自动生成的 API 示例的配置。
+  自动生成的 API 示例配置。
 
   <Expandable title="examples" defaultOpen="True">
     <ResponseField name="languages" type="array of string">
-      用于自动生成 API 代码片段的示例语言。
+      自动生成的 API 代码示例所使用的语言。
 
-      语言会按照指定的顺序显示。
+      语言会按指定顺序显示。
     </ResponseField>
 
     <ResponseField name="defaults" type="&#x22;required&#x22; | &#x22;all&#x22;">
@@ -116,11 +116,11 @@ Playground 会根据你的 OpenAPI 规范或 AsyncAPI 架构为端点生成交�
     </ResponseField>
 
     <ResponseField name="prefill" type="boolean">
-      是否使用 schema 示例中的数据预填充 API Playground。启用后，Playground 会自动用 OpenAPI 规范中的示例值填充请求字段。默认为 `false`。
+      是否使用 schema 示例中的数据预填充 API 操作台。启用后，操作台会自动用 OpenAPI 规范中的示例值填充请求字段。默认为 `false`。
     </ResponseField>
 
     <ResponseField name="autogenerate" type="boolean">
-      是否根据 API 规范为端点生成代码示例。默认为 `true`。当设置为 `false` 时，API Playground 中只会显示手动编写的代码示例（来自 OpenAPI 规范中的 `x-codeSamples` 或 MDX 中的 `<RequestExample>` 组件）。
+      是否根据 API 规范为端点生成代码示例。默认为 `true`。设置为 `false` 时，API 操作台中只会显示手动编写的代码示例 (来自 OpenAPI 规范中的 `x-codeSamples` 或 MDX 中的 `<RequestExample>` 组件) 。
     </ResponseField>
   </Expandable>
 </ResponseField>
@@ -129,7 +129,7 @@ Playground 会根据你的 OpenAPI 规范或 AsyncAPI 架构为端点生成交�
   ### 示例配置
 </div>
 
-此示例将 API playground 配置为交互式，并提供 cURL、Python 和 JavaScript 的示例代码片段。代码片段中仅显示必需参数，且 playground 会使用示例值预填请求体。
+此示例将 API 操作台配置为可交互模式，并提供 cURL、Python 和 JavaScript 的示例代码片段。代码片段中仅显示必填参数，操作台还会用示例值预填充请求体。
 
 ```json
 {
@@ -147,17 +147,17 @@ Playground 会根据你的 OpenAPI 规范或 AsyncAPI 架构为端点生成交�
 ```
 
 <div id="auth-based-playground-display">
-  ### 基于认证的 playground 显示
+  ### 基于身份验证的 操作台 显示
 </div>
 
-使用 `auth` 显示模式，仅向已通过认证的用户显示交互式 playground。当你希望用户可以公开查看 API 文档，但将 playground 的访问权限限制为已登录用户时，这会非常有用。
+使用 `auth` 显示模式，仅向已登录用户显示交互式 操作台。当你希望用户可以公开查看 API 文档，同时仅允许登录用户访问 操作台 时，这种方式很有用。
 
 当 `display` 设置为 `auth` 时：
 
-* 已认证用户可以看到交互式 playground。
-* 未认证用户看不到 playground（等同于 `none`）。
+* 已登录用户会看到交互式 操作台。
+* 未登录用户不会看到 操作台 (等同于 `none`) 。
 
-你还可以将 `auth` 与页面 frontmatter 中的 `groups` 属性结合使用，将 playground 访问权限限制为特定的用户组。
+你还可以将 `auth` 与页面前置元数据中的 `groups` 属性结合使用，将 操作台 的访问权限限制为特定用户组。
 
 ```mdx Page with group-restricted playground
 ---
@@ -169,39 +169,39 @@ public: true
 ---
 ```
 
-在本示例中：
+在这个示例中：
 
-* 页面是公开可见的（任何人都可以查看文档）。
-* 只有属于 `admin` 或 `developer` 组的已通过认证用户才能看到交互式 playground。
-* 不在这些组中的用户看不到 playground。
+* 页面是公开可见的 (任何人都可以查看文档) 。
+* 只有 `admin` 或 `developer` 组中的已认证用户才能看到交互式 操作台。
+* 不在这些组中的用户将看不到 操作台。
 
-如果页面没有 `groups` 属性，所有已通过认证的用户都会看到交互式 playground。
+如果页面没有 `groups` 属性，所有已认证用户都可以看到交互式 操作台。
 
 <Note>
-  使用 `auth` 显示模式前，需要为文档配置[身份验证](/zh/deploy/authentication-setup)。
+  `auth` 显示模式要求先为你的文档配置[身份验证](/zh/deploy/authentication-setup)。
 </Note>
 
 <div id="custom-endpoint-pages">
   ### 自定义端点页面
 </div>
 
-当你需要对 API 文档进行更精细的控制时，可以在 OpenAPI 规范中使用 `x-mint` 扩展，或为各个端点创建单独的 MDX 页面。
+当你需要更灵活地控制 API 文档时，可以在 OpenAPI 规范中使用 `x-mint` 扩展，或为各个端点创建单独的 MDX 页面。
 
 这两种方式都可以让你：
 
 * 自定义页面元数据
 * 添加示例等额外内容
-* 按页面控制 playground 的行为
+* 按页面控制 操作台 的行为
 
-推荐使用 `x-mint` 扩展，这样你的所有 API 文档都能从 OpenAPI 规范中自动生成，并集中维护在一个文件中。
+推荐使用 `x-mint` 扩展，这样你的所有 API 文档都可以根据 OpenAPI 规范自动生成，并集中在一个文件中维护。
 
-对于较小的 API，或当你希望逐页尝试更改时，推荐使用单独的 MDX 页面。
+如果是小型 API，或者你想按页面逐一试验修改，则更推荐使用单独的 MDX 页面。
 
 <div id="further-reading">
   ## 延伸阅读
 </div>
 
-* [OpenAPI setup](/zh/api-playground/openapi-setup) 了解更多关于创建 OpenAPI 文档的信息。
-* [x-mint extension](/zh/api-playground/openapi-setup#x-mint-extension) 了解更多关于自定义端点页面的信息。
-* [MDX setup](/zh/api-playground/mdx-setup) 了解更多关于手动创建单个 API 参考页面的信息。
-* [AsyncAPI setup](/zh/api-playground/asyncapi-setup) 了解更多关于创建 AsyncAPI 架构以生成 WebSocket 参考页面的信息。
+* [OpenAPI 设置](/zh/api-playground/openapi-setup)：详细了解如何创建 OpenAPI 文档。
+* [x-mint 扩展](/zh/api-playground/openapi-setup#x-mint-extension)：详细了解如何自定义端点页面。
+* [MDX 设置](/zh/api-playground/mdx-setup)：详细了解如何手动创建单个 API 参考页面。
+* [AsyncAPI 设置](/zh/api-playground/asyncapi-setup)：详细了解如何创建 AsyncAPI schema 以生成 WebSocket 参考页面。

@@ -1,29 +1,27 @@
 ---
 title: "Fathom"
-description: "使用 Fathom 跟踪文档统计数据。"
-keywords: ["Fathom Analytics", "注重隐私的分析", "site ID", "简单分析"]
+description: "使用 Fathom 跟踪文档分析数据。"
+keywords: ["Fathom Analytics", "注重隐私的分析", "站点 ID", "简洁分析"]
 ---
 
-在你的 `docs.json` 文件中添加以下内容，以将统计数据发送到 Fathom。
+将以下内容添加到你的 `docs.json` 文件中，即可将分析数据发送到 Fathom。
 
-你可以在脚本设置中获取 `siteId`。
+你可以在脚本设置中找到 `siteId`。
 
 <CodeGroup>
+  ```json docs.json 中的分析配置
+  "integrations": {
+      "fathom": {
+          "siteId": "required"
+      }
+  }
+  ```
 
-```json Analytics options in docs.json
-"integrations": {
-    "fathom": {
-        "siteId": "required"
-    }
-}
-```
-
-```json Example
-"integrations": {
-    "fathom": {
-        "siteId": "YSVMSDAY"
-    }
-}
-```
-
+  ```json 示例
+  "integrations": {
+      "fathom": {
+          "siteId": "YSVMSDAY"
+      }
+  }
+  ```
 </CodeGroup>

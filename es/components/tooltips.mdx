@@ -1,15 +1,15 @@
 ---
 title: "Tooltips"
-description: "Añade ayuda contextual con tooltips al pasar el cursor para términos y conceptos."
-keywords: ["tooltips", "ayuda al pasar el cursor", "información contextual", "explicativo", "definiciones"]
+description: "Agrega ayuda contextual con tooltips al pasar el cursor sobre términos y conceptos."
+keywords: ["tooltips", "ayuda al pasar el cursor", "información contextual", "explicaciones", "definiciones"]
 ---
 
-Utiliza tooltips para proporcionar contexto adicional o definiciones cuando un usuario pasa el cursor sobre un fragmento de texto. Los tooltips pueden incluir enlaces de llamada a la acción opcionales.
+Usa tooltips para proporcionar contexto adicional o definiciones cuando un usuario pase el cursor sobre un fragmento de texto. Los tooltips pueden incluir enlaces opcionales de llamada a la acción.
 
-**Ejemplo**: <Tooltip headline="API" tip="Interfaz de Programación de Aplicaciones: conjunto de protocolos que permiten que las aplicaciones de software se comuniquen entre sí." cta="Lee nuestra guía de la API" href="/es/api-reference">La documentación de la API</Tooltip> ayuda a los desarrolladores a comprender cómo integrarse con tu servicio.
+**Ejemplo**: la documentación de <Tooltip headline="API" tip="Interfaz de Programación de Aplicaciones: un conjunto de protocolos que permite que las aplicaciones de software se comuniquen." cta="Lee nuestra guía sobre API" href="/es/api-reference">API</Tooltip> ayuda a los desarrolladores a entender cómo integrarse con tu servicio.
 
 ```mdx Tooltip example wrap
-<Tooltip headline="API" tip="Interfaz de Programación de Aplicaciones: un conjunto de protocolos para que las aplicaciones de software se comuniquen." cta="Consulta nuestra guía de API" href="/api-reference">API</Tooltip> La documentación ayuda a los desarrolladores a entender cómo integrarse con tu servicio.
+<Tooltip headline="API" tip="Application Programming Interface: un conjunto de protocolos para que las aplicaciones de software se comuniquen." cta="Lee nuestra guía de API" href="/api-reference">API</Tooltip> documentation helps developers understand how to integrate with your service.
 ```
 
 <div id="properties">
@@ -25,9 +25,9 @@ Utiliza tooltips para proporcionar contexto adicional o definiciones cuando un u
 </ResponseField>
 
 <ResponseField name="cta" type="string">
-  El texto de llamada a la acción para un enlace dentro del tooltip.
+  El texto de llamada a la acción de un enlace dentro del tooltip.
 </ResponseField>
 
 <ResponseField name="href" type="string">
-  URL del enlace de llamada a la acción. Obligatorio cuando se usa `cta`.
+  URL del enlace de llamada a la acción. Obligatorio al usar `cta`.
 </ResponseField>

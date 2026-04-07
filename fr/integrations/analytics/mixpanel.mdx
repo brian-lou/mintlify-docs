@@ -1,10 +1,10 @@
 ---
 title: "Mixpanel"
-description: "Analysez les données produit et le comportement des utilisateurs avec Mixpanel."
-keywords: ["intégration Mixpanel", "analytique produit", "suivi des événements", "jeton"]
+description: "Analysez l’usage de votre produit et le comportement des utilisateurs avec Mixpanel."
+keywords: ["intégration Mixpanel", "analyse produit", "suivi des événements", "token"]
 ---
 
-Ajoutez ce qui suit à votre fichier `docs.json` pour envoyer des données d’analyse à Mixpanel.
+Ajoutez ce qui suit à votre fichier `docs.json` pour envoyer vos données d’analyse à Mixpanel.
 
 ```json Analytics options in docs.json
 "integrations": {
@@ -14,7 +14,7 @@ Ajoutez ce qui suit à votre fichier `docs.json` pour envoyer des données d’a
 }
 ```
 
-Remplacez `YOUR_MIXPANEL_PROJECT_TOKEN` par le jeton de projet Mixpanel. Vous pouvez le trouver dans les [paramètres de votre projet Mixpanel](https://mixpanel.com/settings/project).
+Remplacez `YOUR_MIXPANEL_PROJECT_TOKEN` par le jeton de votre projet Mixpanel. Vous trouverez ce jeton dans les [paramètres de votre projet Mixpanel](https://mixpanel.com/settings/project).
 
 
 <div id="tracked-events">
@@ -23,10 +23,10 @@ Remplacez `YOUR_MIXPANEL_PROJECT_TOKEN` par le jeton de projet Mixpanel. Vous po
 
 Mintlify suit automatiquement les interactions utilisateur suivantes :
 
-- Pages vues
-- Requêtes de recherche
-- Envois de commentaires
-- Interactions avec le menu contextuel
-- Clics de navigation
+* Pages vues
+* Requêtes de recherche
+* Envois de commentaires
+* Interactions avec le menu contextuel
+* Clics sur la navigation
 
-Si vous ne voyez pas d'événements dans Mixpanel, assurez-vous que le jeton de votre projet est correct et qu’aucune stratégie de sécurité de contenu ne bloque le script Mixpanel.
+Si vous ne voyez pas d&#39;événements dans Mixpanel, assurez-vous que le jeton de votre projet est correct et qu&#39;aucune politique de sécurité du contenu n&#39;empêche le script Mixpanel de se charger.

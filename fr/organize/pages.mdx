@@ -1,50 +1,50 @@
 ---
 title: "Pages"
-description: "Configurer les métadonnées, les titres et les propriétés de frontmatter des pages."
+description: "Configurez les métadonnées, les titres et les propriétés de frontmatter des pages."
 keywords: ["tags", "tag", "frontmatter", "métadonnées", "mise en page"]
 ---
 
-Chaque page est un fichier Markdown. Les deux types de fichiers, `.mdx` et `.md`, sont pris en charge. Nous recommandons d&#39;utiliser MDX, qui combine Markdown et des composants React pour créer une documentation riche et interactive. Le Markdown simple (`.md`) est pris en charge pour faciliter la migration depuis d&#39;autres plateformes, mais il est recommandé de le convertir en MDX afin de bénéficier de l&#39;ensemble des fonctionnalités.
+Chaque page est un fichier Markdown. Les formats de fichier `.mdx` et `.md` sont tous deux pris en charge. Nous vous recommandons d’utiliser MDX, qui combine Markdown et des composants React pour créer une documentation riche et interactive. Le Markdown simple (`.md`) est pris en charge pour faciliter la migration depuis d’autres plateformes, mais il doit être converti en MDX pour bénéficier de toutes les fonctionnalités.
 
 <div id="page-metadata">
-  ## Métadonnées de page
+  ## Métadonnées de la page
 </div>
 
-Chaque page commence par un frontmatter, les métadonnées YAML délimitées par `---` au début d&#39;un fichier. Ces métadonnées définissent l&#39;apparence et le comportement de votre page.
+Chaque page commence par un Frontmatter, c’est-à-dire le bloc de métadonnées YAML délimité par `---` au début du fichier. Ces métadonnées définissent l’apparence et le comportement de votre page.
 
-Utilisez le frontmatter pour contrôler :
+Utilisez le Frontmatter pour définir :
 
-* Les titres et descriptions de page
+* Les titres et descriptions des pages
 * Les titres, icônes et tags de la barre latérale
-* La mise en page des pages
-* Les balises meta pour le SEO
+* Les mises en page
+* Les balises méta SEO
 * Les métadonnées personnalisées
 
 <ResponseField name="title" type="string" required>
-  Le titre de votre page qui apparaît dans la navigation et les onglets du navigateur.
+  Le titre de votre page, affiché dans la navigation et dans les onglets du navigateur.
 </ResponseField>
 
 <ResponseField name="description" type="string">
-  Une brève description de ce que contient cette page. Apparaît sous le titre et améliore le référencement (SEO).
+  Une brève description du contenu de cette page. Elle apparaît sous le titre et améliore le SEO.
 </ResponseField>
 
 <ResponseField name="sidebarTitle" type="string">
-  Un titre court qui s&#39;affiche dans la navigation de la barre latérale.
+  Un titre court qui s’affiche dans la navigation de la barre latérale.
 </ResponseField>
 
 <ResponseField name="icon" type="string">
-  L&#39;icône à afficher.
+  L’icône à afficher.
 
   Options :
 
-  * Nom de l&#39;icône [Font Awesome](https://fontawesome.com/icons)
-  * Nom de l&#39;icône [Lucide](https://lucide.dev/icons)
-  * URL vers une icône hébergée en externe
-  * Chemin vers un fichier d&#39;icône dans votre projet
+  * Nom d’une icône [Font Awesome](https://fontawesome.com/icons)
+  * Nom d’une icône [Lucide](https://lucide.dev/icons)
+  * URL d’une icône hébergée à l’extérieur
+  * Chemin vers un fichier d’icône dans votre projet
 </ResponseField>
 
 <ResponseField name="iconType" type="string">
-  Le style d&#39;icône [Font Awesome](https://fontawesome.com/icons). Utilisé uniquement avec les icônes Font Awesome.
+  Le style de l’icône [Font Awesome](https://fontawesome.com/icons). Utilisé uniquement avec les icônes Font Awesome.
 
   Options : `regular`, `solid`, `light`, `thin`, `sharp-solid`, `duotone`, `brands`.
 </ResponseField>
@@ -54,12 +54,12 @@ Utilisez le frontmatter pour contrôler :
 </ResponseField>
 
 <ResponseField name="<custom>" type="string">
-  Tout frontmatter YAML valide. Par exemple, `product: "API"` ou `version: "1.0.0"`.
+  N’importe quel Frontmatter YAML valide. Par exemple, `product: "API"` ou `version: "1.0.0"`.
 </ResponseField>
 
 ```yaml Example YAML frontmatter wrap
 ---
-title: "About frontmatter"
+title: "À propos du Frontmatter"
 description: "Frontmatter is the metadata that controls how your page appears and behaves"
 sidebarTitle: "Frontmatter"
 icon: "book"
@@ -68,16 +68,16 @@ tag: "NEW"
 ```
 
 <div id="page-mode">
-  ## Mode de page
+  ## Mode d’affichage de la page
 </div>
 
-Contrôlez la façon dont votre page s’affiche grâce au paramètre `mode`.
+Contrôlez l’affichage de votre page avec le paramètre `mode`.
 
 <div id="default">
   ### Par défaut
 </div>
 
-Si aucun mode n’est défini, la page utilise une mise en page standard avec une barre latérale de navigation et une table des matières.
+Si aucun mode n’est défini, une mise en page standard est utilisée par défaut, avec une barre latérale de navigation et une table des matières.
 
 ```yaml
 ---
@@ -89,7 +89,7 @@ title: "Default page title"
   ### Large
 </div>
 
-Le mode large masque la table des matières. Ce mode est utile pour les pages qui n’ont pas de titres ou si vous préférez profiter de l’espace horizontal supplémentaire. Le mode large est disponible pour tous les thèmes.
+Le mode large masque la table des matières. C’est utile pour les pages qui n’ont pas de titres, ou si vous préférez profiter de l’espace horizontal supplémentaire. Le mode large est disponible pour tous les thèmes.
 
 ```yaml
 ---
@@ -102,7 +102,7 @@ mode: "wide"
   ### Personnalisé
 </div>
 
-Le mode personnalisé offre une mise en page minimaliste qui supprime tous les éléments à l’exception de la barre de navigation supérieure. C’est une toile vierge pour créer des pages de destination ou toute autre mise en page unique pour laquelle vous souhaitez réduire au minimum les éléments de navigation. Le mode personnalisé est disponible pour tous les thèmes.
+Le mode personnalisé propose une mise en page minimaliste qui supprime tous les éléments, à l’exception de la barre de navigation supérieure. C’est une toile vierge pour créer des pages d’accueil ou toute autre mise en page unique nécessitant un minimum d’éléments de navigation. Le mode personnalisé est disponible pour tous les thèmes.
 
 ```yaml
 ---
@@ -112,14 +112,14 @@ mode: "custom"
 ```
 
 <Warning>
-  L’utilisation de la propriété `style` sur les pages en mode personnalisé peut provoquer un décalage de la mise en page au chargement de la page. Utilisez plutôt [Tailwind CSS ou du CSS personnalisé](/fr/customize/custom-scripts) pour éviter ce problème.
+  L’utilisation de la propriété `style` sur les pages en mode personnalisé peut provoquer un décalage de mise en page au chargement. Utilisez plutôt [Tailwind CSS ou du CSS personnalisé](/fr/customize/custom-scripts) pour éviter ce problème.
 </Warning>
 
 <div id="frame">
   ### Frame
 </div>
 
-Le mode Frame propose une mise en page similaire au mode personnalisé, tout en conservant la barre latérale de navigation. Ce mode de page permet d’utiliser du HTML et des composants personnalisés tout en préservant l’expérience de navigation par défaut. Le mode Frame est uniquement disponible pour les thèmes Aspen et Almond.
+Le mode Frame propose une mise en page similaire au mode personnalisé, tout en conservant la navigation dans la barre latérale. Ce mode de page permet d’utiliser du HTML personnalisé et des composants, tout en préservant l’expérience de navigation par défaut. Le mode Frame est disponible uniquement avec les thèmes Aspen et Almond.
 
 ```yaml
 ---
@@ -129,10 +129,10 @@ mode: "frame"
 ```
 
 <div id="center">
-  ### Mode centré
+  ### Centré
 </div>
 
-Le mode centré supprime la barre latérale et la table des matières pour placer le contenu au centre. Il est utile pour les journaux de modifications ou d’autres pages où vous souhaitez mettre l’accent sur le contenu. Le mode centré est disponible pour les thèmes Mint et Linden.
+Le mode centré supprime la barre latérale et la table des matières afin de centrer le contenu. C’est utile pour les changelogs ou d’autres pages où vous souhaitez mettre l’accent sur le contenu. Le mode centré est disponible pour les thèmes Mint et Linden.
 
 ```yaml
 ---
@@ -145,7 +145,7 @@ mode: "center"
   ## Pages d’API
 </div>
 
-Créez des environnements de test d’API interactifs en ajoutant une spécification d’API dans votre frontmatter, via `api` ou `openapi`.
+Créez des bacs à sable API interactifs en ajoutant une spécification API à votre frontmatter, `api` ou `openapi`.
 
 ```yaml
 ---
@@ -153,13 +153,13 @@ openapi: "GET /endpoint"
 ---
 ```
 
-En savoir plus sur la création de [documentation d’API](/fr/api-playground/overview).
+En savoir plus sur la création d’une [documentation d’API](/fr/api-playground/overview).
 
 <div id="external-links">
   ## Liens externes
 </div>
 
-Ajoutez des liens vers des sites externes directement depuis votre navigation à l’aide de la métadonnée `url`.
+Ajoutez des liens directs vers des sites externes dans votre navigation à l’aide des métadonnées `url`.
 
 ```yaml
 ---
@@ -169,13 +169,13 @@ url: "https://www.npmjs.com/package/mint"
 ```
 
 <div id="search-engine-optimization">
-  ## Optimisation pour les moteurs de recherche
+  ## Référencement naturel
 </div>
 
-La plupart des balises méta SEO sont générées automatiquement. Vous pouvez définir manuellement des balises méta SEO pour améliorer le référencement de votre site, le partage sur les réseaux sociaux et la compatibilité avec les navigateurs.
+La plupart des balises méta SEO sont générées automatiquement. Vous pouvez définir manuellement les balises méta SEO pour améliorer le référencement de votre site, le partage sur les réseaux sociaux et la compatibilité avec les navigateurs.
 
 <Note>
-  Les balises méta contenant des deux-points doivent être entourées de guillemets.
+  Les balises méta contenant des deux-points doivent être placées entre guillemets.
 </Note>
 
 ```yaml
@@ -184,13 +184,13 @@ La plupart des balises méta SEO sont générées automatiquement. Vous pouvez d
 ---
 ```
 
-Consultez [SEO](/fr/optimize/seo) pour l’ensemble des options complètes de métadonnées SEO.
+Consultez [SEO](/fr/optimize/seo) pour connaître toutes les options de métadonnées SEO.
 
 <div id="internal-search-keywords">
   ## Mots-clés de recherche internes
 </div>
 
-Améliorez la visibilité d’une page spécifique dans la recherche interne en ajoutant des `keywords` dans vos métadonnées. Ces mots-clés n’apparaîtront ni dans le contenu de la page ni dans les résultats de recherche, mais les utilisateurs qui les saisiront verront la page s’afficher dans les résultats.
+Améliorez la visibilité d’une page précise dans la recherche intégrée en ajoutant des `keywords` à vos métadonnées. Ces mots-clés n’apparaîtront ni dans le contenu de la page ni dans les résultats de recherche, mais les utilisateurs qui les saisissent verront la page dans les résultats.
 
 ```yaml
 ---
@@ -199,7 +199,7 @@ keywords: ['configuration', 'setup', 'getting started']
 ```
 
 <div id="last-modified-timestamp">
-  ## Horodatage de la dernière modification
+  ## Date de dernière modification
 </div>
 
 Ajoutez la mention &quot;Dernière modification le [date]&quot; à toutes les pages en activant `metadata.timestamp` dans vos [paramètres globaux](/fr/organize/settings#metadata).
@@ -210,7 +210,7 @@ Ajoutez la mention &quot;Dernière modification le [date]&quot; à toutes les pa
 }
 ```
 
-Remplacez le paramètre global d’horodatage pour des pages individuelles à l’aide du champ `timestamp` dans le frontmatter. Utilisez ce champ pour afficher ou masquer sélectivement les horodatages sur certaines pages.
+Remplacez le paramètre global d’horodatage sur certaines pages à l’aide du champ de Frontmatter `timestamp`. Utilisez ce champ pour afficher ou masquer sélectivement les horodatages sur des pages spécifiques.
 
 ```yaml
 ---
@@ -219,4 +219,4 @@ timestamp: false
 ---
 ```
 
-Lorsque ce paramètre est défini sur `true`, l’horodatage s’affiche même si le paramètre global est défini sur `false`. Lorsqu’il est défini sur `false`, l’horodatage est masqué même si le paramètre global est défini sur `true`.
+Lorsqu’il est défini sur `true`, l’horodatage s’affiche même si le paramètre global est `false`. Lorsqu’il est défini sur `false`, l’horodatage est masqué même si le paramètre global est `true`.

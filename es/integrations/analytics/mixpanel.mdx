@@ -1,10 +1,10 @@
 ---
 title: "Mixpanel"
-description: "Haz un seguimiento del análisis de producto y del comportamiento de los usuarios con Mixpanel."
-keywords: ["Mixpanel integration", "product analytics", "event tracking", "token"]
+description: "Monitoriza la analítica de producto y el comportamiento de los usuarios con Mixpanel."
+keywords: ["integración de Mixpanel", "analítica de producto", "seguimiento de eventos", "token"]
 ---
 
-Agrega lo siguiente a tu archivo `docs.json` para enviar analíticas a Mixpanel.
+Agrega lo siguiente a tu archivo `docs.json` para enviar datos de analítica a Mixpanel.
 
 ```json Analytics options in docs.json
 "integrations": {
@@ -14,19 +14,19 @@ Agrega lo siguiente a tu archivo `docs.json` para enviar analíticas a Mixpanel.
 }
 ```
 
-Sustituye `YOUR_MIXPANEL_PROJECT_TOKEN` por el token de tu proyecto de Mixpanel. Puedes encontrarlo en la [configuración de tu proyecto en Mixpanel](https://mixpanel.com/settings/project).
+Reemplaza `YOUR_MIXPANEL_PROJECT_TOKEN` por el token del proyecto de Mixpanel. Puedes encontrarlo en la [configuración del proyecto de Mixpanel](https://mixpanel.com/settings/project).
 
 
 <div id="tracked-events">
-  ## Eventos registrados
+  ## Eventos rastreados
 </div>
 
-Mintlify registra automáticamente las siguientes interacciones de los usuarios:
+Mintlify rastrea automáticamente las siguientes interacciones de los usuarios:
 
-- Vistas de página
-- Consultas de búsqueda
-- Envío de comentarios
-- Interacciones con el menú contextual
-- Clics de navegación
+* Vistas de página
+* Consultas de búsqueda
+* Envíos de comentarios
+* Interacciones con el menú contextual
+* Clics de navegación
 
-Si no ves eventos en Mixpanel, asegúrate de que el token de tu proyecto sea correcto y de que no haya políticas de seguridad de contenido que estén bloqueando el script de Mixpanel.
+Si no ves eventos en Mixpanel, asegúrate de que el token del proyecto sea correcto y de que ninguna política de seguridad de contenido esté bloqueando el script de Mixpanel.

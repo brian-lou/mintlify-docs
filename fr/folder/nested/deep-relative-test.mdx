@@ -1,21 +1,21 @@
 ---
-title: "Test approfondi des extraits relatifs"
-description: "Page de test cachée pour valider l’import d’extraits relatifs profondément imbriqués"
+title: "Test approfondi des extraits relatifs imbriqués"
+description: "Page de test masquée pour valider les imports d'extraits relatifs profondément imbriqués"
 ---
 
 <div id="deep-relative-snippets-test">
-  # Test d'extraits relatifs profonds
+  # Test approfondi des extraits relatifs
 </div>
 
-Cette page se trouve à l'emplacement `/folder/nested/deep-relative-test.mdx` afin de tester les imports relatifs sur plusieurs niveaux.
+Cette page se trouve dans `/folder/nested/deep-relative-test.mdx` pour tester les imports relatifs sur plusieurs niveaux.
 
----
+***
 
 <div id="test-1-two-levels-up-snippets">
-  ## Test 1 : Deux niveaux au-dessus (`../../snippets/`)
+  ## Test 1 : Deux niveaux plus haut (`../../snippets/`)
 </div>
 
-Import de `/snippets/test-snippet-a.mdx` à l&#39;aide de `../../snippets/` :
+Import depuis `/snippets/test-snippet-a.mdx` avec `../../snippets/` :
 
 import TestSnippetA from "../../snippets/test-snippet-a.mdx";
 
@@ -25,7 +25,7 @@ import TestSnippetA from "../../snippets/test-snippet-a.mdx";
 
 
 <div id="test-2-two-levels-up-with-named-export">
-  ## Test 2 : Deux niveaux au-dessus avec export nommé
+  ## Test 2 : Deux niveaux plus haut avec export nommé
 </div>
 
 Import depuis `/snippets/test-snippet-b.mdx` :
@@ -40,10 +40,10 @@ import TestSnippetB, { testVariable } from "../../snippets/test-snippet-b.mdx";
 
 
 <div id="test-3-one-level-up">
-  ## Test 3 : Un niveau au-dessus (`../`)
+  ## Test 3 : Un niveau supérieur (`../`)
 </div>
 
-Import depuis `/folder/local-snippet.mdx` (répertoire parent) :
+Import de `/folder/local-snippet.mdx` (répertoire parent) :
 
 import LocalSnippet, { localMessage } from "../local-snippet.mdx";
 
@@ -55,7 +55,7 @@ import LocalSnippet, { localMessage } from "../local-snippet.mdx";
 
 
 <div id="test-4-same-directory-sibling">
-  ## Test 4 : Élément au même niveau dans le même répertoire (`./`)
+  ## Test 4 : Fichier frère dans le même répertoire (`./`)
 </div>
 
 Import depuis `/folder/nested/deep-snippet.mdx` (même répertoire) :
@@ -70,10 +70,10 @@ import DeepSnippet, { deepMessage } from "./deep-snippet.mdx";
 
 
 <div id="test-5-mixed-absolute-path-for-comparison">
-  ## Test 5 : Mixte - chemin absolu (pour comparaison)
+  ## Test 5 : mixte - chemin absolu (pour comparaison)
 </div>
 
-Importation avec un chemin absolu :
+Import avec un chemin absolu :
 
 import IconsRequired from "/snippets/fr/icons-required.mdx";
 
@@ -83,13 +83,13 @@ import IconsRequired from "/snippets/fr/icons-required.mdx";
 
 
 <div id="path-resolution-summary">
-  ## Récapitulatif de la résolution des chemins
+  ## Résumé de la résolution des chemins d’accès
 </div>
 
-À partir de cette page `/folder/nested/deep-relative-test.mdx` :
+À partir de cette page, située à `/folder/nested/deep-relative-test.mdx` :
 
-| Chemin relatif | Correspond à |
-|---------------|-------------|
-| `../../snippets/test-snippet-a.mdx` | `/snippets/test-snippet-a.mdx` |
-| `../local-snippet.mdx` | `/folder/local-snippet.mdx` |
-| `./deep-snippet.mdx` | `/folder/nested/deep-snippet.mdx` |
+| Chemin relatif                      | Correspond à                      |
+| ----------------------------------- | --------------------------------- |
+| `../../snippets/test-snippet-a.mdx` | `/snippets/test-snippet-a.mdx`    |
+| `../local-snippet.mdx`              | `/folder/local-snippet.mdx`       |
+| `./deep-snippet.mdx`                | `/folder/nested/deep-snippet.mdx` |

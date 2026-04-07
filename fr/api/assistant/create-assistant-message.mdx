@@ -1,20 +1,20 @@
 ---
 openapi: /fr/discovery-openapi.json POST /v1/assistant/{domain}/message
-tag: "Obsolète"
-keywords: [ "message de l'assistant", "intégrer", "chat", "intégration", "ai sdk v4" ]
+tag: "Déprécié"
+keywords: [ "message d’assistant", "intégration", "chat", "intégrer", "ai sdk v4" ]
 ---
 
-<Badge color="orange">Obsolète</Badge>
+<Badge color="orange">Déprécié</Badge>
 
 <Info>
-  Le point de terminaison assistant message v1 est compatible avec **AI SDK v4**. Si vous utilisez AI SDK v5 ou une version ultérieure, utilisez plutôt le [point de terminaison assistant message v2](/fr/api-reference/assistant/create-assistant-message-v2).
+  Le point de terminaison Assistant Message v1 est compatible avec **AI SDK v4**. Si vous utilisez AI SDK v5 ou une version ultérieure, utilisez plutôt le [point de terminaison Assistant Message v2](/fr/api-reference/assistant/create-assistant-message-v2).
 </Info>
 
 <div id="integration-with-usechat">
   ## Intégration avec `useChat`
 </div>
 
-Le hook `useChat` du SDK d&#39;IA de Vercel est la méthode recommandée pour intégrer l&#39;API Assistant dans votre application.
+Le hook `useChat` du SDK AI de Vercel est la méthode recommandée pour intégrer l’API de l’assistant à votre application.
 
 <Steps>
   <Step title="Installer AI SDK v4">
@@ -67,28 +67,28 @@ Le hook `useChat` du SDK d&#39;IA de Vercel est la méthode recommandée pour in
 
     **Configuration requise pour Mintlify :**
 
-    * `streamProtocol: 'data'` - Requis pour les réponses en streaming.
-    * `sendExtraMessageFields: true` - Requis pour envoyer les métadonnées des messages.
-    * `body.fp` - Identifiant d’empreinte (utiliser `anonymous` ou un identifiant utilisateur).
+    * `streamProtocol: 'data'` - Obligatoire pour le streaming des réponses.
+    * `sendExtraMessageFields: true` - Obligatoire pour envoyer les métadonnées des messages.
+    * `body.fp` - Identifiant d’empreinte (utilisez `'anonymous'` ou un identifiant utilisateur).
     * `body.retrievalPageSize` - Nombre de résultats de recherche à utiliser (recommandé : 5).
 
-    **Configuration optionnelle :**
+    **Configuration facultative :**
 
     * `body.context` - Tableau d’informations contextuelles à fournir à l’assistant. Chaque objet de contexte contient :
       * `type` - Soit `'code'`, soit `'textSelection'`.
-      * `value` - L’extrait de code ou le contenu de texte sélectionné.
-      * `elementId` (optionnel) - Identifiant de l’élément d’interface contenant le contexte.
+      * `value` - L’extrait de code ou le contenu du texte sélectionné.
+      * `elementId` (facultatif) - Identifiant de l’élément d’interface contenant le contexte.
   </Step>
 </Steps>
 
-Consultez [useChat](https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-chat) dans la documentation du SDK d’IA pour plus de détails.
+Consultez la documentation du SDK AI pour plus de détails sur [useChat](https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-chat).
 
 <div id="rate-limits">
-  ## Limites de débit
+  ## Limites de taux
 </div>
 
-L&#39;API Assistant présente les limites suivantes :
+L&#39;API de l&#39;assistant est soumise aux limites suivantes :
 
 * 10 000 utilisations par clé et par mois
 * 10 000 requêtes par organisation Mintlify et par heure
-* 10 000 requêtes par adresse IP et par jour
+* 10 000 requêtes par IP et par jour

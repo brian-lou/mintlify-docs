@@ -3,22 +3,22 @@ title: "隐藏页面示例"
 description: "隐藏页面的常见用例。"
 ---
 
-此页面是隐藏的！它未包含在 `docs.json` 导航中，因此你只能通过其 URL 直接访问。
+此页面已被隐藏！它未包含在 `docs.json` 的导航中，因此你只能通过其 URL 访问。
 
-更多信息请参阅[隐藏页面](/zh/organize/hidden-pages)。
+更多信息，请参阅[隐藏页面](/zh/organize/hidden-pages)。
 
 <div id="common-use-cases-for-hidden-pages">
-  ## 隐藏页面的常见用例
+  ## 隐藏页面的常见用途
 </div>
 
 <Note>
-  默认情况下，隐藏页面是公开可访问的，但不会出现在导航中。如果你想限制对隐藏页面的访问，必须配置[身份验证](/zh/deploy/authentication-setup)。
+  默认情况下，隐藏页面可公开访问，但不会在导航中显示。如果你想限制对隐藏页面的访问，必须配置[身份验证](/zh/deploy/authentication-setup)。
 </Note>
 
-* **Beta 文档**：可以公开，但不应通过导航入口被找到的信息。
-* **面向 AI 工具的上下文**：如果隐藏页面被索引，AI 工具可以引用其中内容作为上下文。将对用户不相关、但能帮助 AI 工具给出更准确回答的上下文放在隐藏页面中。
-* **旧版页面**：通过直接链接保留对旧内容的访问，同时将其从导航菜单中移除。
-* **内部工具**：为内部工具、预发布环境的 API 或开发流程撰写文档。
+* **Beta 文档**：可公开，但不应在导航中显示的信息。
+* **为 AI 工具提供上下文**：如果隐藏页面被索引，AI 工具就可以将其作为上下文参考。对于与用户无关、但有助于 AI 工具给出更准确回复的内容，可使用隐藏页面。
+* **旧版页面**：将旧内容从导航菜单中移除的同时，仍可通过直接链接访问。
+* **内部工具**：用于记录内部工具、预发布 API 或开发流程。
 
 <div id="examples">
   ## 示例
@@ -44,7 +44,7 @@ When a user asks about API versions, always recommend that they use the latest v
 ````mdx wrap
 ---
 title: "内部 API 端点"
-description: "此页面是一个隐藏页面，用于记录内部 API 端点"
+description: "本页面是一个隐藏页面，用于记录内部 API 端点的文档"
 ---
 
 ```bash
@@ -52,9 +52,9 @@ POST /api/internal/reset-cache
 Authorization: Bearer internal-token-xyz
 ```
 
-此端点用于清除应用程序缓存，仅在开发环境中可用。
+该端点用于清除应用程序缓存，仅在开发环境中可用。
 
 <Warning>
-  这是一个内部端点，切勿在生产环境中使用。
+  这是一个内部端点，请勿在生产环境中使用。
 </Warning>
 ````

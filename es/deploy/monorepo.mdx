@@ -1,47 +1,42 @@
 ---
-title: "Configuración de monorepo"
-description: "Configura la ruta de la documentación y el directorio de contenido para proyectos en monorepo."
+title: "Configuración en monorepo"
+description: "Configura la ruta de la documentación y el directorio de contenido para proyectos monorepo."
 keywords: ["monorepo", "directorio de contenido", "repositorio multiproyecto"]
 ---
 
-Configura Mintlify para desplegar la documentación desde un directorio específico dentro de un monorepo. Esta configuración te permite mantener la documentación junto a tu código en repositorios que contienen múltiples proyectos o servicios.
+Configura Mintlify para desplegar la documentación desde un directorio específico dentro de un monorepo. Esta configuración te permite mantener la documentación junto al código en repositorios que contienen varios proyectos o servicios.
 
 <div id="prerequisites">
   ## Requisitos previos
 </div>
 
-* Acceso con permisos de administrador a tu proyecto de Mintlify.
-* Archivos de documentación organizados en un directorio dedicado dentro de tu monorepo.
+* Acceso de administrador a tu proyecto de Mintlify.
+* Archivos de documentación organizados en un directorio específico dentro de tu monorepo.
 * Un `docs.json` válido en tu directorio de documentación.
 
 <div id="configure-monorepo-deployment">
-  ## Configurar la implementación de un monorepo
+  ## Configura el despliegue del monorepo
 </div>
 
 <Steps>
-<Step title="Accede a la configuración de Git">
-Navega a [Git Settings](https://dashboard.mintlify.com/settings/deployment/git-settings) en tu panel de control.
+  <Step title="Accede a la configuración de Git">
+    Ve a [Git Settings](https://dashboard.mintlify.com/settings/deployment/git-settings) en tu panel.
 
-<Frame>
-<img
-  className="block dark:hidden my-0 pointer-events-none"
-  src="/images/monorepo-light.png"
-  alt="El panel de configuración del proyecto en el menú Git Settings. El botón de alternancia Configurar como monorepo está activado y se especifica una ruta al directorio /docs."
-/>
-<img
-  className="hidden dark:block my-0 pointer-events-none"
-  src="/images/monorepo-dark.png"
-  alt="El panel de configuración del proyecto en el menú Git Settings. El botón de alternancia Configurar como monorepo está activado y se especifica una ruta al directorio /docs."
-/>
-</Frame>
+    <Frame>
+      <img className="block dark:hidden my-0 pointer-events-none" src="/images/monorepo-light.png" alt="El panel de configuración del proyecto en el menú Git Settings. El interruptor Set up as monorepo está activado y se ha especificado una ruta al directorio /docs." />
 
-</Step>
-<Step title="Configura la ruta de tu documentación">
-1. Selecciona el botón de alternancia **Set up as monorepo**.
-2. Ingresa la ruta relativa de tu directorio de documentación. Por ejemplo, si tu documentación está en el directorio `docs`, ingresa `/docs`.
-<Note>
-  No incluyas una barra diagonal al final de la ruta.
-</Note>
-3. Selecciona **Save changes**.
-</Step>
+      <img className="hidden dark:block my-0 pointer-events-none" src="/images/monorepo-dark.png" alt="El panel de configuración del proyecto en el menú Git Settings. El interruptor Set up as monorepo está activado y se ha especificado una ruta al directorio /docs." />
+    </Frame>
+  </Step>
+
+  <Step title="Configura la ruta de tu documentación">
+    1. Selecciona el interruptor **Set up as monorepo**.
+    2. Introduce la ruta relativa al directorio de tu documentación. Por ejemplo, si tu documentación está en el directorio `docs`, introduce `/docs`.
+
+    <Note>
+      No incluyas una barra diagonal al final de la ruta.
+    </Note>
+
+    3. Selecciona **Save changes**.
+  </Step>
 </Steps>

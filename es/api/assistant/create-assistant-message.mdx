@@ -1,29 +1,29 @@
 ---
 openapi: /es/discovery-openapi.json POST /v1/assistant/{domain}/message
-tag: "Deprecated"
-keywords: [ "assistant message", "embed", "chat", "integrate", "ai sdk v4" ]
+tag: "Obsoleto"
+keywords: [ "mensaje del asistente", "incrustar", "chat", "integrar", "ai sdk v4" ]
 ---
 
 <Badge color="orange">Obsoleto</Badge>
 
 <Info>
-  El endpoint assistant message v1 es compatible con **AI SDK v4**. Si usas AI SDK v5 o posterior, utiliza en su lugar el [endpoint assistant message v2](/es/api-reference/assistant/create-assistant-message-v2).
+  El endpoint v1 para mensajes del asistente es compatible con **AI SDK v4**. Si usas AI SDK v5 o una versión posterior, usa en su lugar el [endpoint v2 para mensajes del asistente](/es/api-reference/assistant/create-assistant-message-v2).
 </Info>
 
 <div id="integration-with-usechat">
   ## Integración con `useChat`
 </div>
 
-El hook `useChat` del AI SDK de Vercel es la forma recomendada de integrar la API de asistente en tu aplicación.
+El hook `useChat` del SDK de IA de Vercel es la forma recomendada de integrar la API del asistente en tu aplicación.
 
 <Steps>
-  <Step title="Instalar AI SDK v4">
+  <Step title="Instala AI SDK v4">
     ```bash
     npm i ai@^4.1.15
     ```
   </Step>
 
-  <Step title="Usar el hook">
+  <Step title="Usa el hook">
     ```tsx
     import { useChat } from 'ai/react';
 
@@ -65,11 +65,11 @@ El hook `useChat` del AI SDK de Vercel es la forma recomendada de integrar la AP
     }
     ```
 
-    **Configuración requerida para Mintlify:**
+    **Configuración obligatoria para Mintlify:**
 
-    * `streamProtocol: 'data'` - Necesario para respuestas en streaming.
-    * `sendExtraMessageFields: true` - Necesario para enviar metadatos de los mensajes.
-    * `body.fp` - Identificador de huella (usa &#39;anonymous&#39; o un identificador de usuario).
+    * `streamProtocol: 'data'` - Obligatorio para transmitir respuestas en streaming.
+    * `sendExtraMessageFields: true` - Obligatorio para enviar metadatos del mensaje.
+    * `body.fp` - Identificador de huella digital (usa &#39;anonymous&#39; o un identificador de usuario).
     * `body.retrievalPageSize` - Número de resultados de búsqueda que se usarán (recomendado: 5).
 
     **Configuración opcional:**
@@ -77,11 +77,11 @@ El hook `useChat` del AI SDK de Vercel es la forma recomendada de integrar la AP
     * `body.context` - Matriz de información contextual que se proporciona al asistente. Cada objeto de contexto contiene:
       * `type` - Puede ser `'code'` o `'textSelection'`.
       * `value` - El fragmento de código o el contenido de texto seleccionado.
-      * `elementId` (opcional) - Identificador del elemento de la interfaz de usuario que contiene el contexto.
+      * `elementId` (opcional) - Identificador del elemento de la interfaz que contiene el contexto.
   </Step>
 </Steps>
 
-Consulta [useChat](https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-chat) en la documentación del AI SDK para más información.
+Consulta [useChat](https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-chat) en la documentación del AI SDK para obtener más información.
 
 <div id="rate-limits">
   ## Límites de uso
@@ -91,4 +91,4 @@ La API del asistente tiene los siguientes límites:
 
 * 10.000 usos por clave al mes
 * 10.000 solicitudes por organización de Mintlify por hora
-* 10.000 solicitudes por dirección IP al día
+* 10.000 solicitudes por IP al día

@@ -1,31 +1,31 @@
 ---
 title: "自定义脚本"
-description: "添加自定义 JavaScript 和 CSS，全面定制文档的外观与使用体验。"
-keywords: ["CSS", "JavaScript", "Tailwind CSS", "样式定制"]
+description: "添加自定义 JavaScript 和 CSS，全面定制文档的外观与体验。"
+keywords: ["CSS", "JavaScript", "Tailwind CSS", "样式自定义"]
 ---
 
-使用 CSS 为 HTML 元素设置样式，或添加自定义 CSS 和 JavaScript，全面定制文档的外观与使用体验。
+使用 CSS 为 HTML 元素设置样式，或添加自定义 CSS 和 JavaScript，全面定制文档的外观与体验。
 
 <div id="styling-with-tailwind-css">
-  ## 使用 Tailwind CSS 进行样式设计
+  ## 使用 Tailwind CSS 设置样式
 </div>
 
-使用 Tailwind CSS v3 为 HTML 元素添加样式。你可以控制布局、间距、颜色以及其他视觉属性。常见的类包括：
+使用 Tailwind CSS v3 为 HTML 元素设置样式。你可以控制布局、间距、颜色及其他视觉属性。常用类包括：
 
-* `w-full` - 占满全部宽度
+* `w-full` - 全宽
 * `aspect-video` - 16:9 宽高比
 * `rounded-xl` - 大圆角
 * `block`, `hidden` - 显示控制
-* `dark:hidden`, `dark:block` - 深色模式下的可见性
+* `dark:hidden`, `dark:block` - 深色模式下的显示状态
 
-不支持 Tailwind CSS 的任意值语法。对于自定义数值，请改用 `style` 属性。
+不支持 Tailwind CSS 的任意值。需要自定义值时，请改用 `style` prop。
 
 ```html
 <img style={{ width: '350px', margin: '12px auto' }} src="/path/image.jpg" />
 ```
 
 <Warning>
-  使用 `style` prop 可能会在页面加载时导致布局偏移，尤其是在自定义模式的页面上。请改用 Tailwind CSS 类或自定义 CSS 文件，以避免页面布局跳动或闪烁。
+  使用 `style` prop 可能会导致页面在加载时出现布局偏移，尤其是在自定义模式页面中。请改用 Tailwind CSS 类或自定义 CSS 文件，以避免布局偏移或闪烁。
 </Warning>
 
 
@@ -33,13 +33,13 @@ keywords: ["CSS", "JavaScript", "Tailwind CSS", "样式定制"]
   ## 自定义 CSS
 </div>
 
-将 CSS 文件添加到你的仓库后，其中定义的类名将在所有 MDX 文件中生效并可供使用。
+将 CSS 文件添加到你的代码仓库后，其中定义的类名就会自动生效，并可在所有 MDX 文件中使用。
 
 <div id="adding-stylecss">
   ### 添加 `style.css`
 </div>
 
-例如，你可以添加一个名为 `style.css` 的文件，用来自定义导航栏和页脚的样式。
+例如，你可以添加以下 `style.css` 文件，自定义导航栏和页脚的样式。
 
 ```css
 #navbar {
@@ -57,57 +57,57 @@ footer {
   ### 使用标识符和选择器
 </div>
 
-Mintlify 提供了一组常用的标识符和选择器，帮助你标记 UI 中的重要元素。
+Mintlify 提供了一组常用的标识符和选择器，帮助你为 UI 中的重要元素添加标记。
 
 <Tip>
-  使用“检查元素”来找到你想要自定义的相关元素引用。
+  使用“检查元素”功能，查找你要自定义的元素引用。
 </Tip>
 
 <AccordionGroup>
   <Accordion title="标识符">
-    * APIPlaygroundInput: `api-playground-input`
-    * AssistantEntry: `assistant-entry`
-    * AssistantEntryMobile: `assistant-entry-mobile`
-    * Banner: `banner`
-    * BodyContent: `body-content`
-    * ChangelogFilters: `changelog-filters`
-    * ChangelogFiltersContent: `changelog-filters-content`
-    * ChatAssistantSheet: `chat-assistant-sheet`
-    * ChatAssistantTextArea: `chat-assistant-textarea`
-    * ContentArea: `content-area`
-    * ContentContainer: `content-container`
-    * ContentSideLayout: `content-side-layout`
-    * FeedbackForm: `feedback-form`
-    * FeedbackFormCancel: `feedback-form-cancel`
-    * FeedbackFormInput: `feedback-form-input`
-    * FeedbackFormSubmit: `feedback-form-submit`
-    * FeedbackThumbsDown: `feedback-thumbs-down`
-    * FeedbackThumbsUp: `feedback-thumbs-up`
-    * Footer: `footer`
-    * Header: `header`
-    * NavBarTransition: `navbar-transition`
-    * NavigationItems: `navigation-items`
-    * Navbar: `navbar`
-    * PageContextMenu: `page-context-menu`
-    * PageContextMenuButton: `page-context-menu-button`
-    * PageTitle: `page-title`
-    * Pagination: `pagination`
-    * Panel: `panel`
-    * RequestExample: `request-example`
-    * ResponseExample: `response-example`
-    * SearchBarEntry: `search-bar-entry`
-    * SearchBarEntryMobile: `search-bar-entry-mobile`
-    * SearchInput: `search-input`
-    * Sidebar: `sidebar`
-    * SidebarContent: `sidebar-content`
-    * TableOfContents: `table-of-contents`
-    * TableOfContentsContent: `table-of-contents-content`
-    * TableOfContentsLayout: `table-of-contents-layout`
-    * TopbarCtaButton: `topbar-cta-button`
+    * API 操作台输入框: `api-playground-input`
+    * 助手入口: `assistant-entry`
+    * 移动端助手入口: `assistant-entry-mobile`
+    * 横幅: `banner`
+    * 正文内容: `body-content`
+    * 更新日志筛选器: `changelog-filters`
+    * 更新日志筛选器内容: `changelog-filters-content`
+    * 聊天助手面板: `chat-assistant-sheet`
+    * 聊天助手文本区域: `chat-assistant-textarea`
+    * 内容区域: `content-area`
+    * 内容容器: `content-container`
+    * 内容侧边布局: `content-side-layout`
+    * 反馈表单: `feedback-form`
+    * 反馈表单取消按钮: `feedback-form-cancel`
+    * 反馈表单输入框: `feedback-form-input`
+    * 反馈表单提交按钮: `feedback-form-submit`
+    * 反馈“踩”按钮: `feedback-thumbs-down`
+    * 反馈“赞”按钮: `feedback-thumbs-up`
+    * 页脚: `footer`
+    * 页眉: `header`
+    * 导航栏过渡效果: `navbar-transition`
+    * 导航项: `navigation-items`
+    * 导航栏: `navbar`
+    * 页面上下文菜单: `page-context-menu`
+    * 页面上下文菜单按钮: `page-context-menu-button`
+    * 页面标题: `page-title`
+    * 分页: `pagination`
+    * 面板: `panel`
+    * 请求示例: `request-example`
+    * 响应示例: `response-example`
+    * 搜索栏入口: `search-bar-entry`
+    * 移动端搜索栏入口: `search-bar-entry-mobile`
+    * 搜索输入框: `search-input`
+    * 侧边栏: `sidebar`
+    * 侧边栏内容: `sidebar-content`
+    * 目录: `table-of-contents`
+    * 目录内容: `table-of-contents-content`
+    * 目录布局: `table-of-contents-layout`
+    * 顶栏 CTA 按钮: `topbar-cta-button`
   </Accordion>
 
   <Accordion title="选择器">
-    * Accordion: `accordion`
+    * 折叠面板: `accordion`
     * AccordionGroup: `accordion-group`
     * AlmondLayout: `almond-layout`
     * AlmondNavBottomSection: `almond-nav-bottom-section`
@@ -127,7 +127,7 @@ Mintlify 提供了一组常用的标识符和选择器，帮助你标记 UI 中�
     * ChatAssistantInput: `chat-assistant-input`
     * ChatAssistantSendButton: `chat-assistant-send-button`
     * CodeBlock: `code-block`
-    * CodeGroup: `code-group`
+    * 代码分组: `code-group`
     * Content: `mdx-content`
     * DropdownTrigger: `nav-dropdown-trigger`
     * DropdownContent: `nav-dropdown-content`
@@ -163,8 +163,8 @@ Mintlify 提供了一组常用的标识符和选择器，帮助你标记 UI 中�
     * SidebarTitle: `sidebar-title`
     * Step: `step`
     * Steps: `steps`
-    * Tab: `tab`
-    * Tabs: `tabs`
+    * 标签页: `tab`
+    * 标签页: `tabs`
     * TabsBar: `nav-tabs`
     * TabsBarItem: `nav-tabs-item`
     * TableOfContents: `toc`
@@ -177,20 +177,20 @@ Mintlify 提供了一组常用的标识符和选择器，帮助你标记 UI 中�
 </AccordionGroup>
 
 <Warning>
-  随着平台不断演进，引用内容和常见元素的样式可能会发生变化。请谨慎使用自定义样式。
+  参考资料以及常见元素的样式会随着平台的演进而有所变化。请谨慎使用自定义样式。
 </Warning>
 
 <div id="custom-javascript">
   ## 自定义 JavaScript
 </div>
 
-自定义 JS 允许你在全局添加自定义可执行代码，相当于在每个页面中加入一个包含 JS 代码的 `<script>` 标签。
+自定义 JS 可让你在全站范围内添加自定义的可执行代码。这相当于在每个页面中加入一个包含 JS 代码的 `<script>` 标签。
 
 <div id="adding-custom-javascript">
   ### 添加自定义 JavaScript
 </div>
 
-文档内容目录中的任何 `.js` 文件都会自动被引入到每个文档页面中。例如，你可以添加如下所示的 `ga.js` 文件，在整个文档中启用 [Google Analytics](https://marketingplatform.google.com/about/analytics)。
+文档内容目录中的任何 `.js` 文件都会包含在每个文档页面中。例如，你可以添加下面的 `ga.js` 文件，在整个文档站点中启用 [Google Analytics](https://marketingplatform.google.com/about/analytics)。
 
 ```js
 window.dataLayer = window.dataLayer || [];
@@ -203,5 +203,5 @@ gtag('config', 'TAG_ID');
 ```
 
 <Warning>
-  请谨慎使用，避免引入安全漏洞。
+  请务必谨慎使用，以免引入安全漏洞。
 </Warning>

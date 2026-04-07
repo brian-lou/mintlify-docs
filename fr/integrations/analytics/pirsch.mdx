@@ -1,29 +1,27 @@
 ---
 title: "Pirsch"
-description: "Suivez des statistiques respectueuses de la vie privée avec Pirsch."
-keywords: ["Pirsch Analytics", "analyses respectueuses de la vie privée", "code d’identification", "conforme au RGPD"]
+description: "Suivez des analyses respectueuses de la vie privée avec Pirsch."
+keywords: ["Pirsch Analytics", "analyse respectueuse de la vie privée", "code d’identification", "conforme au RGPD"]
 ---
 
 Ajoutez ce qui suit à votre fichier `docs.json` pour envoyer des données d’analyse à Pirsch.
 
-Vous pouvez obtenir l’ID de votre site dans Settings \> Developer \> Identification Code.
+Vous pouvez obtenir l’identifiant de votre site dans Settings &gt; Developer &gt; Identification Code.
 
 <CodeGroup>
+  ```json Options d’analyse dans docs.json
+  "integrations": {
+      "pirsch": {
+          "id": "required"
+      }
+  }
+  ```
 
-```json Options d’analyse dans docs.json
-"integrations": {
-    "pirsch": {
-        "id": "required"
-    }
-}
-```
-
-```json Exemple
-"integrations": {
-    "pirsch": {
-        "id": "8Kw7OKxBfswOjnKGZa7P9Day8JmVYwTp"
-    }
-}
-```
-
+  ```json Exemple
+  "integrations": {
+      "pirsch": {
+          "id": "8Kw7OKxBfswOjnKGZa7P9Day8JmVYwTp"
+      }
+  }
+  ```
 </CodeGroup>

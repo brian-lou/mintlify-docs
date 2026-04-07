@@ -2,7 +2,7 @@
   "openapi": "3.0.1",
   "info": {
     "title": "Mintlify External API",
-    "description": "供 Mintlify 文档管理和资源访问使用的 API。",
+    "description": "用于管理 Mintlify 文档和访问相关资源的 API。",
     "version": "1.0.0"
   },
   "servers": [
@@ -22,12 +22,12 @@
     "/project/update/{projectId}": {
       "post": {
         "summary": "触发更新",
-        "description": "为你的文档项目排队一次部署更新操作。将返回一个状态 ID，用于跟踪更新进度。更新将从你配置的部署分支触发。",
+        "description": "为你的文档项目排队执行一次部署更新。返回一个状态 ID，可用于跟踪更新进度。更新将从你配置的部署分支触发。",
         "parameters": [
           {
             "name": "projectId",
             "in": "path",
-            "description": "你的项目 ID。可以从控制台中的 [API keys](https://dashboard.mintlify.com/settings/organization/api-keys) 页面复制。",
+            "description": "你的项目 ID。可从控制面板中的 [API keys](https://dashboard.mintlify.com/settings/organization/api-keys) 页面复制。",
             "required": true,
             "schema": {
               "type": "string"
@@ -57,7 +57,7 @@
     "/project/update-status/{statusId}": {
       "get": {
         "summary": "获取更新状态",
-        "description": "根据状态 ID 获取对应更新的状态",
+        "description": "通过状态 ID 获取更新状态",
         "parameters": [
           {
             "name": "statusId",
@@ -79,19 +79,19 @@
                   "properties": {
                     "_id": {
                       "type": "string",
-                      "description": "已触发的更新状态 ID。"
+                      "description": "已触发更新的状态 ID。"
                     },
                     "projectId": {
                       "type": "string",
-                      "description": "文档项 ID。"
+                      "description": "文档项目 ID。"
                     },
                     "createdAt": {
                       "type": "string",
-                      "description": "使用指定 UTC 日期时间的 ISODate 值。"
+                      "description": "使用 UTC 表示指定日期时间的 ISODate"
                     },
                     "endedAt": {
                       "type": "string",
-                      "description": "使用指定 UTC 日期时间的 ISODate 值。"
+                      "description": "使用 UTC 表示指定日期时间的 ISODate"
                     },
                     "status": {
                       "type": "string",
@@ -101,11 +101,11 @@
                         "success",
                         "failure"
                       ],
-                      "description": "更新后的状态。"
+                      "description": "更新状态。"
                     },
                     "summary": {
                       "type": "string",
-                      "description": "状态更新的摘要。"
+                      "description": "更新状态摘要"
                     },
                     "logs": {
                       "type": "array",
@@ -120,43 +120,43 @@
                     },
                     "screenshot": {
                       "type": "string",
-                      "description": "文档的截图。"
+                      "description": "文档截图。"
                     },
                     "screenshotLight": {
                       "type": "string",
-                      "description": "文档的截图。"
+                      "description": "文档截图。"
                     },
                     "screenshotDark": {
                       "type": "string",
-                      "description": "深色模式下的文档截图。"
+                      "description": "文档在深色模式下的截图。"
                     },
                     "author": {
                       "type": "string",
-                      "description": "更新后的作者。"
+                      "description": "更新的作者。"
                     },
                     "commit": {
                       "type": "object",
-                      "description": "提交的详细信息。",
+                      "description": "提交详情",
                       "properties": {
                         "sha": {
                           "type": "string",
-                          "description": "该提交的 SHA。"
+                          "description": "提交的 SHA。"
                         },
                         "ref": {
                           "type": "string",
-                          "description": "该提交的引用（ref）。"
+                          "description": "提交的 ref。"
                         },
                         "message": {
                           "type": "string",
-                          "description": "提交消息。"
+                          "description": "提交信息。"
                         },
                         "filesChanged": {
                           "type": "object",
-                          "description": "已更改文件的详细信息。",
+                          "description": "已变更文件的详情。",
                           "properties": {
                             "added": {
                               "type": "array",
-                              "description": "新添加的文件。",
+                              "description": "新增的文件。",
                               "items": {
                                 "type": "string"
                               }
@@ -181,7 +181,7 @@
                     },
                     "source": {
                       "type": "string",
-                      "description": "更新触发器的来源。",
+                      "description": "更新触发来源。",
                       "enum": [
                         "internal",
                         "github-app-installation",
@@ -204,7 +204,7 @@
       "bearerAuth": {
         "type": "http",
         "scheme": "bearer",
-        "description": "Authorization 请求头需要携带 Bearer 令牌。请使用管理员 API 密钥（以 `mint_` 开头）。这是仅供服务端使用的私密密钥。你可以在控制台的 [API 密钥页面](https://dashboard.mintlify.com/settings/organization/api-keys) 中生成一个。"
+        "description": "Authorization 标头需要 Bearer 令牌。请使用管理员 API key（前缀为 `mint_`）。这是服务器端密钥，必须妥善保密。你可以在控制面板中的 [API keys page](https://dashboard.mintlify.com/settings/organization/api-keys) 生成。"
       }
     }
   }

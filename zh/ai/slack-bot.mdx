@@ -1,50 +1,52 @@
 ---
 title: "Slack 机器人"
-description: "在你的 Slack 工作区中添加一个机器人，让它基于你的文档回答问题。"
-keywords: ["bot", "workspace", "Q&A", "Slack", "app"]
+description: "向你的 Slack 工作区添加一个机器人，根据你的文档回答问题。"
+keywords: ["机器人", "工作区", "问答", "Slack", "应用"]
 ---
 
 <Info>
-  Slack 应用适用于包含 Assistant 访问权限的[专业版和自定义方案](https://mintlify.com/pricing?ref=slack-app)。
+  Slack 应用适用于可使用助手的 [Pro 和 Custom 套餐](https://mintlify.com/pricing?ref=slack-app)。
 </Info>
 
-Slack 应用会在你的工作区中添加一个机器人，为你的社区提供实时解答。该机器人使用 Mintlify Assistant 搜索你的文档，并提供准确且带有引用的回复，因此它始终保持最新状态。
+Slack 应用会向你的工作区添加一个机器人，为你的社区提供实时问答支持。该机器人使用 Mintlify 助手搜索你的文档，并提供准确且附带引用的回复，因此内容始终保持最新。
 
-机器人只能访问你明确将其添加到的频道内的消息。它不会对整个工作区拥有全局读取权限。
+该机器人只能查看你明确将其添加到的频道中的消息。它没有你工作区的全局读取权限。
 
-机器人会对 `@` 提及作出响应，或对你配置的特定频道中的所有消息作出响应。
+该机器人会响应 `@` 提及，或响应你所配置的特定频道中的所有消息。
 
-机器人发送的每条消息都会计入你的 Assistant 消息用量。
+机器人发送的每条消息都会计入你的助手消息用量。
 
 <div id="set-up-the-slack-app">
   ## 设置 Slack 应用
 </div>
 
 <Note>
-  每个工作区只能安装一次 Slack 应用。如果你有多个 Mintlify 部署，一个工作区同一时间只能连接一个部署。在将应用连接到另一个部署之前，必须先先在当前部署中断开该应用。
+  每个工作区只能安装一次 Slack 应用。如果你有多个 Mintlify 部署，同一时间只能将其中一个部署连接到某个工作区。你必须先断开应用与一个部署的连接，才能将其连接到另一个部署。
 </Note>
 
-如果你的 Slack 工作区所有者要求对安装应用进行管理员审批，请在添加应用之前先请他们批准 Mintlify Slack 应用。
+如果你的 Slack 工作区所有者要求安装应用前必须获得管理员批准，请先让他们批准 Mintlify Slack 应用，再由你添加。
 
-1. 在仪表盘中进入 [Assistant](https://dashboard.mintlify.com/products/assistant) 页面。
-1. 在 Slack 卡片中，点击 **Configure**。这会打开 Slack。
-    <Frame>
-      <img src="/images/assistant/connected-apps-light.png" alt="助手页面中已连接应用部分。" className="block dark:hidden" />
-      <img src="/images/assistant/connected-apps-dark.png" alt="助手页面中已连接应用部分。" className="hidden dark:block" />
-    </Frame>
-1. 按照 Slack 中的提示将应用添加到你的工作区。
-1. @ 提及该机器人以将其添加到频道。机器人的默认名称是 `@mintlify-assistant`。
+1. 前往控制面板中的 [Assistant](https://dashboard.mintlify.com/products/assistant) 页面。
+2. 在 Slack 卡片中，点击 **Configure**。这会打开 Slack。
+   <Frame>
+     <img src="/images/assistant/connected-apps-light.png" alt="Assistant 页面中的已连接应用部分。" className="block dark:hidden" />
+
+     <img src="/images/assistant/connected-apps-dark.png" alt="Assistant 页面中的已连接应用部分。" className="hidden dark:block" />
+   </Frame>
+3. 按照 Slack 的提示将应用添加到你的工作区。
+4. 在频道中提及该机器人，将其添加到频道。机器人的默认名称是 `@mintlify-assistant`。
 
 <div id="create-an-ask-ai-channel">
-  ## 创建一个 `#ask-ai` 频道
+  ## 创建 `#ask-ai` 频道
 </div>
 
-为了帮助你的用户快速获得问题的答案，你可以让机器人自动回复你所选频道中的每一条消息。默认情况下，机器人会回复所有名为 `#ask-ai` 的频道中的消息。创建一个 `#ask-ai` 频道，并告知用户机器人会回复该频道中的消息。更多信息请参见 Slack 帮助中心中的[创建频道](https://slack.com/help/articles/201402297-Create-a-channel)。
+为了帮助用户快速获得问题解答，机器人可以回复你所选频道中的每条消息。默认情况下，机器人会回复名为 `#ask-ai` 的频道中的每条消息。创建一个 `#ask-ai` 频道，并告知用户机器人会回复该频道中的消息。更多信息，请参阅 Slack 帮助中心中的 [Create a channel](https://slack.com/help/articles/201402297-Create-a-channel)。
 
-如果你希望机器人在其他频道中回复消息，请在 Slack 机器人[配置菜单](https://dashboard.mintlify.com/products/assistant/settings/integrations)中选择一个频道。
+如果你希望机器人在其他频道中回复消息，请在 Slack 机器人[配置菜单](https://dashboard.mintlify.com/products/assistant/settings/integrations)中选择相应频道。
 
 <Frame>
   <img src="/images/assistant/slack-configure-light.png" alt="浅色模式下的 Slack 配置面板。" className="block dark:hidden" />
+
   <img src="/images/assistant/slack-configure-dark.png" alt="深色模式下的 Slack 配置面板。" className="hidden dark:block" />
 </Frame>
 
@@ -52,6 +54,6 @@ Slack 应用会在你的工作区中添加一个机器人，为你的社区提�
   ## 管理 Slack 应用
 </div>
 
-将应用添加到你的工作区后，你可以在 [Integrations](https://dashboard.mintlify.com/products/assistant/settings/integrations) 选项卡中管理或移除该应用。
+将应用添加到工作区后，你可以在 [Integrations](https://dashboard.mintlify.com/products/assistant/settings/integrations) 选项卡中管理或移除该应用。
 
-在 Slack 机器人配置菜单中，你可以通过更改其头像或名称来自定义机器人，并选择其会在其中自动回复所有消息的频道。
+在 Slack 机器人配置菜单中，你可以通过更改机器人的头像或名称来自定义机器人，并选择机器人会自动回复其中所有消息的频道。

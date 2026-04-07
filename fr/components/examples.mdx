@@ -1,19 +1,19 @@
 ---
 title: "Exemples"
-description: "Afficher des blocs de code dans la barre latérale droite sur les ordinateurs de bureau"
+description: "Affichez des blocs de code dans la barre latérale droite sur ordinateur"
 keywords: ["RequestExample", "ResponseExample", "exemples de code", "requête-réponse"]
 ---
 
-Les composants `<RequestExample>` et `<ResponseExample>` affichent des blocs de code dans la barre latérale droite afin de créer une mise en page en deux colonnes qui garde les exemples visibles pendant que les utilisateurs font défiler votre contenu. Ces composants sont conçus pour la documentation d’API, mais ils fonctionnent sur toutes les pages.
+Les composants `<RequestExample>` et `<ResponseExample>` affichent des blocs de code dans la barre latérale droite afin de créer une mise en page sur deux colonnes qui garde les exemples visibles pendant que les utilisateurs parcourent votre contenu. Ces composants sont conçus pour la documentation d’API, mais fonctionnent sur toutes les pages.
 
 Cas d’utilisation courants :
 
-* Documentation d’endpoints d’API avec exemples de requête et de réponse
-* Exemples de configuration à côté du texte explicatif
+* Documentation de points de terminaison d’API avec des exemples de requête et de réponse
+* Exemples de configuration accompagnés de texte explicatif
 * Exemples de code auxquels les utilisateurs se réfèrent en suivant les instructions
 * Exemples avant/après dans les tutoriels
 
-Sur les appareils mobiles, les composants `<RequestExample>` et `<ResponseExample>` s’affichent comme des blocs de code classiques que les utilisateurs peuvent faire défiler.
+Sur les appareils mobiles, les composants `<RequestExample>` et `<ResponseExample>` s’affichent comme des blocs de code classiques et les utilisateurs peuvent simplement les faire défiler.
 
 <RequestExample>
   ```bash Request
@@ -32,7 +32,7 @@ Sur les appareils mobiles, les composants `<RequestExample>` et `<ResponseExampl
   ## RequestExample
 </div>
 
-Utilisez `<RequestExample>` pour épingler des exemples de code dans la barre latérale droite. Ce composant fonctionne de manière similaire au composant [CodeGroup](/fr/components/code-groups), mais affiche le code dans la barre latérale au lieu de l&#39;afficher en ligne.
+Utilisez `<RequestExample>` pour épingler des exemples de code dans la barre latérale droite. Ce composant fonctionne de manière similaire au composant [CodeGroup](/fr/components/code-groups), mais affiche le code dans la barre latérale plutôt que dans le contenu.
 
 Vous pouvez inclure plusieurs blocs de code dans un seul `<RequestExample>`. Chaque bloc de code doit avoir un attribut `title`.
 
@@ -51,7 +51,7 @@ curl --request POST \
   ## ResponseExample
 </div>
 
-Le composant `<ResponseExample>` fixe les exemples de code dans la barre latérale droite, sous tout contenu `<RequestExample>` présent sur la même page.
+Le composant `<ResponseExample>` épingle les exemples de code dans la barre latérale droite, sous tout contenu `<RequestExample>` figurant sur la même page.
 
 ````mdx ResponseExample
 <ResponseExample>

@@ -1,25 +1,25 @@
 ---
 title: "卡片"
-description: "通过可自定义的布局和图标突出展示关键信息或链接。"
-keywords: ["卡片", "可视化容器"]
+description: "使用可自定义的布局和图标突出显示重点内容或链接。"
+keywords: ["卡片", "视觉容器"]
 ---
 
 import IconsOptional from "/snippets/zh/icons-optional.mdx";
 
-使用卡片为内容创建视觉容器。卡片是一种灵活的容器，可以包含文本、图标、图像和链接。
+使用卡片为内容创建可视化容器。卡片是灵活的容器，可包含文本、图标、图片和链接。
 
 <div id="basic-card">
   ## 基础卡片
 </div>
 
 <Card title="卡片标题" icon="text-align-start" href="/zh/components/columns">
-  这是一个带有图标和链接的卡片示例。点击此卡片
+  这是带图标和链接的卡片用法。点击这张卡片
   会跳转到 Columns 页面。
 </Card>
 
 ```mdx Card example
 <Card title="Card title" icon="text-align-start" href="/components/columns">
-  这展示了如何使用带有图标和链接的卡片。点击此卡片将跳转到 Columns 页面。
+  这是带有图标和链接的卡片的使用示例。点击此卡片将跳转至 Columns 页面。
 </Card>
 ```
 
@@ -27,13 +27,13 @@ import IconsOptional from "/snippets/zh/icons-optional.mdx";
   ## 卡片变体
 </div>
 
-卡片提供多种布局和样式，以适配不同的内容需求。
+卡片支持多种布局和样式，可满足不同的内容需求。
 
 <div id="horizontal-layout">
   ### 水平布局
 </div>
 
-添加 `horizontal` 属性，让卡片以更紧凑的水平布局显示。
+添加 `horizontal` 属性，即可以更紧凑的水平方式显示卡片。
 
 <Card title="水平卡片" icon="text-align-start" horizontal>
   这是一个水平卡片的示例。
@@ -49,7 +49,7 @@ import IconsOptional from "/snippets/zh/icons-optional.mdx";
   ### 图片卡片
 </div>
 
-添加 `img` 属性，以在卡片顶部显示图片。
+添加 `img` 属性，即可在卡片顶部显示图片。
 
 <Card title="图片卡片" img="https://mintlify-assets.b-cdn.net/yosemite.jpg">
   这是一个带图片的卡片示例。
@@ -62,10 +62,10 @@ import IconsOptional from "/snippets/zh/icons-optional.mdx";
 ```
 
 <div id="link-cards-with-custom-ctas">
-  ### 带有自定义 CTA 的链接卡片
+  ### 带自定义 CTA 的链接卡片
 </div>
 
-你可以自定义 CTA 文本，并控制是否显示箭头。默认情况下，箭头只会显示在外部链接上。
+你可以自定义行动号召文本，并控制是否显示箭头。默认情况下，箭头仅显示在外部链接上。
 
 <Card title="链接卡片" icon="link" href="/zh/components/columns" arrow="true" cta="点击这里">
   这是一个带有图标和链接的卡片示例。点击此卡片会跳转到 Columns 页面。
@@ -84,10 +84,10 @@ import IconsOptional from "/snippets/zh/icons-optional.mdx";
 ```
 
 <div id="group-cards">
-  ## 分组卡片
+  ## 卡片分组
 </div>
 
-使用 [Columns 组件](/zh/components/columns) 将多个卡片并排排列。Columns 组件支持一到四列，并会在小屏幕上自动调整布局。
+使用 [Columns 组件](/zh/components/columns) 可将多张卡片并排展示。Columns 组件支持一到四列，并会自动适配较小的屏幕。
 
 <Columns cols={2}>
   <Card title="第一张卡片" icon="panel-left-close">
@@ -101,12 +101,14 @@ import IconsOptional from "/snippets/zh/icons-optional.mdx";
 
 ```mdx Columns example
 <Columns cols={2}>
+  <Columns cols={2}>
   <Card title="第一张卡片" icon="panel-left-close">
     这是第一张卡片。
   </Card>
   <Card title="第二张卡片" icon="panel-right-close">
     这是第二张卡片。
   </Card>
+</Columns>
 </Columns>
 ```
 
@@ -115,29 +117,29 @@ import IconsOptional from "/snippets/zh/icons-optional.mdx";
 </div>
 
 <ResponseField name="title" type="string" required>
-  卡片上显示的标题
+  卡片上显示的标题。
 </ResponseField>
 
 <IconsOptional />
 
 <ResponseField name="color" type="string">
-  图标颜色的十六进制色值（例如 `#FF6B6B`）。
+  图标颜色的十六进制代码 (例如 `#FF6B6B`) 。
 </ResponseField>
 
 <ResponseField name="href" type="string">
-  点击卡片时要访问的 URL。
+  点击卡片时跳转到的 URL。
 </ResponseField>
 
 <ResponseField name="horizontal" type="boolean">
-  以紧凑的横向布局显示卡片。
+  以紧凑的水平布局显示卡片。
 </ResponseField>
 
 <ResponseField name="img" type="string">
-  在卡片顶部显示的图片的 URL 或本地路径。
+  显示在卡片顶部的图片 URL 或本地路径。
 </ResponseField>
 
 <ResponseField name="cta" type="string">
-  操作按钮的自定义文案。
+  操作按钮的自定义文本。
 </ResponseField>
 
 <ResponseField name="arrow" type="boolean">

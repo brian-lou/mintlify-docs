@@ -1,23 +1,23 @@
 ---
 title: "SEO"
-description: "Optimiza el SEO mediante la configuración de meta tags para mejorar la visibilidad en los resultados de búsqueda."
-keywords: ["meta tags", "sitemap", "robots.txt", "SEO", "search engine optimization"]
+description: "Optimiza el SEO con la configuración de metaetiquetas para mejorar la visibilidad en los motores de búsqueda."
+keywords: ["metaetiquetas", "sitemap", "robots.txt", "SEO", "optimización para motores de búsqueda"]
 ---
 
-Mintlify gestiona automáticamente muchas de las mejores prácticas de SEO, entre ellas:
+Mintlify gestiona automáticamente muchas prácticas recomendadas de SEO, entre ellas:
 
-* Generación de meta tags
-* Generación de archivos sitemap y `robots.txt`
+* Generación de metaetiquetas
+* Generación del sitemap y del archivo `robots.txt`
 * Estructura HTML semántica
 * Optimización para dispositivos móviles
 
-Puedes personalizar por completo las meta tags de tu sitio añadiendo el campo `metatags` a tu `docs.json` o al frontmatter de una página.
+Puedes personalizar por completo las metaetiquetas de tu sitio añadiendo el campo `metatags` a tu `docs.json` o al Frontmatter de una página.
 
 <div id="automatically-generated-meta-tags">
   ## Metaetiquetas generadas automáticamente
 </div>
 
-Mintlify genera las siguientes metaetiquetas para cada página. Puedes sobrescribir estas metaetiquetas especificándolas en tu `docs.json` o en el frontmatter de una página.
+Mintlify genera las siguientes metaetiquetas para cada página. Puedes sobrescribirlas si las especificas en tu `docs.json` o en el Frontmatter de una página.
 
 **Metadatos básicos:**
 
@@ -35,38 +35,38 @@ Mintlify genera las siguientes metaetiquetas para cada página. Puedes sobrescri
 * `og:description` - Descripción de Open Graph, igual que la descripción de la página
 * `twitter:description` - Descripción de Twitter, igual que la descripción de la página
 
-**URL y canonical:**
+**URL y canónica:**
 
 * `canonical` - Se genera automáticamente a partir de la URL de la página
-* `og:url` - Se configura con la URL canonical
+* `og:url` - Se establece con la URL canónica
 
 **SEO e indexación:**
 
 * `robots` - Se genera a partir de los metadatos de la página
 * `noindex` - Se genera a partir de los metadatos de la página
-* `keywords` - Se generan a partir de los metadatos de la página
+* `keywords` - Se genera a partir de los metadatos de la página
 
 **Imágenes:**
 
-* `og:image` - Imagen de Open Graph, `og:image:width` se establece en 1200 y `og:image:height` en 630
-* `twitter:image` - Imagen de Twitter, `twitter:image:width` se establece en 1200 y `twitter:image:height` en 630
+* `og:image` - Imagen de Open Graph, con `og:image:width` establecido en 1200 y `og:image:height` en 630
+* `twitter:image` - Imagen de Twitter, con `twitter:image:width` establecido en 1200 y `twitter:image:height` en 630
 
-**Metadatos del navegador y la aplicación:**
+**Metadatos del navegador y de la aplicación:**
 
 * `applicationName` - Nombre de tu sitio de documentación
-* `generator: Mintlify` - Identifica el generador del sitio como Mintlify
-* `apple-mobile-web-app-title` - Nombre de la aplicación en la pantalla de inicio de iOS
+* `generator: Mintlify` - Identifica a Mintlify como el generador del sitio
+* `apple-mobile-web-app-title` - Nombre de la app en la pantalla de inicio de iOS
 * `msapplication-TileColor` - Color del mosaico de Windows
-* Favicons e iconos desde tu configuración
+* Favicons e iconos de tu configuración
 * Enlace de referencia al sitemap
 
-Cualquier metaetiqueta en la configuración `seo.metatags` de tu `docs.json` también se inyecta automáticamente en cada página, como `google-site-verification` para la validación en Search Console.
+Cualquier metaetiqueta de la configuración `seo.metatags` de tu `docs.json` también se inyecta automáticamente en cada página, como `google-site-verification` para validar Search Console.
 
 <div id="global-meta-tags">
   ## Metaetiquetas globales
 </div>
 
-Para definir metaetiquetas predeterminadas para todas las páginas, agrega el campo `metatags` al archivo `docs.json`.
+Para configurar las metaetiquetas predeterminadas de todas las páginas, agrega el campo `metatags` a tu `docs.json`.
 
 ```json
 "seo": {
@@ -77,10 +77,10 @@ Para definir metaetiquetas predeterminadas para todas las páginas, agrega el ca
 ```
 
 <div id="set-a-canonical-url">
-  ### Establecer una URL canónica
+  ### Establece una URL canónica
 </div>
 
-Si estás usando un dominio personalizado, configura la etiqueta meta `canonical` para asegurarte de que los motores de búsqueda indexen tu dominio preferido. Una URL canónica indica a los motores de búsqueda qué versión de tu documentación es la principal. Esto mejora el SEO cuando tu documentación es accesible desde varias URLs y evita problemas de contenido duplicado.
+Si usas un dominio personalizado, configura la metaetiqueta `canonical` para asegurarte de que los motores de búsqueda indexen el dominio que prefieres. Una URL canónica indica a los motores de búsqueda qué versión de tu documentación es la principal. Esto mejora el SEO cuando tu documentación está disponible en varias URL y evita problemas de contenido duplicado.
 
 ```json
 "seo": {
@@ -91,32 +91,32 @@ Si estás usando un dominio personalizado, configura la etiqueta meta `canonical
 ```
 
 <div id="page-specific-meta-tags">
-  ## Meta tags específicos de la página
+  ## Metaetiquetas específicas de la página
 </div>
 
-Para definir meta tags específicos de la página, se añaden al frontmatter de la página.
+Para configurar metaetiquetas específicas de una página, agrégalas al Frontmatter de la página.
 
-Los siguientes meta tags se admiten a nivel de página:
+Se admiten las siguientes metaetiquetas a nivel de página:
 
 * `title` - Título de la página
 * `description` - La descripción de la página aparece debajo del título en la página y en algunos resultados de motores de búsqueda
 * `keywords` - Palabras clave separadas por comas
-* `og:title` - Título Open Graph para compartir en redes sociales
-* `og:description` - Descripción Open Graph
-* `og:image` - URL de la imagen Open Graph
-* `og:url` - URL Open Graph
+* `og:title` - Título de Open Graph para compartir en redes sociales
+* `og:description` - Descripción de Open Graph
+* `og:image` - URL de la imagen de Open Graph
+* `og:url` - URL de Open Graph
 * `og:type` - Tipo de Open Graph, como &quot;article&quot; o &quot;website&quot;
-* `og:image:width` - Ancho de la imagen Open Graph
-* `og:image:height` - Altura de la imagen Open Graph
+* `og:image:width` - Ancho de la imagen de Open Graph
+* `og:image:height` - Alto de la imagen de Open Graph
 * `twitter:title` - Título de la tarjeta de Twitter
 * `twitter:description` - Descripción de la tarjeta de Twitter
 * `twitter:image` - Imagen de la tarjeta de Twitter
 * `twitter:card` - Tipo de tarjeta de Twitter, como &quot;summary&quot; o &quot;summary&#95;large&#95;image&quot;
-* `twitter:site` - Nombre de usuario del sitio en Twitter
+* `twitter:site` - Identificador del sitio en Twitter
 * `twitter:image:width` - Ancho de la imagen de Twitter
-* `twitter:image:height` - Altura de la imagen de Twitter
-* `noindex` - Establecer en `true` para evitar la indexación por motores de búsqueda
-* `robots` - Valor de la meta tag robots
+* `twitter:image:height` - Alto de la imagen de Twitter
+* `noindex` - Establécelo en `true` para evitar que los motores de búsqueda la indexen
+* `robots` - Valor de la metaetiqueta robots
 
 ```mdx
 ---
@@ -129,20 +129,20 @@ keywords: ["keyword1", "keyword2"]
 ```
 
 <Note>
-  Las metaetiquetas con dos puntos deben estar entre comillas. El campo `keywords` debe estar formateado como una lista YAML.
+  Las metaetiquetas con dos puntos deben ir entre comillas. El campo `keywords` debe tener el formato de una lista YAML.
 </Note>
 
 <div id="common-meta-tags-reference">
   ## Referencia de metaetiquetas comunes
 </div>
 
-A continuación encontrarás una lista completa de metaetiquetas que puedes agregar a tu `docs.json`. Estas metaetiquetas ayudan a mejorar el SEO de tu sitio, la forma en que se comparte en redes sociales y la compatibilidad con los navegadores.
+A continuación, encontrarás una lista completa de metaetiquetas que puedes añadir a tu `docs.json`. Estas metaetiquetas ayudan a mejorar el SEO de tu sitio, su apariencia al compartirse en redes sociales y la compatibilidad con los navegadores.
 
 <Note>
-  La metaetiqueta `og:image` agrega una imagen de fondo que Mintlify superpone automáticamente con tu logotipo, el título de la página y la descripción al generar vistas previas en redes sociales.
+  `og:image` añade una imagen de fondo sobre la que Mintlify superpone automáticamente tu logotipo, el título de la página y la descripción al generar las vistas previas para redes sociales.
 </Note>
 
-Puedes previsualizar cómo se verán tus metaetiquetas en distintas plataformas usando [metatags.io](https://metatags.io/).
+Puedes previsualizar cómo aparecerán tus metaetiquetas en distintas plataformas con [metatags.io](https://metatags.io/).
 
 ```json expandable
 "seo": {
@@ -244,7 +244,7 @@ Puedes previsualizar cómo se verán tus metaetiquetas en distintas plataformas 
 
 Mintlify genera automáticamente un archivo `sitemap.xml` y un archivo `robots.txt`. Puedes ver tu sitemap añadiendo `/sitemap.xml` a la URL de tu sitio de documentación.
 
-Por defecto, solo se incluyen las páginas que aparecen en tu `docs.json`. Para incluir enlaces ocultos, añade `seo.indexing` a tu `docs.json`:
+De forma predeterminada, solo se incluyen las páginas que aparecen en tu `docs.json`. Para incluir enlaces ocultos, agrega `seo.indexing` a tu `docs.json`:
 
 ```json
 "seo": {
@@ -256,13 +256,13 @@ Por defecto, solo se incluyen las páginas que aparecen en tu `docs.json`. Para 
   ### Sitemaps personalizados y archivos robots.txt
 </div>
 
-Para añadir un `sitemap.xml` o un archivo `robots.txt` personalizado, crea un archivo `sitemap.xml` o `robots.txt` en la raíz de tu proyecto. Al añadir un archivo personalizado, se reemplazará el archivo generado automáticamente con el mismo nombre. Si eliminas un archivo personalizado, se volverá a utilizar el archivo predeterminado.
+Para añadir un archivo `sitemap.xml` o `robots.txt` personalizado, crea el archivo `sitemap.xml` o `robots.txt` en la raíz de tu proyecto. Al añadir un archivo personalizado, se sobrescribirá el archivo generado automáticamente con el mismo nombre. Si eliminas un archivo personalizado, se volverá a usar el archivo predeterminado.
 
 <div id="disabling-indexing">
   ## Desactivar la indexación
 </div>
 
-Si quieres impedir que los motores de búsqueda indexen una página, puedes incluir lo siguiente en el [frontmatter](/es/organize/pages) de tu página:
+Si quieres evitar que los motores de búsqueda indexen una página, puedes incluir lo siguiente en el [frontmatter](/es/organize/pages) de tu página:
 
 ```
 ---
@@ -270,7 +270,7 @@ noindex: true
 ---
 ```
 
-También puedes especificar `noindex` para todas las páginas de tu documentación configurando el campo `metatags.robots` en `"noindex"` en tu `docs.json`:
+También puedes especificar `noindex` para todas las páginas de tu documentación configurando el campo `metatags.robots` como `"noindex"` en tu `docs.json`:
 
 ```json
 "seo": {
@@ -281,36 +281,36 @@ También puedes especificar `noindex` para todas las páginas de tu documentaci�
 ```
 
 <div id="seo-best-practices">
-  ## Mejores prácticas de SEO
+  ## Buenas prácticas de SEO
 </div>
 
 <AccordionGroup>
-  <Accordion title="Escribe títulos y descripciones claros y descriptivos">
+  <Accordion title="Escribe títulos y descripciones claras">
     * Usa títulos de página claros y descriptivos (50-60 caracteres)
     * Escribe descripciones atractivas (150-160 caracteres)
     * Incluye palabras clave relevantes
-    * Haz que cada título y descripción de página sean únicos
+    * Haz que el título y la descripción de cada página sean únicos
   </Accordion>
 
-  <Accordion title="Optimiza la estructura de tu contenido">
+  <Accordion title="Optimiza la estructura del contenido">
     * Usa una jerarquía de encabezados adecuada (H1 → H2 → H3)
-    * Escribe primero para humanos, después para motores de búsqueda
-    * Incluye palabras clave relevantes en encabezados y contenido
+    * Escribe primero para las personas y después para los motores de búsqueda
+    * Incluye palabras clave relevantes en los encabezados y el contenido
     * Mantén las URL cortas, descriptivas y organizadas jerárquicamente
     * Divide el contenido extenso con subtítulos y listas
   </Accordion>
 
   <Accordion title="Estrategia de enlaces internos">
-    * Enlaza a páginas relacionadas dentro de tu documentación
-    * Usa texto ancla descriptivo en lugar de &quot;haz clic aquí&quot;
+    * Enlaza páginas relacionadas dentro de tu documentación
+    * Usa texto de anclaje descriptivo en lugar de &quot;haz clic aquí&quot;
     * Crea grupos temáticos enlazando conceptos relacionados
-    * Usa las funciones automáticas de referencia cruzada
+    * Usa las funciones automáticas de referencias cruzadas
   </Accordion>
 
-  <Accordion title="SEO para imágenes">
+  <Accordion title="SEO de imágenes">
     * Usa nombres de archivo descriptivos para las imágenes
-    * Incluye siempre texto alternativo para accesibilidad y SEO
-    * Optimiza el tamaño de los archivos de imagen para una carga más rápida
+    * Incluye siempre texto alternativo por accesibilidad y SEO
+    * Optimiza el tamaño de los archivos de imagen para acelerar la carga
     * Usa imágenes relevantes que respalden tu contenido
   </Accordion>
 </AccordionGroup>

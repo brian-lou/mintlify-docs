@@ -1,29 +1,29 @@
 ---
 title: "更新"
-description: "以时间线格式展示产品更新和变更日志条目。"
-keywords: ["changelogs", "product updates", "release notes"]
+description: "以时间线形式展示产品更新和变更日志条目。"
+keywords: ["变更日志", "产品更新", "发布说明"]
 ---
 
-使用 `Update` 组件，以一致的格式展示变更日志条目、版本更新和发行说明。
+使用 `Update` 组件以统一格式显示变更日志条目、版本更新和发布说明。
 
 <Update label="示例" description="v0.1.1">
   ## 示例更新
 
-  你可以在这里添加任意内容，比如截图、代码片段或变更列表。
+  你可以在这里添加任何内容，例如截图、代码片段或变更列表。
 
   <Frame>
-    <img className="block" src="https://mintlify-assets.b-cdn.net/hero-light.png" alt="PearsDB 介绍页面的截图，作为 Update 组件中图片示例。" />
+    <img className="block" src="https://mintlify-assets.b-cdn.net/hero-light.png" alt="PearsDB 简介页面的截图，作为 Update 组件中图片的示例。" />
   </Frame>
 
   ### 功能
 
   * 响应式设计
-  * 为每个更新提供锚点链接
-  * 为每个更新生成 RSS 源条目
+  * 为每条更新提供锚点
+  * 为每条更新生成 RSS 订阅源条目
 </Update>
 
 <div id="how-to-use">
-  ## 用法
+  ## 使用方法
 </div>
 
 ```mdx Update example
@@ -34,26 +34,26 @@ keywords: ["changelogs", "product updates", "release notes"]
 
 使用多个 `Update` 组件来创建[更新日志](/zh/create/changelogs)。
 
-`Update` 组件会自动生成 RSS 源条目。条目只包含纯 Markdown——组件、代码块、行内代码以及原始 HTML 元素都不会被包含在内。
+`Update` 组件会自动生成 RSS 订阅源条目。条目仅包含纯 Markdown——不包含组件、代码块、行内代码和原始 HTML 元素。
 
-如果你的更新中包含组件或 HTML，请使用 `rss` 属性为 RSS 订阅者提供替代文本。
+如果更新中包含组件或 HTML，请使用 `rss` prop 为 RSS 订阅者提供替代文本。
 
 ```mdx Custom RSS content
 <Update
   label="March 2025"
   description="v2.0.0"
   rss={{
-    title: "2025年3月 - 重大改版",
-    description: "全面的界面改版，包含全新组件"
+    title: "March 2025 - Major redesign",
+    description: "Complete UI overhaul with new components"
   }}
 >
-  ## 新仪表板
+  ## New dashboard
 
   <Frame>
-    <img src="/dashboard.png" alt="展示更新组件的新仪表板界面。" />
+    <img src="/dashboard.png" alt="New dashboard UI displaying updated components." />
   </Frame>
 
-  欢迎体验我们经过重新设计、导航更加便捷的仪表板。
+  Check out our redesigned dashboard with improved navigation.
 </Update>
 ```
 
@@ -62,32 +62,32 @@ keywords: ["changelogs", "product updates", "release notes"]
 </div>
 
 <ResponseField name="label" type="string" required>
-  更新的标签。显示在更新内容的左侧，并用于创建锚点链接。标签应当是唯一的。
+  更新项的标签。显示在更新内容左侧，并生成一个锚点链接。标签应唯一。
 </ResponseField>
 
 <ResponseField name="tags" type="string[]">
-  更新的标签。显示为右侧面板中的筛选器。
+  更新项的标签。显示为右侧面板中的筛选项。
 </ResponseField>
 
 <ResponseField name="description" type="string">
-  更新的描述。显示在标签和标签下方。
+  更新项的描述。显示在标签和标记下方。
 </ResponseField>
 
 <ResponseField name="rss" type="object">
-  Update 组件会自动生成 RSS 源条目。使用 `rss` 属性可为单个 RSS 源条目设置自定义标题和描述。
+  更新组件会自动生成 RSS 订阅源条目。使用 `rss` 属性可创建一条带有自定义标题和描述的 RSS 订阅源条目。
 
   如果未提供：
 
-  * 带有 Markdown 标题的更新会为每个标题创建一个单独的 RSS 源条目。
-  * 没有 Markdown 标题的更新会使用 `label` 作为标题创建一个单独的 RSS 源条目。
+  * 包含 Markdown 标题的更新会为每个标题分别创建一条 RSS 订阅源条目。
+  * 不包含 Markdown 标题的更新会使用 `label` 作为标题创建一条 RSS 订阅源条目。
 
   <Expandable title="属性">
     <ResponseField name="title" type="string">
-      RSS 源条目的自定义标题。
+      RSS 订阅源条目的自定义标题。
     </ResponseField>
 
     <ResponseField name="description" type="string">
-      RSS 源条目的自定义描述。
+      RSS 订阅源条目的自定义描述。
     </ResponseField>
   </Expandable>
 </ResponseField>

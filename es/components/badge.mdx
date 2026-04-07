@@ -1,16 +1,16 @@
 ---
-title: "Insignia"
-description: "Utiliza insignias para destacar estados, etiquetas o metadatos, ya sea en línea o de forma independiente."
-keywords: ["badge", "label", "tag", "status", "indicator"]
+title: "Badge"
+description: "Usa badges para resaltar estados, etiquetas o metadatos en línea o de forma independiente."
+keywords: ["badge", "etiqueta", "tag", "estado", "indicador"]
 ---
 
 import IconsOptional from "/snippets/es/icons-optional.mdx";
 
-Utiliza insignias para mostrar indicadores de estado, etiquetas o metadatos. Las insignias pueden usarse en línea con el texto o como elementos independientes.
+Usa insignias para mostrar indicadores de estado, etiquetas o metadatos. Las insignias pueden usarse integradas en el texto o como elementos independientes.
 
 
 <div id="basic-badge">
-  ## Insignia básica
+  ## Badge básico
 </div>
 
 <Badge>Insignia</Badge>
@@ -24,19 +24,19 @@ Utiliza insignias para mostrar indicadores de estado, etiquetas o metadatos. Las
   ## Colores
 </div>
 
-Las insignias ofrecen varias variantes de color para expresar distintos significados.
+Los badges admiten varias variantes de color para transmitir distintos significados.
 
-<Badge color="gray">Insignia</Badge>
-<Badge color="blue">Insignia</Badge>
-<Badge color="green">Insignia</Badge>
-<Badge color="yellow">Insignia</Badge>
-<Badge color="orange">Insignia</Badge>
-<Badge color="red">Insignia</Badge>
-<Badge color="purple">Insignia</Badge>
-<Badge color="white">Insignia</Badge>
-<Badge color="surface">Insignia</Badge>
-<Badge color="white-destructive">Insignia</Badge>
-<Badge color="surface-destructive">Insignia</Badge>
+<Badge color="gray">Badge</Badge>
+<Badge color="blue">Badge</Badge>
+<Badge color="green">Badge</Badge>
+<Badge color="yellow">Badge</Badge>
+<Badge color="orange">Badge</Badge>
+<Badge color="red">Badge</Badge>
+<Badge color="purple">Badge</Badge>
+<Badge color="white">Badge</Badge>
+<Badge color="surface">Badge</Badge>
+<Badge color="white-destructive">Badge</Badge>
+<Badge color="surface-destructive">Badge</Badge>
 
 ```mdx
 <Badge color="gray">Badge</Badge>
@@ -57,12 +57,12 @@ Las insignias ofrecen varias variantes de color para expresar distintos signific
   ## Tamaños
 </div>
 
-Los badges vienen en cuatro tamaños para adaptarse a la jerarquía de tu contenido.
+Las etiquetas están disponibles en cuatro tamaños para adaptarse a la jerarquía de tu contenido.
 
-<Badge size="xs">Badge</Badge>
-<Badge size="sm">Badge</Badge>
-<Badge size="md">Badge</Badge>
-<Badge size="lg">Badge</Badge>
+<Badge size="xs">Etiqueta</Badge>
+<Badge size="sm">Etiqueta</Badge>
+<Badge size="md">Etiqueta</Badge>
+<Badge size="lg">Etiqueta</Badge>
 
 ```mdx
 <Badge size="xs">Badge</Badge>
@@ -76,7 +76,7 @@ Los badges vienen en cuatro tamaños para adaptarse a la jerarquía de tu conten
   ## Formas
 </div>
 
-Elige entre bordes redondeados o insignias de estilo pastilla.
+Elige entre insignias con esquinas redondeadas o en forma de píldora.
 
 <Badge shape="rounded">Insignia</Badge>
 <Badge shape="pill">Insignia</Badge>
@@ -91,7 +91,7 @@ Elige entre bordes redondeados o insignias de estilo pastilla.
   ## Iconos
 </div>
 
-Añade iconos a las insignias para dar más contexto.
+Añade iconos a las insignias para aportar contexto adicional.
 
 <Badge icon="circle-check" color="green">Insignia</Badge>
 <Badge icon="clock" color="orange">Insignia</Badge>
@@ -105,15 +105,15 @@ Añade iconos a las insignias para dar más contexto.
 
 
 <div id="stroke-variant">
-  ## Variante de contorno
+  ## Variante con contorno
 </div>
 
-Usa la variante de contorno para lograr un aspecto más sutil.
+Usa la variante con contorno para un aspecto más sutil.
 
-<Badge stroke color="blue">Badge</Badge>
-<Badge stroke color="green">Badge</Badge>
-<Badge stroke color="orange">Badge</Badge>
-<Badge stroke color="red">Badge</Badge>
+<Badge stroke color="blue">Insignia</Badge>
+<Badge stroke color="green">Insignia</Badge>
+<Badge stroke color="orange">Insignia</Badge>
+<Badge stroke color="red">Insignia</Badge>
 
 ```mdx
 <Badge stroke color="blue">Badge</Badge>
@@ -129,8 +129,8 @@ Usa la variante de contorno para lograr un aspecto más sutil.
 
 Desactiva las insignias para indicar estados inactivos o no disponibles.
 
-<Badge disabled icon="lock" color="gray">Badge</Badge>
-<Badge disabled icon="lock" color="blue">Badge</Badge>
+<Badge disabled icon="lock" color="gray">Insignia</Badge>
+<Badge disabled icon="lock" color="blue">Insignia</Badge>
 
 ```mdx
 <Badge disabled icon="lock" color="gray">Badge</Badge>
@@ -142,10 +142,10 @@ Desactiva las insignias para indicar estados inactivos o no disponibles.
   ## Uso en línea
 </div>
 
-Los badges se integran de forma natural en el contenido de texto. Por ejemplo, esta función requiere una suscripción <Badge color="orange" size="sm">Premium</Badge>, o este endpoint de la API devuelve el formato <Badge color="green" size="sm">JSON</Badge>.
+Las insignias funcionan de forma natural en el texto. Por ejemplo, esta función requiere una suscripción <Badge color="orange" size="sm">Premium</Badge> o este endpoint de la API devuelve contenido en formato <Badge color="green" size="sm">JSON</Badge>.
 
 ```mdx
-Esta función requiere una suscripción <Badge color="orange" size="sm">Premium</Badge>.
+This feature requires a <Badge color="orange" size="sm">Premium</Badge> subscription.
 ```
 
 
@@ -153,7 +153,7 @@ Esta función requiere una suscripción <Badge color="orange" size="sm">Premium<
   ## Propiedades combinadas
 </div>
 
-Combina varias propiedades para crear estilos personalizados de insignias.
+Combina varias propiedades para crear estilos de insignias personalizados.
 
 <Badge icon="star" color="blue" size="lg" shape="pill">Premium</Badge>
 <Badge icon="check" stroke color="green" size="sm">Verificado</Badge>
@@ -172,33 +172,33 @@ Combina varias propiedades para crear estilos personalizados de insignias.
 
 <ResponseField name="color" type="string" default="gray">
   Variante de color del badge.
-  
+
   Opciones: `gray`, `blue`, `green`, `yellow`, `orange`, `red`,
   `purple`, `white`, `surface`, `white-destructive`, `surface-destructive`.
 </ResponseField>
 
 <ResponseField name="size" type="string" default="md">
   Tamaño del badge.
-  
+
   Opciones: `xs`, `sm`, `md`, `lg`.
 </ResponseField>
 
 <ResponseField name="shape" type="string" default="rounded">
   Forma del badge.
-  
+
   Opciones: `rounded`, `pill`.
 </ResponseField>
 
 <IconsOptional />
 
 <ResponseField name="stroke" type="boolean" default="false">
-  Mostrar el badge con un contorno en lugar de un fondo sólido.
+  Muestra el badge con un contorno en lugar de un fondo sólido.
 </ResponseField>
 
 <ResponseField name="disabled" type="boolean" default="false">
-  Mostrar el badge en estado deshabilitado con opacidad reducida.
+  Muestra el badge en estado deshabilitado con opacidad reducida.
 </ResponseField>
 
 <ResponseField name="className" type="string">
-  Clases CSS adicionales que se aplicarán al badge.
+  Clases CSS adicionales para aplicar al badge.
 </ResponseField>

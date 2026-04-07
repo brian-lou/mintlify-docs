@@ -1,19 +1,19 @@
 ---
 title: "示例"
-description: "在桌面端右侧边栏中显示代码块"
-keywords: ["RequestExample", "ResponseExample", "代码示例", "request-response"]
+description: "在桌面设备的右侧边栏中显示代码块"
+keywords: ["RequestExample", "ResponseExample", "代码示例", "请求-响应"]
 ---
 
-`<RequestExample>` 和 `<ResponseExample>` 组件会在右侧边栏显示代码块，从而创建双列布局，在用户滚动阅读内容时始终让示例保持可见。这些组件是为 API 文档设计的，但也适用于所有页面。
+`<RequestExample>` 和 `<ResponseExample>` 组件会在右侧边栏中显示代码块，形成双栏布局，让用户在滚动浏览内容时也能始终看到示例。这些组件专为 API 文档设计，但适用于所有页面。
 
-常见使用场景：
+常见用例：
 
-* 带有请求与响应示例的 API 端点文档
-* 与说明性文字并列的配置示例
-* 供用户在按照说明操作时参考的代码示例
+* 包含请求和响应示例的 API 端点文档
+* 与说明文字并排显示的配置示例
+* 用户按说明操作时可随时查看的代码示例
 * 教程中的前后对比示例
 
-在移动设备上，`<RequestExample>` 和 `<ResponseExample>` 组件会显示为常规代码块，用户可以正常滚动浏览。
+在移动设备上，`<RequestExample>` 和 `<ResponseExample>` 组件会显示为普通代码块，用户可以直接滚动过去。
 
 <RequestExample>
   ```bash Request
@@ -32,9 +32,9 @@ keywords: ["RequestExample", "ResponseExample", "代码示例", "request-respons
   ## RequestExample
 </div>
 
-使用 `<RequestExample>` 将代码示例固定在右侧边栏中。该组件的用法与 [CodeGroup](/zh/components/code-groups) 组件类似，只不过会在侧边栏中显示代码，而不是内联显示。
+使用 `<RequestExample>` 可将代码示例固定在右侧边栏。该组件的用法与 [代码分组](/zh/components/code-groups) 组件类似，但代码会显示在侧边栏中，而不是以内联形式显示。
 
-你可以在单个 `<RequestExample>` 中包含多个代码块。每个代码块都必须带有一个 title 属性。
+你可以在一个 `<RequestExample>` 中包含多个代码块。每个代码块都必须包含 `title` 属性。
 
 ````mdx RequestExample
 <RequestExample>
@@ -51,7 +51,7 @@ curl --request POST \
   ## ResponseExample
 </div>
 
-`<ResponseExample>` 组件会将代码示例固定显示在同一页面右侧边栏中，位于所有 `<RequestExample>` 内容的下方。
+`<ResponseExample>` 组件会将代码示例固定在右侧边栏中，显示在同一页面中任意 `<RequestExample>` 内容的下方。
 
 ````mdx ResponseExample
 <ResponseExample>

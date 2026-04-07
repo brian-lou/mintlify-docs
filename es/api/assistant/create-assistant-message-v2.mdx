@@ -1,12 +1,12 @@
 ---
-tag: "Más reciente"
+tag: "Último"
 openapi: /es/discovery-openapi.json POST /v2/assistant/{domain}/message
 keywords:
   [
-    "assistant message",
-    "embed",
+    "mensaje del asistente",
+    "incrustar",
     "chat",
-    "integrate",
+    "integrar",
     "v2",
     "ai sdk v5",
     "ai sdk v6"
@@ -14,8 +14,8 @@ keywords:
 ---
 
 <Info>
-  El endpoint assistant message v2 es compatible con **AI SDK v5+**. Si
-  utilizas AI SDK v4, usa en su lugar el [endpoint assistant message
+  El endpoint de mensaje del asistente v2 es compatible con **AI SDK v5+**. Si
+  usas AI SDK v4, usa en su lugar el [endpoint de mensaje del asistente
   v1](/es/api-reference/assistant/create-assistant-message).
 </Info>
 
@@ -82,25 +82,25 @@ El hook `useChat` del AI SDK de Vercel es la forma recomendada de integrar la AP
             }}
           >
             <input value={input} onChange={(e) => setInput(e.target.value)} />
-            <button type="submit">Enviar</button>
+            <button type="submit">Send</button>
           </form>
         </div>
       );
     }
     ```
 
-    **Configuración requerida:**
+    **Configuración obligatoria:**
 
     * `transport` - Usa `DefaultChatTransport` para configurar la conexión con la API.
-    * `body.fp` - Identificador de huella digital (usa `'anonymous'` o un identificador único de usuario).
+    * `body.fp` - Identificador de huella digital (usa `'anonymous'` o un identificador de usuario único).
     * `body.retrievalPageSize` - Número de resultados de búsqueda que se usarán (recomendado: 5).
 
     **Configuración opcional:**
 
-    * `body.context` - Array de información contextual que se proporcionará al asistente. Cada objeto de contexto contiene:
+    * `body.context` - Lista de información contextual para proporcionar al asistente. Cada objeto de contexto contiene:
       * `type` - `'code'` o `'textSelection'`.
       * `value` - El fragmento de código o el contenido de texto seleccionado.
-      * `path` (opcional) - Ruta al archivo o página de origen.
+      * `path` (opcional) - Ruta al archivo fuente o a la página.
       * `elementId` (opcional) - Identificador del elemento de la interfaz que contiene el contexto.
   </Step>
 </Steps>
@@ -108,11 +108,11 @@ El hook `useChat` del AI SDK de Vercel es la forma recomendada de integrar la AP
 Consulta [useChat](https://ai-sdk.dev/docs/reference/ai-sdk-ui/use-chat) y [Transport](https://ai-sdk.dev/docs/ai-sdk-ui/transport) en la documentación del AI SDK para obtener más información.
 
 <div id="rate-limits">
-  ## Límites de tasa
+  ## Límites de uso
 </div>
 
-La Assistant API tiene los siguientes límites:
+La API del asistente tiene los siguientes límites:
 
-* 10.000 usos por clave al mes
-* 10.000 solicitudes por organización de Mintlify por hora
-* 10.000 solicitudes por IP al día
+* 10,000 usos por clave al mes
+* 10,000 solicitudes por organización de Mintlify por hora
+* 10,000 solicitudes por IP al día

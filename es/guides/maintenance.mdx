@@ -1,46 +1,46 @@
 ---
 title: "Mantenimiento"
-description: "Mantén tu documentación precisa y actualizada con el tiempo."
-keywords: ["maintenance", "content lifecycle", "stale content"]
+description: "Mantén tu documentación correcta y actualizada a lo largo del tiempo."
+keywords: ["mantenimiento", "ciclo de vida del contenido", "contenido obsoleto"]
 ---
 
 <Tip>
-  Esta página explica estrategias para mantener tu documentación precisa y útil con el tiempo, desde revisiones automatizadas hasta la gestión del ciclo de vida del contenido.
+  Esta página explica estrategias para mantener tu documentación correcta y útil a lo largo del tiempo, desde comprobaciones automatizadas hasta ciclos de vida del contenido.
 </Tip>
 
 <div id="automate-what-you-can">
   ## Automatiza lo que puedas
 </div>
 
-Introduce automatizaciones siempre que sea posible, como:
+Incorpora automatizaciones siempre que sea posible, por ejemplo:
 
-* **Haz seguimiento del contenido desactualizado:** Ejecuta un script para marcar los documentos importantes que no se han actualizado en los últimos tres meses. ¿Siguen siendo correctos?
-* **Automatiza las actualizaciones de la documentación:** Crea un flujo de trabajo para actualizar automáticamente la documentación cuando se haga merge de código con la [agent API](/es/guides/automate-agent).
-* **Aplica estándares con linters:** Usa [Vale](http://Vale.sh) o [checks de CI](/es/deploy/ci) para detectar automáticamente problemas de formato, desviaciones de estilo de redacción o metadatos faltantes en cada pull request.
+* **Detecta contenido obsoleto:** Ejecuta un script para señalar la documentación importante que no se haya actualizado en los últimos tres meses. ¿Sigue siendo correcta?
+* **Automatiza las actualizaciones de la documentación:** Crea un flujo de trabajo para actualizar automáticamente la documentación cuando se fusiona código con la [API de agent](/es/guides/automate-agent).
+* **Haz cumplir estándares con linters:** Usa [Vale](http://Vale.sh) o las [comprobaciones de CI](/es/deploy/ci) para detectar automáticamente problemas de formato, desviaciones del estilo de redacción o metadatos faltantes en cada pull request.
 
 <div id="set-up-a-review-process">
-  ## Configura un proceso de revisión
+  ## Establece un proceso de revisión
 </div>
 
-La documentación puede que nunca sea perfecta, y está bien. Debes tener un umbral de aceptación a partir del cual la documentación sea funcional y útil.
+Puede que la documentación nunca sea perfecta, y está bien. Debes definir un umbral de aceptación a partir del cual la documentación sea funcional y útil.
 
 Equilibra la eficiencia y la calidad:
 
-* **Concéntrate en la documentación de alto impacto.** No todas las páginas necesitan actualizaciones periódicas. Asegúrate de que las páginas más importantes se revisen con regularidad para comprobar su precisión y relevancia.
-* **Aprovecha tu comunidad.** Si tu documentación es de código abierto, permite que los usuarios señalen problemas o envíen correcciones mediante pull requests. Esto genera confianza y mantiene el contenido actualizado.
+* **Céntrate en la documentación de mayor impacto.** No todas las páginas necesitan actualizaciones periódicas. Asegúrate de que las páginas más importantes se revisen con regularidad para mantener su precisión y relevancia.
+* **Aprovecha tu comunidad.** Si tu documentación es de código abierto, facilita que los usuarios señalen problemas o envíen correcciones mediante pull requests. Esto genera confianza y mantiene el contenido actualizado.
 
 <div id="know-when-to-rewrite">
-  ## Sepa cuándo reescribir
+  ## Cuándo conviene reescribir
 </div>
 
-Con el tiempo, la documentación tiende a acumular advertencias y soluciones alternativas. Cuando los arreglos incrementales generan más confusión que claridad, una revisión completa puede ser la mejor opción.
+Con el tiempo, la documentación acumula de forma natural advertencias y soluciones provisionales. Cuando las correcciones graduales generan más confusión que claridad, una revisión integral puede ser la mejor opción.
 
-* **Planifique reinicios periódicos.** Una limpieza importante, especialmente si las mejores prácticas o el propio producto han evolucionado de forma significativa, ahorra tiempo a su equipo y a sus usuarios.
-* **Empiece con una auditoría estructurada.** Entreviste a los equipos de soporte, analice los comentarios de los usuarios y documente qué falta, qué induce a error o qué es redundante antes de reescribir.
-* **Complete las reescrituras en sprints enfocados.** Una revisión completa no tiene por qué ocurrir de una sola vez. Priorice las secciones con mayor impacto.
+* **Planifica reinicios periódicos.** Una limpieza a fondo, sobre todo si las prácticas recomendadas o el propio producto han evolucionado significativamente, ahorra tiempo a tu equipo y a tus usuarios.
+* **Empieza con una auditoría estructurada.** Entrevista a los equipos de soporte, analiza los comentarios de los usuarios y documenta qué falta, qué induce a error o qué es redundante antes de reescribir.
+* **Haz las reescrituras completas en sprints enfocados.** Una revisión integral no tiene por qué hacerse de una sola vez. Prioriza las secciones con mayor impacto.
 
 <div id="wrong-docs-can-be-worse-than-no-docs">
-  ## La documentación incorrecta puede ser peor que no tener ninguna
+  ## Una documentación incorrecta puede ser peor que no tener documentación
 </div>
 
-La documentación desactualizada o engañosa hace perder el tiempo a los usuarios y erosiona la confianza. En los casos en que una página es totalmente errónea e imposible de corregir a corto plazo, a menudo es mejor eliminarla por completo. Los usuarios agradecerán tener menos información antes que tener información incorrecta.
+La documentación desactualizada o engañosa hace perder tiempo a los usuarios y socava su confianza. Cuando una página es completamente inexacta y no se puede corregir a corto plazo, suele ser mejor eliminarla por completo. Los usuarios agradecerán más tener menos información que información incorrecta.

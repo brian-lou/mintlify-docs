@@ -1,29 +1,29 @@
 ---
 title: "Asistente"
-description: "Añade chat con IA a tu documentación que responda preguntas, cite fuentes y genere ejemplos de código."
-keywords: ["chat", "RAG", "soporte a usuarios"]
+description: "Añade un chat con IA a tu documentación que responde preguntas, cita fuentes y genera ejemplos de código."
+keywords: ["chat", "RAG", "soporte al usuario"]
 ---
 
 <Info>
-  El asistente se activa automáticamente en los [planes Pro y Enterprise](https://mintlify.com/pricing?ref=assistant).
+  El asistente se habilita automáticamente en los [planes Pro y Enterprise](https://mintlify.com/pricing?ref=assistant).
 </Info>
 
 <div id="about-the-assistant">
-  ## Acerca del asistente
+  ## Sobre el asistente
 </div>
 
-El asistente responde preguntas sobre tu documentación mediante consultas en lenguaje natural. Los usuarios acceden al asistente en tu sitio de documentación, para que puedan encontrar respuestas rápidamente y tener éxito con tu producto incluso si no saben dónde buscar.
+El asistente responde preguntas sobre tu documentación mediante consultas en lenguaje natural. Los usuarios acceden al asistente en tu sitio de documentación para que puedan encontrar respuestas rápidamente y usar tu producto con éxito, incluso si no saben dónde buscar.
 
-El asistente utiliza RAG con enfoque agente (retrieval-augmented generation) y llamadas a herramientas. Cuando los usuarios hacen preguntas, el asistente:
+El asistente usa RAG agéntico (generación aumentada por recuperación) con uso de herramientas. Cuando los usuarios hacen preguntas, el asistente:
 
-* **Busca y recupera** contenido relevante de tu documentación para proporcionar respuestas precisas.
-* **Cita fuentes** y proporciona enlaces navegables que llevan a los usuarios directamente a las páginas mencionadas.
+* **Busca y recupera** contenido relevante de tu documentación para ofrecer respuestas precisas.
+* **Cita fuentes** y proporciona enlaces para llevar a los usuarios directamente a las páginas mencionadas.
 * **Genera ejemplos de código que se pueden copiar** para ayudar a los usuarios a implementar soluciones a partir de tu documentación.
 
-Puedes ver el uso del asistente en tu panel de control para comprender el comportamiento de los usuarios y la eficacia de la documentación. Exporta y analiza los datos de las consultas para ayudar a identificar:
+Puedes ver el uso del asistente en tu panel para comprender el comportamiento de los usuarios y la eficacia de la documentación. Exporta y analiza los datos de las consultas para identificar:
 
 * Preguntas frecuentes que podrían necesitar una mejor cobertura.
-* Brechas de contenido donde los usuarios tienen dificultades para encontrar respuestas.
+* Lagunas de contenido en las que los usuarios tienen dificultades para encontrar respuestas.
 * Temas populares que podrían beneficiarse de contenido adicional.
 
 <div id="how-indexing-works">
@@ -32,15 +32,15 @@ Puedes ver el uso del asistente en tu panel de control para comprender el compor
 
 El asistente indexa automáticamente tu documentación publicada para responder preguntas con precisión. Cuando publicas cambios, el asistente indexa de inmediato el contenido nuevo, actualizado o eliminado. El asistente no indexa ramas de borrador ni despliegues de vista previa.
 
-De forma predeterminada, el asistente no indexa las páginas ocultas. Para incluir páginas ocultas en el índice del asistente, establece `seo.indexing: "all"` en tu `docs.json`. Consulta [Páginas ocultas](/es/organize/hidden-pages#search-seo-and-ai-indexing) para obtener más información.
+De forma predeterminada, el asistente no indexa las páginas ocultas. Para incluir páginas ocultas en el índice del asistente, configura `seo.indexing: "all"` en tu `docs.json`. Consulta [Páginas ocultas](/es/organize/hidden-pages#search-seo-and-ai-indexing) para obtener más información.
 
 <div id="how-the-assistant-handles-unknown-questions">
-  ### Cómo gestiona el asistente las preguntas desconocidas
+  ### Cómo gestiona el asistente las preguntas que no puede responder
 </div>
 
-El asistente solo responde preguntas basadas en la información de tu documentación. Si no encuentra información relevante después de buscar, indica que no tiene suficiente información para responder.
+El asistente solo responde preguntas basándose en la información de tu documentación. Si, tras buscar, no encuentra información relevante, indica que no tiene suficiente información para responder.
 
-Puedes [configurar un correo de desvío](/es/ai/assistant#set-deflection-email) para que el asistente proporcione tu dirección de correo de soporte a los usuarios cuyas preguntas no puede responder. Esto les da a los usuarios una vía para seguir adelante, incluso si la documentación no aborda su pregunta específica.
+Puedes [configurar un correo electrónico de derivación](/es/ai/assistant#set-deflection-email) para que el asistente proporcione tu correo electrónico de soporte a los usuarios cuyas preguntas no pueda responder. Esto les da una vía para continuar, incluso si la documentación no aborda su pregunta concreta.
 
 <div id="configure-the-assistant">
   ## Configura el asistente
@@ -48,7 +48,7 @@ Puedes [configurar un correo de desvío](/es/ai/assistant#set-deflection-email) 
 
 El asistente está activo de forma predeterminada en los planes Pro y Enterprise.
 
-Administra el asistente desde la página [Assistant Configurations](https://dashboard.mintlify.com/products/assistant/settings) de tu panel de control. Activa o desactiva el asistente, configura cómo se gestionan las respuestas, agrega preguntas predeterminadas y administra tu límite de mensajes.
+Gestiona el asistente desde la página [Assistant Configurations](https://dashboard.mintlify.com/products/assistant/settings) de tu panel. Activa o desactiva el asistente, configura cómo se gestionan las respuestas, añade preguntas predeterminadas y administra tu cuota de mensajes.
 
 <div id="enable-or-disable-the-assistant">
   ### Activar o desactivar el asistente
@@ -57,154 +57,154 @@ Administra el asistente desde la página [Assistant Configurations](https://dash
 Cambia el estado del asistente para activarlo o desactivarlo en tu sitio de documentación.
 
 <Frame>
-  <img src="/images/assistant/status-light.png" alt="El control de estado del asistente en el panel." className="block dark:hidden" />
+  <img src="/images/assistant/status-light.png" alt="El interruptor de estado del asistente en el panel." className="block dark:hidden" />
 
-  <img src="/images/assistant/status-dark.png" alt="El control de estado del asistente en el panel." className="hidden dark:block" />
+  <img src="/images/assistant/status-dark.png" alt="El interruptor de estado del asistente en el panel." className="hidden dark:block" />
 </Frame>
 
 <div id="set-deflection-email">
-  ### Configurar correo de desvío
+  ### Configura el correo electrónico de derivación
 </div>
 
-En la sección Response Handling, activa la opción para que el asistente redirija las preguntas sin respuesta a tu equipo de soporte.
+En la sección Response Handling, habilita que el asistente derive las preguntas sin respuesta a tu equipo de soporte.
 
-Especifica una dirección de correo electrónico que el asistente pueda proporcionar a los usuarios si no puede responder a su pregunta. También puedes habilitar un botón &quot;Contact support&quot; para que aparezca en el panel de chat del asistente.
+Especifica una dirección de correo electrónico para que el asistente se la proporcione a los usuarios si no puede responder a su pregunta. También puedes habilitar un botón de &quot;Contact support&quot; para que aparezca en el panel de chat del asistente.
 
 <Frame>
-  <img src="/images/assistant/deflection-light.png" alt="El panel de desvío del asistente en el dashboard. El desvío del asistente está activado y support@mintlify.com está configurado como el correo electrónico de desvío." className="block dark:hidden" />
+  <img src="/images/assistant/deflection-light.png" alt="El panel de derivación del asistente en el panel de control. La derivación del asistente está activada y support@mintlify.com está configurado como correo electrónico de derivación." className="block dark:hidden" />
 
-  <img src="/images/assistant/deflection-dark.png" alt="El panel de desvío del asistente en el dashboard. El desvío del asistente está activado y support@mintlify.com está configurado como el correo electrónico de desvío." className="hidden dark:block" />
+  <img src="/images/assistant/deflection-dark.png" alt="El panel de derivación del asistente en el panel de control. La derivación del asistente está activada y support@mintlify.com está configurado como correo electrónico de derivación." className="hidden dark:block" />
 </Frame>
 
 <div id="search-domains">
   ### Dominios de búsqueda
 </div>
 
-En la sección Response Handling, configura los dominios que el asistente puede usar en búsquedas en la web para obtener contexto adicional al responder preguntas.
+En la sección Response Handling, configura los dominios que el asistente puede usar para hacer búsquedas web y obtener contexto adicional al responder preguntas.
 
 * Los dominios deben ser de acceso público.
-* Los dominios que requieren JavaScript para cargar no son compatibles con esta función.
+* No se admiten dominios que requieran JavaScript para cargarse.
 
 <Frame>
-  <img src="/images/assistant/search-domains-light.png" alt="El panel de dominios de búsqueda del asistente habilitado en el dashboard. El asistente está configurado para buscar en el dominio mintlify.com/pricing." className="block dark:hidden" />
+  <img src="/images/assistant/search-domains-light.png" alt="El panel de dominios de búsqueda del asistente está habilitado en el panel de control. El asistente está configurado para buscar en el dominio mintlify.com/pricing." className="block dark:hidden" />
 
-  <img src="/images/assistant/search-domains-dark.png" alt="El panel de dominios de búsqueda del asistente habilitado en el dashboard. El asistente está configurado para buscar en el dominio mintlify.com/pricing." className="hidden dark:block" />
+  <img src="/images/assistant/search-domains-dark.png" alt="El panel de dominios de búsqueda del asistente está habilitado en el panel de control. El asistente está configurado para buscar en el dominio mintlify.com/pricing." className="hidden dark:block" />
 </Frame>
 
-Para un control más preciso sobre lo que el asistente puede buscar, utiliza la sintaxis de filtrado.
+Para controlar con mayor precisión lo que el asistente puede buscar, usa la sintaxis de filtrado.
 
 * **Filtrado a nivel de dominio**
   * `example.com`: Busca solo en el dominio `example.com`
   * `docs.example.com`: Busca solo en el subdominio `docs.example.com`
   * `*.example.com`: Busca en todos los subdominios de `example.com`
 * **Filtrado a nivel de ruta**
-  * `docs.example.com/api`: Busca en todas las páginas bajo la subruta `/api`
+  * `docs.example.com/api`: Busca en todas las páginas dentro de la subruta `/api`
 * **Múltiples patrones**
-  * Agrega múltiples entradas para dirigirte a diferentes secciones de los sitios
+  * Agrega varias entradas para abarcar distintas secciones de los sitios
 
 <div id="add-sample-questions">
-  ### Agregar preguntas de ejemplo
+  ### Añade preguntas iniciales
 </div>
 
-Ayuda a tus usuarios a iniciar conversaciones con el asistente agregando preguntas de ejemplo. Agrega preguntas frecuentes o preguntas sobre temas que quieras que tus usuarios conozcan. Haz clic en **Ask AI** para ver preguntas recomendadas según tu documentación.
+Ayuda a tus usuarios a iniciar conversaciones con el asistente añadiendo preguntas iniciales. Añade preguntas frecuentes o preguntas sobre temas que quieras que tus usuarios conozcan. Haz clic en **Ask AI** para ver preguntas recomendadas según tu documentación.
 
 <Frame>
-  <img src="/images/assistant/search-suggestions-light.png" alt="El panel de sugerencias de búsqueda en el panel de control con las preguntas de ejemplo habilitadas y tres preguntas visibles." className="block dark:hidden" />
+  <img src="/images/assistant/search-suggestions-light.png" alt="El panel de sugerencias de búsqueda del panel de control, con las preguntas iniciales habilitadas y tres preguntas añadidas." className="block dark:hidden" />
 
-  <img src="/images/assistant/search-suggestions-dark.png" alt="El panel de sugerencias de búsqueda en el panel de control con las preguntas de ejemplo habilitadas y tres preguntas visibles." className="hidden dark:block" />
+  <img src="/images/assistant/search-suggestions-dark.png" alt="El panel de sugerencias de búsqueda del panel de control, con las preguntas iniciales habilitadas y tres preguntas añadidas." className="hidden dark:block" />
 </Frame>
 
 <div id="manage-billing">
-  ## Administrar la facturación
+  ## Gestionar la facturación
 </div>
 
-El asistente utiliza asignaciones de mensajes por niveles. Un mensaje es cualquier interacción del usuario con el asistente que recibe una respuesta correcta. Si tienes mensajes sin usar, hasta la mitad de tu asignación de mensajes puede trasladarse al siguiente ciclo de facturación. Por ejemplo, si tienes una asignación de 1,000 mensajes y usas 300 mensajes, 500 mensajes se trasladan al siguiente ciclo de facturación, dándote un total de 1,500 mensajes para el siguiente ciclo de facturación.
+El asistente usa cuotas de mensajes por nivel. Un mensaje es cualquier interacción del usuario con el asistente que recibe una respuesta correcta. Si te sobran mensajes, hasta la mitad de tu cuota de mensajes puede transferirse al siguiente ciclo de facturación. Por ejemplo, si tienes una cuota de 1,000 mensajes y usas 300, 500 mensajes se transfieren al siguiente ciclo de facturación, lo que te da un total de 1,500 mensajes para ese ciclo.
 
-De forma predeterminada, el asistente permite excedentes. Puedes desactivar los excedentes para evitar costos adicionales por uso más allá de tu nivel. Si alcanzas tu asignación de mensajes con los excedentes desactivados, el asistente no estará disponible hasta que se restablezca tu asignación de mensajes. Si permites excedentes, cada mensaje más allá de tu asignación genera un cargo adicional, pero los excedentes ocasionales pueden resultar más baratos que actualizar a un nivel superior, dependiendo de tu uso.
+De forma predeterminada, el asistente permite excedentes. Puedes desactivar esta opción para evitar costos adicionales por uso por encima de tu nivel. Si alcanzas tu cuota de mensajes con esta opción desactivada, el asistente no estará disponible hasta que tu cuota se restablezca. Si permites excedentes, cada mensaje que supere tu límite genera un cargo por excedente, pero, según tu uso, los excedentes ocasionales pueden ser más económicos que cambiar a un nivel superior.
 
 <div id="change-your-assistant-tier">
-  ### Cambia el plan de tu asistente
+  ### Cambia el nivel de tu asistente
 </div>
 
-Los planes de asistente determinan tu límite mensual de mensajes y los precios.
+Los niveles del asistente determinan tu cuota mensual de mensajes y el precio.
 
-Consulta y cambia tu plan actual en la [pestaña Billing](https://dashboard.mintlify.com/products/assistant/settings/billing) de la página del asistente en tu panel.
+Consulta y cambia tu nivel actual en la [pestaña Billing](https://dashboard.mintlify.com/products/assistant/settings/billing) de la página del asistente en tu panel.
 
-En la sección **Spending Controls**, selecciona tu plan preferido en el menú desplegable.
+En la sección **Spending Controls**, selecciona el nivel que prefieras en el menú desplegable.
 
-**Mejora tu plan:**
+**Sube de nivel:**
 
-* Tu nuevo límite de mensajes está disponible de inmediato.
+* Tu nueva cuota de mensajes se aplica de inmediato.
 * Pagas la diferencia prorrateada correspondiente al ciclo de facturación actual.
 
-**Reduce tu plan:**
+**Baja de nivel:**
 
-* Tu límite de mensajes se actualiza de inmediato.
+* Tu cuota de mensajes se actualiza de inmediato.
 * Los cambios de precio entran en vigor al inicio de tu próximo ciclo de facturación.
-* Los mensajes no utilizados de tu plan actual **no** se acumulan.
+* Los mensajes no utilizados de tu nivel actual **no** se transfieren.
 
 <div id="allow-overages">
   ### Permitir excedentes
 </div>
 
-Si quieres impedir los excedentes, desactívalos en la sección **Billing Controls** de la [pestaña Billing](https://dashboard.mintlify.com/products/assistant/settings/billing) de la página del asistente en tu panel de control.
+Si no quieres permitir excedentes, desactívalos en la sección **Billing Controls** de la [pestaña Billing](https://dashboard.mintlify.com/products/assistant/settings/billing) de la página del asistente en tu panel.
 
 <div id="set-usage-alerts">
-  ### Configurar alertas de uso
+  ### Configura alertas de uso
 </div>
 
-En la sección Billing Controls, configura alertas de uso para recibir un correo electrónico cuando alcances un determinado porcentaje de tu cupo de mensajes.
+En la sección Billing Controls, configura alertas de uso para recibir un correo electrónico cuando alcances un porcentaje determinado de tu cuota de mensajes.
 
 <div id="connect-apps">
   ## Conectar aplicaciones
 </div>
 
-En la sección Conectar aplicaciones, agrega el asistente a tu servidor de [Discord](/es/ai/discord) y al espacio de trabajo de [Slack](/es/ai/slack-bot) para que los usuarios puedan obtener respuestas de tu documentación en esas plataformas.
+En la sección Conectar aplicaciones, agrega el asistente a tu servidor de [Discord](/es/ai/discord) y a tu espacio de trabajo de [Slack](/es/ai/slack-bot) para que los usuarios puedan obtener respuestas de tu documentación en esas plataformas.
 
 <div id="assistant-insights">
-  ## Insights del asistente
+  ## Datos del asistente
 </div>
 
-Utiliza los insights del asistente para comprender cómo los usuarios interactúan con tu documentación e identificar oportunidades de mejora.
+Usa los datos del asistente para entender cómo interactúan los usuarios con tu documentación e identificar oportunidades de mejora.
 
-La [página del asistente](https://dashboard.mintlify.com/products/assistant) muestra las tendencias de uso del mes en curso. Consulta insights más detallados en la página de [Analytics](/es/optimize/analytics#assistant).
+La [página del asistente](https://dashboard.mintlify.com/products/assistant) muestra las tendencias de uso del mes en curso. Consulta datos más detallados en la página de [análisis](/es/optimize/analytics#assistant).
 
 <div id="make-content-ai-ingestible">
-  ## Haz que el contenido sea apto para la IA
+  ## Haz que el contenido sea fácil de procesar para la IA
 </div>
 
-Estructura tu documentación para ayudar al asistente a proporcionar respuestas precisas y relevantes. Una organización clara y un contexto completo benefician tanto a los lectores humanos como a la comprensión de la IA.
+Estructura tu documentación para ayudar al asistente a ofrecer respuestas precisas y relevantes. Una organización clara y un contexto completo benefician tanto a los lectores como a la comprensión de la IA.
 
 <Card title="Estructura y organización">
   * Usa marcado semántico.
   * Escribe encabezados descriptivos para las secciones.
   * Crea una jerarquía lógica de la información.
-  * Usa un formato coherente en toda tu documentación.
-  * Incluye metadatos completos en el frontmatter de la página.
-  * Divide los bloques largos de texto en párrafos más cortos.
+  * Mantén un formato coherente en toda la documentación.
+  * Incluye metadatos completos en el Frontmatter de la página.
+  * Divide los bloques largos de texto en párrafos más breves.
 </Card>
 
 <Card title="Contexto">
-  * Define términos y siglas específicos cuando se introduzcan por primera vez.
-  * Proporciona contenido conceptual suficiente sobre las características y los procedimientos.
+  * Define los términos específicos y las siglas cuando aparezcan por primera vez.
+  * Proporciona suficiente contenido conceptual sobre las funcionalidades y los procedimientos.
   * Incluye ejemplos y casos de uso.
-  * Incluye referencias cruzadas a temas relacionados.
-  * Añade [páginas ocultas](/es/organize/hidden-pages) con contexto adicional que los usuarios no necesitan, pero que el asistente sí puede consultar.
+  * Añade referencias cruzadas a temas relacionados.
+  * Agrega [páginas ocultas](/es/organize/hidden-pages) con contexto adicional que los usuarios no necesitan, pero que el asistente puede consultar.
 </Card>
 
 <div id="use-the-assistant">
   ## Usa el asistente
 </div>
 
-Los usuarios tienen varias formas de iniciar una conversación con el asistente. Cada método abre un panel de chat en el lado derecho de tu documentación. Los usuarios pueden hacer cualquier pregunta y el asistente busca en tu documentación una respuesta. Si el asistente no puede encontrar información relevante, responde que no puede contestar la pregunta.
+Los usuarios pueden iniciar una conversación con el asistente de varias maneras. Cada método abre un panel de chat en el lado derecho de la documentación. Los usuarios pueden hacer cualquier pregunta, y el asistente buscará la respuesta en tu documentación. Si el asistente no puede encontrar información relevante, responderá que no puede contestar la pregunta.
 
-Añade el asistente como bot a tu [espacio de trabajo de Slack](/es/ai/slack-bot) o [servidor de Discord](/es/ai/discord) para que tu comunidad pueda hacer preguntas sin salir de su plataforma preferida.
+Agrega el asistente como bot a tu [espacio de trabajo de Slack](/es/ai/slack-bot) o [servidor de Discord](/es/ai/discord) para que tu comunidad pueda hacer preguntas sin salir de su plataforma preferida.
 
 <div id="ui-placement">
   ### Ubicación en la interfaz
 </div>
 
-El asistente aparece en dos lugares de la interfaz: como un botón junto a la barra de búsqueda y como una barra en la parte inferior de la página.
+El asistente aparece en dos lugares: como un botón junto a la barra de búsqueda y como una barra en la parte inferior de la página.
 
 <Columns cols={2}>
   <Frame caption="Botón del asistente junto a la barra de búsqueda.">
@@ -212,8 +212,8 @@ El asistente aparece en dos lugares de la interfaz: como un botón junto a la ba
       src="/images/assistant/assistant-button-light.png"
       className="block dark:hidden"
       style={{
-  width: '268px',
-  height: 'auto',
+width: '268px',
+height: 'auto',
 }}
       alt="Barra de búsqueda y botón del asistente en modo claro."
     />
@@ -222,8 +222,8 @@ El asistente aparece en dos lugares de la interfaz: como un botón junto a la ba
       src="/images/assistant/assistant-button-dark.png"
       className="hidden dark:block"
       style={{
-  width: '268px',
-  height: 'auto',
+width: '268px',
+height: 'auto',
 }}
       alt="Barra de búsqueda y botón del asistente en modo oscuro."
     />
@@ -234,8 +234,8 @@ El asistente aparece en dos lugares de la interfaz: como un botón junto a la ba
       src="/images/assistant/assistant-bar-light.png"
       className="block dark:hidden"
       style={{
-  width: '268px',
-  height: 'auto',
+width: '268px',
+height: 'auto',
 }}
       alt="Barra del asistente en modo claro."
     />
@@ -244,8 +244,8 @@ El asistente aparece en dos lugares de la interfaz: como un botón junto a la ba
       src="/images/assistant/assistant-bar-dark.png"
       className="hidden dark:block"
       style={{
-  width: '268px',
-  height: 'auto',
+width: '268px',
+height: 'auto',
 }}
       alt="Barra del asistente en modo oscuro."
     />
@@ -256,7 +256,7 @@ El asistente aparece en dos lugares de la interfaz: como un botón junto a la ba
   ### Atajo de teclado
 </div>
 
-Abre el panel de chat del asistente con la combinación de teclas <kbd>Command</kbd> + <kbd>I</kbd> en macOS y <kbd>Ctrl</kbd> + <kbd>I</kbd> en Windows.
+Abre el panel de chat del asistente con el método abreviado de teclado <kbd>Command</kbd> + <kbd>I</kbd> en macOS y <kbd>Ctrl</kbd> + <kbd>I</kbd> en Windows.
 
 <div id="highlight-text">
   ### Resaltar texto
@@ -274,7 +274,7 @@ Resalta texto en una página y haz clic en el botón emergente **Add to assistan
   ### Bloques de código
 </div>
 
-Haz clic en el botón **Ask AI** de un bloque de código para abrir el panel de chat del asistente y añadir dicho bloque como contexto. Puedes añadir varios bloques de código o fragmentos de texto al contexto del asistente.
+Haz clic en el botón **Ask AI** de un bloque de código para abrir el panel de chat del asistente y añadir ese bloque de código como contexto. Puedes añadir varios bloques de código o fragmentos de texto al contexto del asistente.
 
 <Frame>
   <img src="/images/assistant/code-block-light.png" alt="El botón Ask AI en un bloque de código en modo claro." className="block dark:hidden" />
@@ -286,19 +286,19 @@ Haz clic en el botón **Ask AI** de un bloque de código para abrir el panel de 
   ### URLs
 </div>
 
-Abre el asistente con un parámetro de consulta en la URL para crear enlaces profundos que guíen a los usuarios a información específica o para compartir conversaciones con el asistente con preguntas predefinidas.
+Abre el asistente con un parámetro de consulta en la URL para crear enlaces directos que lleven a los usuarios a información específica o compartir conversaciones del asistente con preguntas rellenadas previamente.
 
-* **Abrir el asistente**: Agrega `?assistant=open` para abrir el panel de chat del asistente cuando se cargue la página.
+* **Abrir el asistente**: Añade `?assistant=open` para abrir el panel de chat del asistente cuando se cargue la página.
   * Ejemplo: [https://mintlify.com/docs?assistant=open](https://mintlify.com/docs?assistant=open)
-* **Abrir con una consulta predefinida**: Agrega `?assistant=YOUR_QUERY` para abrir el asistente y enviar automáticamente una pregunta.
+* **Abrir con una consulta precargada**: Añade `?assistant=YOUR_QUERY` para abrir el asistente y enviar automáticamente una pregunta.
   * Ejemplo: [https://mintlify.com/docs?assistant=explain webhooks](https://mintlify.com/docs?assistant=explain%20webhooks)
 
 <div id="troubleshooting">
   ## Solución de problemas
 </div>
 
-<Accordion title="Barra de chat del asistente no visible">
-  Si la interfaz del asistente no es visible en determinados navegadores, es posible que debas enviar un informe de falso positivo a [EasyList](https://easylist.to). Los navegadores que usan la lista de cookies de EasyList, como Brave y Comet, a veces bloquean el asistente u otros elementos de la interfaz de usuario. La lista de cookies de EasyList incluye una regla específica de dominio que oculta elementos fijos en ciertos dominios para bloquear banners de cookies. Esta regla afecta inadvertidamente a componentes legítimos de la interfaz de usuario.
+<Accordion title="La barra de chat del asistente no aparece">
+  Si la interfaz del asistente no aparece en determinados navegadores, es posible que debas enviar un informe de falso positivo a [EasyList](https://easylist.to). Los navegadores que usan la lista de cookies de EasyList, como Brave y Comet, a veces bloquean el asistente u otros elementos de la interfaz. La lista de cookies de EasyList incluye una regla específica para determinados dominios que oculta elementos fijos para bloquear los banners de cookies. Esta regla afecta inadvertidamente a componentes legítimos de la interfaz.
 
-  Envía un informe de falso positivo a [EasyList](https://github.com/easylist/easylist) para solicitar la eliminación de la regla. Esto resuelve el problema para todos los usuarios una vez que se actualiza la lista de filtros.
+  Envía un informe de falso positivo a [EasyList](https://github.com/easylist/easylist) para solicitar que se elimine la regla. Esto resuelve el problema para todos los usuarios una vez que se actualiza la lista de filtros.
 </Accordion>

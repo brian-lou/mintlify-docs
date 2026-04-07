@@ -1,17 +1,17 @@
 ---
 title: "Dar formato al texto"
 description: "Aprende a dar formato al texto, crear encabezados y dar estilo al contenido."
-keywords: ["formato en Markdown", "estilo de texto", "encabezados", "enlaces de ancla"]
+keywords: ["formato en Markdown", "estilo del texto", "encabezados", "enlaces de ancla"]
 ---
 
 <div id="headers">
   ## Encabezados
 </div>
 
-Los encabezados organizan tu contenido y crean anclas de navegación. Aparecen en la tabla de contenidos y ayudan a los usuarios a recorrer rápidamente tu documentación.
+Los encabezados organizan tu contenido y crean anclas de navegación. Aparecen en la tabla de contenido y ayudan a los usuarios a examinar rápidamente tu documentación.
 
 <div id="creating-headers">
-  ### Creación de encabezados
+  ### Crear encabezados
 </div>
 
 Usa el símbolo `#` para crear encabezados de distintos niveles:
@@ -23,14 +23,14 @@ Usa el símbolo `#` para crear encabezados de distintos niveles:
 ```
 
 <Tip>
-  Utiliza encabezados descriptivos, con palabras clave, que indiquen claramente el contenido que viene a continuación. Esto mejora tanto la navegación de los usuarios como el posicionamiento en motores de búsqueda.
+  Usa encabezados descriptivos y con palabras clave relevantes que indiquen claramente el contenido que sigue. Esto mejora tanto la navegación como la optimización para motores de búsqueda.
 </Tip>
 
 <div id="disabling-anchor-links">
   ### Desactivar enlaces de ancla
 </div>
 
-De forma predeterminada, los encabezados incluyen enlaces de ancla en los que se puede hacer clic y que permiten a los usuarios enlazar directamente a secciones específicas. Puedes desactivar estos enlaces de ancla usando la prop `noAnchor` en encabezados HTML o de React.
+De forma predeterminada, los encabezados incluyen enlaces de ancla clicables que permiten a los usuarios enlazar directamente a secciones específicas. Puedes desactivar estos enlaces de ancla con la prop `noAnchor` en encabezados HTML o React.
 
 <CodeGroup>
   ```mdx HTML header example
@@ -46,29 +46,29 @@ De forma predeterminada, los encabezados incluyen enlaces de ancla en los que se
   ```
 </CodeGroup>
 
-Cuando se usa `noAnchor`, el encabezado no mostrará la ficha de ancla y, al hacer clic en el texto del encabezado, no se copiará el enlace de ancla al portapapeles.
+Cuando se usa `noAnchor`, el encabezado no mostrará el chip de ancla, y al hacer clic en el texto del encabezado no se copiará el enlace de ancla al portapapeles.
 
 ## Formato de texto
 
-Admitimos la mayoría de las opciones de formato de Markdown para resaltar y dar estilo al texto.
+Admitimos la mayoría de los formatos de Markdown para resaltar y dar estilo al texto.
 
 <div id="basic-formatting">
   ### Formato básico
 </div>
 
-Aplica estos estilos de formato a tu texto:
+Aplica estos estilos de formato al texto:
 
-| Estilo | Sintaxis | Ejemplo | Resultado |
-|-------|--------|---------|--------|
-| **Negrita** | `**text**` | `**nota importante**` | **nota importante** |
-| *Cursiva* | `_text_` | `_énfasis_` | *énfasis* |
-| ~~Tachado~~ | `~text~` | `~función obsoleta~` | ~~función obsoleta~~ |
+| Estilo      | Sintaxis    | Ejemplo               | Resultado            |
+| ----------- | ----------- | --------------------- | -------------------- |
+| **Negrita** | `**texto**` | `**nota importante**` | **nota importante**  |
+| *Cursiva*   | `_texto_`   | `_énfasis_`           | *énfasis*            |
+| ~~Tachado~~ | `~texto~`   | `~función obsoleta~`  | ~~función obsoleta~~ |
 
 <div id="combining-formats">
-  ### Combinar formatos
+  ### Combinación de formatos
 </div>
 
-Puedes combinar distintos estilos de formato:
+Puedes combinar estilos de formato:
 
 ```mdx
 **_bold and italic_**
@@ -84,16 +84,16 @@ Puedes combinar distintos estilos de formato:
   ### Superíndice y subíndice
 </div>
 
-Para expresiones matemáticas o notas al pie, utiliza etiquetas HTML:
+Para expresiones matemáticas o notas al pie, usa etiquetas HTML:
 
-| Tipo | Sintaxis | Ejemplo | Resultado |
-|------|--------|---------|--------|
+| Tipo        | Sintaxis          | Ejemplo               | Resultado           |
+| ----------- | ----------------- | --------------------- | ------------------- |
 | Superíndice | `<sup>text</sup>` | `example<sup>2</sup>` | example<sup>2</sup> |
-| Subíndice | `<sub>text</sub>` | `example<sub>n</sub>` | example<sub>n</sub> |
+| Subíndice   | `<sub>text</sub>` | `example<sub>n</sub>` | example<sub>n</sub> |
 
 ## Enlaces
 
-Los enlaces ayudan a los usuarios a navegar entre páginas y acceder a recursos externos. Utiliza textos de enlace descriptivos para mejorar la accesibilidad y la experiencia del usuario.
+Los enlaces ayudan a los usuarios a navegar entre páginas y a acceder a recursos externos. Usa un texto de enlace descriptivo para mejorar la accesibilidad y la experiencia del usuario.
 
 <div id="internal-links">
   ### Enlaces internos
@@ -106,7 +106,7 @@ Enlaza a otras páginas de tu documentación mediante rutas relativas a la raíz
 [Steps](/components/steps)
 ```
 
-[Guía rápida](/es/quickstart)<br />
+[Primeros pasos](/es/quickstart)<br />
 [Pasos](/es/components/steps)
 
 <div id="external-links">
@@ -125,7 +125,7 @@ Para los recursos externos, incluye la URL completa:
   ### Enlaces rotos
 </div>
 
-Puedes comprobar si hay enlaces rotos en tu documentación mediante la [CLI](/es/installation):
+Puedes comprobar si hay enlaces rotos en tu documentación con la [CLI](/es/installation):
 
 ```bash
 mint broken-links
@@ -135,28 +135,28 @@ mint broken-links
   ## Citas en bloque
 </div>
 
-Las citas en bloque sirven para resaltar información importante, citas o ejemplos dentro de tu contenido.
+Las citas en bloque permiten destacar información importante, citas o ejemplos en tu contenido.
 
 <div id="single-line-blockquotes">
-  ### Citas de una sola línea
+  ### Citas en bloque de una sola línea
 </div>
 
-Añade `>` antes del texto para crear una cita de bloque:
+Añade `>` antes del texto para crear una cita en bloque:
 
 ```mdx
 > This is a quote that stands out from the main content.
 ```
 
-> Esta es una cita que resalta frente al contenido principal.
+> Esta es una cita que destaca dentro del contenido principal.
 
 <div id="multi-line-blockquotes">
   ### Citas en bloque de varias líneas
 </div>
 
-Para citas más largas o con varios párrafos:
+Para citas más largas o de varios párrafos:
 
 ```mdx
-> Este es el primer párrafo de una cita de bloque multilínea.
+> Este es el primer párrafo de una cita en bloque multilínea.
 >
 > Este es el segundo párrafo, separado por una línea vacía con `>`.
 ```
@@ -173,13 +173,13 @@ Para citas más largas o con varios párrafos:
   ## Expresiones matemáticas
 </div>
 
-Usamos LaTeX para mostrar expresiones y ecuaciones matemáticas. Puedes anular la detección automática configurando `styles.latex` en tu archivo `docs.json` en [configuración](/es/organize/settings#param-latex).
+Admitimos LaTeX para mostrar expresiones y ecuaciones matemáticas. Puedes anular la detección automática configurando `styles.latex` en tu `docs.json` [configuración](/es/organize/settings#param-latex).
 
 <div id="inline-math">
   ### Matemáticas en línea
 </div>
 
-Utiliza un solo signo de dólar, `$`, para las expresiones matemáticas en línea:
+Usa un solo signo de dólar, `$`, para las expresiones matemáticas en línea:
 
 ```mdx
 The Pythagorean theorem states that $(a^2 + b^2 = c^2)$ in a right triangle.
@@ -191,7 +191,7 @@ El teorema de Pitágoras establece que $(a^2 + b^2 = c^2)$ en un triángulo rect
   ### Ecuaciones en bloque
 </div>
 
-Usa dos signos de dólar, `$$`, para ecuaciones en bloque:
+Usa dos signos de dólar, `$$`, para ecuaciones independientes:
 
 ```mdx
 $$
@@ -204,20 +204,20 @@ E = mc^2
 $$
 
 <Info>
-  El soporte de LaTeX requiere una sintaxis matemática correcta. Consulta la [documentación de LaTeX](https://www.latex-project.org/help/documentation/) para obtener directrices detalladas sobre la sintaxis.
+  La compatibilidad con LaTeX requiere una sintaxis matemática correcta. Consulta la [documentación de LaTeX](https://www.latex-project.org/help/documentation/) para ver una guía completa sobre la sintaxis.
 </Info>
 
 <div id="line-breaks-and-spacing">
   ## Saltos de línea y espaciado
 </div>
 
-Controla los saltos de línea y el espaciado para mejorar la legibilidad del contenido.
+Controla el espaciado y los saltos de línea para mejorar la legibilidad del contenido.
 
 <div id="paragraph-breaks">
   ### Saltos de párrafo
 </div>
 
-Separe los párrafos con una línea en blanco:
+Separa los párrafos con líneas en blanco:
 
 ```mdx
 This is the first paragraph.
@@ -233,7 +233,7 @@ Este es el segundo párrafo, separado por una línea en blanco.
   ### Saltos de línea manuales
 </div>
 
-Utiliza etiquetas HTML `<br />` para insertar saltos de línea forzados dentro de los párrafos:
+Usa etiquetas HTML `<br />` para insertar saltos de línea forzados dentro de los párrafos:
 
 ```mdx
 This line ends here.<br />
@@ -241,14 +241,14 @@ This line starts on a new line.
 ```
 
 Esta línea termina aquí.<br />
-Esta línea comienza en una nueva línea.
+Esta línea empieza en una línea nueva.
 
 <Tip>
-  En la mayoría de los casos, los saltos de párrafo con líneas en blanco mejoran la legibilidad frente a los saltos de línea manuales.
+  En la mayoría de los casos, los saltos de párrafo con líneas en blanco ofrecen una mejor legibilidad que los saltos de línea manuales.
 </Tip>
 
 <div id="best-practices">
-  ## Mejores prácticas
+  ## Buenas prácticas
 </div>
 
 <div id="content-organization">
@@ -257,20 +257,20 @@ Esta línea comienza en una nueva línea.
 
 * Usa encabezados para crear una jerarquía de contenido clara
 * Sigue una jerarquía correcta de encabezados (no pases de H2 a H4)
-* Escribe encabezados descriptivos y con abundantes palabras clave
+* Escribe encabezados descriptivos y con palabras clave relevantes
 
 <div id="text-formatting">
-  ### Formato de texto
+  ### Formato del texto
 </div>
 
-* Usa negrita para resaltar, no para párrafos completos
-* Reserva la cursiva para términos, títulos o énfasis sutil
+* Usa la negrita para dar énfasis, no para párrafos enteros
+* Reserva la cursiva para términos, títulos o un énfasis sutil
 * Evita el exceso de formato que distraiga del contenido
 
 <div id="links">
   ### Enlaces
 </div>
 
-* Escribe texto descriptivo para los enlaces en lugar de &quot;haz clic aquí&quot; o &quot;leer más&quot;
+* Usa un texto de enlace descriptivo en lugar de &quot;haz clic aquí&quot; o &quot;leer más&quot;
 * Usa rutas relativas a la raíz para los enlaces internos
-* Comprueba los enlaces con regularidad para evitar enlaces rotos
+* Comprueba los enlaces con regularidad para evitar referencias rotas

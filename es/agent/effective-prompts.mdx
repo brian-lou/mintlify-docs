@@ -1,21 +1,21 @@
 ---
-title: "Escribe prompts efectivos"
-description: "Obtén mejores resultados del agente con prompts claros y bien enfocados."
-keywords: ["prompts", "agent prompts", "effective prompting", "agent usage"]
+title: "Escribe prompts eficaces"
+description: "Obtén mejores resultados del agente con prompts claros y precisos."
+keywords: ["prompts", "prompts del agente", "prompts eficaces", "uso del agente"]
 ---
 
-Piensa en el agente como un asistente servicial que necesita tu orientación para completar tareas. Dale instrucciones claras y contexto. Cuanto más específicas sean las tareas, más fácil será completarlas, así que divide los proyectos complejos en pasos más pequeños.
+Piensa en el agente como un asistente útil que necesita tus indicaciones para completar tareas. Dale instrucciones claras y contexto. Las tareas más concretas son más fáciles de resolver, así que divide los proyectos complejos en pasos más pequeños.
 
 <div id="make-prompts-specific-and-outcome-focused">
-  ## Haz que tus prompts sean específicos y orientados a resultados
+  ## Haz que los prompts sean específicos y se orienten a resultados
 </div>
 
-Prompts genéricos como `@mintlify Improve the onboarding page` aplican buenas prácticas generales, pero es posible que no mejoren el contenido de la forma específica que tenías en mente.
+Los prompts genéricos como `@mintlify Improve the onboarding page` aplican buenas prácticas generales, pero puede que no mejoren el contenido de la forma concreta que tenías en mente.
 
-Prueba prompts basados en los resultados que quieres que tus usuarios logren o en los problemas que encuentran.
+Prueba prompts basados en los resultados que quieres que consigan tus usuarios o en los problemas con los que se encuentran.
 
-- `@mintlify A lot of users have trouble installing the CLI. Review the onboarding page and update the docs so that users can easily install the CLI`
-- `@mintlify Developers keep getting 401 errors when following our authentication guide. Review the auth docs and add clearer examples showing how to properly format the API key`
+* `@mintlify A lot of users have trouble installing the CLI. Review the onboarding page and update the docs so that users can easily install the CLI`
+* `@mintlify Developers keep getting 401 errors when following our authentication guide. Review the auth docs and add clearer examples showing how to properly format the API key`
 
 <div id="use-broad-prompts-for-maintenance-tasks">
   ## Usa prompts amplios para tareas de mantenimiento
@@ -23,18 +23,18 @@ Prueba prompts basados en los resultados que quieres que tus usuarios logren o e
 
 Usa prompts amplios para el mantenimiento general del contenido, como corregir errores tipográficos, actualizar redirecciones o cambiar el nombre de una funcionalidad en toda tu documentación.
 
-- `@mintlify Find and fix all typos in the docs`
-- `@mintlify change all unordered lists to use * instead of -`
+* `@mintlify Find and fix all typos in the docs`
+* `@mintlify change all unordered lists to use * instead of -`
 
 <div id="specify-a-domain-name-for-multi-site-organizations">
-  ## Especificar un nombre de dominio para organizaciones con varios sitios
+  ## Especifica un nombre de dominio para organizaciones con varios sitios
 </div>
 
 Si tienes varios sitios de documentación, incluye el parámetro `subdomain` en tu mensaje para especificar en qué conjunto de documentación debe trabajar el agente.
 
-Para encontrar tu nombre de dominio, consulta la URL del panel para el conjunto de documentación que quieres actualizar. El nombre de dominio es la última parte después del nombre de tu organización. Por ejemplo, si la URL de tu panel es `https://dashboard.mintlify.com/org-name/domain-name`, tu nombre de dominio es `domain-name`.
+Para encontrar tu nombre de dominio, revisa la URL del panel del conjunto de documentación que quieres actualizar. El nombre de dominio es la última parte después del nombre de tu organización. Por ejemplo, si la URL de tu panel es `https://dashboard.mintlify.com/org-name/domain-name`, tu nombre de dominio es `domain-name`.
 
 Usa el formato `@mintlify subdomain=<your-domain-name> <your-prompt>` para indicar al agente que trabaje en un conjunto de documentación específico.
 
-- `@mintlify subdomain=public-docs Add a new section to the quickstart about inviting collaborators based on this PR`: Indica al agente que actualice el quickstart solo en el sitio `public-docs`.
-- `@mintlify subdomain=customer-docs Update the auth docs for the new authentication method`: Indica al agente que actualice la documentación de autenticación solo en el sitio `customer-docs`.
+* `@mintlify subdomain=public-docs Add a new section to the quickstart about inviting collaborators based on this PR`: Indica al agente que actualice el quickstart solo en el sitio `public-docs`.
+* `@mintlify subdomain=customer-docs Update the auth docs for the new authentication method`: Indica al agente que actualice la documentación de autenticación solo en el sitio `customer-docs`.

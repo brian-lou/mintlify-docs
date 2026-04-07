@@ -1,36 +1,36 @@
 ---
 title: "Google Analytics 4"
-description: "使用 Google Analytics 4 跟踪访问者行为和参与度。"
-keywords: ["GA4 integration", "measurement ID", "web stream", "Universal Analytics"]
+description: "使用 Google Analytics 跟踪访客行为和互动情况。"
+keywords: ["GA4 集成", "衡量 ID", "网站数据流", "Universal Analytics"]
 ---
 
-你需要创建一个新的 <Tooltip tip="Google Analytics 4">GA4</Tooltip> 媒体资源，以在 Mintlify 中使用。收集到的数据会归入与你其他 Google Analytics 数据相同的项目中。
+您需要新建一个 <Tooltip tip="Google Analytics 4">GA4</Tooltip> 媒体资源，以便与 Mintlify 搭配使用。收集到的数据会进入与您其他 Google Analytics 数据相同的项目中。
 
-即使你仍在使用旧版 Google Analytics（Universal Analytics，简称 UA），也依然可以创建 <Tooltip tip="Google Analytics 4">GA4</Tooltip> 媒体资源。<Tooltip tip="Google Analytics 4">GA4</Tooltip> 数据与 UA 数据略有不同，但仍会被收集到同一个项目中。
+如果您使用的是旧版 Google Analytics (即 Universal Analytics) ，您仍然可以新建一个 <Tooltip tip="Google Analytics 4">GA4</Tooltip> 媒体资源。<Tooltip tip="Google Analytics 4">GA4</Tooltip> 数据与 UA 数据略有不同，但仍会收集到同一个项目中。
 
 <div id="how-to-connect-ga4-to-mintlify">
-  ## 如何将 GA4 接入 Mintlify
+  ## 如何将 GA4 关联到 Mintlify
 </div>
 
 <div id="create-a-web-stream">
-  ### 创建 Web 数据流
+  ### 创建 Web Stream
 </div>
 
-你需要创建一个 Web 数据流来获取 Measurement ID，并将其填入 Mintlify。
+你需要先创建一个 Web Stream，以获取要填入 Mintlify 的 Measurement ID。
 
 点击 Google Analytics 界面左下角的齿轮图标，然后点击 Data Streams。
 
-<Frame>![Google Analytics 仪表盘中 Data Streams 页面截图。](/images/ga4-web-streams.png)</Frame>
+<Frame>![Google Analytics 控制面板中 Data Streams 页面的截图。](/images/ga4-web-streams.png)</Frame>
 
-创建一个 Web 数据流，并将你的 Mintlify 文档站点的 URL 填写为该数据流的 URL。
+创建一个 Web Stream，并将你的 Mintlify 文档站点 URL 填写为 stream URL。
 
-你的 Measurement ID 类似于 `G-XXXXXXX`，在你创建 Web 数据流之后，会立即显示在 Stream Details 下方。
+你的 Measurement ID 格式类似 `G-XXXXXXX`，创建 Web Stream 后会立即显示在 Stream Details 下方。
 
 <div id="put-measurement-id-in-docsjson">
   ### 在 docs.json 中填写 Measurement ID
 </div>
 
-将你的 Measurement ID 添加到 `docs.json` 文件中，示例如下：
+像这样将你的 Measurement ID 添加到 `docs.json` 文件中：
 
 ```json docs.json
 "integrations": {
@@ -45,12 +45,10 @@ keywords: ["GA4 integration", "measurement ID", "web stream", "Universal Analyti
   ### 等待
 </div>
 
-Google Analytics 需要两到三天时间才会显示你的数据。
+Google Analytics 需要两到三天才会显示你的数据。
 
-你可以使用 [Google Analytics Debugger](https://chrome.google.com/webstore/detail/google-analytics-debugger/jnkmfdileelhofjcijamephohjechhna?hl=en) 来检查分析功能是否已正确启用。该扩展程序会在每次 GA4 发出请求时，将相关信息记录到你的浏览器控制台中。
+你可以使用 [Google Analytics Debugger](https://chrome.google.com/webstore/detail/google-analytics-debugger/jnkmfdileelhofjcijamephohjechhna?hl=en) 检查分析功能是否已正确启用。每次 GA4 发出请求时，该扩展程序都会在浏览器控制台中输出日志。
 
 <Note>
-
-预览链接默认不启用分析功能。
-
+  预览链接默认不启用分析功能。
 </Note>

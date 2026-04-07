@@ -1,27 +1,27 @@
 ---
-title: "Journaux de modifications"
-description: "Créez des journaux de modifications de produit avec prise en charge des flux RSS pour vos abonnés."
-keywords: ["product updates", "release notes", "RSS"]
+title: "Journaux des modifications"
+description: "Créez des journaux des modifications produit avec prise en charge des flux RSS pour les abonnés."
+keywords: ["mises à jour produit", "notes de version", "RSS"]
 ---
 
-Créez un journal de modifications pour votre documentation en ajoutant des [composants Update](/fr/components/update) à une page.
+Créez un journal des modifications pour votre documentation en ajoutant des [composants Update](/fr/components/update) à une page.
 
-Consultez le [journal de modifications Mintlify](/fr/changelog) à titre d’exemple : vous pouvez inclure des liens, des images, du texte et des démonstrations de vos nouvelles fonctionnalités dans chaque mise à jour.
+Consultez le [journal des modifications de Mintlify](/fr/changelog) pour voir un exemple : vous pouvez inclure des liens, des images, du texte et des démonstrations de vos nouvelles fonctionnalités dans chaque mise à jour.
 
 <div id="setting-up-your-changelog">
-  ## Configurer votre changelog
+  ## Configurer votre journal des modifications
 </div>
 
 <Steps>
-  <Step title="Créer une page pour votre changelog">
+  <Step title="Créer une page pour votre journal des modifications">
     1. Créez une nouvelle page dans votre documentation, par exemple `changelog.mdx` ou `updates.mdx`.
-    2. Ajoutez votre page de changelog à la structure de navigation dans votre `docs.json`.
+    2. Ajoutez la page de votre journal des modifications à la navigation dans votre `docs.json`.
   </Step>
 
-  <Step title="Ajouter des composants Update à votre changelog">
-    Ajoutez un composant `Update` pour chaque entrée de changelog.
+  <Step title="Ajouter des composants Update à votre journal des modifications">
+    Ajoutez un composant `Update` pour chaque entrée du journal des modifications.
 
-    Incluez des informations pertinentes comme les nouvelles fonctionnalités, les corrections de bugs ou d&#39;autres annonces.
+    Incluez des informations pertinentes, comme les nouvelles fonctionnalités, les corrections de bugs ou d&#39;autres annonces.
   </Step>
 </Steps>
 
@@ -45,25 +45,25 @@ description: "Product updates and announcements"
   ## Personnaliser votre journal des modifications
 </div>
 
-Définissez comment les utilisateurs naviguent dans votre journal des modifications et restent informés des nouveautés concernant votre produit.
+Définissez comment les utilisateurs parcourent votre journal des modifications et se tiennent informés de l’actualité de votre produit.
 
 <div id="table-of-contents">
   ### Table des matières
 </div>
 
-Chaque propriété `label` d’une `Update` crée automatiquement une entrée dans la table des matières de la barre latérale droite. Il s’agit du mode de navigation par défaut de votre changelog.
+Chaque propriété `label` d’un `Update` crée automatiquement une entrée dans la table des matières de la barre latérale de droite. C’est la navigation par défaut de votre journal des modifications.
 
 <Frame>
-  <img src="/images/changelog-toc-light.png" alt="Changelog avec table des matières affichée en mode clair." className="block dark:hidden" />
+  <img src="/images/changelog-toc-light.png" alt="journal des modifications avec la table des matières affichée en mode clair." className="block dark:hidden" />
 
-  <img src="/images/changelog-toc-dark.png" alt="Changelog avec table des matières affichée en mode sombre." className="hidden dark:block" />
+  <img src="/images/changelog-toc-dark.png" alt="journal des modifications avec la table des matières affichée en mode sombre." className="hidden dark:block" />
 </Frame>
 
 <div id="tag-filters">
-  ### Filtres de tags
+  ### Filtres par tag
 </div>
 
-Ajoutez la propriété `tags` à vos composants `Update` pour remplacer la table des matières par des filtres de tags. Les utilisateurs peuvent filtrer le changelog en sélectionnant un ou plusieurs tags :
+Ajoutez `tags` à vos composants `Update` pour remplacer la table des matières par des filtres par tag. Les utilisateurs peuvent filtrer le journal des modifications en sélectionnant un ou plusieurs tags :
 
 ```mdx Tag filters example wrap
 <Update label="March 2025" description="v0.0.10" tags={["Wintergreen", "Spearmint"]}>
@@ -84,9 +84,9 @@ Ajoutez la propriété `tags` à vos composants `Update` pour remplacer la table
 ```
 
 <Frame>
-  <img src="/images/changelog-filters-light.png" alt="Journal des modifications en mode clair avec le filtre d’étiquette Peppermint sélectionné." className="block dark:hidden" />
+  <img src="/images/changelog-filters-light.png" alt="journal des modifications en mode clair avec le filtre par tag Peppermint sélectionné." className="block dark:hidden" />
 
-  <img src="/images/changelog-filters-dark.png" alt="Journal des modifications en mode sombre avec le filtre d’étiquette Peppermint sélectionné." className="hidden dark:block" />
+  <img src="/images/changelog-filters-dark.png" alt="journal des modifications en mode sombre avec le filtre par tag Peppermint sélectionné." className="hidden dark:block" />
 </Frame>
 
 <Tip>
@@ -94,14 +94,14 @@ Ajoutez la propriété `tags` à vos composants `Update` pour remplacer la table
 </Tip>
 
 <div id="subscribable-changelogs">
-  ### Journaux de modifications auxquels s’abonner
+  ### Journaux des modifications auxquels s’abonner
 </div>
 
-<Note>Les flux RSS sont uniquement disponibles pour la documentation publique.</Note>
+<Note>Les flux RSS sont disponibles uniquement pour la documentation publique.</Note>
 
-Utilisez des composants `Update` pour créer un flux RSS auquel s’abonner en ajoutant `/rss.xml` à l’URL de votre page. Par exemple, `mintlify.com/docs/changelog/rss.xml`.
+Utilisez des composants `Update` pour créer un flux RSS auquel il est possible de s’abonner à l’URL de votre page en ajoutant `/rss.xml`. Par exemple, `mintlify.com/docs/changelog/rss.xml`.
 
-Le flux RSS publie des entrées lorsque vous ajoutez de nouveaux composants `Update` et lorsque vous modifiez les titres à l’intérieur de composants `Update` existants.
+Le flux RSS publie des entrées lorsque vous ajoutez de nouveaux composants `Update` et lorsque vous modifiez les titres dans des composants `Update` existants.
 
 Les entrées du flux RSS contiennent uniquement du Markdown brut. Les composants, le code et les éléments HTML sont exclus. Utilisez la propriété `rss` pour fournir des descriptions textuelles alternatives aux abonnés RSS lorsque vos mises à jour incluent du contenu exclu.
 
@@ -109,8 +109,8 @@ Les entrées du flux RSS contiennent uniquement du Markdown brut. Les composants
 <?xml version="1.0" encoding="UTF-8"?>
 <rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
   <channel>
-    <title><![CDATA[Product updates]]></title>
-    <description><![CDATA[New updates and improvements]]></description>
+    <title><![CDATA[Mises à jour du produit]]></title>
+    <description><![CDATA[Nouvelles mises à jour et améliorations]]></description>
     <link>https://mintlify.com/docs</link>
     <generator>RSS for Node</generator>
     <lastBuildDate>Mon, 21 Jul 2025 21:21:47 GMT</lastBuildDate>
@@ -127,13 +127,13 @@ Les entrées du flux RSS contiennent uniquement du Markdown brut. Les composants
 </rss>
 ```
 
-Les flux RSS peuvent s&#39;intégrer à Slack, au courrier électronique ou à d&#39;autres outils d&#39;abonnement pour notifier les utilisateurs des modifications du produit. Parmi les options possibles :
+Les flux RSS peuvent s’intégrer à Slack, à l’e-mail ou à d’autres outils d’abonnement pour notifier les utilisateurs des modifications apportées au produit. Voici quelques options :
 
 * [Slack](https://slack.com/help/articles/218688467-Add-RSS-feeds-to-Slack)
-* [Email](https://zapier.com/apps/email/integrations/rss/1441/send-new-rss-feed-entries-via-email) via Zapier
-* Des bots Discord tels que [Readybot](https://readybot.io) ou [RSS Feeds to Discord Bot](https://rss.app/en/bots/rssfeeds-discord-bot)
+* [E-mail](https://zapier.com/apps/email/integrations/rss/1441/send-new-rss-feed-entries-via-email) via Zapier
+* Des bots Discord comme [Readybot](https://readybot.io) ou [RSS Feeds to Discord Bot](https://rss.app/en/bots/rssfeeds-discord-bot)
 
-Pour rendre le flux RSS facilement repérable, vous pouvez afficher un bouton avec une icône RSS qui pointe vers le flux en haut de la page. Ajoutez `rss: true` au frontmatter de la page :
+Pour rendre le flux RSS facile à trouver, vous pouvez afficher en haut de la page un bouton avec une icône RSS qui renvoie vers le flux. Ajoutez `rss: true` au Frontmatter de la page :
 
 ```mdx
 ---

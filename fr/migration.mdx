@@ -1,11 +1,11 @@
 ---
 title: "Migrer vers Mintlify"
 sidebarTitle: "Guide de migration"
-description: "Apprenez à migrer vers Mintlify depuis Docusaurus, ReadMe ou une autre plateforme."
+description: "Découvrez comment migrer vers Mintlify depuis Docusaurus, ReadMe ou une autre plateforme."
 keywords: ["migration", "Docusaurus", "ReadMe", "import"]
 ---
 
-Ce guide vous aide à transférer votre documentation existante vers Mintlify. Choisissez la migration automatisée pour les plateformes compatibles ou la migration manuelle pour garder un contrôle total sur le processus.
+Ce guide vous aide à migrer votre documentation existante vers Mintlify. Choisissez une migration automatisée pour les plateformes prises en charge, ou une migration manuelle pour garder un contrôle total sur le processus.
 
 <div id="choose-your-migration-path">
   ## Choisissez votre méthode de migration
@@ -13,16 +13,16 @@ Ce guide vous aide à transférer votre documentation existante vers Mintlify. C
 
 <CardGroup cols="2">
   <Card title="Migration automatisée" icon="wand-sparkles">
-    Si vous migrez à partir de Docusaurus ou ReadMe, utilisez nos outils pour automatiser votre migration.
+    Si vous migrez depuis Docusaurus ou ReadMe, utilisez nos outils pour automatiser la migration.
   </Card>
 
   <Card title="Migration manuelle" icon="pencil-ruler">
-    Si vous migrez à partir d’une autre plateforme, suivez notre guide pour migrer votre contenu.
+    Si vous migrez depuis une autre plateforme, suivez notre guide pour migrer votre contenu.
   </Card>
 </CardGroup>
 
 <Tabs>
-  <Tab title="Migration automatique">
+  <Tab title="Migration automatisée">
     Migrez votre documentation à l&#39;aide du [package @mintlify/scraping](https://www.npmjs.com/package/@mintlify/scraping). Ce package extrait votre contenu et le convertit pour utiliser les composants Mintlify.
 
     ### Plateformes prises en charge
@@ -104,7 +104,7 @@ Ce guide vous aide à transférer votre documentation existante vers Mintlify. C
       />
 
       <Card
-        title="À lire"
+        title="ReadMe"
         icon={<svg fill="#177fc4" className="h-6 w-6" width="36" height="36" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
 <path d="M29.35 4.361h-7.767c-2.672 0-4.994 1.85-5.578 4.461-0.589-2.611-2.906-4.461-5.578-4.461h-7.761c-1.472 0-2.667 1.194-2.667 2.667v13.656c0 1.472 1.194 2.667 2.667 2.667h4.983c5.678 0 7.372 1.355 8.183 4.167 0.039 0.156 0.289 0.156 0.333 0 0.817-2.811 2.511-4.167 8.183-4.167h4.983c1.472 0 2.667-1.194 2.667-2.667v-13.65c0-1.467-1.183-2.661-2.65-2.672zM13.444 19.105c0 0.106-0.083 0.194-0.194 0.194h-8.906c-0.105 0-0.194-0.083-0.194-0.194v-1.272c0-0.105 0.083-0.194 0.194-0.194h8.911c0.105 0 0.194 0.083 0.194 0.194v1.272zM13.444 15.722c0 0.105-0.083 0.194-0.194 0.194h-8.906c-0.105 0-0.194-0.083-0.194-0.194v-1.272c0-0.106 0.083-0.194 0.194-0.194h8.911c0.105 0 0.194 0.083 0.194 0.194v1.272zM13.444 12.339c0 0.105-0.083 0.194-0.194 0.194h-8.906c-0.105 0-0.194-0.083-0.194-0.194v-1.272c0-0.105 0.083-0.194 0.194-0.194h8.911c0.105 0 0.194 0.083 0.194 0.194v1.272zM27.85 19.1c0 0.105-0.083 0.194-0.194 0.194h-8.906c-0.105 0-0.194-0.083-0.194-0.194v-1.272c0-0.105 0.083-0.194 0.194-0.194h8.911c0.106 0 0.194 0.083 0.194 0.194v1.272zM27.85 15.717c0 0.106-0.083 0.194-0.194 0.194h-8.906c-0.105 0-0.194-0.083-0.194-0.194v-1.272c0-0.105 0.083-0.194 0.194-0.194h8.911c0.106 0 0.194 0.083 0.194 0.194v1.272zM27.85 12.333c0 0.105-0.083 0.194-0.194 0.194h-8.906c-0.105 0-0.194-0.083-0.194-0.194v-1.267c0-0.105 0.083-0.194 0.194-0.194h8.911c0.106 0 0.194 0.083 0.194 0.194v1.267z"/>
 </svg>}
@@ -124,9 +124,9 @@ Ce guide vous aide à transférer votre documentation existante vers Mintlify. C
 
     ### Extraction de pages et de sections
 
-    L&#39;outil de migration détecte automatiquement votre plateforme de documentation et convertit votre contenu. Les fichiers préparés sont stockés localement dans `./docs` par défaut.
+    L&#39;outil de migration détecte automatiquement votre plateforme de documentation et convertit votre contenu. Les fichiers générés sont stockés localement dans `./docs` par défaut.
 
-    Pour les sites de documentation volumineux, migrez les sections une par une plutôt que l&#39;intégralité du site d&#39;un coup.
+    Pour les sites de documentation volumineux, migrez les sections une par une plutôt que l&#39;intégralité du site en une seule fois.
 
     **Migrer des sections entières :**
 
@@ -148,25 +148,25 @@ Ce guide vous aide à transférer votre documentation existante vers Mintlify. C
 
     ### Ajouter du contenu préparé à votre projet Mintlify
 
-    Après avoir récupéré le contenu de votre plateforme de documentation existante, vous êtes prêt à créer votre documentation sur Mintlify.
+    Une fois le contenu de votre plateforme de documentation existante extrait, vous êtes prêt à créer votre documentation sur Mintlify.
 
-    Confirmez que toutes vos pages ont été migrées, puis ajoutez ces fichiers au dépôt de documentation que vous avez créé lors du processus d&#39;intégration. Il s&#39;agit généralement d&#39;un dépôt GitHub.
+    Vérifiez que toutes vos pages ont bien été migrées, puis ajoutez ces fichiers au dépôt de documentation que vous avez créé lors du processus d&#39;intégration. Il s&#39;agit généralement d&#39;un dépôt GitHub.
   </Tab>
 
   <Tab title="Migration manuelle">
-    Migrez votre documentation à partir de n’importe quelle plateforme en gardant un contrôle total sur le processus.
+    Migrez votre documentation depuis n’importe quelle plateforme tout en gardant un contrôle total sur le processus.
 
     ### Migration du contenu
 
     Pour migrer votre contenu vers Mintlify, vous aurez besoin de :
 
-    * D’un `docs.json` valide pour les paramètres de votre site et la navigation. Consultez [Paramètres globaux](/fr/organize/settings) et [Navigation](/fr/organize/navigation) pour plus d’informations.
-    * D’un fichier Markdown (`.md` ou `.mdx`) pour chaque page de votre documentation. MDX est le format recommandé. Consultez [Pages](/fr/organize/pages) pour plus d’informations.
-    * (Facultatif) D’une spécification OpenAPI pour les pages de vos points de terminaison d’API. Consultez [Configuration d’OpenAPI](/fr/api-playground/openapi-setup) pour plus d’informations.
+    * D’un fichier `docs.json` valide pour les paramètres et la navigation de votre site. Consultez [Paramètres globaux](/fr/organize/settings) et [Navigation](/fr/organize/navigation) pour en savoir plus.
+    * D’un fichier Markdown (`.md` ou `.mdx`) pour chaque page de votre documentation. MDX est le format recommandé. Consultez [Pages](/fr/organize/pages) pour en savoir plus.
+    * (Facultatif) D’une spécification OpenAPI pour les pages d’endpoint de votre API. Consultez [Configuration d’OpenAPI](/fr/api-playground/openapi-setup) pour en savoir plus.
 
-    1. Si votre contenu est déjà au format Markdown, copiez-le dans votre projet Mintlify. Sinon, convertissez votre contenu au format MDX.
-    2. Créez votre `docs.json` en y renseignant les chemins vers vos pages Markdown.
-    3. Si vous avez des spécifications OpenAPI, ajoutez-les à votre `docs.json` et configurez le bac à sable d’API.
+    1. Si votre contenu est déjà au format Markdown, copiez-le dans votre projet Mintlify. Sinon, convertissez-le au format MDX.
+    2. Créez votre `docs.json` en y indiquant les chemins de vos pages Markdown.
+    3. Si vous avez des spécifications OpenAPI, ajoutez-les à votre `docs.json` et configurez le Bac à sable API.
 
     <Tip>
       Si vous migrez votre contenu sous forme de fichiers `.md`, convertissez-les en `.mdx` pour prendre en charge des fonctionnalités interactives comme les composants React.
@@ -177,13 +177,13 @@ Ce guide vous aide à transférer votre documentation existante vers Mintlify. C
     1. Copiez les ressources dans le répertoire `images/` de votre dépôt.
     2. Mettez à jour les références dans vos fichiers Markdown :
        ```mdx
-       ![Alt text](/images/screenshot.png)
+       ![Texte alternatif](/images/screenshot.png)
        ```
   </Tab>
 </Tabs>
 
 <div id="post-migration-checklist">
-  ## Liste de vérification après migration
+  ## Liste de contrôle après migration
 </div>
 
 Après avoir terminé votre migration (automatisée ou manuelle), nous vous recommandons de vérifier :
@@ -191,8 +191,8 @@ Après avoir terminé votre migration (automatisée ou manuelle), nous vous reco
 * Toutes les pages s’affichent correctement
 * La navigation fonctionne comme prévu
 * Les liens internes fonctionnent correctement
-* Les images et ressources se chargent correctement
-* Les blocs de code s’affichent avec une coloration syntaxique appropriée
+* Les images et les ressources se chargent correctement
+* Les blocs de code affichent une coloration syntaxique correcte
 * La recherche fonctionne
-* Le déploiement est correctement configuré
-* Le domaine personnalisé est correctement configuré
+* Le déploiement est configuré
+* Le nom de domaine personnalisé est configuré

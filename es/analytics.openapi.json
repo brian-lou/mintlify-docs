@@ -3,7 +3,7 @@
   "info": {
     "title": "Mintlify Analytics Export API",
     "version": "1.0.0",
-    "description": "API para exportar datos analíticos de la documentación"
+    "description": "API para exportar datos de analytics de la documentación"
   },
   "servers": [
     {
@@ -16,20 +16,20 @@
       "bearerAuth": {
         "type": "http",
         "scheme": "bearer",
-        "description": "El encabezado Authorization requiere un token Bearer. Utiliza una clave de API de administrador (con el prefijo `mint_`). Se trata de una clave secreta del lado del servidor. Genera una en la [página de claves de API](https://dashboard.mintlify.com/settings/organization/api-keys) de tu panel de control."
+        "description": "El encabezado Authorization espera un Token Bearer. Usa una clave de API de administrador (con el prefijo `mint_`). Esta es una clave secreta del servidor. Genera una en la [página de claves de API](https://dashboard.mintlify.com/settings/organization/api-keys) de tu panel."
       }
     },
     "schemas": {
       "projectId": {
         "type": "string",
-        "description": "El ID de tu proyecto. Puedes copiarlo desde la [página de claves de API](https://dashboard.mintlify.com/settings/organization/api-keys) en tu panel de control."
+        "description": "Tu ID de proyecto. Puedes copiarlo desde la [página de claves de API](https://dashboard.mintlify.com/settings/organization/api-keys) de tu panel."
       },
       "FeedbackResponse": {
         "type": "object",
         "properties": {
           "feedback": {
             "type": "array",
-            "description": "Lista de registros de comentarios.",
+            "description": "Lista de entradas de comentarios.",
             "items": {
               "anyOf": [
                 {
@@ -55,7 +55,7 @@
                         "string",
                         "null"
                       ],
-                      "description": "Marca de tiempo en la que se envió el comentario."
+                      "description": "Marca de tiempo en que se envió el comentario."
                     },
                     "source": {
                       "type": "string",
@@ -63,7 +63,7 @@
                         "code_snippet",
                         "contextual"
                       ],
-                      "description": "Origen del comentario. `code_snippet` indica un comentario sobre un bloque de código y `contextual`, un comentario a nivel de página."
+                      "description": "Origen del comentario. `code_snippet` indica un comentario sobre un bloque de fragmento de código; `contextual`, un comentario a nivel de página."
                     },
                     "status": {
                       "type": "string",
@@ -101,14 +101,14 @@
                         "string",
                         "null"
                       ],
-                      "description": "Texto del comentario proporcionado por el usuario."
+                      "description": "Texto del comentario del usuario."
                     },
                     "createdAt": {
                       "type": [
                         "string",
                         "null"
                       ],
-                      "description": "Marca de tiempo en la que se envió el comentario."
+                      "description": "Marca de tiempo en que se envió el comentario."
                     },
                     "source": {
                       "type": "string",
@@ -116,7 +116,7 @@
                         "code_snippet",
                         "contextual"
                       ],
-                      "description": "Origen del comentario. `code_snippet` indica un comentario sobre un bloque de código y `contextual`, un comentario a nivel de página."
+                      "description": "Origen del comentario. `code_snippet` indica un comentario sobre un bloque de fragmento de código; `contextual`, un comentario a nivel de página."
                     },
                     "status": {
                       "type": "string",
@@ -130,7 +130,7 @@
                     },
                     "helpful": {
                       "type": "boolean",
-                      "description": "Indica si el usuario encontró útil el contenido."
+                      "description": "Si el usuario consideró útil el contenido."
                     },
                     "contact": {
                       "type": [
@@ -160,7 +160,7 @@
                     },
                     "path": {
                       "type": "string",
-                      "description": "Ruta o URL del documento original."
+                      "description": "La ruta o URL del documento de origen."
                     },
                     "comment": {
                       "type": [
@@ -174,7 +174,7 @@
                         "string",
                         "null"
                       ],
-                      "description": "Marca de tiempo en la que se envió el comentario."
+                      "description": "Marca de tiempo en que se envió el comentario."
                     },
                     "source": {
                       "type": "string",
@@ -182,7 +182,7 @@
                         "code_snippet",
                         "contextual"
                       ],
-                      "description": "Origen del comentario. `code_snippet` indica un comentario sobre un bloque de código; `contextual`, un comentario a nivel de página."
+                      "description": "Origen del comentario. `code_snippet` indica un comentario sobre un bloque de fragmento de código; `contextual`, un comentario a nivel de página."
                     },
                     "status": {
                       "type": "string",
@@ -192,18 +192,18 @@
                         "resolved",
                         "dismissed"
                       ],
-                      "description": "Estado de revisión actual del comentario."
+                      "description": "Estado actual de revisión del comentario."
                     },
                     "code": {
                       "type": "string",
-                      "description": "Fragmento de código al que hace referencia el comentario."
+                      "description": "El fragmento de código al que se refiere el comentario."
                     },
                     "filename": {
                       "type": [
                         "string",
                         "null"
                       ],
-                      "description": "Nombre del archivo asociado con el fragmento de código."
+                      "description": "Nombre de archivo asociado al fragmento de código."
                     },
                     "lang": {
                       "type": [
@@ -233,11 +233,11 @@
               "string",
               "null"
             ],
-            "description": "Cursor para obtener la siguiente página de resultados. Nulo si no hay más resultados."
+            "description": "Cursor para recuperar la siguiente página de resultados. nulo si no hay más resultados."
           },
           "hasMore": {
             "type": "boolean",
-            "description": "Indica si hay resultados adicionales posteriores a esta página."
+            "description": "Si hay resultados adicionales disponibles después de esta página."
           }
         },
         "required": [
@@ -251,7 +251,7 @@
         "properties": {
           "error": {
             "type": "string",
-            "description": "Mensaje de error que describe qué salió mal."
+            "description": "Mensaje de error que describe el problema."
           },
           "details": {
             "type": "array",
@@ -289,29 +289,29 @@
                 },
                 "timestamp": {
                   "type": "string",
-                  "description": "Marca de tiempo en la que tuvo lugar la conversación."
+                  "description": "Marca de tiempo de la conversación."
                 },
                 "query": {
                   "type": "string",
-                  "description": "La pregunta del usuario para el asistente."
+                  "description": "Pregunta del usuario al asistente."
                 },
                 "response": {
                   "type": "string",
-                  "description": "La respuesta del asistente."
+                  "description": "Respuesta del asistente."
                 },
                 "sources": {
                   "type": "array",
-                  "description": "Páginas de documentación mencionadas en la respuesta.",
+                  "description": "Páginas de documentación citadas en la respuesta.",
                   "items": {
                     "type": "object",
                     "properties": {
                       "title": {
                         "type": "string",
-                        "description": "Título de la página de documentación mencionada."
+                        "description": "Título de la página de documentación citada."
                       },
                       "url": {
                         "type": "string",
-                        "description": "URL de la página de documentación mencionada."
+                        "description": "URL de la página de documentación citada."
                       }
                     },
                     "required": [
@@ -325,7 +325,7 @@
                     "string",
                     "null"
                   ],
-                  "description": "Categoría de agrupación asignada automáticamente a la conversación, si corresponde."
+                  "description": "Categoría asignada automáticamente para agrupar la conversación, si corresponde."
                 }
               },
               "required": [
@@ -343,11 +343,11 @@
               "string",
               "null"
             ],
-            "description": "Cursor para recuperar la siguiente página de resultados. Null si no hay más resultados."
+            "description": "Cursor para recuperar la siguiente página de resultados. Nulo si no hay más resultados."
           },
           "hasMore": {
             "type": "boolean",
-            "description": "Indica si hay resultados adicionales más allá de esta página."
+            "description": "Indica si hay resultados adicionales después de esta página."
           }
         },
         "required": [
@@ -372,7 +372,7 @@
     "/api/external/v1/analytics/{projectId}/feedback": {
       "get": {
         "summary": "Obtener comentarios de los usuarios",
-        "description": "Devuelve comentarios de usuarios paginados con filtrado opcional.",
+        "description": "Devuelve comentarios de usuarios paginados con filtrado opcional",
         "tags": [
           "Analytics"
         ],
@@ -388,7 +388,7 @@
           {
             "schema": {
               "type": "string",
-              "description": "Fecha en formato ISO 8601 o AAAA-MM-DD.",
+              "description": "Fecha en formato ISO 8601 o YYYY-MM-DD",
               "example": "2024-01-01"
             },
             "required": false,
@@ -398,7 +398,7 @@
           {
             "schema": {
               "type": "string",
-              "description": "Fecha en formato ISO 8601 o AAAA-MM-DD.",
+              "description": "Fecha en formato ISO 8601 o YYYY-MM-DD",
               "example": "2024-01-01"
             },
             "required": false,
@@ -412,7 +412,7 @@
                 "code_snippet",
                 "contextual"
               ],
-              "description": "Filtrar por origen del comentario."
+              "description": "Filtrar por origen del comentario"
             },
             "required": false,
             "name": "source",
@@ -421,7 +421,7 @@
           {
             "schema": {
               "type": "string",
-              "description": "Lista de estados separados por comas para el filtro"
+              "description": "Lista de estados separados por comas para filtrar"
             },
             "required": false,
             "name": "status",
@@ -451,7 +451,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Datos de comentarios paginados",
+            "description": "Datos de comentarios con paginación",
             "content": {
               "application/json": {
                 "schema": {
@@ -486,7 +486,7 @@
     "/api/external/v1/analytics/{projectId}/assistant": {
       "get": {
         "summary": "Obtener conversaciones del asistente",
-        "description": "Devuelve el historial de conversaciones paginado del asistente de IA",
+        "description": "Devuelve el historial paginado de conversaciones del asistente de IA",
         "tags": [
           "Analytics"
         ],
@@ -544,7 +544,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Datos de conversación paginados",
+            "description": "Datos de conversaciones con paginación",
             "content": {
               "application/json": {
                 "schema": {
@@ -564,7 +564,7 @@
             }
           },
           "500": {
-            "description": "Error de servidor",
+            "description": "Error del servidor",
             "content": {
               "application/json": {
                 "schema": {

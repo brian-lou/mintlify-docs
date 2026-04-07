@@ -1,19 +1,19 @@
 ---
-title: "Excluir archivos al publicar"
+title: "Excluir archivos de la publicación"
 sidebarTitle: "Excluir archivos"
 description: "Excluye archivos y directorios específicos de tu documentación publicada con un archivo `.mintignore`."
 keywords: ["exclude", "ignore", "gitignore", "drafts", "private"]
 ---
 
-El archivo `.mintignore` te permite excluir archivos y directorios específicos de tu repositorio de documentación para que no se procesen ni se publiquen en tu sitio de documentación.
+El archivo `.mintignore` te permite excluir archivos y directorios específicos de tu repositorio de documentación para evitar que se procesen y publiquen en tu sitio de documentación.
 
-Usa `.mintignore` para mantener borradores, notas internas y archivos fuente fuera de tu documentación pública mientras los conservas en tu repositorio.
+Usa `.mintignore` para mantener borradores, notas internas y archivos fuente fuera de tu documentación pública, sin dejar de conservarlos en tu repositorio.
 
 <div id="create-a-mintignore-file">
-  ## Crear un archivo .mintignore
+  ## Crea un archivo `.mintignore`
 </div>
 
-Crea un archivo `.mintignore` en la raíz del directorio de tu documentación. Este archivo usa la misma sintaxis de patrones que `.gitignore`.
+Crea un archivo `.mintignore` en la raíz de tu directorio de documentación. Este archivo utiliza la misma sintaxis de patrones que `.gitignore`.
 
 ```plaintext .mintignore
 # Excluir documentos en borrador
@@ -27,20 +27,20 @@ internal/
 private-notes.md
 ```
 
-Cuando Mintlify crea tu documentación, lee el archivo `.mintignore` y excluye del procesamiento cualquier archivo o directorio que coincida.
+Cuando Mintlify genera tu documentación, lee el archivo `.mintignore` y excluye del procesamiento cualquier archivo o directorio que coincida.
 
 Archivos excluidos:
 
 * No aparecen en tu documentación publicada.
-* No se indexan en la búsqueda.
-* No son accesibles para los visitantes.
-* Se omiten en las [comprobaciones de enlaces rotos](/es/installation#find-broken-links). Los enlaces que apuntan a archivos ignorados se consideran rotos.
+* No se indexan para las búsquedas.
+* Los visitantes no pueden acceder a ellos.
+* No se tienen en cuenta en las [comprobaciones de enlaces rotos](/es/installation#find-broken-links). Los enlaces que apuntan a archivos ignorados se consideran rotos.
 
 <div id="default-ignored-patterns">
-  ## Patrones ignorados de forma predeterminada
+  ## Patrones ignorados por defecto
 </div>
 
-Mintlify ignora automáticamente los siguientes directorios y archivos sin que sea necesaria ninguna configuración:
+Mintlify ignora automáticamente los siguientes directorios y archivos sin necesidad de configuración:
 
 * `.git`
 * `.github`
@@ -53,7 +53,7 @@ Mintlify ignora automáticamente los siguientes directorios y archivos sin que s
 * `CHANGELOG.md`
 * `CONTRIBUTING.md`
 
-No es necesario añadirlos a tu archivo `.mintignore`.
+No necesitas añadirlos a tu archivo `.mintignore`.
 
 <Note>
   A diferencia de las [páginas ocultas](/es/organize/hidden-pages), los archivos excluidos por `.mintignore`
@@ -66,10 +66,10 @@ No es necesario añadirlos a tu archivo `.mintignore`.
 
 El archivo `.mintignore` sigue la sintaxis de `.gitignore`. Algunos patrones comunes son:
 
-| Patrón             | Descripción                                          |
-| ------------------ | ---------------------------------------------------- |
-| `drafts/`          | Excluye el directorio `drafts` completo              |
-| `*.draft.mdx`      | Excluye todos los archivos que terminan en `.draft.mdx` |
-| `private-notes.md` | Excluye un archivo específico                        |
+| Patrón             | Descripción                                                |
+| ------------------ | ---------------------------------------------------------- |
+| `drafts/`          | Excluye todo el directorio `drafts`                        |
+| `*.draft.mdx`      | Excluye todos los archivos que terminan en `.draft.mdx`    |
+| `private-notes.md` | Excluye un archivo específico                              |
 | `**/internal/**`   | Excluye cualquier directorio `internal` en cualquier nivel |
-| `!important.mdx`   | Niega un patrón anterior (incluye el archivo)        |
+| `!important.mdx`   | Anula un patrón anterior (incluye el archivo)              |

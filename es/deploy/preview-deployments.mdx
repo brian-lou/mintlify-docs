@@ -1,79 +1,79 @@
 ---
 title: "Despliegues de vista previa"
-description: "Obtén URL de vista previa únicas para pull requests y revisa los cambios antes de fusionarlos."
-keywords: ["URLs de vista previa", "vistas previas de pull request", "vistas previas de rama", "entornos de staging"]
+description: "Obtén URLs de vista previa únicas para pull requests y revisa los cambios antes de fusionarlos."
+keywords: ["URLs de vista previa", "vistas previas de pull requests", "vistas previas de ramas", "entornos de ensayo"]
 ---
 
 <Info>
   Los despliegues de vista previa están disponibles en los [planes Pro y Enterprise](https://mintlify.com/pricing?ref=preview-deployments).
 </Info>
 
-Los despliegues de vista previa te permiten ver cómo se verán los cambios en tu documentación antes de fusionarlos en producción. Cada vista previa crea una URL para compartir que se actualiza automáticamente a medida que envías nuevos cambios.
+Los despliegues de vista previa te permiten ver cómo quedarán los cambios en tu documentación antes de pasarlos a producción. Cada vista previa genera una URL que puedes compartir y que se actualiza automáticamente a medida que subes nuevos cambios.
 
-Las URL de vista previa son visibles públicamente de forma predeterminada. Comparte un enlace de vista previa con cualquier persona que necesite revisar tus cambios.
+Las URLs de vista previa son públicas de forma predeterminada. Comparte el enlace de vista previa con cualquier persona que necesite revisar tus cambios.
 
 <div id="create-preview-deployments">
   ## Crear despliegues de vista previa
 </div>
 
-Los despliegues de vista previa se crean automáticamente mediante pull requests o manualmente desde tu panel.
+Los despliegues de vista previa se crean automáticamente a través de pull requests o de forma manual desde tu panel de control.
 
 <div id="automatic-previews">
   ### Vistas previas automáticas
 </div>
 
 <Note>
-  Las vistas previas automáticas solo se crean para las pull requests que tienen como destino tu [rama de despliegue](/es/guides/git-concepts#deployment-branch).
+  Las vistas previas automáticas solo se crean para las pull requests dirigidas a tu [rama de despliegue](/es/guides/git-concepts#deployment-branch).
 </Note>
 
-Cuando creas una pull request, el bot de Mintlify añade automáticamente un enlace para ver el despliegue de la vista previa en tu pull request. La vista previa se actualiza cada vez que haces push de nuevos commits a la rama.
+Cuando creas una pull request, el bot de Mintlify añade automáticamente un enlace para ver el despliegue de vista previa en la pull request. La vista previa se actualiza cada vez que subes nuevos commits a la rama.
 
 <Frame>
-  <img src="/images/previews/preview-deployment-light.png" alt="Enlace para ver el despliegue en la línea de tiempo de la pull request" className="block dark:hidden" />
+  <img src="/images/previews/preview-deployment-light.png" alt="Enlace para ver el despliegue en la cronología de la pull request" className="block dark:hidden" />
 
-  <img src="/images/previews/preview-deployment-dark.png" alt="Enlace para ver el despliegue en la línea de tiempo de la pull request" className="hidden dark:block" />
+  <img src="/images/previews/preview-deployment-dark.png" alt="Enlace para ver el despliegue en la cronología de la pull request" className="hidden dark:block" />
 </Frame>
 
 <div id="manual-previews">
   ### Vistas previas manuales
 </div>
 
-Puedes crear una vista previa manualmente para cualquier rama.
+Puedes crear manualmente una vista previa para cualquier rama.
 
 1. Ve a tu [panel de control](https://dashboard.mintlify.com/).
 2. Selecciona **Previews**.
 3. Selecciona **Create custom preview**.
-4. Introduce el nombre de la rama que quieres previsualizar.
+4. Introduce el nombre de la rama que quieres ver en la vista previa.
 5. Selecciona **Create deployment**.
 
 <div id="redeploy-a-preview">
   ## Volver a desplegar una vista previa
 </div>
 
-Vuelve a desplegar una vista previa para actualizar el contenido o volver a intentarlo tras un despliegue fallido.
+Vuelve a desplegar una vista previa para actualizar el contenido o reintentarla después de un despliegue fallido.
 
 1. Selecciona la vista previa desde tu [panel de control](https://dashboard.mintlify.com/).
 2. Selecciona **Redeploy**.
 
 <Frame>
-  <img src="/images/previews/redeploy-preview-light.png" alt="El menú Previews con el botón de despliegue resaltado por un rectángulo naranja." className="block dark:hidden" />
+  <img src="/images/previews/redeploy-preview-light.png" alt="El menú Previews con el botón de despliegue resaltado con un rectángulo naranja." className="block dark:hidden" />
 
-  <img src="/images/previews/redeploy-preview-dark.png" alt="El menú Previews con el botón de despliegue resaltado por un rectángulo naranja." className="hidden dark:block" />
+  <img src="/images/previews/redeploy-preview-dark.png" alt="El menú Previews con el botón de despliegue resaltado con un rectángulo naranja." className="hidden dark:block" />
 </Frame>
 
 <div id="preview-widget">
   ## Widget de vista previa
 </div>
 
-El widget de vista previa aparece en los despliegues de vista previa para ayudarte a navegar y revisar las páginas actualizadas. El widget es un botón flotante en la esquina inferior derecha de tu despliegue de vista previa.
+El widget de vista previa aparece en los despliegues de vista previa para ayudarte a navegar y revisar las páginas actualizadas. Es un botón flotante situado en la esquina inferior derecha de tu despliegue de vista previa.
 
 <Frame>
-  <img src="/images/previews/widget-light.png" alt="Widget de vista previa expandido que muestra la lista de archivos con cambios." className="block dark:hidden" />
+  <img src="/images/previews/widget-light.png" alt="Widget de vista previa expandido para mostrar la lista de archivos con cambios." className="block dark:hidden" />
 
-  <img src="/images/previews/widget-dark.png" alt="Widget de vista previa expandido que muestra la lista de archivos con cambios." className="hidden dark:block" />
+  <img src="/images/previews/widget-dark.png" alt="Widget de vista previa expandido para mostrar la lista de archivos con cambios." className="hidden dark:block" />
 </Frame>
 
-1. Haz clic en el widget para mostrar todos los archivos añadidos, modificados o eliminados en la vista previa.
+1. Haz clic en el widget para mostrar todos los archivos agregados, modificados o eliminados en la vista previa.
 2. Haz clic en un archivo para ver los cambios en la página correspondiente.
 3. Usa la barra de búsqueda para filtrar la lista de archivos con cambios.
 
@@ -85,7 +85,7 @@ El widget solo aparece en los despliegues de vista previa, no en tu sitio en pro
 
 De forma predeterminada, los despliegues de vista previa son accesibles públicamente para cualquier persona que tenga la URL. Puedes restringir el acceso a los miembros autenticados de tu organización en Mintlify.
 
-1. Ve a la sección **Previews** en la página [Add-ons](https://dashboard.mintlify.com/products/addons) de tu panel de control.
+1. Ve a la sección **Previews** de la página [Add-ons](https://dashboard.mintlify.com/products/addons) de tu panel de control.
 2. Haz clic en el interruptor **Preview authentication** para activar o desactivar la autenticación de vista previa.
 
 <Frame>
@@ -95,16 +95,16 @@ De forma predeterminada, los despliegues de vista previa son accesibles pública
 </Frame>
 
 <div id="troubleshooting-preview-deployments">
-  ## Solución de problemas con las implementaciones de vista previa
+  ## Solución de problemas de los despliegues de vista previa
 </div>
 
-Si una implementación de vista previa falla, prueba estos pasos de solución de problemas:
+Si tu despliegue de vista previa falla, prueba estos pasos de solución de problemas.
 
-* **Ver los registros de compilación**: En tu [dashboard](https://dashboard.mintlify.com/), ve a **Previews** y haz clic en la vista previa con error. Los registros de implementación muestran los errores que provocaron los fallos.
-* **Verificar tu configuración**:
-  * Sintaxis inválida en `docs.json`
-  * Rutas de archivo faltantes o incorrectas referenciadas en tu navegación
-  * Frontmatter inválido en archivos MDX
+* **Consulta los registros de compilación**: En tu [panel de control](https://dashboard.mintlify.com/), ve a **Previews** y haz clic en la vista previa que falló. Los registros del despliegue muestran los errores que provocaron el fallo.
+* **Revisa la configuración**:
+  * Sintaxis no válida en `docs.json`
+  * Rutas de archivo faltantes o incorrectas a las que hace referencia tu navegación
+  * Frontmatter no válido en archivos MDX
   * Enlaces de imagen rotos o archivos de imagen faltantes
-* **Validar localmente**: Ejecuta `mint dev` en tu entorno local para detectar errores de compilación antes de hacer push al repositorio.
-* **Revisar cambios recientes**: Revisa los commits más recientes en tu rama para identificar qué cambios provocaron el fallo de la compilación.
+* **Valida en local**: Ejecuta `mint dev` en local para detectar errores de compilación antes de subir los cambios al repositorio.
+* **Revisa los cambios recientes**: Revisa los commits más recientes en tu rama para identificar qué cambios hicieron que la compilación fallara.

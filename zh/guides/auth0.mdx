@@ -1,61 +1,65 @@
 ---
 title: "在 OAuth 握手中使用 Auth0"
-description: "将 Auth0 设置为 OAuth 提供程序以验证用户身份。"
-keywords: ["Auth0", "OAuth flow"]
+description: "将 Auth0 配置为你的 OAuth 提供方，以验证用户身份。"
+keywords: ["Auth0", "OAuth 流程"]
 ---
 
 <Note>
-  **安全免责声明**：我们提供本指南是为了帮助你将 Auth0 集成到 Mintlify 中，但在实施任何身份验证解决方案之前，请务必咨询你的安全团队。对于因你特定的实现方式可能引发的任何安全问题，Mintlify 不承担任何责任。
+  **安全声明**：虽然我们提供本指南来帮助你将 Auth0 与 Mintlify 集成，但在实施任何身份验证方案之前，请先咨询你的安全团队。对于因你的具体实现而可能引发的任何安全问题，Mintlify 概不负责。
 </Note>
 
 <div id="overview">
-  ## 概览
+  ## 概述
 </div>
 
-本指南将引导你将 Auth0 配置为 Mintlify 文档的身份验证提供方。完成后，你的用户将能够使用其 Auth0 凭据登录你的文档。
+本指南将指导你把 Auth0 设置为 Mintlify 文档的身份验证提供商。完成后，用户即可使用自己的 Auth0 凭据登录你的文档。
 
 <Steps>
   <Step title="在 Auth0 中创建 Regular Web Application">
-    登录 Auth0 控制台并前往 **Applications** > **Applications**。点击 **Create Application** 按钮，为你的应用命名（例如，“Mintlify”），并选择 **Regular Web Applications** 作为应用类型。然后点击 **Create**。
-    
+    登录 Auth0 控制台，然后依次前往 **Applications** &gt; **Applications**。点击 **Create Application** 按钮，为应用命名 (例如 `"Mintlify"`) ，并选择 **Regular Web Applications** 作为应用类型。然后点击 **Create**。
+
     <Frame>![在 Auth0 中创建新应用](/images/guides/auth0/auth0-create-application.png)</Frame>
   </Step>
+
   <Step title="获取客户端信息">
-    创建应用后，你会进入该应用的设置页面。在这里，你可以找到 OAuth 集成所需的关键信息：
-    
+    创建应用后，你将进入应用设置页面。在这里，你可以找到 OAuth 集成所需的关键凭据：
+
     <Frame>![Auth0 客户端设置页面](/images/guides/auth0/auth0clientsettings.png)</Frame>
-    
-    记录以下信息：
-    - **Domain**：你的 Auth0 租户域名（例如，`your-tenant.auth0.com`）
-    - **Client ID**：应用的公共标识符
-    - **Client Secret**：应用的密钥（请务必妥善保管）
-    
-    在下一步配置 Mintlify 时你会用到这些值。
+
+    请记下以下信息：
+
+    * **Domain**：这是你的 Auth0 租户域名 (例如 `your-tenant.auth0.com`) 
+    * **Client ID**：应用的公开标识符
+    * **Client Secret**：应用的密钥 (请妥善保管) 
+
+    下一步配置 Mintlify 时会用到这些值。
   </Step>
+
   <Step title="设置 Mintlify 客户端">
-    打开 Mintlify Dashboard，进入 **Settings** > **Authentication**。选择 **OAuth** 作为身份验证方式，此时你会看到 OAuth 配置表单：
-    
+    前往 Mintlify Dashboard，进入 **Settings** &gt; **Authentication** 部分。选择 **OAuth** 作为身份验证方式后，你会看到 OAuth 配置表单：
+
     <Frame>![Mintlify OAuth 客户端设置](/images/guides/auth0/mintlifyoauthclientsettings.png)</Frame>
-    
+
     使用以下值填写表单：
-    
-    - **Authorization URL**：`https://YOUR_AUTH0_DOMAIN/authorize`（将 `YOUR_AUTH0_DOMAIN` 替换为第 2 步中获取的实际 Auth0 域名）
-    - **Client ID**：填写你的 Auth0 应用中的 Client ID
-    - **Client Secret**：填写你的 Auth0 应用中的 Client Secret
-    - **Scopes**：保持为空，除非你在 Auth0 中配置了自定义 Scopes
-    - **Token URL**：`https://YOUR_AUTH0_DOMAIN/oauth/token`（将 `YOUR_AUTH0_DOMAIN` 替换为你的实际 Auth0 域名）
-    
+
+    * **Authorization URL**：`https://YOUR_AUTH0_DOMAIN/authorize` (将 `YOUR_AUTH0_DOMAIN` 替换为你在第 2 步中获取的实际 Auth0 域名) 
+    * **Client ID**：输入 Auth0 应用中的 Client ID
+    * **Client Secret**：输入 Auth0 应用中的 Client Secret
+    * **Scopes**：除非你在 Auth0 中配置了自定义作用域，否则请留空
+    * **Token URL**：`https://YOUR_AUTH0_DOMAIN/oauth/token` (将 `YOUR_AUTH0_DOMAIN` 替换为实际的 Auth0 域名) 
+
     填写完成后，点击 **Save changes** 保存 OAuth 配置。
   </Step>
-  <Step title="配置 Callback URL">
-    Mintlify 会生成一个唯一的 Redirect URL，Auth0 需要识别该地址，OAuth 授权流程才能正常工作。
-    
-    在 Mintlify Dashboard 的 Authentication 设置中复制该 Redirect URL：
-    <Frame>![Mintlify redirect URL](/images/guides/auth0/mintlifyredirecturl.png)</Frame>
-    
-    返回 Auth0 应用设置页面，向下滚动至 **Application URIs** 部分，将 Redirect URL 粘贴到 **Allowed Callback URLs** 字段中：
-    <Frame>![Auth0 redirect URL 配置](/images/guides/auth0/auth0redirecturl.png)</Frame>
-    
-    在 Auth0 页面底部点击 **Save Changes** 以应用此配置。
+
+  <Step title="配置回调 URL">
+    Mintlify 会生成一个唯一的 Redirect URL。Auth0 必须识别该 URL，OAuth 流程才能正常运行。
+
+    从 Mintlify Dashboard 的 Authentication 设置中复制 Redirect URL：
+    <Frame>![Mintlify 重定向 URL](/images/guides/auth0/mintlifyredirecturl.png)</Frame>
+
+    返回 Auth0 应用设置页面，向下滚动到 **Application URIs** 部分，然后将 Redirect URL 粘贴到 **Allowed Callback URLs** 字段中：
+    <Frame>![Auth0 重定向 URL 配置](/images/guides/auth0/auth0redirecturl.png)</Frame>
+
+    点击 Auth0 页面底部的 **Save Changes** 以应用此配置。
   </Step>
 </Steps>

@@ -1,46 +1,47 @@
 ---
 title: "Démarrage rapide"
-description: "Commencez à utiliser l'agent dans votre tableau de bord pour mettre à jour la documentation."
-keywords: ["configuration de l'agent"]
+description: "Commencez à utiliser l’agent depuis votre tableau de bord pour mettre à jour la documentation."
+keywords: ["configuration de l’agent"]
 ---
 
 <div id="open-the-agent-panel">
   ## Ouvrir le panneau de l’agent
 </div>
 
-Sur ordinateur, le panneau de l’agent est redimensionnable. Sur les appareils mobiles, l’agent s’ouvre en mode plein écran.
+Sur ordinateur, le panneau de l’agent peut être redimensionné. Sur mobile, l’agent s’ouvre en plein écran.
 
 Pour ouvrir le panneau de l’agent :
 
-- Depuis n’importe quelle page de votre tableau de bord, utilisez le raccourci clavier <kbd>⌘</kbd>+<kbd>I</kbd> (macOS) ou <kbd>Ctrl</kbd>+<kbd>I</kbd> (Windows/Linux).
-- Sur la page [Overview](https://dashboard.mintlify.com/), cliquez sur **Ask agent**.
+* Depuis n’importe quelle page de votre tableau de bord, utilisez le raccourci clavier <kbd>⌘</kbd>+<kbd>I</kbd> (macOS) ou <kbd>Ctrl</kbd>+<kbd>I</kbd> (Windows/Linux).
+* Sur la page [Overview](https://dashboard.mintlify.com/), cliquez sur **Ask agent**.
 
 <div id="agent-panel-views">
-  ### Vues du panneau de l’agent
+  ### Vues du panneau de l&#39;agent
 </div>
 
 <Frame>
-  <img src="/images/agent/views-light.png" alt="Vues dans le panneau de l’agent : nouveau chat, suggestions, historique et paramètres." className="block dark:hidden" />
-  <img src="/images/agent/views-dark.png" alt="Vues dans le panneau de l’agent : nouveau chat, suggestions, historique et paramètres." className="hidden dark:block" />
+  <img src="/images/agent/views-light.png" alt="Vues du panneau de l'agent : nouvelle discussion, suggestions, historique et paramètres." className="block dark:hidden" />
+
+  <img src="/images/agent/views-dark.png" alt="Vues du panneau de l'agent : nouvelle discussion, suggestions, historique et paramètres." className="hidden dark:block" />
 </Frame>
 
-- **Chat** : cliquez sur l’icône plus, <Icon icon="plus" />, pour démarrer un nouveau chat. Dans la vue de chat, envoyez des requêtes à l’agent pour mettre à jour votre documentation ou poser des questions à son sujet. L’agent crée des pull requests en fonction de vos instructions et affiche des liens pour consulter les pull requests ou ouvrir les modifications dans l’éditeur web.
-- **Suggestions** : si cette option est activée, le panneau Suggestions affiche des mises à jour proposées pour votre documentation, à partir des modifications des pull requests et des conversations des utilisateurs avec l’assistant.
-- **Historique** : cliquez sur l’icône d’historique, <Icon icon="clock" />, pour parcourir les conversations passées et continuer à travailler sur des demandes précédentes. Cliquez sur n’importe quelle conversation pour la charger dans la vue de chat.
-- **Paramètres** : cliquez sur l’icône des paramètres, <Icon icon="settings" />, pour configurer les intégrations de l’agent et l’accès au dépôt.
+* **Chat** : Cliquez sur l&#39;icône plus, <Icon icon="plus" />, pour démarrer une nouvelle discussion. Dans la vue de chat, envoyez des prompts à l&#39;agent pour mettre à jour votre documentation ou poser des questions à son sujet. L&#39;agent crée des pull requests à partir de vos instructions et affiche des liens pour consulter les pull requests ou ouvrir les modifications dans l&#39;éditeur web.
+* **Suggestions** : Si cette option est activée, le panneau des suggestions affiche des suggestions de mise à jour de votre documentation en fonction des modifications apportées aux pull requests et des conversations des utilisateurs avec l&#39;assistant.
+* **History** : Cliquez sur l&#39;icône d&#39;historique, <Icon icon="clock" />, pour parcourir les conversations précédentes et reprendre le travail sur d&#39;anciennes demandes. Cliquez sur n&#39;importe quelle conversation pour la charger dans la vue de chat.
+* **Settings** : Cliquez sur l&#39;icône des paramètres, <Icon icon="settings" />, pour configurer les intégrations de l&#39;agent et l&#39;accès au dépôt.
 
 <Tip>
-  Commencez une nouvelle conversation avec l’agent pour chaque tâche. Cela permet de conserver un contexte ciblé et vous aide à associer les conversations à des projets spécifiques.
+  Démarrez une nouvelle conversation avec l&#39;agent pour chaque tâche. Cela permet de garder un contexte bien ciblé et de mieux associer les conversations à des projets précis.
 </Tip>
 
 <div id="connect-your-github-account">
   ## Connectez votre compte GitHub
 </div>
 
-Par défaut, l’agent ouvre des pull requests attribuées au bot Mintlify. Pour que les pull requests vous soient attribuées, connectez votre compte GitHub sur la page [My profile](https://dashboard.mintlify.com/settings/account) du tableau de bord.
+Par défaut, l’agent ouvre des pull requests attribuées au bot Mintlify. Pour que les pull requests vous soient attribuées, connectez votre compte GitHub depuis la page [Mon profil](https://dashboard.mintlify.com/settings/account) du tableau de bord.
 
 <div id="connect-repositories-as-context">
-  ## Connecter des dépôts en tant que contexte
+  ## Connecter des dépôts comme source de contexte
 </div>
 
-L'agent ne peut accéder qu'aux dépôts que vous connectez via l'application GitHub Mintlify. Configurez les dépôts auxquels l'agent peut accéder dans le panneau **Settings** de l'agent ou dans les [paramètres de l'application GitHub](https://github.com/apps/mintlify/installations/new).
+L’agent ne peut accéder qu’aux dépôts que vous connectez via la GitHub App Mintlify. Configurez les dépôts auxquels l’agent peut accéder dans **Settings** du panneau de l’agent ou dans les [paramètres de la GitHub App](https://github.com/apps/mintlify/installations/new).

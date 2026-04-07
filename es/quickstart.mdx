@@ -1,29 +1,29 @@
 ---
-title: "Guía rápida"
-description: "Publica tu sitio de documentación y realiza tu primer cambio."
-keywords: ["guía rápida","publicar","empezar","primeros pasos","tutorial","configuración","onboarding"]
+title: "Inicio rápido"
+description: "Despliega tu sitio de documentación y haz tu primer cambio."
+keywords: ["inicio rápido","desplegar","empezar","primeros pasos","tutorial","configuración","incorporación"]
 ---
 
 Después de completar esta guía, tendrás un sitio de documentación en línea listo para personalizar y actualizar.
 
 <div id="before-you-begin">
-  ## Antes de comenzar
+  ## Antes de empezar
 </div>
 
-Mintlify utiliza un enfoque de documentación como código para gestionar tu documentación. Cada página de tu sitio tiene un archivo correspondiente almacenado en el <Tooltip tip="El código fuente de tu documentación donde se almacenan todos los archivos y su historial. El editor web se conecta a tu repositorio de documentación para acceder y modificar el contenido, o puedes editar los archivos localmente en tu IDE preferido.">repositorio</Tooltip> de documentación.
+Mintlify utiliza un enfoque de documentación como código para gestionar tu documentación. Cada página de tu sitio tiene un archivo correspondiente almacenado en el <Tooltip tip="El código fuente de tu documentación, donde se guardan todos los archivos y su historial. El editor web se conecta al repositorio de tu documentación para acceder al contenido y modificarlo, o puedes editar los archivos localmente en tu IDE preferido.">repositorio</Tooltip> de tu documentación.
 
-Cuando conectas tu repositorio de documentación a tu proyecto, puedes trabajar en tu documentación localmente o en el editor web y sincronizar los cambios con tu repositorio remoto.
+Cuando conectas el repositorio de tu documentación a tu proyecto, puedes trabajar en ella localmente o en el editor web y sincronizar cualquier cambio con tu repositorio remoto.
 
 <div id="deploy-your-documentation-site">
   ## Despliega tu sitio de documentación
 </div>
 
-Ve a [mintlify.com/start](https://mintlify.com/start) y completa el proceso de configuración inicial. Durante esta configuración, conectarás tu cuenta de GitHub, crearás o seleccionarás un repositorio para tu documentación e instalarás la GitHub App para habilitar los despliegues automáticos.
+Ve a [mintlify.com/start](https://mintlify.com/start) y completa el proceso de configuración inicial. Durante este proceso, conectarás tu cuenta de GitHub, crearás o seleccionarás un repositorio para tu documentación e instalarás la GitHub App para habilitar los despliegues automáticos.
 
-Después de completar la configuración inicial, tu sitio de documentación queda desplegado y accesible en tu URL `.mintlify.app`.
+Después de la configuración inicial, tu sitio de documentación quedará desplegado y accesible en tu URL de `.mintlify.app`.
 
 <AccordionGroup>
-  <Accordion title="Opcional: omitir la conexión con GitHub durante la configuración inicial">
+  <Accordion title="Opcional: omite la conexión con GitHub durante la configuración inicial">
     Si quieres empezar rápidamente sin conectar tu propio repositorio, puedes omitir la conexión con GitHub durante la configuración inicial. Mintlify crea un repositorio privado en una organización privada y configura automáticamente la GitHub App por ti.
 
     Esto te permite usar el editor web de inmediato y migrar a tu propio repositorio más adelante.
@@ -31,12 +31,12 @@ Después de completar la configuración inicial, tu sitio de documentación qued
 </AccordionGroup>
 
 <div id="view-your-deployed-site">
-  ## Visualiza tu sitio publicado
+  ## Ver tu sitio desplegado
 </div>
 
-Tu sitio de documentación ya está disponible en `https://<your-project-name>.mintlify.app`.
+Tu sitio de documentación ya está desplegado en `https://<your-project-name>.mintlify.app`.
 
-Encuentra tu URL exacta en la página **Overview** de tu [dashboard](https://dashboard.mintlify.com/).
+Encuentra la URL exacta en la página **Overview** de tu [panel](https://dashboard.mintlify.com/).
 
 <Frame>
   <img src="/images/quickstart/mintlify-domain-light.png" alt="Página Overview del panel de Mintlify." className="block dark:hidden" />
@@ -45,11 +45,11 @@ Encuentra tu URL exacta en la página **Overview** de tu [dashboard](https://das
 </Frame>
 
 <Tip>
-  Tu sitio está disponible de inmediato. Usa esta URL para hacer pruebas y compartirla con tu equipo. Antes de compartirla con tus usuarios, quizá quieras añadir un [dominio personalizado](/es/customize/custom-domain).
+  Tu sitio está listo para verse de inmediato. Usa esta URL para hacer pruebas y compartirla con tu equipo. Antes de compartirla con tus usuarios, quizá te convenga añadir un [dominio personalizado](/es/customize/custom-domain).
 </Tip>
 
 <div id="make-your-first-change">
-  ## Realiza tu primer cambio
+  ## Haz tu primer cambio
 </div>
 
 <Tabs>
@@ -68,15 +68,15 @@ Encuentra tu URL exacta en la página **Overview** de tu [dashboard](https://das
           ```
         </CodeGroup>
 
-        Consulta la sección [Instalar la CLI](/es/installation) para ver todos los detalles y la resolución de problemas.
+        Consulta [Instalar la CLI](/es/installation) para ver todos los detalles y solucionar problemas.
       </Step>
 
       <Step title="Clona tu repositorio">
-        Si aún no has clonado tu repositorio localmente, sigue las instrucciones en [Clonar tu repositorio](/es/installation#clone-your-repository).
+        Si aún no has clonado tu repositorio en local, sigue las instrucciones de [Clona tu repositorio](/es/installation#clone-your-repository).
       </Step>
 
       <Step title="Edita una página">
-        Abre `index.mdx` en tu editor preferido y actualiza la descripción en el frontmatter:
+        Abre `index.mdx` en tu editor preferido y actualiza la descripción en el Frontmatter:
 
         ```mdx
         ---
@@ -86,18 +86,18 @@ Encuentra tu URL exacta en la página **Overview** de tu [dashboard](https://das
         ```
       </Step>
 
-      <Step title="Previsualiza localmente">
+      <Step title="Vista previa local">
         Ejecuta el siguiente comando desde tu directorio de documentación:
 
         ```bash
         mint dev
         ```
 
-        Abre la vista previa en `http://localhost:3000`.
+        Consulta la vista previa en `http://localhost:3000`.
       </Step>
 
-      <Step title="Envía tus cambios">
-        Haz commit y sube tus cambios para iniciar un despliegue:
+      <Step title="Sube tus cambios">
+        Haz commit y sube tus cambios para activar un despliegue:
 
         ```bash
         git add .
@@ -105,7 +105,7 @@ Encuentra tu URL exacta en la página **Overview** de tu [dashboard](https://das
         git push
         ```
 
-        Mintlify despliega tus cambios automáticamente. Consulta el estado de tu despliegue en la página [Overview](https://dashboard.mintlify.com/) de tu panel.
+        Mintlify despliega tus cambios automáticamente. Consulta el estado del despliegue en la página [Overview](https://dashboard.mintlify.com/) de tu panel.
       </Step>
     </Steps>
   </Tab>
@@ -113,16 +113,16 @@ Encuentra tu URL exacta en la página **Overview** de tu [dashboard](https://das
   <Tab title="Editor web">
     <Steps>
       <Step title="Abre el editor web">
-        Navega al [editor web](https://dashboard.mintlify.com/editor) en tu panel.
+        Ve al [editor web](https://dashboard.mintlify.com/editor) en tu panel.
       </Step>
 
       <Step title="Edita una página">
         Abre la página **Introduction** y actualiza la descripción.
 
         <Frame>
-          <img src="/images/quickstart/hello-world-light.png" alt="Página Introduction abierta en el editor web con la descripción editada para decir Hello world!." className="block dark:hidden" />
+          <img src="/images/quickstart/hello-world-light.png" alt="Página Introduction abierta en el editor web con la descripción editada para mostrar «Hello world!». " className="block dark:hidden" />
 
-          <img src="/images/quickstart/hello-world-dark.png" alt="Página Introduction abierta en el editor web con la descripción editada para decir Hello world!." className="hidden dark:block" />
+          <img src="/images/quickstart/hello-world-dark.png" alt="Página Introduction abierta en el editor web con la descripción editada para mostrar «Hello world!». " className="hidden dark:block" />
         </Frame>
       </Step>
 
@@ -131,7 +131,7 @@ Encuentra tu URL exacta en la página **Overview** de tu [dashboard](https://das
       </Step>
 
       <Step title="Ver en vivo">
-        En la página [Overview](https://dashboard.mintlify.com/) de tu panel, puedes ver el estado de despliegue de tu sitio. Cuando finalice el despliegue, actualiza tu sitio de documentación para ver tus cambios en vivo.
+        En la página [Overview](https://dashboard.mintlify.com/) de tu panel, puedes ver el estado del despliegue de tu sitio. Cuando termine de desplegarse, actualiza tu sitio de documentación para ver los cambios en vivo.
       </Step>
     </Steps>
   </Tab>
@@ -142,13 +142,13 @@ Encuentra tu URL exacta en la página **Overview** de tu [dashboard](https://das
 </div>
 
 <Card title="Usa el editor web" icon="mouse-pointer-2" horizontal href="/es/editor/index">
-  Edita la documentación en tu navegador y obtén una vista previa de cómo se verán tus páginas al publicarlas.
+  Edita la documentación en el navegador y previsualiza cómo se verán tus páginas cuando se publiquen.
 </Card>
 
 <Card title="Explora los comandos de la CLI" icon="terminal" horizontal href="/es/installation">
-  Detecta enlaces rotos, comprueba la accesibilidad, valida especificaciones de OpenAPI y mucho más.
+  Encuentra enlaces rotos, comprueba la accesibilidad, valida especificaciones OpenAPI y mucho más.
 </Card>
 
-<Card title="Agrega un dominio personalizado" icon="globe" horizontal href="/es/customize/custom-domain">
+<Card title="Añade un dominio personalizado" icon="globe" horizontal href="/es/customize/custom-domain">
   Usa tu propio dominio para tu sitio de documentación.
 </Card>

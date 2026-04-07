@@ -1,61 +1,62 @@
 ---
 title: "Vérifications CI"
-description: "Automatisez les vérifications de liens cassés, le linting et la validation grammaticale dans la CI/CD."
-keywords: ["continuous integration", "CI/CD", "vérifications", "Vale", "linter"]
+description: "Automatisez la vérification des liens rompus, le linting et la validation grammaticale dans CI/CD."
+keywords: ["intégration continue", "CI/CD", "contrôles", "Vale", "linter"]
 ---
 
 <Info>
   Les [offres Pro et Enterprise](https://mintlify.com/pricing?ref=docs-ci) incluent des vérifications CI pour les dépôts GitHub.
 </Info>
 
-Utilisez les vérifications CI pour analyser votre documentation à la recherche d’erreurs et fournir des avertissements avant le déploiement. Les vérifications CI Mintlify s’exécutent sur les pull requests visant une branche de déploiement configurée.
+Utilisez les vérifications CI pour détecter les erreurs dans votre documentation et afficher des avertissements avant le déploiement. Les vérifications CI de Mintlify s’exécutent sur les pull requests par rapport à une branche de déploiement configurée.
 
 <div id="installation">
   ## Installation
 </div>
 
-Pour commencer, suivez les étapes indiquées sur la page [GitHub](/fr/deploy/github).
+Pour commencer, suivez les étapes de la page [GitHub](/fr/deploy/github).
 
 <Tip>
-  Seul l&#39;accès au dépôt où se trouve le contenu de votre documentation est nécessaire. Il est donc fortement recommandé de n&#39;accorder l&#39;accès qu&#39;à ce dépôt.
+  Seul l’accès au dépôt contenant votre documentation est nécessaire. Il est donc fortement recommandé de n’accorder l’accès qu’à ce dépôt.
 </Tip>
 
 ## Configuration
 
-Configurez les vérifications CI à exécuter lors d’un déploiement en vous rendant sur la page [Add-ons](https://dashboard.mintlify.com/products/addons) de votre tableau de bord. Activez les vérifications que vous souhaitez exécuter.
+Configurez les vérifications CI activées pour un déploiement en accédant à la page [Add-ons](https://dashboard.mintlify.com/products/addons) de votre tableau de bord. Activez les vérifications que vous souhaitez exécuter.
 
-Lors de l’activation des vérifications, vous pouvez choisir de les exécuter au niveau `Warning` ou `Blocking`.
+Lorsque vous activez des vérifications, vous pouvez choisir de les exécuter au niveau `Warning` ou `Blocking`.
 
-* Une vérification de niveau `Warning` n’indiquera jamais un statut d’échec, même en cas d’erreur ou de suggestions.
-* Une vérification de niveau `Blocking` indiquera un statut d’échec en cas d’erreur ou de suggestions.
+* Une vérification de niveau `Warning` ne renverra jamais un statut d’échec, même en cas d’erreur ou de suggestions.
+* Une vérification de niveau `Blocking` renverra un statut d’échec en cas d’erreur ou de suggestions.
 
 <div id="available-ci-checks">
-  ## Contrôles CI disponibles
+  ## Vérifications CI disponibles
 </div>
 
 <div id="broken-links">
-  ### Liens cassés
+  ### Liens rompus
 </div>
 
-De la même manière que l&#39;[outil de vérification de liens en ligne de commande](/fr/installation#find-broken-links) fonctionne sur votre machine locale, le contrôle CI des liens cassés recherche automatiquement les liens internes brisés dans votre documentation.
+À l’instar du [vérificateur de liens CLI](/fr/installation#find-broken-links) sur votre machine locale, la
+vérification CI des liens rompus recherche automatiquement les liens internes rompus dans le contenu de votre documentation.
 
-Pour voir les résultats de ce contrôle, rendez-vous sur la page des résultats des contrôles GitHub pour un commit donné.
+Pour consulter les résultats de cette vérification, accédez à la page des résultats des vérifications GitHub pour un commit donné.
 
 <div id="vale">
   ### Vale
 </div>
 
-[Vale](https://vale.sh/) est un linter de prose open source, basé sur des règles, qui prend en charge un large éventail de types de documents, y compris Markdown et MDX. Utilisez Vale pour vérifier la cohérence du style et du ton de votre documentation.
+[Vale](https://vale.sh/) est un linter de prose open source basé sur des règles, compatible avec plusieurs types de documents, dont Markdown et MDX. Utilisez Vale pour vérifier la cohérence du style et du ton de votre documentation.
 
-Mintlify permet d’exécuter automatiquement Vale dans un contrôle CI et d’afficher les résultats en tant que statut de vérification.
+Mintlify permet d’exécuter automatiquement Vale dans une vérification CI et d’afficher les résultats sous forme de statut de vérification.
 
 <div id="configuration">
   #### Configuration
 </div>
 
-Si vous avez un fichier `.vale.ini` dans le répertoire racine de contenu de votre déploiement, le contrôle CI Vale utilise ce fichier de configuration ainsi que tous les fichiers de configuration situés dans le `stylesPath` que vous avez spécifié.
+Si vous avez un fichier `.vale.ini` dans le répertoire racine du contenu de votre déploiement, la vérification Vale CI utilise ce fichier de configuration ainsi que tous les fichiers de configuration du `stylesPath` spécifié.
 
-Si vous n’avez pas de fichier de configuration Vale, la configuration par défaut est automatiquement chargée.
+Si vous n&#39;avez pas de fichier de configuration Vale, la configuration par défaut se charge automatiquement.
 
 ```mdx Default vale.ini configuration expandable
 # Styles de niveau supérieur
@@ -74,7 +75,7 @@ Packages = MDX
 # Correspondre uniquement aux fichiers MDX
 [*.mdx]
 BasedOnStyles = Vale
-Vale.Terms = NO # Applique des règles de capitalisation très strictes, à désactiver
+Vale.Terms = NO # Applique des règles de capitalisation très strictes, à laisser désactivé
 
 # Ignorer les motifs de syntaxe spécifiques à JSX/MDX
 # `import ...`, `export ...`
@@ -91,7 +92,7 @@ BlockIgnores = (?sm)^(<\w+\n .*\s\/>)$, \
 (?sm)^({.+.*})
 ```
 
-Le vocabulaire par défaut de Vale comprend les mots suivants.
+Le vocabulaire Vale par défaut comprend les mots suivants.
 
 ```text Default Vale vocabulary expandable
 Mintlify
@@ -363,10 +364,10 @@ next
 toc
 ```
 
-Pour ajouter votre propre vocabulaire pour la configuration par défaut, créez un répertoire `styles/config/vocabularies/Mintlify` contenant les fichiers `accept.txt` et `reject.txt`.
+Pour ajouter votre propre vocabulaire à la configuration par défaut, créez un répertoire `styles/config/vocabularies/Mintlify` avec les fichiers `accept.txt` et `reject.txt`.
 
-* `accept.txt` : Mots qui doivent être ignorés par l’outil de vérification Vale, par exemple des noms de produits ou des termes peu courants.
-* `reject.txt` : Mots qui doivent être signalés comme des erreurs, par exemple du jargon ou des mots qui ne sont pas appropriés au ton de votre documentation.
+* `accept.txt` : Mots qui doivent être ignorés par le linter Vale. Par exemple, les noms de produits ou les termes peu courants.
+* `reject.txt` : Mots qui doivent être considérés comme des erreurs. Par exemple, le jargon ou les mots qui ne conviennent pas au ton de votre documentation.
 
 ```text Example Vale file structure
 /your-project
@@ -398,21 +399,21 @@ Pour ajouter votre propre vocabulaire pour la configuration par défaut, créez 
 ```
 
 <Note>
-  Pour des raisons de sécurité, les `stylesPath` absolus, ou les `stylesPath` contenant `..`, ne sont pas pris en charge.
+  Pour des raisons de sécurité, les `stylesPath` absolus ou les `stylesPath` contenant des valeurs `..` ne sont pas pris en charge.
 
-  Utilisez des chemins relatifs et incluez le `stylesPath` dans votre dépôt.
+  Utilisez des chemins relatifs et veillez à inclure le `stylesPath` dans votre dépôt.
 </Note>
 
 <div id="packages">
-  #### Paquets
+  #### Packages
 </div>
 
-Vale prend en charge une gamme de [paquets](https://vale.sh/docs/keys/packages) qui peuvent être utilisés pour détecter les fautes d’orthographe et les erreurs de style. Tous les paquets que vous incluez dans votre dépôt sous le `stylesPath` approprié sont automatiquement installés et utilisés dans votre configuration Vale.
+Vale prend en charge un large éventail de [packages](https://vale.sh/docs/keys/packages), qui peuvent être utilisés pour détecter les fautes d’orthographe et les erreurs de style. Tous les packages que vous incluez dans votre dépôt sous le bon `stylesPath` sont automatiquement installés et utilisés dans votre configuration Vale.
 
-Pour les paquets qui ne sont pas inclus dans votre dépôt, vous pouvez spécifier n’importe quel paquet issu du [registre de paquets Vale](https://vale.sh/explorer) ; ils sont alors automatiquement téléchargés et utilisés dans votre configuration Vale.
+Pour les packages qui ne sont pas inclus dans votre dépôt, vous pouvez spécifier n’importe quel package du [registre de packages Vale](https://vale.sh/explorer) ; ils seront automatiquement téléchargés et utilisés dans votre configuration Vale.
 
 <Note>
-  Pour des raisons de sécurité, le téléchargement automatique de paquets qui ne proviennent pas du [registre de paquets Vale](https://vale.sh/explorer) n’est **pas** pris en charge.
+  Pour des raisons de sécurité, le téléchargement automatique de packages qui ne proviennent pas du [registre de packages Vale](https://vale.sh/explorer) n’est **pas** pris en charge.
 </Note>
 
 <div id="vale-with-mdx">
@@ -420,10 +421,10 @@ Pour les paquets qui ne sont pas inclus dans votre dépôt, vous pouvez spécifi
 </div>
 
 <Note>
-  La prise en charge native de MDX nécessite Vale 3.10.0 ou une version ultérieure. Vérifiez votre version de Vale avec `vale --version`.
+  La prise en charge native de MDX nécessite Vale 3.10.0 ou version ultérieure. Vérifiez votre version de Vale avec `vale --version`.
 </Note>
 
-Pour utiliser les commentaires intégrés de Vale dans les fichiers MDX, utilisez les commentaires au format MDX `{/* ... */}` :
+Pour utiliser les commentaires intégrés au document de Vale dans des fichiers MDX, utilisez des commentaires au format MDX `{/* ... */}` :
 
 ```mdx
 {/* vale off */}
@@ -433,4 +434,4 @@ This text is ignored by Vale
 {/* vale on */}
 ```
 
-Vale reconnaît et respecte automatiquement ces commentaires dans les fichiers MDX sans configuration supplémentaire. Utilisez les commentaires pour ignorer les lignes ou sections qui doivent être ignorées par le linter.
+Vale reconnaît et prend automatiquement en compte ces commentaires dans les fichiers MDX, sans configuration supplémentaire. Utilisez des commentaires pour exclure les lignes ou sections qui doivent être ignorées par le linter.

@@ -1,25 +1,25 @@
 ---
 title: "Proxy inverse"
-description: "Configurer un proxy inverse personnalisé pour diffuser votre documentation."
-keywords: ["reverse proxy configuration","nginx","proxy routing","header forwarding"]
+description: "Configurez un proxy inverse personnalisé pour diffuser votre documentation."
+keywords: ["configuration de proxy inverse","nginx","routage du proxy","transmission des en-têtes"]
 ---
 
 <Note>
-  Les configurations de proxy inverse ne sont prises en charge que pour les [offres Enterprise](https://mintlify.com/pricing?ref=reverse-proxy).
+  Les configurations de proxy inverse sont uniquement prises en charge avec les [offres Enterprise](https://mintlify.com/pricing?ref=reverse-proxy).
 </Note>
 
-Pour diffuser votre documentation via un proxy inverse personnalisé, vous devez configurer des règles de routage, des stratégies de mise en cache et le transfert des en-têtes.
+Pour diffuser votre documentation via un proxy inverse personnalisé, vous devez configurer les règles de routage, les politiques de mise en cache et la transmission des en-têtes.
 
-Lorsque vous mettez en place un proxy inverse, surveillez les éventuels problèmes de vérification de domaine, de délivrance de certificats SSL, de flux d'authentification, de performances et de suivi des analytics.
+Lorsque vous mettez en place un proxy inverse, surveillez les problèmes potentiels liés à la vérification du domaine, au provisionnement du certificat SSL, aux flux d&#39;authentification, aux performances et au suivi analytique.
 
 <div id="choose-your-deployment-approach">
-  ## Choisissez votre approche de déploiement
+  ## Choisissez votre méthode de déploiement
 </div>
 
-Mintlify prend en charge deux configurations de proxy inverse, selon vos besoins en matière de sous-chemin.
+Mintlify prend en charge deux configurations de proxy inverse selon vos besoins en matière de sous-chemin.
 
-- **Host at `/docs`** : utilisez `mintlify.dev` comme cible du proxy. Activez l’option **Host at `/docs`** sur la page [Configuration de domaine personnalisé](https://dashboard.mintlify.com/settings/deployment/custom-domain) de votre tableau de bord. Il s’agit d’une configuration plus simple avec moins de routes.
-- **Sous-chemin personnalisé** : utilisez `mintlify.app` comme cible du proxy. Cette approche prend en charge n’importe quel sous-chemin et nécessite des règles de routage supplémentaires.
+* **Host at `/docs`**: utilisez `mintlify.dev` comme cible du proxy. Activez l’option **Host at `/docs`** sur la page [Custom domain setup](https://dashboard.mintlify.com/settings/deployment/custom-domain) de votre tableau de bord. Cette configuration est plus simple et comporte moins de routes.
+* **sous-chemin personnalisé**: utilisez `mintlify.app` comme cible du proxy. Cette approche prend en charge n’importe quel sous-chemin et nécessite des règles de routage supplémentaires.
 
 <div id="host-at-docs-subpath">
   ## Héberger sur le sous-chemin `/docs`
@@ -30,40 +30,40 @@ Utilisez cette configuration lorsque vous souhaitez héberger la documentation s
 Avant de configurer votre proxy inverse :
 
 1. Accédez à [Custom domain setup](https://dashboard.mintlify.com/settings/deployment/custom-domain) dans votre tableau de bord.
-2. Activez l’option **Host at `/docs`**.
-3. Saisissez votre domaine et sélectionnez **Add domain**.
+2. Activez le bouton **Host at `/docs`**.
+3. Saisissez votre domaine, puis sélectionnez **Add domain**.
 
 <Warning>
-  Lorsque vous activez **Host at `/docs`**, l’URL canonique de votre documentation devient `<your-subdomain>.mintlify.dev`. L’invalidation du cache n’est plus effectuée sur `mintlify.app`, et vous devez faire pointer votre proxy vers `mintlify.dev` pour que les mises à jour apparaissent.
+  Lorsque vous activez **Host at `/docs`**, l’URL canonique de votre documentation devient `<your-subdomain>.mintlify.dev`. L’invalidation du cache ne fonctionne plus sur `mintlify.app`, et vous devez configurer le proxy vers `mintlify.dev` pour que les mises à jour s’affichent.
 </Warning>
 
 <div id="routing-configuration">
-  ### Configuration du routage
+  ### Configuration de routage
 </div>
 
-Faites passer ces chemins par un proxy vers votre sous-domaine Mintlify :
+Redirigez ces chemins via un proxy vers votre sous-domaine Mintlify :
 
-| Path                              | Destination                          | Caching     |
-| --------------------------------- | ------------------------------------ | ----------- |
-| `/docs`                           | `<your-subdomain>.mintlify.dev/docs` | Aucun cache |
-| `/docs/*`                         | `<your-subdomain>.mintlify.dev/docs` | Aucun cache |
-| `/.well-known/vercel/*`           | `<your-subdomain>.mintlify.dev`      | Aucun cache |
-| `/.well-known/skills/*` (optional)| `<your-subdomain>.mintlify.dev/docs` | Aucun cache |
-| `/skill.md` (optional)            | `<your-subdomain>.mintlify.dev/docs` | Aucun cache |
+| Chemin                               | Destination                          | Mise en cache |
+| ------------------------------------ | ------------------------------------ | ------------- |
+| `/docs`                              | `<your-subdomain>.mintlify.dev/docs` | Sans cache    |
+| `/docs/*`                            | `<your-subdomain>.mintlify.dev/docs` | Sans cache    |
+| `/.well-known/vercel/*`              | `<your-subdomain>.mintlify.dev`      | Sans cache    |
+| `/.well-known/skills/*` (facultatif) | `<your-subdomain>.mintlify.dev/docs` | Sans cache    |
+| `/skill.md` (facultatif)             | `<your-subdomain>.mintlify.dev/docs` | Sans cache    |
 
-Les routes `/.well-known/skills/*` et `/skill.md` sont facultatives. Incluez-les uniquement si vous souhaitez servir des fichiers de compétences IA à des chemins de racine comme `your-domain.com/skills.md` au lieu de sous votre sous-chemin de documentation, comme `your-domain.com/docs/skills.md`.
+Les routes `/.well-known/skills/*` et `/skill.md` sont facultatives. Incluez-les uniquement si vous voulez servir des fichiers de compétences d’IA à la racine, comme `your-domain.com/skills.md`, plutôt que sous votre sous-chemin de documentation, comme `your-domain.com/docs/skills.md`.
 
 <div id="required-header-configuration">
   ### Configuration requise des en-têtes
 </div>
 
-Configurez votre proxy inverse avec les exigences d’en-têtes suivantes :
+Configurez votre proxy inverse avec les en-têtes suivants :
 
-- **Origin** : contient le sous-domaine cible `<your-subdomain>.mintlify.dev`
-- **X-Forwarded-For** : préserve les informations d’adresse IP du client
-- **X-Forwarded-Proto** : préserve le protocole d’origine (http/https)
-- **X-Real-IP** : transmet la véritable adresse IP du client
-- **User-Agent** : transmet l’agent utilisateur
+* **Origin** : contient le sous-domaine cible `<your-subdomain>.mintlify.dev`
+* **X-Forwarded-For** : préserve les informations sur l’adresse IP du client
+* **X-Forwarded-Proto** : préserve le protocole d’origine (http/https)
+* **X-Real-IP** : transmet l’adresse IP réelle du client
+* **User-Agent** : transmet l’agent utilisateur
 
 <Warning>
   Assurez-vous que l’en-tête `Host` n’est pas transmis.
@@ -145,37 +145,37 @@ server {
   ## Sous-chemin personnalisé
 </div>
 
-Lorsque vous avez besoin d’un sous-chemin autre que `/docs` (comme `/help` ou `/resources`), utilisez la configuration de routage suivante.
+Lorsque vous avez besoin d’un sous-chemin autre que `/docs` (par exemple `/help` ou `/resources`), utilisez la configuration de routage suivante.
 
-Redirigez ces chemins via un proxy vers votre sous-domaine Mintlify avec les stratégies de mise en cache indiquées :
+Redirigez ces chemins vers votre sous-domaine Mintlify avec les règles de mise en cache indiquées :
 
 | Chemin                            | Destination                     | Mise en cache |
 | --------------------------------- | ------------------------------- | ------------- |
-| `/.well-known/vercel/*`           | `<your-subdomain>.mintlify.app` | Pas de cache  |
-| `/.well-known/skills/*`           | `<your-subdomain>.mintlify.app` | Pas de cache  |
-| `/skill.md`                       | `<your-subdomain>.mintlify.app` | Pas de cache  |
-| `/mintlify-assets/_next/static/*` | `<your-subdomain>.mintlify.app` | Cache activé  |
-| `/_mintlify/*`                    | `<your-subdomain>.mintlify.app` | Pas de cache  |
-| `/*`                              | `<your-subdomain>.mintlify.app` | Pas de cache  |
-| `/`                               | `<your-subdomain>.mintlify.app` | Pas de cache  |
+| `/.well-known/vercel/*`           | `<your-subdomain>.mintlify.app` | sans cache    |
+| `/.well-known/skills/*`           | `<your-subdomain>.mintlify.app` | sans cache    |
+| `/skill.md`                       | `<your-subdomain>.mintlify.app` | sans cache    |
+| `/mintlify-assets/_next/static/*` | `<your-subdomain>.mintlify.app` | Activée       |
+| `/_mintlify/*`                    | `<your-subdomain>.mintlify.app` | sans cache    |
+| `/*`                              | `<your-subdomain>.mintlify.app` | sans cache    |
+| `/`                               | `<your-subdomain>.mintlify.app` | sans cache    |
 
-<div id="required-header-configuration">
-  ### Configuration requise des en-têtes
-</div>
+### Configuration des en-têtes requise
 
-Configurez votre proxy inverse avec les exigences suivantes pour les en-têtes :
+Configurez votre proxy inverse avec les en-têtes suivants :
 
-- **Origin** : contient le sous-domaine cible `<your-subdomain>.mintlify.app`
-- **X-Forwarded-For** : préserve les informations d’adresse IP du client
-- **X-Forwarded-Proto** : préserve le protocole d’origine (HTTP/HTTPS)
-- **X-Real-IP** : transmet la véritable adresse IP du client
-- **User-Agent** : transmet le User-Agent
+* **Origin** : contient le sous-domaine cible `<your-subdomain>.mintlify.app`
+* **X-Forwarded-For** : préserve les informations d’IP du client
+* **X-Forwarded-Proto** : préserve le protocole d’origine (HTTP/HTTPS)
+* **X-Real-IP** : transmet l’adresse IP réelle du client
+* **User-Agent** : transmet l’agent utilisateur
 
 <Warning>
-  Assurez-vous que l’en-tête `Host` n’est pas transmis
+  Veillez à ne pas transférer l’en-tête `Host`
 </Warning>
 
-### Exemple de configuration NGINX
+<div id="example-nginx-configuration">
+  ### Exemple de configuration Nginx
+</div>
 
 ```nginx
 server {
@@ -191,7 +191,7 @@ server {
         proxy_set_header X-Forwarded-Proto $scheme;
         proxy_set_header User-Agent $http_user_agent;
 
-        # Désactiver la mise en cache pour les chemins de vérification
+        # Désactiver le cache pour les chemins de vérification
         add_header Cache-Control "no-cache, no-store, must-revalidate";
     }
 
@@ -204,7 +204,7 @@ server {
         proxy_set_header X-Forwarded-Proto $scheme;
         proxy_set_header User-Agent $http_user_agent;
 
-        # Désactiver la mise en cache pour les chemins de vérification
+        # Désactiver le cache pour les chemins de vérification
         add_header Cache-Control "no-cache, no-store, must-revalidate";
     }
 
@@ -217,7 +217,7 @@ server {
         proxy_set_header X-Forwarded-Proto $scheme;
         proxy_set_header User-Agent $http_user_agent;
 
-        # Désactiver la mise en cache pour le manifeste de compétence
+        # Désactiver le cache pour le manifeste de compétence
         add_header Cache-Control "no-cache, no-store, must-revalidate";
     }
 
@@ -230,7 +230,7 @@ server {
         proxy_set_header X-Forwarded-Proto $scheme;
         proxy_set_header User-Agent $http_user_agent;
 
-        # Activer la mise en cache pour les ressources statiques
+        # Activer le cache pour les ressources statiques
         add_header Cache-Control "public, max-age=86400";
     }
 
@@ -243,7 +243,7 @@ server {
         proxy_set_header X-Forwarded-Proto $scheme;
         proxy_set_header User-Agent $http_user_agent;
 
-        # Désactiver la mise en cache pour les chemins Mintlify
+        # Désactiver le cache pour les chemins Mintlify
         add_header Cache-Control "no-cache, no-store, must-revalidate";
     }
 
@@ -256,7 +256,7 @@ server {
         proxy_set_header X-Forwarded-Proto $scheme;
         proxy_set_header User-Agent $http_user_agent;
 
-        # Désactiver la mise en cache pour le contenu dynamique
+        # Désactiver le cache pour le contenu dynamique
         add_header Cache-Control "no-cache, no-store, must-revalidate";
     }
 
@@ -269,7 +269,7 @@ server {
         proxy_set_header X-Forwarded-Proto $scheme;
         proxy_set_header User-Agent $http_user_agent;
 
-        # Désactiver la mise en cache pour le contenu dynamique
+        # Désactiver le cache pour le contenu dynamique
         add_header Cache-Control "no-cache, no-store, must-revalidate";
     }
 }
@@ -281,34 +281,34 @@ server {
 </div>
 
 <div id="changes-not-appearing">
-  ### Les modifications n'apparaissent pas
+  ### Les modifications n’apparaissent pas
 </div>
 
-**Symptômes** : Vous publiez des mises à jour de la documentation, mais les modifications n'apparaissent pas sur votre site.
+**Symptômes** : vous publiez des mises à jour de la documentation, mais les modifications n’apparaissent pas sur votre site.
 
-**Cause** : Vous avez activé **Host at `/docs`** dans votre tableau de bord, mais votre reverse proxy pointe vers `mintlify.app` au lieu de `mintlify.dev`.
+**Cause** : l’option **Host at `/docs`** est activée dans votre tableau de bord, mais votre proxy inverse pointe vers `mintlify.app` au lieu de `mintlify.dev`.
 
-**Solution** : Mettez à jour la configuration de votre reverse proxy pour qu'il pointe vers `<your-subdomain>.mintlify.dev` au lieu de `<your-subdomain>.mintlify.app`.
+**Solution** : mettez à jour la configuration de votre proxy inverse afin qu’elle pointe vers `<your-subdomain>.mintlify.dev` plutôt que vers `<your-subdomain>.mintlify.app`.
 
 <div id="404-error">
   ### Erreur 404
 </div>
 
-**Symptômes** : La documentation se charge, mais les fonctionnalités ne fonctionnent pas. Les appels d’API échouent.
+**Symptômes** : La documentation se charge, mais les fonctionnalités ne marchent pas. Les appels d’API échouent.
 
-**Cause** : Le proxy inverse transmet l’en-tête `Host` ou l’en-tête `Origin` est manquant.
+**Cause** : Le proxy inverse transmet l’en-tête `Host`, ou l’en-tête `Origin` est absent.
 
 **Solution** :
 
-- Supprimer la transmission de l’en-tête `Host`
-- Définir la valeur de l’en-tête `Origin` sur votre sous-domaine Mintlify (`mintlify.dev` pour un sous-répertoire `/docs` ou `mintlify.app` pour un sous-répertoire différent)
+* Désactivez le transfert de l’en-tête `Host`
+* Définissez l’en-tête `Origin` sur votre sous-domaine Mintlify (`mintlify.dev` pour un sous-chemin `/docs` ou `mintlify.app` pour un autre sous-chemin)
 
 <div id="performance-issues">
   ### Problèmes de performances
 </div>
 
-**Symptômes** : Temps de chargement des pages lents et sauts de mise en page.
+**Symptômes** : Chargement lent des pages et décalages de mise en page.
 
-**Cause** : Configuration de la mise en cache incorrecte.
+**Cause** : Configuration incorrecte de la mise en cache.
 
-**Solution** : Pour les configurations personnalisées de sous-chemins, activez la mise en cache uniquement pour les chemins `/mintlify-assets/_next/static/*`. La configuration du sous-chemin `/docs` gère automatiquement la mise en cache.
+**Solution** : Pour les configurations de sous-chemin personnalisées, activez la mise en cache uniquement pour les chemins `/mintlify-assets/_next/static/*`. La configuration du sous-chemin `/docs` gère automatiquement la mise en cache.
